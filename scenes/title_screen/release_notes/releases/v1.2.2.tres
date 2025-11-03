@@ -46,4 +46,9 @@ Fixed a bug in the Cog Creator where the proxy status effect wouldn't be properl
 Fixed some wonky battle collisions
 The connectors in the Cog Golf Course no longer consume the chests in the maze room
 Fixed the respawn point of a lava floor in the Molten Mint
-Adjusted an invisible wall in the Molten Mint"
+Adjusted an invisible wall in the Molten Mint
+[TITLE]Hotfix #1
+Fixed an issue where non-specific ToonTasks could not be rolled
+Fixed an issue where specific Cog ToonTasks were generating with quotas that were too high
+Due to a coin flip, Star Glasses have returned to the Gold Chest item pool
+Fixed the descriptions of the Toon-Up items"

@@ -68,8 +68,7 @@ func randomize_objective() -> void:
 	
 	# 33% chance of department specific
 	if quest_type == 0:
-		pass
-		#department = goal_dept
+		department = CogDNA.CogDept.NULL
 	elif quest_type == 1:
 		var cog_pool: CogPool
 		match department:
@@ -81,8 +80,8 @@ func randomize_objective() -> void:
 				cog_pool = load('res://objects/cog/presets/pools/lawbot.tres')
 			CogDNA.CogDept.BOSS:
 				cog_pool = load('res://objects/cog/presets/pools/bossbot.tres')
-				
 		specific_cog = cog_pool.cogs[RNG.channel(RNG.ChannelCogQuestTypes).randi_range(minimum_level, maximum_level)]
+		department = CogDNA.CogDept.NULL
 	
 	# Reduce quotas for more specific quest types
 	if not department == CogDNA.CogDept.NULL:

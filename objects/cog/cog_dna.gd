@@ -204,6 +204,7 @@ const ATTRIBUTE_LIST : Array[String] = [
 	"health_mod",
 	"battle_phrases",
 	"external_assets",
+	"can_speak",
 ]
 const PATH_ATTRIBUTE_LIST : Array[String] = [
 	"custom_blazer_tex",
