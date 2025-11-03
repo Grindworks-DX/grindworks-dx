@@ -7,7 +7,6 @@
 [resource]
 script = ExtResource("2_25hrb")
 qualitoon = 1
-rarity = 1
 evergreen = true
 world_scale = 2.0
 ui_cam_offset = 0.15

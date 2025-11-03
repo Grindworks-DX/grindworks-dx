@@ -7,7 +7,6 @@
 [resource]
 script = ExtResource("3_l5yp1")
 qualitoon = 1
-rarity = 1
 evergreen = true
 world_scale = 0.28
 item_name = "Feather"

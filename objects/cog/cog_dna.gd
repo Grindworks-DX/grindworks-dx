@@ -55,6 +55,7 @@ enum SuitType {
 	head_model = "",
 	head_textures = [],
 	attacks = [],
+	status_effects = [],
 	custom_blazer_tex = "",
 	custom_arm_tex = "",
 	custom_wrist_tex = "",
