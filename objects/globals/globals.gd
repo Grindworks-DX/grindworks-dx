@@ -605,12 +605,13 @@ signal s_radio_spawned(radio: Node3D)
 signal s_slendercog_boss_initialized(directory: Node3D)
 signal s_shop_spawned(shop: ToonShop)
 signal s_game_win
+signal s_im_stuck
 #endregion
 
 
 ## Custom Seeds
 ## Input one of these to get a wacky effect
-var custom_seeds: Dictionary[String, String] = {
+var custom_seeds: Dictionary[String, Variant] = {
 	# Guaranteed Motorcycle Boots (hi boots)
 	"boots": "res://objects/items/resources/custom_seeds/seed_boots.tres",
 	
@@ -624,8 +625,7 @@ var custom_seeds: Dictionary[String, String] = {
 	"fedora": "res://objects/items/resources/custom_seeds/seed_fedora.tres",
 	
 	# Play with a mirrored camera
-	## (Scrapped. Enable at your own risk (flashing imagery warning)
-	#"mirror": "res://objects/items/resources/custom_seeds/seed_mirror.tres",
+	"mirror": "res://objects/items/resources/custom_seeds/seed_mirror.tres",
 	
 	# Fake "Authenticating..." screen
 	"multiplayer": "res://objects/items/resources/custom_seeds/seed_multiplayer.tres",
@@ -644,4 +644,30 @@ var custom_seeds: Dictionary[String, String] = {
 	
 	# All floors have the low gravity effect
 	"zerog": "res://objects/items/resources/custom_seeds/seed_zerog.tres",
+	
+	# Resistance Ranger Ripley is your shopkeeper
+	"ooowo": "res://objects/items/resources/custom_seeds/seed_ooowo.tres",
+	
+	# Collision Blunder Counter
+	"kelblock": "res://objects/items/resources/custom_seeds/seed_kelblock.tres",
+	
+	# Sends you to heaven
+	"sketched": "res://objects/items/resources/custom_seeds/seed_sketched.tres",
+	
+	# Purple filter
+	"lavender": "res://objects/items/resources/custom_seeds/seed_lavender.tres",
+	
+	"misty": "res://objects/items/resources/custom_seeds/seed_misty.tres",
+	
+	# Mirrored AND Blackout (we hate you)
+	"blackmirror": [
+		"res://objects/items/resources/custom_seeds/seed_blackout.tres",
+		"res://objects/items/resources/custom_seeds/seed_mirror.tres"
+	],
+	
+	# Mirrored AND Sketched (we love you)
+	"whitemirror": [
+		"res://objects/items/resources/custom_seeds/seed_sketched.tres",
+		"res://objects/items/resources/custom_seeds/seed_mirror.tres"
+	]
 }

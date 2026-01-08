@@ -37,7 +37,7 @@ world_scale = 0.11
 ui_cam_offset = 0.4
 item_name = "Pixie Wings"
 item_description = "A gentler touch..."
-big_description = "+ 30% healing effectiveness
+big_description = "+ 35% healing effectiveness
 - 5% damage"
 model = ExtResource("4_h8b75")
 stats_add = {

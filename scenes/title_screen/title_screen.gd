@@ -209,7 +209,7 @@ func begin_game(character: PlayerCharacter, falling_scene := false) -> void:
 	if has_existing_run and SaveFileService.progress_file.win_streak > 0:
 		SaveFileService.progress_file.win_streak = 0
 
-	var seed_item: Item
+	var seed_items: Array[Item] = []
 	SaveFileService.delete_run_file()
 	if clipboard.custom_seed == "":
 		RNG.generate_seed()
@@ -217,7 +217,10 @@ func begin_game(character: PlayerCharacter, falling_scene := false) -> void:
 	elif clipboard.custom_seed in Globals.custom_seeds.keys():
 		RNG.generate_seed()
 		RNG.is_custom_seed = true
-		seed_item = load(Globals.custom_seeds[clipboard.custom_seed])
+		var seed_result = Globals.custom_seeds[clipboard.custom_seed]
+		if seed_result is Array:
+			seed_items.append_array(seed_result.map(func(x): return load(x)))
+		elif seed_result is String: seed_items.append(load(seed_result))
 	else:
 		RNG._str_seed = clipboard.custom_seed
 		RNG.set_seed(RNG.get_numerical_seed_from_string(clipboard.custom_seed))
@@ -229,8 +232,8 @@ func begin_game(character: PlayerCharacter, falling_scene := false) -> void:
 	var player: Player = PLAYER.instantiate()
 	player.stats = PlayerStats.new()
 	player.stats.character = character.duplicate(true)
-	if seed_item:
-		player.stats.character.starting_items.append(seed_item)
+	for item in seed_items:
+		player.stats.character.starting_items.append(item)
 	player.reset_stats()
 	SceneLoader.add_persistent_node(player)
 	player.state = player.PlayerState.STOPPED

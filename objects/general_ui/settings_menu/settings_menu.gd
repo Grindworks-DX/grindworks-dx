@@ -210,6 +210,7 @@ func cry_for_help() -> void:
 	if is_instance_valid(Util.floor_manager) and is_instance_valid(Util.player):
 		Util.floor_manager.player_out_of_bounds(Util.get_player())
 		Util.get_player().camera.make_current()
+	Globals.s_im_stuck.emit()
 
 func get_control_style(style : bool) -> String:
 	if style:
