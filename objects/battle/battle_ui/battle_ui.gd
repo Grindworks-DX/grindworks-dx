@@ -53,6 +53,8 @@ func _ready():
 
 	status_container.target = Util.get_player()
 
+	set_button_neighbors()
+
 func gag_selected(gag: BattleAction) -> void:
 	if remaining_turns <= 0:
 		s_gag_canceled.emit(gag)
@@ -235,3 +237,35 @@ func refresh_tracks() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed('end_turn') and visible:
 		complete_turn()
+
+func set_button_neighbors() -> void:
+	var tracks = gag_tracks.get_children()
+	# Iterate through each TrackElement and set a two-way connection between the current one and the next available one
+	for i in range(tracks.size()):
+		var current_te: TrackElement = tracks[i]
+		if !current_te.unlocked > -1:
+			continue
+
+		var next_te: TrackElement
+		for j in range(1, tracks.size()):
+			if tracks[(i + j) % tracks.size()].unlocked > 1:
+				next_te = tracks[(i + j) % tracks.size()]
+		
+		var buttons = current_te.gag_buttons
+		for k in range(buttons.size()):
+			var button: GagButton = buttons[k]
+			# Left + Right
+			button.focus_neighbor_left = buttons[k - 1].get_path()
+			button.focus_neighbor_right = buttons[(k + 1) % buttons.size()].get_path()
+			# Down + Up
+			if next_te is TrackElement:
+				var next_buttons = next_te.gag_buttons
+				var b_neighbor = next_buttons[k]
+				if b_neighbor.disabled:
+					for next_k in range(k + 1):
+						if next_buttons[next_k + 1].disabled:
+							b_neighbor = next_buttons[next_k]
+							break
+				button.focus_neighbor_bottom = b_neighbor.get_path()
+				b_neighbor.focus_neighbor_top = button.get_path()
+	
