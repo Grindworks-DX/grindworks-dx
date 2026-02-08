@@ -80,7 +80,10 @@ func refresh():
 			if button.pressed.is_connected(emit_gag):
 				button.pressed.disconnect(emit_gag)
 				button.mouse_entered.disconnect(ui_root.gag_hovered)
+				button.mouse_entered.disconnect(button.grab_focus)
 				button.mouse_exited.disconnect(ui_root.gag_unhovered)
+				button.focus_entered.disconnect(ui_root.gag_hovered.bind(gag))
+				button.focus_exited.disconnect(ui_root.gag_unhovered)
 			
 			var price := 0
 			var stats : PlayerStats
@@ -100,8 +103,11 @@ func refresh():
 				button.set_count(price)
 				if ui_root:
 					button.mouse_entered.connect(ui_root.gag_hovered.bind(gag))
+					button.mouse_entered.connect(button.grab_focus)
 					button.mouse_exited.connect(ui_root.gag_unhovered)
 					button.pressed.connect(emit_gag.bind(gag,price))
+					button.focus_entered.connect(ui_root.gag_hovered.bind(gag))
+					button.focus_exited.connect(ui_root.gag_unhovered)
 			
 			if should_disable(gag, price):
 				button.disable()

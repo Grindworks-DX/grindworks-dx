@@ -240,6 +240,7 @@ func _process(_delta: float) -> void:
 
 func set_button_neighbors() -> void:
 	var tracks = gag_tracks.get_children()
+	var first_focused := false
 	# Iterate through each TrackElement and set a two-way connection between the current one and the next available one
 	for i in range(tracks.size()):
 		var current_te: TrackElement = tracks[i]
@@ -268,4 +269,8 @@ func set_button_neighbors() -> void:
 							break
 				button.focus_neighbor_bottom = b_neighbor.get_path()
 				b_neighbor.focus_neighbor_top = button.get_path()
+			# TEMP: set first button focus
+			if !first_focused:
+				button.grab_focus.call_deferred()
+				first_focused = true
 	
