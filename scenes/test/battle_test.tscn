@@ -85,11 +85,11 @@ base_stats = SubResource("Resource_4yraj")
 script = ExtResource("17_8fcps")
 money = 30
 gags_unlocked = Dictionary[String, int]({
-"Drop": 7,
-"Lure": 7,
-"Sound": 7,
+"Drop": 4,
+"Lure": 5,
+"Sound": 6,
 "Squirt": 7,
-"Throw": 7,
+"Throw": 6,
 "Trap": 7
 })
 gag_balance = Dictionary[String, int]({

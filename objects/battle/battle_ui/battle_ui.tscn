@@ -275,9 +275,10 @@ texture_normal = ExtResource("6_x2218")
 texture_pressed = ExtResource("7_ispc8")
 texture_hover = ExtResource("8_rdvyd")
 texture_disabled = ExtResource("9_fsjx4")
+texture_focused = ExtResource("8_rdvyd")
 text = "END TURN"
 
-[node name="ButtonText" parent="BattleMenuContainer/BottomRight/LockIn" index="1"]
+[node name="ButtonText" parent="BattleMenuContainer/BottomRight/LockIn" index="1" unique_id=2113924769]
 offset_left = -70.0
 offset_top = -24.5
 offset_right = 86.0

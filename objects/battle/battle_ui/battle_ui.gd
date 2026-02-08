@@ -255,22 +255,22 @@ func set_button_neighbors() -> void:
 		var buttons = current_te.gag_buttons
 		for k in range(buttons.size()):
 			var button: GagButton = buttons[k]
-			# Left + Right
-			button.focus_neighbor_left = buttons[k - 1].get_path()
-			button.focus_neighbor_right = buttons[(k + 1) % buttons.size()].get_path()
-			# Down + Up
-			if next_te is TrackElement:
-				var next_buttons = next_te.gag_buttons
-				var b_neighbor = next_buttons[k]
-				if b_neighbor.disabled:
-					for next_k in range(k + 1):
-						if next_buttons[next_k + 1].disabled:
-							b_neighbor = next_buttons[next_k]
-							break
-				button.focus_neighbor_top = b_neighbor.get_path()
-				b_neighbor.focus_neighbor_bottom = button.get_path()
-			# TEMP: set first button focus
+			button.track_color = current_te.track.track_color
+			# # Left + Right
+			# button.focus_neighbor_left = buttons[k - 1].get_path()
+			# button.focus_neighbor_right = buttons[(k + 1) % buttons.size()].get_path()
+			# # Down + Up
+			# if next_te is TrackElement:
+			# 	var next_buttons = next_te.gag_buttons
+			# 	var b_neighbor = next_buttons[k]
+			# 	if b_neighbor.disabled:
+			# 		for next_k in range(k + 1):
+			# 			if next_buttons[next_k + 1].disabled:
+			# 				b_neighbor = next_buttons[next_k]
+			# 				break
+			# 	button.focus_neighbor_top = b_neighbor.get_path()
+			# 	b_neighbor.focus_neighbor_bottom = button.get_path()
+			# # TEMP: set first button focus
 			if !first_focused:
 				button.grab_focus.call_deferred()
 				first_focused = true
-	

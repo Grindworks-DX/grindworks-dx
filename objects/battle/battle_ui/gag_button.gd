@@ -4,6 +4,11 @@ class_name GagButton
 const DEFAULT_COLOR := Color("00a1ff")
 const DISABLED_COLOR := Color('2e2e2e')
 
+var track_color := Color("ffffff"):
+	set(x):
+		if x is Color: $FocusPanel.modulate = x
+		track_color = x
+
 @onready var image_rect := $Image
 @onready var label := $ButtonText
 @onready var count_label := $CountLabel
@@ -32,6 +37,11 @@ var default_color := DEFAULT_COLOR:
 func _ready():
 	label.text = text
 	mouse_entered.connect(hover)
+
+	focus_entered.connect(func(): $FocusPanel.visible = has_focus(true))
+	focus_exited.connect($FocusPanel.hide)
+	focus_entered.connect(func(): z_index += 10)
+	focus_exited.connect(func(): z_index -= 10)
 
 func hover() -> void:
 	AudioManager.play_sound(hover_sfx, 6.0)

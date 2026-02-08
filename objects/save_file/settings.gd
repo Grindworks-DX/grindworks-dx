@@ -69,7 +69,7 @@ func get_color_blind_mapping() -> Dictionary:
 ## CONTROLS
 # To preserve the ordering of controls, we must have two dictionaries
 # And the array for the order to display controls in
-var REMAPPABLE_CONTROLS := [
+static var REMAPPABLE_CONTROLS := [
 	"move_forward",
 	"move_back",
 	"move_left",
@@ -83,6 +83,13 @@ var REMAPPABLE_CONTROLS := [
 	"screenshot",
 	"recenter_camera",
 ]
+# UI directions to sync with movement keys
+static var UI_DIRECTIONS := {
+	"move_forward": "ui_up",
+	"move_back": "ui_down",
+	"move_left": "ui_left",
+	"move_right": "ui_right"
+}
 @export var saved_controls := {}
 var controls := {}
 
@@ -120,6 +127,13 @@ func sync_settings() -> void:
 			else:
 				controls[action] = InputMap.action_get_events(action)[0]
 				saved_controls[action] = controls[action]
+		if action in UI_DIRECTIONS.keys():
+			var ui_action = UI_DIRECTIONS[action]
+			for event in InputMap.action_get_events(ui_action):
+				if event is InputEventKey:
+					InputMap.action_erase_event(ui_action, event)
+			InputMap.action_add_event(ui_action, saved_controls[action])
+
 	SaveFileService.s_settings_changed.emit()
 
 func get_bus_index(bus: String) -> int:
