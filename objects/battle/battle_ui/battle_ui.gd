@@ -267,8 +267,8 @@ func set_button_neighbors() -> void:
 						if next_buttons[next_k + 1].disabled:
 							b_neighbor = next_buttons[next_k]
 							break
-				button.focus_neighbor_bottom = b_neighbor.get_path()
-				b_neighbor.focus_neighbor_top = button.get_path()
+				button.focus_neighbor_top = b_neighbor.get_path()
+				b_neighbor.focus_neighbor_bottom = button.get_path()
 			# TEMP: set first button focus
 			if !first_focused:
 				button.grab_focus.call_deferred()
