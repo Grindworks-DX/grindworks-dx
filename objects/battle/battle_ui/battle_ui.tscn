@@ -254,6 +254,8 @@ offset_right = 75.0
 offset_bottom = 2.0
 grow_horizontal = 1
 grow_vertical = 0
+focus_neighbor_top = NodePath("../LockIn")
+focus_neighbor_right = NodePath("../SOS")
 text = "FIRE"
 
 [node name="LockIn" parent="BattleMenuContainer/BottomRight" unique_id=1462293221 instance=ExtResource("6_giclt")]
@@ -305,6 +307,8 @@ offset_right = 7.0
 offset_bottom = 2.0
 grow_horizontal = 0
 grow_vertical = 0
+focus_neighbor_left = NodePath("../Fire")
+focus_neighbor_top = NodePath("../LockIn")
 text = "ITEMS"
 
 [node name="CogPanels" type="HBoxContainer" parent="." unique_id=1766532749]
@@ -417,10 +421,10 @@ offset_left = 18.0
 offset_top = 39.0
 offset_right = 95.0
 offset_bottom = 92.0
+focus_behavior_recursive = 2
 texture_normal = ExtResource("16_fsqkc")
 texture_pressed = ExtResource("17_75n66")
 texture_hover = ExtResource("18_fiwp1")
-font_size = 36.0
 
 [node name="Label2" type="Label" parent="TargetSelect/Buttons/Back" unique_id=1120208072]
 layout_mode = 0
@@ -448,12 +452,12 @@ alignment = 1
 [node name="ArrowButton" parent="TargetSelect/Buttons/Arrows" unique_id=418891837 instance=ExtResource("131_8fhg1")]
 custom_minimum_size = Vector2(58, 40)
 layout_mode = 2
+focus_behavior_recursive = 2
 texture_normal = ExtResource("19_yvh33")
 texture_pressed = ExtResource("20_s4dyj")
 texture_hover = ExtResource("21_gljl2")
 texture_disabled = null
 stretch_mode = 4
-font_size = 36.0
 
 [node name="SelectedGags" type="HBoxContainer" parent="." unique_id=2015893393]
 unique_name_in_owner = true

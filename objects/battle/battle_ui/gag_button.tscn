@@ -44,6 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 theme = SubResource("Theme_nh40n")
+action_mode = 0
 texture_normal = ExtResource("1_1utcq")
 texture_pressed = ExtResource("2_0j5m3")
 texture_hover = ExtResource("3_18eg3")

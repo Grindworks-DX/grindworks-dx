@@ -37,6 +37,7 @@ var default_color := DEFAULT_COLOR:
 func _ready():
 	label.text = text
 	mouse_entered.connect(hover)
+	focus_entered.connect(hover)
 
 	focus_entered.connect(func(): $FocusPanel.visible = has_focus(true))
 	focus_exited.connect($FocusPanel.hide)
@@ -44,6 +45,9 @@ func _ready():
 	focus_exited.connect(func(): z_index -= 10)
 
 func hover() -> void:
+	# "Button Press" for non-mouse, "Button Release" for mouse
+	action_mode = int(!has_focus(true))
+	if has_focus(true): Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	AudioManager.play_sound(hover_sfx, 6.0)
 
 func set_count(number: int):

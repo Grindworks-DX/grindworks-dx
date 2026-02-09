@@ -84,11 +84,12 @@ static var REMAPPABLE_CONTROLS := [
 	"recenter_camera",
 ]
 # UI directions to sync with movement keys
-static var UI_DIRECTIONS := {
+static var UI_CONTROLS := {
 	"move_forward": "ui_up",
 	"move_back": "ui_down",
 	"move_left": "ui_left",
-	"move_right": "ui_right"
+	"move_right": "ui_right",
+	"jump": "ui_accept"
 }
 @export var saved_controls := {}
 var controls := {}
@@ -127,8 +128,8 @@ func sync_settings() -> void:
 			else:
 				controls[action] = InputMap.action_get_events(action)[0]
 				saved_controls[action] = controls[action]
-		if action in UI_DIRECTIONS.keys():
-			var ui_action = UI_DIRECTIONS[action]
+		if action in UI_CONTROLS.keys():
+			var ui_action = UI_CONTROLS[action]
 			for event in InputMap.action_get_events(ui_action):
 				if event is InputEventKey:
 					InputMap.action_erase_event(ui_action, event)

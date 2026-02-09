@@ -6,26 +6,28 @@
 [ext_resource type="AudioStream" uid="uid://cn3dn3fydnkkw" path="res://audio/sfx/ui/Click.ogg" id="4_68apb"]
 [ext_resource type="AudioStream" uid="uid://bm3fm1xutb7es" path="res://audio/sfx/ui/GUI_rollover.ogg" id="5_mi2i0"]
 [ext_resource type="FontFile" uid="uid://815gwlftl5ik" path="res://fonts/impress-bt.ttf" id="5_nyx2p"]
+[ext_resource type="Texture2D" uid="uid://bwd5kq0bi6bjh" path="res://ui_assets/cursor.png" id="8_wb6xn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2uxvi"]
 resource_local_to_scene = true
 font = ExtResource("5_nyx2p")
 font_size = 36
 
-[node name="GeneralButton" type="TextureButton"]
+[node name="GeneralButton" type="TextureButton" unique_id=1756232947 node_paths=PackedStringArray("label", "focus_texture")]
 offset_right = 246.0
 offset_bottom = 96.0
-focus_mode = 0
 texture_normal = ExtResource("1_l2ae8")
 texture_pressed = ExtResource("2_v6ual")
 texture_disabled = ExtResource("2_v6ual")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 5
 script = ExtResource("1_tk66j")
+label = NodePath("Label")
+focus_texture = NodePath("FocusTexture")
 press_sfx = ExtResource("4_68apb")
 hover_sfx = ExtResource("5_mi2i0")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1572222559]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,5 +38,38 @@ label_settings = SubResource("LabelSettings_2uxvi")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="FocusPanel" type="Panel" parent="." unique_id=964679739]
+visible = false
+modulate = Color(0.897449, 0.880027, 3.85046e-07, 1)
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("7_emdc8")
+
+[node name="FocusTexture" type="TextureRect" parent="." unique_id=646632714]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.80600005
+anchor_top = 0.5
+anchor_right = 0.80600005
+anchor_bottom = 0.5
+offset_left = -1.276001
+offset_top = -0.9999962
+offset_right = 62.723984
+offset_bottom = 63.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = 0.31415927
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_wb6xn")
+
 [connection signal="button_down" from="." to="." method="on_button_down"]
-[connection signal="mouse_entered" from="." to="." method="on_mouse_entered"]
+[connection signal="focus_entered" from="." to="." method="hover"]
+[connection signal="focus_exited" from="." to="." method="unhover"]
+[connection signal="mouse_entered" from="." to="." method="hover"]
+[connection signal="mouse_exited" from="." to="." method="unhover"]

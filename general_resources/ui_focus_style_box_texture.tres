@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://bfyn0cgamy77a"]
+
+[ext_resource type="Texture2D" uid="uid://bl4jam52awobx" path="res://ui_assets/battle/queued_gags/PartyPlanner_CancelButtonUp.png" id="1_y3ct0"]
+
+[resource]
+texture = ExtResource("1_y3ct0")
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+modulate_color = Color(0.37711382, 0.24030042, 0.67311394, 1)

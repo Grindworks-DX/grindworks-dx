@@ -219,10 +219,10 @@ func _process(delta : float) -> void:
 		return
 	if Input.is_action_just_pressed('pause'):
 		resume()
-	if Input.is_action_just_pressed('move_left'):
-		view_prev_page()
-	if Input.is_action_just_pressed('move_right'):
-		view_next_page()
+	#if Input.is_action_just_pressed('move_left'):
+		#view_prev_page()
+	#if Input.is_action_just_pressed('move_right'):
+		#view_next_page()
 
 func view_next_page() -> void:
 	if page_transition and page_transition.is_running():

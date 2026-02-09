@@ -199,6 +199,7 @@ func cancel_gag(index: int):
 	s_gag_canceled.emit(gag)
 	if Util.get_player().gags_cost_beans:
 		refresh_tracks()
+	AudioManager.play_sound(load("res://audio/sfx/ui/GUI_balloon_popup.ogg"))
 
 func get_track_element(track: Track) -> TextureRect:
 	for track_elem in gag_tracks.get_children():
@@ -274,3 +275,8 @@ func set_button_neighbors() -> void:
 			if !first_focused:
 				button.grab_focus.call_deferred()
 				first_focused = true
+
+func _input(event: InputEvent):
+	if event.is_pressed():
+		if InputMap.event_is_action(event, "undo_move") and turn > 0:
+			cancel_gag(turn - 1)
