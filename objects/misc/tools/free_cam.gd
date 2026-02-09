@@ -11,8 +11,8 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		rotate_y(-event.relative.x*Globals.SENSITIVITY)
-		rotation.x-=event.relative.y*Globals.SENSITIVITY
+		rotate_y(-event.relative.x*Globals.MOUSE_SENSITIVITY)
+		rotation.x-=event.relative.y*Globals.MOUSE_SENSITIVITY
 		rotation.x = clamp(rotation.x,deg_to_rad(-89),deg_to_rad(89))
 
 func _physics_process(delta: float) -> void:

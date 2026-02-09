@@ -37,8 +37,8 @@ func _process(_delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and rotating:
-		spring_arm.rotate_y(-event.relative.x*Globals.SENSITIVITY)
-		spring_arm.rotation.x-=event.relative.y*Globals.SENSITIVITY
+		spring_arm.rotate_y(-event.relative.x*Globals.MOUSE_SENSITIVITY)
+		spring_arm.rotation.x-=event.relative.y*Globals.MOUSE_SENSITIVITY
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x,deg_to_rad(-89),deg_to_rad(89))
 
 func dna_changed(dna : ToonDNA):

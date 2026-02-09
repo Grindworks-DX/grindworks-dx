@@ -17,16 +17,22 @@ var fov: float:
 	get: return camera.fov
 	set(x): camera.fov = x
 
+var stick_axes := Vector2(0.0, 0.0)
+@export var stick_deadzone := 0.2
+@export var stick_boost := 3.0
 
 func _unhandled_input(event) -> void:
 	# Orbital Camera
-	if event is InputEventMouseMotion and player.controller.current_state.accepts_interaction() and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+	if (event is InputEventMouseMotion or event is InputEventJoypadMotion) and player.controller.current_state.accepts_interaction() and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if ((not player.control_style and Input.is_action_pressed('pull_camera'))
 				or (player.control_style and not recentering)):
 			pull_step(event)
 
 func _process(delta: float) -> void:
 	global_position = player.get_global_transform_interpolated().origin + Vector3(0, y_offset, 0)
+	if max(abs(stick_axes.x), abs(stick_axes.y)) > stick_deadzone:
+		rotation.x -= stick_axes.x * Globals.JOYSTICK_SENSITIVITY * SaveFileService.settings_file.camera_sensitivity
+		rotate_y(-stick_axes.y * Globals.JOYSTICK_SENSITIVITY * SaveFileService.settings_file.camera_sensitivity)
 	
 	if recentering:
 		recenter_step(delta)
@@ -34,10 +40,17 @@ func _process(delta: float) -> void:
 func make_current() -> void:
 	camera.make_current()
 
-func pull_step(event: InputEventMouseMotion) -> void:
-	rotate_y(-event.relative.x * Globals.SENSITIVITY * SaveFileService.settings_file.camera_sensitivity)
-	rotation.x -= event.relative.y * Globals.SENSITIVITY * SaveFileService.settings_file.camera_sensitivity
-	rotation.x = clamp(rotation.x, deg_to_rad(-89), deg_to_rad(89))
+func pull_step(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		rotate_y(-event.relative.x * Globals.MOUSE_SENSITIVITY * SaveFileService.settings_file.camera_sensitivity)
+		rotation.x -= event.relative.y * Globals.MOUSE_SENSITIVITY * SaveFileService.settings_file.camera_sensitivity
+		rotation.x = clamp(rotation.x, deg_to_rad(-89), deg_to_rad(89))
+	if event is InputEventJoypadMotion:
+		match event.axis:
+			JOY_AXIS_RIGHT_Y:
+				stick_axes.x = event.axis_value
+			JOY_AXIS_RIGHT_X:
+				stick_axes.y = event.axis_value
 
 func recenter_step(delta: float) -> void:
 	var prev_rot := rotation
