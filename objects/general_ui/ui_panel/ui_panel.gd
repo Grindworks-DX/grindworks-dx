@@ -30,6 +30,7 @@ class_name UIPanel
 @onready var body_label : Label = $Panel/Body
 @onready var cancel_button : GeneralButton = $Panel/CancelButton
 @onready var animator : AnimationPlayer = $AnimationPlayer
+var first_focus: Control
 
 var active := false
 var click_buffer: Control
@@ -50,7 +51,7 @@ func close() -> void:
 		click_buffer.queue_free()
 	
 	s_closed.emit()
-	
+	if get_parent() is Control: get_parent().focus_behavior_recursive = FOCUS_BEHAVIOR_INHERITED
 	queue_free()
 
 func on_resize() -> void:
@@ -63,6 +64,9 @@ func _ready() -> void:
 	if pop:
 		animator.play('pop_in')
 		await animator.animation_finished
+	if get_parent() is Control: get_parent().focus_behavior_recursive = FOCUS_BEHAVIOR_DISABLED
+	if first_focus is not Control and cancelable: first_focus = cancel_button
+	first_focus.grab_focus(true)
 	
 	active = true
 

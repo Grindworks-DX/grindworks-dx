@@ -74,7 +74,7 @@ _data = {
 &"pop_out": SubResource("Animation_awakr")
 }
 
-[node name="UIPanel" type="Control"]
+[node name="UIPanel" type="Control" unique_id=1358404767]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -88,11 +88,12 @@ offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(237, 212.5)
+focus_behavior_recursive = 2
 script = ExtResource("2_p4po8")
 title = "Hello!"
 body = "This is a pop-up menu!"
 
-[node name="Panel" parent="." instance=ExtResource("2_8spu8")]
+[node name="Panel" parent="." unique_id=19787620 instance=ExtResource("2_8spu8")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -107,7 +108,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(237, 212.5)
 
-[node name="Title" type="Label" parent="Panel"]
+[node name="Title" type="Label" parent="Panel" unique_id=1672225041]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -121,7 +122,7 @@ text = "Hello!"
 label_settings = SubResource("LabelSettings_hdyg0")
 horizontal_alignment = 1
 
-[node name="Body" type="Label" parent="Panel"]
+[node name="Body" type="Label" parent="Panel" unique_id=2139905455]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -139,7 +140,7 @@ label_settings = SubResource("LabelSettings_mt0qs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CancelButton" parent="Panel" instance=ExtResource("4_pjrfy")]
+[node name="CancelButton" parent="Panel" unique_id=1921982487 instance=ExtResource("4_pjrfy")]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -153,10 +154,8 @@ texture_pressed = ExtResource("5_u32pb")
 texture_hover = ExtResource("6_2ohc8")
 texture_disabled = ExtResource("5_u32pb")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_dfm6d")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=663870087]
+libraries/ = SubResource("AnimationLibrary_dfm6d")
 speed_scale = 1.5
 
 [connection signal="resized" from="." to="." method="on_resize"]

@@ -7,6 +7,9 @@ signal s_canceled
 @onready var confirm_button : GeneralButton = %ConfirmButton
 @onready var canceled_button : GeneralButton = %CancelButton
 
+func _ready() -> void:
+	first_focus = confirm_button
+	super()
 
 func confirm() -> void:
 	if active:

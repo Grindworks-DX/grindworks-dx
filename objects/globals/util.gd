@@ -126,13 +126,14 @@ func acknowledge(text: String, button_text := "Okay", title_text := "") -> UIPan
 	return panel
 
 var CONFIRM_PANEL: PackedScene
-func confirm(title : String, body := "", confirm_text := "Confirm", cancel_text := "Cancel") -> UIPanel:
+func confirm(title: String, parent: Node = get_tree().get_root(), body := "", confirm_text := "Confirm", cancel_text := "Cancel") -> UIPanel:
 	var panel := CONFIRM_PANEL.instantiate()
-	get_tree().get_root().add_child(panel)
+	parent.add_child(panel)
 	panel.title = title
 	panel.body = body
 	panel.confirm_button.text = confirm_text
 	panel.canceled_button.text = cancel_text
+	panel.confirm_button.grab_focus(true)
 	return panel
 
 func get_cog_head_icon(dna : CogDNA) -> Texture2D:

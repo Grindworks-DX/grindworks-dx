@@ -18,7 +18,7 @@ shader = ExtResource("8_0bd1o")
 shader_parameter/Shift_Hue = 0.56
 shader_parameter/alpha = 1.0
 
-[node name="ConfirmPanel" instance=ExtResource("1_cehdy")]
+[node name="ConfirmPanel" unique_id=1927373063 instance=ExtResource("1_cehdy")]
 offset_left = -234.0
 offset_top = -189.0
 offset_right = 234.0
@@ -28,7 +28,7 @@ title = "Are you sure?"
 body = "Are you sure you're sure?"
 cancelable = false
 
-[node name="Panel" parent="." index="0"]
+[node name="Panel" parent="." index="0" unique_id=19787620]
 anchors_preset = 15
 anchor_left = 0.0
 anchor_top = 0.0
@@ -40,20 +40,18 @@ offset_right = 0.0
 offset_bottom = 0.0
 pivot_offset = Vector2(234, 164.5)
 
-[node name="Title" parent="Panel" index="0"]
+[node name="Title" parent="Panel" index="0" unique_id=1672225041]
 text = "Are you sure?"
 autowrap_mode = 2
 
-[node name="Body" parent="Panel" index="1"]
+[node name="Body" parent="Panel" index="1" unique_id=2139905455]
 text = "Are you sure you're sure?"
 autowrap_mode = 2
 
-[node name="CancelButton" parent="Panel" index="2"]
+[node name="CancelButton" parent="Panel" index="2" unique_id=1921982487]
 visible = false
-hover_db_offset = 6.0
-press_db_offset = 0.0
 
-[node name="ButtonContainer" type="HBoxContainer" parent="." index="2"]
+[node name="ButtonContainer" type="HBoxContainer" parent="." index="2" unique_id=1923107813]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -67,7 +65,7 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 
-[node name="CancelButton" parent="ButtonContainer" index="0" instance=ExtResource("3_l477t")]
+[node name="CancelButton" parent="ButtonContainer" index="0" unique_id=841529192 instance=ExtResource("3_l477t")]
 unique_name_in_owner = true
 layout_mode = 2
 texture_normal = ExtResource("4_0bd1o")
@@ -75,15 +73,13 @@ texture_pressed = ExtResource("5_6n2fl")
 texture_hover = ExtResource("6_b3kdo")
 texture_disabled = null
 ignore_texture_size = false
-hover_db_offset = 6.0
-press_db_offset = 0.0
 text = "Cancel"
 
-[node name="Label" parent="ButtonContainer/CancelButton" index="0"]
+[node name="Label" parent="ButtonContainer/CancelButton" index="0" unique_id=1572222559]
 text = "Cancel"
 label_settings = SubResource("LabelSettings_o775n")
 
-[node name="ConfirmButton" parent="ButtonContainer" index="1" instance=ExtResource("3_l477t")]
+[node name="ConfirmButton" parent="ButtonContainer" index="1" unique_id=1230938194 instance=ExtResource("3_l477t")]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_6n2fl")
 layout_mode = 2
@@ -92,11 +88,9 @@ texture_pressed = ExtResource("5_6n2fl")
 texture_hover = ExtResource("6_b3kdo")
 texture_disabled = null
 ignore_texture_size = false
-hover_db_offset = 6.0
-press_db_offset = 0.0
 text = "Confirm"
 
-[node name="Label" parent="ButtonContainer/ConfirmButton" index="0"]
+[node name="Label" parent="ButtonContainer/ConfirmButton" index="0" unique_id=1572222559]
 text = "Confirm"
 label_settings = SubResource("LabelSettings_o775n")
 

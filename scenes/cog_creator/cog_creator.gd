@@ -83,6 +83,7 @@ func attach_delete_buttons() -> void:
 func delete_pressed(file_path : String) -> void:
 	Util.confirm(
 		"Delete Cog",
+		self,
 		"Are you sure you want to delete this Cog?"
 	).s_confirmed.connect(delete_file.bind(file_path))
 

@@ -30,9 +30,11 @@ func backup_prev_settings() -> void:
 func cancel_changes() -> void:
 	var _panel: UIPanel = Util.confirm(
 		"Cancel Changes?",
+		self,
 		"Are you sure you want to revert your settings?"
 		)
 	_panel.s_confirmed.connect(close)
+	_panel.s_canceled.connect(first_focus.grab_focus.bind(true))
 	_panel.process_mode = Node.PROCESS_MODE_ALWAYS
 	tree_exited.connect(_panel.queue_free)
 
