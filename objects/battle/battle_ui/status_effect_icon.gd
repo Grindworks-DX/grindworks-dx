@@ -27,6 +27,8 @@ func _ready() -> void:
 	refresh()
 	%Icon.mouse_entered.connect(hovered)
 	%Icon.mouse_exited.connect(stopped_hover)
+	%Icon.focus_entered.connect(hovered)
+	%Icon.focus_exited.connect(stopped_hover)
 
 func refresh() -> void:
 	if get_effect_rounds() == 0 and not effect.rounds == -1:

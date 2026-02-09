@@ -114,7 +114,7 @@ _data = {
 &"bounce_down": SubResource("Animation_bp4uv")
 }
 
-[node name="LaffMeter" type="Control"]
+[node name="LaffMeter" type="Control" unique_id=583360402]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 3
 anchors_preset = 8
@@ -129,9 +129,10 @@ offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
+focus_mode = 2
 script = ExtResource("1_k1sjt")
 
-[node name="Anchor" type="Control" parent="."]
+[node name="Anchor" type="Control" parent="." unique_id=274326246]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -142,7 +143,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Meter" type="TextureRect" parent="Anchor"]
+[node name="Meter" type="TextureRect" parent="Anchor" unique_id=874461752]
 self_modulate = Color(0.345, 0.82, 0.953, 1)
 layout_mode = 1
 anchors_preset = 8
@@ -159,7 +160,7 @@ grow_vertical = 2
 texture = ExtResource("2_0oixq")
 expand_mode = 1
 
-[node name="Dead" type="Control" parent="Anchor/Meter"]
+[node name="Dead" type="Control" parent="Anchor/Meter" unique_id=1887818284]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -175,7 +176,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Frown" type="TextureRect" parent="Anchor/Meter/Dead"]
+[node name="Frown" type="TextureRect" parent="Anchor/Meter/Dead" unique_id=1951904771]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -190,7 +191,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_gnyfo")
 
-[node name="Healthy" type="Control" parent="Anchor/Meter"]
+[node name="Healthy" type="Control" parent="Anchor/Meter" unique_id=1478633696]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -205,7 +206,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Eyes" type="TextureRect" parent="Anchor/Meter/Healthy"]
+[node name="Eyes" type="TextureRect" parent="Anchor/Meter/Healthy" unique_id=569725812]
 layout_mode = 0
 offset_left = -17.3333
 offset_top = -16.0
@@ -214,7 +215,7 @@ offset_bottom = 50.0
 texture = ExtResource("2_3paw8")
 expand_mode = 1
 
-[node name="Health" type="Label" parent="Anchor/Meter/Healthy/Eyes"]
+[node name="Health" type="Label" parent="Anchor/Meter/Healthy/Eyes" unique_id=1720059483]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -233,7 +234,7 @@ label_settings = SubResource("LabelSettings_1b8o8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MaxHealth" type="Label" parent="Anchor/Meter/Healthy/Eyes"]
+[node name="MaxHealth" type="Label" parent="Anchor/Meter/Healthy/Eyes" unique_id=1424319772]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -252,7 +253,7 @@ label_settings = SubResource("LabelSettings_1b8o8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Mouth" type="TextureRect" parent="Anchor/Meter/Healthy"]
+[node name="Mouth" type="TextureRect" parent="Anchor/Meter/Healthy" unique_id=48601179]
 visible = false
 layout_mode = 0
 offset_left = -16.0
@@ -261,7 +262,7 @@ offset_right = 59.0
 offset_bottom = 55.6667
 texture = ExtResource("6_eplsu")
 
-[node name="Tooth1" type="TextureRect" parent="Anchor/Meter/Healthy/Mouth"]
+[node name="Tooth1" type="TextureRect" parent="Anchor/Meter/Healthy/Mouth" unique_id=615984757]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 36.6667
@@ -269,7 +270,7 @@ offset_right = 25.0
 offset_bottom = 57.6667
 texture = ExtResource("7_hj011")
 
-[node name="Tooth2" type="TextureRect" parent="Anchor/Meter/Healthy/Mouth"]
+[node name="Tooth2" type="TextureRect" parent="Anchor/Meter/Healthy/Mouth" unique_id=621590505]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 43.3333
@@ -277,7 +278,7 @@ offset_right = 31.0
 offset_bottom = 64.3333
 texture = ExtResource("8_g8w8l")
 
-[node name="Tooth3" type="TextureRect" parent="Anchor/Meter/Healthy/Mouth"]
+[node name="Tooth3" type="TextureRect" parent="Anchor/Meter/Healthy/Mouth" unique_id=1534032339]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 46.0
@@ -285,7 +286,7 @@ offset_right = 39.0
 offset_bottom = 70.0
 texture = ExtResource("9_0k7ii")
 
-[node name="Tooth4" type="TextureRect" parent="Anchor/Meter/Healthy/Mouth"]
+[node name="Tooth4" type="TextureRect" parent="Anchor/Meter/Healthy/Mouth" unique_id=376086822]
 visible = false
 layout_mode = 0
 offset_left = 38.0
@@ -294,7 +295,7 @@ offset_right = 58.0
 offset_bottom = 68.0
 texture = ExtResource("10_h3dym")
 
-[node name="Tooth5" type="TextureRect" parent="Anchor/Meter/Healthy/Mouth"]
+[node name="Tooth5" type="TextureRect" parent="Anchor/Meter/Healthy/Mouth" unique_id=1223419154]
 visible = false
 layout_mode = 0
 offset_left = 47.0
@@ -304,7 +305,7 @@ offset_bottom = 64.0
 texture = ExtResource("11_i0d0j")
 expand_mode = 1
 
-[node name="Tooth6" type="TextureRect" parent="Anchor/Meter/Healthy/Mouth"]
+[node name="Tooth6" type="TextureRect" parent="Anchor/Meter/Healthy/Mouth" unique_id=2114149415]
 visible = false
 layout_mode = 0
 offset_left = 54.0
@@ -314,7 +315,7 @@ offset_bottom = 56.3333
 texture = ExtResource("12_egrgc")
 expand_mode = 1
 
-[node name="Grin" type="TextureRect" parent="Anchor/Meter/Healthy"]
+[node name="Grin" type="TextureRect" parent="Anchor/Meter/Healthy" unique_id=618203357]
 layout_mode = 0
 offset_left = -14.0
 offset_top = -11.0
@@ -322,7 +323,7 @@ offset_right = 58.0
 offset_bottom = 53.0
 texture = ExtResource("13_e7lcx")
 
-[node name="ObscuredFaces" type="Control" parent="Anchor/Meter"]
+[node name="ObscuredFaces" type="Control" parent="Anchor/Meter" unique_id=1069114380]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -337,7 +338,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="FaceLow" type="TextureRect" parent="Anchor/Meter/ObscuredFaces"]
+[node name="FaceLow" type="TextureRect" parent="Anchor/Meter/ObscuredFaces" unique_id=1464557967]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -353,7 +354,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("16_du207")
 
-[node name="FaceMed" type="TextureRect" parent="Anchor/Meter/ObscuredFaces"]
+[node name="FaceMed" type="TextureRect" parent="Anchor/Meter/ObscuredFaces" unique_id=1481905888]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -370,7 +371,7 @@ grow_vertical = 2
 texture = ExtResource("15_evyjk")
 stretch_mode = 2
 
-[node name="FaceHigh" type="TextureRect" parent="Anchor/Meter/ObscuredFaces"]
+[node name="FaceHigh" type="TextureRect" parent="Anchor/Meter/ObscuredFaces" unique_id=1116251971]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -385,7 +386,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("14_e23xb")
 
-[node name="Lock" type="TextureRect" parent="Anchor/Meter"]
+[node name="Lock" type="TextureRect" parent="Anchor/Meter" unique_id=2113100618]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -400,7 +401,7 @@ grow_vertical = 0
 texture = ExtResource("14_l2l4e")
 expand_mode = 1
 
-[node name="ReviveLabel" type="Label" parent="Anchor"]
+[node name="ReviveLabel" type="Label" parent="Anchor" unique_id=1652060236]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 42.3333
@@ -410,10 +411,10 @@ offset_bottom = 31.6667
 text = "x1"
 label_settings = SubResource("LabelSettings_h38gy")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_5ij2f")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=813538790]
+libraries/ = SubResource("AnimationLibrary_5ij2f")
 
+[connection signal="focus_entered" from="." to="." method="hover"]
+[connection signal="focus_exited" from="." to="." method="stop_hover"]
 [connection signal="mouse_entered" from="." to="." method="hover"]
 [connection signal="mouse_exited" from="." to="." method="stop_hover"]

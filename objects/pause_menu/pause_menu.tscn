@@ -116,6 +116,9 @@ font = ExtResource("3_ij621")
 font_size = 20
 shadow_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ehxx"]
+bg_color = Color(0.6215426, 0.5456459, 0.83459353, 0.57254905)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_10epn"]
 shader = ExtResource("4_sgslx")
 shader_parameter/Shift_Hue = 0.585
@@ -923,7 +926,6 @@ hide_close_button = true
 
 [node name="TopLevelElements" type="Control" parent="." unique_id=199333793]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -986,6 +988,7 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 offset_right = 8.0
 offset_bottom = 8.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_6ehxx")
 
 [node name="Buttons" type="HBoxContainer" parent="TopLevelElements/BackdropHolder/Backdrop" unique_id=364462398]
 layout_mode = 1

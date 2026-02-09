@@ -13,6 +13,8 @@ var hover_seq: Tween:
 func _ready() -> void:
 	gag_sprite.mouse_entered.connect(hover)
 	gag_sprite.mouse_exited.connect(stop_hover)
+	gag_sprite.focus_entered.connect(hover)
+	gag_sprite.focus_exited.connect(stop_hover)
 
 func hover() -> void:
 	is_hovered = true

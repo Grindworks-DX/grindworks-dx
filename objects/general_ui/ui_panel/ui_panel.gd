@@ -66,7 +66,7 @@ func _ready() -> void:
 		await animator.animation_finished
 	if get_parent() is Control: get_parent().focus_behavior_recursive = FOCUS_BEHAVIOR_DISABLED
 	if first_focus is not Control and cancelable: first_focus = cancel_button
-	first_focus.grab_focus(true)
+	if !Engine.is_editor_hint(): first_focus.grab_focus(true)
 	
 	active = true
 

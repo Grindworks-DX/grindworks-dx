@@ -142,6 +142,8 @@ func create_new_toonup(level: int, count: int) -> Control:
 		button_copy.get_node('GagSprite').pressed.connect(use_toonup.bind(level))
 		button_copy.get_node('GagSprite').mouse_entered.connect(hover_toonup.bind(level))
 		button_copy.get_node('GagSprite').mouse_exited.connect(HoverManager.stop_hover)
+		button_copy.get_node('GagSprite').focus_entered.connect(hover_toonup.bind(level))
+		button_copy.get_node('GagSprite').focus_exited.connect(HoverManager.stop_hover)
 	else:
 		button_copy.get_node('GagSprite').pressed.connect(play_fail_sfx)
 		button_copy.modulate = Color.GRAY
@@ -236,6 +238,8 @@ func create_new_treasure(level: int, count: int) -> Control:
 	button_copy.get_node('GagSprite').pressed.connect(use_treasure.bind(level))
 	button_copy.get_node('GagSprite').mouse_entered.connect(hover_treasure.bind(level))
 	button_copy.get_node('GagSprite').mouse_exited.connect(HoverManager.stop_hover)
+	button_copy.get_node('GagSprite').focus_entered.connect(hover_treasure.bind(level))
+	button_copy.get_node('GagSprite').focus_exited.connect(HoverManager.stop_hover)
 	if button_copy.get_node('GagSprite').disabled: button_copy.modulate = Color.GRAY
 	return button_copy
 

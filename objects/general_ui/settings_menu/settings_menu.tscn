@@ -83,6 +83,8 @@ font_size = 12
 font_color = Color(0, 0, 0, 1)
 
 [node name="SettingsMenu" unique_id=162920558 instance=ExtResource("1_bwryn")]
+top_level = true
+z_index = 10
 offset_left = -273.0
 offset_top = -284.0
 offset_right = 273.0
@@ -91,7 +93,7 @@ script = ExtResource("2_2jdde")
 title = "Settings"
 body = ""
 
-[node name="Panel" parent="." index="0"]
+[node name="Panel" parent="." index="0" unique_id=19787620]
 anchors_preset = 15
 anchor_left = 0.0
 anchor_top = 0.0
@@ -103,17 +105,14 @@ offset_right = 0.0
 offset_bottom = 0.0
 pivot_offset = Vector2(273, 284)
 
-[node name="Title" parent="Panel" index="0"]
+[node name="Title" parent="Panel" index="0" unique_id=1672225041]
 offset_top = 48.0
 offset_bottom = 92.5
 text = "Settings"
 label_settings = SubResource("LabelSettings_ddgja")
 
-[node name="Body" parent="Panel" index="1"]
+[node name="Body" parent="Panel" index="1" unique_id=2139905455]
 text = ""
-
-[node name="CancelButton" parent="Panel" index="2"]
-font_size = 36.0
 
 [node name="SettingScroller" type="ScrollContainer" parent="Panel" index="3" unique_id=813636767]
 layout_mode = 1
@@ -173,9 +172,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "On"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/VideoSettings/Fullscreen/FullscreenButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/VideoSettings/Fullscreen/FullscreenButton" index="0" unique_id=1572222559]
 text = "On"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -199,9 +197,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "60"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/VideoSettings/FPSLimit/FPSButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/VideoSettings/FPSLimit/FPSButton" index="0" unique_id=1572222559]
 text = "60"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -225,9 +222,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "On"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/VideoSettings/AntiAliasing/AliasButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/VideoSettings/AntiAliasing/AliasButton" index="0" unique_id=1572222559]
 text = "On"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -251,9 +247,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "Standard"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/VideoSettings/CameraShake/CameraShakeButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/VideoSettings/CameraShake/CameraShakeButton" index="0" unique_id=1572222559]
 text = "Standard"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -314,9 +309,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "Disabled"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/VideoSettings/ColorblindToggle/ColorBlindButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/VideoSettings/ColorblindToggle/ColorBlindButton" index="0" unique_id=1572222559]
 text = "Disabled"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -411,9 +405,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "On"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/AudioSettings/AmbientSound/AmbientButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/AudioSettings/AmbientSound/AmbientButton" index="0" unique_id=1572222559]
 text = "On"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -442,9 +435,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "I'M STUCK!"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/ImStuck/StuckButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/ImStuck/StuckButton" index="0" unique_id=1572222559]
 text = "I'M STUCK!"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -468,9 +460,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "1.0x"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/BattleSpeed/SpeedButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/BattleSpeed/SpeedButton" index="0" unique_id=1572222559]
 text = "1.0x"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -494,9 +485,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "On"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/ControlStyle/ControlStyleButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/ControlStyle/ControlStyleButton" index="0" unique_id=1572222559]
 text = "On"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -543,9 +533,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "On"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/AutoSprint/AutoSprintButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/AutoSprint/AutoSprintButton" index="0" unique_id=1572222559]
 text = "On"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -569,9 +558,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "Default"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/ItemDescriptions/DescriptionButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/ItemDescriptions/DescriptionButton" index="0" unique_id=1572222559]
 text = "Default"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -621,9 +609,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "Default"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/ItemReactions/ReactionButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/ItemReactions/ReactionButton" index="0" unique_id=1572222559]
 text = "Default"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -647,9 +634,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "Off"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/ShowTimer/TimerButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/ShowTimer/TimerButton" index="0" unique_id=1572222559]
 text = "Off"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -674,9 +660,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "Off"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/IntroSkip/IntroSkipButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/IntroSkip/IntroSkipButton" index="0" unique_id=1572222559]
 text = "Off"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -700,9 +685,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "On"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/CustomCogs/CustomCogsButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/CustomCogs/CustomCogsButton" index="0" unique_id=1572222559]
 text = "On"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -726,9 +710,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "On"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/ButtonPrompts/ButtonPromptsButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/GameplaySettings/ButtonPrompts/ButtonPromptsButton" index="0" unique_id=1572222559]
 text = "On"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -755,9 +738,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "Open Save Folder"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/SaveFileSettings/OpenFolder/SaveFolderButton" index="0"]
+[node name="Label" parent="Panel/SettingScroller/MarginContainer/SettingContainer/SaveFileSettings/OpenFolder/SaveFolderButton" index="0" unique_id=1572222559]
 text = "Open Save Folder"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -810,9 +792,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "Save"
-font_size = 24.0
 
-[node name="Label" parent="Panel/SaveButton" index="0"]
+[node name="Label" parent="Panel/SaveButton" index="0" unique_id=1572222559]
 text = "Save"
 label_settings = SubResource("LabelSettings_pmgey")
 
@@ -837,9 +818,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "W"
-font_size = 24.0
 
-[node name="Label" parent="ControlTemplate/GeneralButton" index="0"]
+[node name="Label" parent="ControlTemplate/GeneralButton" index="0" unique_id=1572222559]
 text = "W"
 label_settings = SubResource("LabelSettings_xxrhd")
 
@@ -877,9 +857,8 @@ texture_pressed = ExtResource("6_bs0ac")
 texture_hover = ExtResource("7_nxqst")
 texture_disabled = ExtResource("6_bs0ac")
 text = "On"
-font_size = 24.0
 
-[node name="Label" parent="ModTemplate/GeneralButton" index="0"]
+[node name="Label" parent="ModTemplate/GeneralButton" index="0" unique_id=1572222559]
 text = "On"
 label_settings = SubResource("LabelSettings_xxrhd")
 

@@ -72,9 +72,14 @@ func _process(_delta: float) -> void:
 	if hover_root.visible:
 		# Find bounds of viewport
 		var viewport_rect: Rect2 = hover_root.get_viewport_rect()
-		var mouse_pos: Vector2 = hover_root.get_global_mouse_position()
+		var ref_pos: Vector2 = hover_root.get_global_mouse_position()
+		if !Input.mouse_mode == Input.MOUSE_MODE_VISIBLE and hover_root.get_viewport().gui_get_focus_owner() is Control:
+			var control = hover_root.get_viewport().gui_get_focus_owner()
+			ref_pos = control.global_position
+			if !control.is_connected("focus_exited", stop_hover):
+				control.focus_exited.connect(stop_hover.bind(control))
 		# Set initial bubble position
-		hover_root.global_position = mouse_pos
+		hover_root.global_position = ref_pos
 		# Find bounds of bubble
 		var global_rect: Rect2 = bubble.get_global_rect()
 		# Compare bubble bounds to the viewport bounds
@@ -105,7 +110,8 @@ func hover(_text: String, font_size := 18, extra_x_margin := 0.025, title := "",
 		text = _text
 	hover_root.show()
 
-func stop_hover() -> void:
+func stop_hover(control: Control = null) -> void:
 	if Engine.is_editor_hint():
 		return
+	if control is Control: control.focus_exited.disconnect(stop_hover)
 	hover_root.hide()

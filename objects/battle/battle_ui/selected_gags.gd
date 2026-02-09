@@ -24,6 +24,8 @@ func _ready():
 func configure_panel(panel) -> void:
 	panel.get_node('GagIcon').mouse_entered.connect(hover_slot.bind(panels.find(panel)))
 	panel.get_node('GagIcon').mouse_exited.connect(stop_hover)
+	panel.get_node('GagIcon').focus_entered.connect(hover_slot.bind(panels.find(panel)))
+	panel.get_node('GagIcon').focus_exited.connect(stop_hover)
 	panel.get_node('GeneralButton').disabled = true
 	panel.get_node('GeneralButton').hide()
 	panel.get_node('GeneralButton').pressed.connect(cancel_gag.bind(panels.find(panel)))

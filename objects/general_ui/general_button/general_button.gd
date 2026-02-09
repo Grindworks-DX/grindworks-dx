@@ -37,8 +37,8 @@ func hover(cursor := false) -> void:
 	# "Button Press" for non-mouse, "Button Release" for mouse
 	#z_index += 10
 	action_mode = int(!has_focus(true))
-	if !cursor:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if !cursor and has_focus(true):
+		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	focus_texture.visible = has_focus(true)
 	AudioManager.play_sound(hover_sfx, hover_db_offset)
 
@@ -48,7 +48,7 @@ func unhover() -> void:
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and has_focus(true):
+		get_viewport().warp_mouse(focus_texture.global_position)
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		get_viewport().warp_mouse(focus_texture.global_position + event.relative)
 		focus_texture.visible = false
 		grab_focus(true)
