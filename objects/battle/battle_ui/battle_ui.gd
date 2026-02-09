@@ -40,6 +40,8 @@ var selected_gags: Array[ToonAttack] = []
 var fire_action: ToonAttackFire
 var timer : GameTimer
 
+var last_gag_button: GagButton
+
 func _ready():
 	refresh_turns()
 	reset()
@@ -82,12 +84,14 @@ func gag_selected(gag: BattleAction) -> void:
 				%TargetSelect.gag = gag
 				%TargetSelect.reposition_buttons(get_parent().cogs.size())
 				main_container.hide()
+				%TargetSelect.back.grab_focus(true)
 				var selection = await $TargetSelect.s_arrow_pressed
 				if selection == -1:
 					# Swap UIs back
 					%TargetSelect.hide()
 					main_container.show()
 					s_gag_canceled.emit(gag)
+					focus_gag_button()
 					return
 				else:
 					# Set the target
@@ -98,6 +102,7 @@ func gag_selected(gag: BattleAction) -> void:
 					# Swap UIs back
 					%TargetSelect.hide()
 					main_container.show()
+					focus_gag_button()
 		_:
 			gag.targets = get_parent().cogs.duplicate(true)
 	selected_gags.append(gag)
@@ -273,8 +278,15 @@ func set_button_neighbors() -> void:
 			# 	b_neighbor.focus_neighbor_bottom = button.get_path()
 			# # TEMP: set first button focus
 			if !first_focused:
-				button.grab_focus.call_deferred()
+				last_gag_button = button
+				focus_gag_button()
 				first_focused = true
+
+func focus_gag_button(_gb: GagButton = null) -> void:
+	var gb = last_gag_button
+	if _gb is GagButton: gb = _gb
+	if gb is not GagButton: return
+	gb.grab_focus.bind(true).call_deferred()
 
 func _input(event: InputEvent):
 	if event.is_pressed():

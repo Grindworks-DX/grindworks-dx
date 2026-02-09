@@ -457,6 +457,7 @@ texture_normal = ExtResource("19_yvh33")
 texture_pressed = ExtResource("20_s4dyj")
 texture_hover = ExtResource("21_gljl2")
 texture_disabled = null
+texture_focused = ExtResource("21_gljl2")
 stretch_mode = 4
 
 [node name="SelectedGags" type="HBoxContainer" parent="." unique_id=2015893393]

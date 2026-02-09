@@ -84,6 +84,7 @@ func refresh():
 				button.mouse_exited.disconnect(ui_root.gag_unhovered)
 				button.focus_entered.disconnect(ui_root.gag_hovered.bind(gag))
 				button.focus_exited.disconnect(ui_root.gag_unhovered)
+				button.pressed.disconnect(ui_root.set)
 			
 			var price := 0
 			var stats : PlayerStats
@@ -106,6 +107,7 @@ func refresh():
 					button.mouse_entered.connect(button.grab_focus.bind(true))
 					button.mouse_exited.connect(ui_root.gag_unhovered)
 					button.pressed.connect(emit_gag.bind(gag,price))
+					button.pressed.connect(ui_root.set.bind("last_gag_button", self))
 					button.focus_entered.connect(ui_root.gag_hovered.bind(gag))
 					button.focus_exited.connect(ui_root.gag_unhovered)
 			

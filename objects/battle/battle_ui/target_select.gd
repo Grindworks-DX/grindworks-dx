@@ -5,6 +5,7 @@ const ARROW_RED := preload("res://ui_assets/battle/target_select/PckMn_Arrow_Up_
 
 # Child references
 @onready var arrow := $Buttons/Arrows/ArrowButton
+@onready var back := $Buttons/Back
 
 # Signals
 signal s_arrow_pressed(index: int)
@@ -23,6 +24,8 @@ func reposition_buttons(cogs: int):
 		newbutton.pressed.connect(arrow_pressed.bind(i))
 		newbutton.mouse_entered.connect(on_arrow_hovered.bind(i))
 		newbutton.mouse_exited.connect(on_arrow_unhovered.bind(i))
+		newbutton.focus_entered.connect(on_arrow_hovered.bind(i))
+		newbutton.focus_exited.connect(on_arrow_unhovered.bind(i))
 		newbutton.disabled = false
 		
 		var cog: Cog = get_parent().get_parent().cogs[i]
@@ -47,6 +50,8 @@ func reset_buttons():
 	arrow.disconnect('pressed',arrow_pressed)
 	arrow.mouse_entered.disconnect(on_arrow_hovered)
 	arrow.mouse_exited.disconnect(on_arrow_unhovered)
+	arrow.focus_entered.disconnect(on_arrow_hovered)
+	arrow.focus_exited.disconnect(on_arrow_unhovered)
 
 func arrow_pressed(index : int):
 	s_arrow_pressed.emit(index)
