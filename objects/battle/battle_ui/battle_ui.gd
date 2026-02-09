@@ -176,7 +176,7 @@ func reset():
 		# can force the battle UI to be over early
 		%TargetSelect.s_arrow_pressed.emit(-1)
 		%TargetSelect.reset_buttons()
-	
+	focus_gag_button()
 	try_start_timer()
 
 func try_start_timer() -> void:
