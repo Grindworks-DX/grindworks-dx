@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbv1hcp1eu285"]
+[gd_scene format=3 uid="uid://bbv1hcp1eu285"]
 
 [ext_resource type="PackedScene" uid="uid://bqwsksiexwsjb" path="res://scenes/game_floor/game_floor.tscn" id="1_fpnsp"]
 [ext_resource type="Resource" uid="uid://d3bnj680tmqdo" path="res://scenes/game_floor/floor_variants/base_floors/cog_golf_course.tres" id="2_p76an"]

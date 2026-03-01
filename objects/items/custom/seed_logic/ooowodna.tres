@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ToonDNA" load_steps=4 format=3 uid="uid://cxerjvm8uuf53"]
+[gd_resource type="Resource" script_class="ToonDNA" format=3 uid="uid://cxerjvm8uuf53"]
 
 [ext_resource type="Resource" uid="uid://bq6aiin2h5lo5" path="res://objects/toon/clothing/shorts/sellbot_shorts.tres" id="1_uxhiu"]
 [ext_resource type="Script" uid="uid://yg7gxug4rab" path="res://objects/toon/toon_dna.gd" id="1_vp7j6"]

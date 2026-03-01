@@ -385,3 +385,33 @@ func _on_request_completed(_result, _response_code, _headers, body) -> void:
 	var version = json["tag_name"]
 	if version != Globals.VERSION_NUMBER:
 		%NewVersionLabel.show()
+
+func discord_hover() -> void:
+	HoverManager.hover("Join the Discord!")
+	%DiscordButton.mouse_exited.connect(HoverManager.stop_hover, CONNECT_ONE_SHOT)
+	on_social_hover(%DiscordButton, Color("#5865f2"))
+
+func bluesky_hover() -> void:
+	HoverManager.hover("Follow us on Bluesky!")
+	%BlueskyButton.mouse_exited.connect(HoverManager.stop_hover, CONNECT_ONE_SHOT)
+	on_social_hover(%BlueskyButton, Color("#1185fe"))
+
+func wiki_hover() -> void:
+	HoverManager.hover("Check out the Wiki!")
+	%WikiButton.mouse_exited.connect(HoverManager.stop_hover, CONNECT_ONE_SHOT)
+	on_social_hover(%WikiButton, Color("#ff1985"))
+
+func on_social_hover(social: GeneralButton, color: Color) -> void:
+	var tween_time := 0.4
+	var social_popup := create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	social_popup.tween_property(social.get_parent(), 'scale', Vector2(1.1, 1.1), tween_time)
+	social_popup.parallel().tween_property(social, 'self_modulate', color, tween_time)
+
+func on_social_unhover(social: GeneralButton) -> void:
+	var tween_time := 0.4
+	var social_popdown := create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	social_popdown.tween_property(social.get_parent(), 'scale', Vector2.ONE, tween_time)
+	social_popdown.parallel().tween_property(social, 'self_modulate', Color.WHITE, tween_time)
+
+func on_social_click(url: String) -> void:
+	OS.shell_open(url) 

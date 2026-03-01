@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ToonShirt" load_steps=4 format=3 uid="uid://bohy7vmwmcyeg"]
+[gd_resource type="Resource" script_class="ToonShirt" format=3 uid="uid://bohy7vmwmcyeg"]
 
 [ext_resource type="Script" uid="uid://dfqwh4jmdy0iw" path="res://objects/toon/clothing/toon_shirt.gd" id="1_c44jg"]
 [ext_resource type="Texture2D" uid="uid://db2puun88l8vt" path="res://models/toon/textures/clothes/shirts/tt_t_chr_avt_shirt_sellbotCrusher.jpg" id="2_qvyj8"]

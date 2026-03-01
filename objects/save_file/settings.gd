@@ -53,6 +53,8 @@ func get_color_blind_mapping() -> Dictionary:
 	set(x):
 		camera_sensitivity = clampf(x, 0.5, 1.5)
 @export var item_reactions := true
+@export var item_descriptions := true
+@export var item_popups := true
 @export var auto_sprint := true
 @export var show_timer := false
 @export var skip_intro := false

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemShoe" load_steps=4 format=3 uid="uid://dqil865a5gmji"]
+[gd_resource type="Resource" script_class="ItemShoe" format=3 uid="uid://dqil865a5gmji"]
 
 [ext_resource type="Texture2D" uid="uid://b6q6beasso23f" path="res://objects/items/resources/accessories/shoes/icons/wingtips.png" id="1_uahf4"]
 [ext_resource type="Script" uid="uid://bb02y647us2n3" path="res://objects/items/classes/item_shoe.gd" id="1_vwbjg"]
@@ -10,9 +10,11 @@ shoe_tex = ExtResource("2_vixwx")
 qualitoon = 2
 item_name = "Wingtips"
 item_description = "Up and at 'em!"
-big_description = "+10% Jump height"
+big_description = "+10% Jump height
++10% Speed"
 stats_add = {
-"agility": 0.1
+"agility": 0.1,
+"speed": 0.1
 }
 icon = ExtResource("1_uahf4")
 unlock_achievement = 38

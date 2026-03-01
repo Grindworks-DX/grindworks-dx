@@ -289,9 +289,7 @@ func barrier(_signal: Signal, timeout: float = 10.0) -> Signal:
 	return SignalBarrier.new([_signal, Task.delay(timeout)], SignalBarrier.BarrierType.ANY).s_complete
 
 func do_item_hover(item: Item) -> void:
-	var big_description: bool = false
-	if is_instance_valid(player):
-		big_description = player.see_descriptions
+	var big_description := SaveFileService.settings_file.item_descriptions
 	var desc: String = item.big_description if big_description else item.item_description
 	HoverManager.hover(desc, 18, 0.025, item.item_name, item.shop_category_color.darkened(0.3))
 
@@ -407,3 +405,17 @@ func vec3_to_quat(vec3: Vector3, node: Node3D, use_rotation_degrees := true) -> 
 	var quat := node.quaternion
 	node.rotation = pre_rotation
 	return quat
+
+func search_directory_recursive(directory: String, type: String) -> PackedStringArray:
+	var files := DirAccess.get_files_at(directory)
+	for i in range(files.size() -1, -1, -1):
+		var file := files[i]
+		if not file.get_extension() == type:
+			files.erase(file)
+		else:
+			files[i] = directory + file
+	for folder in DirAccess.get_directories_at(directory):
+		var new_dir := directory + "%s/" % folder
+		files.append_array(search_directory_recursive(new_dir, type))
+	
+	return files

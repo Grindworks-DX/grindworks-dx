@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://d24kpkm0vxdlb"]
+[gd_scene format=3 uid="uid://d24kpkm0vxdlb"]
 
 [ext_resource type="Script" uid="uid://dqdvlwknplnxi" path="res://addons/moon-dfx/fx/dfx_reverb.gd" id="1_7om5g"]
 

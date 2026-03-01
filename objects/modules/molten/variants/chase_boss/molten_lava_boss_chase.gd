@@ -200,6 +200,7 @@ func end_boss() -> void:
 	%RecoveryBellows.position = Vector3(-2.877, 0.893, 0.899)
 	AudioManager.stop_music(true)
 	AudioManager.set_default_music(load('res://audio/music/molten_mint/molten_mint.ogg'))
+	ScoreTally.modify_score(ScoreTally.ChannelBosses, ScoreTally.BOSS_BONUS)
 
 func unload_chase() -> void:
 	for room in rooms.get_children():

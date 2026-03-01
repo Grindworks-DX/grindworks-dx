@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bn2swbaxboewh"]
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bn2swbaxboewh"]
 
 [ext_resource type="Script" uid="uid://combwqypom1ru" path="res://objects/items/classes/item.gd" id="1_r121t"]
 [ext_resource type="Script" uid="uid://fua72aqkhh5e" path="res://objects/items/custom/seed_logic/seed_lavender.gd" id="1_wffmk"]

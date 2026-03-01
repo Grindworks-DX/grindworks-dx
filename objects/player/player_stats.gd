@@ -16,6 +16,7 @@ class_name PlayerStats
 			Globals.s_hundred_jellybeans.emit()
 signal s_money_changed(value: int)
 signal s_gained_money
+@export var money_mult := 1.0
 
 @export var items: Array[Item] = []
 
@@ -97,7 +98,7 @@ signal s_agility_changed(new_agility: float)
 @export var current_active_item: ItemActive:
 	set(x):
 		if actives_in_reserve.size() < active_reserve_size and current_active_item:
-			if not current_active_item.node.is_removing:
+			if current_active_item.node and not current_active_item.node.is_removing:
 				actives_in_reserve.append(current_active_item)
 		if x in actives_in_reserve: 
 			actives_in_reserve.erase(x)
@@ -248,7 +249,7 @@ func get_cog_dept_boost(dept: CogDNA.CogDept) -> float:
 		_: return 1.0
 
 func add_money(amount: int) -> void:
-	money += amount
+	money += ceili(amount * money_mult)
 	SaveFileService.progress_file.jellybeans_collected += amount
 
 func charge_active_item(amount := 1) -> void:

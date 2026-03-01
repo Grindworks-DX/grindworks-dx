@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ywm6tudx6h63"]
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ywm6tudx6h63"]
 
 [ext_resource type="Script" uid="uid://gt3xlteixh0s" path="res://objects/items/custom/seed_logic/seed_mouse.gd" id="1_7wxeb"]
 [ext_resource type="Script" uid="uid://combwqypom1ru" path="res://objects/items/classes/item.gd" id="1_b5j8g"]

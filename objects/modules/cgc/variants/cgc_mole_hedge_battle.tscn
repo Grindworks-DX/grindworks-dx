@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://e3lbnnyh7pga"]
+[gd_scene format=3 uid="uid://e3lbnnyh7pga"]
 
 [ext_resource type="PackedScene" uid="uid://461ajltncxsc" path="res://objects/modules/cgc/base_rooms/cgc_mole_room.tscn" id="1_a8dbm"]
 [ext_resource type="PackedScene" uid="uid://b3p8q3fhmuo35" path="res://objects/props/cgc/resizeable_hedge_cube.tscn" id="2_615d1"]

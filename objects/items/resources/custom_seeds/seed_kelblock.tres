@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b18am0b6ftfwm"]
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b18am0b6ftfwm"]
 
 [ext_resource type="Script" uid="uid://d1v85rt34bep" path="res://objects/items/custom/seed_logic/seed_kelblock.gd" id="1_a151t"]
 [ext_resource type="Script" uid="uid://combwqypom1ru" path="res://objects/items/classes/item.gd" id="1_iubva"]

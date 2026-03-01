@@ -20,6 +20,8 @@ signal s_refreshed(element: TrackElement)
 
 
 func _ready():
+	if not Util.get_player():
+		return
 	var loadout: GagLoadout = Util.get_player().stats.character.gag_loadout
 	var track_index : int = get_parent().get_children().find(self)
 	if track_index >= loadout.loadout.size():

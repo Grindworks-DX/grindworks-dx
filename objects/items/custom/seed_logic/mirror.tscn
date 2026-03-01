@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://t24ho8me0rd"]
+[gd_scene format=3 uid="uid://t24ho8me0rd"]
 
 [ext_resource type="Shader" uid="uid://d1vjsxt6ck7h3" path="res://objects/items/custom/seed_logic/mirror.gdshader" id="1_akdso"]
 [ext_resource type="Script" uid="uid://bb58mos1yrhco" path="res://objects/items/custom/seed_logic/mirror.gd" id="1_bxp52"]

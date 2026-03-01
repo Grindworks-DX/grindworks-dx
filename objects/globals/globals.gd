@@ -1,6 +1,6 @@
 extends Node
 
-const VERSION_NUMBER := "v1.2.5"
+const VERSION_NUMBER := "v1.2.6"
 
 ## Holds any value you may want accessible globally and quickly
 
@@ -79,6 +79,7 @@ func _init():
 	})
 
 func _ready() -> void:
+	Util.search_directory_recursive(COG_SAVE_PATH, "cog")
 	import_custom_cogs()
 	Util.s_floor_started.connect(on_floor_start)
 	print("Game Version: %s" % VERSION_NUMBER)
@@ -194,15 +195,15 @@ func cog_to_file_name(cog_name : String) -> String:
 	return COG_SAVE_PATH + file_name + ".cog"
 
 func import_cog_dna() -> void:
-	for file_name in DirAccess.get_files_at(COG_SAVE_PATH):
+	for file_name in Util.search_directory_recursive(COG_SAVE_PATH, "cog"):
 		if not file_name.get_extension() == "cog":
 			continue
-		var loaded_file := FileAccess.open(COG_SAVE_PATH + file_name, FileAccess.READ)
+		var loaded_file := FileAccess.open(file_name, FileAccess.READ)
 		var json_string := ""
 		while loaded_file.get_position() < loaded_file.get_length():
 			json_string += loaded_file.get_line()
 		var new_dna := CogDNA.from_json(json_string)
-		loaded_custom_cogs[COG_SAVE_PATH + file_name] = new_dna
+		loaded_custom_cogs[file_name] = new_dna
 		if SaveFileService.settings_file.use_custom_cogs:
 			if new_dna.is_mod_cog:
 				add_proxy(new_dna)
@@ -607,6 +608,7 @@ signal s_shop_spawned(shop: ToonShop)
 signal s_game_win
 signal s_im_stuck
 signal s_colorblind_mode_changed(new_mode: Dictionary)
+signal s_quest_completed
 #endregion
 
 

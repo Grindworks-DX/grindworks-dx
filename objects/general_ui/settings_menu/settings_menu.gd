@@ -154,6 +154,8 @@ func toggle_ambient_sfx() -> void:
 
 @onready var speed_button: GeneralButton = %SpeedButton
 @onready var reaction_button: GeneralButton = %ReactionButton
+@onready var description_button: GeneralButton = %DescriptionButton
+@onready var popups_button: GeneralButton = %PopupsButton
 @onready var auto_sprint_button: GeneralButton = %AutoSprintButton
 @onready var control_style_button: GeneralButton = %ControlStyleButton
 @onready var cam_sens_slider: HSlider = %CamSensSlider
@@ -167,6 +169,7 @@ func toggle_ambient_sfx() -> void:
 func _sync_gameplay_settings() -> void:
 	speed_button.text = get_speed_string(SaveFileService.settings_file.SpeedOptions[get_setting("battle_speed_idx")])
 	reaction_button.text = get_toggle_text(get_setting('item_reactions'))
+	description_button.text = get_toggle_text(get_setting('item_descriptions'))
 	auto_sprint_button.text = get_toggle_text(get_setting('auto_sprint'))
 	control_style_button.text = get_control_style(get_setting('control_style'))
 	cam_sens_slider.value = get_setting("camera_sensitivity")
@@ -175,11 +178,14 @@ func _sync_gameplay_settings() -> void:
 	intro_skip_button.text = get_toggle_text(get_setting('skip_intro'))
 	custom_cogs_button.text = get_toggle_text(get_setting('use_custom_cogs'))
 	button_prompts_button.text = get_toggle_text(get_setting('button_prompts'))
+	popups_button.text = get_toggle_text(get_setting('item_popups'))
 	
 	if not is_instance_valid(Util.floor_manager) or Util.stuck_lock:
 		stuck_element.queue_free()
 	if not SaveFileService.progress_file.characters_unlocked > 1:
-		intro_skip_element.queue_free()
+		intro_skip_button.disabled = true
+		intro_skip_button.modulate.a = 0.5
+		intro_skip_button.material.set_shader_parameter('alpha', 0.5)
 
 func change_speed() -> void:
 	var curr_idx: int = get_setting('battle_speed_idx')
@@ -197,6 +203,14 @@ func get_speed_string(speed : float) -> String:
 func toggle_item_reactions() -> void:
 	toggle_setting('item_reactions')
 	reaction_button.text = get_toggle_text(get_setting('item_reactions'))
+
+func toggle_item_popups() -> void:
+	toggle_setting('item_popups')
+	popups_button.text = get_toggle_text(get_setting('item_popups'))
+
+func toggle_item_descriptions() -> void:
+	toggle_setting('item_descriptions')
+	description_button.text = get_toggle_text(get_setting('item_descriptions'))
 
 func toggle_auto_sprint() -> void:
 	toggle_setting('auto_sprint')
@@ -287,8 +301,8 @@ func input_to_text(input : InputEvent) -> String:
 	if not input: 
 		return "<UNBOUND>"
 	var base_string := input.as_text()
-	if base_string.ends_with(" (Physical)"):
-		base_string = base_string.trim_suffix(" (Physical)")
+	if base_string.ends_with(" - Physical"):
+		base_string = base_string.trim_suffix(" - Physical")
 	return base_string
 
 func set_keybind(action_name: String, input: InputEvent) -> void:

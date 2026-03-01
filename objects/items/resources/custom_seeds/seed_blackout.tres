@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c5o65i65xjnie"]
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c5o65i65xjnie"]
 
 [ext_resource type="Script" uid="uid://combwqypom1ru" path="res://objects/items/classes/item.gd" id="1_6tu7w"]
 [ext_resource type="Script" uid="uid://c4qkup0qbece8" path="res://objects/items/custom/seed_logic/seed_blackout.gd" id="1_hmyih"]

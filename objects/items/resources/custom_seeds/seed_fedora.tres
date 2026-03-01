@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://mcxw15n43n8j"]
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://mcxw15n43n8j"]
 
 [ext_resource type="Script" uid="uid://combwqypom1ru" path="res://objects/items/classes/item.gd" id="1_e54k7"]
 [ext_resource type="Script" uid="uid://deva3qtno76yp" path="res://objects/items/custom/seed_logic/seed_fedora.gd" id="1_yppir"]

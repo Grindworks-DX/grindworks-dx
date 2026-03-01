@@ -1,4 +1,4 @@
-[gd_scene load_steps=166 format=3 uid="uid://cha3dccp1m281"]
+[gd_scene format=3 uid="uid://cha3dccp1m281"]
 
 [ext_resource type="PackedScene" uid="uid://d1qs8nf0s0y85" path="res://objects/general_ui/ui_panel/ui_panel.tscn" id="1_py1ix"]
 [ext_resource type="Script" uid="uid://b2tqjgqv6xn1p" path="res://scenes/title_screen/credits/credits_panel.gd" id="2_3oeyj"]

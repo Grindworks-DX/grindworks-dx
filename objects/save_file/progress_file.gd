@@ -33,6 +33,7 @@ var total_cogs_defeated : int:
 @export var win_streak := 0
 @export var wins := 0
 @export var best_time := 0.0
+@export var high_score := 0
 @export var pocket_pranks_used := 0
 
 ## Item Specific stat tracking
@@ -153,6 +154,7 @@ enum GameAchievement {
 	UNLOCK_WEIRD_GLASSES,
 	UNLOCK_ROLODEX,
 	UNLOCK_WINGTIPS,
+	UNLOCK_RAINBOW_JELLYBEAN,
 }
 
 const PATH := "res://objects/save_file/achievements/resources/"
@@ -196,6 +198,7 @@ const ACHIEVEMENT_RESOURCES := {
 	GameAchievement.UNLOCK_WEIRD_GLASSES: PATH + "achievement_item_weird_glasses.tres",
 	GameAchievement.UNLOCK_ROLODEX: PATH + "achievement_item_rolodex.tres",
 	GameAchievement.UNLOCK_WINGTIPS: PATH + "achievement_item_wingtips.tres",
+	GameAchievement.UNLOCK_RAINBOW_JELLYBEAN: PATH + "achievement_item_rainbow_jellybean.tres",
 }
 
 @export var achievements_earned := {
@@ -238,6 +241,7 @@ const ACHIEVEMENT_RESOURCES := {
 	GameAchievement.UNLOCK_WEIRD_GLASSES: false,
 	GameAchievement.UNLOCK_ROLODEX: false,
 	GameAchievement.UNLOCK_WINGTIPS: false,
+	GameAchievement.UNLOCK_RAINBOW_JELLYBEAN: false,
 }
 
 var achievement_count: int:

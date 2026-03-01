@@ -119,6 +119,7 @@ var stranger_guaranteed := false
 var obscured_laff: bool:
 	get: return laff_meter.obscured
 	set(x): laff_meter.obscured = x
+var alt_gag_hotswap := false
 
 var laff_lock_enabled := false:
 	set(x):
@@ -137,6 +138,7 @@ signal s_died
 signal s_dying
 signal s_jumped
 signal s_stats_connected(stats: PlayerStats)
+signal s_hurt_realtime(damage: int)
 
 func _init() -> void:
 	GameLoader.queue_into(GameLoader.Phase.GAMEPLAY, self, {
@@ -377,6 +379,7 @@ func quick_heal(amount: int, allow_iframes := true) -> void:
 	if sign(diff) == -1:
 		if controller.current_state.accepts_interaction() and allow_iframes:
 			do_invincibility_frames()
+			s_hurt_realtime.emit(diff)
 		Util.do_3d_text(self,str(diff))
 	else:
 		Util.do_3d_text(self, "+" + str(diff), Color.GREEN, Color.DARK_GREEN)

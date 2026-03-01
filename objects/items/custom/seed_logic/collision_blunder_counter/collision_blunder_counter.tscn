@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://vcwmayp1krq6"]
+[gd_scene format=3 uid="uid://vcwmayp1krq6"]
 
 [ext_resource type="Script" uid="uid://uwbufybl66il" path="res://objects/items/custom/seed_logic/collision_blunder_counter/collision_blunder_counter.gd" id="1_7bhyr"]
 [ext_resource type="FontFile" uid="uid://815gwlftl5ik" path="res://fonts/impress-bt.ttf" id="1_7pu3r"]
