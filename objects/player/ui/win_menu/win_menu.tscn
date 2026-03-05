@@ -50,7 +50,7 @@ font_size = 32
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xtw8j"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_naek7"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aee0c"]
@@ -122,7 +122,7 @@ label_settings = SubResource("LabelSettings_aen5p")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DefeatedBy" type="Label" parent="Root" unique_id=391159205]
+[node name="Congratulation" type="Label" parent="Root" unique_id=391159205]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
@@ -173,7 +173,7 @@ offset_right = 423.0
 offset_bottom = 114.0
 grow_vertical = 2
 mouse_filter = 2
-texture = SubResource("ViewportTexture_xtw8j")
+texture = SubResource("ViewportTexture_naek7")
 expand_mode = 1
 
 [node name="ScoreTally" type="VBoxContainer" parent="Root" unique_id=1789093348]

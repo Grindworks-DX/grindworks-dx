@@ -10,6 +10,14 @@ var toon: Toon
 var score_tally_tween: Tween
 
 func _ready() -> void:
+	if Util.get_player() and Util.get_player().character:
+		var player_char: PlayerCharacter = Util.get_player().character
+		var char_name: String
+		if player_char.random_character_stored_name:
+			char_name = player_char.random_character_stored_name
+		else:
+			char_name = player_char.character_name
+		%Congratulation.set_text("%s defeated the Executive Office!" % char_name)
 	
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	Engine.time_scale = 1.0

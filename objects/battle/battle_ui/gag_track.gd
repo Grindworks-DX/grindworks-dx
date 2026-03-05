@@ -123,7 +123,7 @@ func refund_gag(gag: ToonAttack):
 	for i in track.gags.size():
 		if track.gags[i].action_name == gag.action_name:
 			if player.gags_cost_beans:
-				player.stats.add_money(gag.price)
+				player.stats.money += gag.price
 				refresh()
 				return
 			var new_balance: int = player.stats.gag_balance[track.track_name]

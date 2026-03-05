@@ -41,5 +41,13 @@ Added in the back-end for a canceled expansion to gags, includes:
   Some miscellaneous additions to gag scripts (Throw gags now have the optional ability to apply status effects)
 [TITLE]Hotfix #1
 Fixed a regression in Lure's damage/accuracy nerf values
-Fixed the Gag Panel on the pause menu not responding to player input"
+Fixed the Gag Panel on the pause menu not responding to player input
+[TITLE]Hotfix #2
+The win screen will now display your Toon's name
+Rainbow Jellybean will no longer allow Professor Pete to gain infinite jellybeans
+Cash Register will also now refresh the battle UI to reflect your current bean balance as Professor Pete
+Fixed a mishap that occurred when White-Out spawned secret floors
+Fixed a Mole Stomp game that did not charge your Pocket Prank upon victory
+Shoes will now show their taglines in the Stranger Shop
+Modders: The Gag Shop is now properly functional. Rejoice!"
 metadata/_custom_type_script = "uid://d1j0hh6tsgy0r"
