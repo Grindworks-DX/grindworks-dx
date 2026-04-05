@@ -25,5 +25,9 @@ Custom Cogs' unique suit textures will no longer override the suit of the base C
 Toon speech bubbles no longer animate with the Toon's body
 Connector rooms in facilities are now properly seeded
 [TITLE]For Modders
-The Null Cog department should now be functional"
+The Null Cog department should now be functional
+[TITLE]Hotfix #1
+Fixed Yesman's suit textures not loading
+[TITLE]Hotfix #2
+Fixed Head of Security handing out free wins to anyone just for beating Skull Finder normally"
 metadata/_custom_type_script = "uid://d1j0hh6tsgy0r"
