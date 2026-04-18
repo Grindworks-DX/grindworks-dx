@@ -1,7 +1,7 @@
-# Toontown: The Grindworks
+# Grindworks DX: Directors' Cut
 
 
-This is a single-player game based on Disney's Toontown Online developed with the Godot Engine.
+Grindworks DX (or TT:GDX) is a modified re-rerelease of the open-source single player Toontown fangame Toontown: The Grindworks that contains new content and QoL features.
 
 ## Requirements
 
@@ -19,8 +19,12 @@ This is a single-player game based on Disney's Toontown Online developed with th
 
 Enjoy!
 
-## Credits
-- Evan
+## TT:GDX Credits
+- Buck
+  - Project Lead
+
+## Toontown: The Grindworks Credits
+- Chloe
   - Project Lead, Programmer & Designer
 - squiddy
   - Programmer, 3D & Texture Artist
@@ -88,4 +92,4 @@ Enjoy!
 - Jackyland
 - Niji
 - Princess Sandy
-- You! Yes, really.
+- You! ...Probably? I'll ask again later.
