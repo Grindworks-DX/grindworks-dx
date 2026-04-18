@@ -325,9 +325,9 @@ func back_out_logo() -> void:
 	state = MenuState.TRANSITIONING
 	new_game_menu.hide()
 	var tween := create_tween().set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(spring_arm, 'spring_length', 24.0, 2.5)
-	tween.parallel().tween_property(spring_arm, 'rotation_degrees', Vector3(-22.0, 0, 0), 1.0)
-	tween.parallel().tween_property(spring_arm, 'position', Vector3(0.0, 5.0, 8.02), 1.0)
+	tween.tween_property(spring_arm, 'spring_length', 6.0, 1.0)
+	tween.parallel().tween_property(spring_arm, 'rotation_degrees', Vector3(22.0, 0, 0), 1.0)
+	tween.parallel().tween_property(spring_arm, 'position', Vector3(0.0, 5.0, 10.0), 1.0)
 	tween.finished.connect(
 		func():
 			tween.kill()

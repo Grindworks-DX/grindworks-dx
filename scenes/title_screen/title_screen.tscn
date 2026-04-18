@@ -220,9 +220,8 @@ texture_pressed = ExtResource("12_nwwc5")
 texture_hover = ExtResource("13_glcqf")
 texture_disabled = null
 text = "Release Notes"
-font_size = 24.0
 
-[node name="Label" parent="GUI/Logo/ReleaseNotesButton" index="0"]
+[node name="Label" parent="GUI/Logo/ReleaseNotesButton" index="0" unique_id=1572222559]
 text = "Release Notes"
 label_settings = SubResource("LabelSettings_5vlir")
 
@@ -318,9 +317,8 @@ texture_normal = ExtResource("10_otspg")
 texture_pressed = ExtResource("10_otspg")
 texture_hover = ExtResource("10_otspg")
 texture_disabled = null
-font_size = 36.0
 
-[node name="Label" parent="GUI/Logo/SocialButtons/DiscordScaler/DiscordButton" index="0"]
+[node name="Label" parent="GUI/Logo/SocialButtons/DiscordScaler/DiscordButton" index="0" unique_id=1572222559]
 offset_left = 74.5
 offset_right = -74.5
 offset_bottom = -47.0
@@ -357,9 +355,8 @@ texture_normal = ExtResource("11_ao3wo")
 texture_pressed = ExtResource("11_ao3wo")
 texture_hover = ExtResource("11_ao3wo")
 texture_disabled = null
-font_size = 36.0
 
-[node name="Label" parent="GUI/Logo/SocialButtons/BlueskyScaler/BlueskyButton" index="0"]
+[node name="Label" parent="GUI/Logo/SocialButtons/BlueskyScaler/BlueskyButton" index="0" unique_id=1572222559]
 offset_left = 74.5
 offset_right = -74.5
 offset_bottom = -47.0
@@ -393,9 +390,8 @@ texture_normal = ExtResource("12_ao3wo")
 texture_pressed = ExtResource("12_ao3wo")
 texture_hover = ExtResource("12_ao3wo")
 texture_disabled = null
-font_size = 36.0
 
-[node name="Label" parent="GUI/Logo/SocialButtons/WikiScaler/WikiButton" index="0"]
+[node name="Label" parent="GUI/Logo/SocialButtons/WikiScaler/WikiButton" index="0" unique_id=1572222559]
 offset_left = 74.5
 offset_right = -74.5
 offset_bottom = -47.0
@@ -458,9 +454,8 @@ texture_pressed = ExtResource("12_nwwc5")
 texture_hover = ExtResource("13_glcqf")
 texture_disabled = null
 text = "Back"
-font_size = 24.0
 
-[node name="Label" parent="GUI/NewGameMenu/ButtonContainer/BackButton" index="0"]
+[node name="Label" parent="GUI/NewGameMenu/ButtonContainer/BackButton" index="0" unique_id=1572222559]
 text = "Back"
 label_settings = SubResource("LabelSettings_5vlir")
 
@@ -475,9 +470,8 @@ texture_pressed = ExtResource("12_nwwc5")
 texture_hover = ExtResource("13_glcqf")
 texture_disabled = null
 text = "Extras"
-font_size = 24.0
 
-[node name="Label" parent="GUI/NewGameMenu/ButtonContainer/ExtrasButton" index="0"]
+[node name="Label" parent="GUI/NewGameMenu/ButtonContainer/ExtrasButton" index="0" unique_id=1572222559]
 text = "Extras"
 label_settings = SubResource("LabelSettings_5vlir")
 
@@ -492,9 +486,8 @@ texture_pressed = ExtResource("12_nwwc5")
 texture_hover = ExtResource("13_glcqf")
 texture_disabled = null
 text = "Settings"
-font_size = 24.0
 
-[node name="Label" parent="GUI/NewGameMenu/ButtonContainer/SettingsButton" index="0"]
+[node name="Label" parent="GUI/NewGameMenu/ButtonContainer/SettingsButton" index="0" unique_id=1572222559]
 text = "Settings"
 label_settings = SubResource("LabelSettings_5vlir")
 
@@ -508,9 +501,8 @@ texture_pressed = ExtResource("12_nwwc5")
 texture_hover = ExtResource("13_glcqf")
 texture_disabled = null
 text = "	Quit"
-font_size = 24.0
 
-[node name="Label" parent="GUI/NewGameMenu/ButtonContainer/QuitButton" index="0"]
+[node name="Label" parent="GUI/NewGameMenu/ButtonContainer/QuitButton" index="0" unique_id=1572222559]
 text = "	Quit"
 label_settings = SubResource("LabelSettings_5vlir")
 
@@ -541,9 +533,8 @@ texture_pressed = ExtResource("12_nwwc5")
 texture_hover = ExtResource("13_glcqf")
 texture_disabled = null
 text = "New Game"
-font_size = 24.0
 
-[node name="Label" parent="GUI/NewGameMenu/MiddleButtons/NewGameButton" index="0"]
+[node name="Label" parent="GUI/NewGameMenu/MiddleButtons/NewGameButton" index="0" unique_id=1572222559]
 text = "New Game"
 label_settings = SubResource("LabelSettings_5vlir")
 
@@ -558,9 +549,8 @@ texture_pressed = ExtResource("12_nwwc5")
 texture_hover = ExtResource("13_glcqf")
 texture_disabled = null
 text = "Continue"
-font_size = 24.0
 
-[node name="Label" parent="GUI/NewGameMenu/MiddleButtons/ContinueButton" index="0"]
+[node name="Label" parent="GUI/NewGameMenu/MiddleButtons/ContinueButton" index="0" unique_id=1572222559]
 text = "Continue"
 label_settings = SubResource("LabelSettings_5vlir")
 
@@ -606,9 +596,9 @@ transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, -0.005, 0)
 building_name = "An Ordinary Cog Building"
 
 [node name="SpringArm" type="SpringArm3D" parent="World3D" unique_id=1008395950]
-transform = Transform3D(1, 0, 0, 0, 0.927184, 0.374607, 0, -0.374607, 0.927184, 0, 5, 8.025)
+transform = Transform3D(1, 0, 0, 0, 0.9271841, -0.37460667, 0, 0.37460667, 0.9271841, 0, 5, 10)
 collision_mask = 0
-spring_length = 24.0
+spring_length = 6.0
 
 [node name="Camera" type="Camera3D" parent="World3D/SpringArm" unique_id=1208868544]
 current = true

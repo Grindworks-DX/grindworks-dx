@@ -16,6 +16,7 @@ bg_color = Color(1, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_ydl26"]
 font = ExtResource("1_5jrqf")
 font_size = 36
+font_color = Color(0.7666196, 0.76661956, 0.76661956, 1)
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 0.41960785)
 
@@ -30,6 +31,7 @@ script = ExtResource("1_85l3m")
 files_to_load = Array[String](["res://objects/items/custom/toonosaur_hat/meteor.tscn", "res://objects/items/custom/toonosaur_hat/meteor_explosion.tscn", "res://objects/battle/effects/cog_healing/cog_healing.tscn", "res://objects/battle/effects/rainbow_paint_splash/rainbow_paint_splash_effect.tscn", "res://objects/battle/effects/coin/coinspill.tscn", "res://objects/battle/effects/fire/fireburst.tscn", "res://objects/battle/effects/unite/unite.tscn", "res://objects/battle/effects/pixie_dust/pixie_dust_battle_effect.tscn", "res://objects/battle/effects/poison/poison_cog.tscn", "res://models/props/gags/geyser-revamp/geyser_gag.tscn", "res://objects/obstacles/sandtrap/sand_trap_with_moles/sand_mole/mole_movement.tscn", "res://objects/obstacles/sandtrap/sandtrap_dust.tscn"])
 
 [node name="Background" type="TextureRect" parent="." unique_id=707614026]
+modulate = Color(0.19317037, 0.27946776, 0.26742405, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,6 +41,7 @@ grow_vertical = 2
 texture = ExtResource("2_1wgck")
 
 [node name="GameLogo" type="TextureRect" parent="." unique_id=1525882190]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -17,6 +17,7 @@ bg_color = Color(1, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_ydl26"]
 font = ExtResource("3_5snab")
 font_size = 36
+font_color = Color(0.7666196, 0.76661956, 0.76661956, 1)
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 0.41960785)
 
@@ -25,7 +26,7 @@ font = ExtResource("3_5snab")
 font_size = 24
 font_color = Color(0.309804, 0.254902, 0.2, 1)
 
-[node name="LoadingScreen" type="Control"]
+[node name="LoadingScreen" type="Control" unique_id=1811285463]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,7 +35,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6lcto")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1536488671]
+modulate = Color(0.19317037, 0.27946776, 0.26742405, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,7 +45,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_d20g6")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1735348689]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -63,7 +65,7 @@ max_value = 1.0
 value = 0.25
 show_percentage = false
 
-[node name="Label" type="Label" parent="ProgressBar"]
+[node name="Label" type="Label" parent="ProgressBar" unique_id=1542464335]
 layout_mode = 1
 offset_top = -49.0
 offset_right = 149.0
@@ -71,7 +73,7 @@ offset_bottom = -3.0
 text = "Loading..."
 label_settings = SubResource("LabelSettings_ydl26")
 
-[node name="TipScroll" type="TextureRect" parent="."]
+[node name="TipScroll" type="TextureRect" parent="." unique_id=1859183819]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -87,7 +89,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_iur5r")
 
-[node name="TipLabel" type="Label" parent="TipScroll"]
+[node name="TipLabel" type="Label" parent="TipScroll" unique_id=1639529189]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 43.0
@@ -98,7 +100,8 @@ Drink Motor Oil"
 label_settings = SubResource("LabelSettings_njque")
 autowrap_mode = 2
 
-[node name="GameLogo" type="TextureRect" parent="."]
+[node name="GameLogo" type="TextureRect" parent="." unique_id=152431904]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
