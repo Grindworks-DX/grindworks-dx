@@ -144,6 +144,10 @@ func populate_tabs() -> void:
 		if Globals.get_unlocked_toons().find(toon) == 0:
 			char_tab.selected = true
 			current_tab = char_tab
+		
+		# Gamepad: Right goes directly to enter
+		char_tab.focus_neighbor_right = char_tab.get_path_to(%EnterButton)
+		%EnterButton.focus_neighbor_left = %EnterButton.get_path_to(char_tab)
 
 func on_tab_clicked(new_character: PlayerCharacter, tab: Control) -> void:
 	if tab == current_tab and not new_character.character_id == PlayerCharacter.Character.MYSTERY:

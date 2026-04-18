@@ -4,6 +4,13 @@
 [ext_resource type="Script" uid="uid://1bjcyfu1h3rc" path="res://scenes/title_screen/character_select/character_tab.gd" id="2_a3mh6"]
 [ext_resource type="FontFile" uid="uid://815gwlftl5ik" path="res://fonts/impress-bt.ttf" id="2_cl71p"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_os63w"]
+texture = ExtResource("1_wvfa3")
+expand_margin_left = 80.0
+expand_margin_top = 5.0
+expand_margin_bottom = 8.0
+modulate_color = Color(0.85272104, 0.8044109, 0.30722067, 0.8862745)
+
 [sub_resource type="LabelSettings" id="LabelSettings_a3mh6"]
 font = ExtResource("2_cl71p")
 font_size = 24
@@ -12,9 +19,8 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 6
 shadow_color = Color(0, 0, 0, 1)
 
-[node name="CharacterTab" type="Control"]
+[node name="CharacterTab" type="Button" unique_id=2033266642]
 custom_minimum_size = Vector2(264, 45)
-layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -26,9 +32,11 @@ offset_right = 132.0
 offset_bottom = 22.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_os63w")
+flat = true
 script = ExtResource("2_a3mh6")
 
-[node name="Tab" type="TextureRect" parent="."]
+[node name="Tab" type="TextureRect" parent="." unique_id=522396040]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(264, 45)
 layout_mode = 1
@@ -46,7 +54,7 @@ grow_vertical = 2
 texture = ExtResource("1_wvfa3")
 expand_mode = 1
 
-[node name="CharLabel" type="Label" parent="Tab"]
+[node name="CharLabel" type="Label" parent="Tab" unique_id=745483181]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 4
@@ -60,6 +68,9 @@ grow_vertical = 2
 text = "Flippy"
 label_settings = SubResource("LabelSettings_a3mh6")
 
+[connection signal="focus_entered" from="." to="." method="mouse_entered"]
+[connection signal="focus_exited" from="." to="." method="mouse_exited"]
 [connection signal="gui_input" from="." to="." method="gui_input"]
 [connection signal="mouse_entered" from="." to="." method="mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="mouse_exited"]
+[connection signal="pressed" from="." to="." method="clicked"]

@@ -31,7 +31,9 @@ var selected := false:
 		selected = x
 		if x: push_tab(FULLOUT_X)
 		else: push_tab()
-var hovered := false
+var hovered := false:
+	set(x):
+		hovered = x
 var push_tween: Tween
 ## The variable below is for animating that is all dw about it
 var h_offset_offset: float = 0.0:
@@ -69,10 +71,10 @@ func push_tab(xpos := 0.0, time := 0.2) -> void:
 	push_tween.tween_property(self, 'h_offset_offset', xpos, time)
 	push_tween.finished.connect(push_tween.kill)
 
-func gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			clicked()
+#func gui_input(event: InputEvent) -> void:
+	#if event is InputEventMouseButton:
+		#if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			#clicked()
 
 func clicked() -> void:
 	s_clicked.emit(character)
