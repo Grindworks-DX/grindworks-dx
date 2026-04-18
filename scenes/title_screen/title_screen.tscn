@@ -406,6 +406,7 @@ offset_bottom = 1410.0
 
 [node name="NewGameMenu" type="Control" parent="GUI" unique_id=893500153]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
