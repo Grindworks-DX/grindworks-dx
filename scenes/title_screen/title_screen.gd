@@ -127,7 +127,7 @@ func _ready() -> void:
 
 	%VersionLabel.set_text(Globals.VERSION_NUMBER)
 	
-	var title_theme: AudioStream = load("res://audio/music/main_theme.ogg")
+	var title_theme: AudioStream = load("res://audio/music/title_dx.ogg")
 	if not AudioManager.current_music == title_theme:
 		AudioManager.stop_music(true)
 		AudioManager.set_default_music(title_theme)
