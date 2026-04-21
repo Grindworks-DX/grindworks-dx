@@ -17,28 +17,28 @@ font = ExtResource("4_2sbpv")
 font_size = 36
 shadow_color = Color(0, 0, 0, 1)
 
-[node name="BattleNode" type="Area3D"]
+[node name="BattleNode" type="Area3D" unique_id=782035458]
 collision_mask = 2
 script = ExtResource("1_8sgxc")
 item_pool = ExtResource("2_5be2w")
 
-[node name="BirdsEye" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.48481, 0.87462, 0, -0.87462, 0.48481, 0, 6.75, 4)
+[node name="BirdsEye" type="Node3D" parent="." unique_id=1434794390]
+transform = Transform3D(1, 0, 0, 0, 0.64278793, 0.7660448, 0, -0.7660448, 0.64278793, 0, 5.225, 4)
 
-[node name="BattleCamera" type="Camera3D" parent="BirdsEye"]
+[node name="BattleCamera" type="Camera3D" parent="BirdsEye" unique_id=323521800]
 physics_interpolation_mode = 2
-fov = 48.8
+fov = 66.0
 
-[node name="Area3D" type="Area3D" parent="BirdsEye/BattleCamera"]
+[node name="Area3D" type="Area3D" parent="BirdsEye/BattleCamera" unique_id=1747742829]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BirdsEye/BattleCamera/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BirdsEye/BattleCamera/Area3D" unique_id=333097163]
 shape = SubResource("SphereShape3D_hs6yv")
 
-[node name="ArrowReference" type="MeshInstance3D" parent="."]
+[node name="ArrowReference" type="MeshInstance3D" parent="." unique_id=1029984184]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 0.565281, 0)
 mesh = SubResource("TextMesh_6r1av")
 
-[node name="SkipButton" parent="." instance=ExtResource("3_ck76g")]
+[node name="SkipButton" parent="." unique_id=1306118693 instance=ExtResource("3_ck76g")]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 3
@@ -53,9 +53,8 @@ offset_bottom = -35.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Skip"
-font_size = 36.0
 
-[node name="Label" parent="SkipButton" index="0"]
+[node name="Label" parent="SkipButton" index="0" unique_id=1572222559]
 text = "Skip"
 label_settings = SubResource("LabelSettings_g2407")
 
