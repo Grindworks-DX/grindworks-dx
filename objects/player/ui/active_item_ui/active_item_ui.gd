@@ -59,7 +59,7 @@ func setup_item(new_item: ItemActive) -> void:
 	check_reserve()
 
 func clear_item() -> void:
-	hide()
+	#hide()
 	clear_ticks()
 	progress_circle.value = 0
 	item_icon.set_texture(null)

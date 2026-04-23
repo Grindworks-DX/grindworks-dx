@@ -5,50 +5,51 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_j00wc"]
 font = ExtResource("2_nyi5o")
-font_size = 64
+font_size = 48
 font_color = Color(1, 0, 0, 1)
 shadow_size = 11
 shadow_color = Color(0.448949, 2.05157e-06, 2.16588e-07, 1)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(2, 2)
+stacked_shadow_0/color = Color(0, 0, 0, 0.37254903)
+stacked_shadow_0/outline_size = 2
 
 [sub_resource type="LabelSettings" id="LabelSettings_sg3ye"]
 font = ExtResource("2_nyi5o")
-font_size = 42
+font_size = 28
 font_color = Color(1, 0.427451, 0, 1)
 shadow_size = 8
 shadow_color = Color(0.358869, 0.134262, 0, 1)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(2, 2)
+stacked_shadow_0/color = Color(0, 0, 0, 0.37254903)
+stacked_shadow_0/outline_size = 2
 
-[node name="BattleManager" type="Node"]
+[node name="BattleManager" type="Node" unique_id=473736810]
 script = ExtResource("1_jfi3m")
 
-[node name="SceneTimer" type="Timer" parent="."]
+[node name="SceneTimer" type="Timer" parent="." unique_id=1295539216]
 one_shot = true
 
-[node name="AttackLabel" type="Label" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=151573554]
+offset_left = 136.0
+offset_top = 400.0
+offset_right = 691.0
+offset_bottom = 512.0
+alignment = 2
+
+[node name="AttackLabel" type="Label" parent="VBoxContainer" unique_id=418347371]
+unique_name_in_owner = true
 visible = false
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -276.5
-offset_top = 35.0
-offset_right = 276.5
-offset_bottom = 100.0
-grow_horizontal = 2
+layout_mode = 2
 text = "ATTACK NAME"
 label_settings = SubResource("LabelSettings_j00wc")
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SummaryLabel" type="Label" parent="."]
+[node name="SummaryLabel" type="Label" parent="VBoxContainer" unique_id=1008880546]
+unique_name_in_owner = true
 visible = false
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -215.0
-offset_top = 103.0
-offset_right = 216.0
-offset_bottom = 146.0
-grow_horizontal = 2
+layout_mode = 2
 text = "Attack Summary"
 label_settings = SubResource("LabelSettings_sg3ye")
-horizontal_alignment = 1
 vertical_alignment = 1

@@ -50,6 +50,10 @@ font = ExtResource("12_iqdos")
 font_size = 24
 font_color = Color(1, 1, 0, 1)
 shadow_color = Color(0.564706, 0.564706, 0, 1)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(2, 2)
+stacked_shadow_0/color = Color(0, 0, 0, 0.54901963)
+stacked_shadow_0/outline_size = 3
 
 [sub_resource type="LabelSettings" id="LabelSettings_pxipy"]
 font = ExtResource("5_pju0v")
@@ -64,9 +68,18 @@ font_color = Color(0, 0, 1, 1)
 [node name="BattleUI" type="CanvasLayer" unique_id=1862134265]
 script = ExtResource("1_8x8hy")
 
-[node name="BattleMenuContainer" type="Control" parent="." unique_id=1606016607]
+[node name="PlanningUI" type="Control" parent="." unique_id=1270773797]
 unique_name_in_owner = true
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BattleMenuContainer" type="Control" parent="PlanningUI" unique_id=1606016607]
+unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -79,7 +92,7 @@ offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MainPanel" type="Control" parent="BattleMenuContainer" unique_id=1239790486]
+[node name="MainPanel" type="Control" parent="PlanningUI/BattleMenuContainer" unique_id=1239790486]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -95,7 +108,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.36, 1.36)
 
-[node name="BattlePanel" type="TextureRect" parent="BattleMenuContainer/MainPanel" unique_id=851296586]
+[node name="BattlePanel" type="TextureRect" parent="PlanningUI/BattleMenuContainer/MainPanel" unique_id=851296586]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(702, 335)
 layout_mode = 1
@@ -113,7 +126,7 @@ grow_vertical = 2
 scale = Vector2(0.842, 0.8)
 texture = ExtResource("1_ahgpo")
 
-[node name="Tracks" type="VBoxContainer" parent="BattleMenuContainer/MainPanel" unique_id=927005080]
+[node name="Tracks" type="VBoxContainer" parent="PlanningUI/BattleMenuContainer/MainPanel" unique_id=927005080]
 unique_name_in_owner = true
 layout_mode = 1
 offset_left = -313.971
@@ -123,25 +136,25 @@ offset_bottom = 141.0
 scale = Vector2(1, 1.01)
 theme_override_constants/separation = 0
 
-[node name="Trap" parent="BattleMenuContainer/MainPanel/Tracks" unique_id=347393730 instance=ExtResource("3_1uaxw")]
+[node name="Trap" parent="PlanningUI/BattleMenuContainer/MainPanel/Tracks" unique_id=347393730 instance=ExtResource("3_1uaxw")]
 layout_mode = 2
 
-[node name="Lure" parent="BattleMenuContainer/MainPanel/Tracks" unique_id=733757207 instance=ExtResource("3_1uaxw")]
+[node name="Lure" parent="PlanningUI/BattleMenuContainer/MainPanel/Tracks" unique_id=733757207 instance=ExtResource("3_1uaxw")]
 layout_mode = 2
 
-[node name="Sound" parent="BattleMenuContainer/MainPanel/Tracks" unique_id=1485695708 instance=ExtResource("3_1uaxw")]
+[node name="Sound" parent="PlanningUI/BattleMenuContainer/MainPanel/Tracks" unique_id=1485695708 instance=ExtResource("3_1uaxw")]
 layout_mode = 2
 
-[node name="Throw" parent="BattleMenuContainer/MainPanel/Tracks" unique_id=376763570 instance=ExtResource("3_1uaxw")]
+[node name="Throw" parent="PlanningUI/BattleMenuContainer/MainPanel/Tracks" unique_id=376763570 instance=ExtResource("3_1uaxw")]
 layout_mode = 2
 
-[node name="Squirt" parent="BattleMenuContainer/MainPanel/Tracks" unique_id=414158597 instance=ExtResource("3_1uaxw")]
+[node name="Squirt" parent="PlanningUI/BattleMenuContainer/MainPanel/Tracks" unique_id=414158597 instance=ExtResource("3_1uaxw")]
 layout_mode = 2
 
-[node name="Drop" parent="BattleMenuContainer/MainPanel/Tracks" unique_id=1681351224 instance=ExtResource("3_1uaxw")]
+[node name="Drop" parent="PlanningUI/BattleMenuContainer/MainPanel/Tracks" unique_id=1681351224 instance=ExtResource("3_1uaxw")]
 layout_mode = 2
 
-[node name="RightPanel" type="Control" parent="BattleMenuContainer" unique_id=167065068]
+[node name="RightPanel" type="Control" parent="PlanningUI/BattleMenuContainer" unique_id=167065068]
 unique_name_in_owner = true
 anchors_preset = 0
 offset_left = 247.0
@@ -150,7 +163,7 @@ offset_right = 380.0
 offset_bottom = 48.0
 script = ExtResource("36_1a4qv")
 
-[node name="GagInfo" type="Control" parent="BattleMenuContainer/RightPanel" unique_id=1273537117]
+[node name="GagInfo" type="Control" parent="PlanningUI/BattleMenuContainer/RightPanel" unique_id=1273537117]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -158,7 +171,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GagName" type="Label" parent="BattleMenuContainer/RightPanel/GagInfo" unique_id=189564344]
+[node name="GagName" type="Label" parent="PlanningUI/BattleMenuContainer/RightPanel/GagInfo" unique_id=189564344]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -171,7 +184,7 @@ grow_horizontal = 2
 label_settings = SubResource("LabelSettings_tdkys")
 horizontal_alignment = 1
 
-[node name="GagIcon" type="TextureRect" parent="BattleMenuContainer/RightPanel/GagInfo" unique_id=1885391650]
+[node name="GagIcon" type="TextureRect" parent="PlanningUI/BattleMenuContainer/RightPanel/GagInfo" unique_id=1885391650]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 30.5
@@ -179,7 +192,7 @@ offset_right = 80.0
 offset_bottom = 62.5
 expand_mode = 1
 
-[node name="Capacity" type="Label" parent="BattleMenuContainer/RightPanel/GagInfo" unique_id=368658552]
+[node name="Capacity" type="Label" parent="PlanningUI/BattleMenuContainer/RightPanel/GagInfo" unique_id=368658552]
 visible = false
 layout_mode = 0
 offset_left = 86.0
@@ -188,7 +201,7 @@ offset_right = 114.0
 offset_bottom = 69.5
 label_settings = SubResource("LabelSettings_qttfa")
 
-[node name="GagStats" type="Label" parent="BattleMenuContainer/RightPanel/GagInfo" unique_id=2064804983]
+[node name="GagStats" type="Label" parent="PlanningUI/BattleMenuContainer/RightPanel/GagInfo" unique_id=2064804983]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 74.0
@@ -196,7 +209,7 @@ offset_right = 128.0
 offset_bottom = 149.0
 label_settings = SubResource("LabelSettings_iiktb")
 
-[node name="CurrentStats" type="Control" parent="BattleMenuContainer/RightPanel" unique_id=1882810803]
+[node name="CurrentStats" type="Control" parent="PlanningUI/BattleMenuContainer/RightPanel" unique_id=1882810803]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -205,7 +218,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RegenSlips" type="Label" parent="BattleMenuContainer/RightPanel/CurrentStats" unique_id=236784662]
+[node name="RegenSlips" type="Label" parent="PlanningUI/BattleMenuContainer/RightPanel/CurrentStats" unique_id=236784662]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
@@ -220,7 +233,7 @@ label_settings = SubResource("LabelSettings_qttfa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlayerStats" type="Label" parent="BattleMenuContainer/RightPanel/CurrentStats" unique_id=1803015119]
+[node name="PlayerStats" type="Label" parent="PlanningUI/BattleMenuContainer/RightPanel/CurrentStats" unique_id=1803015119]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 6.0
@@ -233,14 +246,14 @@ Evasiveness: 1.0
 Luck: 1.0"
 label_settings = SubResource("LabelSettings_iiktb")
 
-[node name="BottomRight" type="Control" parent="BattleMenuContainer" unique_id=151975647]
+[node name="BottomRight" type="Control" parent="PlanningUI/BattleMenuContainer" unique_id=151975647]
 anchors_preset = 0
 offset_left = 233.0
 offset_top = 64.0
 offset_right = 379.0
 offset_bottom = 156.0
 
-[node name="Fire" parent="BattleMenuContainer/BottomRight" unique_id=1641012622 instance=ExtResource("6_giclt")]
+[node name="Fire" parent="PlanningUI/BattleMenuContainer/BottomRight" unique_id=1641012622 instance=ExtResource("6_giclt")]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 2
@@ -258,7 +271,7 @@ focus_neighbor_top = NodePath("../LockIn")
 focus_neighbor_right = NodePath("../SOS")
 text = "FIRE"
 
-[node name="LockIn" parent="BattleMenuContainer/BottomRight" unique_id=1462293221 instance=ExtResource("6_giclt")]
+[node name="LockIn" parent="PlanningUI/BattleMenuContainer/BottomRight" unique_id=1462293221 instance=ExtResource("6_giclt")]
 unique_name_in_owner = true
 self_modulate = Color(0.0949, 0.73, 0.465375, 1)
 layout_mode = 1
@@ -280,13 +293,13 @@ texture_disabled = ExtResource("9_fsjx4")
 texture_focused = ExtResource("8_rdvyd")
 text = "END TURN"
 
-[node name="ButtonText" parent="BattleMenuContainer/BottomRight/LockIn" index="1" unique_id=2113924769]
+[node name="ButtonText" parent="PlanningUI/BattleMenuContainer/BottomRight/LockIn" index="1" unique_id=2113924769]
 offset_left = -70.0
 offset_top = -24.5
 offset_right = 86.0
 offset_bottom = 31.5
 
-[node name="Run" parent="BattleMenuContainer/BottomRight" unique_id=509481613 instance=ExtResource("6_giclt")]
+[node name="Run" parent="PlanningUI/BattleMenuContainer/BottomRight" unique_id=509481613 instance=ExtResource("6_giclt")]
 visible = false
 layout_mode = 1
 offset_left = -71.0
@@ -294,7 +307,7 @@ offset_top = 3.5
 offset_right = -5.0
 offset_bottom = 45.5
 
-[node name="SOS" parent="BattleMenuContainer/BottomRight" unique_id=2079938619 instance=ExtResource("6_giclt")]
+[node name="SOS" parent="PlanningUI/BattleMenuContainer/BottomRight" unique_id=2079938619 instance=ExtResource("6_giclt")]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -311,37 +324,28 @@ focus_neighbor_left = NodePath("../Fire")
 focus_neighbor_top = NodePath("../LockIn")
 text = "ITEMS"
 
-[node name="CogPanels" type="HBoxContainer" parent="." unique_id=1766532749]
+[node name="AttackLabel" type="Label" parent="PlanningUI" unique_id=241992762]
 unique_name_in_owner = true
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 25.0
-offset_bottom = 126.0
-grow_horizontal = 2
-theme_override_constants/separation = 20
-alignment = 1
-script = ExtResource("14_j8cyf")
-
-[node name="AttackLabel" type="Label" parent="." unique_id=241992762]
-unique_name_in_owner = true
-anchors_preset = 3
-anchor_left = 1.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -292.0
-offset_top = -37.0
-offset_right = -20.0
-offset_bottom = -6.0
-grow_horizontal = 0
+offset_left = -363.0
+offset_top = -153.0
+offset_right = -80.0
+offset_bottom = -122.0
+grow_horizontal = 2
 grow_vertical = 0
 text = "Moves Remaining: 1"
 label_settings = SubResource("LabelSettings_uefqg")
 
-[node name="TargetSelect" type="TextureRect" parent="." unique_id=1639316139]
+[node name="TargetSelect" type="TextureRect" parent="PlanningUI" unique_id=1639316139]
 unique_name_in_owner = true
 visible = false
 self_modulate = Color(1, 0.2, 0.2, 1)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -357,7 +361,7 @@ scale = Vector2(1.4, 1.4)
 texture = ExtResource("13_meb7h")
 script = ExtResource("14_ykvjj")
 
-[node name="GagPanel" type="TextureRect" parent="TargetSelect" unique_id=357702589]
+[node name="GagPanel" type="TextureRect" parent="PlanningUI/TargetSelect" unique_id=357702589]
 self_modulate = Color(0.5, 0.9, 0.5, 1)
 layout_mode = 0
 offset_left = 306.0
@@ -366,7 +370,7 @@ offset_right = 409.0
 offset_bottom = 97.0
 texture = ExtResource("9_wvj0c")
 
-[node name="GagImage" type="TextureRect" parent="TargetSelect/GagPanel" unique_id=83113602]
+[node name="GagImage" type="TextureRect" parent="PlanningUI/TargetSelect/GagPanel" unique_id=83113602]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -382,7 +386,7 @@ grow_vertical = 2
 texture = ExtResource("10_sskeq")
 expand_mode = 1
 
-[node name="MiddleTab" type="TextureRect" parent="TargetSelect" unique_id=1154273464]
+[node name="MiddleTab" type="TextureRect" parent="PlanningUI/TargetSelect" unique_id=1154273464]
 self_modulate = Color(1, 1, 0, 1)
 layout_mode = 0
 offset_left = 99.0
@@ -391,7 +395,7 @@ offset_right = 312.0
 offset_bottom = 80.0
 texture = ExtResource("15_3yu02")
 
-[node name="TargetCenterLabel" type="Label" parent="TargetSelect/MiddleTab" unique_id=1629120619]
+[node name="TargetCenterLabel" type="Label" parent="PlanningUI/TargetSelect/MiddleTab" unique_id=1629120619]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -410,12 +414,12 @@ label_settings = SubResource("LabelSettings_pxipy")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Buttons" type="Control" parent="TargetSelect" unique_id=1760910418]
+[node name="Buttons" type="Control" parent="PlanningUI/TargetSelect" unique_id=1760910418]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Back" parent="TargetSelect/Buttons" unique_id=1850803737 instance=ExtResource("131_8fhg1")]
+[node name="Back" parent="PlanningUI/TargetSelect/Buttons" unique_id=1850803737 instance=ExtResource("131_8fhg1")]
 layout_mode = 1
 offset_left = 18.0
 offset_top = 39.0
@@ -426,7 +430,7 @@ texture_normal = ExtResource("16_fsqkc")
 texture_pressed = ExtResource("17_75n66")
 texture_hover = ExtResource("18_fiwp1")
 
-[node name="Label2" type="Label" parent="TargetSelect/Buttons/Back" unique_id=1120208072]
+[node name="Label2" type="Label" parent="PlanningUI/TargetSelect/Buttons/Back" unique_id=1120208072]
 layout_mode = 0
 offset_left = 23.0
 offset_top = 15.0
@@ -435,7 +439,7 @@ offset_bottom = 38.0
 text = "BACK"
 label_settings = SubResource("LabelSettings_wqxli")
 
-[node name="Arrows" type="HBoxContainer" parent="TargetSelect/Buttons" unique_id=27878010]
+[node name="Arrows" type="HBoxContainer" parent="PlanningUI/TargetSelect/Buttons" unique_id=27878010]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -449,7 +453,7 @@ grow_vertical = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="ArrowButton" parent="TargetSelect/Buttons/Arrows" unique_id=418891837 instance=ExtResource("131_8fhg1")]
+[node name="ArrowButton" parent="PlanningUI/TargetSelect/Buttons/Arrows" unique_id=418891837 instance=ExtResource("131_8fhg1")]
 custom_minimum_size = Vector2(58, 40)
 layout_mode = 2
 focus_behavior_recursive = 2
@@ -460,57 +464,75 @@ texture_disabled = null
 texture_focused = ExtResource("21_gljl2")
 stretch_mode = 4
 
+[node name="ItemPanel" parent="PlanningUI" unique_id=1715438360 instance=ExtResource("25_tdt4q")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_top = -164.0
+offset_bottom = 171.0
+
+[node name="StatusContainer" type="HBoxContainer" parent="." unique_id=72980342]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 90)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = 260.0
+offset_right = 918.3334
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+theme_override_constants/separation = -8
+script = ExtResource("29_rfk4w")
+
 [node name="SelectedGags" type="HBoxContainer" parent="." unique_id=2015893393]
 unique_name_in_owner = true
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -927.0
-offset_top = -95.0
-offset_right = -27.0
-offset_bottom = -47.0
-grow_horizontal = 0
+offset_left = -332.0
+offset_top = -116.0
+offset_right = 348.0
+offset_bottom = -68.0
+grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 10
-alignment = 2
 script = ExtResource("138_dqsj0")
 
 [node name="SelectedGag" parent="SelectedGags" unique_id=662183976 instance=ExtResource("24_38lnm")]
 layout_mode = 2
 
-[node name="ItemPanel" parent="." unique_id=1715438360 instance=ExtResource("25_tdt4q")]
+[node name="CogPanels" type="HBoxContainer" parent="." unique_id=1766532749]
 unique_name_in_owner = true
-visible = false
-
-[node name="StatusContainer" type="HBoxContainer" parent="." unique_id=72980342]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(700, 90)
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 149.0
-offset_top = -87.0
-offset_right = 1049.0
-offset_bottom = 3.0
-grow_vertical = 0
-scale = Vector2(0.75, 0.75)
-theme_override_constants/separation = -8
-script = ExtResource("29_rfk4w")
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 25.0
+offset_bottom = 126.0
+grow_horizontal = 2
+scale = Vector2(1.08, 1.08)
+pivot_offset = Vector2(576, -25)
+theme_override_constants/separation = 24
+alignment = 1
+script = ExtResource("14_j8cyf")
 
 [connection signal="s_gag_canceled" from="." to="." method="gag_canceled"]
 [connection signal="s_gag_pressed" from="." to="." method="gag_selected"]
 [connection signal="s_gags_updated" from="." to="SelectedGags" method="refresh_gags"]
-[connection signal="s_turn_complete" from="." to="CogPanels" method="reset"]
 [connection signal="s_turn_complete" from="." to="SelectedGags" method="on_round_start"]
-[connection signal="visibility_changed" from="BattleMenuContainer/RightPanel" to="BattleMenuContainer/RightPanel" method="update_stats_text"]
-[connection signal="mouse_entered" from="BattleMenuContainer/BottomRight/Fire" to="." method="fire_hovered"]
-[connection signal="mouse_exited" from="BattleMenuContainer/BottomRight/Fire" to="." method="gag_unhovered"]
-[connection signal="pressed" from="BattleMenuContainer/BottomRight/Fire" to="." method="fire_pressed"]
-[connection signal="pressed" from="BattleMenuContainer/BottomRight/LockIn" to="." method="complete_turn"]
-[connection signal="pressed" from="BattleMenuContainer/BottomRight/SOS" to="." method="open_items"]
-[connection signal="pressed" from="TargetSelect/Buttons/Back" to="TargetSelect" method="arrow_pressed" binds= [-1]]
+[connection signal="s_turn_complete" from="." to="CogPanels" method="reset"]
+[connection signal="visibility_changed" from="PlanningUI/BattleMenuContainer/RightPanel" to="PlanningUI/BattleMenuContainer/RightPanel" method="update_stats_text"]
+[connection signal="mouse_entered" from="PlanningUI/BattleMenuContainer/BottomRight/Fire" to="." method="fire_hovered"]
+[connection signal="mouse_exited" from="PlanningUI/BattleMenuContainer/BottomRight/Fire" to="." method="gag_unhovered"]
+[connection signal="pressed" from="PlanningUI/BattleMenuContainer/BottomRight/Fire" to="." method="fire_pressed"]
+[connection signal="pressed" from="PlanningUI/BattleMenuContainer/BottomRight/LockIn" to="." method="complete_turn"]
+[connection signal="pressed" from="PlanningUI/BattleMenuContainer/BottomRight/SOS" to="." method="open_items"]
+[connection signal="pressed" from="PlanningUI/TargetSelect/Buttons/Back" to="PlanningUI/TargetSelect" method="arrow_pressed" binds= [-1]]
 [connection signal="s_gag_canceled" from="SelectedGags" to="." method="cancel_gag"]
 
-[editable path="BattleMenuContainer/BottomRight/LockIn"]
+[editable path="PlanningUI/BattleMenuContainer/BottomRight/LockIn"]

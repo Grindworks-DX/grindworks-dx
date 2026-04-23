@@ -11,8 +11,8 @@ const CRIT_SFX: Array = [CRIT_SFX_1, CRIT_SFX_2, CRIT_SFX_3, CRIT_SFX_4]
 
 ## Child references
 @onready var scene_timer := $SceneTimer
-@onready var attack_label := $AttackLabel
-@onready var summary_label := $SummaryLabel
+@onready var attack_label := %AttackLabel
+@onready var summary_label := %SummaryLabel
 
 ## Locals
 var player = Util.get_player()
@@ -104,7 +104,7 @@ func revert_battle_speed() -> void:
 
 func begin_turn():
 	# Hide Battle UI
-	battle_ui.hide()
+	battle_ui.planning_ui.hide()
 	apply_battle_speed()
 	current_round += 1
 	is_round_ongoing = true
@@ -563,8 +563,8 @@ func show_action_name(action_name : String, action_summary := "", action_color :
 	summary_label.set_text(action_summary)
 	summary_label.label_settings.font_color = summary_color
 	summary_label.label_settings.shadow_color = summary_shadow
-	summary_label.show()
-	await sleep(4.0)
+	summary_label.visible = !action_summary.is_empty()
+	await sleep(6.0)
 	
 	if attack_label.text == action_name:
 		attack_label.hide()

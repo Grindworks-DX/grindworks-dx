@@ -23,7 +23,7 @@ script = ExtResource("1_8sgxc")
 item_pool = ExtResource("2_5be2w")
 
 [node name="BirdsEye" type="Node3D" parent="." unique_id=1434794390]
-transform = Transform3D(1, 0, 0, 0, 0.64278793, 0.7660448, 0, -0.7660448, 0.64278793, 0, 5.225, 4)
+transform = Transform3D(1, 0, 0, 0, 0.64278793, 0.7660448, 0, -0.7660448, 0.64278793, 0, 4.735, 4)
 
 [node name="BattleCamera" type="Camera3D" parent="BirdsEye" unique_id=323521800]
 physics_interpolation_mode = 2

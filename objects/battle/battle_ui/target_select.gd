@@ -28,7 +28,7 @@ func reposition_buttons(cogs: int):
 		newbutton.focus_exited.connect(on_arrow_unhovered.bind(i))
 		newbutton.disabled = false
 		
-		var cog: Cog = get_parent().get_parent().cogs[i]
+		var cog: Cog = BattleService.ongoing_battle.cogs[i]
 		if gag.target_type == BattleAction.ActionTarget.ENEMY_SPLASH:
 			%TargetCenterLabel.text = "Which Cogs?"
 		else:

@@ -53,12 +53,13 @@ func battle_movie() -> void:
 	meteor_pos /= targets.size()
 
 	# Set cam angle
-	if targets[0] is Player:
-		var player: Player = targets[0]
-		battle_node.focus_character(player, 6.0, 0)
-	else:
-		battle_node.focus_cogs()
-		battle_node.battle_cam.position.z += 1
+	if !targets.is_empty():
+		if targets[0] is Player:
+			var player: Player = targets[0]
+			battle_node.focus_character(player, 6.0, 0)
+		else:
+			battle_node.focus_cogs()
+			battle_node.battle_cam.position.z += 1
 	
 	# Oh yeah. It's meteor time
 	var meteor := METEOR.instantiate()

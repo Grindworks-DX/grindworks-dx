@@ -77,7 +77,7 @@ func reset_panel(panel) -> void:
 
 func on_round_start(_gag_order: Array[ToonAttack]) -> void:
 	for panel in panels:
-		reset_panel(panel)
+		panel.get_node('GeneralButton').hide()
 
 func cancel_gag(index: int):
 	s_gag_canceled.emit(index)

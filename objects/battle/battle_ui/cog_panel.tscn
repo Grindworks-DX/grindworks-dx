@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dg7eslyvsgjpm" path="res://models/cogs/misc/hp_light/glow.png" id="4_3emoa"]
 [ext_resource type="FontFile" uid="uid://815gwlftl5ik" path="res://fonts/impress-bt.ttf" id="4_rqo48"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_wbork"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_rqo48"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="LabelSettings" id="LabelSettings_2vko0"]
@@ -25,7 +25,7 @@ corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
-[node name="CogPanel" type="Control"]
+[node name="CogPanel" type="Control" unique_id=1489456230]
 custom_minimum_size = Vector2(160, 140)
 layout_mode = 3
 anchors_preset = 0
@@ -33,7 +33,7 @@ offset_right = 178.0
 offset_bottom = 199.0
 script = ExtResource("2_luwxf")
 
-[node name="Profile" type="TextureRect" parent="."]
+[node name="Profile" type="TextureRect" parent="." unique_id=778225730]
 unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0.435294)
 custom_minimum_size = Vector2(160, 100)
@@ -43,7 +43,7 @@ offset_bottom = 100.0
 texture = ExtResource("1_1tuon")
 expand_mode = 1
 
-[node name="CogFace" parent="Profile" instance=ExtResource("3_t5175")]
+[node name="CogFace" parent="Profile" unique_id=1570054293 instance=ExtResource("3_t5175")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 1
@@ -58,10 +58,10 @@ offset_right = 55.9769
 offset_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("ViewportTexture_wbork")
+texture = SubResource("ViewportTexture_rqo48")
 expand_mode = 1
 
-[node name="Level" type="Label" parent="Profile"]
+[node name="Level" type="Label" parent="Profile" unique_id=1639043194]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 34.0
@@ -72,7 +72,7 @@ text = "Level 1"
 label_settings = SubResource("LabelSettings_2vko0")
 horizontal_alignment = 1
 
-[node name="HealthLight" type="TextureRect" parent="Profile"]
+[node name="HealthLight" type="TextureRect" parent="Profile" unique_id=1771325652]
 unique_name_in_owner = true
 self_modulate = Color(0, 1, 0, 1)
 layout_mode = 0
@@ -83,7 +83,7 @@ offset_bottom = 48.0
 texture = ExtResource("3_jlr6j")
 expand_mode = 1
 
-[node name="HealthGlow" type="TextureRect" parent="Profile/HealthLight"]
+[node name="HealthGlow" type="TextureRect" parent="Profile/HealthLight" unique_id=185203440]
 unique_name_in_owner = true
 self_modulate = Color(0, 1, 0, 0.501961)
 z_index = -1
@@ -95,7 +95,7 @@ offset_bottom = 36.0
 texture = ExtResource("4_3emoa")
 expand_mode = 1
 
-[node name="CogHP" type="Label" parent="Profile/HealthLight"]
+[node name="CogHP" type="Label" parent="Profile/HealthLight" unique_id=1571451830]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = -16.0
@@ -106,17 +106,18 @@ text = "6/6"
 label_settings = SubResource("LabelSettings_q00sf")
 horizontal_alignment = 1
 
-[node name="StatusEffectMask" type="Control" parent="."]
+[node name="StatusEffectMask" type="Control" parent="." unique_id=1968619215]
 unique_name_in_owner = true
 clip_contents = true
 anchors_preset = 0
-offset_left = -4.0
+offset_left = -88.0
 offset_top = 88.0
-offset_right = 368.0
+offset_right = 264.0
 offset_bottom = 272.0
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(176, 0)
 
-[node name="EffectPanel" type="Panel" parent="StatusEffectMask"]
+[node name="EffectPanel" type="Panel" parent="StatusEffectMask" unique_id=355110197]
 unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0.25)
 layout_mode = 1
@@ -128,16 +129,18 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lsfax")
 
-[node name="StatusEffects" type="GridContainer" parent="StatusEffectMask"]
+[node name="StatusEffects" type="GridContainer" parent="StatusEffectMask" unique_id=1708485771]
 unique_name_in_owner = true
 clip_contents = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -186.0
-offset_right = 186.0
+offset_left = -176.0
+offset_right = 196.0
 grow_horizontal = 2
+theme_override_constants/h_separation = -4
+theme_override_constants/v_separation = -8
 columns = 4
 
 [connection signal="mouse_entered" from="StatusEffectMask" to="." method="statuses_hovered"]

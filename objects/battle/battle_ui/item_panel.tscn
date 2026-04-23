@@ -848,16 +848,17 @@ font = SubResource("FontFile_rsnhx")
 font_size = 24
 shadow_color = Color(0.0807833, 0.0807833, 0.0807833, 1)
 
-[node name="ItemPanel" type="TextureRect"]
+[node name="ItemPanel" type="TextureRect" unique_id=444708129]
+custom_minimum_size = Vector2(539, 335)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -269.0
-offset_top = -224.0
+offset_top = -159.0
 offset_right = 270.0
-offset_bottom = 241.0
+offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_vxmce")
@@ -865,7 +866,7 @@ expand_mode = 1
 script = ExtResource("2_a3c6l")
 point_label_settings = SubResource("LabelSettings_n4vqr")
 
-[node name="MenuSize" type="Control" parent="."]
+[node name="MenuSize" type="Control" parent="." unique_id=628088381]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -877,7 +878,7 @@ offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MenuSize"]
+[node name="MarginContainer" type="MarginContainer" parent="MenuSize" unique_id=1573539850]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -886,27 +887,27 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_bottom = 4
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MenuSize/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MenuSize/MarginContainer" unique_id=1750268651]
 layout_mode = 2
 theme = ExtResource("4_hmhvn")
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuSize/MarginContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuSize/MarginContainer/ScrollContainer" unique_id=265638087]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 alignment = 1
 
-[node name="TreasureTitle" type="Label" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="TreasureTitle" type="Label" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1504865029]
 layout_mode = 2
 text = "Treasures"
 label_settings = SubResource("LabelSettings_66ssk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TreasureContainer" type="HBoxContainer" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="TreasureContainer" type="HBoxContainer" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer" unique_id=178310257]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
@@ -914,18 +915,18 @@ size_flags_horizontal = 3
 mouse_filter = 2
 alignment = 1
 
-[node name="ToonUpTitle" type="Label" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="ToonUpTitle" type="Label" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer" unique_id=366171430]
 layout_mode = 2
 text = "Toon-Up"
 label_settings = SubResource("LabelSettings_66ssk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Spacer" type="Control" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="Spacer" type="Control" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1737920565]
 custom_minimum_size = Vector2(0, 4)
 layout_mode = 2
 
-[node name="ToonUpContainer" type="HBoxContainer" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="ToonUpContainer" type="HBoxContainer" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2033918343]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
@@ -933,27 +934,29 @@ size_flags_horizontal = 3
 mouse_filter = 2
 alignment = 1
 
-[node name="Spacer2" type="Control" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="Spacer2" type="Control" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer" unique_id=66558899]
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 
-[node name="VoucherTitle" type="Label" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="VoucherTitle" type="Label" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer" unique_id=186068211]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "Gag Vouchers"
 label_settings = SubResource("LabelSettings_66ssk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VoucherContainer" type="HBoxContainer" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="VoucherContainer" type="HBoxContainer" parent="MenuSize/MarginContainer/ScrollContainer/VBoxContainer" unique_id=776697358]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 alignment = 1
 
-[node name="GagVouchers" type="Control" parent="MenuSize"]
+[node name="GagVouchers" type="Control" parent="MenuSize" unique_id=1254504695]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -966,14 +969,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="VoucherTemplate" type="Control" parent="MenuSize/GagVouchers"]
+[node name="VoucherTemplate" type="Control" parent="MenuSize/GagVouchers" unique_id=523400321]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(55, 80)
 anchors_preset = 0
 script = ExtResource("5_oorw0")
 
-[node name="TrackName" type="Label" parent="MenuSize/GagVouchers/VoucherTemplate"]
+[node name="TrackName" type="Label" parent="MenuSize/GagVouchers/VoucherTemplate" unique_id=2131430097]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -987,7 +990,7 @@ label_settings = SubResource("LabelSettings_5krt3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GagSprite" parent="MenuSize/GagVouchers/VoucherTemplate" instance=ExtResource("6_afh8f")]
+[node name="GagSprite" parent="MenuSize/GagVouchers/VoucherTemplate" unique_id=353671425 instance=ExtResource("6_afh8f")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1004,9 +1007,8 @@ pivot_offset = Vector2(20, 20)
 texture_normal = null
 texture_pressed = null
 texture_disabled = null
-font_size = 36.0
 
-[node name="Quantity" type="Label" parent="MenuSize/GagVouchers/VoucherTemplate"]
+[node name="Quantity" type="Label" parent="MenuSize/GagVouchers/VoucherTemplate" unique_id=88011043]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1023,7 +1025,7 @@ label_settings = SubResource("LabelSettings_5krt3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ToonUp" type="Control" parent="MenuSize"]
+[node name="ToonUp" type="Control" parent="MenuSize" unique_id=212407230]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -1036,14 +1038,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="ToonUpTemplate" type="Control" parent="MenuSize/ToonUp"]
+[node name="ToonUpTemplate" type="Control" parent="MenuSize/ToonUp" unique_id=1569481050]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(55, 80)
 anchors_preset = 0
 script = ExtResource("5_oorw0")
 
-[node name="GagName" type="Label" parent="MenuSize/ToonUp/ToonUpTemplate"]
+[node name="GagName" type="Label" parent="MenuSize/ToonUp/ToonUpTemplate" unique_id=1870368193]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -1059,7 +1061,7 @@ label_settings = SubResource("LabelSettings_vxmce")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GagSprite" parent="MenuSize/ToonUp/ToonUpTemplate" instance=ExtResource("6_afh8f")]
+[node name="GagSprite" parent="MenuSize/ToonUp/ToonUpTemplate" unique_id=1798025978 instance=ExtResource("6_afh8f")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1076,9 +1078,8 @@ pivot_offset = Vector2(20, 20)
 texture_normal = null
 texture_pressed = null
 texture_disabled = null
-font_size = 36.0
 
-[node name="Quantity" type="Label" parent="MenuSize/ToonUp/ToonUpTemplate"]
+[node name="Quantity" type="Label" parent="MenuSize/ToonUp/ToonUpTemplate" unique_id=201983422]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1095,7 +1096,7 @@ label_settings = SubResource("LabelSettings_vxmce")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Treasure" type="Control" parent="MenuSize"]
+[node name="Treasure" type="Control" parent="MenuSize" unique_id=123328344]
 visible = false
 anchors_preset = 0
 offset_left = 4.0
@@ -1103,7 +1104,7 @@ offset_top = 12.0
 offset_right = 423.0
 offset_bottom = 326.0
 
-[node name="TreasureTemplate" type="Control" parent="MenuSize/Treasure"]
+[node name="TreasureTemplate" type="Control" parent="MenuSize/Treasure" unique_id=1943203915]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(55, 80)
 anchors_preset = 0
@@ -1112,7 +1113,7 @@ offset_right = 55.0
 offset_bottom = 85.0
 script = ExtResource("5_oorw0")
 
-[node name="GagName" type="Label" parent="MenuSize/Treasure/TreasureTemplate"]
+[node name="GagName" type="Label" parent="MenuSize/Treasure/TreasureTemplate" unique_id=1351312241]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -1128,7 +1129,7 @@ label_settings = SubResource("LabelSettings_rmc0o")
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="GagSprite" parent="MenuSize/Treasure/TreasureTemplate" instance=ExtResource("6_afh8f")]
+[node name="GagSprite" parent="MenuSize/Treasure/TreasureTemplate" unique_id=2129375658 instance=ExtResource("6_afh8f")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1145,10 +1146,8 @@ pivot_offset = Vector2(20, 20)
 texture_normal = ExtResource("7_0e63b")
 texture_pressed = null
 texture_disabled = null
-stretch_mode = 5
-font_size = 36.0
 
-[node name="Quantity" type="Label" parent="MenuSize/Treasure/TreasureTemplate"]
+[node name="Quantity" type="Label" parent="MenuSize/Treasure/TreasureTemplate" unique_id=1987732864]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1165,7 +1164,7 @@ text = "x3"
 label_settings = SubResource("LabelSettings_rmc0o")
 horizontal_alignment = 1
 
-[node name="ToonupPreventer" type="TextureRect" parent="MenuSize"]
+[node name="ToonupPreventer" type="TextureRect" parent="MenuSize" unique_id=322802037]
 unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0.188235)
 material = SubResource("CanvasItemMaterial_22jrs")
@@ -1177,8 +1176,9 @@ offset_bottom = 244.0
 texture = ExtResource("4_a3c6l")
 expand_mode = 1
 
-[node name="VoucherPreventer" type="TextureRect" parent="MenuSize"]
+[node name="VoucherPreventer" type="TextureRect" parent="MenuSize" unique_id=867148562]
 unique_name_in_owner = true
+visible = false
 self_modulate = Color(1, 1, 1, 0.188235)
 material = SubResource("CanvasItemMaterial_22jrs")
 layout_mode = 0
@@ -1189,7 +1189,7 @@ offset_bottom = 368.0
 texture = ExtResource("4_a3c6l")
 expand_mode = 1
 
-[node name="BannerSize" type="Control" parent="."]
+[node name="BannerSize" type="Control" parent="." unique_id=1861811625]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -1199,17 +1199,15 @@ offset_right = -18.0
 offset_bottom = 60.0
 grow_horizontal = 2
 
-[node name="Panel" type="Panel" parent="BannerSize"]
+[node name="Panel" type="Panel" parent="BannerSize" unique_id=1959440043]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 11.0
-offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="Label" parent="BannerSize"]
+[node name="Title" type="Label" parent="BannerSize" unique_id=1736308486]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1217,9 +1215,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -136.0
-offset_top = -3.0
+offset_top = -12.0
 offset_right = 136.0
-offset_bottom = 28.0
+offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Items"
@@ -1227,21 +1225,23 @@ label_settings = SubResource("LabelSettings_yn3eg")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CloseButton" parent="BannerSize" instance=ExtResource("6_afh8f")]
+[node name="CloseButton" parent="BannerSize" unique_id=1813473278 instance=ExtResource("6_afh8f")]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = 6
 anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
+anchor_bottom = 0.5
 offset_left = -44.0
-offset_top = 11.0
+offset_top = -22.0
 offset_right = 0.0
-offset_bottom = 55.0
+offset_bottom = 22.0
 grow_horizontal = 0
+grow_vertical = 2
 texture_normal = ExtResource("8_0n2r4")
 texture_pressed = ExtResource("9_lcsq8")
 texture_hover = ExtResource("10_w4vpw")
 texture_disabled = null
-font_size = 36.0
 
 [connection signal="pressed" from="BannerSize/CloseButton" to="." method="_exit"]

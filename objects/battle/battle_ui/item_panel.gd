@@ -110,7 +110,7 @@ func use_voucher(track: Track) -> void:
 func _ready_toonup() -> void:
 	_refresh_toonup()
 	if is_instance_valid(BattleService.ongoing_battle):
-		get_parent().s_update_toonups.connect(_refresh_toonup)
+		BattleService.ongoing_battle.battle_ui.s_update_toonups.connect(_refresh_toonup)
 
 func _populate_toonup() -> void:
 	var toonups := get_toonup_counts()
@@ -272,7 +272,7 @@ func get_track(track_name: String) -> Track:
 
 func _exit() -> void:
 	hide()
-	get_parent().main_container.show()
+	BattleService.ongoing_battle.battle_ui.main_container.show()
 
 func play_fail_sfx() -> void:
 	AudioManager.play_sound(GameLoader.load("res://audio/sfx/ui/ring_miss.ogg"))

@@ -39,7 +39,13 @@ func set_cog(cog: Cog):
 
 	if not hp_hidden:
 		hp_label.show()
-		hp_label.text = str(cog.stats.hp) + '/' + str(cog.stats.max_hp)
+
+	cog.stats.hp_changed.connect(set_hp_label.unbind(1))
+	set_hp_label()
+	
+	BattleService.s_round_ended.connect(func(_x):
+		if !is_instance_valid(current_cog): queue_free() 
+	)
 
 	var head: Node3D = cog.dna.get_head()
 	if not cog.dna.head_scale.is_equal_approx(Vector3.ONE * cog.dna.head_scale.x):
@@ -49,6 +55,14 @@ func set_cog(cog: Cog):
 	if not BattleService.ongoing_battle:
 		await BattleService.s_battle_started
 	populate_status_effects(cog)
+
+func set_hp_label():
+	hp_label.text = str(current_cog.stats.hp) + '/' + str(current_cog.stats.max_hp)
+	if !current_cog.stats.hp > 0:
+		modulate = Color(0.451, 0.451, 0.451, 1.0)
+		light.hide()
+		glow.hide()
+		effect_mask.hide()
 
 func sync_colors(light_color: Color, glow_color: Color, cog: Cog):
 	if (not is_instance_valid(cog)) or cog != current_cog:

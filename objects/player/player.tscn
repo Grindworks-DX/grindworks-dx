@@ -143,7 +143,7 @@ font = ExtResource("20_fnojw")
 font_size = 24
 shadow_color = Color(0, 0, 0, 1)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head_node")]
+[node name="Player" type="CharacterBody3D" unique_id=1346336334 node_paths=PackedStringArray("head_node")]
 collision_layer = 6
 collision_mask = 5
 floor_max_angle = 1.309
@@ -152,28 +152,28 @@ script = ExtResource("1_nexlg")
 stats = SubResource("Resource_tmow5")
 head_node = NodePath("Head")
 
-[node name="Toon" parent="." instance=ExtResource("5_ryhr4")]
+[node name="Toon" parent="." unique_id=800958817 instance=ExtResource("5_ryhr4")]
 unique_name_in_owner = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2028124267]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.564, 0)
 shape = SubResource("CapsuleShape3D_3sqh5")
 
-[node name="PlayerCamera" parent="." instance=ExtResource("16_tmow5")]
+[node name="PlayerCamera" parent="." unique_id=1639721200 instance=ExtResource("16_tmow5")]
 unique_name_in_owner = true
 process_physics_priority = -100
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06085, 0)
 
-[node name="Head" type="Node3D" parent="."]
+[node name="Head" type="Node3D" parent="." unique_id=243561096]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.920243, 0)
 
-[node name="MoveSFX" type="AudioStreamPlayer" parent="."]
+[node name="MoveSFX" type="AudioStreamPlayer" parent="." unique_id=1566637674]
 unique_name_in_owner = true
 bus = &"SFX"
 
-[node name="Items" type="Node" parent="."]
+[node name="Items" type="Node" parent="." unique_id=2141608706]
 
-[node name="GUI" type="Control" parent="."]
+[node name="GUI" type="Control" parent="." unique_id=1177355749]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
@@ -183,11 +183,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="QuestNotification" parent="GUI" instance=ExtResource("19_2bvb5")]
+[node name="QuestNotification" parent="GUI" unique_id=1109842636 instance=ExtResource("19_2bvb5")]
 unique_name_in_owner = true
 layout_mode = 1
 
-[node name="LaffMeter" parent="GUI" instance=ExtResource("6_553ug")]
+[node name="LaffMeter" parent="GUI" unique_id=1014651457 instance=ExtResource("6_553ug")]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 2
@@ -203,7 +203,7 @@ grow_horizontal = 1
 grow_vertical = 0
 scale = Vector2(1.2, 1.2)
 
-[node name="BeanJar" parent="GUI" instance=ExtResource("9_2bgkf")]
+[node name="BeanJar" parent="GUI" unique_id=1296201761 instance=ExtResource("9_2bgkf")]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 2
@@ -220,7 +220,7 @@ grow_vertical = 0
 scale = Vector2(0.85, 0.85)
 pivot_offset = Vector2(50, 62.5)
 
-[node name="FloorLabel" type="Label" parent="GUI"]
+[node name="FloorLabel" type="Label" parent="GUI" unique_id=885106932]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
@@ -239,11 +239,11 @@ label_settings = SubResource("LabelSettings_530nt")
 horizontal_alignment = 2
 script = ExtResource("21_dh5ch")
 
-[node name="GameTimer" parent="GUI" instance=ExtResource("22_0c65h")]
+[node name="GameTimer" parent="GUI" unique_id=1560368756 instance=ExtResource("22_0c65h")]
 unique_name_in_owner = true
 layout_mode = 0
 
-[node name="BoostTextQueue" type="Control" parent="GUI"]
+[node name="BoostTextQueue" type="Control" parent="GUI" unique_id=361164844]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
@@ -257,11 +257,11 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("23_468de")
 
-[node name="ItemDescriptions" parent="GUI" instance=ExtResource("5_ajyaa")]
+[node name="ItemDescriptions" parent="GUI" unique_id=843541933 instance=ExtResource("5_ajyaa")]
 unique_name_in_owner = true
 visible = false
 
-[node name="ActiveItemUI" parent="GUI" instance=ExtResource("25_r5k7d")]
+[node name="ActiveItemUI" parent="GUI" unique_id=28837869 instance=ExtResource("25_r5k7d")]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 2
@@ -269,35 +269,35 @@ anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 0.0
 anchor_bottom = 1.0
-offset_left = 14.0
-offset_top = -324.0
-offset_right = 116.0
-offset_bottom = -234.0
+offset_left = 122.0
+offset_top = -125.0
+offset_right = 224.0
+offset_bottom = -35.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="Controller" type="Node3D" parent="."]
+[node name="Controller" type="Node3D" parent="." unique_id=1699677718]
 unique_name_in_owner = true
 visible = false
 script = ExtResource("26_y35q5")
 metadata/_custom_type_script = "uid://cs7q470v3yvq3"
 
-[node name="Walk" type="Node3D" parent="Controller"]
+[node name="Walk" type="Node3D" parent="Controller" unique_id=1656529095]
 script = ExtResource("27_no36w")
 metadata/_custom_type_script = "uid://bdi6661gfhedm"
 
-[node name="Chase" type="Node3D" parent="Controller"]
+[node name="Chase" type="Node3D" parent="Controller" unique_id=132863274]
 script = ExtResource("28_tk20p")
 metadata/_custom_type_script = "uid://bdi6661gfhedm"
 
-[node name="Push" type="Node3D" parent="Controller"]
+[node name="Push" type="Node3D" parent="Controller" unique_id=1597921303]
 script = ExtResource("29_3nl4h")
 metadata/_custom_type_script = "uid://bdi6661gfhedm"
 
-[node name="Stopped" type="Node3D" parent="Controller"]
+[node name="Stopped" type="Node3D" parent="Controller" unique_id=164273730]
 script = ExtResource("29_1g4tr")
 metadata/_custom_type_script = "uid://bdi6661gfhedm"
 
-[node name="Sad" type="Node3D" parent="Controller"]
+[node name="Sad" type="Node3D" parent="Controller" unique_id=85551524]
 script = ExtResource("30_ja0yg")
 metadata/_custom_type_script = "uid://bdi6661gfhedm"

@@ -13,9 +13,9 @@ func setup() -> void:
 func on_battle_started(manager: BattleManager) -> void:
 	await get_tree().process_frame
 	manager.battle_stats[Util.get_player()].turns += 1
-	manager.s_round_started.connect(reset_moves.bind(manager), CONNECT_ONE_SHOT)
+	manager.s_round_ended.connect(reset_moves.bind(manager), CONNECT_ONE_SHOT)
 	manager.battle_ui.refresh_turns()
 
-func reset_moves(_actions, manager: BattleManager) -> void:
+func reset_moves(manager: BattleManager) -> void:
 	manager.battle_stats[Util.get_player()].turns -= 1
 	manager.battle_ui.refresh_turns()

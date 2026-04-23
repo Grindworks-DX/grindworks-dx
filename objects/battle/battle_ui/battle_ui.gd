@@ -9,6 +9,8 @@ class_name BattleUI
 @onready var main_container := %BattleMenuContainer
 @onready var gag_order_menu := %SelectedGags
 
+@onready var planning_ui := %PlanningUI
+
 # Bottom-right buttons
 @onready var fire_button := %Fire
 
@@ -85,7 +87,7 @@ func gag_selected(gag: BattleAction) -> void:
 				%TargetSelect.reposition_buttons(get_parent().cogs.size())
 				main_container.hide()
 				%TargetSelect.back.grab_focus(true)
-				var selection = await $TargetSelect.s_arrow_pressed
+				var selection = await %TargetSelect.s_arrow_pressed
 				if selection == -1:
 					# Swap UIs back
 					%TargetSelect.hide()
@@ -136,13 +138,16 @@ func gag_unhovered() -> void:
 	right_panel.clear_display()
 
 func complete_turn():
-	# Reset turns
-	turn = 0
-	
 	var gag_order := sort_gags(selected_gags)
 	
 	s_turn_complete.emit(gag_order)
 	selected_gags.clear()
+	
+	await BattleService.ongoing_battle.s_actions_ended
+	
+	# Reset turns
+	turn = 0
+	gag_order_menu.refresh_gags(selected_gags)
 
 func sort_gags(gags: Array[ToonAttack]) -> Array[ToonAttack]:
 	if Util.get_player().custom_gag_order:
@@ -163,6 +168,7 @@ func sort_gags(gags: Array[ToonAttack]) -> Array[ToonAttack]:
 
 func reset():
 	show()
+	planning_ui.show()
 	cog_panels.assign_cogs(get_parent().cogs)
 	for track in gag_tracks.get_children():
 		track.refresh()
