@@ -27,6 +27,7 @@
 [ext_resource type="Script" uid="uid://bnmo4cxoda23r" path="res://objects/player/boost_text_queue.gd" id="23_468de"]
 [ext_resource type="PackedScene" uid="uid://6se4ghde6e11" path="res://objects/player/ui/active_item_ui/active_item_ui.tscn" id="25_r5k7d"]
 [ext_resource type="Script" uid="uid://cs7q470v3yvq3" path="res://addons/toonlike_tools/fsm/fsm_3d.gd" id="26_y35q5"]
+[ext_resource type="PackedScene" uid="uid://3wpuwo50gkt" path="res://objects/player/ui/item_display.tscn" id="27_82b0h"]
 [ext_resource type="Script" uid="uid://detg88noxcaws" path="res://objects/player/walk_state.gd" id="27_no36w"]
 [ext_resource type="Script" uid="uid://dgix68yymyrlh" path="res://objects/player/chase_state.gd" id="28_tk20p"]
 [ext_resource type="Script" uid="uid://db0ka1vdpp7ot" path="res://objects/player/stopped_state.gd" id="29_1g4tr"]
@@ -275,6 +276,15 @@ offset_right = 224.0
 offset_bottom = -35.0
 grow_horizontal = 1
 grow_vertical = 0
+
+[node name="ItemDisplay" parent="GUI" unique_id=1035120880 instance=ExtResource("27_82b0h")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 1
+offset_left = 23.0
+offset_top = -552.0
+offset_right = -1034.0
+offset_bottom = -224.0
+vertical = true
 
 [node name="Controller" type="Node3D" parent="." unique_id=1699677718]
 unique_name_in_owner = true

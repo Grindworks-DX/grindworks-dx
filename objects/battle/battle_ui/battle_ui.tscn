@@ -76,6 +76,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="BattleMenuContainer" type="Control" parent="PlanningUI" unique_id=1606016607]
 unique_name_in_owner = true
@@ -91,6 +92,7 @@ offset_right = 20.0
 offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="MainPanel" type="Control" parent="PlanningUI/BattleMenuContainer" unique_id=1239790486]
 unique_name_in_owner = true
@@ -517,6 +519,7 @@ offset_bottom = 126.0
 grow_horizontal = 2
 scale = Vector2(1.08, 1.08)
 pivot_offset = Vector2(576, -25)
+mouse_filter = 2
 theme_override_constants/separation = 24
 alignment = 1
 script = ExtResource("14_j8cyf")

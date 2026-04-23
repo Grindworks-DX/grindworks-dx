@@ -1,16 +1,23 @@
+@tool
 extends ScrollContainer
 class_name ItemDisplay
 
 const HOVER_SFX := preload("res://audio/sfx/ui/GUI_rollover.ogg")
 
-@onready var item_container: HBoxContainer = %ItemContainer
+@onready var item_container: FlowContainer = %ItemContainer
+
+@export var vertical := false:
+	set(x):
+		vertical = x
+		%ItemContainer.vertical = vertical
+		%ItemContainer.alignment = FlowContainer.ALIGNMENT_END
 
 func _ready() -> void:
 	ItemService.s_item_applied.connect(add_new_item)
 	Util.s_floor_started.connect(func(_x=null): show())
 	Util.s_floor_ended.connect(func(_x=null): hide())
-	BattleService.s_battle_started.connect(func(_x=null): hide())
-	BattleService.s_battle_ended.connect(func(_x=null): if Util.floor_number != -1: show())
+	#BattleService.s_battle_started.connect(func(_x=null): hide())
+	#BattleService.s_battle_ended.connect(func(_x=null): if Util.floor_number != -1: show())
 
 	if not Util.get_player():
 		await Util.s_player_assigned

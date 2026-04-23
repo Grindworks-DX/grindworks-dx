@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1eauoxbpgsk7" path="res://objects/player/ui/item_display.gd" id="1_yadxl"]
 
-[node name="ItemDisplay" type="ScrollContainer"]
+[node name="ItemDisplay" type="ScrollContainer" unique_id=2004571992]
 clip_contents = false
 custom_minimum_size = Vector2(128, 80)
 anchors_preset = 12
@@ -14,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_yadxl")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2096791362]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -22,9 +22,8 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 20
 
-[node name="ItemContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="ItemContainer" type="FlowContainer" parent="MarginContainer" unique_id=1335063106]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 12
