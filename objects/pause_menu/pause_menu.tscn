@@ -8,6 +8,7 @@
 [ext_resource type="Shader" uid="uid://ryrnfqn0ixe5" path="res://scenes/title_screen/hue_shift.gdshader" id="4_sgslx"]
 [ext_resource type="PackedScene" uid="uid://ewhq7f4agtnn" path="res://objects/quests/scroll/quest_scroll.tscn" id="4_wy1sv"]
 [ext_resource type="Texture2D" uid="uid://ddcktpjy3gdew" path="res://ui_assets/misc/uiAccessoryDelete_up.png" id="6_2ls0o"]
+[ext_resource type="Script" uid="uid://cykv5tbt4501y" path="res://objects/general_ui/stats_display.gd" id="6_6ehxx"]
 [ext_resource type="Texture2D" uid="uid://b7ri5sq021cvo" path="res://ui_assets/misc/uiAccessoryDelete_down.png" id="7_pio3r"]
 [ext_resource type="Texture2D" uid="uid://dn8vndd37lqom" path="res://ui_assets/misc/uiAccessoryDelete_rollover.png" id="8_l83vw"]
 [ext_resource type="PackedScene" uid="uid://dvch4ydlcxhu6" path="res://objects/battle/battle_ui/item_panel.tscn" id="9_1s8xm"]
@@ -108,7 +109,7 @@ font_size = 20
 font_color = Color(0.992759, 0.914398, 0.738453, 1)
 shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1s8xm"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5p4rn"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="LabelSettings" id="LabelSettings_khjnh"]
@@ -521,7 +522,6 @@ color = Color(0.856067, 0.856067, 0.856067, 1)
 
 [node name="Pages" type="Control" parent="." unique_id=1015129880]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -700,6 +700,7 @@ offset_bottom = 125.0
 grow_horizontal = 0
 grow_vertical = 2
 pivot_offset = Vector2(115, 105)
+script = ExtResource("6_6ehxx")
 
 [node name="MarginContainer" type="MarginContainer" parent="Pages/MainPage/StatsHolder/Stats" unique_id=1881362290]
 layout_mode = 2
@@ -861,7 +862,7 @@ offset_right = 53.0
 offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = SubResource("ViewportTexture_1s8xm")
+texture = SubResource("ViewportTexture_5p4rn")
 expand_mode = 1
 
 [node name="NoReward" type="TextureRect" parent="Pages/MainPage/RewardHolder/ItemReward" unique_id=1096662492]

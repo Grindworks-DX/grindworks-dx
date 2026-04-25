@@ -29,10 +29,17 @@
 [ext_resource type="Script" uid="uid://cs7q470v3yvq3" path="res://addons/toonlike_tools/fsm/fsm_3d.gd" id="26_y35q5"]
 [ext_resource type="PackedScene" uid="uid://3wpuwo50gkt" path="res://objects/player/ui/item_display.tscn" id="27_82b0h"]
 [ext_resource type="Script" uid="uid://detg88noxcaws" path="res://objects/player/walk_state.gd" id="27_no36w"]
+[ext_resource type="Script" uid="uid://cykv5tbt4501y" path="res://objects/general_ui/stats_display.gd" id="28_adk3m"]
 [ext_resource type="Script" uid="uid://dgix68yymyrlh" path="res://objects/player/chase_state.gd" id="28_tk20p"]
 [ext_resource type="Script" uid="uid://db0ka1vdpp7ot" path="res://objects/player/stopped_state.gd" id="29_1g4tr"]
 [ext_resource type="Script" uid="uid://br2wo63wlu1mb" path="res://objects/player/push_state.gd" id="29_3nl4h"]
+[ext_resource type="Texture2D" uid="uid://be7nrxoyxenp6" path="res://ui_assets/battle/statuses/damage.png" id="29_rgkrx"]
+[ext_resource type="FontFile" uid="uid://815gwlftl5ik" path="res://fonts/impress-bt.ttf" id="29_ur8bd"]
 [ext_resource type="Script" uid="uid://diyhdcaniqp3h" path="res://objects/player/sad_state.gd" id="30_ja0yg"]
+[ext_resource type="Texture2D" uid="uid://ca70trnfykg5p" path="res://ui_assets/battle/statuses/defense.png" id="30_ur8bd"]
+[ext_resource type="Texture2D" uid="uid://cabh8sh536557" path="res://ui_assets/battle/statuses/evasiveness.png" id="31_p8q04"]
+[ext_resource type="Texture2D" uid="uid://cd0igouy5fqje" path="res://ui_assets/battle/statuses/luck_crit.png" id="32_si0m7"]
+[ext_resource type="Texture2D" uid="uid://dkriwcm0xxlsn" path="res://ui_assets/battle/statuses/speed.png" id="33_bvvlm"]
 
 [sub_resource type="Resource" id="Resource_jj61k"]
 script = ExtResource("2_mf0eg")
@@ -142,6 +149,42 @@ height = 1.12841
 [sub_resource type="LabelSettings" id="LabelSettings_530nt"]
 font = ExtResource("20_fnojw")
 font_size = 24
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jerem"]
+font = ExtResource("29_ur8bd")
+font_size = 15
+font_color = Color(0.992165, 0.682616, 0.465558, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ur8bd"]
+font = ExtResource("20_fnojw")
+font_size = 14
+font_color = Color(0.3, 0.9, 0.3, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b75n2"]
+font = ExtResource("29_ur8bd")
+font_size = 15
+font_color = Color(0.687588, 0.74357, 0.925783, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rgkrx"]
+font = ExtResource("29_ur8bd")
+font_size = 15
+font_color = Color(0.894916, 0.660997, 0.86582, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p8q04"]
+font = ExtResource("29_ur8bd")
+font_size = 15
+font_color = Color(0.568627, 0.862745, 0.623529, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bvvlm"]
+font = ExtResource("29_ur8bd")
+font_size = 15
+font_color = Color(0.984314, 0.65098, 0.592157, 1)
 shadow_color = Color(0, 0, 0, 1)
 
 [node name="Player" type="CharacterBody3D" unique_id=1346336334 node_paths=PackedStringArray("head_node")]
@@ -281,10 +324,183 @@ grow_vertical = 0
 custom_minimum_size = Vector2(0, 0)
 layout_mode = 1
 offset_left = 23.0
-offset_top = -552.0
-offset_right = -1034.0
-offset_bottom = -224.0
+offset_top = -592.0
+offset_right = -1028.0
+offset_bottom = -208.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 0
 vertical = true
+
+[node name="Stats" type="PanelContainer" parent="GUI" unique_id=1081223745]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1020.0
+offset_right = -790.0
+offset_bottom = 200.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(115, 105)
+script = ExtResource("28_adk3m")
+is_mini = true
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/Stats" unique_id=1311001764]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Stats/MarginContainer" unique_id=547138815]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Damage" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer" unique_id=1298907988]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_jerem")
+vertical_alignment = 1
+
+[node name="DamageChange" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer/Damage" unique_id=339831069]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 5.0
+offset_right = 95.0
+offset_bottom = 21.0
+text = "+2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Stats/MarginContainer/VBoxContainer/Damage" unique_id=1725136805]
+layout_mode = 0
+offset_left = -26.848488
+offset_top = -0.9999924
+offset_right = 3.4242325
+offset_bottom = 29.272728
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("29_rgkrx")
+expand_mode = 1
+
+[node name="Defense" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer" unique_id=1480678129]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_b75n2")
+vertical_alignment = 1
+
+[node name="DefenseChange" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer/Defense" unique_id=951024122]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 5.0
+offset_right = 95.0
+offset_bottom = 21.0
+text = "-2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="GUI/Stats/MarginContainer/VBoxContainer/Defense" unique_id=1872317336]
+layout_mode = 0
+offset_left = -26.848488
+offset_top = -2.9999924
+offset_right = 3.4242325
+offset_bottom = 27.272728
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("30_ur8bd")
+expand_mode = 1
+
+[node name="Evasiveness" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer" unique_id=407009159]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_rgkrx")
+vertical_alignment = 1
+
+[node name="EvasivenessChange" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer/Evasiveness" unique_id=2107263565]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 5.0
+offset_right = 95.0
+offset_bottom = 21.0
+text = "+2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="GUI/Stats/MarginContainer/VBoxContainer/Evasiveness" unique_id=473623212]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -4.1514816
+offset_right = 3.2727203
+offset_bottom = 26.121239
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("31_p8q04")
+expand_mode = 1
+
+[node name="Luck" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer" unique_id=466083967]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_p8q04")
+vertical_alignment = 1
+
+[node name="LuckChange" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer/Luck" unique_id=825925526]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 5.0
+offset_right = 95.0
+offset_bottom = 21.0
+text = "-2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect4" type="TextureRect" parent="GUI/Stats/MarginContainer/VBoxContainer/Luck" unique_id=1726505008]
+layout_mode = 0
+offset_left = -26.848488
+offset_top = -2.0
+offset_right = 3.4242325
+offset_bottom = 28.27272
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("32_si0m7")
+expand_mode = 1
+
+[node name="Speed" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer" unique_id=321009064]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_bvvlm")
+vertical_alignment = 1
+
+[node name="SpeedChange" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer/Speed" unique_id=365844425]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 5.0
+offset_right = 95.0
+offset_bottom = 21.0
+text = "+2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect5" type="TextureRect" parent="GUI/Stats/MarginContainer/VBoxContainer/Speed" unique_id=518726193]
+layout_mode = 0
+offset_left = -25.848488
+offset_top = -1.0
+offset_right = 4.4242325
+offset_bottom = 29.27272
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("33_bvvlm")
+expand_mode = 1
 
 [node name="Controller" type="Node3D" parent="." unique_id=1699677718]
 unique_name_in_owner = true

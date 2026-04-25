@@ -43,11 +43,13 @@ var debug_gag_points := false
 	set(x):
 		luck = x
 		s_luck_changed.emit(x)
+		s_stat_changed.emit('luck')
 		print("Luck set to %.2f" % x)
 @export var agility := 1.0:
 	set(x):
 		agility = x
 		s_agility_changed.emit(x)
+		s_stat_changed.emit('agility')
 		print("Agility set to %.2f" % x)
 
 @export var crit_mult := 1.25

@@ -9,24 +9,28 @@ class_name BattleStats
 		if self is PlayerStats:
 			print('damage set to ' +str(x))
 		s_damage_changed.emit(x)
+		s_stat_changed.emit('damage')
 @export var defense := 1.0:
 	set(x):
 		defense = x
 		if self is PlayerStats:
 			print('defense set to ' + str(x))
 		s_defense_changed.emit(x)
+		s_stat_changed.emit('defense')
 @export var evasiveness := 1.0:
 	set(x):
 		evasiveness = x
 		if self is PlayerStats:
 			print('evasiveness set to ' + str(x))
 		s_evasiveness_changed.emit(x)
+		s_stat_changed.emit('evasiveness')
 @export var accuracy := 1.0:
 	set(x):
 		accuracy = x
 		if self is PlayerStats:
 			print('accuracy set to ' + str(x))
 		s_accuracy_changed.emit(x)
+		s_stat_changed.emit('accuracy')
 
 ## STAT CLAMPS
 static var STAT_CLAMPS: Dictionary[String, Vector2] = {
@@ -44,6 +48,7 @@ const UNCAPPED_STAT_VAL := -999.0
 		if self is PlayerStats:
 			print('speed set to ' + str(x))
 		s_speed_changed.emit(x)
+		s_stat_changed.emit('speed')
 @export var max_turns := 3
 
 
@@ -69,11 +74,14 @@ var multipliers: Array[StatMultiplier] = []
 # Signals for objects listening
 signal hp_changed(health: int)
 signal max_hp_changed(health: int)
+
 signal s_damage_changed(new_damaage: float)
 signal s_accuracy_changed(new_accuracy: float)
 signal s_defense_changed(new_defense: float)
 signal s_evasiveness_changed(new_evasiveness: float)
 signal s_speed_changed(new_speed: float)
+
+signal s_stat_changed(stat: String)
 
 ## Modifiers
 var allow_overheal := false
