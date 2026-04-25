@@ -6,6 +6,7 @@ const WARNING_COLOR := Color.RED
 @onready var gag_buttons: = $Gags.get_children()
 @onready var ui_root: BattleUI = NodeGlobals.get_ancestor_of_type(self, BattleUI)
 @onready var point_label := %Points
+@onready var point_bar := %PointsBar
 @onready var track_label := %TrackName
 
 ## Locals
@@ -123,6 +124,10 @@ func refresh():
 		point_label.self_modulate = WARNING_COLOR
 	else:
 		point_label.self_modulate = Color.WHITE
+	
+	point_bar.max_value = roundi(Util.get_player().stats.gag_cap)
+	point_bar.value = roundi(Util.get_player().stats.gag_balance[track.track_name])
+	point_bar.self_modulate = track.track_color
 	
 	s_refreshed.emit(self)
 
