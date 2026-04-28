@@ -41,8 +41,10 @@ var moving := false:
 var velocity: Vector3:
 	get: return player.velocity
 	set(x): player.velocity = x
+
 func get_run_speed() -> float:
-	return run_speed * stats.get_stat('speed')
+	# Breaking Grounds: temporarily disable speed stat movespeed
+	return run_speed #* stats.get_stat('speed')
 
 var run_speed: float:
 	get: return player.run_speed
@@ -97,7 +99,8 @@ func _movement_style_standard(_delta: float, origin: Node3D = camera) -> void:
 func _calc_movement_style_tank() -> Array:
 	var input_dir := Input.get_axis('move_back','move_forward')
 	if input_dir == -1 and sprint: 
-		speed = (run_speed * stats.get_stat('speed')) / 2.0
+		# speed = (run_speed * stats.get_stat('speed')) / 2.0
+		speed = (run_speed * 1.0) / 2.0
 	var direction = (toon.transform.basis * Vector3(0, 0, input_dir)).normalized()
 	if direction:
 		velocity.x = direction.x * speed
@@ -114,7 +117,7 @@ func _movement_style_tank(delta: float) -> void:
 	var input := _calc_movement_style_tank()
 	var input_dir: float = input[0]
 	var input_turn: float = input[1]
-	var turn_speed := TURN_SPEED * player.stats.get_stat('speed')
+	var turn_speed := TURN_SPEED #* player.stats.get_stat('speed')
 	toon.rotation.y += (deg_to_rad(turn_speed * delta) * -input_turn)
 	camera.rotation.y += (deg_to_rad(turn_speed * delta) * -input_turn)
 	

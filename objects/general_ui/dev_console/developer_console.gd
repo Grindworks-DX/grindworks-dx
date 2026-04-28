@@ -387,6 +387,16 @@ class PlayerStatsSetterCommand extends SetterCommand:
 			"extra_lives",
 			"money",
 			"active_reserve_size",
+			# Breaking Grounds
+			'punch',
+			'humor',
+			'gusto',
+			'shrug',
+			'parry',
+			'jokes',
+			'total_jokes',
+			'gag_regen_chance',
+			'heal_on_kill'
 		]
 
 class GiveItemCommand extends Command:

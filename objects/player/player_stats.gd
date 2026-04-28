@@ -39,12 +39,6 @@ var debug_gag_points := false
 @export var quests: Array[Quest]
 @export var quest_rerolls := 3
 @export var pink_slips := 0
-@export var luck := 1.0:
-	set(x):
-		luck = x
-		s_luck_changed.emit(x)
-		s_stat_changed.emit('luck')
-		print("Luck set to %.2f" % x)
 @export var agility := 1.0:
 	set(x):
 		agility = x
@@ -72,7 +66,6 @@ var debug_gag_points := false
 		extra_lives = x
 		s_extra_lives_changed.emit(x)
 signal s_extra_lives_changed(value: int)
-signal s_luck_changed(new_luck: float)
 signal s_agility_changed(new_agility: float)
 
 @export var toonup_boost := 1.0  # MULTIPLICATIVE
@@ -312,3 +305,13 @@ func run_stranger_roll() -> bool:
 	return result
 
 #endregion
+
+#region Breaking Grounds
+
+@export var jokes := 0:
+	set(x):
+		jokes = x
+		if total_jokes < jokes:
+			total_jokes = jokes
+		s_stat_changed.emit('jokes')
+@export var total_jokes := 0

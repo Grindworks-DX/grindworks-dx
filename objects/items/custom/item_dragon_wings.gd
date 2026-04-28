@@ -1,11 +1,13 @@
 extends ItemScript
 
+# TODO: Breaking Grounds rework
+
 const BOOST_STATS :={
 	'luck': 0.01,
 	'evasiveness': 0.01,
 	'defense': 0.01,
 	'damage': 0.01,
-	'speed': 0.01
+	#'speed': 0.01
 }
 var multipliers: Array[StatMultiplier]
 

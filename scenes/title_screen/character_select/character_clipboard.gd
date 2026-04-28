@@ -67,13 +67,14 @@ func update_display() -> void:
 
 	for child in stat_container.get_children():
 		var stat_name := child.name.to_lower()
-		var stat_value: float
+		var stat_value
 		if stat_name in character.base_stats:
 			stat_value = character.base_stats.get(stat_name)
 		elif stat_name in character.additional_stats.keys():
 			stat_value = character.additional_stats[stat_name]
 		if stat_value and not is_mystery_toon:
-			child.get_node('StatLabel').set_text(Util.float_to_perc(stat_value))
+			#child.get_node('StatLabel').set_text(Util.float_to_perc(stat_value) if stat_name != 'speed' else str(stat_value))
+			child.get_node('StatLabel').set_text(str(stat_value))
 		else:
 			child.get_node('StatLabel').set_text("???")
 

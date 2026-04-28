@@ -1,5 +1,7 @@
 extends Node3D
 
+# TODO: Breaking Grounds rework
+
 ## Funny script that's necessary for this item to work
 ## Also before you ask, no it cannot use an item script
 

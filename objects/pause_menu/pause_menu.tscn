@@ -109,7 +109,7 @@ font_size = 20
 font_color = Color(0.992759, 0.914398, 0.738453, 1)
 shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5p4rn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_6ehxx"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="LabelSettings" id="LabelSettings_khjnh"]
@@ -862,7 +862,7 @@ offset_right = 53.0
 offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = SubResource("ViewportTexture_5p4rn")
+texture = SubResource("ViewportTexture_6ehxx")
 expand_mode = 1
 
 [node name="NoReward" type="TextureRect" parent="Pages/MainPage/RewardHolder/ItemReward" unique_id=1096662492]

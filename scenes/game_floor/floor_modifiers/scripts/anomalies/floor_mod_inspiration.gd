@@ -1,7 +1,7 @@
 extends FloorModifier
 
 const BOOST_AMT := 0.2
-const BOOST_STATS: Array[String] = ['damage', 'defense', 'evasiveness', 'luck', 'speed', 'hp']
+const BOOST_STATS: Array[String] = ['damage', 'defense', 'evasiveness', 'luck', 'hp']
 var multiplier := StatMultiplier.new()
 
 func modify_floor() -> void:

@@ -14,8 +14,15 @@
 [ext_resource type="Resource" uid="uid://cyiwxplege133" path="res://objects/items/resources/passive/emergency_unite.tres" id="10_81tpj"]
 [ext_resource type="Resource" uid="uid://ci7shc77lxvwr" path="res://objects/items/resources/passive/flippy_setup.tres" id="12_e8jb6"]
 
-[sub_resource type="Resource" id="Resource_jj61k"]
+[sub_resource type="Resource" id="Resource_4xrsp"]
 script = ExtResource("1_vg416")
+speed = 0
+turns = 2
+punch = 4
+humor = 5
+gusto = 2
+shrug = 5
+metadata/_custom_type_script = "uid://o2fe7ud1faj6"
 
 [sub_resource type="Resource" id="Resource_ugrs1"]
 script = ExtResource("1_ivgnp")
@@ -51,7 +58,7 @@ dna = SubResource("Resource_ax4gq")
 gag_loadout = ExtResource("2_pvta8")
 starting_laff = 30
 starting_items = Array[ExtResource("9_t8yrd")]([ExtResource("10_81tpj"), ExtResource("12_e8jb6")])
-base_stats = SubResource("Resource_jj61k")
+base_stats = SubResource("Resource_4xrsp")
 starting_gags = Dictionary[String, int]({
 "Drop": 0,
 "Lure": 0,
@@ -59,9 +66,6 @@ starting_gags = Dictionary[String, int]({
 "Squirt": 1,
 "Throw": 1,
 "Trap": 0
-})
-additional_stats = Dictionary[String, Variant]({
-"luck": 1.05
 })
 achievement_items = Dictionary[int, ExtResource("9_t8yrd")]({
 26: ExtResource("2_4xrsp")
