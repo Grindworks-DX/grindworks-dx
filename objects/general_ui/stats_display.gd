@@ -10,6 +10,10 @@ const SFX_STAT_CHANGE := preload("res://audio/sfx/ui/sfx_pop.ogg")
 	[%Evasiveness, "evasiveness"],
 	[%Luck, "luck"],
 	[%Speed, "speed"],
+	[%Punch, "punch"],
+	[%Humor, "humor"],
+	[%Gusto, "gusto"],
+	[%Shrug, "shrug"],
 ]
 
 @export var is_mini := false:
@@ -29,7 +33,7 @@ func _ready() -> void:
 	Globals.s_game_started.connect(update, CONNECT_ONE_SHOT)
 
 func update() -> void:
-	if !Util.get_player().is_connected("s_stat_changed", update):
+	if !Util.get_player().stats.is_connected("s_stat_changed", update):
 		Util.get_player().stats.s_stat_changed.connect(update.unbind(1))
 	apply_stat_labels()
 	apply_stat_changes()
@@ -37,8 +41,10 @@ func update() -> void:
 func apply_stat_labels() -> void:
 	for stat_array: Array in StatInfo:
 		stat_array[0].text = "" if is_mini else "%s: " % stat_array[1].capitalize()
-		stat_array[0].text += '%d' % Util.get_player().stats.get_stat_as_percent(stat_array[1]) if Util.player_exists() else 100
-		if stat_array[1] != 'speed': stat_array[0].text += "%"
+		if stat_array[1] in ['damage', 'defense', 'evasiveness', 'luck']:
+			stat_array[0].text += '%d%%' % Util.get_player().stats.get_stat_as_percent(stat_array[1]) if Util.player_exists() else 100
+		else:
+			stat_array[0].text += str(ceili(Util.get_player().stats.get_stat(stat_array[1])))
 
 func apply_stat_changes() -> void:
 	var stat_up_color := Color("4de64d")

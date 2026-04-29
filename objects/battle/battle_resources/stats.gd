@@ -107,7 +107,7 @@ func _to_string():
 		return_string += property.name + ': ' + str(get(property.name)) + '\n'
 	return return_string
 
-func get_stat(stat: String) -> float:
+func get_stat(stat: String):
 	if stat in self:
 		var base_stat = get(stat)
 		var additive_total := 0.0
@@ -123,7 +123,7 @@ func get_stat(stat: String) -> float:
 		return 1.0
 
 ## Can be added to over time if stats need to be hard capped
-func clamp_stat(stat : String, amount : float) -> float:
+func clamp_stat(stat : String, amount):
 	if stat in STAT_CLAMPS.keys():
 		var stat_min := STAT_CLAMPS[stat].x
 		var stat_max := STAT_CLAMPS[stat].y
@@ -135,10 +135,8 @@ func clamp_stat(stat : String, amount : float) -> float:
 	return amount
 
 func get_stat_as_percent(stat : String) -> int:
-	# speed is not a percentt go away
-	if stat == 'speed': return  get_stat(stat)
-	var stat_as_float := get_stat(stat)
-	var stat_as_int : int = roundi(stat_as_float * 100.0)
+	var stat_as_float: float = get_stat(stat)
+	var stat_as_int: int = roundi(stat_as_float * 100.0)
 	return stat_as_int
 
 #region Breaking Grounds
@@ -178,8 +176,8 @@ signal s_shrug_changed(new_value: int)
 		if Util.player_exists():
 			attribute_changed('gusto', gusto, x)
 		gusto = x
-		if self is PlayerStats:
-			print('gusto set to ' +str(x))
+		#if self is PlayerStats:
+		print('gusto set to ' +str(x))
 		s_gusto_changed.emit(x)
 		s_stat_changed.emit('gusto')
 		

@@ -136,13 +136,21 @@ func first_time_setup() -> void:
 		character = character.duplicate(true)
 		set_loadout(character.gag_loadout)
 		if character.base_stats:
-			damage = character.base_stats.damage
-			defense = character.base_stats.defense
-			evasiveness = character.base_stats.evasiveness
-			accuracy = character.base_stats.accuracy
-			speed = character.base_stats.speed
-			turns = character.base_stats.turns
-			max_turns = character.base_stats.max_turns
+			for stat in [
+				'damage',
+				'defense',
+				'evasiveness',
+				'accuracy',
+				'luck',
+				'speed',
+				'turns',
+				'max_turns',
+				'punch',
+				'humor',
+				'gusto',
+				'shrug'
+			]:
+				set(stat, character.base_stats.get(stat))
 	
 	initialize()
 

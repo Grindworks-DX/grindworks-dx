@@ -137,7 +137,6 @@ damage = 2.0
 defense = 1.2
 evasiveness = 1.1
 accuracy = 1.5
-speed = 1.1
 max_hp = 100
 hp = 70
 turns = 3
@@ -361,6 +360,122 @@ theme_override_constants/margin_bottom = 12
 layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 2
+
+[node name="Punch" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer" unique_id=148875305]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_jerem")
+vertical_alignment = 1
+
+[node name="DamageChange" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer/Punch" unique_id=1812362731]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_right = 95.0
+offset_bottom = 21.0
+text = "+2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Stats/MarginContainer/VBoxContainer/Punch" unique_id=489104192]
+visible = false
+layout_mode = 0
+offset_left = -26.848488
+offset_top = -0.9999924
+offset_right = 3.4242325
+offset_bottom = 29.272728
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("29_rgkrx")
+expand_mode = 1
+
+[node name="Humor" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer" unique_id=732527059]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_jerem")
+vertical_alignment = 1
+
+[node name="DamageChange" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer/Humor" unique_id=2010974513]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_right = 95.0
+offset_bottom = 21.0
+text = "+2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Stats/MarginContainer/VBoxContainer/Humor" unique_id=49812503]
+visible = false
+layout_mode = 0
+offset_left = -26.848488
+offset_top = -0.9999924
+offset_right = 3.4242325
+offset_bottom = 29.272728
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("29_rgkrx")
+expand_mode = 1
+
+[node name="Gusto" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer" unique_id=1120579371]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_jerem")
+vertical_alignment = 1
+
+[node name="DamageChange" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer/Gusto" unique_id=1099657002]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_right = 95.0
+offset_bottom = 21.0
+text = "+2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Stats/MarginContainer/VBoxContainer/Gusto" unique_id=2014428783]
+visible = false
+layout_mode = 0
+offset_left = -26.848488
+offset_top = -0.9999924
+offset_right = 3.4242325
+offset_bottom = 29.272728
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("29_rgkrx")
+expand_mode = 1
+
+[node name="Shrug" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer" unique_id=1489297784]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_jerem")
+vertical_alignment = 1
+
+[node name="DamageChange" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer/Shrug" unique_id=1571414199]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_right = 95.0
+offset_bottom = 21.0
+text = "+2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Stats/MarginContainer/VBoxContainer/Shrug" unique_id=1818507014]
+visible = false
+layout_mode = 0
+offset_left = -26.848488
+offset_top = -0.9999924
+offset_right = 3.4242325
+offset_bottom = 29.272728
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("29_rgkrx")
+expand_mode = 1
 
 [node name="Damage" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer" unique_id=1298907988]
 unique_name_in_owner = true
