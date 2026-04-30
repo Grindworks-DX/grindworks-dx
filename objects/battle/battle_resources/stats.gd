@@ -48,7 +48,7 @@ static var STAT_CLAMPS: Dictionary[String, Vector2] = {
 }
 const UNCAPPED_STAT_VAL := -999.0
 
-# Breaking Grounds: Speed is now an internal battlestat inste
+# Breaking Grounds: Speed is now an internal battlestat instead
 @export var speed := 1:
 	set(x):
 		speed = x
@@ -203,6 +203,8 @@ var attribute_modifiers := {
 	'gusto': { 'speed': 1, 'gag_regen_chance': 0.10 },
 	'shrug': { 'luck': 0.03, 'evasiveness': 0.04 },
 }
+
+# TODO: call this correctly
 
 func attribute_changed(attr: String, old_value, new_value) -> void:
 	if attr not in attribute_modifiers.keys(): return

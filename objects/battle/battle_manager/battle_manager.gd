@@ -85,6 +85,7 @@ func start_battle(cog_array: Array[Cog], battlenode: BattleNode):
 	s_ui_initialized.emit()
 	
 	player.toon.drop_shadow.reparent(player.toon.legs.shadow_bone)
+	populate_enemy_moves()
 
 func append_action(action: BattleAction):
 	round_actions.append(action)
@@ -111,12 +112,10 @@ func begin_turn():
 	# Inject partner moves before player's
 	for partner in Util.get_player().partners:
 		inject_battle_action(partner.get_attack(), 0)
+	# Breaking Grounds: Cog actions are premade at round start and shown to the player
 	# Get actions from every Cog
-	for cog in cogs:
-		for i in cog.stats.turns:
-			var attack := get_cog_attack(cog)
-			if not attack == null:
-				append_action(attack)
+	for attack in enemy_moves:
+		append_action(attack)
 	s_round_started.emit(round_actions)
 	await run_actions()
 	round_over()
@@ -229,6 +228,9 @@ func round_over():
 			battle_node.reposition_cogs()
 			has_moved.clear()
 			is_round_ongoing = false
+			# Breaking Grounds: get enemy moves
+			enemy_moves.clear()
+			populate_enemy_moves()
 
 func end_battle() -> void:
 	# End battle
@@ -856,3 +858,19 @@ func boost_v2_stats(old_cog: Cog, cog: Cog) -> void:
 	for boost: StatBoost in [def_nerf, dmg_boost]:
 		boost.target = cog
 		add_status_effect(boost)
+
+#region Breaking Grounds
+
+signal s_enemy_moves_assigned
+
+# Cog turn generation
+var enemy_moves: Array[BattleAction]
+
+func populate_enemy_moves() -> void:
+	for cog in cogs:
+		for i in cog.stats.turns:
+			var attack := get_cog_attack(cog)
+			if not attack == null:
+				enemy_moves.append(attack)
+	print(enemy_moves)
+	s_enemy_moves_assigned.emit()

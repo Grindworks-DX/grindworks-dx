@@ -5,14 +5,14 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_qgthv"]
 viewport_path = NodePath("SubViewport")
 
-[node name="NodeViewer" type="TextureRect" node_paths=PackedStringArray("camera")]
+[node name="NodeViewer" type="TextureRect" unique_id=1742974584 node_paths=PackedStringArray("camera")]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = SubResource("ViewportTexture_qgthv")
 script = ExtResource("1_iqgby")
 camera = NodePath("SubViewport/Camera3D")
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=167797959]
 unique_name_in_owner = true
 physics_interpolation_mode = 2
 own_world_3d = true
@@ -22,7 +22,7 @@ snap_2d_vertices_to_pixel = true
 msaa_3d = 2
 debug_draw = 1
 
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=1219609789]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.04865, -0.38615, -10.9427)
 projection = 1
 current = true

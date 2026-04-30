@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cthojhm1w7mns" path="res://ui_assets/battle/target_select/PckMn_Arrow_Rlvr.png" id="21_gljl2"]
 [ext_resource type="PackedScene" uid="uid://3ylkd1s4kncx" path="res://objects/battle/battle_ui/selected_gag.tscn" id="24_38lnm"]
 [ext_resource type="PackedScene" uid="uid://dvch4ydlcxhu6" path="res://objects/battle/battle_ui/item_panel.tscn" id="25_tdt4q"]
+[ext_resource type="Script" uid="uid://bk2whvajwre7y" path="res://objects/battle/battle_ui/cog_moves.gd" id="28_k5f0o"]
 [ext_resource type="Script" uid="uid://0y6hs6nosotk" path="res://objects/player/status_container.gd" id="29_rfk4w"]
 [ext_resource type="Script" uid="uid://d2457oaer5pr1" path="res://objects/battle/battle_ui/right_panel.gd" id="36_1a4qv"]
 [ext_resource type="PackedScene" uid="uid://b0d1er4oqiqcn" path="res://objects/general_ui/general_button/general_button.tscn" id="131_8fhg1"]
@@ -50,6 +51,16 @@ font = ExtResource("12_iqdos")
 font_size = 24
 font_color = Color(1, 1, 0, 1)
 shadow_color = Color(0.564706, 0.564706, 0, 1)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(2, 2)
+stacked_shadow_0/color = Color(0, 0, 0, 0.54901963)
+stacked_shadow_0/outline_size = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_iqdos"]
+font = ExtResource("12_iqdos")
+font_size = 24
+font_color = Color(0.91848797, 0.49743938, 0.41782272, 1)
+shadow_color = Color(0.7753446, 0.44680023, 0.13053751, 1)
 stacked_shadow_count = 1
 stacked_shadow_0/offset = Vector2(2, 2)
 stacked_shadow_0/color = Color(0, 0, 0, 0.54901963)
@@ -344,6 +355,24 @@ grow_vertical = 0
 text = "Moves Remaining: 1"
 label_settings = SubResource("LabelSettings_uefqg")
 
+[node name="IncomingLabel" type="Label" parent="PlanningUI" unique_id=632584574]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 104.0
+offset_top = -153.0
+offset_right = 387.0
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Incoming:"
+label_settings = SubResource("LabelSettings_iqdos")
+horizontal_alignment = 2
+
 [node name="TargetSelect" type="TextureRect" parent="PlanningUI" unique_id=1639316139]
 unique_name_in_owner = true
 visible = false
@@ -501,7 +530,6 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -332.0
 offset_top = -116.0
-offset_right = 348.0
 offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -509,6 +537,26 @@ theme_override_constants/separation = 10
 script = ExtResource("138_dqsj0")
 
 [node name="SelectedGag" parent="SelectedGags" unique_id=662183976 instance=ExtResource("24_38lnm")]
+layout_mode = 2
+
+[node name="CogMoves" type="HBoxContainer" parent="." unique_id=428542075]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = -116.0
+offset_right = 404.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+alignment = 2
+script = ExtResource("28_k5f0o")
+
+[node name="CogMove" parent="CogMoves" unique_id=1905001589 instance_placeholder="res://objects/battle/battle_ui/cog_move.tscn"]
 layout_mode = 2
 
 [node name="CogPanels" type="HBoxContainer" parent="." unique_id=1766532749]
