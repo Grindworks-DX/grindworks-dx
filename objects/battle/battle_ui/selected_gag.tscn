@@ -5,11 +5,52 @@
 [ext_resource type="Texture2D" uid="uid://bl4jam52awobx" path="res://ui_assets/battle/queued_gags/PartyPlanner_CancelButtonUp.png" id="3_kkrbn"]
 [ext_resource type="Texture2D" uid="uid://cijunm56f5hq2" path="res://ui_assets/battle/queued_gags/PartyPlanner_CancelButtonDown.png" id="4_l5xvc"]
 [ext_resource type="Texture2D" uid="uid://ctnar4np8tsb3" path="res://ui_assets/battle/queued_gags/PartyPlanner_CancelButtonRollover.png" id="5_sxu28"]
+[ext_resource type="FontFile" uid="uid://815gwlftl5ik" path="res://fonts/impress-bt.ttf" id="6_kkrbn"]
+[ext_resource type="FontFile" uid="uid://cup2yr5w7or1l" path="res://fonts/Minnie.TTF" id="7_l5xvc"]
 
-[node name="SelectedGag" type="TextureRect"]
+[sub_resource type="Theme" id="Theme_sxu28"]
+default_font = ExtResource("6_kkrbn")
+default_font_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7pbi5"]
+bg_color = Color(0.29411766, 0.29803923, 0.3882353, 0.54509807)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fq154"]
+bg_color = Color(0.76862746, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.3254902)
+shadow_size = 2
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kkrbn"]
+font = ExtResource("6_kkrbn")
+outline_size = 4
+outline_color = Color(0.051970966, 0.05197096, 0.05197095, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m07gh"]
+font = ExtResource("7_l5xvc")
+font_size = 14
+font_color = Color(1, 0.84034747, 0.8107204, 1)
+outline_size = 4
+outline_color = Color(0.103743516, 0.10374353, 0.103743516, 1)
+shadow_size = 4
+shadow_color = Color(0.17015168, 0.15703246, 0.28341207, 1)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(2, 2)
+stacked_shadow_0/color = Color(0, 0, 0, 0.37254903)
+stacked_shadow_0/outline_size = 2
+
+[node name="SelectedGag" type="TextureRect" unique_id=680160225]
 texture = ExtResource("1_y0eee")
 
-[node name="GagIcon" type="TextureRect" parent="."]
+[node name="GagIcon" type="TextureRect" parent="." unique_id=1408679624]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -24,18 +65,73 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 
-[node name="GeneralButton" parent="." instance=ExtResource("2_s6w1k")]
+[node name="GeneralButton" parent="." unique_id=1439429829 instance=ExtResource("2_s6w1k")]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -18.0
-offset_top = -18.0
-offset_right = 18.0
-offset_bottom = 18.0
+offset_left = -13.0
+offset_top = -11.0
+offset_right = 23.0
+offset_bottom = 25.000004
 grow_horizontal = 0
+scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("3_kkrbn")
 texture_pressed = ExtResource("4_l5xvc")
 texture_hover = ExtResource("5_sxu28")
-hover_db_offset = 6.0
-press_db_offset = 0.0
+
+[node name="AccuracyBar" type="ProgressBar" parent="." unique_id=1059134465]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.0
+offset_top = 33.0
+offset_right = 22.0
+offset_bottom = 46.0
+grow_horizontal = 2
+theme = SubResource("Theme_sxu28")
+theme_override_colors/font_color = Color(0.8776155, 0.87761575, 0.87761605, 1)
+theme_override_colors/font_outline_color = Color(0.1764706, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_7pbi5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fq154")
+value = 50.0
+
+[node name="TargetingLabel" type="Label" parent="." unique_id=1793891582]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.5
+offset_top = -70.0
+offset_right = 25.5
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "-X--"
+label_settings = SubResource("LabelSettings_kkrbn")
+horizontal_alignment = 1
+
+[node name="DamageLabel" type="Label" parent="." unique_id=1947348599]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = 2.0
+offset_right = 24.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "544"
+label_settings = SubResource("LabelSettings_m07gh")
+horizontal_alignment = 1

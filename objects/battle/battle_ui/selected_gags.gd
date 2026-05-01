@@ -29,6 +29,8 @@ func configure_panel(panel) -> void:
 	panel.get_node('GeneralButton').disabled = true
 	panel.get_node('GeneralButton').hide()
 	panel.get_node('GeneralButton').pressed.connect(cancel_gag.bind(panels.find(panel)))
+	panel.get_node('DamageLabel').text = ""
+	panel.get_node('TargetingLabel').text = ""
 		
 func update_panels() -> void:
 	# Amount of panels is based on Player turns (-1)
@@ -87,11 +89,17 @@ func refresh_gags(gags: Array[ToonAttack]):
 	for i in panels.size():
 		var panel = panels[i]
 		if i < gags.size():
-			panel.get_node('GagIcon').texture = gags[i].icon
+			var gag = gags[i]
+			panel.get_node('GagIcon').texture = gag.icon
 			panel.get_node('GeneralButton').disabled = false
+			var damage = manager.get_damage(gag.damage, gag, gag.targets[0])
+			panel.get_node('DamageLabel').text = "-" + str(damage)
+			panel.get_node('TargetingLabel').text = get_targeting_string(gag)
 		else:
 			panel.get_node('GagIcon').texture = null
 			panel.get_node('GeneralButton').disabled = true
+			panel.get_node('DamageLabel').text = ""
+			panel.get_node('TargetingLabel').text = ""
 		panel.get_node('GeneralButton').visible = not panel.get_node('GeneralButton').disabled
 
 func hover_slot(idx: int) -> void:
@@ -99,7 +107,11 @@ func hover_slot(idx: int) -> void:
 		return
 
 	var gag: ToonAttack = current_gags[idx]
-	var atk_string: String = ""
+	var atk_string := get_targeting_string(gag)
+	HoverManager.hover(atk_string, 20, 0.0125)
+
+func get_targeting_string(gag: ToonAttack) -> String:
+	var atk_string := ""
 	var has_main_target: bool = gag.main_target != null
 	for cog in manager.cogs:
 		if cog in gag.targets:
@@ -107,8 +119,8 @@ func hover_slot(idx: int) -> void:
 		else:
 			atk_string += "-"
 		if manager.cogs.find(cog) < manager.cogs.size() - 1:
-			atk_string += " "
-	HoverManager.hover(atk_string, 20, 0.0125)
+			atk_string += ""
+	return atk_string
 
 func stop_hover() -> void:
 	HoverManager.stop_hover()
