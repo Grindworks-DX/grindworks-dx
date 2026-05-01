@@ -139,7 +139,7 @@ evasiveness = 1.1
 accuracy = 1.5
 max_hp = 100
 hp = 70
-turns = 3
+turns = 4
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3sqh5"]
 radius = 0.292689

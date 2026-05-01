@@ -485,19 +485,19 @@ func get_damage(damage: float, action: BattleAction, target: Node3D) -> int:
 
 	return roundi(boosted_damage / defense)
 
-func roll_for_accuracy(action: BattleAction) -> bool:
+func calculate_accuracy(action: BattleAction) -> float:
 	if action in action_hit_rolls.keys():
 		return action_hit_rolls[action]
 	if action is ToonAttack:
 		if not Util.get_player().use_accuracy:
 			action_hit_rolls[action] = true
-			return true
+			return Globals.ACCURACY_GUARANTEE_HIT
 	elif not 'accuracy' in action or action.accuracy == Globals.ACCURACY_GUARANTEE_HIT:
 		action_hit_rolls[action] = true
-		return true
+		return Globals.ACCURACY_GUARANTEE_HIT
 	elif action.accuracy == Globals.ACCURACY_GUARANTEE_MISS:
 		action_hit_rolls[action] = false
-		return false
+		return Globals.ACCURACY_GUARANTEE_MISS
 	
 	# Get reference values
 	# The base accuracy of the move
@@ -513,7 +513,7 @@ func roll_for_accuracy(action: BattleAction) -> bool:
 	for target in action.targets:
 		if action is CogAttack and action.damage > 0 and target is Player and target.cogs_always_hit:
 			action_hit_rolls[action] = true
-			return true
+			return Globals.ACCURACY_GUARANTEE_HIT
 		evasiveness += battle_stats[target].get_stat('evasiveness')
 	evasiveness /= float(action.targets.size())
 	
@@ -524,12 +524,16 @@ func roll_for_accuracy(action: BattleAction) -> bool:
 	# Cap accuracy at 95%
 	true_acc = clamp(true_acc, 5, 95)
 	
+	return true_acc
+
+func roll_for_accuracy(action: BattleAction) -> bool:
+	var acc := calculate_accuracy(action)
 	# Roll
 	var roll := randi() % 100
 	
-	print(action.action_name + " rolled " + str(roll) + " for accuracy, and needed lower than " + str(true_acc) + ".")
+	print(action.action_name + " rolled " + str(roll) + " for accuracy, and needed lower than " + str(acc) + ".")
 	
-	var hit := roll < true_acc
+	var hit := roll < acc
 	action_hit_rolls[action] = hit
 	return hit
 
