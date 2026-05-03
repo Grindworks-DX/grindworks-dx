@@ -74,7 +74,10 @@ const UNCAPPED_STAT_VAL := -999.0
 				true: hp = maxi(0, x)
 				_: hp = clamp(x, 0, max_hp)
 		hp_changed.emit(hp)
-@export var turns := 1
+@export var turns := 1:
+	set(x):
+		turns = x
+		s_turns_changed.emit(x)
 var debug_invulnerable := false
 
 var multipliers: Array[StatMultiplier] = []
@@ -87,8 +90,10 @@ signal s_damage_changed(new_damaage: float)
 signal s_accuracy_changed(new_accuracy: float)
 signal s_defense_changed(new_defense: float)
 signal s_evasiveness_changed(new_evasiveness: float)
-signal s_speed_changed(new_speed: float)
+signal s_speed_changed(new_speed: int)
 signal s_luck_changed(new_luck: float)
+
+signal s_turns_changed(new_turns: int)
 
 signal s_stat_changed(stat: String)
 
@@ -220,3 +225,4 @@ func attribute_changed(attr: String, old_value, new_value) -> void:
 			if hp > max_hp:
 				hp = max_hp
 			
+signal s_stunned

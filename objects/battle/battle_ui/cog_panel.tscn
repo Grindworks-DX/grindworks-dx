@@ -6,17 +6,27 @@
 [ext_resource type="PackedScene" uid="uid://bwnrw7jcf01kq" path="res://objects/general_ui/node_viewer/node_viewer.tscn" id="3_t5175"]
 [ext_resource type="Texture2D" uid="uid://dg7eslyvsgjpm" path="res://models/cogs/misc/hp_light/glow.png" id="4_3emoa"]
 [ext_resource type="FontFile" uid="uid://815gwlftl5ik" path="res://fonts/impress-bt.ttf" id="4_rqo48"]
+[ext_resource type="Texture2D" uid="uid://e5b2tf3v7sur" path="res://ui_assets/player_ui/pocket_prank_icons/goon_foot.png" id="7_x3boc"]
+[ext_resource type="LabelSettings" uid="uid://cnx4cg5a68tp7" path="res://ui_assets/battle/labelsettings_adv_label_bad.tres" id="8_05y4n"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_rqo48"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_x3boc"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="LabelSettings" id="LabelSettings_2vko0"]
 font = ExtResource("4_rqo48")
 font_color = Color(0, 0, 0, 1)
+outline_size = 6
+outline_color = Color(0.89059, 0.89059, 0.8905901, 0.3254902)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.20392157)
 
-[sub_resource type="LabelSettings" id="LabelSettings_q00sf"]
+[sub_resource type="LabelSettings" id="LabelSettings_qcr6k"]
 font = ExtResource("4_rqo48")
-font_color = Color(0, 0, 0, 1)
+font_color = Color(0.6041997, 0.8092164, 0.21885833, 1)
+outline_size = 6
+outline_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+shadow_size = 4
+shadow_color = Color(1, 1, 1, 0.22745098)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsfax"]
 bg_color = Color(0, 0, 0, 1)
@@ -26,6 +36,7 @@ corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
 [node name="CogPanel" type="Control" unique_id=1489456230]
+texture_filter = 4
 custom_minimum_size = Vector2(160, 140)
 layout_mode = 3
 anchors_preset = 0
@@ -35,13 +46,29 @@ script = ExtResource("2_luwxf")
 
 [node name="Profile" type="TextureRect" parent="." unique_id=778225730]
 unique_name_in_owner = true
-self_modulate = Color(1, 1, 1, 0.435294)
+self_modulate = Color(0.8776157, 0.8776158, 0.8776157, 0.6509804)
 custom_minimum_size = Vector2(160, 100)
 layout_mode = 0
 offset_right = 160.0
 offset_bottom = 100.0
 texture = ExtResource("1_1tuon")
 expand_mode = 1
+
+[node name="AdvantageLabel" type="Label" parent="Profile" unique_id=1445603231]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.549
+anchor_right = 0.549
+offset_left = -78.090004
+offset_top = -16.0
+offset_right = 78.159996
+offset_bottom = 3.0
+grow_horizontal = 2
+text = "1 Extra Move!!"
+label_settings = ExtResource("8_05y4n")
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="CogFace" parent="Profile" unique_id=1570054293 instance=ExtResource("3_t5175")]
 unique_name_in_owner = true
@@ -58,19 +85,8 @@ offset_right = 55.9769
 offset_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("ViewportTexture_rqo48")
+texture = SubResource("ViewportTexture_x3boc")
 expand_mode = 1
-
-[node name="Level" type="Label" parent="Profile" unique_id=1639043194]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 34.0
-offset_top = 62.0
-offset_right = 137.0
-offset_bottom = 86.0
-text = "Level 1"
-label_settings = SubResource("LabelSettings_2vko0")
-horizontal_alignment = 1
 
 [node name="HealthLight" type="TextureRect" parent="Profile" unique_id=1771325652]
 unique_name_in_owner = true
@@ -82,6 +98,24 @@ offset_right = 73.0
 offset_bottom = 48.0
 texture = ExtResource("3_jlr6j")
 expand_mode = 1
+
+[node name="Level" type="Label" parent="Profile/HealthLight" unique_id=1639043194]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = 15.0
+offset_right = 22.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Level 100"
+label_settings = SubResource("LabelSettings_2vko0")
+horizontal_alignment = 1
 
 [node name="HealthGlow" type="TextureRect" parent="Profile/HealthLight" unique_id=185203440]
 unique_name_in_owner = true
@@ -103,8 +137,28 @@ offset_top = 29.0
 offset_right = 50.0
 offset_bottom = 50.0
 text = "6/6"
-label_settings = SubResource("LabelSettings_q00sf")
+label_settings = SubResource("LabelSettings_2vko0")
 horizontal_alignment = 1
+
+[node name="SpeedIcon" type="TextureRect" parent="Profile" unique_id=591728751]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 96.0
+offset_top = 56.0
+offset_right = 125.0
+offset_bottom = 85.0
+texture = ExtResource("7_x3boc")
+expand_mode = 1
+
+[node name="SpeedLabel" type="Label" parent="Profile" unique_id=759807861]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 128.0
+offset_top = 60.0
+offset_right = 194.0
+offset_bottom = 81.0
+text = "12"
+label_settings = SubResource("LabelSettings_qcr6k")
 
 [node name="StatusEffectMask" type="Control" parent="." unique_id=1968619215]
 unique_name_in_owner = true

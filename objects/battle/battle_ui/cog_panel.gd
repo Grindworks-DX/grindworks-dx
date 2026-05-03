@@ -10,6 +10,8 @@ const BASE_MASK_SIZE := 184.0
 @onready var hp_label := %CogHP
 @onready var status_container := %StatusEffects
 @onready var effect_panel := %EffectPanel
+@onready var speed_label := %SpeedLabel
+@onready var advantage_label := %AdvantageLabel
 
 @onready var effect_mask := %StatusEffectMask
 
@@ -33,15 +35,17 @@ func set_cog(cog: Cog):
 	sync_colors(cog.hp_light.get_surface_override_material(0).albedo_color, cog.hp_light.get_child(0).get_surface_override_material(0).albedo_color, cog)
 	
 	# Show level
-	level_label.text = "Level " + str(cog.level)
-	if cog.v2:
-		level_label.text += ' v2.0'
+	level_label.text = ("Level %d" % cog.level) if !cog.v2 else "Lv%d v2.0" % cog.level
 
 	if not hp_hidden:
 		hp_label.show()
 
 	cog.stats.hp_changed.connect(set_hp_label.unbind(1))
 	set_hp_label()
+	cog.stats.s_speed_changed.connect(set_speed_label)
+	set_speed_label(cog.stats.speed)
+	BattleService.ongoing_battle.s_enemy_moves_assigned.connect(set_advantage_label)
+	set_advantage_label()
 	
 	BattleService.s_round_ended.connect(func(_x):
 		if !is_instance_valid(current_cog): queue_free() 
@@ -63,6 +67,27 @@ func set_hp_label():
 		light.hide()
 		glow.hide()
 		effect_mask.hide()
+
+func set_speed_label(new_speed: int):
+	speed_label.text = str(new_speed)
+
+const ADV_LABEL_SETTINGS := [preload("uid://cnx4cg5a68tp7"), preload("uid://ix6utnif3h1p")]
+
+func set_advantage_label():
+	var moves := current_cog.stats.turns
+	advantage_label.visible = moves != 1 or current_cog.current_moves.is_empty()
+	if moves == 1 and !current_cog.current_moves.is_empty(): return
+	
+	var delayed: bool = moves == 0 or current_cog.current_moves.is_empty()
+	advantage_label.label_settings = ADV_LABEL_SETTINGS[int(!delayed)]
+	
+	if delayed:
+		advantage_label.text = "Delayed!"
+	else:
+		advantage_label.text = "%d Extra Move" % (moves - 1)
+		if moves > 2: advantage_label.text += "s"
+		for i in range(moves):
+			advantage_label.text += "!"
 
 func sync_colors(light_color: Color, glow_color: Color, cog: Cog):
 	if (not is_instance_valid(cog)) or cog != current_cog:

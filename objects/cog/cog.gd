@@ -74,7 +74,11 @@ var head_node: Node3D
 
 # Battle values
 var lured := false
-var stunned := false
+var stunned := false:
+	set(x):
+		stunned = x
+		if x:
+			stats.s_stunned.emit()
 var trap: GagTrap
 var losing := false
 

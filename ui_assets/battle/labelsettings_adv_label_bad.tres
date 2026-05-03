@@ -1,0 +1,18 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://cnx4cg5a68tp7"]
+
+[ext_resource type="FontFile" uid="uid://cup2yr5w7or1l" path="res://fonts/Minnie.TTF" id="1_k427n"]
+
+[resource]
+resource_local_to_scene = true
+line_spacing = 0.0
+font = ExtResource("1_k427n")
+font_size = 18
+font_color = Color(0.1680679, 0.63589984, 0.28123245, 1)
+outline_size = 4
+outline_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+shadow_size = 2
+shadow_color = Color(0.15903842, 0.25698113, 0.11208198, 1)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(2, 2)
+stacked_shadow_0/color = Color(0, 0, 0, 0.37254903)
+stacked_shadow_0/outline_size = 2

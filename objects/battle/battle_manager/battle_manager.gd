@@ -734,6 +734,13 @@ func get_cog_attack(cog: Cog) -> CogAttack:
 		illegal_moves.append(cog_attack.get_script())
 	return cog_attack
 
+func get_cog_attacks(cog: Cog) -> Array[CogAttack]:
+	var attacks: Array[CogAttack] = []
+	for i in cog.stats.turns:
+		var attack = get_cog_attack(cog)
+		if attack != null: attacks.append(attack)
+	return attacks
+
 func knockback_cog(cog : Cog) -> void:
 	var damage := get_knockback_damage(cog)
 	cog.stats.hp-=damage
@@ -872,9 +879,10 @@ var enemy_moves: Array[BattleAction]
 
 func populate_enemy_moves() -> void:
 	for cog in cogs:
-		for i in cog.stats.turns:
-			var attack := get_cog_attack(cog)
-			if not attack == null:
-				enemy_moves.append(attack)
+		cog.current_moves.clear()
+		var attacks := get_cog_attacks(cog)
+		if !attacks.is_empty():
+			enemy_moves.append_array(attacks)
+			cog.current_moves.append_array(attacks)
 	print(enemy_moves)
 	s_enemy_moves_assigned.emit()
