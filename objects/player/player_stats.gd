@@ -33,6 +33,11 @@ var debug_gag_points := false
 @export var toonups: Dictionary[int, int] = {0: 1, 1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 0}
 @export var treasures: Dictionary[int, int] = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
 
+# Breaking Grounds - Combat starts at fixed gag point values and with varying regen rates
+@export var gag_starting_points: Dictionary[String, int] = {}
+@export var gag_regen_chance_modifiers: Dictionary[String, float] = {}
+@export var gag_point_caps: Dictionary[String, int] = {} # TODO
+
 @export var gag_cap := 10
 @export var gag_discount := -1
 @export var character: PlayerCharacter
@@ -46,7 +51,8 @@ var debug_gag_points := false
 		s_stat_changed.emit('agility')
 		print("Agility set to %.2f" % x)
 
-@export var crit_mult := 1.25
+# Breaking Grounds - beeeeg crits
+@export var crit_mult := 2.0
 @export var mod_cog_dmg_mult := 1.0
 @export var shop_discount := 0
 @export var healing_effectiveness := 1.0
@@ -118,15 +124,17 @@ var prev_stats: Dictionary[String, float] = {}
 
 ## Sets the player's base gag loadout
 func set_loadout(loadout: GagLoadout) -> void:
-	var gag_dicts := [gags_unlocked, gag_balance, gag_effectiveness, gag_regeneration, gag_vouchers, gag_battle_start_point_boost]
+	var gag_dicts := [gags_unlocked, gag_balance, gag_effectiveness, gag_regeneration, gag_vouchers, gag_battle_start_point_boost, gag_starting_points, gag_regen_chance_modifiers, gag_point_caps]
 	for dict in gag_dicts:
 		dict.clear()
 		var value 
 		match gag_dicts.find(dict):
 			0, 5: value = 0
-			1: value = 10
+			1, 8: value = 10
 			2: value = 1.0
 			3: value = 1
+			6: value = 3
+			7: value = 0.0
 			_: value = 1
 		for track in loadout.loadout:
 			dict[track.track_name] = value
@@ -204,6 +212,7 @@ func on_round_end(_battle: BattleManager) -> void:
 func on_battle_started(_battle: BattleManager) -> void:
 	for track in gag_balance.keys():
 		if not gags_unlocked[track] > 0: continue
+		gag_balance[track] = gag_starting_points[track]
 		var value: int = gag_battle_start_point_boost.get(track, 0) + global_battle_start_point_boost
 		if value != 0:
 			restock(track, value)

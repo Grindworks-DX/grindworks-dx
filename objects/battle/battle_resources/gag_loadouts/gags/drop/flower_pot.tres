@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DropSmall" load_steps=6 format=3 uid="uid://c3cy1e5fvbds6"]
+[gd_resource type="Resource" script_class="DropSmall" format=3 uid="uid://c3cy1e5fvbds6"]
 
 [ext_resource type="Texture2D" uid="uid://b58goas1dfh35" path="res://ui_assets/battle/gags/inventory_flower_pot.png" id="1_ixatg"]
 [ext_resource type="PackedScene" uid="uid://b83bdoxnutfks" path="res://models/props/gags/flower_pot/flower_pot.tscn" id="2_vottw"]
@@ -14,7 +14,4 @@ sfx_hit = ExtResource("4_xlge2")
 sfx_miss = ExtResource("5_lufi2")
 icon = ExtResource("1_ixatg")
 damage = 8
-crit_chance_mod = 1.0
-target_type = 0
 action_name = "Flower Pot"
-one_time_use = false

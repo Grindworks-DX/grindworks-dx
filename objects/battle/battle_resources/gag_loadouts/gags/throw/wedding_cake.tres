@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GagThrow" load_steps=7 format=3 uid="uid://g1mi6jf6c2a3"]
+[gd_resource type="Resource" script_class="GagThrow" format=3 uid="uid://g1mi6jf6c2a3"]
 
 [ext_resource type="Texture2D" uid="uid://dchh2t3rdfm34" path="res://ui_assets/battle/gags/inventory_wedding.png" id="1_k2lu2"]
 [ext_resource type="AudioStream" uid="uid://csjxqnrh0pi1p" path="res://audio/sfx/battle/gags/throw/AA_throw_wedding_cake_miss.ogg" id="2_ev1l8"]
@@ -15,9 +15,7 @@ splat_color = Color(1, 0.454902, 1, 1)
 splat_sfx = ExtResource("6_0xkmn")
 present_sfx = ExtResource("4_pccl8")
 miss_sfx = ExtResource("2_ev1l8")
+sweetspot_damage = 20
 icon = ExtResource("1_k2lu2")
-damage = 110
-crit_chance_mod = 1.0
-target_type = 0
+damage = 80
 action_name = "Wedding Cake"
-one_time_use = false

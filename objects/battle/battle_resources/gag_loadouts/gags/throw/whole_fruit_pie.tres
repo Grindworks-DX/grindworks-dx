@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GagThrow" load_steps=5 format=3 uid="uid://yr56ehgsd3fc"]
+[gd_resource type="Resource" script_class="GagThrow" format=3 uid="uid://yr56ehgsd3fc"]
 
 [ext_resource type="Texture2D" uid="uid://bqis01vyse0vq" path="res://ui_assets/battle/gags/inventory_fruitpie.png" id="1_nt8ws"]
 [ext_resource type="PackedScene" uid="uid://dj268hnb7rr26" path="res://models/props/gags/pie/pie.glb" id="2_6hqgd"]
@@ -11,9 +11,7 @@ model = ExtResource("2_6hqgd")
 scale = 0.75
 splat_color = Color(0.207843, 0.196078, 0.592157, 1)
 splat_sfx = ExtResource("4_s5a35")
+sweetspot_damage = 14
 icon = ExtResource("1_nt8ws")
-damage = 40
-crit_chance_mod = 1.0
-target_type = 0
+damage = 27
 action_name = "Whole Fruit Pie"
-one_time_use = false

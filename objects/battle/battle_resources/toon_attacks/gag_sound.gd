@@ -60,7 +60,7 @@ func action():
 				continue
 			animator_target = target
 			var real_damage = damage
-			if (not target == main_target and not user.inverted_sound_damage) or (user.inverted_sound_damage and target == main_target):
+			if target_type != ActionTarget.ENEMIES and ((not target == main_target and not user.inverted_sound_damage) or (user.inverted_sound_damage and target == main_target)):
 				real_damage *= 0.5
 			if get_immunity(target):
 				manager.battle_text(target, 'IMMUNE')
@@ -122,8 +122,7 @@ func get_stats() -> String:
 			string += "One Cog"
 		ActionTarget.ENEMY_SPLASH:
 			string += "Three Cogs"
-
-	string += "\nSplash: %s" % get_splash_damage_str()
+			string += "\nSplash: %s" % get_splash_damage_str()
 
 	return string
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="TrapToss" load_steps=5 format=3 uid="uid://bo731q0esb6yy"]
+[gd_resource type="Resource" script_class="TrapToss" format=3 uid="uid://bo731q0esb6yy"]
 
 [ext_resource type="Texture2D" uid="uid://qdx2c3oyhq3w" path="res://ui_assets/battle/gags/inventory_tnt.png" id="1_6vj2d"]
 [ext_resource type="PackedScene" uid="uid://dsgjdbl5ivwss" path="res://models/props/gags/tnt/tnt.tscn" id="2_yiae2"]
@@ -8,12 +8,9 @@
 [resource]
 script = ExtResource("3_faiut")
 model = ExtResource("2_yiae2")
-toss_time = 1.5
 animation = 2
 toss_sfx = ExtResource("4_hl8bq")
+gullible_defense = -0.5
 icon = ExtResource("1_6vj2d")
-damage = 190
-crit_chance_mod = 1.0
-target_type = 0
+damage = 165
 action_name = "TNT"
-one_time_use = false

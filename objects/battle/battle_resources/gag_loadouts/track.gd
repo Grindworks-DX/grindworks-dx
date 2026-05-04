@@ -16,6 +16,10 @@ enum TrackType {
 ## Specify the modded gag and the level it's assigned (0-6)
 @export var mod_gags: Dictionary[ToonAttack, int]
 
+@export var base_regen := 0.0
+@export var base_combat_start_gp := 3
+@export var base_gp_cap := 10
+
 func get_gag_variants(index: int) -> Array[ToonAttack]:
 	var variants: Array[ToonAttack] = []
 	for action in mod_gags.keys():

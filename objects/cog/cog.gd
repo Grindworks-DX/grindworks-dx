@@ -250,6 +250,8 @@ func set_up_stats() -> void:
 	body.nametag_node.update_position(new_text)
 	if not stats.hp_changed.is_connected(update_health_light):
 		stats.hp_changed.connect(update_health_light.unbind(1))
+	# Breaking Grounds TEMP: Speed = Level
+	stats.speed = level
 
 ## Validates DNA and level combinations
 static func test_dna(cog_dna: CogDNA, cog_level: int) -> bool:

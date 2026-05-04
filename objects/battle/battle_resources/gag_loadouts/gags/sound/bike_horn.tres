@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GagSound" load_steps=6 format=3 uid="uid://4vss2qycp4rk"]
+[gd_resource type="Resource" script_class="GagSound" format=3 uid="uid://4vss2qycp4rk"]
 
 [ext_resource type="Texture2D" uid="uid://b42plu52oeyaq" path="res://ui_assets/battle/gags/inventory_bikehorn.png" id="1_4hkig"]
 [ext_resource type="PackedScene" uid="uid://ctpd48nalncug" path="res://models/props/gags/bike_horn/bike_horn.tscn" id="2_enxq8"]
@@ -12,12 +12,9 @@ model = ExtResource("2_enxq8")
 position = Vector3(0.995, 0.114, -1.444)
 rotation = Vector3(0, 149.9, 0)
 scale = Vector3(0.625, 0.625, 0.625)
-anim_delay = 1.9
 sfx_windup = ExtResource("5_mq5rf")
 sfx_blast = ExtResource("4_r8ra8")
 icon = ExtResource("1_4hkig")
-damage = 6
-crit_chance_mod = 1.0
-target_type = 7
+damage = 5
+target_type = 2
 action_name = "Bike Horn"
-one_time_use = false

@@ -11,4 +11,4 @@
 
 [resource]
 script = ExtResource("119_h062j")
-loadout = Array[ExtResource("1_ejseq")]([ExtResource("7_m7vt2"), ExtResource("3_f35fq"), ExtResource("4_0jpk2"), ExtResource("5_lim3m"), ExtResource("6_nlbmv"), ExtResource("8_gt0y2")])
+loadout = Array[ExtResource("1_ejseq")]([ExtResource("3_f35fq"), ExtResource("4_0jpk2"), ExtResource("5_lim3m"), ExtResource("6_nlbmv"), ExtResource("7_m7vt2"), ExtResource("8_gt0y2")])

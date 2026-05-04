@@ -2,6 +2,9 @@ extends ToonAttack
 class_name GagTrap
 
 const TRAP_EFFECT := preload("res://objects/battle/battle_resources/status_effects/resources/status_effect_trapped.tres")
+const GULLIBLE_EFFECT := preload("uid://ckb6q8h5rxyg8")
+
+@export var gullible_defense := -0.2
 
 # Signals when trap movie is over
 signal s_trap
@@ -29,6 +32,12 @@ func apply_trap_effect(who: Cog) -> void:
 	effect.target = who
 	manager.add_status_effect(effect)
 
+func apply_debuff(who: Cog) -> void:
+	var effect := GULLIBLE_EFFECT.duplicate(true)
+	effect.boost = gullible_defense
+	effect.target = who
+	manager.add_status_effect(effect)
+
 func apply_extra_knockback(cog: Cog) -> void:
 	if not activating_lure:
 		# Honestly, let's just fake it.
@@ -43,3 +52,23 @@ func apply_extra_knockback(cog: Cog) -> void:
 
 	var boost_percent: float = Util.get_player().stats.trap_knockback_percent
 	manager.do_standalone_knockback_damage(cog, roundi(activating_lure.get_lure_effect().get_true_knockback() * boost_percent))
+
+func get_stats() -> String:
+	var string := "Damage: " + get_true_damage() + "\n"\
+	+ "Affects: "
+	match target_type:
+		ActionTarget.SELF:
+			string += "Self"
+		ActionTarget.ENEMIES:
+			string += "All Cogs"
+		ActionTarget.ENEMY:
+			string += "One Cog"
+		ActionTarget.ENEMY_SPLASH:
+			string += "Three Cogs"
+		
+	string += "\nOn Hit: %d%% Defense" % ceili(gullible_defense * 100)
+	
+	if Util.get_player().stats.has_item('Witch Hat'):
+		string += "\nOn Hit: Poison"
+	
+	return string

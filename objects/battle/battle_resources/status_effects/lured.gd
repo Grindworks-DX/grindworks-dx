@@ -40,7 +40,10 @@ func expire() -> void:
 		manager.battle_stats[target].damage -= damage_nerf
 		manager.battle_stats[target].accuracy -= damage_nerf / 2.0
 	else:
-		target.stunned = false
+		target.stunned = false 
+		# Breaking Grounds: No longer acts after unluring - instead gains Lure Resistance
+		var new_effect := apply_lure_immunity()
+		new_effect.rounds -= 1
 		manager.unskip_turn(target)
 		await manager.run_actions()
 
@@ -63,8 +66,19 @@ func create_walk_tween() -> Tween:
 
 func get_effect_string() -> String:
 	match lure_type:
-		LureType.STUN: return 'Applies: Stun'
-		_: return 'Nerfs: Damage/Accuracy'
+		LureType.STUN: return 'While Lured: Stun'
+		_: return 'While Lured: -50% DMG'
 
 func get_status_name() -> String:
 	return "Lured"
+
+func apply_lure_immunity() -> StatusEffect:
+	# Breaking Grounds: Stun lures apply temporary Lure Immunity when expired
+	var lure_immunity: StatusEffectGagImmunity = load("res://objects/battle/battle_resources/status_effects/resources/status_effect_gag_immunity.tres").duplicate(true)
+	if lure_immunity.id not in manager.get_status_ids_for_target(target):
+		lure_immunity.set_track(load("res://objects/battle/battle_resources/gag_loadouts/gag_tracks/lure.tres"))
+		lure_immunity.rounds = 1
+		lure_immunity.target = target
+		manager.add_status_effect(lure_immunity)
+		Task.delay(1.0).connect(manager.battle_text.bind(target, "Lure Immunity!", BattleText.colors.orange[0], BattleText.colors.orange[1]))
+	return lure_immunity

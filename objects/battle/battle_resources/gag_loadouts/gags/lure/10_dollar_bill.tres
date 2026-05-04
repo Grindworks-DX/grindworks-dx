@@ -7,8 +7,9 @@
 
 [sub_resource type="Resource" id="Resource_37cp3"]
 script = ExtResource("2_2t0uq")
-knockback_effect = 60
+knockback_effect = 55
 quality = 1
+rounds = 3
 id = 2
 
 [resource]

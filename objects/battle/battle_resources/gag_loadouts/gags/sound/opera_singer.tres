@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GagSound" load_steps=6 format=3 uid="uid://ciw7jmgu6iq05"]
+[gd_resource type="Resource" script_class="GagSound" format=3 uid="uid://ciw7jmgu6iq05"]
 
 [ext_resource type="Texture2D" uid="uid://b1fm464rbu48m" path="res://ui_assets/battle/gags/inventory_opera_singer.png" id="1_np050"]
 [ext_resource type="PackedScene" uid="uid://brx5luolo4twm" path="res://models/props/gags/opera_singer/opera_singer.tscn" id="2_jknoh"]
@@ -16,8 +16,6 @@ anim_delay = 0.01
 sfx_windup = ExtResource("5_e6qcd")
 sfx_blast = ExtResource("4_0bvr6")
 icon = ExtResource("1_np050")
-damage = 100
-crit_chance_mod = 1.0
-target_type = 7
+damage = 55
+target_type = 2
 action_name = "Opera Singer"
-one_time_use = false

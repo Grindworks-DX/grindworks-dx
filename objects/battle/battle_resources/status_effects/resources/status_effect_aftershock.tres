@@ -6,6 +6,5 @@
 script = ExtResource("1_nhdpi")
 instant_effect = false
 quality = 1
-rounds = 2
 description = ""
 id = 3

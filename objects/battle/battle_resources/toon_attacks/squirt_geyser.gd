@@ -7,13 +7,10 @@ const SFX := preload('res://audio/sfx/battle/gags/squirt/AA_squirt_Geyser.ogg')
 
 func action() -> void:
 	var player: Player = user
-	var cog: Cog = targets[0]
-	var geyser := PROP.instantiate()
 	
+	var water_color := Color.WHITE
 	if Util.get_player().stats.has_item('Witch Hat'):
-		geyser.get_node('Geyser').water_color = Color(0, 0.43, 0.151)
-	else:
-		geyser.get_node('Geyser').water_color = Color.WHITE
+		water_color = Color(0, 0.43, 0.151)
 	
 	# Movie Start
 	var movie := manager.create_tween()
@@ -24,56 +21,77 @@ func action() -> void:
 	movie.tween_interval(2.4)
 	movie.tween_callback(AudioManager.play_sound.bind(SFX))
 	movie.tween_interval(1.0)
+	movie.tween_callback(battle_node.focus_cogs)
 	
-	# Spawn geyser
-	movie.tween_callback(battle_node.add_child.bind(geyser))
-	movie.tween_callback(geyser.set_global_position.bind(cog.body_root.global_position))
-	movie.tween_callback(battle_node.focus_character.bind(cog))
-	movie.tween_callback(geyser.get_node('AnimationPlayer').play.bind('squirt'))
+	var submovies: Array[Tween] = []
 	
-	var hit: bool = manager.roll_for_accuracy(self) or cog.lured 
-	if hit:
-		if not get_immunity(cog):
-			movie.tween_callback(s_hit.emit)
-			# Play geyser anim, parent cog to cog root
-			movie.tween_callback(cog_flyup.bind(cog))
-			movie.tween_callback(manager.affect_target.bind(cog, damage))
-			movie.tween_interval(0.01)
-			movie.tween_callback(cog.reset_physics_interpolation)
-			movie.tween_callback(cog.body_root.reparent.bind(geyser.get_node('CogRoot')))
-			movie.tween_interval(0.5)
-			# Knockback damage here
-			if cog.lured:
-				var kb_dmg := manager.get_knockback_damage(cog)
-				movie.tween_callback(manager.battle_text.bind(cog, '-' + str(kb_dmg), BattleText.colors.orange[0], BattleText.colors.orange[1]))
-				movie.tween_callback(func(): cog.stats.hp -= kb_dmg)
-			movie.tween_callback(apply_debuff.bind(cog))
-			movie.tween_interval(1.75)
-			movie.tween_callback(manager.battle_text.bind(cog, "Drenched!", BattleText.colors.orange[0], BattleText.colors.orange[1]))
-			movie.tween_callback(cog_slip.bind(cog))
-			movie.tween_callback(cog.body_root.reparent.bind(cog))
-			movie.tween_callback(func(): cog.body_root.position.y = 0.0)
-			movie.tween_interval(2.0)
-			if cog.lured:
-				movie.tween_callback(manager.force_unlure.bind(cog))
-				movie.tween_callback(cog.set_animation.bind('walk'))
-				movie.tween_property(cog.body_root, 'position:z', 0.0, 0.5)
-				movie.tween_callback(cog.set_animation.bind('neutral'))
+	for cog: Cog in targets:
+		var geyser := PROP.instantiate()
+		geyser.get_node('Geyser').water_color = water_color
+		
+		var submovie := manager.create_tween()
+		submovie.tween_interval(randf_range(0.01, 0.8))
+		
+		# Spawn geyser
+		submovie.tween_callback(battle_node.add_child.bind(geyser))
+		submovie.tween_callback(geyser.set_global_position.bind(cog.body_root.global_position))
+		
+		submovie.tween_callback(geyser.get_node('AnimationPlayer').play.bind('squirt'))
+		
+		var hit: bool = manager.roll_for_accuracy(self) or cog.lured 
+		if hit:
+			if not get_immunity(cog):
+				submovie.tween_callback(s_hit.emit)
+				# Play geyser anim, parent cog to cog root
+				submovie.tween_callback(cog_flyup.bind(cog))
+				submovie.tween_callback(manager.affect_target.bind(cog, damage))
+				submovie.tween_interval(0.01)
+				submovie.tween_callback(cog.reset_physics_interpolation)
+				submovie.tween_callback(cog.body_root.reparent.bind(geyser.get_node('CogRoot')))
+				submovie.tween_interval(0.5)
+				# Knockback damage here
+				if cog.lured:
+					var kb_dmg := manager.get_knockback_damage(cog)
+					submovie.tween_callback(manager.battle_text.bind(cog, '-' + str(kb_dmg), BattleText.colors.orange[0], BattleText.colors.orange[1]))
+					submovie.tween_callback(func(): cog.stats.hp -= kb_dmg)
+				submovie.tween_callback(apply_debuff.bind(cog))
+				submovie.tween_interval(1.75)
+				submovie.tween_callback(manager.battle_text.bind(cog, "Drenched!", BattleText.colors.orange[0], BattleText.colors.orange[1]))
+				submovie.tween_callback(cog_slip.bind(cog))
+				submovie.tween_callback(cog.body_root.reparent.bind(cog))
+				submovie.tween_callback(func(): cog.body_root.position.y = 0.0)
+				submovie.tween_interval(2.0)
+				if cog.lured:
+					submovie.tween_callback(manager.force_unlure.bind(cog))
+					submovie.tween_callback(cog.set_animation.bind('walk'))
+					submovie.tween_property(cog.body_root, 'position:z', 0.0, 0.5)
+					submovie.tween_callback(cog.set_animation.bind('neutral'))
+			else:
+				submovie.tween_callback(manager.battle_text.bind(cog, "IMMUNE"))
+				submovie.tween_interval(4.0)
 		else:
-			movie.tween_callback(manager.battle_text.bind(cog, "IMMUNE"))
-			movie.tween_interval(4.0)
-	else:
-		movie.tween_callback(cog.set_animation.bind('sidestep-left'))
-		movie.tween_callback(manager.battle_text.bind(cog, "MISSED"))
-		movie.tween_interval(5.0)
+			submovie.tween_callback(cog.set_animation.bind('sidestep-left'))
+			submovie.tween_callback(manager.battle_text.bind(cog, "MISSED"))
+			submovie.tween_interval(5.0)
+		
+		submovie.tween_callback(geyser.queue_free)
+		#submovie.pause()
+		submovies.append(submovie)
 	
-	movie.tween_callback(geyser.queue_free)
+	for i in submovies.size():
+		var submovie = submovies[i]
+		movie.parallel().tween_subtween(submovie)
+		if i == submovies.size() - 1:
+			await submovie.finished
+	
 	await movie.finished
 	await manager.check_pulses(targets)
 
 func cog_flyup(cog : Cog) -> void:
 	cog.set_animation('slip-backward')
-	Task.delay(1.0).connect(cog.pause_animator)
+	cog.animator.speed_scale = 0.5
+	#Task.delay(1.0).connect(cog.pause_animator)
+	Task.delay(2.0).connect(cog.animator.set.bind("speed_scale", 1.0))
 
 func cog_slip(cog : Cog) -> void:
 	cog.set_animation('slip-backward')

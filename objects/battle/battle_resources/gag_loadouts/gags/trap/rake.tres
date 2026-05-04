@@ -11,5 +11,5 @@ model = ExtResource("2_mrucr")
 animation = 1
 toss_sfx = ExtResource("4_64h54")
 icon = ExtResource("1_gnm0c")
-damage = 30
+damage = 32
 action_name = "Rake"

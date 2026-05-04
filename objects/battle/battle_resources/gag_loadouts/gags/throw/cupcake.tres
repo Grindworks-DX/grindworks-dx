@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GagThrow" load_steps=5 format=3 uid="uid://c2h15gk437pf4"]
+[gd_resource type="Resource" script_class="GagThrow" format=3 uid="uid://c2h15gk437pf4"]
 
 [ext_resource type="Texture2D" uid="uid://b02dgcnkrbbtx" path="res://ui_assets/battle/gags/inventory_tart.png" id="1_mt1kg"]
 [ext_resource type="PackedScene" uid="uid://dj268hnb7rr26" path="res://models/props/gags/pie/pie.glb" id="2_jnfn6"]
@@ -11,9 +11,7 @@ model = ExtResource("2_jnfn6")
 scale = 0.5
 splat_color = Color(0.207843, 0.196078, 0.592157, 1)
 splat_sfx = ExtResource("4_csaya")
+sweetspot_damage = 8
 icon = ExtResource("1_mt1kg")
-damage = 7
-crit_chance_mod = 1.0
-target_type = 0
+damage = 6
 action_name = "Cupcake"
-one_time_use = false

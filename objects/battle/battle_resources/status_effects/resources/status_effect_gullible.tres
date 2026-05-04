@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://ckb6q8h5rxyg8"]
+
+[ext_resource type="Script" uid="uid://bgyp1fl848bb4" path="res://objects/battle/battle_resources/status_effects/status_effect_gullible.gd" id="1_jxdcj"]
+
+[resource]
+script = ExtResource("1_jxdcj")
+boost = -0.2
+quality = 1
+id = 53

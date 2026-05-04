@@ -7,10 +7,11 @@ var ICONS := {
 	'defense': load("res://ui_assets/battle/statuses/defense.png"),
 	'evasiveness': load("res://ui_assets/battle/statuses/evasiveness.png"),
 	'luck': load("res://ui_assets/battle/statuses/luck_crit.png"),
+	'speed': load("res://ui_assets/battle/statuses/speed.png")
 }
 
 @export var stat: String = 'defense'
-@export var boost: float = 1.0
+@export var boost: Variant
 
 
 func apply():
@@ -21,10 +22,11 @@ func apply():
 func expire():
 	var battle_stats = manager.battle_stats[target]
 	if stat in battle_stats:
-		battle_stats.set(stat, battle_stats.get(stat) - boost) 
+		battle_stats.set(stat, battle_stats.get(stat) - boost)
 
 func get_description() -> String:
-	return "%s%s%% %s" % ["+" if boost > 0.0 else "-", roundi(abs(boost) * 100), stat[0].to_upper() + stat.substr(1)]
+	var __out = "%s%s%s %s" % ["+" if boost > 0.0 else "-", roundi(abs(boost) * (100 if boost is float else 1)), "%" if boost is float else "", stat[0].to_upper() + stat.substr(1)]
+	return __out
 
 func get_icon() -> Texture2D:
 	return ICONS[stat]
@@ -62,5 +64,5 @@ func randomize_effect() -> void:
 	else:
 		quality = StatusEffect.EffectQuality.NEGATIVE
 
-func get_combined_boost(boost1: float, boost2: float) -> float:
+func get_combined_boost(boost1, boost2):
 	return boost1 + boost2

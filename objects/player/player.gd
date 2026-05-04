@@ -97,7 +97,8 @@ var custom_gag_order := 0
 var less_shop_items := 0
 var better_battle_rewards := 0
 var no_negative_anomalies := 0
-var throw_heals := 1
+# Breaking Grounds - Throw self-heal removed in favor of Humor Healing
+var throw_heals := 0
 var trap_needs_lure := 1
 var inverted_sound_damage := 0
 var obscured_anomalies := 0

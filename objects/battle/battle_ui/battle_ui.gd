@@ -38,7 +38,7 @@ var remaining_turns: int:
 		else:
 			return Util.get_player().stats.turns - turn
 
-var selected_gags: Array[ToonAttack] = []
+var selected_gags: Array[ToonAttack] = []0
 var fire_action: ToonAttackFire
 var timer : GameTimer
 

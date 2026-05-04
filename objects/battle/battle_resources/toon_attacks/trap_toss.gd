@@ -172,6 +172,10 @@ func banana():
 	if not get_immunity(target):
 		manager.affect_target(target, damage)
 		apply_extra_knockback(target)
+		var debuff_tween = manager.create_tween()
+		debuff_tween.tween_callback(apply_debuff.bind(target))
+		debuff_tween.tween_interval(1.75)
+		debuff_tween.tween_callback(manager.battle_text.bind(target, "Gullible!", BattleText.colors.orange[0], BattleText.colors.orange[1]))
 	else:
 		manager.battle_text(target, "IMMUNE")
 	if activating_lure:
@@ -192,6 +196,10 @@ func rake():
 	if not get_immunity(target):
 		manager.affect_target(target, damage)
 		apply_extra_knockback(target)
+		var debuff_tween = manager.create_tween()
+		debuff_tween.tween_callback(apply_debuff.bind(target))
+		debuff_tween.tween_interval(1.75)
+		debuff_tween.tween_callback(manager.battle_text.bind(target, "Gullible!", BattleText.colors.orange[0], BattleText.colors.orange[1]))
 	else:
 		manager.battle_text(target, "IMMUNE")
 	if activating_lure:
@@ -207,6 +215,10 @@ func tnt():
 	if not get_immunity(target):
 		manager.affect_target(target, damage)
 		apply_extra_knockback(target)
+		var debuff_tween = manager.create_tween()
+		debuff_tween.tween_callback(apply_debuff.bind(target))
+		debuff_tween.tween_interval(1.75)
+		debuff_tween.tween_callback(manager.battle_text.bind(target, "Gullible!", BattleText.colors.orange[0], BattleText.colors.orange[1]))
 	else:
 		manager.battle_text(target, "IMMUNE")
 	if activating_lure:

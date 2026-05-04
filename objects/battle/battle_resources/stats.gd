@@ -40,7 +40,7 @@ class_name BattleStats
 
 ## STAT CLAMPS
 static var STAT_CLAMPS: Dictionary[String, Vector2] = {
-	'speed' : Vector2(0, 127),
+	'speed' : Vector2(-127, 127),
 	'damage' : Vector2(0.0, UNCAPPED_STAT_VAL),
 	'defense' : Vector2(0.1, UNCAPPED_STAT_VAL),
 	'evasiveness' : Vector2(0.0, UNCAPPED_STAT_VAL),

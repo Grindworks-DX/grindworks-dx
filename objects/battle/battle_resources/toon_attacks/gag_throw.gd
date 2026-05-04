@@ -13,6 +13,8 @@ const FALLBACK_THROW_SFX := preload('res://audio/sfx/battle/gags/throw/AA_pie_th
 @export var status_effect: StatusEffect
 @export var status_effect_base: StatusEffect
 
+@export var sweetspot_damage := 15
+
 func action():
 	user = Util.get_player()
 	var cog: Cog = targets[0]
@@ -43,6 +45,7 @@ func action():
 	var hit: bool = manager.roll_for_accuracy(self) or cog.lured
 	
 	if hit:
+		var do_sweetspot := manager.is_target_debuffed(cog)
 		await throw_tween.finished
 		throw_tween.kill()
 		user.face_position(manager.battle_node.global_position)
@@ -52,7 +55,7 @@ func action():
 		var immune := get_immunity(cog)
 		
 		if not immune:
-			var throw_damage: int = manager.affect_target(cog, damage)
+			var throw_damage: int = manager.affect_target(cog, damage + (sweetspot_damage if do_sweetspot else 0), false, "\nSweetspot!" if do_sweetspot else "")
 			if status_effect:
 				apply_status_effect()
 			if user.throw_heals:
@@ -106,7 +109,9 @@ func get_stats() -> String:
 			player_stats = BattleService.ongoing_battle.battle_stats[Util.get_player()]
 		else:
 			player_stats = Util.get_player().stats
-		string += "\nSelf-Heal: %s%%" % roundi(player_stats.get_stat('throw_heal_boost') * 100)
+		#string += "\nSelf-Heal: %s%%" % roundi(player_stats.get_stat('throw_heal_boost') * 100)
+	
+	string += "\nSweetspot: %s" % get_true_damage(1.0, sweetspot_damage)
 
 	return string
 

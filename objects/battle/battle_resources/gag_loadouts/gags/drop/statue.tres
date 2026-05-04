@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DropBig" load_steps=6 format=3 uid="uid://cavn2ph00cuks"]
+[gd_resource type="Resource" script_class="DropBig" format=3 uid="uid://cavn2ph00cuks"]
 
 [ext_resource type="Texture2D" uid="uid://cbqu6d060xt2w" path="res://ui_assets/battle/gags/inventory_statue.png" id="1_wpsqj"]
 [ext_resource type="PackedScene" uid="uid://gnotwb20f4fk" path="res://models/props/gags/statue/statue_gag.tscn" id="2_x7uvh"]
@@ -13,8 +13,5 @@ shadow_scale = 3.0
 sfx_hit = ExtResource("4_v6ws3")
 sfx_miss = ExtResource("5_fe74s")
 icon = ExtResource("1_wpsqj")
-damage = 100
-crit_chance_mod = 1.0
-target_type = 0
+damage = 85
 action_name = "Statue"
-one_time_use = false

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DropBig" load_steps=6 format=3 uid="uid://doe7eiwy4sm5y"]
+[gd_resource type="Resource" script_class="DropBig" format=3 uid="uid://doe7eiwy4sm5y"]
 
 [ext_resource type="Texture2D" uid="uid://d3lgtwpp1y4ev" path="res://ui_assets/battle/gags/inventory_safe_box.png" id="1_x47bq"]
 [ext_resource type="PackedScene" uid="uid://cueenmir23h2" path="res://models/props/gags/safe/safe.tscn" id="2_2yvnp"]
@@ -13,8 +13,5 @@ shadow_scale = 3.0
 sfx_hit = ExtResource("4_se63h")
 sfx_miss = ExtResource("5_gbn8g")
 icon = ExtResource("1_x47bq")
-damage = 56
-crit_chance_mod = 1.0
-target_type = 0
+damage = 45
 action_name = "Safe"
-one_time_use = false

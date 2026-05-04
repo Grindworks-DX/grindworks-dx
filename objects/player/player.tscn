@@ -325,7 +325,7 @@ custom_minimum_size = Vector2(0, 0)
 layout_mode = 1
 offset_left = 23.0
 offset_top = -592.0
-offset_right = -1028.0
+offset_right = -957.0
 offset_bottom = -208.0
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 0
@@ -342,8 +342,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -1020.0
+offset_top = 3.0
 offset_right = -790.0
-offset_bottom = 200.0
+offset_bottom = 207.0
 grow_horizontal = 0
 grow_vertical = 2
 pivot_offset = Vector2(115, 105)
@@ -364,6 +365,7 @@ alignment = 2
 
 [node name="Punch" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer" unique_id=148875305]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "100%"
 label_settings = SubResource("LabelSettings_jerem")
@@ -393,6 +395,7 @@ expand_mode = 1
 
 [node name="Humor" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer" unique_id=732527059]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "100%"
 label_settings = SubResource("LabelSettings_jerem")
@@ -422,6 +425,7 @@ expand_mode = 1
 
 [node name="Gusto" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer" unique_id=1120579371]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "100%"
 label_settings = SubResource("LabelSettings_jerem")
@@ -451,6 +455,7 @@ expand_mode = 1
 
 [node name="Shrug" type="Label" parent="GUI/Stats/MarginContainer/VBoxContainer" unique_id=1489297784]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "100%"
 label_settings = SubResource("LabelSettings_jerem")

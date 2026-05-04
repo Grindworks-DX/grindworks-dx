@@ -6,7 +6,10 @@
 
 [sub_resource type="Resource" id="Resource_voata"]
 script = ExtResource("2_12p58")
+lure_type = 1
+damage_nerf = -0.5
 quality = 1
+rounds = 2
 id = 2
 
 [resource]

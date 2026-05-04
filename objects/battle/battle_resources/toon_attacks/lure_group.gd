@@ -77,8 +77,7 @@ func action():
 			elif get_immunity(target):
 				manager.battle_text(target, "IMMUNE")
 				continue
-			manager.battle_text(target, "Damage Down!", BattleText.colors.orange[0], BattleText.colors.orange[1])
-			Task.delay(1.0).connect(manager.battle_text.bind(target, "Accuracy Down!", BattleText.colors.orange[0], BattleText.colors.orange[1]))
+			effect_battle_text(target)
 			if cog_anim == 'landing':
 				animate_magnet_pull(target)
 			else:

@@ -322,7 +322,7 @@ func barrier(_signal: Signal, timeout: float = 10.0) -> Signal:
 	return SignalBarrier.new([_signal, Task.delay(timeout)], SignalBarrier.BarrierType.ANY).s_complete
 
 ## Returns a positive value if it deals damage, negative if it heals.
-func affect_target(target: Node3D, amount: float, ignore_current_action := false) -> int:
+func affect_target(target: Node3D, amount: float, ignore_current_action := false, extra_text: String = "") -> int:
 	# Some cog attacks may want to do "true damage" and ignore all incoming and outgoing stats.
 	# If so, they will set to ignore the current action, making the incoming damage the "true damage"
 	if current_action and is_instance_of(current_action, CogAttack) and current_action.ignore_stats:
@@ -398,7 +398,8 @@ func affect_target(target: Node3D, amount: float, ignore_current_action := false
 		text_color = Color('00ff00')
 		outline_color = Color('007100')
 		string = '+' + str(roundi(target.stats.get(stat) - pre_stat))
-
+	
+	string += extra_text
 	if string == "0":
 		pass
 	elif text_color:
@@ -423,6 +424,7 @@ func affect_target(target: Node3D, amount: float, ignore_current_action := false
 	return roundi(amount)
 
 func battle_text(target, string, text_color: Color = Color('ff0000'), outline_color: Color = Color('7a0000'), raise_height := 0.0):
+	if !is_instance_valid(target): return
 	var txt = load('res://objects/battle/3d_text/3d_text.tscn').instantiate()
 	txt.text = string
 	txt.modulate = text_color
@@ -483,12 +485,15 @@ func get_damage(damage: float, action: BattleAction, target: Node3D) -> int:
 		if not is_equal_approx(dept_boost, 1.0):
 			defense *= dept_boost
 
-	return roundi(boosted_damage / defense)
+	return ceili(boosted_damage / defense)
 
 func calculate_accuracy(action: BattleAction) -> float:
 	if action in action_hit_rolls.keys():
-		return action_hit_rolls[action]
+		return Globals.ACCURACY_GUARANTEE_HIT
 	if action is ToonAttack:
+		if action is GagDrop and action.targets[0].lured:
+			# Breaking Grounds: no more lured drop, sorry!
+			return Globals.ACCURACY_GUARANTEE_MISS
 		if not Util.get_player().use_accuracy:
 			action_hit_rolls[action] = true
 			return Globals.ACCURACY_GUARANTEE_HIT
@@ -687,6 +692,8 @@ func force_unlure(target: Cog) -> void:
 	for i in range(status_effects.size() - 1, -1, -1):
 		var effect = status_effects[i]
 		if effect is StatusLured and target == effect.target:
+			if effect.lure_type == StatusLured.LureType.STUN:
+				effect.apply_lure_immunity()
 			effect.target = null
 			lure_effect = effect
 	if not lure_effect:
@@ -720,8 +727,6 @@ func unskip_turn(who: Actor) -> void:
 			elif not action.user is Player:
 				break 
 			action_index += 1
-		for i in who.stats.turns:
-			inject_battle_action(get_cog_attack(who), action_index)
 
 func get_cog_attack(cog: Cog) -> CogAttack:
 	var cog_attack: CogAttack
@@ -886,3 +891,8 @@ func populate_enemy_moves() -> void:
 			cog.current_moves.append_array(attacks)
 	print(enemy_moves)
 	s_enemy_moves_assigned.emit()
+
+func is_target_debuffed(target: Actor) -> bool:
+	for effect in status_effects:
+		if effect.target == target and effect.quality == effect.EffectQuality.NEGATIVE: return true
+	return false

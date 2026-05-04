@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GagThrow" load_steps=5 format=3 uid="uid://j4n5n6omljxv"]
+[gd_resource type="Resource" script_class="GagThrow" format=3 uid="uid://j4n5n6omljxv"]
 
 [ext_resource type="Texture2D" uid="uid://d2eh7ur04xhve" path="res://ui_assets/battle/gags/inventory_creampie.png" id="1_jfugg"]
 [ext_resource type="PackedScene" uid="uid://dj268hnb7rr26" path="res://models/props/gags/pie/pie.glb" id="2_x2lnb"]
@@ -11,9 +11,7 @@ model = ExtResource("2_x2lnb")
 scale = 0.9
 splat_color = Color(1, 1, 0, 1)
 splat_sfx = ExtResource("4_r77ev")
+sweetspot_damage = 18
 icon = ExtResource("1_jfugg")
-damage = 60
-crit_chance_mod = 1.0
-target_type = 0
+damage = 38
 action_name = "Whole Cream Pie"
-one_time_use = false

@@ -10,6 +10,7 @@ script = ExtResource("3_l6pb8")
 model = ExtResource("2_1iy4c")
 toss_time = 0.01
 toss_sfx = ExtResource("4_1pd7m")
+gullible_defense = -0.3
 icon = ExtResource("1_0161d")
 damage = 56
 action_name = "Marbles"

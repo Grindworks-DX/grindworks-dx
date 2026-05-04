@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GagSound" load_steps=6 format=3 uid="uid://ckr8uplo6wg5h"]
+[gd_resource type="Resource" script_class="GagSound" format=3 uid="uid://ckr8uplo6wg5h"]
 
 [ext_resource type="Texture2D" uid="uid://dlpwdg5qa3cuo" path="res://ui_assets/battle/gags/inventory_whistle.png" id="1_mr628"]
 [ext_resource type="PackedScene" uid="uid://it2qq8y17ofu" path="res://models/props/gags/whistle/whistle.tscn" id="2_on3ip"]
@@ -16,8 +16,6 @@ anim_delay = 2.4
 sfx_windup = ExtResource("5_1rp04")
 sfx_blast = ExtResource("4_b6gdu")
 icon = ExtResource("1_mr628")
-damage = 12
-crit_chance_mod = 1.0
+damage = 14
 target_type = 7
 action_name = "Whistle"
-one_time_use = false

@@ -42,8 +42,8 @@ func set_cog(cog: Cog):
 
 	cog.stats.hp_changed.connect(set_hp_label.unbind(1))
 	set_hp_label()
-	cog.stats.s_speed_changed.connect(set_speed_label)
-	set_speed_label(cog.stats.speed)
+	BattleService.ongoing_battle.battle_stats[cog].s_speed_changed.connect(set_speed_label)
+	set_speed_label(BattleService.ongoing_battle.battle_stats[cog].speed)
 	BattleService.ongoing_battle.s_enemy_moves_assigned.connect(set_advantage_label)
 	set_advantage_label()
 	
@@ -74,6 +74,8 @@ func set_speed_label(new_speed: int):
 const ADV_LABEL_SETTINGS := [preload("uid://cnx4cg5a68tp7"), preload("uid://ix6utnif3h1p")]
 
 func set_advantage_label():
+	if !is_instance_valid(current_cog): return
+	
 	var moves := current_cog.stats.turns
 	advantage_label.visible = moves != 1 or current_cog.current_moves.is_empty()
 	if moves == 1 and !current_cog.current_moves.is_empty(): return
@@ -82,7 +84,7 @@ func set_advantage_label():
 	advantage_label.label_settings = ADV_LABEL_SETTINGS[int(!delayed)]
 	
 	if delayed:
-		advantage_label.text = "Delayed!"
+		advantage_label.text = "Delayed!" if !current_cog.stunned else "Stunned!"
 	else:
 		advantage_label.text = "%d Extra Move" % (moves - 1)
 		if moves > 2: advantage_label.text += "s"

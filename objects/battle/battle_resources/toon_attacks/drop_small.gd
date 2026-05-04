@@ -38,7 +38,7 @@ func action():
 	# Play incoming whistle
 	AudioManager.play_snippet(load('res://audio/sfx/battle/gags/drop/incoming_whistleALT.ogg'), 0.0, 2.0)
 	
-	if not hit:
+	if not hit and !target.lured:
 		await manager.sleep(0.5)
 		target.set_animation('sidestep-left')
 	
@@ -76,7 +76,7 @@ func action():
 		gag.scale /= 2.0
 		AudioManager.play_sound(sfx_miss)
 		manager.battle_text(target, "MISSED")
-		await target.animator.animation_finished
+		await manager.barrier(target.animator.animation_finished, 2.0)
 	
 	if is_instance_valid(gag):
 		gag.queue_free()

@@ -4,7 +4,5 @@
 
 [resource]
 script = ExtResource("1_5uj7t")
-boost = 0.8
-quality = 1
-rounds = 2
-id = 4
+stat = "speed"
+boost = -3

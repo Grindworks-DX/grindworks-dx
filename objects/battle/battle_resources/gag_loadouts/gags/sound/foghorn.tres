@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GagSound" load_steps=6 format=3 uid="uid://h6hi3blhr7gf"]
+[gd_resource type="Resource" script_class="GagSound" format=3 uid="uid://h6hi3blhr7gf"]
 
 [ext_resource type="Texture2D" uid="uid://c1fgwu0iapunq" path="res://ui_assets/battle/gags/inventory_fog_horn.png" id="1_7hiyh"]
 [ext_resource type="PackedScene" uid="uid://idagtqd5cor5" path="res://models/props/gags/foghorn/foghorn.tscn" id="2_1l8u8"]
@@ -12,12 +12,9 @@ model = ExtResource("2_1l8u8")
 position = Vector3(1.067, 0.213, -1.631)
 rotation = Vector3(0.1, 147.7, 81.8)
 scale = Vector3(0.475, 0.475, 0.475)
-anim_delay = 1.9
 sfx_windup = ExtResource("5_lvh27")
 sfx_blast = ExtResource("4_ujfg1")
 icon = ExtResource("1_7hiyh")
-damage = 76
-crit_chance_mod = 1.0
+damage = 70
 target_type = 7
 action_name = "Fog Horn"
-one_time_use = false

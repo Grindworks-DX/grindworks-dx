@@ -8,14 +8,12 @@ var trap_gags: Array[GagTrap] = []
 # Required for crit storage to work properly
 var current_activating_trap: GagTrap = null
 
-
 func get_stats() -> String:
 	if not lure_effect:
 		return "NO LURE EFFECT SET UP"
 
 	var knockback_damage: int = lure_effect.get_true_knockback()
 	var string := "Knockback Damage: " + str(knockback_damage) + "\n"\
-	+ "Rounds: " + str(get_lure_rounds()) +"\n"\
 	+ "Affects: "
 	match target_type:
 		ActionTarget.SELF:
@@ -27,6 +25,7 @@ func get_stats() -> String:
 		ActionTarget.ENEMY_SPLASH:
 			string += "Three Cogs"
 	string += "\n" + lure_effect.get_effect_string()
+	string += "\nRounds: " + str(get_lure_rounds())
 	return string
 
 
@@ -56,3 +55,11 @@ func get_lure_rounds() -> int:
 	var base_rounds := lure_effect.rounds
 	if self is LureFish: base_rounds += Util.get_player().stats.lure_fish_round_boost
 	return base_rounds
+
+func effect_battle_text(target: Actor) -> void:
+	match lure_effect.lure_type:
+		StatusLured.LureType.STUN:
+			manager.battle_text(target, "Stunned!", BattleText.colors.orange[0], BattleText.colors.orange[1])
+		StatusLured.LureType.DAMAGE_DOWN:
+			manager.battle_text(target, "Damage Down!", BattleText.colors.orange[0], BattleText.colors.orange[1])
+			Task.delay(1.0).connect(manager.battle_text.bind(target, "Accuracy Down!", BattleText.colors.orange[0], BattleText.colors.orange[1]))

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="TrapFall" load_steps=5 format=3 uid="uid://cktfkn8wvmlqv"]
+[gd_resource type="Resource" script_class="TrapFall" format=3 uid="uid://cktfkn8wvmlqv"]
 
 [ext_resource type="Texture2D" uid="uid://dllr28f4s08g" path="res://ui_assets/battle/gags/inventory_trapdoor.png" id="1_avft3"]
 [ext_resource type="PackedScene" uid="uid://54b8v4xqohhn" path="res://models/props/gags/trapdoor/trapdoor.glb" id="2_gfroe"]
@@ -10,9 +10,7 @@ script = ExtResource("3_ewhcy")
 model = ExtResource("2_gfroe")
 sfx = ExtResource("4_1sjcf")
 trap_type = 1
+gullible_defense = -0.3
 icon = ExtResource("1_avft3")
 damage = 110
-crit_chance_mod = 1.0
-target_type = 0
 action_name = "Trap Door"
-one_time_use = false

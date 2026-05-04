@@ -7,9 +7,8 @@
 
 [sub_resource type="Resource" id="Resource_e3sel"]
 script = ExtResource("2_uv4ns")
-lure_type = 1
-knockback_effect = 30
-damage_nerf = -0.75
+knockback_effect = 21
+damage_nerf = -0.8
 quality = 1
 id = 2
 

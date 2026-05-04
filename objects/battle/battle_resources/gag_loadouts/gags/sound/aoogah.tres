@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GagSound" load_steps=6 format=3 uid="uid://fcegry5yokp5"]
+[gd_resource type="Resource" script_class="GagSound" format=3 uid="uid://fcegry5yokp5"]
 
 [ext_resource type="Texture2D" uid="uid://b6fgd8mo03x7e" path="res://ui_assets/battle/gags/inventory_aoogah.png" id="1_10dg7"]
 [ext_resource type="PackedScene" uid="uid://clb5aeit6u56k" path="res://models/props/gags/aoogah/aoogah.tscn" id="2_afgbl"]
@@ -12,12 +12,9 @@ model = ExtResource("2_afgbl")
 position = Vector3(1.552, -0.055, -2.513)
 rotation = Vector3(-5.2, -28.2, 7.6)
 scale = Vector3(0.525, 0.525, 0.525)
-anim_delay = 1.9
 sfx_windup = ExtResource("5_ew2jg")
 sfx_blast = ExtResource("4_jqekm")
 icon = ExtResource("1_10dg7")
-damage = 34
-crit_chance_mod = 1.0
+damage = 28
 target_type = 7
 action_name = "Aoogah"
-one_time_use = false

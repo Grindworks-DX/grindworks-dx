@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GagSound" load_steps=6 format=3 uid="uid://bawjqrc07c6o2"]
+[gd_resource type="Resource" script_class="GagSound" format=3 uid="uid://bawjqrc07c6o2"]
 
 [ext_resource type="Texture2D" uid="uid://b3w7npbkc8fod" path="res://ui_assets/battle/gags/inventory_bugle.png" id="1_63mjv"]
 [ext_resource type="PackedScene" uid="uid://2p6r48esch8k" path="res://models/props/gags/bugle/bugle.tscn" id="2_40h5q"]
@@ -12,12 +12,9 @@ model = ExtResource("2_40h5q")
 position = Vector3(1.676, -0.28, -2.665)
 rotation = Vector3(11.8, 142.8, 139.9)
 scale = Vector3(0.7, 0.7, 0.7)
-anim_delay = 1.9
 sfx_windup = ExtResource("5_7fxe6")
 sfx_blast = ExtResource("4_7xo4e")
 icon = ExtResource("1_63mjv")
-damage = 20
-crit_chance_mod = 1.0
-target_type = 7
+damage = 17
+target_type = 2
 action_name = "Bugle"
-one_time_use = false
