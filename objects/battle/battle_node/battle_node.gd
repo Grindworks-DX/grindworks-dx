@@ -5,7 +5,11 @@ class_name BattleNode
 const BATTLE_MANAGER = preload("res://objects/battle/battle_manager/battle_manager.tscn")
 # Somehow preloading this is a cyclical reference i wish i was joking
 const BATTLE_UI := "res://objects/battle/battle_ui/battle_ui.tscn"
-const COG_DISTANCE := 2.25
+const COG_DISTANCES := {
+	6: 1.75,
+	4: 2.0,
+	0: 2.25
+}
 
 # Object state
 enum BattleState {
@@ -261,7 +265,12 @@ func get_cog_position(cog: Cog) -> Vector3:
 	
 	# Determine the offset of the position from cog center
 	var offset := Vector3.ZERO
-	offset.x = COG_DISTANCE * (float(cog_pos) - center_cog_index)
+	var distance := 0.0
+	for key in COG_DISTANCES.keys():
+		if cogs.size() < key: continue
+		distance = COG_DISTANCES[key]
+		break
+	offset.x = distance * (float(cog_pos) - center_cog_index)
 	
 	# Move Cog a little bit back if in middle
 	if cog_pos > 1 and cog_pos < cogs.size():

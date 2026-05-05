@@ -38,7 +38,7 @@ var debug_gag_points := false
 @export var gag_regen_chance_modifiers: Dictionary[String, float] = {}
 @export var gag_point_caps: Dictionary[String, int] = {} # TODO
 
-@export var gag_cap := 10
+@export var gag_cap := 25
 @export var gag_discount := -1
 @export var character: PlayerCharacter
 @export var quests: Array[Quest]
@@ -204,7 +204,7 @@ func max_out() -> void:
 		hp = 100
 	for track in gags_unlocked:
 		gags_unlocked[track] = 7
-		gag_balance[track] = 10
+		gag_balance[track] = 25
 	for key in toonups.keys():
 		toonups[key] = 0
 	for key in gag_vouchers.keys():
@@ -341,16 +341,23 @@ func run_stranger_roll() -> bool:
 		s_stat_changed.emit('jokes')
 @export var total_jokes := 0
 
+@export var regen_crit_chance := 0.0
+
 func roll_gag_regen(track_name: String) -> int:
 	var __out := 0
 	var regen_rate := gag_regen_chance + gag_regen_chance_modifiers[track_name]
 	__out += floori(regen_rate)
-	__out += int(randf() < (regen_rate - floori(regen_rate)))
+	# TODO: implement rng
+	var bonus = (randf() < (regen_rate - floori(regen_rate)))
+	if bonus: __out += int(bonus)
+	# Crit regen: Luck% chance per track to triple its regeneration
+	if randf() < (luck - 1.0) + regen_crit_chance:
+		print("Regen crit! %s" % track_name)
+		__out *= 3
 	print("Gag regen: %s gained %d points" % [track_name, __out])
 	return __out
 
 func do_humor_healing(effectiveness := 1.0) -> void:
-	if hp < max_hp:
+	if hp < max_hp and humor_healing * effectiveness > 0:
 		AudioManager.play_sound(load("res://audio/sfx/items/laff_boost_pickup.ogg"), -3.0)
-	Util.get_player().quick_heal(humor_healing * effectiveness)
-	
+	Util.get_player().quick_heal(ceili(humor_healing * effectiveness))

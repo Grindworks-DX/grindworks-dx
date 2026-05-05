@@ -12,6 +12,7 @@ const BASE_MASK_SIZE := 184.0
 @onready var effect_panel := %EffectPanel
 @onready var speed_label := %SpeedLabel
 @onready var advantage_label := %AdvantageLabel
+@onready var profile := %Profile
 
 @onready var effect_mask := %StatusEffectMask
 

@@ -49,7 +49,7 @@ static var STAT_CLAMPS: Dictionary[String, Vector2] = {
 const UNCAPPED_STAT_VAL := -999.0
 
 # Breaking Grounds: Speed is now an internal battlestat instead
-@export var speed := 1:
+@export var speed := 0:
 	set(x):
 		speed = x
 		if self is PlayerStats:
@@ -207,7 +207,7 @@ signal s_shrug_changed(new_value: int)
 var attribute_modifiers := {
 	'punch': { 'damage': 0.05, 'parry': 0.04 },
 	'humor': { 'max_hp': 4, 'humor_healing': 2 },
-	'gusto': { 'speed': 1, 'gag_regen_chance': 0.10 },
+	'gusto': { 'speed': 2, 'gag_regen_chance': 0.15 },
 	'shrug': { 'luck': 0.03, 'evasiveness': 0.04 },
 }
 
@@ -226,3 +226,6 @@ func attribute_changed(attr: String, old_value, new_value) -> void:
 				hp = max_hp
 			
 signal s_stunned
+
+# Speed stat mechanics
+@export var delay_resist := 0.0

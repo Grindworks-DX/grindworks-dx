@@ -124,15 +124,15 @@ func refresh():
 	
 	point_label.text = "%d/%d (%s)" % [
 		roundi(Util.get_player().stats.gag_balance[track.track_name]),
-		roundi(Util.get_player().stats.gag_cap),
+		roundi(Util.get_player().stats.gag_point_caps[track.track_name]),
 		Util.float_to_perc(stats.gag_regen_chance + stats.gag_regen_chance_modifiers[track.track_name])
 	]
-	if Util.get_player().stats.gag_balance[track.track_name] > Util.get_player().stats.gag_cap:
+	if Util.get_player().stats.gag_balance[track.track_name] > Util.get_player().stats.gag_point_caps[track.track_name]:
 		point_label.self_modulate = WARNING_COLOR
 	else:
 		point_label.self_modulate = Color.WHITE
 	
-	point_bar.max_value = roundi(Util.get_player().stats.gag_cap)
+	point_bar.max_value = roundi(Util.get_player().stats.gag_point_caps[track.track_name])
 	point_bar.value = roundi(Util.get_player().stats.gag_balance[track.track_name])
 	point_bar.self_modulate = track.track_color
 	
@@ -148,7 +148,7 @@ func refund_gag(gag: ToonAttack):
 				return
 			var new_balance: int = player.stats.gag_balance[track.track_name]
 			new_balance = new_balance + gag.price
-			player.stats.gag_balance[track.track_name] = mini(new_balance, player.stats.gag_cap)
+			player.stats.gag_balance[track.track_name] = mini(new_balance, player.stats.gag_point_caps[track.track_name])
 			refresh()
 
 # Gag checks

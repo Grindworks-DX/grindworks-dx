@@ -16,7 +16,6 @@
 
 [sub_resource type="Resource" id="Resource_4xrsp"]
 script = ExtResource("1_vg416")
-speed = 0
 max_hp = 15
 hp = 15
 turns = 2
@@ -63,9 +62,9 @@ base_stats = SubResource("Resource_4xrsp")
 starting_gags = Dictionary[String, int]({
 "Drop": 0,
 "Lure": 0,
-"Sound": 0,
-"Squirt": 1,
-"Throw": 1,
+"Sound": 1,
+"Squirt": 3,
+"Throw": 3,
 "Trap": 0
 })
 achievement_items = Dictionary[int, ExtResource("9_t8yrd")]({

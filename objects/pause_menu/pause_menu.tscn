@@ -832,11 +832,11 @@ key_items = Array[Dictionary]([{
 "value": 0.0
 }, {
 "title": "Gusto",
-"tooltip": "+2 Speed, +10% Gag Regen per point",
+"tooltip": "+2 Speed, +15% Gag Regen per point",
 "value": 0.0
 }, {
 "title": "Shrug",
-"tooltip": "+3% Crit, +4% Dodge per point",
+"tooltip": "+3% Luck, +4% Dodge per point",
 "value": 0.0
 }])
 max_value = 12.0
@@ -864,10 +864,10 @@ items/key_1/title = "Humor
 items/key_1/tooltip = "+4 Max Laff, +2 Humor Healing per point"
 items/key_2/value = 0.0
 items/key_2/title = "Gusto"
-items/key_2/tooltip = "+2 Speed, +10% Gag Regen per point"
+items/key_2/tooltip = "+2 Speed, +15% Gag Regen per point"
 items/key_3/value = 0.0
 items/key_3/title = "Shrug"
-items/key_3/tooltip = "+3% Crit, +4% Dodge per point"
+items/key_3/tooltip = "+3% Luck, +4% Dodge per point"
 
 [node name="UpgradeButtonPunch" parent="Pages/MainPage/Attributes/AttributeRadarGraph" unique_id=1756232947 instance=ExtResource("2_fdjxk")]
 layout_mode = 0

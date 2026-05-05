@@ -1,15 +1,20 @@
 extends ActionScript
 class_name ElevatorReinforcements
 
+var amount := 2
+
+func _init(_amount := 2) -> void:
+	amount = _amount
+
 func action() -> void:
-	var cogs_needed := mini(4 - manager.cogs.size(), 2)
+	var cogs_needed := mini(8 - manager.cogs.size(), 2)
 	
 	if cogs_needed <= 0:
 		return
 	
 	# Fill the elevator
 	var elevator: Elevator = user.elevator_out
-	var cogs: Array[Cog] = user.fill_elevator(cogs_needed)
+	var cogs: Array[Cog] = user.fill_elevator(amount)
 	
 	# Focus elevator
 	battle_node.battle_cam.global_transform = elevator.elevator_cam.global_transform

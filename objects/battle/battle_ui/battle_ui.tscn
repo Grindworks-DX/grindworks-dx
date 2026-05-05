@@ -46,6 +46,13 @@ font = ExtResource("5_pju0v")
 font_size = 13
 font_color = Color(0, 0, 0.454902, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_k5f0o"]
+resource_local_to_scene = true
+font = ExtResource("5_pju0v")
+font_size = 12
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.35686275)
+
 [sub_resource type="LabelSettings" id="LabelSettings_uefqg"]
 font = ExtResource("12_iqdos")
 font_size = 18
@@ -77,6 +84,8 @@ font_color = Color(0, 0, 0, 1)
 font = ExtResource("5_pju0v")
 font_size = 14
 font_color = Color(0, 0, 1, 1)
+
+[sub_resource type="Theme" id="Theme_k5f0o"]
 
 [node name="BattleUI" type="CanvasLayer" unique_id=1862134265]
 script = ExtResource("1_8x8hy")
@@ -315,6 +324,9 @@ offset_top = -24.5
 offset_right = 86.0
 offset_bottom = 31.5
 
+[node name="CountLabel" parent="PlanningUI/BattleMenuContainer/BottomRight/LockIn" index="2" unique_id=2098216321]
+label_settings = SubResource("LabelSettings_k5f0o")
+
 [node name="Run" parent="PlanningUI/BattleMenuContainer/BottomRight" unique_id=509481613 instance=ExtResource("6_giclt")]
 visible = false
 layout_mode = 1
@@ -385,23 +397,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -295.0
-offset_top = -68.0
-offset_right = 125.0
-offset_bottom = 64.0
+offset_left = -290.0
+offset_top = -42.0
+offset_right = 290.0
+offset_bottom = 138.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.4, 1.4)
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(290, 90)
 texture = ExtResource("13_meb7h")
 script = ExtResource("14_ykvjj")
 
 [node name="GagPanel" type="TextureRect" parent="PlanningUI/TargetSelect" unique_id=357702589]
 self_modulate = Color(0.5, 0.9, 0.5, 1)
-layout_mode = 0
-offset_left = 306.0
-offset_top = 32.0
-offset_right = 409.0
-offset_bottom = 97.0
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -158.5712
+offset_top = -44.571426
+offset_right = -15.714111
+offset_bottom = 41.0
+grow_horizontal = 0
+grow_vertical = 2
 texture = ExtResource("9_wvj0c")
 
 [node name="GagImage" type="TextureRect" parent="PlanningUI/TargetSelect/GagPanel" unique_id=83113602]
@@ -422,11 +442,18 @@ expand_mode = 1
 
 [node name="MiddleTab" type="TextureRect" parent="PlanningUI/TargetSelect" unique_id=1154273464]
 self_modulate = Color(1, 1, 0, 1)
-layout_mode = 0
-offset_left = 99.0
-offset_top = 40.0
-offset_right = 312.0
-offset_bottom = 80.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.71426
+offset_top = -28.142853
+offset_right = 140.00003
+offset_bottom = 19.28572
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("15_3yu02")
 
 [node name="TargetCenterLabel" type="Label" parent="PlanningUI/TargetSelect/MiddleTab" unique_id=1629120619]
@@ -449,42 +476,55 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Buttons" type="Control" parent="PlanningUI/TargetSelect" unique_id=1760910418]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Back" parent="PlanningUI/TargetSelect/Buttons" unique_id=1850803737 instance=ExtResource("131_8fhg1")]
 layout_mode = 1
-offset_left = 18.0
-offset_top = 39.0
-offset_right = 95.0
-offset_bottom = 92.0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.285507
+offset_top = -36.0
+offset_right = 123.90817
+offset_bottom = 32.57144
+grow_vertical = 2
 focus_behavior_recursive = 2
 texture_normal = ExtResource("16_fsqkc")
 texture_pressed = ExtResource("17_75n66")
 texture_hover = ExtResource("18_fiwp1")
 
 [node name="Label2" type="Label" parent="PlanningUI/TargetSelect/Buttons/Back" unique_id=1120208072]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 15.0
-offset_right = 63.0
-offset_bottom = 38.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.642853
+offset_top = -11.5
+offset_right = 24.357147
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "BACK"
 label_settings = SubResource("LabelSettings_wqxli")
 
 [node name="Arrows" type="HBoxContainer" parent="PlanningUI/TargetSelect/Buttons" unique_id=27878010]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 3.57142
-offset_right = 375.0
-offset_bottom = 3.57142
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -228.57144
+offset_top = 9.428535
+offset_right = 239.2857
+offset_bottom = 49.428535
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 12
 alignment = 1
 
 [node name="ArrowButton" parent="PlanningUI/TargetSelect/Buttons/Arrows" unique_id=418891837 instance=ExtResource("131_8fhg1")]
@@ -565,13 +605,13 @@ layout_mode = 2
 unique_name_in_owner = true
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 25.0
-offset_bottom = 126.0
+offset_top = 47.0
+offset_bottom = 148.0
 grow_horizontal = 2
-scale = Vector2(1.08, 1.08)
-pivot_offset = Vector2(576, -25)
+pivot_offset = Vector2(576, -75)
 mouse_filter = 2
-theme_override_constants/separation = 24
+theme = SubResource("Theme_k5f0o")
+theme_override_constants/separation = -8
 alignment = 1
 script = ExtResource("14_j8cyf")
 

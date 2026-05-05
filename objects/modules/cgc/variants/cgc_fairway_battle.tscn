@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://bck84ftelia7y"]
 
 [ext_resource type="PackedScene" uid="uid://ch3xs1d1lu117" path="res://objects/modules/cgc/base_rooms/golfcourse_fairway.tscn" id="1_1hppd"]
-[ext_resource type="PackedScene" uid="uid://direah3lbjuu5" path="res://objects/battle/battle_node/battle_node.tscn" id="2_han7l"]
-[ext_resource type="PackedScene" uid="uid://dflwjcy6fj0av" path="res://objects/cog/cog.tscn" id="3_w0l22"]
 [ext_resource type="PackedScene" uid="uid://c1rus4vu8jrlg" path="res://objects/battle/battle_node/dynamic/battle_node_dynamic.tscn" id="4_7tvhk"]
 [ext_resource type="PackedScene" uid="uid://5m1a0suouie8" path="res://objects/props/cgc/fence_with_end.tscn" id="4_e0ejp"]
 [ext_resource type="PackedScene" uid="uid://dbrst2twjd0pu" path="res://objects/interactables/button/button.tscn" id="6_gkpxy"]
@@ -13,9 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://c1g5f6yxujvef" path="res://addons/toonlike_tools/injectors/player/debug_player_position_marker.tscn" id="11_6mv8n"]
 [ext_resource type="Script" uid="uid://dax7hby88nkbu" path="res://addons/toonlike_tools/injectors/player/debug_player_position_marker.gd" id="12_mx57x"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_x8c6u"]
-size = Vector3(11.741, 6.05652, 10.3316)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_vc8ur"]
 size = Vector3(20.6291, 6.05652, 10.3316)
 
@@ -23,44 +18,40 @@ size = Vector3(20.6291, 6.05652, 10.3316)
 
 [node name="Battles" type="Node3D" parent="." index="29" unique_id=1512998419]
 
-[node name="BattleFinal" parent="Battles" index="0" unique_id=2065429761 node_paths=PackedStringArray("cogs") instance=ExtResource("2_han7l")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.0414, 0, 0)
-cogs = [NodePath("Cog"), NodePath("Cog2"), NodePath("Cog3")]
-
-[node name="Cog" parent="Battles/BattleFinal" index="3" unique_id=1301746616 instance=ExtResource("3_w0l22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3139, 0, 0)
-
-[node name="Cog2" parent="Battles/BattleFinal" index="4" unique_id=546831973 instance=ExtResource("3_w0l22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000977516, 0, 0)
-
-[node name="Cog3" parent="Battles/BattleFinal" index="5" unique_id=183404891 instance=ExtResource("3_w0l22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43742, 0, 0)
-
-[node name="Cog4" parent="Battles/BattleFinal" index="6" unique_id=1548162529 instance=ExtResource("3_w0l22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.874, 0, 0)
-
-[node name="Cog5" parent="Battles/BattleFinal" index="7" unique_id=213109445 instance=ExtResource("3_w0l22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.874, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Battles/BattleFinal" index="8" unique_id=730415956]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.301361, 3.02826, -0.130524)
-shape = SubResource("BoxShape3D_x8c6u")
-
-[node name="BattleLeft" parent="Battles" index="1" unique_id=1445341792 node_paths=PackedStringArray("cogs") instance=ExtResource("2_han7l")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.8189, 4.76837e-07, -13.8446)
-cogs = [NodePath(""), NodePath(""), NodePath(""), NodePath("")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Battles/BattleLeft" index="3" unique_id=1292303661]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36249, 3.02826, -0.130524)
-shape = SubResource("BoxShape3D_vc8ur")
-
-[node name="BattleRight" parent="Battles" index="2" unique_id=994772594 node_paths=PackedStringArray("cogs") instance=ExtResource("4_7tvhk")]
+[node name="BattleRight" parent="Battles" index="0" unique_id=994772594 node_paths=PackedStringArray("cogs") instance=ExtResource("4_7tvhk")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.8189, 4.76837e-07, 14.0307)
-cog_range = Vector2i(6, 6)
 cog_dist = 1.12
-cogs = [NodePath("Cogs/Cog12"), NodePath("Cogs/Cog13"), NodePath("Cogs/Cog14"), NodePath("Cogs/Cog15"), NodePath("Cogs/Cog16"), NodePath("Cogs/Cog17")]
+cogs = [NodePath("Cogs/Cog8"), NodePath("Cogs/Cog9"), NodePath("Cogs/Cog10"), NodePath("Cogs/Cog11")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Battles/BattleRight" index="4" unique_id=658091096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63598, 3.02826, -0.130524)
+shape = SubResource("BoxShape3D_vc8ur")
+
+[node name="BattleRight2" parent="Battles" index="1" unique_id=698056555 node_paths=PackedStringArray("cogs") instance=ExtResource("4_7tvhk")]
+transform = Transform3D(-1, 0, -8.742279e-08, 0, 1, 0, 8.742279e-08, 0, -1, 17.040428, 4.76837e-07, 14.0307)
+cog_dist = 1.12
+cogs = [NodePath("Cogs/Cog12"), NodePath("Cogs/Cog13"), NodePath("Cogs/Cog14"), NodePath("Cogs/Cog15")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Battles/BattleRight2" index="4" unique_id=971121457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63598, 3.02826, -0.130524)
+shape = SubResource("BoxShape3D_vc8ur")
+
+[node name="BattleRight3" parent="Battles" index="2" unique_id=1055282520 node_paths=PackedStringArray("cogs") instance=ExtResource("4_7tvhk")]
+transform = Transform3D(1, 0, 1.4210855e-14, 0, 1, 0, -1.4210855e-14, 0, 1, 17.040428, 4.76837e-07, -14.9693)
+cog_dist = 1.12
+cogs = [NodePath("Cogs/Cog8"), NodePath("Cogs/Cog9"), NodePath("Cogs/Cog10"), NodePath("Cogs/Cog11")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Battles/BattleRight3" index="4" unique_id=592074685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63598, 3.02826, -0.130524)
+shape = SubResource("BoxShape3D_vc8ur")
+
+[node name="BattleLeft" parent="Battles" index="3" unique_id=764392466 node_paths=PackedStringArray("cogs") instance=ExtResource("4_7tvhk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.8189, 4.76837e-07, -12.772743)
+cog_range = Vector2i(4, 4)
+cog_dist = 1.12
+cogs = [NodePath("Cogs/Cog0"), NodePath("Cogs/Cog1"), NodePath("Cogs/Cog2"), NodePath("Cogs/Cog3")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Battles/BattleLeft" index="4" unique_id=1712807817]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63598, 3.02826, -0.130524)
 shape = SubResource("BoxShape3D_vc8ur")
 

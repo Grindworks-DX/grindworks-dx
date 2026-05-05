@@ -372,7 +372,6 @@ class PlayerStatsSetterCommand extends SetterCommand:
 			"stranger_chance",
 			"pink_slips",
 			"quest_rerolls",
-			"gag_cap",
 			"crit_mult",
 			"mod_cog_dmg_mult",
 			"shop_discount",

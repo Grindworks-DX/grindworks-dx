@@ -32,7 +32,7 @@ var unlock_toon := false
 var unlock_mystery := false
 
 ## For battle tracking
-const COG_LEVEL_RANGE := Vector2i(10, 16)
+const COG_LEVEL_RANGE := Vector2i(12, 18)
 var boss_one_choice: CogDNA
 var boss_two_choice: CogDNA
 
@@ -93,10 +93,14 @@ func _ready() -> void:
 
 
 func try_add_cogs(_actions: Array[BattleAction]) -> void:
-	var cooldown := 2
+	# Breaking Grounds: MORE COGS
+	var cooldown := 4
+	var amount := 4
+	if !(boss_one_alive and boss_two_alive):
+		amount += 2
 	
 	if BattleService.ongoing_battle.current_round % cooldown == 1 and (boss_one_alive or boss_two_alive):
-		var new_reinforcements := ElevatorReinforcements.new()
+		var new_reinforcements := ElevatorReinforcements.new(amount)
 		new_reinforcements.user = self
 		BattleService.ongoing_battle.round_end_actions.append(new_reinforcements)
 
@@ -185,7 +189,7 @@ func fill_elevator(cog_count: int, dna: CogDNA = null) -> Array[Cog]:
 	var new_cogs: Array[Cog]
 	for i in cog_count:
 		var cog := COG_SCENE.instantiate()
-		cog.custom_level_range = COG_LEVEL_RANGE
+		cog.custom_level_range = COG_LEVEL_RANGE - (Vector2i(4, 2) if !(boss_one_alive and boss_two_alive) else Vector2i(0, 0))
 		if dna: cog.dna = dna
 		elif roll_for_proxies and RNG.channel(RNG.ChannelModCogChance).randf() < 0.25:
 			cog.use_mod_cogs_pool = true

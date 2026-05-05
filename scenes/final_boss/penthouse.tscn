@@ -183,6 +183,9 @@ func _ready() -> void:
 script = ExtResource("2_bn0hh")
 possible_bosses = Array[ExtResource("3_pu03o")]([ExtResource("4_7haf7"), ExtResource("7_qh8x2"), ExtResource("6_76361"), ExtResource("7_y0ea0")])
 
+[node name="Grp_room" parent="." index="0" unique_id=183702905]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
 [node name="bossChair" parent="Grp_room/props_GRP" parent_id_path=PackedInt32Array(736864593) index="0" unique_id=1114352095]
 visible = false
 
@@ -222,7 +225,7 @@ visible = false
 visible = false
 
 [node name="cloudAnimation_GRP" parent="Grp_animation" parent_id_path=PackedInt32Array(1751320857) index="2" unique_id=640595544]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
 
 [node name="toonCage" parent="Grp_animation" parent_id_path=PackedInt32Array(1751320857) index="3" unique_id=846716552]
 surface_material_override/0 = SubResource("StandardMaterial3D_wvq2t")
@@ -243,14 +246,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.94665, 3.4633, -10.426)
 environment = SubResource("Environment_7vej0")
 
 [node name="ElevatorEntrance" parent="." index="5" unique_id=1423401555 instance=ExtResource("6_mrpky")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.83145, -0.03319, 14.9418)
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 1.2815996, -0.03319, 22.269205)
 monitoring = false
 
 [node name="frame" parent="ElevatorEntrance/unnamed1/Grp_elevatorB" parent_id_path=PackedInt32Array(1423401555, 69146950) index="2" unique_id=859035096]
-visible = false
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
 [node name="ElevatorExit" parent="." index="6" unique_id=1276638388 instance=ExtResource("6_mrpky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83145, -0.03319, -14.9068)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2611482, -0.03319, -22.351421)
 monitoring = false
 
 [node name="frame" parent="ElevatorExit/unnamed1/Grp_elevatorB" parent_id_path=PackedInt32Array(1276638388, 69146950) index="2" unique_id=859035096]

@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://direah3lbjuu5" path="res://objects/battle/battle_node/battle_node.tscn" id="2_alx7d"]
 [ext_resource type="PackedScene" uid="uid://dflwjcy6fj0av" path="res://objects/cog/cog.tscn" id="3_okjj0"]
 [ext_resource type="Resource" uid="uid://q8ev1hag3yvy" path="res://objects/cog/presets/sellbot/mr_hollywood.tres" id="4_16xtn"]
-[ext_resource type="PackedScene" uid="uid://wpoc3xs1yy0" path="res://objects/player/player.tscn" id="4_fefq8"]
 [ext_resource type="Script" uid="uid://o2fe7ud1faj6" path="res://objects/battle/battle_resources/stats.gd" id="5_wgpvb"]
 [ext_resource type="Script" uid="uid://5uwfsntxdag6" path="res://objects/items/classes/item_active.gd" id="6_1xuw6"]
 [ext_resource type="Script" uid="uid://c8kas2j4io1jh" path="res://objects/toon/clothing/toon_bottoms.gd" id="6_sp5d7"]
@@ -29,6 +28,8 @@
 [ext_resource type="Resource" uid="uid://b73ax0fohafiu" path="res://objects/items/resources/accessories/hats/toonosaur_hat.tres" id="26_16xtn"]
 [ext_resource type="Resource" uid="uid://clm40vnq0ywx8" path="res://objects/items/resources/passive/joke.tres" id="28_1xuw6"]
 [ext_resource type="Resource" uid="uid://ca25j75xttg4p" path="res://objects/items/resources/active/moneybags_coin.tres" id="28_16xtn"]
+[ext_resource type="PackedScene" uid="uid://c1g5f6yxujvef" path="res://addons/toonlike_tools/injectors/player/debug_player_position_marker.tscn" id="30_ouruu"]
+[ext_resource type="Script" uid="uid://dax7hby88nkbu" path="res://addons/toonlike_tools/injectors/player/debug_player_position_marker.gd" id="31_4p2an"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5pfdn"]
 size = Vector3(14.6639, 5.65576, 10.2309)
@@ -186,7 +187,7 @@ dna = ExtResource("4_16xtn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13974, 2.82789, 1.11899)
 shape = SubResource("BoxShape3D_5pfdn")
 
-[node name="Player" parent="." unique_id=786556779 instance=ExtResource("4_fefq8")]
+[node name="Player" parent="." unique_id=786556779 instance_placeholder="res://objects/player/player.tscn"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4345, 0, -10.4431)
 state = 0
 stats = SubResource("Resource_vs51t")
@@ -210,3 +211,7 @@ override_item = ExtResource("28_1xuw6")
 [node name="treasure_chest5" parent="." unique_id=1686263884 instance=ExtResource("23_16xtn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.65817, 0, -5.41882)
 override_item = ExtResource("28_16xtn")
+
+[node name="DebugPlayerPositionMarker" type="Marker3D" parent="." unique_id=1108719677 instance=ExtResource("30_ouruu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.011791, 0, -4.1908646)
+script = ExtResource("31_4p2an")

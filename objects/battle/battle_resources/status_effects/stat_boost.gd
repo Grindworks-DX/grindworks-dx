@@ -7,7 +7,8 @@ var ICONS := {
 	'defense': load("res://ui_assets/battle/statuses/defense.png"),
 	'evasiveness': load("res://ui_assets/battle/statuses/evasiveness.png"),
 	'luck': load("res://ui_assets/battle/statuses/luck_crit.png"),
-	'speed': load("res://ui_assets/battle/statuses/speed.png")
+	'speed': load("res://ui_assets/battle/statuses/speed.png"),
+	'delay_resist': load("res://ui_assets/player_ui/pause/time_crunch.png")
 }
 
 @export var stat: String = 'defense'
@@ -25,14 +26,14 @@ func expire():
 		battle_stats.set(stat, battle_stats.get(stat) - boost)
 
 func get_description() -> String:
-	var __out = "%s%s%s %s" % ["+" if boost > 0.0 else "-", roundi(abs(boost) * (100 if boost is float else 1)), "%" if boost is float else "", stat[0].to_upper() + stat.substr(1)]
+	var __out = "%s%s%s %s" % ["+" if boost > 0.0 else "-", roundi(abs(boost) * (100 if boost is float else 1)), "%" if boost is float else "", stat.capitalize()]
 	return __out
 
 func get_icon() -> Texture2D:
 	return ICONS[stat]
 
 func get_status_name() -> String:
-	return stat[0].to_upper() + stat.substr(1) + (" Up" if boost > 0.0 else " Down")
+	return stat.capitalize() + (" Up" if boost > 0.0 else " Down")
 
 func combine(effect: StatusEffect) -> bool:
 	if not effect is StatBoost:

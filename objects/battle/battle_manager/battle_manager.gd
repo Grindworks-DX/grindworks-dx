@@ -444,6 +444,10 @@ func get_damage(damage: float, action: BattleAction, target: Node3D) -> int:
 	if sign(damage) == -1 or not action:
 		return roundi(damage)
 	
+	# Fire in the hole!
+	if action is ToonAttackFire:
+		return target.stats.hp
+	
 	# Get the user
 	var user = action.user
 	
@@ -893,6 +897,7 @@ func populate_enemy_moves() -> void:
 	for cog in cogs:
 		cog.current_moves.clear()
 		var attacks := get_cog_attacks(cog)
+		if check_for_delay(cog): attacks.clear()
 		if !attacks.is_empty():
 			enemy_moves.append_array(attacks)
 			cog.current_moves.append_array(attacks)
@@ -903,3 +908,26 @@ func is_target_debuffed(target: Actor) -> bool:
 	for effect in status_effects:
 		if effect.target == target and effect.quality == effect.EffectQuality.NEGATIVE: return true
 	return false
+
+# For each speed point the player has above a Cog, there is a 10% chance for them to be delayed;
+# this causes a stacking 20% Delay resistance until they finally take their turn
+
+func check_for_delay(cog: Cog) -> bool:
+	var __out = false
+	var player_speed = battle_stats[Util.get_player()].speed
+	var cog_speed = battle_stats[cog].speed
+	var cog_delay_resist = battle_stats[cog].delay_resist
+	var roll := randf()
+	var chance: float = min(1.0, ((player_speed - cog_speed) * 0.1)) - cog_delay_resist
+	__out = roll < chance
+	if __out:
+		
+		var new_status = load("res://objects/battle/battle_resources/status_effects/resources/status_effect_delay_resist.tres").duplicate(true)
+		new_status.target = cog
+		add_status_effect(new_status)
+	else:
+		for status: StatusEffect in status_effects:
+			if status.target == cog and status.get_status_name() == "Delay Resist Up":
+				expire_status_effect(status)
+	print("Delay - Rolled: %0.2f Needed lower than: %0.2f" % [roll, chance])
+	return __out

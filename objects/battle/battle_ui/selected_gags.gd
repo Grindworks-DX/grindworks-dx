@@ -90,10 +90,10 @@ func refresh_gags(gags: Array[ToonAttack]):
 		var panel = panels[i]
 		if i < gags.size():
 			var gag = gags[i]
+			var damage = manager.get_damage(gag.damage, gag, gag.targets[0])
 			panel.get_node('GagIcon').texture = gag.icon
 			panel.get_node('GeneralButton').disabled = false
-			var damage = manager.get_damage(gag.damage, gag, gag.targets[0])
-			panel.get_node('DamageLabel').text = "-" + str(damage)
+			panel.get_node('DamageLabel').text = ("-" + str(damage)) if damage > 0 else ""
 			panel.get_node('TargetingLabel').text = get_targeting_string(gag)
 		else:
 			panel.get_node('GagIcon').texture = null

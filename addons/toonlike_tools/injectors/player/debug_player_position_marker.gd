@@ -18,6 +18,7 @@ func _ready():
 		player.stats.debug_invulnerable = invulnerable
 		player.state = state
 		player.stats.set_loadout(player.character.gag_loadout)
+		player.stats.initialize()
 		if infinite_gag_points:
 			player.stats.gag_cap = 100
 			player.stats.debug_gag_points = true

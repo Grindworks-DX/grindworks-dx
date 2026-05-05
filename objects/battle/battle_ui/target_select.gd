@@ -58,33 +58,52 @@ func arrow_pressed(index : int):
 	reset_buttons()
 
 func on_arrow_hovered(index : int) -> void:
-	if not gag.target_type == BattleAction.ActionTarget.ENEMY_SPLASH:
-		return
+	var cog_panels := BattleService.ongoing_battle.battle_ui.cog_panels
+	var panels = cog_panels.get_children()
+	panels[index].profile.self_modulate = Color(0.645, 0.813, 0.972, 1.0)
 	
-	for button in get_neighbors(index):
-		button.texture_normal = ARROW_RED
+	if gag.target_type == BattleAction.ActionTarget.ENEMY_SPLASH:
+		for i in get_neighboring_indices(index, cog_panels.get_child_count()):
+			panels[i].profile.self_modulate = Color(0.855, 0.665, 0.88, 1.0)
+		for button in get_neighbor_buttons(index):
+			button.texture_normal = ARROW_RED
 
 ## Returns splash neighbors
-func get_neighbors(index : int) -> Array[GeneralButton]:
+func get_neighbor_buttons(index : int) -> Array[GeneralButton]:
 	var neighbors : Array[GeneralButton] = []
 	var button_container : HBoxContainer = $Buttons/Arrows
 	
-	if index == 0:
-		var i := 1
-		while i < button_container.get_child_count() and i < 3:
-			neighbors.append(button_container.get_child(i))
-			i += 1
-	elif index == button_container.get_child_count() - 1:
-		var i := button_container.get_child_count() - 2
-		while i >= 0 and i > button_container.get_child_count() - 4:
-			neighbors.append(button_container.get_child(i))
-			i -= 1
-	else:
-		neighbors.append(button_container.get_child(index - 1))
-		neighbors.append(button_container.get_child(index + 1))
+	for i in get_neighboring_indices(index, button_container.get_child_count()):
+		neighbors.append(button_container.get_child(i))
 	
 	return neighbors
 
-func on_arrow_unhovered(_index : int) -> void:
+func get_neighboring_indices(index: int, amount: int) -> Array[int]:
+	var neighbors : Array[int] = []
+	
+	if index == 0:
+		var i := 1
+		while i < amount and i < 3:
+			neighbors.append(i)
+			i += 1
+	elif index == amount - 1:
+		var i := amount - 2
+		while i >= 0 and i > amount - 4:
+			neighbors.append(i)
+			i -= 1
+	else:
+		neighbors.append(index - 1)
+		neighbors.append(index + 1)
+	
+	return neighbors
+
+func on_arrow_unhovered(index : int) -> void:
+	var cog_panels := BattleService.ongoing_battle.battle_ui.cog_panels
+	cog_panels.get_children()[index].profile.self_modulate = Color('e0e0e0a6')
+	
+	if gag.target_type == BattleAction.ActionTarget.ENEMY_SPLASH:
+		for i in get_neighboring_indices(index, cog_panels.get_child_count()):
+			cog_panels.get_children()[i].profile.self_modulate = Color('e0e0e0a6')
+	
 	for button : GeneralButton in $Buttons/Arrows.get_children():
 		button.texture_normal = ARROW_NORM

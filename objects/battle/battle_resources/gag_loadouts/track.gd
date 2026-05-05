@@ -18,7 +18,7 @@ enum TrackType {
 
 @export var base_regen := 0.0
 @export var base_combat_start_gp := 3
-@export var base_gp_cap := 10
+@export var base_gp_cap := 15
 @export var base_level := 0
 @export var base_effectiveness := 1.0
 
