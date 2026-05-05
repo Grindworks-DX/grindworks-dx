@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("1_kv0ue")
+qualitoon = 3
 evergreen = true
 item_name = "Joke!"
 item_description = "Ha! That's a good one!"
@@ -13,7 +14,8 @@ big_description = "Spend these to upgrade one of your four Attributes!"
 model = ExtResource("1_taocm")
 pickup_sfx = ExtResource("2_xq7fd")
 stats_add = {
-"jokes": 1
+"jokes": 1,
+"max_jokes": 1
 }
 remember_item = false
 shop_category_color = Color(1, 0.54901963, 0, 1)

@@ -174,7 +174,7 @@ func get_ortho_model_tex(model : Variant) -> Texture2D:
 	return tex
 
 func on_easy_floor() -> bool:
-	return floor_number < 3
+	return floor_number < 1
 
 ## Creates a timer
 func run_timer(time := 5.0, anchor := Control.PRESET_BOTTOM_RIGHT) -> GameTimer:
@@ -341,7 +341,6 @@ func make_boss_chests(holder_node: Node3D, pos_node: Node3D) -> void:
 		await s_player_assigned
 	var spacing := 2.0
 	var chest_types: Array[String] = [
-		'candy',
 		'gag',
 		'toonup',
 		'bean'
@@ -358,9 +357,6 @@ func make_boss_chests(holder_node: Node3D, pos_node: Node3D) -> void:
 		chest.item_pool = ItemService.PROGRESSIVE_POOL
 		chest.override_replacement_rolls = true
 		match type:
-			'candy':
-				# Give a random super candy
-				chest.item_pool = ItemService.pool_from_path("res://objects/items/pools/super_candies.tres")
 			'gag':
 				# Give a random track frame
 				chest.override_item = load("res://objects/items/resources/passive/track_frame.tres")

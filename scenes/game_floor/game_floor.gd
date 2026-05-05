@@ -60,6 +60,8 @@ var debug_modifiers: Array[Script]
 var debug_anomalies: Array[Script]
 var debug_floor_variant: FloorVariant
 
+var battles_spawned := 0
+
 func _init() -> void:
 	EngineDebugger.register_message_capture('toonlike', _capture_debug_message)
 	EngineDebugger.send_message('toonlike:ready_for', ['game_floor'])
@@ -72,6 +74,9 @@ func _ready() -> void:
 	if room_count % 2 == 0:
 		room_count += 1
 	Util.floor_number += 1
+	battles_spawned = 0
+	BattleService.s_battle_spawned.connect(on_battle_spawned)
+	
 	generate_floor()
 	if SaveFileService.run_file:
 		SaveFileService.run_file.floor_choice = null
@@ -102,10 +107,7 @@ func generate_floor() -> void:
 	for modifier in floor_variant.modifiers + debug_modifiers:
 		initialize_floor_mod(modifier)
 
-	if Util.floor_number == 0:
-		$LocationText.set_text("Ground Floor\n%s" % floor_variant.floor_name)
-	else:
-		$LocationText.set_text("Floor %d\n%s" % [Util.floor_number, floor_variant.floor_name])
+	$LocationText.set_text("Floor %d\n%s" % [Util.floor_number + 1, floor_variant.floor_name])
 	
 	# Some values may be copied over from the floor variant to the floor type
 	floor_variant.floor_type = floor_variant.floor_type.duplicate(true)
@@ -426,3 +428,21 @@ func _capture_debug_message(message: String, data: Array) -> bool:
 ## Game Signals
 signal s_cog_spawned(cog: Cog)
 #endregion
+
+# Breaking Grounds - The first 4 battles of each floor nerfs the highest level Cog to 2-3 levels below minimum
+func on_battle_spawned(battle_node: BattleNode) -> void:
+	if battles_spawned < 4:
+		var cog_to_debuff: Cog
+		var highest_level := 0
+		
+		for cog in battle_node.cogs:
+			if cog.level > highest_level:
+				highest_level = cog.level
+				cog_to_debuff = cog
+		
+		if cog_to_debuff is Cog:
+			cog_to_debuff.level = RNG.channel(RNG.ChannelCogLevels).randi_range(level_range.x - 3, level_range.x - 2)
+			cog_to_debuff.dna = null
+			cog_to_debuff.randomize_cog()
+			print("Floor first 2 battles: Debuffing cog %s" % cog_to_debuff)
+	battles_spawned += 1

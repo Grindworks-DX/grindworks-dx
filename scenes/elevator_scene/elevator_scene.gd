@@ -22,7 +22,7 @@ func _init():
 	})
 
 func _ready():
-	if Util.floor_number == 5:
+	if Util.floor_number == 3:
 		$ElevatorUI.arrow_left.hide()
 		$ElevatorUI.arrow_right.hide()
 	
@@ -83,7 +83,7 @@ func start_game_floor(floor_var : FloorVariant) -> void:
 
 ## Selects 3 random floors to give to the player
 func get_next_floors() -> void:
-	if Util.floor_number == 5:
+	if Util.floor_number == 3:
 		final_boss_time_baby()
 		return
 	var floor_variants := Globals.FLOOR_VARIANTS

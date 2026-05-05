@@ -358,6 +358,9 @@ func connect_stats() -> void:
 	if stats.current_active_item and not stats.current_active_item.node:
 		stats.current_active_item.apply_item(self)
 	s_stats_connected.emit(stats)
+	
+	# Breaking Grounds
+	BattleService.s_cog_died.connect(stats.do_humor_healing.unbind(1))
 
 var prev_hp := -1
 func check_hp(hp : int) -> void:

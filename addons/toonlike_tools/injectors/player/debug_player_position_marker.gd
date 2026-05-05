@@ -4,7 +4,7 @@ const PLAYER_SCENE := preload('res://objects/player/player.tscn')
 var player: Player
 
 @export var invulnerable := false
-@export var infinite_gag_points := false
+@export var infinite_gag_points := true
 @export var state: Player.PlayerState = Player.PlayerState.WALK
 
 func _init():
@@ -17,6 +17,7 @@ func _ready():
 		SceneLoader.add_persistent_node(player)
 		player.stats.debug_invulnerable = invulnerable
 		player.state = state
+		player.stats.set_loadout(player.character.gag_loadout)
 		if infinite_gag_points:
 			player.stats.gag_cap = 100
 			player.stats.debug_gag_points = true

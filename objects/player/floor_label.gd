@@ -12,7 +12,4 @@ func _ready() -> void:
 	BattleService.s_battle_ended.connect(func(_x=null): if Util.floor_number != -1: show())
 
 func update_text() -> void:
-	if Util.floor_number == 0:
-		text = 'Ground Floor'
-	else:
-		text = 'Floor %s' % Util.floor_number
+	text = 'Floor %d' % (Util.floor_number + 1)

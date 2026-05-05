@@ -4722,451 +4722,451 @@ ambient_light_color = Color(1, 1, 1, 1)
 script = ExtResource("20_3wle6")
 override_music = ExtResource("19_ryjah")
 
-[node name="cog_building_floor1" type="Node3D"]
+[node name="cog_building_floor1" type="Node3D" unique_id=1509993275]
 script = ExtResource("1_60jla")
 
-[node name="suit_interior" type="Node3D" parent="."]
+[node name="suit_interior" type="Node3D" parent="." unique_id=990003444]
 transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4.37114e-08, -4.37114e-08, 0, 0, 0)
 
-[node name="collisions" type="Node3D" parent="suit_interior"]
+[node name="collisions" type="Node3D" parent="suit_interior" unique_id=2024749577]
 visible = false
 
-[node name="suit_interior_floor_collision" type="MeshInstance3D" parent="suit_interior/collisions"]
+[node name="suit_interior_floor_collision" type="MeshInstance3D" parent="suit_interior/collisions" unique_id=887558284]
 mesh = SubResource("ArrayMesh_s024x")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/suit_interior_floor_collision"]
+[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/suit_interior_floor_collision" unique_id=1623281068]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/suit_interior_floor_collision/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/suit_interior_floor_collision/StaticBody3D" unique_id=515774864]
 shape = SubResource("ConcavePolygonShape3D_3mddi")
 
-[node name="suit_interior_camera_barrier_collision" type="MeshInstance3D" parent="suit_interior/collisions"]
+[node name="suit_interior_camera_barrier_collision" type="MeshInstance3D" parent="suit_interior/collisions" unique_id=818436620]
 mesh = SubResource("ArrayMesh_5h6xj")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/suit_interior_camera_barrier_collision"]
+[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/suit_interior_camera_barrier_collision" unique_id=589172362]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/suit_interior_camera_barrier_collision/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/suit_interior_camera_barrier_collision/StaticBody3D" unique_id=204739514]
 shape = SubResource("ConcavePolygonShape3D_lo74w")
 
-[node name="col_tube_1" type="MeshInstance3D" parent="suit_interior/collisions"]
+[node name="col_tube_1" type="MeshInstance3D" parent="suit_interior/collisions" unique_id=1721953421]
 mesh = SubResource("ArrayMesh_1y1cp")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_1" unique_id=2063166900]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_1/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_1/StaticBody3D" unique_id=658823924]
 shape = SubResource("ConcavePolygonShape3D_3eulg")
 
-[node name="col_tube_2" type="MeshInstance3D" parent="suit_interior/collisions"]
+[node name="col_tube_2" type="MeshInstance3D" parent="suit_interior/collisions" unique_id=1644728092]
 mesh = SubResource("ArrayMesh_o77yt")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_2" unique_id=1010154459]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_2/StaticBody3D" unique_id=1258215974]
 shape = SubResource("ConcavePolygonShape3D_dhver")
 
-[node name="col_tube_3" type="MeshInstance3D" parent="suit_interior/collisions"]
+[node name="col_tube_3" type="MeshInstance3D" parent="suit_interior/collisions" unique_id=188175262]
 mesh = SubResource("ArrayMesh_56oic")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_3" unique_id=51665295]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_3/StaticBody3D" unique_id=1663058818]
 shape = SubResource("ConcavePolygonShape3D_rpnmj")
 
-[node name="col_tube_4" type="MeshInstance3D" parent="suit_interior/collisions"]
+[node name="col_tube_4" type="MeshInstance3D" parent="suit_interior/collisions" unique_id=1644732883]
 mesh = SubResource("ArrayMesh_tssbe")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_4" unique_id=414140574]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_4/StaticBody3D" unique_id=965279089]
 shape = SubResource("ConcavePolygonShape3D_wayf3")
 
-[node name="col_tube_5" type="MeshInstance3D" parent="suit_interior/collisions"]
+[node name="col_tube_5" type="MeshInstance3D" parent="suit_interior/collisions" unique_id=1092857597]
 mesh = SubResource("ArrayMesh_agplo")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_5" unique_id=1201775617]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_5/StaticBody3D" unique_id=1879344682]
 shape = SubResource("ConcavePolygonShape3D_57w43")
 
-[node name="col_tube_6" type="MeshInstance3D" parent="suit_interior/collisions"]
+[node name="col_tube_6" type="MeshInstance3D" parent="suit_interior/collisions" unique_id=2032412782]
 mesh = SubResource("ArrayMesh_e8kr5")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_6" unique_id=1582714857]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_6/StaticBody3D" unique_id=2119779623]
 shape = SubResource("ConcavePolygonShape3D_g1kd0")
 
-[node name="col_tube_7" type="MeshInstance3D" parent="suit_interior/collisions"]
+[node name="col_tube_7" type="MeshInstance3D" parent="suit_interior/collisions" unique_id=458558628]
 mesh = SubResource("ArrayMesh_xe4lm")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_7"]
+[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_7" unique_id=1282291307]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_7/StaticBody3D" unique_id=612572155]
 shape = SubResource("ConcavePolygonShape3D_r1iou")
 
-[node name="col_tube_8" type="MeshInstance3D" parent="suit_interior/collisions"]
+[node name="col_tube_8" type="MeshInstance3D" parent="suit_interior/collisions" unique_id=160080831]
 mesh = SubResource("ArrayMesh_fms0o")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_8"]
+[node name="StaticBody3D" type="StaticBody3D" parent="suit_interior/collisions/col_tube_8" unique_id=750023812]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/collisions/col_tube_8/StaticBody3D" unique_id=1605215062]
 shape = SubResource("ConcavePolygonShape3D_rf6li")
 
-[node name="room_boundries" type="Node3D" parent="suit_interior"]
+[node name="room_boundries" type="Node3D" parent="suit_interior" unique_id=848182140]
 
-[node name="main_floor" type="MeshInstance3D" parent="suit_interior/room_boundries"]
+[node name="main_floor" type="MeshInstance3D" parent="suit_interior/room_boundries" unique_id=2044975662]
 mesh = SubResource("ArrayMesh_xj5qu")
 skeleton = NodePath("")
 
-[node name="left_wall" type="MeshInstance3D" parent="suit_interior/room_boundries"]
+[node name="left_wall" type="MeshInstance3D" parent="suit_interior/room_boundries" unique_id=980867334]
 mesh = SubResource("ArrayMesh_441ad")
 skeleton = NodePath("")
 
-[node name="right_wall" type="MeshInstance3D" parent="suit_interior/room_boundries"]
+[node name="right_wall" type="MeshInstance3D" parent="suit_interior/room_boundries" unique_id=2011451006]
 mesh = SubResource("ArrayMesh_qx0e3")
 skeleton = NodePath("")
 
-[node name="north_panel_wall" type="MeshInstance3D" parent="suit_interior/room_boundries"]
+[node name="north_panel_wall" type="MeshInstance3D" parent="suit_interior/room_boundries" unique_id=1998443332]
 mesh = SubResource("ArrayMesh_sthui")
 skeleton = NodePath("")
 
-[node name="south_panel_wall" type="MeshInstance3D" parent="suit_interior/room_boundries"]
+[node name="south_panel_wall" type="MeshInstance3D" parent="suit_interior/room_boundries" unique_id=626498121]
 mesh = SubResource("ArrayMesh_acv3v")
 skeleton = NodePath("")
 
-[node name="screws" type="Node3D" parent="suit_interior/room_boundries"]
+[node name="screws" type="Node3D" parent="suit_interior/room_boundries" unique_id=337188339]
 
-[node name="o91" type="MeshInstance3D" parent="suit_interior/room_boundries/screws"]
+[node name="o91" type="MeshInstance3D" parent="suit_interior/room_boundries/screws" unique_id=63041788]
 mesh = SubResource("ArrayMesh_xewm7")
 skeleton = NodePath("")
 
-[node name="o91_4" type="MeshInstance3D" parent="suit_interior/room_boundries/screws"]
+[node name="o91_4" type="MeshInstance3D" parent="suit_interior/room_boundries/screws" unique_id=1670474995]
 mesh = SubResource("ArrayMesh_rcvia")
 skeleton = NodePath("")
 
-[node name="o91_5" type="MeshInstance3D" parent="suit_interior/room_boundries/screws"]
+[node name="o91_5" type="MeshInstance3D" parent="suit_interior/room_boundries/screws" unique_id=2004269410]
 mesh = SubResource("ArrayMesh_jymde")
 skeleton = NodePath("")
 
-[node name="o91_1" type="MeshInstance3D" parent="suit_interior/room_boundries/screws"]
+[node name="o91_1" type="MeshInstance3D" parent="suit_interior/room_boundries/screws" unique_id=2067758175]
 mesh = SubResource("ArrayMesh_exclq")
 skeleton = NodePath("")
 
-[node name="o91_6" type="MeshInstance3D" parent="suit_interior/room_boundries/screws"]
+[node name="o91_6" type="MeshInstance3D" parent="suit_interior/room_boundries/screws" unique_id=1111341388]
 mesh = SubResource("ArrayMesh_wjr3t")
 skeleton = NodePath("")
 
-[node name="o91_7" type="MeshInstance3D" parent="suit_interior/room_boundries/screws"]
+[node name="o91_7" type="MeshInstance3D" parent="suit_interior/room_boundries/screws" unique_id=276298166]
 mesh = SubResource("ArrayMesh_jay7g")
 skeleton = NodePath("")
 
-[node name="columns_left" type="Node3D" parent="suit_interior/room_boundries"]
+[node name="columns_left" type="Node3D" parent="suit_interior/room_boundries" unique_id=587185784]
 
-[node name="column1_1" type="Node3D" parent="suit_interior/room_boundries/columns_left"]
+[node name="column1_1" type="Node3D" parent="suit_interior/room_boundries/columns_left" unique_id=1767581166]
 
-[node name="o101_7" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column1_1"]
+[node name="o101_7" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column1_1" unique_id=541591624]
 mesh = SubResource("ArrayMesh_q2equ")
 skeleton = NodePath("")
 
-[node name="bolt_16" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column1_1"]
+[node name="bolt_16" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column1_1" unique_id=1150764455]
 mesh = SubResource("ArrayMesh_ko7wi")
 skeleton = NodePath("")
 
-[node name="bolt_17" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column1_1"]
+[node name="bolt_17" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column1_1" unique_id=438171360]
 mesh = SubResource("ArrayMesh_0lp4h")
 skeleton = NodePath("")
 
-[node name="bolt_18" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column1_1"]
+[node name="bolt_18" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column1_1" unique_id=531267592]
 mesh = SubResource("ArrayMesh_k66ad")
 skeleton = NodePath("")
 
-[node name="bolt_19" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column1_1"]
+[node name="bolt_19" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column1_1" unique_id=157488712]
 mesh = SubResource("ArrayMesh_3yx1b")
 skeleton = NodePath("")
 
-[node name="shadow" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column1_1"]
+[node name="shadow" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column1_1" unique_id=956643155]
 mesh = SubResource("ArrayMesh_yibs3")
 skeleton = NodePath("")
 
-[node name="column2_1" type="Node3D" parent="suit_interior/room_boundries/columns_left"]
+[node name="column2_1" type="Node3D" parent="suit_interior/room_boundries/columns_left" unique_id=682684537]
 
-[node name="o101_8" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column2_1"]
+[node name="o101_8" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column2_1" unique_id=249760807]
 mesh = SubResource("ArrayMesh_l83g3")
 skeleton = NodePath("")
 
-[node name="bolt_20" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column2_1"]
+[node name="bolt_20" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column2_1" unique_id=602463233]
 mesh = SubResource("ArrayMesh_2u5u5")
 skeleton = NodePath("")
 
-[node name="bolt_21" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column2_1"]
+[node name="bolt_21" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column2_1" unique_id=1901318450]
 mesh = SubResource("ArrayMesh_hiexi")
 skeleton = NodePath("")
 
-[node name="bolt_22" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column2_1"]
+[node name="bolt_22" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column2_1" unique_id=691794860]
 mesh = SubResource("ArrayMesh_4ovca")
 skeleton = NodePath("")
 
-[node name="bolt_23" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column2_1"]
+[node name="bolt_23" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column2_1" unique_id=163725125]
 mesh = SubResource("ArrayMesh_f74gx")
 skeleton = NodePath("")
 
-[node name="shadow_1" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column2_1"]
+[node name="shadow_1" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column2_1" unique_id=1268279305]
 mesh = SubResource("ArrayMesh_nxxbs")
 skeleton = NodePath("")
 
-[node name="column3_1" type="Node3D" parent="suit_interior/room_boundries/columns_left"]
+[node name="column3_1" type="Node3D" parent="suit_interior/room_boundries/columns_left" unique_id=60227783]
 
-[node name="o101_9" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column3_1"]
+[node name="o101_9" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column3_1" unique_id=273812392]
 mesh = SubResource("ArrayMesh_2wfh4")
 skeleton = NodePath("")
 
-[node name="bolt_24" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column3_1"]
+[node name="bolt_24" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column3_1" unique_id=2019903967]
 mesh = SubResource("ArrayMesh_h5lnd")
 skeleton = NodePath("")
 
-[node name="bolt_25" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column3_1"]
+[node name="bolt_25" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column3_1" unique_id=929859684]
 mesh = SubResource("ArrayMesh_4xvdt")
 skeleton = NodePath("")
 
-[node name="bolt_26" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column3_1"]
+[node name="bolt_26" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column3_1" unique_id=1257435824]
 mesh = SubResource("ArrayMesh_jdmh0")
 skeleton = NodePath("")
 
-[node name="bolt_27" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column3_1"]
+[node name="bolt_27" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column3_1" unique_id=1428587754]
 mesh = SubResource("ArrayMesh_dmln1")
 skeleton = NodePath("")
 
-[node name="shadow_2" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column3_1"]
+[node name="shadow_2" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column3_1" unique_id=2120566864]
 mesh = SubResource("ArrayMesh_2uajq")
 skeleton = NodePath("")
 
-[node name="column4_1" type="Node3D" parent="suit_interior/room_boundries/columns_left"]
+[node name="column4_1" type="Node3D" parent="suit_interior/room_boundries/columns_left" unique_id=683365078]
 
-[node name="o101_10" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column4_1"]
+[node name="o101_10" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column4_1" unique_id=1916199059]
 mesh = SubResource("ArrayMesh_o5anr")
 skeleton = NodePath("")
 
-[node name="bolt_28" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column4_1"]
+[node name="bolt_28" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column4_1" unique_id=1020257288]
 mesh = SubResource("ArrayMesh_0ropj")
 skeleton = NodePath("")
 
-[node name="bolt_29" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column4_1"]
+[node name="bolt_29" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column4_1" unique_id=1562466993]
 mesh = SubResource("ArrayMesh_aajqr")
 skeleton = NodePath("")
 
-[node name="bolt_30" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column4_1"]
+[node name="bolt_30" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column4_1" unique_id=1644918936]
 mesh = SubResource("ArrayMesh_fk05e")
 skeleton = NodePath("")
 
-[node name="bolt_31" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column4_1"]
+[node name="bolt_31" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column4_1" unique_id=105075723]
 mesh = SubResource("ArrayMesh_4ht47")
 skeleton = NodePath("")
 
-[node name="shadow_3" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column4_1"]
+[node name="shadow_3" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_left/column4_1" unique_id=1214732874]
 mesh = SubResource("ArrayMesh_fxvmw")
 skeleton = NodePath("")
 
-[node name="columns_right" type="Node3D" parent="suit_interior/room_boundries"]
+[node name="columns_right" type="Node3D" parent="suit_interior/room_boundries" unique_id=1177067671]
 
-[node name="column1" type="Node3D" parent="suit_interior/room_boundries/columns_right"]
+[node name="column1" type="Node3D" parent="suit_interior/room_boundries/columns_right" unique_id=813663611]
 
-[node name="o101_4" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column1"]
+[node name="o101_4" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column1" unique_id=1099739222]
 mesh = SubResource("ArrayMesh_4r3ve")
 skeleton = NodePath("")
 
-[node name="bolt_4" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column1"]
+[node name="bolt_4" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column1" unique_id=1420933950]
 mesh = SubResource("ArrayMesh_53owj")
 skeleton = NodePath("")
 
-[node name="bolt_5" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column1"]
+[node name="bolt_5" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column1" unique_id=1746079115]
 mesh = SubResource("ArrayMesh_shkoi")
 skeleton = NodePath("")
 
-[node name="bolt_6" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column1"]
+[node name="bolt_6" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column1" unique_id=1799255983]
 mesh = SubResource("ArrayMesh_16p4w")
 skeleton = NodePath("")
 
-[node name="bolt_7" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column1"]
+[node name="bolt_7" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column1" unique_id=1592895578]
 mesh = SubResource("ArrayMesh_drjdq")
 skeleton = NodePath("")
 
-[node name="shadow_4" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column1"]
+[node name="shadow_4" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column1" unique_id=1510101823]
 mesh = SubResource("ArrayMesh_c82r2")
 skeleton = NodePath("")
 
-[node name="column2" type="Node3D" parent="suit_interior/room_boundries/columns_right"]
+[node name="column2" type="Node3D" parent="suit_interior/room_boundries/columns_right" unique_id=895482079]
 
-[node name="o101_2" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column2"]
+[node name="o101_2" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column2" unique_id=1608131848]
 mesh = SubResource("ArrayMesh_rewc4")
 skeleton = NodePath("")
 
-[node name="bolt" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column2"]
+[node name="bolt" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column2" unique_id=296401232]
 mesh = SubResource("ArrayMesh_klqci")
 skeleton = NodePath("")
 
-[node name="bolt_1" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column2"]
+[node name="bolt_1" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column2" unique_id=918338487]
 mesh = SubResource("ArrayMesh_x1ny1")
 skeleton = NodePath("")
 
-[node name="bolt_2" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column2"]
+[node name="bolt_2" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column2" unique_id=100557660]
 mesh = SubResource("ArrayMesh_sygyd")
 skeleton = NodePath("")
 
-[node name="bolt_3" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column2"]
+[node name="bolt_3" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column2" unique_id=2012161448]
 mesh = SubResource("ArrayMesh_ib801")
 skeleton = NodePath("")
 
-[node name="shadow_5" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column2"]
+[node name="shadow_5" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column2" unique_id=1755191519]
 mesh = SubResource("ArrayMesh_jiteb")
 skeleton = NodePath("")
 
-[node name="column3" type="Node3D" parent="suit_interior/room_boundries/columns_right"]
+[node name="column3" type="Node3D" parent="suit_interior/room_boundries/columns_right" unique_id=664635743]
 
-[node name="o101_5" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column3"]
+[node name="o101_5" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column3" unique_id=1937832179]
 mesh = SubResource("ArrayMesh_6mgmq")
 skeleton = NodePath("")
 
-[node name="bolt_8" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column3"]
+[node name="bolt_8" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column3" unique_id=1601158955]
 mesh = SubResource("ArrayMesh_m17xa")
 skeleton = NodePath("")
 
-[node name="bolt_9" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column3"]
+[node name="bolt_9" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column3" unique_id=1852753621]
 mesh = SubResource("ArrayMesh_i5wqt")
 skeleton = NodePath("")
 
-[node name="bolt_10" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column3"]
+[node name="bolt_10" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column3" unique_id=1983525096]
 mesh = SubResource("ArrayMesh_xf86q")
 skeleton = NodePath("")
 
-[node name="bolt_11" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column3"]
+[node name="bolt_11" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column3" unique_id=1161250767]
 mesh = SubResource("ArrayMesh_5hggt")
 skeleton = NodePath("")
 
-[node name="shadow_6" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column3"]
+[node name="shadow_6" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column3" unique_id=2092961171]
 mesh = SubResource("ArrayMesh_ms5rm")
 skeleton = NodePath("")
 
-[node name="column4" type="Node3D" parent="suit_interior/room_boundries/columns_right"]
+[node name="column4" type="Node3D" parent="suit_interior/room_boundries/columns_right" unique_id=1739593559]
 
-[node name="o101_6" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column4"]
+[node name="o101_6" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column4" unique_id=88810897]
 mesh = SubResource("ArrayMesh_qutpa")
 skeleton = NodePath("")
 
-[node name="bolt_12" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column4"]
+[node name="bolt_12" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column4" unique_id=1223616817]
 mesh = SubResource("ArrayMesh_4nt2t")
 skeleton = NodePath("")
 
-[node name="bolt_13" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column4"]
+[node name="bolt_13" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column4" unique_id=913382545]
 mesh = SubResource("ArrayMesh_k8s7x")
 skeleton = NodePath("")
 
-[node name="bolt_14" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column4"]
+[node name="bolt_14" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column4" unique_id=1316308717]
 mesh = SubResource("ArrayMesh_lr3lk")
 skeleton = NodePath("")
 
-[node name="bolt_15" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column4"]
+[node name="bolt_15" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column4" unique_id=325821234]
 mesh = SubResource("ArrayMesh_wdinv")
 skeleton = NodePath("")
 
-[node name="shadow_7" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column4"]
+[node name="shadow_7" type="MeshInstance3D" parent="suit_interior/room_boundries/columns_right/column4" unique_id=1025057467]
 mesh = SubResource("ArrayMesh_027py")
 skeleton = NodePath("")
 
-[node name="clock_1" type="MeshInstance3D" parent="suit_interior/room_boundries"]
+[node name="clock_1" type="MeshInstance3D" parent="suit_interior/room_boundries" unique_id=2001964085]
 mesh = SubResource("ArrayMesh_soyf4")
 skeleton = NodePath("")
 
-[node name="clock" type="MeshInstance3D" parent="suit_interior/room_boundries"]
+[node name="clock" type="MeshInstance3D" parent="suit_interior/room_boundries" unique_id=352025889]
 mesh = SubResource("ArrayMesh_hww6a")
 skeleton = NodePath("")
 
-[node name="top" type="Node3D" parent="suit_interior/room_boundries"]
+[node name="top" type="Node3D" parent="suit_interior/room_boundries" unique_id=894839079]
 
-[node name="ceiling" type="MeshInstance3D" parent="suit_interior/room_boundries/top"]
+[node name="ceiling" type="MeshInstance3D" parent="suit_interior/room_boundries/top" unique_id=2027633111]
 mesh = SubResource("ArrayMesh_3uxn8")
 skeleton = NodePath("")
 
-[node name="support1" type="MeshInstance3D" parent="suit_interior/room_boundries/top"]
+[node name="support1" type="MeshInstance3D" parent="suit_interior/room_boundries/top" unique_id=81788917]
 mesh = SubResource("ArrayMesh_sw87l")
 skeleton = NodePath("")
 
-[node name="support2" type="MeshInstance3D" parent="suit_interior/room_boundries/top"]
+[node name="support2" type="MeshInstance3D" parent="suit_interior/room_boundries/top" unique_id=637528973]
 mesh = SubResource("ArrayMesh_wff2u")
 skeleton = NodePath("")
 
-[node name="pipes" type="Node3D" parent="suit_interior/room_boundries"]
+[node name="pipes" type="Node3D" parent="suit_interior/room_boundries" unique_id=1024359720]
 
-[node name="terminators" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes"]
+[node name="terminators" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes" unique_id=421002787]
 mesh = SubResource("ArrayMesh_5d1dx")
 skeleton = NodePath("")
 
-[node name="terminators_1" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes"]
+[node name="terminators_1" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes" unique_id=537780112]
 mesh = SubResource("ArrayMesh_q7u56")
 skeleton = NodePath("")
 
-[node name="terminators_3" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes"]
+[node name="terminators_3" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes" unique_id=719561724]
 mesh = SubResource("ArrayMesh_2b325")
 skeleton = NodePath("")
 
-[node name="terminators_5" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes"]
+[node name="terminators_5" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes" unique_id=1197387722]
 mesh = SubResource("ArrayMesh_d5q1f")
 skeleton = NodePath("")
 
-[node name="terminators_7" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes"]
+[node name="terminators_7" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes" unique_id=1240609838]
 mesh = SubResource("ArrayMesh_4ur4j")
 skeleton = NodePath("")
 
-[node name="terminators_9" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes"]
+[node name="terminators_9" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes" unique_id=770544409]
 mesh = SubResource("ArrayMesh_e4dbj")
 skeleton = NodePath("")
 
-[node name="terminators_11" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes"]
+[node name="terminators_11" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes" unique_id=1126384174]
 mesh = SubResource("ArrayMesh_5x4ko")
 skeleton = NodePath("")
 
-[node name="terminators_13" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes"]
+[node name="terminators_13" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes" unique_id=1424290286]
 mesh = SubResource("ArrayMesh_5jhjg")
 skeleton = NodePath("")
 
-[node name="pipe4" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes"]
+[node name="pipe4" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes" unique_id=717169336]
 mesh = SubResource("ArrayMesh_lfudg")
 skeleton = NodePath("")
 
-[node name="pipe3" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes"]
+[node name="pipe3" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes" unique_id=2108482636]
 mesh = SubResource("ArrayMesh_dgg6u")
 skeleton = NodePath("")
 
-[node name="pipe2" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes"]
+[node name="pipe2" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes" unique_id=1383105416]
 mesh = SubResource("ArrayMesh_4obj5")
 skeleton = NodePath("")
 
-[node name="pipe1" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes"]
+[node name="pipe1" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes" unique_id=851389645]
 mesh = SubResource("ArrayMesh_mt004")
 skeleton = NodePath("")
 
-[node name="elevator_in" type="Node3D" parent="suit_interior"]
+[node name="elevator_in" type="Node3D" parent="suit_interior" unique_id=1429984383]
 transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, -9.144, -5.5989e-16, 0)
 
-[node name="sellbot_elevator" parent="suit_interior/elevator_in" instance=ExtResource("13_gtdut")]
+[node name="sellbot_elevator" parent="suit_interior/elevator_in" unique_id=352524032 instance=ExtResource("13_gtdut")]
 transform = Transform3D(1.535, 0, 0, 0, -6.7097e-08, -1.535, 0, 1.535, -6.7097e-08, 0, -0.00824451, 3.60387e-10)
 floor_count = 5
 floor_current = 1
 monitoring = false
 opened = false
 
-[node name="elevator_out" type="Node3D" parent="suit_interior"]
+[node name="elevator_out" type="Node3D" parent="suit_interior" unique_id=1583829009]
 transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 9.144, 5.5989e-16, 0)
 
-[node name="sellbot_elevator" parent="suit_interior/elevator_out" instance=ExtResource("13_gtdut")]
+[node name="sellbot_elevator" parent="suit_interior/elevator_out" unique_id=1493608430 instance=ExtResource("13_gtdut")]
 transform = Transform3D(1.535, 0, 0, 0, -6.7097e-08, -1.535, 0, 1.535, -6.7097e-08, 0, -0.00824451, 3.60387e-10)
 script = ExtResource("15_vt1eg")
 floor_count = 5
@@ -5174,448 +5174,448 @@ floor_current = 1
 scene_path = "res://scenes/falling_scene/falling_scene.tscn"
 opened = false
 
-[node name="Machines" type="Node3D" parent="suit_interior"]
+[node name="Machines" type="Node3D" parent="suit_interior" unique_id=568560092]
 
-[node name="suit_interior_machinery" type="Node3D" parent="suit_interior/Machines"]
+[node name="suit_interior_machinery" type="Node3D" parent="suit_interior/Machines" unique_id=1812603698]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4864, 8.5344, 0)
 
-[node name="machine_floor_base_sides" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery"]
+[node name="machine_floor_base_sides" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery" unique_id=1390981778]
 
-[node name="o7" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides"]
+[node name="o7" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides" unique_id=905846009]
 mesh = SubResource("ArrayMesh_0ei4f")
 skeleton = NodePath("")
 
-[node name="o8" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides"]
+[node name="o8" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides" unique_id=485149079]
 mesh = SubResource("ArrayMesh_4m2qf")
 skeleton = NodePath("")
 
-[node name="o9" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides"]
+[node name="o9" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides" unique_id=748812704]
 mesh = SubResource("ArrayMesh_y1gm1")
 skeleton = NodePath("")
 
-[node name="o10" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides"]
+[node name="o10" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides" unique_id=745529017]
 mesh = SubResource("ArrayMesh_x0o11")
 skeleton = NodePath("")
 
-[node name="o11" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides"]
+[node name="o11" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides" unique_id=219573754]
 mesh = SubResource("ArrayMesh_4bfku")
 skeleton = NodePath("")
 
-[node name="o122" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides"]
+[node name="o122" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides" unique_id=271704717]
 mesh = SubResource("ArrayMesh_oxawf")
 skeleton = NodePath("")
 
-[node name="o132" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides"]
+[node name="o132" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides" unique_id=769188155]
 mesh = SubResource("ArrayMesh_dt1b0")
 skeleton = NodePath("")
 
-[node name="o142" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides"]
+[node name="o142" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/machine_floor_base_sides" unique_id=362351980]
 mesh = SubResource("ArrayMesh_53wmx")
 skeleton = NodePath("")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery" unique_id=1642675780]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.068, 0, 1.836)
 mesh = SubResource("QuadMesh_ceqmj")
 skeleton = NodePath("../machine_floor_base_sides")
 
-[node name="machine_floor_base_floor" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery"]
+[node name="machine_floor_base_floor" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery" unique_id=1958747348]
 mesh = SubResource("ArrayMesh_ul27m")
 skeleton = NodePath("")
 
-[node name="machine_railing" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery"]
+[node name="machine_railing" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery" unique_id=2053533206]
 mesh = SubResource("ArrayMesh_0l1q3")
 skeleton = NodePath("")
 
-[node name="suit_interior_machinery_collisions" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery"]
+[node name="suit_interior_machinery_collisions" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery" unique_id=948830736]
 visible = false
 mesh = SubResource("ArrayMesh_ww0yp")
 skeleton = NodePath("")
 
-[node name="g8" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery"]
+[node name="g8" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery" unique_id=1775782036]
 
-[node name="drop_shadow" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery"]
+[node name="drop_shadow" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery" unique_id=33156017]
 
-[node name="o1" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/drop_shadow"]
+[node name="o1" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery/drop_shadow" unique_id=1167767861]
 mesh = SubResource("ArrayMesh_chfq7")
 skeleton = NodePath("")
 
-[node name="Collision" type="StaticBody3D" parent="suit_interior/Machines/suit_interior_machinery"]
+[node name="Collision" type="StaticBody3D" parent="suit_interior/Machines/suit_interior_machinery" unique_id=1244771606]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/Machines/suit_interior_machinery/Collision"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/Machines/suit_interior_machinery/Collision" unique_id=2084888965]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.38419e-06, 0, 3.83443)
 shape = SubResource("CylinderShape3D_8gxyh")
 
-[node name="suit_interior_machinery2" type="Node3D" parent="suit_interior/Machines"]
+[node name="suit_interior_machinery2" type="Node3D" parent="suit_interior/Machines" unique_id=345357184]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4864, 8.5344, 0)
 
-[node name="machine_floor_base_sides" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery2"]
+[node name="machine_floor_base_sides" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery2" unique_id=1490381995]
 
-[node name="o7" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides"]
+[node name="o7" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides" unique_id=792696162]
 mesh = SubResource("ArrayMesh_0ei4f")
 skeleton = NodePath("")
 
-[node name="o8" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides"]
+[node name="o8" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides" unique_id=1782873901]
 mesh = SubResource("ArrayMesh_4m2qf")
 skeleton = NodePath("")
 
-[node name="o9" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides"]
+[node name="o9" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides" unique_id=346199601]
 mesh = SubResource("ArrayMesh_y1gm1")
 skeleton = NodePath("")
 
-[node name="o10" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides"]
+[node name="o10" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides" unique_id=642031892]
 mesh = SubResource("ArrayMesh_x0o11")
 skeleton = NodePath("")
 
-[node name="o11" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides"]
+[node name="o11" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides" unique_id=638637010]
 mesh = SubResource("ArrayMesh_4bfku")
 skeleton = NodePath("")
 
-[node name="o122" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides"]
+[node name="o122" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides" unique_id=1875079395]
 mesh = SubResource("ArrayMesh_oxawf")
 skeleton = NodePath("")
 
-[node name="o132" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides"]
+[node name="o132" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides" unique_id=538346229]
 mesh = SubResource("ArrayMesh_dt1b0")
 skeleton = NodePath("")
 
-[node name="o142" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides"]
+[node name="o142" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/machine_floor_base_sides" unique_id=626246523]
 mesh = SubResource("ArrayMesh_53wmx")
 skeleton = NodePath("")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2" unique_id=923065995]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.068, 0, 1.836)
 mesh = SubResource("QuadMesh_ceqmj")
 skeleton = NodePath("../machine_floor_base_sides")
 
-[node name="machine_floor_base_floor" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2"]
+[node name="machine_floor_base_floor" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2" unique_id=141996092]
 mesh = SubResource("ArrayMesh_ul27m")
 skeleton = NodePath("")
 
-[node name="machine_railing" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2"]
+[node name="machine_railing" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2" unique_id=1939404113]
 mesh = SubResource("ArrayMesh_0l1q3")
 skeleton = NodePath("")
 
-[node name="suit_interior_machinery_collisions" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2"]
+[node name="suit_interior_machinery_collisions" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2" unique_id=1656676272]
 visible = false
 mesh = SubResource("ArrayMesh_ww0yp")
 skeleton = NodePath("")
 
-[node name="g8" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery2"]
+[node name="g8" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery2" unique_id=2070082814]
 
-[node name="drop_shadow" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery2"]
+[node name="drop_shadow" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery2" unique_id=473439801]
 
-[node name="o1" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/drop_shadow"]
+[node name="o1" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery2/drop_shadow" unique_id=18549823]
 mesh = SubResource("ArrayMesh_chfq7")
 skeleton = NodePath("")
 
-[node name="Collision" type="StaticBody3D" parent="suit_interior/Machines/suit_interior_machinery2"]
+[node name="Collision" type="StaticBody3D" parent="suit_interior/Machines/suit_interior_machinery2" unique_id=1258139]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/Machines/suit_interior_machinery2/Collision"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/Machines/suit_interior_machinery2/Collision" unique_id=453576731]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.38419e-06, 0, 3.83443)
 shape = SubResource("CylinderShape3D_8gxyh")
 
-[node name="suit_interior_machinery3" type="Node3D" parent="suit_interior/Machines"]
+[node name="suit_interior_machinery3" type="Node3D" parent="suit_interior/Machines" unique_id=84107758]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5344, 0)
 
-[node name="machine_floor_base_sides" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery3"]
+[node name="machine_floor_base_sides" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery3" unique_id=1778297037]
 
-[node name="o7" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides"]
+[node name="o7" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides" unique_id=1258407369]
 mesh = SubResource("ArrayMesh_0ei4f")
 skeleton = NodePath("")
 
-[node name="o8" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides"]
+[node name="o8" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides" unique_id=225036002]
 mesh = SubResource("ArrayMesh_4m2qf")
 skeleton = NodePath("")
 
-[node name="o9" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides"]
+[node name="o9" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides" unique_id=98261170]
 mesh = SubResource("ArrayMesh_y1gm1")
 skeleton = NodePath("")
 
-[node name="o10" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides"]
+[node name="o10" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides" unique_id=788105105]
 mesh = SubResource("ArrayMesh_x0o11")
 skeleton = NodePath("")
 
-[node name="o11" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides"]
+[node name="o11" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides" unique_id=1347339225]
 mesh = SubResource("ArrayMesh_4bfku")
 skeleton = NodePath("")
 
-[node name="o122" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides"]
+[node name="o122" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides" unique_id=284102775]
 mesh = SubResource("ArrayMesh_oxawf")
 skeleton = NodePath("")
 
-[node name="o132" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides"]
+[node name="o132" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides" unique_id=541124455]
 mesh = SubResource("ArrayMesh_dt1b0")
 skeleton = NodePath("")
 
-[node name="o142" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides"]
+[node name="o142" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/machine_floor_base_sides" unique_id=328510267]
 mesh = SubResource("ArrayMesh_53wmx")
 skeleton = NodePath("")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3" unique_id=406694110]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.068, 0, 1.836)
 mesh = SubResource("QuadMesh_ceqmj")
 skeleton = NodePath("../machine_floor_base_sides")
 
-[node name="machine_floor_base_floor" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3"]
+[node name="machine_floor_base_floor" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3" unique_id=1871447202]
 mesh = SubResource("ArrayMesh_ul27m")
 skeleton = NodePath("")
 
-[node name="machine_railing" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3"]
+[node name="machine_railing" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3" unique_id=890378189]
 mesh = SubResource("ArrayMesh_0l1q3")
 skeleton = NodePath("")
 
-[node name="suit_interior_machinery_collisions" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3"]
+[node name="suit_interior_machinery_collisions" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3" unique_id=1713731815]
 visible = false
 mesh = SubResource("ArrayMesh_ww0yp")
 skeleton = NodePath("")
 
-[node name="g8" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery3"]
+[node name="g8" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery3" unique_id=908136544]
 
-[node name="drop_shadow" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery3"]
+[node name="drop_shadow" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery3" unique_id=1457019871]
 
-[node name="o1" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/drop_shadow"]
+[node name="o1" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery3/drop_shadow" unique_id=1390898594]
 mesh = SubResource("ArrayMesh_chfq7")
 skeleton = NodePath("")
 
-[node name="Collision" type="StaticBody3D" parent="suit_interior/Machines/suit_interior_machinery3"]
+[node name="Collision" type="StaticBody3D" parent="suit_interior/Machines/suit_interior_machinery3" unique_id=1702484294]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/Machines/suit_interior_machinery3/Collision"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/Machines/suit_interior_machinery3/Collision" unique_id=1353848756]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.38419e-06, 0, 3.83443)
 shape = SubResource("CylinderShape3D_8gxyh")
 
-[node name="suit_interior_machinery4" type="Node3D" parent="suit_interior/Machines"]
+[node name="suit_interior_machinery4" type="Node3D" parent="suit_interior/Machines" unique_id=36882224]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.5344, 0)
 
-[node name="machine_floor_base_sides" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery4"]
+[node name="machine_floor_base_sides" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery4" unique_id=1193630840]
 
-[node name="o7" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides"]
+[node name="o7" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides" unique_id=2075902921]
 mesh = SubResource("ArrayMesh_0ei4f")
 skeleton = NodePath("")
 
-[node name="o8" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides"]
+[node name="o8" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides" unique_id=210955146]
 mesh = SubResource("ArrayMesh_4m2qf")
 skeleton = NodePath("")
 
-[node name="o9" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides"]
+[node name="o9" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides" unique_id=1441086175]
 mesh = SubResource("ArrayMesh_y1gm1")
 skeleton = NodePath("")
 
-[node name="o10" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides"]
+[node name="o10" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides" unique_id=1025764774]
 mesh = SubResource("ArrayMesh_x0o11")
 skeleton = NodePath("")
 
-[node name="o11" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides"]
+[node name="o11" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides" unique_id=2063789887]
 mesh = SubResource("ArrayMesh_4bfku")
 skeleton = NodePath("")
 
-[node name="o122" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides"]
+[node name="o122" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides" unique_id=629656990]
 mesh = SubResource("ArrayMesh_oxawf")
 skeleton = NodePath("")
 
-[node name="o132" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides"]
+[node name="o132" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides" unique_id=1291775062]
 mesh = SubResource("ArrayMesh_dt1b0")
 skeleton = NodePath("")
 
-[node name="o142" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides"]
+[node name="o142" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/machine_floor_base_sides" unique_id=54673427]
 mesh = SubResource("ArrayMesh_53wmx")
 skeleton = NodePath("")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4" unique_id=1368398344]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.068, 0, 1.836)
 mesh = SubResource("QuadMesh_ceqmj")
 skeleton = NodePath("../machine_floor_base_sides")
 
-[node name="machine_floor_base_floor" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4"]
+[node name="machine_floor_base_floor" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4" unique_id=1666805260]
 mesh = SubResource("ArrayMesh_ul27m")
 skeleton = NodePath("")
 
-[node name="machine_railing" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4"]
+[node name="machine_railing" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4" unique_id=557135808]
 mesh = SubResource("ArrayMesh_0l1q3")
 skeleton = NodePath("")
 
-[node name="suit_interior_machinery_collisions" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4"]
+[node name="suit_interior_machinery_collisions" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4" unique_id=953908387]
 visible = false
 mesh = SubResource("ArrayMesh_ww0yp")
 skeleton = NodePath("")
 
-[node name="g8" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery4"]
+[node name="g8" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery4" unique_id=1132656146]
 
-[node name="drop_shadow" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery4"]
+[node name="drop_shadow" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery4" unique_id=1310584115]
 
-[node name="o1" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/drop_shadow"]
+[node name="o1" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery4/drop_shadow" unique_id=1711143059]
 mesh = SubResource("ArrayMesh_chfq7")
 skeleton = NodePath("")
 
-[node name="Collision" type="StaticBody3D" parent="suit_interior/Machines/suit_interior_machinery4"]
+[node name="Collision" type="StaticBody3D" parent="suit_interior/Machines/suit_interior_machinery4" unique_id=2104678332]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/Machines/suit_interior_machinery4/Collision"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/Machines/suit_interior_machinery4/Collision" unique_id=2135106514]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.38419e-06, 0, 3.83443)
 shape = SubResource("CylinderShape3D_8gxyh")
 
-[node name="suit_interior_machinery5" type="Node3D" parent="suit_interior/Machines"]
+[node name="suit_interior_machinery5" type="Node3D" parent="suit_interior/Machines" unique_id=2031776144]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4864, -8.5344, 0)
 
-[node name="machine_floor_base_sides" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery5"]
+[node name="machine_floor_base_sides" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery5" unique_id=1868996868]
 
-[node name="o7" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides"]
+[node name="o7" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides" unique_id=1294332710]
 mesh = SubResource("ArrayMesh_0ei4f")
 skeleton = NodePath("")
 
-[node name="o8" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides"]
+[node name="o8" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides" unique_id=942428939]
 mesh = SubResource("ArrayMesh_4m2qf")
 skeleton = NodePath("")
 
-[node name="o9" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides"]
+[node name="o9" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides" unique_id=1098377193]
 mesh = SubResource("ArrayMesh_y1gm1")
 skeleton = NodePath("")
 
-[node name="o10" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides"]
+[node name="o10" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides" unique_id=1534640390]
 mesh = SubResource("ArrayMesh_x0o11")
 skeleton = NodePath("")
 
-[node name="o11" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides"]
+[node name="o11" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides" unique_id=1217250277]
 mesh = SubResource("ArrayMesh_4bfku")
 skeleton = NodePath("")
 
-[node name="o122" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides"]
+[node name="o122" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides" unique_id=2123791328]
 mesh = SubResource("ArrayMesh_oxawf")
 skeleton = NodePath("")
 
-[node name="o132" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides"]
+[node name="o132" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides" unique_id=1384217931]
 mesh = SubResource("ArrayMesh_dt1b0")
 skeleton = NodePath("")
 
-[node name="o142" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides"]
+[node name="o142" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/machine_floor_base_sides" unique_id=1496979898]
 mesh = SubResource("ArrayMesh_53wmx")
 skeleton = NodePath("")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5" unique_id=739617601]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.068, 0, 1.836)
 mesh = SubResource("QuadMesh_ceqmj")
 skeleton = NodePath("../machine_floor_base_sides")
 
-[node name="machine_floor_base_floor" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5"]
+[node name="machine_floor_base_floor" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5" unique_id=147107146]
 mesh = SubResource("ArrayMesh_ul27m")
 skeleton = NodePath("")
 
-[node name="machine_railing" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5"]
+[node name="machine_railing" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5" unique_id=265636944]
 mesh = SubResource("ArrayMesh_0l1q3")
 skeleton = NodePath("")
 
-[node name="suit_interior_machinery_collisions" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5"]
+[node name="suit_interior_machinery_collisions" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5" unique_id=1628454545]
 visible = false
 mesh = SubResource("ArrayMesh_ww0yp")
 skeleton = NodePath("")
 
-[node name="g8" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery5"]
+[node name="g8" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery5" unique_id=1134111190]
 
-[node name="drop_shadow" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery5"]
+[node name="drop_shadow" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery5" unique_id=1871028334]
 
-[node name="o1" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/drop_shadow"]
+[node name="o1" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery5/drop_shadow" unique_id=1767113219]
 mesh = SubResource("ArrayMesh_chfq7")
 skeleton = NodePath("")
 
-[node name="Collision" type="StaticBody3D" parent="suit_interior/Machines/suit_interior_machinery5"]
+[node name="Collision" type="StaticBody3D" parent="suit_interior/Machines/suit_interior_machinery5" unique_id=1155786860]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/Machines/suit_interior_machinery5/Collision"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/Machines/suit_interior_machinery5/Collision" unique_id=785366326]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.38419e-06, 0, 3.83443)
 shape = SubResource("CylinderShape3D_8gxyh")
 
-[node name="suit_interior_machinery6" type="Node3D" parent="suit_interior/Machines"]
+[node name="suit_interior_machinery6" type="Node3D" parent="suit_interior/Machines" unique_id=522386883]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4864, -8.5344, 0)
 
-[node name="machine_floor_base_sides" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery6"]
+[node name="machine_floor_base_sides" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery6" unique_id=1333772953]
 
-[node name="o7" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides"]
+[node name="o7" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides" unique_id=494125817]
 mesh = SubResource("ArrayMesh_0ei4f")
 skeleton = NodePath("")
 
-[node name="o8" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides"]
+[node name="o8" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides" unique_id=1037966739]
 mesh = SubResource("ArrayMesh_4m2qf")
 skeleton = NodePath("")
 
-[node name="o9" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides"]
+[node name="o9" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides" unique_id=1684704478]
 mesh = SubResource("ArrayMesh_y1gm1")
 skeleton = NodePath("")
 
-[node name="o10" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides"]
+[node name="o10" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides" unique_id=1243239460]
 mesh = SubResource("ArrayMesh_x0o11")
 skeleton = NodePath("")
 
-[node name="o11" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides"]
+[node name="o11" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides" unique_id=1052134320]
 mesh = SubResource("ArrayMesh_4bfku")
 skeleton = NodePath("")
 
-[node name="o122" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides"]
+[node name="o122" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides" unique_id=486576886]
 mesh = SubResource("ArrayMesh_oxawf")
 skeleton = NodePath("")
 
-[node name="o132" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides"]
+[node name="o132" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides" unique_id=1080490896]
 mesh = SubResource("ArrayMesh_dt1b0")
 skeleton = NodePath("")
 
-[node name="o142" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides"]
+[node name="o142" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/machine_floor_base_sides" unique_id=1535939215]
 mesh = SubResource("ArrayMesh_53wmx")
 skeleton = NodePath("")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6" unique_id=1977695007]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.068, 0, 1.836)
 mesh = SubResource("QuadMesh_ceqmj")
 skeleton = NodePath("../machine_floor_base_sides")
 
-[node name="machine_floor_base_floor" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6"]
+[node name="machine_floor_base_floor" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6" unique_id=106421252]
 mesh = SubResource("ArrayMesh_ul27m")
 skeleton = NodePath("")
 
-[node name="machine_railing" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6"]
+[node name="machine_railing" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6" unique_id=1203452643]
 mesh = SubResource("ArrayMesh_0l1q3")
 skeleton = NodePath("")
 
-[node name="suit_interior_machinery_collisions" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6"]
+[node name="suit_interior_machinery_collisions" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6" unique_id=1783372841]
 visible = false
 mesh = SubResource("ArrayMesh_ww0yp")
 skeleton = NodePath("")
 
-[node name="g8" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery6"]
+[node name="g8" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery6" unique_id=500677572]
 
-[node name="drop_shadow" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery6"]
+[node name="drop_shadow" type="Node3D" parent="suit_interior/Machines/suit_interior_machinery6" unique_id=304473724]
 
-[node name="o1" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/drop_shadow"]
+[node name="o1" type="MeshInstance3D" parent="suit_interior/Machines/suit_interior_machinery6/drop_shadow" unique_id=1771932363]
 mesh = SubResource("ArrayMesh_chfq7")
 skeleton = NodePath("")
 
-[node name="Collision" type="StaticBody3D" parent="suit_interior/Machines/suit_interior_machinery6"]
+[node name="Collision" type="StaticBody3D" parent="suit_interior/Machines/suit_interior_machinery6" unique_id=1603944758]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/Machines/suit_interior_machinery6/Collision"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suit_interior/Machines/suit_interior_machinery6/Collision" unique_id=312522064]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.38419e-06, 0, 3.83443)
 shape = SubResource("CylinderShape3D_8gxyh")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=522045395]
 environment = SubResource("Environment_a8aea")
 
-[node name="BattleNode" parent="." node_paths=PackedStringArray("cogs") instance=ExtResource("20_e03ya")]
+[node name="BattleNode" parent="." unique_id=1482500472 node_paths=PackedStringArray("cogs") instance=ExtResource("20_e03ya")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.525)
 cogs = [NodePath("Cog"), NodePath("Cog2"), NodePath("Cog3"), NodePath("Cog4")]
 override_intro = SubResource("Resource_0njsd")
 item_pool = null
 
-[node name="Cog" parent="BattleNode" instance=ExtResource("21_ogpp3")]
+[node name="Cog" parent="BattleNode" unique_id=800085306 instance=ExtResource("21_ogpp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.965112, 0, 0)
 custom_level_range = Vector2i(6, 8)
 
-[node name="Cog2" parent="BattleNode" instance=ExtResource("21_ogpp3")]
+[node name="Cog2" parent="BattleNode" unique_id=2138019753 instance=ExtResource("21_ogpp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83164, 0, 0)
 custom_level_range = Vector2i(5, 7)
 
-[node name="Cog3" parent="BattleNode" instance=ExtResource("21_ogpp3")]
+[node name="Cog3" parent="BattleNode" unique_id=1227444125 instance=ExtResource("21_ogpp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06278, 0, 0)
 custom_level_range = Vector2i(7, 9)
 
-[node name="Cog4" parent="BattleNode" instance=ExtResource("21_ogpp3")]
+[node name="Cog4" parent="BattleNode" unique_id=726306714 instance=ExtResource("21_ogpp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.06051, 0, 0)
 custom_level_range = Vector2i(6, 8)
 
-[node name="ElevatorCam" type="Camera3D" parent="."]
+[node name="ElevatorCam" type="Camera3D" parent="." unique_id=951998153]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 11.942)
 script = ExtResource("22_vg1r1")
 y_positions = Vector2(1.4, 1.5)

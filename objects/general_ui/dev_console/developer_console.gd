@@ -396,7 +396,7 @@ class PlayerStatsSetterCommand extends SetterCommand:
 			'jokes',
 			'total_jokes',
 			'gag_regen_chance',
-			'heal_on_kill'
+			'humor_healing'
 		]
 
 class GiveItemCommand extends Command:

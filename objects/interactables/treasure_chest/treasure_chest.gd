@@ -64,10 +64,8 @@ var LAFF_BOOST := load("res://objects/items/resources/passive/laff_boost.tres")
 var SCRIPTED_PROGRESSION_ITEMS: Dictionary = {
 	0: null,
 	1: EXTRA_TURN,
-	2: POINT_BOOST,
+	2: EXTRA_TURN,
 	3: null,
-	4: EXTRA_TURN,
-	5: LAFF_BOOST,
 }
 static var chest_chances: Array[float] = [
 	1.0, # Bronze

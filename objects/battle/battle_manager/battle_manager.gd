@@ -265,23 +265,30 @@ func end_battle() -> void:
 	if not SaveFileService.settings_file.control_style:
 		player.recenter_camera()
 
+# Breaking Grounds: more loot!!
+var chests_to_spawn := 3
+var chest_distance := 2
+
 func spawn_reward() -> void:
 	# Battle drops
 	if boss_battle:
 		Util.make_boss_chests(battle_node.get_parent(), battle_node)
 	else:
 		if battle_node.item_pool:
-			var chest = load('res://objects/interactables/treasure_chest/treasure_chest.tscn').instantiate()
-			if player.better_battle_rewards and current_round <= 2:
-				chest.item_pool = ItemService.PROGRESSIVE_POOL
-				player.boost_queue.queue_text("Bounty!", Color.GREEN)
-			else:
-				chest.item_pool = battle_node.item_pool
-			chest.override_replacement_rolls = RNG.channel(RNG.ChannelBattleChestOverrides).randf() < 0.33
-			battle_node.get_parent().add_child(chest)
-			chest.global_position = battle_node.global_position
-			chest.global_rotation = battle_node.global_rotation
-			s_spawned_reward_chest.emit(chest)
+			var bounty: bool = (player.better_battle_rewards and current_round <= 2)
+			if bounty: player.boost_queue.queue_text("Bounty!", Color.GREEN)
+			for i in range(chests_to_spawn):
+				var chest: TreasureChest = load('res://objects/interactables/treasure_chest/treasure_chest.tscn').instantiate()
+				if bounty:
+					chest.item_pool = ItemService.PROGRESSIVE_POOL
+				else:
+					chest.item_pool = battle_node.item_pool
+				chest.override_replacement_rolls = RNG.channel(RNG.ChannelBattleChestOverrides).randf() < 0.33
+				battle_node.get_parent().add_child(chest)
+				chest.global_position = battle_node.global_position
+				chest.global_rotation = battle_node.global_rotation
+				chest.position.x += (i * chest_distance) - ((chest_distance * (chests_to_spawn - 1)) / 2)
+				s_spawned_reward_chest.emit(chest)
 
 func is_target_dead(target: Node3D) -> bool:
 	var health_ratio: float = float(target.stats.hp) / float(target.stats.max_hp)

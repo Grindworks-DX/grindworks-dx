@@ -6,3 +6,4 @@
 script = ExtResource("1_5uj7t")
 stat = "speed"
 boost = -3
+quality = 1

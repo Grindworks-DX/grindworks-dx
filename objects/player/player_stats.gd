@@ -160,13 +160,6 @@ func first_time_setup() -> void:
 				'shrug'
 			]:
 				set(stat, character.base_stats.get(stat))
-			for attribute in [
-				'punch',
-				'humor',
-				'gusto',
-				'shrug'
-			]:
-				character.base_stats.attribute_changed(attribute, 0, character.base_stats.get(attribute))
 	
 	initialize()
 
@@ -189,6 +182,13 @@ func clear_quests(clear_check := true) -> void:
 
 func initialize() -> void:
 	hp_changed.connect(attempt_revive)
+	for attribute in [
+		'punch',
+		'humor',
+		'gusto',
+		'shrug'
+	]:
+		attribute_changed(attribute, 0, character.base_stats.get(attribute))
 	attributes_initialized = true
 	start_stat_monitors()
 	monitor_stranger_chance()
@@ -346,4 +346,11 @@ func roll_gag_regen(track_name: String) -> int:
 	var regen_rate := gag_regen_chance + gag_regen_chance_modifiers[track_name]
 	__out += floori(regen_rate)
 	__out += int(randf() < (regen_rate - floori(regen_rate)))
+	print("Gag regen: %s gained %d points" % [track_name, __out])
 	return __out
+
+func do_humor_healing(effectiveness := 1.0) -> void:
+	if hp < max_hp:
+		AudioManager.play_sound(load("res://audio/sfx/items/laff_boost_pickup.ogg"), -3.0)
+	Util.get_player().quick_heal(humor_healing * effectiveness)
+	

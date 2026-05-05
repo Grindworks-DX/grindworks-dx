@@ -23,6 +23,7 @@ const ChannelStrangerRoll = &"stranger_roll"
 # Item Generation
 const ChannelGagRolls = &"gag_rolls"
 const ChannelLaffRolls = &"laff_rolls"
+const ChannelJokeRolls = &"joke_rolls"
 const ChannelBeanRolls = &"bean_rolls"
 const ChannelActiveItemDiscard = &"active_item_discard"
 const ChannelItemQualityRoll = &"item_quality_roll"

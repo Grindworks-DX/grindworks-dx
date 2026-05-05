@@ -201,17 +201,15 @@ signal s_shrug_changed(new_value: int)
 
 # New mechanic stats
 @export var parry := 0.0 # TODO
-@export var heal_on_kill := 0 # TODO
+@export var humor_healing := 0 # TODO
 @export var gag_regen_chance := 1.0 # TODO
 
 var attribute_modifiers := {
 	'punch': { 'damage': 0.05, 'parry': 0.04 },
-	'humor': { 'max_hp': 4, 'heal_on_kill': 2 },
+	'humor': { 'max_hp': 4, 'humor_healing': 2 },
 	'gusto': { 'speed': 1, 'gag_regen_chance': 0.10 },
 	'shrug': { 'luck': 0.03, 'evasiveness': 0.04 },
 }
-
-# TODO: call this correctly
 
 func attribute_changed(attr: String, old_value, new_value) -> void:
 	if attr not in attribute_modifiers.keys(): return

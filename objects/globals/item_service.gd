@@ -16,11 +16,11 @@ var linked_items: Array = [
 	]
 ]
 
+# Breaking Grounds - no candy
 const POOL_PATHS: Array[String] = [
 	"res://objects/items/pools/accessories.tres",
 	"res://objects/items/pools/active_items.tres",
 	"res://objects/items/pools/battle_clears.tres",
-	"res://objects/items/pools/candies.tres",
 	"res://objects/items/pools/doodle_treasure.tres",
 	"res://objects/items/pools/everything.tres",
 	"res://objects/items/pools/floor_clears.tres",
@@ -31,7 +31,6 @@ const POOL_PATHS: Array[String] = [
 	"res://objects/items/pools/shop_progressives.tres",
 	"res://objects/items/pools/shop_rewards.tres",
 	"res://objects/items/pools/special_items.tres",
-	"res://objects/items/pools/super_candies.tres",
 	"res://objects/items/pools/toontasks.tres",
 	"res://objects/items/pools/treasures.tres",
 ]
@@ -62,6 +61,11 @@ func get_random_item(pool: ItemPool, override_rolls := false) -> Item:
 		if gag_roll < get_gag_rate():
 			print('Forcing gag spawn')
 			return load('res://objects/items/resources/passive/track_frame.tres').duplicate(true)
+		# Breaking Grounds - Joke roll
+		var joke_roll := RNG.channel(RNG.ChannelJokeRolls).randf()
+		if joke_roll < get_joke_rate():
+			print('Forcing joke spawn')
+			return load("uid://clm40vnq0ywx8").duplicate(true)
 		# Laff roll
 		var laff_roll := RNG.channel(RNG.ChannelLaffRolls).randf()
 		print('Laff rate is %f, and Laff roll is %f' % [get_laff_rate(), laff_roll])
@@ -251,12 +255,10 @@ func apply_inventory() -> void:
 
 
 const GagGoals: Dictionary = {
-	1: 0.2,
-	2: 0.375,
-	3: 0.55,
-	4: 0.725,
-	5: 0.9,
-	6: 1.0,
+	1: 0.4,
+	2: 0.6,
+	3: 0.7,
+	4: 1.0,
 }
 
 func get_gag_rate() -> float:
@@ -287,12 +289,7 @@ func get_gag_rate() -> float:
 	
 	var gag_percent: float = float(collected_gags) / float(total_gags)
 	# We aim for the player to have collected all of their gags by the end of Floor 5. (Considered floor 6 by this code)
-	# Floor 0: 20% of all gags collected
-	# Floor 1: 35% of all gags collected
-	# Floor 2: 50% of all gags collected
-	# Floor 3: 70% of all gags collected
-	# Floor 4: 90% of all gags collected
-	# Floor 5: 100% of all gags collected
+	# TODO: Breaking Grounds - Readjust for floor numbers
 	var goal_percent := minf(GagGoals[floor_num], 1.0)
 	
 	var chance := (1.0 - (gag_percent / goal_percent)) * 1.35
@@ -324,6 +321,23 @@ func get_laff_rate() -> float:
 	var laff_rate := clampf(goal_diff * LIKELIHOOD_PER_POINT, 0.0, 0.5)
 	
 	return laff_rate
+
+const JokeGoals := {
+	1: 6,
+	2: 14,
+	3: 25,
+	4: 32
+}
+
+func get_joke_rate() -> float:
+	if not is_instance_valid(Util.get_player()):
+		return 0.0
+	
+	var floor_num := maxi(Util.floor_number + 1, 1)
+	
+	var joke_percent: float = float(Util.get_player().stats.total_jokes) / float(JokeGoals[floor_num])
+	var chance := (1.0 - (joke_percent)) * 1.35
+	return chance
 
 const REVIVE_GOAL := 15.0
 func get_revive_rate() -> float:

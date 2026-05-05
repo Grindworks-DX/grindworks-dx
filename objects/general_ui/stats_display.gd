@@ -10,10 +10,6 @@ const SFX_STAT_CHANGE := preload("res://audio/sfx/ui/sfx_pop.ogg")
 	[%Evasiveness, "evasiveness"],
 	[%Luck, "luck"],
 	[%Speed, "speed"],
-	[%Punch, "punch"],
-	[%Humor, "humor"],
-	[%Gusto, "gusto"],
-	[%Shrug, "shrug"],
 ]
 
 @export var is_mini := false:

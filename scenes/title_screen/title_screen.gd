@@ -96,7 +96,7 @@ func _ready() -> void:
 			elevator = building.sellbot_elevator
 	
 	if has_existing_run:
-		elevator.floor_current = clamp(SaveFileService.run_file.floor_number + 1, 0, 6)
+		elevator.floor_current = clamp(SaveFileService.run_file.floor_number + 1, 0, 4)
 	else:
 		continue_button.set_disabled(true)
 		continue_button.material.set_shader_parameter('alpha', 0.4)

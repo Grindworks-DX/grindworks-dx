@@ -19,7 +19,7 @@ enum Character {
 @export_multiline var character_blurb := ""
 @export var dna: ToonDNA
 @export var gag_loadout: GagLoadout
-@export var starting_laff := 25
+@export var starting_laff := 15
 @export var starting_items: Array[Item]
 @export var base_stats: BattleStats
 @export var starting_gags: Dictionary[String, int] = {}
@@ -35,8 +35,8 @@ enum Character {
 @export var achievement_index : ProgressFile.GameAchievement = ProgressFile.GameAchievement.DEFEAT_COGS_1
 
 func character_setup(player: Player):
-	player.stats.max_hp = starting_laff
-	player.stats.hp = starting_laff
+	player.stats.max_hp = starting_laff + (base_stats.humor * base_stats.attribute_modifiers['humor']['max_hp'])
+	player.stats.hp = player.stats.max_hp
 	for key in starting_gags.keys():
 		player.stats.gags_unlocked[key] = starting_gags[key]
 	for key in additional_stats.keys():
