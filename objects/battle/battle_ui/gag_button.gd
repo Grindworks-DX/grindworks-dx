@@ -11,7 +11,7 @@ var track_color := Color("ffffff"):
 
 @onready var image_rect := $Image
 @onready var label := $ButtonText
-@onready var count_label := $CountLabel
+@onready var count_label: Label = $CountLabel
 
 @export var image: Texture2D:
 	set(x):

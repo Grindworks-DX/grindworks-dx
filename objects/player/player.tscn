@@ -321,6 +321,7 @@ grow_horizontal = 1
 grow_vertical = 0
 
 [node name="ItemDisplay" parent="GUI" unique_id=1035120880 instance=ExtResource("27_82b0h")]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 0)
 layout_mode = 1
 offset_left = 23.0

@@ -48,26 +48,26 @@ ambient_light_color = Color(1, 1, 1, 1)
 script = ExtResource("2_uw8r3")
 eyelashes = false
 
-[node name="FallingScene" type="Node3D"]
+[node name="FallingScene" type="Node3D" unique_id=1857464039]
 script = ExtResource("1_17q1f")
 gags = Array[PackedScene]([ExtResource("3_t6k10"), ExtResource("4_n5y81"), ExtResource("5_qp603"), ExtResource("7_mbc4y"), ExtResource("8_2d0p4"), ExtResource("7_gajcq"), ExtResource("8_qxoky"), ExtResource("9_k3ift"), ExtResource("10_vahar"), ExtResource("11_dfkkk"), ExtResource("12_60n4r"), ExtResource("13_ec5l7"), ExtResource("14_82qur"), ExtResource("15_i8apf"), ExtResource("16_bt7lh"), ExtResource("17_u1u51"), ExtResource("18_fu1jn"), ExtResource("19_q3pmj"), ExtResource("20_dirjp"), ExtResource("21_73xrd"), ExtResource("22_y00hd"), ExtResource("23_44pap"), ExtResource("24_q0iq2"), ExtResource("25_tf8fe"), ExtResource("26_bf1xr"), ExtResource("27_pds12"), ExtResource("28_dennb"), ExtResource("29_3h31u"), ExtResource("31_npagy"), ExtResource("32_r47wm"), ExtResource("33_llxy1"), ExtResource("34_omn7q"), ExtResource("35_fd1ne"), ExtResource("35_lyboo")])
 camera_final_y = 350.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1325126529]
 environment = SubResource("Environment_5n52k")
 
-[node name="Props" type="Node3D" parent="."]
+[node name="Props" type="Node3D" parent="." unique_id=1535142190]
 
-[node name="Toon" parent="Props" instance=ExtResource("1_o31sf")]
+[node name="Toon" parent="Props" unique_id=887048149 instance=ExtResource("1_o31sf")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 toon_dna = SubResource("Resource_0nsmt")
 
-[node name="Camera" type="Camera3D" parent="."]
+[node name="Camera" type="Camera3D" parent="." unique_id=1537160699]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9.094, 0)
 current = true
 fov = 60.0
 
-[node name="SceneUI" type="Control" parent="."]
+[node name="SceneUI" type="Control" parent="." unique_id=1498336697]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,7 +76,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Logo" type="TextureRect" parent="SceneUI"]
+[node name="Logo" type="TextureRect" parent="SceneUI" unique_id=1652852874]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8

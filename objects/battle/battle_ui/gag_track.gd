@@ -71,12 +71,19 @@ func refresh():
 	gags = track.gags.duplicate(true)
 	s_refreshing.emit(self)
 	
+	var stats := Util.get_player().stats
+	if is_instance_valid(BattleService.ongoing_battle):
+		stats = BattleService.ongoing_battle.battle_stats[Util.get_player()]
+	var battle_stats := stats
+	
 	for i in gag_buttons.size():
 		if gags.size() >= i + 1 and i < unlocked:
 			var gag := gags[i]
 			var button: GagButton = gag_buttons[i]
 			button.image = gag.icon
 			button.show()
+			button.count_label.label_settings.outline_size = 1 if battle_stats.get_track_effectiveness(track.track_name) > 1.0 else 0
+			button.count_label.label_settings.font_size = 14 if battle_stats.get_track_effectiveness(track.track_name) > 1.0 else 12
 			
 			if button.pressed.is_connected(emit_gag):
 				button.pressed.disconnect(emit_gag)
@@ -88,15 +95,11 @@ func refresh():
 				button.pressed.disconnect(ui_root.set)
 			
 			var price := 0
-			var stats : PlayerStats
-			if is_instance_valid(BattleService.ongoing_battle):
-				stats = BattleService.ongoing_battle.battle_stats[Util.get_player()]
-			else:
-				stats = Util.get_player().stats
+			
 			if not button.pressed.is_connected(emit_gag):
 				if not is_gag_free(gag):
 					price = i
-					price -= stats.gag_discount
+					price -= battle_stats.gag_discount
 					if Util.get_player().gags_cost_beans:
 						# Basically just for budget cuts on Pete
 						if i == 0: price = 0
@@ -119,7 +122,11 @@ func refresh():
 		else:
 			gag_buttons[i].hide()
 	
-	point_label.text = "Points: " + str(roundi(Util.get_player().stats.gag_balance[track.track_name])) + '/' + str(roundi(Util.get_player().stats.gag_cap))
+	point_label.text = "%d/%d (%s)" % [
+		roundi(Util.get_player().stats.gag_balance[track.track_name]),
+		roundi(Util.get_player().stats.gag_cap),
+		Util.float_to_perc(stats.gag_regen_chance + stats.gag_regen_chance_modifiers[track.track_name])
+	]
 	if Util.get_player().stats.gag_balance[track.track_name] > Util.get_player().stats.gag_cap:
 		point_label.self_modulate = WARNING_COLOR
 	else:
@@ -169,6 +176,7 @@ func all_cogs_trapped() -> bool:
 
 func grey_out() -> void:
 	point_label.hide()
+	point_bar.hide()
 	track_label.set_text("???")
 	self_modulate = Color.GRAY
 	for button in gag_buttons:

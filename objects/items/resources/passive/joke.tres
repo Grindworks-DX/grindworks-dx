@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://clm40vnq0ywx8"]
+
+[ext_resource type="Script" uid="uid://combwqypom1ru" path="res://objects/items/classes/item.gd" id="1_kv0ue"]
+[ext_resource type="PackedScene" uid="uid://dgqurwn1l3pdg" path="res://models/props/facility_objects/memo/memo.fbx" id="1_taocm"]
+[ext_resource type="AudioStream" uid="uid://5vvc0md47wn6" path="res://audio/sfx/items/avatar_emotion_laugh.ogg" id="2_xq7fd"]
+
+[resource]
+script = ExtResource("1_kv0ue")
+evergreen = true
+item_name = "Joke!"
+item_description = "Ha! That's a good one!"
+big_description = "Spend these to upgrade one of your four Attributes!"
+model = ExtResource("1_taocm")
+pickup_sfx = ExtResource("2_xq7fd")
+stats_add = {
+"jokes": 1
+}
+remember_item = false
+shop_category_color = Color(1, 0.54901963, 0, 1)
+force_show_shop_category = true
+custom_shop_price = 15
+metadata/_custom_type_script = "uid://combwqypom1ru"

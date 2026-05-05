@@ -25,7 +25,7 @@ signal s_gained_money
 @export var gag_balance: Dictionary[String, int] = {}
 var debug_gag_points := false
 @export var gag_effectiveness: Dictionary[String, float] = {}
-@export var gag_regeneration: Dictionary[String, int] = {}
+@export var gag_regeneration: Dictionary[String, int] = {} # TODO: Deprecate in favor of regen rolls
 @export var gag_vouchers: Dictionary[String, int] = {}
 @export var bean_vouchers: Dictionary[int, int] = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
 @export var gag_battle_start_point_boost: Dictionary[String, int] = {}
@@ -127,16 +127,17 @@ func set_loadout(loadout: GagLoadout) -> void:
 	var gag_dicts := [gags_unlocked, gag_balance, gag_effectiveness, gag_regeneration, gag_vouchers, gag_battle_start_point_boost, gag_starting_points, gag_regen_chance_modifiers, gag_point_caps]
 	for dict in gag_dicts:
 		dict.clear()
-		var value 
-		match gag_dicts.find(dict):
-			0, 5: value = 0
-			1, 8: value = 10
-			2: value = 1.0
-			3: value = 1
-			6: value = 3
-			7: value = 0.0
-			_: value = 1
 		for track in loadout.loadout:
+			var value 
+			match gag_dicts.find(dict):
+				0: value = track.base_level
+				5: value = 0
+				1, 8: value = track.base_gp_cap
+				2: value = track.base_effectiveness
+				3: value = 1
+				6: value = track.base_combat_start_gp
+				7: value = track.base_regen
+				_: value = 1
 			dict[track.track_name] = value
 
 func first_time_setup() -> void:
@@ -159,17 +160,26 @@ func first_time_setup() -> void:
 				'shrug'
 			]:
 				set(stat, character.base_stats.get(stat))
+			for attribute in [
+				'punch',
+				'humor',
+				'gusto',
+				'shrug'
+			]:
+				character.base_stats.attribute_changed(attribute, 0, character.base_stats.get(attribute))
 	
 	initialize()
 
 func initialize_quests() -> void:
+	# Breaking Grounds - NO QUESTS HEHEHE
+	return
 	# Quest setup
-	if quests.is_empty():
-		for i in 4:
-			var new_quest := QuestCog.new()
-			new_quest.goal_dept = i as CogDNA.CogDept
-			new_quest.setup()
-			quests.append(new_quest)
+	#if quests.is_empty():
+		#for i in 4:
+			#var new_quest := QuestCog.new()
+			#new_quest.goal_dept = i as CogDNA.CogDept
+			#new_quest.setup()
+			#quests.append(new_quest)
 
 func clear_quests(clear_check := true) -> void:
 	for quest: Quest in quests.duplicate(true):
@@ -179,6 +189,7 @@ func clear_quests(clear_check := true) -> void:
 
 func initialize() -> void:
 	hp_changed.connect(attempt_revive)
+	attributes_initialized = true
 	start_stat_monitors()
 	monitor_stranger_chance()
 
@@ -206,16 +217,13 @@ func get_highest_gag_level() -> int:
 func on_round_end(_battle: BattleManager) -> void:
 	for track in gag_balance.keys():
 		if not gags_unlocked[track] > 0: continue
-		if gag_regeneration.has(track):
-			restock(track, gag_regeneration[track])
+		restock(track, roll_gag_regen(track))
 
 func on_battle_started(_battle: BattleManager) -> void:
 	for track in gag_balance.keys():
 		if not gags_unlocked[track] > 0: continue
 		gag_balance[track] = gag_starting_points[track]
-		var value: int = gag_battle_start_point_boost.get(track, 0) + global_battle_start_point_boost
-		if value != 0:
-			restock(track, value)
+		restock(track, roll_gag_regen(track) + gag_battle_start_point_boost.get(track, 0) + global_battle_start_point_boost)
 
 func restock(track: String, add: int) -> void:
 	if debug_gag_points:
@@ -327,8 +335,15 @@ func run_stranger_roll() -> bool:
 
 @export var jokes := 0:
 	set(x):
+		if total_jokes < x:
+			total_jokes = x
 		jokes = x
-		if total_jokes < jokes:
-			total_jokes = jokes
 		s_stat_changed.emit('jokes')
 @export var total_jokes := 0
+
+func roll_gag_regen(track_name: String) -> int:
+	var __out := 0
+	var regen_rate := gag_regen_chance + gag_regen_chance_modifiers[track_name]
+	__out += floori(regen_rate)
+	__out += int(randf() < (regen_rate - floori(regen_rate)))
+	return __out

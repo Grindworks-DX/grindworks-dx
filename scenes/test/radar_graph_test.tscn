@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bfrf4yqt3h8eg"]
+
+[ext_resource type="Script" uid="uid://ry28m3weojoi" path="res://scenes/test/radar_graph_test.gd" id="1_x1k8l"]
+[ext_resource type="Script" uid="uid://dj2hfa37ymon4" path="res://addons/godot_radar_graph/radar_graph.gd" id="2_gg05t"]
+[ext_resource type="FontFile" uid="uid://815gwlftl5ik" path="res://fonts/impress-bt.ttf" id="3_i85sc"]
+
+[node name="TweenExample" type="VBoxContainer" unique_id=1619141332]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("1_x1k8l")
+
+[node name="RadarGraph" type="Control" parent="." unique_id=1364931939]
+unique_name_in_owner = true
+self_modulate = Color(0.28814104, 0.6765764, 0.7398631, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+script = ExtResource("2_gg05t")
+key_count = 4
+radius = 180.0
+key_items = Array[Dictionary]([{
+"title": "Punch
+",
+"tooltip": "+5% Damage, +3% Parry Chance per point",
+"value": 8.0
+}, {
+"title": "Humor
+",
+"tooltip": "+4 Max Laff, +2 Humor Healing per point",
+"value": 8.0
+}, {
+"title": "Gusto",
+"tooltip": "+2 Speed, +10% Gag Regen per point",
+"value": 0.0
+}, {
+"title": "Shrug",
+"tooltip": "+3% Crit, +4% Dodge per point",
+"value": 0.0
+}])
+rounded = true
+font = ExtResource("3_i85sc")
+font_size = 32
+font_outline_size = 6
+background_color = Color(0.83033514, 0.8303352, 0.830335, 1)
+background_outline_color = Color(0.48178947, 0.48178947, 0.48178947, 1)
+background_outline_width = 4.0
+graph_color = Color(0.559125, 0.51382935, 0.5482521, 1)
+graph_outline_color = Color(0.23921569, 0.23921569, 0.23921569, 0.23529412)
+graph_outline_width = 2.0
+show_guides = true
+guide_color = Color(0.43529412, 0.43529412, 0.43529412, 0.24705882)
+guide_width = 3.0
+guide_step = 20.0
+draw_order = PackedStringArray("background", "background_outline", "guides", "graph", "graph_outline", "titles")
+items/key_0/value = 8.0
+items/key_0/title = "Punch
+"
+items/key_0/tooltip = "+5% Damage, +3% Parry Chance per point"
+items/key_1/value = 8.0
+items/key_1/title = "Humor
+"
+items/key_1/tooltip = "+4 Max Laff, +2 Humor Healing per point"
+items/key_2/value = 0.0
+items/key_2/title = "Gusto"
+items/key_2/tooltip = "+2 Speed, +10% Gag Regen per point"
+items/key_3/value = 0.0
+items/key_3/title = "Shrug"
+items/key_3/tooltip = "+3% Crit, +4% Dodge per point"
+
+[node name="Button" type="Button" parent="." unique_id=849659661]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Randomize Values"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

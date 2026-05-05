@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://bhr54g3wafqjk" path="res://models/props/pickups/candy/candy_overlay_arrows.tres" id="4_imcd3"]
 [ext_resource type="PackedScene" uid="uid://b1ebxidhw6o1q" path="res://objects/battle/effects/pixie_dust/pixie_dust.tscn" id="5_5t50c"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_au01a"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qh263"]
 resource_local_to_scene = true
 resource_name = "Candy_Base"
 next_pass = ExtResource("4_imcd3")
@@ -22,7 +22,7 @@ point_count = 4
 [sub_resource type="CurveTexture" id="CurveTexture_j8e1y"]
 curve = SubResource("Curve_n67wx")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qh263"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ydevw"]
 resource_local_to_scene = true
 emission_shape = 1
 emission_sphere_radius = 0.5
@@ -38,7 +38,7 @@ turbulence_influence_max = 0.451
 turbulence_initial_displacement_min = -3.9
 turbulence_initial_displacement_max = 28.6
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ydevw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g87un"]
 resource_local_to_scene = true
 render_priority = 3
 transparency = 1
@@ -46,31 +46,31 @@ cull_mode = 2
 shading_mode = 0
 vertex_color_use_as_albedo = true
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_g87un"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_yi2wt"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2, 2),
 "attribute_data": PackedByteArray("/////wAAAAAAAAAAAAD//wAAAAAAAIA//////wAAgD8AAIA/AAD//wAAgD8AAAAA/////wAAAAAAAAAAAAD//wAAAAAAAIA//////wAAgD8AAIA/AAD//wAAgD8AAAAA/////wAAAAAAAAAAAAD//wAAAAAAAIA//////wAAgD8AAIA/AAD//wAAgD8AAAAA"),
 "format": 34359738393,
-"material": SubResource("StandardMaterial3D_ydevw"),
+"material": SubResource("StandardMaterial3D_g87un"),
 "primitive": 1,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 12,
 "vertex_data": PackedByteArray("AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAAAAAACAvwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgL8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIC/")
 }]
 
-[node name="Candy" instance=ExtResource("1_d3srj")]
+[node name="Candy" unique_id=921018294 instance=ExtResource("1_d3srj")]
 script = ExtResource("2_p27yg")
 
-[node name="Cube_001" parent="." index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_au01a")
+[node name="Cube_001" parent="." index="0" unique_id=1040692639]
+surface_material_override/0 = SubResource("StandardMaterial3D_qh263")
 
-[node name="Particles" parent="." index="1" instance=ExtResource("5_5t50c")]
+[node name="Particles" parent="." index="1" unique_id=1818689198 instance=ExtResource("5_5t50c")]
 unique_name_in_owner = true
 visible = false
 emitting = false
 amount = 40
 lifetime = 1.6
 preprocess = 3.0
-process_material = SubResource("ParticleProcessMaterial_qh263")
-draw_pass_1 = SubResource("ArrayMesh_g87un")
+process_material = SubResource("ParticleProcessMaterial_ydevw")
+draw_pass_1 = SubResource("ArrayMesh_yi2wt")

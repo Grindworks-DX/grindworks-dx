@@ -8,11 +8,17 @@
 [ext_resource type="Shader" uid="uid://ryrnfqn0ixe5" path="res://scenes/title_screen/hue_shift.gdshader" id="4_sgslx"]
 [ext_resource type="PackedScene" uid="uid://ewhq7f4agtnn" path="res://objects/quests/scroll/quest_scroll.tscn" id="4_wy1sv"]
 [ext_resource type="Texture2D" uid="uid://ddcktpjy3gdew" path="res://ui_assets/misc/uiAccessoryDelete_up.png" id="6_2ls0o"]
+[ext_resource type="Script" uid="uid://dj2hfa37ymon4" path="res://addons/godot_radar_graph/radar_graph.gd" id="6_5p4rn"]
 [ext_resource type="Script" uid="uid://cykv5tbt4501y" path="res://objects/general_ui/stats_display.gd" id="6_6ehxx"]
+[ext_resource type="Script" uid="uid://bj1yv0gtu5x8j" path="res://objects/pause_menu/attributes_panel.gd" id="6_56hqx"]
 [ext_resource type="Texture2D" uid="uid://b7ri5sq021cvo" path="res://ui_assets/misc/uiAccessoryDelete_down.png" id="7_pio3r"]
+[ext_resource type="Texture2D" uid="uid://c14h8cr0mcyb7" path="res://ui_assets/general/CheckButtonUp.png" id="8_krdv7"]
 [ext_resource type="Texture2D" uid="uid://dn8vndd37lqom" path="res://ui_assets/misc/uiAccessoryDelete_rollover.png" id="8_l83vw"]
 [ext_resource type="PackedScene" uid="uid://dvch4ydlcxhu6" path="res://objects/battle/battle_ui/item_panel.tscn" id="9_1s8xm"]
+[ext_resource type="Texture2D" uid="uid://i8dbmhyj5akn" path="res://ui_assets/general/CheckButtonDown.png" id="9_56hqx"]
 [ext_resource type="Texture2D" uid="uid://dpt21awypabxf" path="res://ui_assets/general/tt_t_gui_mat_shuffleArrowUp.png" id="9_bs06e"]
+[ext_resource type="Texture2D" uid="uid://dxmijm52v4fjp" path="res://ui_assets/player_ui/joke_icon.png" id="9_iens6"]
+[ext_resource type="Texture2D" uid="uid://cuxdebgtthepu" path="res://ui_assets/general/CheckButtonRollover.png" id="10_7hnab"]
 [ext_resource type="Texture2D" uid="uid://bkbmvj823roof" path="res://ui_assets/general/tt_t_gui_mat_shuffleArrowDown.png" id="10_jrqgq"]
 [ext_resource type="Texture2D" uid="uid://tyjutuxwdlop" path="res://ui_assets/quests/gear2.png" id="10_lmpwx"]
 [ext_resource type="Texture2D" uid="uid://xhprgs7k8i2r" path="res://ui_assets/general/tt_t_gui_mat_shuffleArrowDisabled.png" id="11_1s8xm"]
@@ -36,6 +42,77 @@ shadow_color = Color(0, 0, 0, 1)
 font = ExtResource("1_nhuu3")
 font_size = 32
 shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_krdv7"]
+resource_local_to_scene = true
+line_spacing = 0.0
+font = ExtResource("1_nhuu3")
+font_size = 30
+font_color = Color(0.81388783, 0.88268846, 0.9569791, 1)
+outline_size = 4
+outline_color = Color(0.1728372, 0.13577601, 0.20016393, 1)
+shadow_size = 2
+shadow_color = Color(0.120867096, 0.23894772, 0.3351023, 1)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(2, 2)
+stacked_shadow_0/color = Color(0, 0, 0, 0.37254903)
+stacked_shadow_0/outline_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_56hqx"]
+resource_local_to_scene = true
+line_spacing = 0.0
+font = ExtResource("1_nhuu3")
+font_size = 30
+font_color = Color(0.81388783, 0.88268846, 0.9569791, 1)
+outline_size = 4
+outline_color = Color(0.1728372, 0.13577601, 0.20016393, 1)
+shadow_size = 2
+shadow_color = Color(0.120867096, 0.23894772, 0.3351023, 1)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(2, 2)
+stacked_shadow_0/color = Color(0, 0, 0, 0.37254903)
+stacked_shadow_0/outline_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_7hnab"]
+resource_local_to_scene = true
+line_spacing = 0.0
+font = ExtResource("1_nhuu3")
+font_size = 30
+font_color = Color(0.81388783, 0.88268846, 0.9569791, 1)
+outline_size = 4
+outline_color = Color(0.1728372, 0.13577601, 0.20016393, 1)
+shadow_size = 2
+shadow_color = Color(0.120867096, 0.23894772, 0.3351023, 1)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(2, 2)
+stacked_shadow_0/color = Color(0, 0, 0, 0.37254903)
+stacked_shadow_0/outline_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_thwhf"]
+resource_local_to_scene = true
+line_spacing = 0.0
+font = ExtResource("1_nhuu3")
+font_size = 30
+font_color = Color(0.81388783, 0.88268846, 0.9569791, 1)
+outline_size = 4
+outline_color = Color(0.1728372, 0.13577601, 0.20016393, 1)
+shadow_size = 2
+shadow_color = Color(0.120867096, 0.23894772, 0.3351023, 1)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(2, 2)
+stacked_shadow_0/color = Color(0, 0, 0, 0.37254903)
+stacked_shadow_0/outline_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_iens6"]
+font = ExtResource("3_ij621")
+font_size = 32
+font_color = Color(0.9843137, 0.9882353, 0.023529412, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lja84"]
+font = ExtResource("3_ij621")
+font_color = Color(0.60122335, 0.6012229, 0.6012228, 1)
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_w52ml"]
@@ -110,7 +187,7 @@ font_size = 20
 font_color = Color(0.992759, 0.914398, 0.738453, 1)
 shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_6ehxx"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_oj70j"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="LabelSettings" id="LabelSettings_khjnh"]
@@ -272,6 +349,30 @@ tracks/11/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Pages/MainPage/Attributes/AttributeRadarGraph:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Pages/MainPage/Attributes/AttributeRadarGraph:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_yqy0f"]
@@ -492,6 +593,30 @@ tracks/18/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.47)
 }
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Pages/MainPage/Attributes/AttributeRadarGraph:scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.53333336),
+"transitions": PackedFloat32Array(2.070531, 0.40612632, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Pages/MainPage/Attributes/AttributeRadarGraph:rotation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 2.0000005),
+"update": 0,
+"values": [-3.141592653589793, 0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gpmgs"]
 _data = {
@@ -555,13 +680,13 @@ mouse_filter = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -593.0
-offset_top = 132.0
-offset_right = -43.0
-offset_bottom = 332.0
+anchors_preset = -1
+anchor_left = 0.725
+anchor_right = 0.725
+offset_left = -276.2
+offset_top = 56.0
+offset_right = 273.8
+offset_bottom = 256.0
 grow_horizontal = 0
 scale = Vector2(1, 0.995118)
 theme_override_constants/separation = -8
@@ -623,8 +748,8 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -158.167
 offset_top = -60.854
-offset_right = 34.833008
-offset_bottom = -27.8535
+offset_right = 34.834106
+offset_bottom = -27.853497
 grow_horizontal = 2
 text = "ToonTasks"
 label_settings = SubResource("LabelSettings_0wxjl")
@@ -676,6 +801,187 @@ grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.7, 0.7)
 
+[node name="Attributes" type="Control" parent="Pages/MainPage" unique_id=1682908693]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_56hqx")
+
+[node name="AttributeRadarGraph" type="Control" parent="Pages/MainPage/Attributes" unique_id=947922547]
+unique_name_in_owner = true
+self_modulate = Color(0.28814104, 0.6765764, 0.7398631, 1)
+anchors_preset = 0
+offset_left = 81.0
+offset_top = 43.0
+offset_right = 81.0
+offset_bottom = 43.0
+pivot_offset = Vector2(239, 199)
+size_flags_horizontal = 4
+script = ExtResource("6_5p4rn")
+key_count = 4
+radius = 150.0
+key_items = Array[Dictionary]([{
+"title": "Punch
+",
+"tooltip": "+5% Damage, +3% Parry Chance per point",
+"value": 0.0
+}, {
+"title": "Humor
+",
+"tooltip": "+4 Max Laff, +2 Humor Healing per point",
+"value": 0.0
+}, {
+"title": "Gusto",
+"tooltip": "+2 Speed, +10% Gag Regen per point",
+"value": 0.0
+}, {
+"title": "Shrug",
+"tooltip": "+3% Crit, +4% Dodge per point",
+"value": 0.0
+}])
+max_value = 12.0
+font = ExtResource("3_ij621")
+font_size = 32
+font_outline_size = 6
+background_color = Color(0.83033514, 0.8303352, 0.830335, 1)
+background_outline_color = Color(0.48178947, 0.48178947, 0.48178947, 1)
+background_outline_width = 4.0
+graph_color = Color(0.559125, 0.51382935, 0.5482521, 1)
+graph_outline_color = Color(0.23921569, 0.23921569, 0.23921569, 0.23529412)
+graph_outline_width = 2.0
+show_guides = true
+guide_color = Color(0.43529412, 0.43529412, 0.43529412, 0.24705882)
+guide_width = 3.0
+guide_step = 4.0
+draw_order = PackedStringArray("background", "background_outline", "guides", "graph", "graph_outline", "titles")
+items/key_0/value = 0.0
+items/key_0/title = "Punch
+"
+items/key_0/tooltip = "+5% Damage, +3% Parry Chance per point"
+items/key_1/value = 0.0
+items/key_1/title = "Humor
+"
+items/key_1/tooltip = "+4 Max Laff, +2 Humor Healing per point"
+items/key_2/value = 0.0
+items/key_2/title = "Gusto"
+items/key_2/tooltip = "+2 Speed, +10% Gag Regen per point"
+items/key_3/value = 0.0
+items/key_3/title = "Shrug"
+items/key_3/tooltip = "+3% Crit, +4% Dodge per point"
+
+[node name="UpgradeButtonPunch" parent="Pages/MainPage/Attributes/AttributeRadarGraph" unique_id=1756232947 instance=ExtResource("2_fdjxk")]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 58.0
+offset_right = 267.0
+offset_bottom = 116.0
+texture_normal = ExtResource("8_krdv7")
+texture_pressed = ExtResource("9_56hqx")
+texture_hover = ExtResource("10_7hnab")
+texture_disabled = ExtResource("8_krdv7")
+texture_focused = ExtResource("10_7hnab")
+text = "+"
+
+[node name="Label" parent="Pages/MainPage/Attributes/AttributeRadarGraph/UpgradeButtonPunch" index="0" unique_id=1572222559]
+text = "+"
+label_settings = SubResource("LabelSettings_krdv7")
+
+[node name="UpgradeButtonHumor" parent="Pages/MainPage/Attributes/AttributeRadarGraph" unique_id=1031913354 instance=ExtResource("2_fdjxk")]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 172.0
+offset_right = 379.0
+offset_bottom = 230.0
+texture_normal = ExtResource("8_krdv7")
+texture_pressed = ExtResource("9_56hqx")
+texture_hover = ExtResource("10_7hnab")
+texture_disabled = ExtResource("8_krdv7")
+texture_focused = ExtResource("10_7hnab")
+text = "+"
+
+[node name="Label" parent="Pages/MainPage/Attributes/AttributeRadarGraph/UpgradeButtonHumor" index="0" unique_id=1572222559]
+text = "+"
+label_settings = SubResource("LabelSettings_56hqx")
+
+[node name="UpgradeButtonGusto" parent="Pages/MainPage/Attributes/AttributeRadarGraph" unique_id=1793753504 instance=ExtResource("2_fdjxk")]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 284.0
+offset_right = 267.0
+offset_bottom = 342.0
+texture_normal = ExtResource("8_krdv7")
+texture_pressed = ExtResource("9_56hqx")
+texture_hover = ExtResource("10_7hnab")
+texture_disabled = ExtResource("8_krdv7")
+texture_focused = ExtResource("10_7hnab")
+text = "+"
+
+[node name="Label" parent="Pages/MainPage/Attributes/AttributeRadarGraph/UpgradeButtonGusto" index="0" unique_id=1572222559]
+text = "+"
+label_settings = SubResource("LabelSettings_7hnab")
+
+[node name="UpgradeButtonShrug" parent="Pages/MainPage/Attributes/AttributeRadarGraph" unique_id=1016320477 instance=ExtResource("2_fdjxk")]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 172.0
+offset_right = 156.0
+offset_bottom = 230.0
+texture_normal = ExtResource("8_krdv7")
+texture_pressed = ExtResource("9_56hqx")
+texture_hover = ExtResource("10_7hnab")
+texture_disabled = ExtResource("8_krdv7")
+texture_focused = ExtResource("10_7hnab")
+text = "+"
+
+[node name="Label" parent="Pages/MainPage/Attributes/AttributeRadarGraph/UpgradeButtonShrug" index="0" unique_id=1572222559]
+text = "+"
+label_settings = SubResource("LabelSettings_thwhf")
+
+[node name="JokesIcon" type="TextureRect" parent="Pages/MainPage/Attributes" unique_id=1468629039]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 112.0
+offset_top = 368.0
+offset_right = 164.0
+offset_bottom = 448.0
+texture = ExtResource("9_iens6")
+expand_mode = 1
+
+[node name="JokesLabel" type="Label" parent="Pages/MainPage/Attributes/JokesIcon" unique_id=1504130191]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -24.0
+offset_right = 47.0
+offset_bottom = 17.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "2"
+label_settings = SubResource("LabelSettings_iens6")
+
+[node name="TotalJokesLabel" type="Label" parent="Pages/MainPage/Attributes/JokesIcon" unique_id=1157593690]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = 10.0
+offset_right = 98.0
+offset_bottom = 31.0
+grow_vertical = 2
+text = "/ 48"
+label_settings = SubResource("LabelSettings_lja84")
+
 [node name="StatsHolder" type="Control" parent="Pages/MainPage" unique_id=1242694875]
 layout_mode = 1
 anchors_preset = 15
@@ -695,10 +1001,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -499.0
-offset_top = -85.0
-offset_right = -269.0
-offset_bottom = 125.0
+offset_left = -560.0
+offset_top = 36.0
+offset_right = -330.0
+offset_bottom = 246.0
 grow_horizontal = 0
 grow_vertical = 2
 pivot_offset = Vector2(115, 105)
@@ -727,6 +1033,7 @@ layout_mode = 2
 
 [node name="Punch" type="Label" parent="Pages/MainPage/StatsHolder/Stats/MarginContainer/VBoxContainer" unique_id=1374470122]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "Punch: 0"
 label_settings = SubResource("LabelSettings_6ehxx")
@@ -745,6 +1052,7 @@ vertical_alignment = 1
 
 [node name="Humor" type="Label" parent="Pages/MainPage/StatsHolder/Stats/MarginContainer/VBoxContainer" unique_id=890309932]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "Humor: 0"
 label_settings = SubResource("LabelSettings_6ehxx")
@@ -763,6 +1071,7 @@ vertical_alignment = 1
 
 [node name="Gusto" type="Label" parent="Pages/MainPage/StatsHolder/Stats/MarginContainer/VBoxContainer" unique_id=1911877683]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "Gusto: 0"
 label_settings = SubResource("LabelSettings_6ehxx")
@@ -781,6 +1090,7 @@ vertical_alignment = 1
 
 [node name="Shrug" type="Label" parent="Pages/MainPage/StatsHolder/Stats/MarginContainer/VBoxContainer" unique_id=1751855066]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "Shrug: 0"
 label_settings = SubResource("LabelSettings_6ehxx")
@@ -937,7 +1247,7 @@ offset_right = 53.0
 offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = SubResource("ViewportTexture_6ehxx")
+texture = SubResource("ViewportTexture_oj70j")
 expand_mode = 1
 
 [node name="NoReward" type="TextureRect" parent="Pages/MainPage/RewardHolder/ItemReward" unique_id=1096662492]
@@ -995,7 +1305,7 @@ grow_vertical = 2
 [node name="ItemPanel" parent="Pages/ConsumablePage" unique_id=1951519200 instance=ExtResource("9_1s8xm")]
 layout_mode = 1
 offset_left = -269.5
-offset_top = -293.0
+offset_top = -163.0
 offset_right = 269.5
 offset_bottom = 172.0
 hide_close_button = true
@@ -1195,3 +1505,8 @@ libraries/ = SubResource("AnimationLibrary_gpmgs")
 [connection signal="pressed" from="TopLevelElements/BackdropHolder/Backdrop/Buttons/Quit" to="." method="quit"]
 [connection signal="pressed" from="TopLevelElements/ButtonLeft/GeneralButton" to="." method="view_prev_page"]
 [connection signal="pressed" from="TopLevelElements/ButtonRight/GeneralButton" to="." method="view_next_page"]
+
+[editable path="Pages/MainPage/Attributes/AttributeRadarGraph/UpgradeButtonPunch"]
+[editable path="Pages/MainPage/Attributes/AttributeRadarGraph/UpgradeButtonHumor"]
+[editable path="Pages/MainPage/Attributes/AttributeRadarGraph/UpgradeButtonGusto"]
+[editable path="Pages/MainPage/Attributes/AttributeRadarGraph/UpgradeButtonShrug"]

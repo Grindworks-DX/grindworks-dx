@@ -19,14 +19,9 @@ func _ready() -> void:
 	#BattleService.s_battle_started.connect(func(_x=null): hide())
 	#BattleService.s_battle_ended.connect(func(_x=null): if Util.floor_number != -1: show())
 
-	if not Util.get_player():
-		await Util.s_player_assigned
-	if Util.get_player().stats.current_active_item:
-		add_new_item(Util.get_player().stats.current_active_item)
-	for item in Util.get_player().stats.actives_in_reserve:
-		add_new_item(item)
-	for item: Item in Util.get_player().stats.items:
-		add_new_item(item)
+	if not Util.get_player(): await Util.s_player_assigned
+	reload_items()
+	
 
 func add_new_item(item: Item) -> void:
 	if not item.icon:
@@ -56,3 +51,13 @@ func stop_hover(tex_rect: TextureRect) -> void:
 	Parallel.new([
 		LerpProperty.new(tex_rect, ^"scale", 0.1, Vector2.ONE).interp(Tween.EASE_IN_OUT, Tween.TRANS_QUAD),
 	]).as_tween(self)
+
+func reload_items() -> void:
+	for item in item_container.get_children():
+		item.queue_free()
+	if Util.get_player().stats.current_active_item and !vertical:
+		add_new_item(Util.get_player().stats.current_active_item)
+	for item in Util.get_player().stats.actives_in_reserve:
+		add_new_item(item)
+	for item: Item in Util.get_player().stats.items:
+		add_new_item(item)

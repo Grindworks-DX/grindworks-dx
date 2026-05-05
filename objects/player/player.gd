@@ -70,6 +70,7 @@ var ignore_battles := false
 		return stats.character
 @onready var item_node := $Items
 @onready var boost_queue: BoostQueue = %BoostTextQueue
+@onready var item_display := %ItemDisplay
 
 @onready var game_timer: Control = %GameTimer
 var game_timer_tick := false:

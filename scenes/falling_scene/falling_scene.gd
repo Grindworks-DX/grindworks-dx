@@ -152,12 +152,14 @@ func create_random_gag(volume := 0.0) -> void:
 		)
 
 func end_scene() -> void:
-	if is_instance_valid(Util.get_player()):
+	var player := Util.get_player()
+	if is_instance_valid(player):
 		await GameLoader.wait_for_phase(GameLoader.Phase.GAMEPLAY)
-		Util.get_player().show()
-		Util.get_player().reset_stats()
-		Util.get_player().stats.initialize_quests()
-		Util.get_player().lock_game_timer = false
+		player.show()
+		player.reset_stats()
+		player.stats.initialize_quests()
+		player.lock_game_timer = false
+		player.item_display.reload_items()
 		Globals.s_game_started.emit()
 		var gamefloor := GAME_FLOOR.instantiate()
 		gamefloor.floor_variant = get_first_floor()

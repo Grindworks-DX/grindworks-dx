@@ -156,7 +156,7 @@ signal s_shrug_changed(new_value: int)
 # Punch: +5% damage | +4% Parry chance
 @export var punch := 0:
 	set(x):
-		if Util.player_exists():
+		if Util.player_exists() and attributes_initialized:
 			attribute_changed('punch', punch, x)
 		punch = x
 		if self is PlayerStats:
@@ -167,7 +167,7 @@ signal s_shrug_changed(new_value: int)
 # Humor: +4 Laff | +2 Laff on Cog Destroyed
 @export var humor := 0:
 	set(x):
-		if Util.player_exists():
+		if Util.player_exists() and attributes_initialized:
 			attribute_changed('humor', humor, x)
 		humor = x
 		if self is PlayerStats:
@@ -178,7 +178,7 @@ signal s_shrug_changed(new_value: int)
 # Gusto: +1 Speed | +10% Gag Regen
 @export var gusto := 0:
 	set(x):
-		if Util.player_exists():
+		if Util.player_exists() and attributes_initialized:
 			attribute_changed('gusto', gusto, x)
 		gusto = x
 		#if self is PlayerStats:
@@ -189,7 +189,7 @@ signal s_shrug_changed(new_value: int)
 # Shrug: +1 Luck | +4% Dodge Chance
 @export var shrug := 0:
 	set(x):
-		if Util.player_exists():
+		if Util.player_exists() and attributes_initialized:
 			attribute_changed('shrug', shrug, x)
 		shrug = x
 		if self is PlayerStats:
@@ -197,10 +197,12 @@ signal s_shrug_changed(new_value: int)
 		s_shrug_changed.emit(x)
 		s_stat_changed.emit('shrug')
 
+@export var attributes_initialized := false
+
 # New mechanic stats
 @export var parry := 0.0 # TODO
 @export var heal_on_kill := 0 # TODO
-@export var gag_regen_chance := 0.0 # TODO
+@export var gag_regen_chance := 1.0 # TODO
 
 var attribute_modifiers := {
 	'punch': { 'damage': 0.05, 'parry': 0.04 },

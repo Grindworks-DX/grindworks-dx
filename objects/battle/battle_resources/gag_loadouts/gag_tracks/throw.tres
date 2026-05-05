@@ -26,3 +26,4 @@ ExtResource("7_s8xnx"): 5,
 ExtResource("8_s8o63"): 6,
 ExtResource("9_fs2by"): 0
 })
+base_regen = 0.2
