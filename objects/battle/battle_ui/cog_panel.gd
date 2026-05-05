@@ -59,6 +59,11 @@ func set_cog(cog: Cog):
 
 	if not BattleService.ongoing_battle:
 		await BattleService.s_battle_started
+	BattleService.ongoing_battle.s_status_effect_added.connect(func(x: StatusEffect):
+		if x.target == cog:
+			populate_status_effects(cog)
+			x.s_expire.connect(populate_status_effects.bind(cog))
+	)
 	populate_status_effects(cog)
 
 func set_hp_label():

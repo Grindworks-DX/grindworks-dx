@@ -7,6 +7,11 @@ extends HBoxContainer
 
 func _ready() -> void:
 	BattleService.s_refresh_statuses.connect(refresh)
+	BattleService.ongoing_battle.s_status_effect_added.connect(func(x: StatusEffect):
+		if x.target == target:
+			refresh()
+			x.s_expire.connect(refresh)
+	)
 
 func refresh() -> void:
 	for icon: StatusEffectIcon in get_children():

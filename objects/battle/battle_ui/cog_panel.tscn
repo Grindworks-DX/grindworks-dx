@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://e5b2tf3v7sur" path="res://ui_assets/player_ui/pocket_prank_icons/goon_foot.png" id="7_x3boc"]
 [ext_resource type="LabelSettings" uid="uid://cnx4cg5a68tp7" path="res://ui_assets/battle/labelsettings_adv_label_bad.tres" id="8_05y4n"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_x3boc"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_05y4n"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="LabelSettings" id="LabelSettings_2vko0"]
@@ -85,7 +85,7 @@ offset_right = 55.9769
 offset_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("ViewportTexture_x3boc")
+texture = SubResource("ViewportTexture_05y4n")
 expand_mode = 1
 
 [node name="HealthLight" type="TextureRect" parent="Profile" unique_id=1771325652]
