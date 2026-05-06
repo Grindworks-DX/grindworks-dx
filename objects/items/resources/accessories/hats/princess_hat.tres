@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://fb0tqfojo57q" path="res://objects/items/classes/accessory_placement.gd" id="1_84qt4"]
 [ext_resource type="Script" uid="uid://c4eyu1xvv7h2l" path="res://objects/items/classes/head_placement.gd" id="2_5nqo0"]
 [ext_resource type="Texture2D" uid="uid://bcigbb4sebjiw" path="res://models/accessories/hats/princess_hat/princess_hat-pix-1.png" id="3_84qt4"]
+[ext_resource type="Script" uid="uid://dgxrpuv325rb2" path="res://objects/items/custom/item_princess_hat.gd" id="4_5nqo0"]
 [ext_resource type="PackedScene" uid="uid://bcqbvvtyoqxfn" path="res://models/accessories/hats/princess_hat/princess_hat.tscn" id="4_84qt4"]
 [ext_resource type="Script" uid="uid://dvu24b3o8i3sj" path="res://objects/items/classes/item_accessory.gd" id="5_1r7mw"]
 
@@ -268,16 +269,21 @@ scale = Vector3(0.36, 0.4, 0.44)
 [resource]
 script = ExtResource("5_1r7mw")
 accessory_placements = Array[ExtResource("1_84qt4")]([SubResource("Resource_8pqho"), SubResource("Resource_4qx3c"), SubResource("Resource_s7khx"), SubResource("Resource_g7cfs"), SubResource("Resource_10r2o"), SubResource("Resource_1pn5b"), SubResource("Resource_12s3o"), SubResource("Resource_ri0uk"), SubResource("Resource_iuwe1"), SubResource("Resource_4hlks"), SubResource("Resource_rrf6k"), SubResource("Resource_shykx"), SubResource("Resource_5lxyc"), SubResource("Resource_h15cx"), SubResource("Resource_2gm5v"), SubResource("Resource_ss5a7"), SubResource("Resource_g43iw"), SubResource("Resource_s5fl3"), SubResource("Resource_n3gkc"), SubResource("Resource_k5eti"), SubResource("Resource_5rw3p"), SubResource("Resource_2enl1"), SubResource("Resource_7heev"), SubResource("Resource_1bdb1"), SubResource("Resource_c36o5"), SubResource("Resource_jafqh"), SubResource("Resource_7roc0"), SubResource("Resource_46dnc"), SubResource("Resource_0y12l"), SubResource("Resource_kbcnn"), SubResource("Resource_nk2mc"), SubResource("Resource_57ry5"), SubResource("Resource_y5ahc"), SubResource("Resource_bkf5t")])
+qualitoon = 1
+rarity = 4
 slot = 1
 world_scale = 0.13
 item_name = "Princess Hat"
-item_description = "Take your time!"
-big_description = "+ 5% damage
-- 15% speed"
+item_description = "Fight for a kingdom in unrest!"
+big_description = "+2 in all Attributes
+When you defeat a Cog, enforce a 20 second round timer for the rest of combat (scales with Speed)"
 model = ExtResource("4_84qt4")
 stats_add = {
-"damage": 0.05,
-"speed": -0.15
+"gusto": 2,
+"humor": 2,
+"punch": 2,
+"shrug": 2
 }
+item_script = ExtResource("4_5nqo0")
 icon = ExtResource("3_84qt4")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

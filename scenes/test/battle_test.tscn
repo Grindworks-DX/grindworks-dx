@@ -31,6 +31,7 @@
 [ext_resource type="Resource" uid="uid://bh5mubvof8wpe" path="res://objects/items/resources/accessories/hats/tiara.tres" id="27_1xuw6"]
 [ext_resource type="Resource" uid="uid://bfp72fa0cxtxv" path="res://objects/items/resources/accessories/glasses/cateye_glasses.tres" id="27_4p2an"]
 [ext_resource type="Resource" uid="uid://cfl3ywl6ynhpc" path="res://objects/items/resources/accessories/backpacks/bee_wings.tres" id="28_66vty"]
+[ext_resource type="Resource" uid="uid://iqm1t7lmfclu" path="res://objects/items/resources/accessories/hats/princess_hat.tres" id="28_qncha"]
 [ext_resource type="PackedScene" uid="uid://c1g5f6yxujvef" path="res://addons/toonlike_tools/injectors/player/debug_player_position_marker.tscn" id="30_ouruu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5pfdn"]
@@ -210,6 +211,10 @@ override_item = ExtResource("26_ouruu")
 [node name="treasure_chest8" parent="." unique_id=1775819028 instance=ExtResource("23_16xtn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.206854, 0, -5.41882)
 override_item = ExtResource("27_4p2an")
+
+[node name="treasure_chest9" parent="." unique_id=23914528 instance=ExtResource("23_16xtn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.513517, 0, -5.41882)
+override_item = ExtResource("28_qncha")
 
 [node name="treasure_chest2" parent="." unique_id=499844087 instance=ExtResource("23_16xtn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9695, 0, -5.41882)

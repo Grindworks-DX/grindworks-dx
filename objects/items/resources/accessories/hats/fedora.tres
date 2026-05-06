@@ -250,15 +250,15 @@ accessory_placements = Array[ExtResource("1_npcfx")]([SubResource("Resource_8pqh
 slot = 1
 world_scale = 0.5
 item_name = "Fedora"
-item_description = "Life on the edge"
-big_description = "+ 10% Evasiveness
-+ 5% Luck
-- 20% Defense"
+item_description = "Life on the edge!"
+big_description = "+4 Shrug
++2 Gusto
+-20% Defense"
 model = ExtResource("2_xav6c")
 stats_add = {
 "defense": -0.2,
-"evasiveness": 0.1,
-"luck": 0.05
+"gusto": 2,
+"shrug": 4
 }
 icon = ExtResource("3_3nnhj")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)
