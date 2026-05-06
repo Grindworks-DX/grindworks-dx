@@ -6,7 +6,7 @@ var FALLBACK_REWARD_POOL: ItemPool
 ## Default Cog Pool
 var FALLBACK_COG_POOL: CogPool
 ## Amount of rooms to add per difficulty (includes connectors)
-static var DIFFICULTY_ROOM_ADDITION := 5
+static var DIFFICULTY_ROOM_ADDITION := 2
 
 static var ANOMALIES_POSITIVE: Array[String] = [
 	"res://scenes/game_floor/floor_modifiers/scripts/anomalies/floor_mod_overheal.gd",
@@ -39,9 +39,9 @@ static var ANOMALIES_NEGATIVE: Array[String] = [
 # Breaking Grounds: 4 floors (from 6)
 static var LEVEL_RANGES: Dictionary[int, Array] = {
 	0: [4, 6],
-	1: [5, 9],
-	2: [7, 10],
-	3: [10, 16]
+	1: [5, 11],
+	2: [10, 14],
+	3: [12, 16]
 }
 
 ## Floor difficulty from 0-5

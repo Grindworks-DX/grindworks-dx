@@ -7,6 +7,6 @@
 script = ExtResource("2_113k8")
 drenched_speed = -5
 icon = ExtResource("1_mgfgo")
-damage = 70
+damage = 52
 target_type = 2
 action_name = "Geyser"
