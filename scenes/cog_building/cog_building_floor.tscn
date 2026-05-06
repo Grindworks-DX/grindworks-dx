@@ -5150,6 +5150,7 @@ mesh = SubResource("ArrayMesh_4obj5")
 skeleton = NodePath("")
 
 [node name="pipe1" type="MeshInstance3D" parent="suit_interior/room_boundries/pipes" unique_id=851389645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8756788, 3.8277143e-08, 0.2992899)
 mesh = SubResource("ArrayMesh_mt004")
 skeleton = NodePath("")
 

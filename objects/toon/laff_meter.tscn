@@ -22,6 +22,8 @@
 font = ExtResource("5_eeki7")
 font_size = 11
 font_color = Color(0, 0, 0, 1)
+outline_color = Color(0.37130952, 0.72534627, 0.6021776, 1)
+shadow_color = Color(0, 0, 0, 0.2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_h38gy"]
 font = ExtResource("5_eeki7")

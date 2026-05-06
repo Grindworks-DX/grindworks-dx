@@ -19,10 +19,8 @@ script = ExtResource("1_vg416")
 max_hp = 15
 hp = 15
 turns = 2
-punch = 2
-humor = 3
-gusto = 1
-shrug = 2
+humor = 5
+gusto = 2
 metadata/_custom_type_script = "uid://o2fe7ud1faj6"
 
 [sub_resource type="Resource" id="Resource_ugrs1"]

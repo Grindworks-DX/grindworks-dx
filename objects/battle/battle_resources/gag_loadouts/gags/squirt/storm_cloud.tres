@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_s8n74")
-drenched_speed = -8
+drenched_speed = -15
 icon = ExtResource("1_3l3ou")
 damage = 48
 action_name = "Storm Cloud"

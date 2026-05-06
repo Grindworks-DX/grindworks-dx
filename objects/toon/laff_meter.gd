@@ -64,6 +64,7 @@ func update_hp():
 		update_extra_lives()
 	# Update eye text
 	laff_eye.set_text(str(laff))
+	laff_eye.label_settings.outline_size = 3 if laff > max_laff else 0
 	max_eye.set_text(str(max_laff))
 	
 	if laff > hp_ref:

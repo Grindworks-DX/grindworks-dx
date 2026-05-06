@@ -823,12 +823,12 @@ radius = 150.0
 key_items = Array[Dictionary]([{
 "title": "Punch
 ",
-"tooltip": "+5% Damage, +3% Parry Chance per point",
+"tooltip": "+5% Damage per point",
 "value": 0.0
 }, {
 "title": "Humor
 ",
-"tooltip": "+4 Max Laff, +2 Humor Healing per point",
+"tooltip": "+3 Max Laff, +1 Humor Healing per point",
 "value": 0.0
 }, {
 "title": "Gusto",
@@ -857,11 +857,11 @@ draw_order = PackedStringArray("background", "background_outline", "guides", "gr
 items/key_0/value = 0.0
 items/key_0/title = "Punch
 "
-items/key_0/tooltip = "+5% Damage, +3% Parry Chance per point"
+items/key_0/tooltip = "+5% Damage per point"
 items/key_1/value = 0.0
 items/key_1/title = "Humor
 "
-items/key_1/tooltip = "+4 Max Laff, +2 Humor Healing per point"
+items/key_1/tooltip = "+3 Max Laff, +1 Humor Healing per point"
 items/key_2/value = 0.0
 items/key_2/title = "Gusto"
 items/key_2/tooltip = "+2 Speed, +15% Gag Regen per point"

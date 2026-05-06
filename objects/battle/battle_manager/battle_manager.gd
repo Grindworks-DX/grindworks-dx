@@ -913,8 +913,8 @@ func is_target_debuffed(target: Actor) -> bool:
 		if effect.target == target and effect.quality == effect.EffectQuality.NEGATIVE: return true
 	return false
 
-# For each speed point the player has above a Cog, there is a 5% chance for them to be delayed;
-# this causes a stacking 20% Delay resistance until they finally take their turn
+# For each speed point the player has above a Cog, there is a 10% chance for them to be delayed;
+# this causes a stacking 40% Delay resistance until they finally take their turn
 
 func check_for_delay(cog: Cog) -> bool:
 	var __out = false
@@ -922,7 +922,7 @@ func check_for_delay(cog: Cog) -> bool:
 	var cog_speed = battle_stats[cog].speed
 	var cog_delay_resist = battle_stats[cog].delay_resist
 	var roll := randf()
-	var chance: float = min(1.0, ((player_speed - cog_speed) * 0.05)) - cog_delay_resist
+	var chance: float = min(1.0, ((player_speed - cog_speed) * 0.10)) - cog_delay_resist
 	__out = roll < chance
 	if __out:
 		
