@@ -15,7 +15,7 @@ model = ExtResource("1_taocm")
 pickup_sfx = ExtResource("2_xq7fd")
 stats_add = {
 "jokes": 1,
-"max_jokes": 1
+"total_jokes": 1
 }
 remember_item = false
 shop_category_color = Color(1, 0.54901963, 0, 1)

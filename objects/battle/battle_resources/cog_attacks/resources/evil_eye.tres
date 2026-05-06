@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_c7pnc")
 accuracy = 70
-damage = 14
+damage = 12
 attack_lines = Array[String](["I'm giving you the evil eye.", "Could you eye-ball this for me?", "Wait. I've got something in my eye.", "I've got my eye on you!", "Could you keep an eye on this for me?", "I've got a real eye for evil.", "I'll poke you in the eye!"])
 action_name = "Evil Eye"
