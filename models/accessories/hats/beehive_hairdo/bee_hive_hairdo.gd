@@ -3,8 +3,10 @@ extends Node3D
 ## Funny script that's necessary for this item to work
 ## This can't meaningfully be an item script
 
-const STAT_DIFF_POS := 0.2
-const STAT_DIFF_NEG := -0.15
+# Breaking Grounds - Gag Regen instead of Gag Boost
+
+const STAT_DIFF_POS := 0.4
+const STAT_DIFF_NEG := -0.3
 
 var _item: Item
 

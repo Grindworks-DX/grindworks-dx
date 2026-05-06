@@ -13,9 +13,9 @@ func setup() -> void:
 	BattleService.s_battle_started.connect(on_battle_started)
 
 func on_battle_started(manager: BattleManager) -> void:
-	await get_tree().process_frame
 	manager.battle_stats[Util.get_player()].speed += starting_speed
 	manager.s_round_ended.connect(reset_moves.bind(manager), CONNECT_ONE_SHOT)
+	await get_tree().process_frame
 	manager.battle_ui.refresh_turns()
 
 func reset_moves(manager: BattleManager) -> void:

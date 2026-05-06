@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dvu24b3o8i3sj" path="res://objects/items/classes/item_accessory.gd" id="2_wrirq"]
 [ext_resource type="Script" uid="uid://duxq3xtgnln43" path="res://objects/items/classes/body_placement.gd" id="2_x6rgu"]
 [ext_resource type="Texture2D" uid="uid://6fm8ne12w47v" path="res://models/accessories/backpacks/bat_wings/tt_m_chr_avt_acc_pac_batWings.glb-pix-1.png" id="3_jpgnc"]
+[ext_resource type="Script" uid="uid://dmvxw7y6rn4ji" path="res://objects/items/custom/item_bat_wings.gd" id="4_a83ep"]
 
 [sub_resource type="Resource" id="Resource_bcdov"]
 script = ExtResource("2_x6rgu")
@@ -35,11 +36,17 @@ slot = 3
 world_scale = 0.15
 ui_cam_offset = 0.45
 item_name = "Bat Wings"
-item_description = "Siphon your enemies."
-big_description = "Adds an extra 10% to Throw's self heal bonus."
+item_description = "Who's the Bloodsucker now?!"
+big_description = "+20% Damage
+TRIPLE your Humor Healing
+Take 2 damage (non-lethal) every time you deal damage"
 model = ExtResource("2_lkame")
 stats_add = {
-"throw_heal_boost": 0.1
+"damage": 0.2
 }
+stats_multiply = {
+"humor_healing": 3
+}
+item_script = ExtResource("4_a83ep")
 icon = ExtResource("3_jpgnc")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

@@ -275,8 +275,8 @@ world_scale = 0.1
 world_y_offset = 0.1
 item_name = "Bee Hive Hairdo"
 item_description = "Fashion Mix-Up!"
-big_description = "+ 20% effectiveness to 2 random Tracks
-- 15% effectiveness to 2 random Tracks"
+big_description = "+ 40% Gag Regen to 2 random Tracks
+- 30% Gag Regen to 2 random Tracks"
 model = ExtResource("4_kq1vh")
 icon = ExtResource("3_kq1vh")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

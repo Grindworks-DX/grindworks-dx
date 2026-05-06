@@ -210,7 +210,7 @@ signal s_shrug_changed(new_value: int)
 
 var attribute_modifiers := {
 	'punch': { 'damage': 0.04, 'parry': 0.04 },
-	'humor': { 'max_hp': 3, 'humor_healing': 1 },
+	'humor': { 'max_hp': 3, 'humor_healing': 2 },
 	'gusto': { 'speed': 2, 'gag_regen_chance': 0.15 },
 	'shrug': { 'luck': 0.03, 'evasiveness': 0.04 },
 }

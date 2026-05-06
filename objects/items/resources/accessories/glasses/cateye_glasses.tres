@@ -246,13 +246,15 @@ slot = 2
 world_scale = 0.15
 ui_cam_offset = 0.15
 item_name = "Cateye Glasses"
-item_description = "Don't get hiss-terical!"
-big_description = "+ 5% Damage
-- 10% Defense"
+item_description = "Feeling hiss-terical!"
+big_description = "+1 Speed
++10% Gag Regen
+-10% Defense"
 model = ExtResource("2_jumbx")
 stats_add = {
-"damage": 0.05,
-"defense": -0.1
+"defense": -0.1,
+"gag_regen_chance": 0.1,
+"speed": 1
 }
 icon = ExtResource("3_gpdmo")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)
