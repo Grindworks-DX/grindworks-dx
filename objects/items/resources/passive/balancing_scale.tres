@@ -11,11 +11,7 @@ qualitoon = 2
 world_scale = 0.1
 item_name = "Balancing Scale"
 item_description = "Equilibrium"
-big_description = "Averages the following stats on pickup:
-- Damage
-- Defense
-- Evasiveness
-- Luck"
+big_description = "On pickup, averages your Attributes"
 model = ExtResource("1_df1fs")
 item_script = ExtResource("1_ssrur")
 icon = ExtResource("1_uk4kc")

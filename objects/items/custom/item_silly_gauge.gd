@@ -1,13 +1,13 @@
 extends ItemScript
 
-const BoostRange: Vector2 = Vector2(0.02, 0.04)
-const StatChoices: Array = [
-	["damage", Color("fc954cff")],
-	["defense", Color("5c81edff")],
-	["evasiveness", Color("e366d4ff")],
-	["luck", Color("53db6cff")],
-	["speed", Color("fa6f5cff")],
-]
+const BoostRange: Vector2 = Vector2(0.05, 0.15)
+#const StatChoices: Array = [
+	#["damage", Color("fc954cff")],
+	#["defense", Color("5c81edff")],
+	#["evasiveness", Color("e366d4ff")],
+	#["luck", Color("53db6cff")],
+	#["speed", Color("fa6f5cff")],
+#]
 const ClockSfxChoices: Array[String] = ["01", "04", "05", "06", "07", "08", "10", "11"]
 
 var player: Player
@@ -33,12 +33,12 @@ func on_active_item_changed(active_item: ItemActive) -> void:
 		curr_active_item.node.s_used.connect(on_item_use)
 
 func on_item_use() -> void:
-	var choice: Array = StatChoices.pick_random()
+	var track: String = player.stats.gags_unlocked.keys().pick_random()
 
 	var boost_amt: float = randf_range(BoostRange.x, BoostRange.y)
-	player.stats[choice[0]] += boost_amt
+	player.stats.gag_effectiveness[track] += boost_amt
 	if BattleService.ongoing_battle:
-		BattleService.ongoing_battle.battle_stats[player][choice[0]] += boost_amt
+		BattleService.ongoing_battle.battle_stats[player][track] += boost_amt
 
-	player.boost_queue.queue_text("%s Up!" % choice[0].capitalize(), choice[1])
+	player.boost_queue.queue_text("%s Up!" % track.capitalize(), player.stats.character.gag_loadout.get_track_of_name(track).track_color)
 	AudioManager.play_sound(load("res://audio/sfx/items/clock%s.ogg" % ClockSfxChoices.pick_random()), 2.0)
