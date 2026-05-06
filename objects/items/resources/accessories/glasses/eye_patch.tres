@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://c4eyu1xvv7h2l" path="res://objects/items/classes/head_placement.gd" id="2_m4yrn"]
 [ext_resource type="PackedScene" uid="uid://bu2pxahlevsrn" path="res://models/accessories/glasses/eye_patch/tt_m_chr_avt_acc_msk_eyepatch.glb" id="2_uecrr"]
 [ext_resource type="Texture2D" uid="uid://dwblyk012ilns" path="res://models/accessories/glasses/eye_patch/tt_m_chr_avt_acc_msk_eyepatch.glb-pix-1.png" id="3_1lctm"]
+[ext_resource type="Script" uid="uid://bkv0xceworn85" path="res://objects/items/custom/item_eye_patch.gd" id="4_ij7ox"]
 
 [sub_resource type="Resource" id="Resource_6dx77"]
 script = ExtResource("2_m4yrn")
@@ -245,13 +246,13 @@ slot = 2
 world_scale = 0.15
 ui_cam_offset = 0.4
 item_name = "Eye Patch"
-item_description = "Depth-perception who?"
-big_description = "+ 5% Damage
-- 10% Luck"
+item_description = "Shiver me timbers!"
+big_description = "+5% Defense
++3% Defense per Shrug point"
 model = ExtResource("2_uecrr")
 stats_add = {
-"damage": 0.05,
-"luck": -0.1
+"defense": 0.05
 }
+item_script = ExtResource("4_ij7ox")
 icon = ExtResource("3_1lctm")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

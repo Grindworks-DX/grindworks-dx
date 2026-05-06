@@ -1,22 +1,25 @@
 extends ItemScriptActive
 
-const SHUFFLE_STATS: Array[String] = ['damage', 'defense', 'evasiveness', 'luck', 'speed']
+# Breaking Grounds - Shuffle attributes instead of internal stats
+const SHUFFLE_STATS: Array[String] = ['punch', 'humor', 'gusto', 'shrug']
+
+var bonus_points := 2
 
 func use() -> void:
 	var stats: PlayerStats = Util.get_player().stats
 	
 	# Record our base stats
-	var base_stats: Dictionary[String, float] = {}
+	var base_stats: Dictionary[String, int] = {}
 	for stat in SHUFFLE_STATS:
 		if stat in stats.character.base_stats:
 			base_stats[stat] = stats.character.base_stats.get(stat)
 		elif stats.character.additional_stats.keys().has(stat):
 			base_stats[stat] = stats.character.additional_stats[stat]
 		else:
-			base_stats[stat] = 1.0
+			base_stats[stat] = 1
 	
 	# Get our total stats above base
-	var stat_total := 0.0
+	var stat_total := bonus_points
 	for stat in SHUFFLE_STATS:
 		stat_total += stats.get(stat) - base_stats[stat]
 	
@@ -37,7 +40,7 @@ func use() -> void:
 	
 	# Now, apply the new stats
 	for stat in SHUFFLE_STATS:
-		stats.set(stat, base_stats[stat] + (stat_total * stat_proportions[stat]))
+		stats.set(stat, base_stats[stat] + (roundi(stat_total * stat_proportions[stat])))
 	
 	do_movie()
 

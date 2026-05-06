@@ -25,11 +25,10 @@
 [ext_resource type="PackedScene" uid="uid://dxyq5lb5oineo" path="res://objects/interactables/treasure_chest/treasure_chest.tscn" id="23_16xtn"]
 [ext_resource type="Resource" uid="uid://c8xt0naden1hv" path="res://objects/items/resources/accessories/shoes/super_toon_boots.tres" id="24_16xtn"]
 [ext_resource type="Resource" uid="uid://klobdj40hb36" path="res://objects/items/resources/accessories/backpacks/medium_pouch.tres" id="25_1xuw6"]
-[ext_resource type="Resource" uid="uid://b73ax0fohafiu" path="res://objects/items/resources/accessories/hats/toonosaur_hat.tres" id="26_16xtn"]
+[ext_resource type="Resource" uid="uid://c8hbpj5bgfuem" path="res://objects/items/resources/active/spinning_top.tres" id="26_1xuw6"]
 [ext_resource type="Resource" uid="uid://clm40vnq0ywx8" path="res://objects/items/resources/passive/joke.tres" id="28_1xuw6"]
 [ext_resource type="Resource" uid="uid://ca25j75xttg4p" path="res://objects/items/resources/active/moneybags_coin.tres" id="28_16xtn"]
 [ext_resource type="PackedScene" uid="uid://c1g5f6yxujvef" path="res://addons/toonlike_tools/injectors/player/debug_player_position_marker.tscn" id="30_ouruu"]
-[ext_resource type="Script" uid="uid://dax7hby88nkbu" path="res://addons/toonlike_tools/injectors/player/debug_player_position_marker.gd" id="31_4p2an"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5pfdn"]
 size = Vector3(14.6639, 5.65576, 10.2309)
@@ -202,7 +201,7 @@ override_item = ExtResource("25_1xuw6")
 
 [node name="treasure_chest3" parent="." unique_id=1383960643 instance=ExtResource("23_16xtn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5301, 0, -5.41882)
-override_item = ExtResource("26_16xtn")
+override_item = ExtResource("26_1xuw6")
 
 [node name="treasure_chest4" parent="." unique_id=1800338882 instance=ExtResource("23_16xtn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05854, 0, -5.41882)
@@ -212,6 +211,5 @@ override_item = ExtResource("28_1xuw6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.65817, 0, -5.41882)
 override_item = ExtResource("28_16xtn")
 
-[node name="DebugPlayerPositionMarker" type="Marker3D" parent="." unique_id=1108719677 instance=ExtResource("30_ouruu")]
+[node name="DebugPlayerPositionMarker" parent="." unique_id=1108719677 instance=ExtResource("30_ouruu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.011791, 0, -4.1908646)
-script = ExtResource("31_4p2an")

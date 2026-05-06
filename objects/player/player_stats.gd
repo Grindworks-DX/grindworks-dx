@@ -38,7 +38,8 @@ var debug_gag_points := false
 @export var gag_regen_chance_modifiers: Dictionary[String, float] = {}
 @export var gag_point_caps: Dictionary[String, int] = {} # TODO
 
-@export var gag_cap := 25
+# Breaking Grounds: Gag cap is per track; gag_cap increases all tracks
+@export var gag_cap := 0
 @export var gag_discount := -1
 @export var character: PlayerCharacter
 @export var quests: Array[Quest]
@@ -215,9 +216,7 @@ func get_highest_gag_level() -> int:
 	return gags_unlocked.values().max()
 
 func on_round_end(_battle: BattleManager) -> void:
-	for track in gag_balance.keys():
-		if not gags_unlocked[track] > 0: continue
-		restock(track, roll_gag_regen(track))
+	restock_tick()
 
 func on_battle_started(_battle: BattleManager) -> void:
 	for track in gag_balance.keys():
@@ -225,11 +224,16 @@ func on_battle_started(_battle: BattleManager) -> void:
 		gag_balance[track] = gag_starting_points[track]
 		restock(track, roll_gag_regen(track) + gag_battle_start_point_boost.get(track, 0) + global_battle_start_point_boost)
 
+func restock_tick() -> void:
+	for track in gag_balance.keys():
+		if not gags_unlocked[track] > 0: continue
+		restock(track, roll_gag_regen(track))
+
 func restock(track: String, add: int) -> void:
 	if debug_gag_points:
 		gag_balance[track] = gag_cap
 	else:
-		gag_balance[track] = min(gag_cap, gag_balance[track] + add)
+		gag_balance[track] = min(gag_point_caps[track] + gag_cap, gag_balance[track] + add)
 
 func attempt_revive(_hp: int = 0) -> void:
 	if _hp > 0 or extra_lives <= 0:
@@ -357,6 +361,8 @@ func roll_gag_regen(track_name: String) -> int:
 	print("Gag regen: %s gained %d points" % [track_name, __out])
 	return __out
 
+signal s_humor_healing_triggered
+
 func do_humor_healing(effectiveness := 1.0) -> void:
 	if humor_healing * effectiveness > 0:
 		AudioManager.play_sound(load("res://audio/sfx/items/laff_boost_pickup.ogg"), -5.0)
@@ -364,3 +370,4 @@ func do_humor_healing(effectiveness := 1.0) -> void:
 	BattleService.ongoing_battle.s_round_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
 	BattleService.ongoing_battle.s_battle_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
 	Util.get_player().quick_heal(ceili(humor_healing * effectiveness))
+	s_humor_healing_triggered.emit()

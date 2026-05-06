@@ -35,11 +35,11 @@ rarity = 1
 slot = 3
 world_scale = 0.15
 item_name = "Small Pouch"
-item_description = "More storage space!"
-big_description = "Adds +2 to your Gag carry capacity."
+item_description = "Good for storing belongings!"
+big_description = "+5 to Gag carry capacity"
 model = ExtResource("2_cd8nj")
 stats_add = {
-"gag_cap": 2
+"gag_cap": 5
 }
 icon = ExtResource("3_xvk3a")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)
