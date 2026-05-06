@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_o5uaa")
-drenched_speed = -4
+drenched_speed = -8
 icon = ExtResource("1_krv5g")
 damage = 12
 action_name = "Squirt Gun"

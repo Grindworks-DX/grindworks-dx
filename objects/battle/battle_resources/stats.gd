@@ -98,7 +98,11 @@ signal s_turns_changed(new_turns: int)
 signal s_stat_changed(stat: String)
 
 ## Modifiers
-var allow_overheal := false
+var allow_overheal := false:
+	set(x):
+		allow_overheal = x
+		if !allow_overheal and hp > max_hp:
+			hp = max_hp
 
 
 func _to_string():
@@ -205,8 +209,8 @@ signal s_shrug_changed(new_value: int)
 @export var gag_regen_chance := 1.0 # TODO
 
 var attribute_modifiers := {
-	'punch': { 'damage': 0.05, 'parry': 0.04 },
-	'humor': { 'max_hp': 4, 'humor_healing': 1 },
+	'punch': { 'damage': 0.04, 'parry': 0.04 },
+	'humor': { 'max_hp': 3, 'humor_healing': 1 },
 	'gusto': { 'speed': 2, 'gag_regen_chance': 0.15 },
 	'shrug': { 'luck': 0.03, 'evasiveness': 0.04 },
 }

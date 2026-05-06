@@ -358,6 +358,9 @@ func roll_gag_regen(track_name: String) -> int:
 	return __out
 
 func do_humor_healing(effectiveness := 1.0) -> void:
-	if hp < max_hp and humor_healing * effectiveness > 0:
-		AudioManager.play_sound(load("res://audio/sfx/items/laff_boost_pickup.ogg"), -3.0)
+	if humor_healing * effectiveness > 0:
+		AudioManager.play_sound(load("res://audio/sfx/items/laff_boost_pickup.ogg"), -5.0)
+	allow_overheal = true
+	BattleService.ongoing_battle.s_round_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
+	BattleService.ongoing_battle.s_battle_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
 	Util.get_player().quick_heal(ceili(humor_healing * effectiveness))

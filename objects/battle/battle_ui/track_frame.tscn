@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bnpkyjdtm26x8" path="res://objects/battle/battle_ui/gag_track.gd" id="2_pviot"]
 [ext_resource type="PackedScene" uid="uid://yxu25u6bk3mo" path="res://objects/battle/battle_ui/gag_button.tscn" id="3_q38fp"]
 [ext_resource type="FontFile" uid="uid://815gwlftl5ik" path="res://fonts/impress-bt.ttf" id="4_0fjuy"]
+[ext_resource type="FontFile" uid="uid://cup2yr5w7or1l" path="res://fonts/Minnie.TTF" id="5_eejpd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fjuy"]
 bg_color = Color(0.68235296, 0.68235296, 0.68235296, 0.5411765)
@@ -34,6 +35,14 @@ font_color = Color(0.13219136, 0.12290577, 0.16309813, 1)
 font = ExtResource("4_0fjuy")
 font_size = 32
 font_color = Color(0.15686275, 0.14901961, 0.14901961, 0.9098039)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bog3x"]
+font = ExtResource("5_eejpd")
+font_size = 14
+font_color = Color(0.3, 0.9, 0.3, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 0.48235294)
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="TrackFrame" type="TextureRect" unique_id=806348545]
 self_modulate = Color(0.819608, 0.556863, 1, 1)
@@ -118,3 +127,17 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "TOON-UP"
 label_settings = SubResource("LabelSettings_pap8k")
+
+[node name="PointGainLabel" type="Label" parent="." unique_id=1360209692]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -85.0
+offset_top = 8.181819
+offset_right = 5.0
+offset_bottom = 29.18182
+rotation = -0.2617994
+pivot_offset = Vector2(90, 10.5)
+text = "+2"
+label_settings = SubResource("LabelSettings_bog3x")
+horizontal_alignment = 2
+vertical_alignment = 1

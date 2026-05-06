@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_hsbcx")
-drenched_speed = -5
+drenched_speed = -10
 icon = ExtResource("1_kad6d")
 damage = 21
 action_name = "Seltzer Bottle"

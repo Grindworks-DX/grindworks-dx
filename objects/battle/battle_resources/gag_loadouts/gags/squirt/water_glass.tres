@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_d6tnl")
-drenched_speed = -3
+drenched_speed = -6
 icon = ExtResource("1_b40am")
 damage = 8
 action_name = "Glass of Water"

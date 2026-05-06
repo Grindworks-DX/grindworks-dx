@@ -324,9 +324,9 @@ func get_laff_rate() -> float:
 
 const JokeGoals := {
 	1: 6,
-	2: 14,
-	3: 25,
-	4: 32
+	2: 10,
+	3: 15,
+	4: 25
 }
 
 func get_joke_rate() -> float:

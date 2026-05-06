@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("2_mwhhn")
+drenched_speed = -4
 icon = ExtResource("1_5yol7")
 damage = 3
 action_name = "Squirting Flower"

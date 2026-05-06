@@ -8,6 +8,7 @@ const WARNING_COLOR := Color.RED
 @onready var point_label := %Points
 @onready var point_bar := %PointsBar
 @onready var track_label := %TrackName
+@onready var point_gain_label := %PointGainLabel
 
 ## Locals
 var unlocked: int 
@@ -15,12 +16,19 @@ var track: Track
 var gags: Array[ToonAttack]
 var free := false
 
+var points: int = 25:
+	set(x):
+		if x > points:
+			do_gain_animation(x - points, randf_range(0.05, 0.15))
+		points = x
+
 ## Signals
 signal s_refreshing(element: TrackElement)
 signal s_refreshed(element: TrackElement)
 
 
 func _ready():
+	point_gain_label.hide()
 	if not Util.get_player():
 		return
 	var loadout: GagLoadout = Util.get_player().stats.character.gag_loadout
@@ -122,8 +130,10 @@ func refresh():
 		else:
 			gag_buttons[i].hide()
 	
+	points = roundi(Util.get_player().stats.gag_balance[track.track_name])
+	
 	point_label.text = "%d/%d (%s)" % [
-		roundi(Util.get_player().stats.gag_balance[track.track_name]),
+		points,
 		roundi(Util.get_player().stats.gag_point_caps[track.track_name]),
 		Util.float_to_perc(stats.gag_regen_chance + stats.gag_regen_chance_modifiers[track.track_name])
 	]
@@ -212,3 +222,26 @@ func is_gag_free(gag : ToonAttack) -> bool:
 	if gag in Util.get_player().free_gags:
 		return true
 	return free
+
+# Breaking Grounds
+
+func do_gain_animation(amount: int, delay := 0.5) -> void:
+	point_gain_label.text = "+%d" % amount
+	point_gain_label.scale = Vector2.ONE * 0.01
+	
+	var tween := create_tween().set_trans(Tween.TRANS_QUAD)
+	tween.tween_interval(delay)
+	tween.tween_property(point_gain_label, 'scale', Vector2.ONE, 0.2)
+	tween.tween_callback(
+		func():
+			point_gain_label.show()
+			var player := AudioManager.play_sound(load("res://audio/sfx/ui/GUI_balloon_popup.ogg"), -9.0)
+	)
+	tween.parallel().tween_property(point_gain_label, 'scale', Vector2.ONE * 1.1, 0.2)
+	tween.tween_property(point_gain_label.label_settings, 'font_color', Color.WHITE, 0.2)
+	tween.tween_interval(0.01)
+	tween.tween_property(point_gain_label.label_settings, 'font_color', point_gain_label.label_settings.font_color, 0.2)
+	tween.parallel().tween_property(point_gain_label, 'scale', Vector2.ONE, 0.2)
+	tween.tween_interval(3.0)
+	tween.tween_property(point_gain_label, 'scale', Vector2.ONE * 0.01, 0.2)
+	tween.finished.connect(tween.kill)

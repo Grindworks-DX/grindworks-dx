@@ -18,5 +18,5 @@ script = ExtResource("3_6ggh8")
 sfx = ExtResource("4_ywge2")
 lure_effect = SubResource("Resource_41ybs")
 icon = ExtResource("1_efhxm")
-target_type = 2
+target_type = 7
 action_name = "Hypno Goggles"
