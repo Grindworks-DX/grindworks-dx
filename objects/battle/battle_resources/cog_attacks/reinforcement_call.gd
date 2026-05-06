@@ -2,7 +2,7 @@ extends CogAttack
 
 const COG_OBJECT := preload('res://objects/cog/cog.tscn')
 
-@export_range(1, 3) var cog_amount := 3
+@export_range(1, 7) var cog_amount := 4
 
 var spawn_proxies := false
 

@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_6jsip")
-damage = 3
+damage = 6
 attack_lines = Array[String](["Let me increase your losses.", "Let's make the best of a bad deal.", "Time to balance the books.", "This won't look good on your books.", "I'm looking for some dividends.", "You must account for your losses.", "You can forget about a bonus.", "I'll shuffle your accounts around.", "You're about to suffer some losses.", "This is going to hurt your bottom line."])
 action_name = "Write Off"

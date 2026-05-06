@@ -238,7 +238,8 @@ func set_up_stats() -> void:
 		stats.max_hp = ceili(stats.max_hp * health_mod)
 	stats.hp = stats.max_hp
 	stats.evasiveness = 0.5 + (level * 0.05)
-	stats.damage = 0.4 + (level * 0.13)
+	# Breaking Grounds: make them mad
+	stats.damage = 1.0 + (level * 0.1)
 	stats.accuracy = 0.75 + (level * 0.05)
 	var new_text: String = dna.cog_name + '\n'
 	new_text += 'Level ' + str(level)

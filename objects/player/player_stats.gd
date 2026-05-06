@@ -350,10 +350,10 @@ func roll_gag_regen(track_name: String) -> int:
 	# TODO: implement rng
 	var bonus = (randf() < (regen_rate - floori(regen_rate)))
 	if bonus: __out += int(bonus)
-	# Crit regen: Luck% chance per track to triple its regeneration
+	# Crit regen: Luck% chance per track to double its regeneration
 	if randf() < (luck - 1.0) + regen_crit_chance:
 		print("Regen crit! %s" % track_name)
-		__out *= 3
+		__out *= 2
 	print("Gag regen: %s gained %d points" % [track_name, __out])
 	return __out
 

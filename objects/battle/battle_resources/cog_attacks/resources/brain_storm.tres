@@ -9,6 +9,5 @@ script = ExtResource("1_gxmhg")
 particles = ExtResource("1_tmsix")
 sfx = ExtResource("3_axctg")
 animation = 1
-damage = 4
 attack_lines = Array[String](["I forecast rain.", "Hope you packed your umbrella.", "I want to enlighten you.", "How about a few rain DROPS?", "Not so sunny now, are you Toon?", "Ready for a down pour?", "I'm going to take you by storm.", "I call this a lightning attack.", "I love to be a wet blanket."])
 action_name = "Brain Storm"

@@ -1,8 +1,8 @@
 extends ActionScript
 class_name CogAttack
 
-@export var accuracy := 75
-@export var damage := 1
+@export var accuracy := 90
+@export var damage := 7
 @export var ignore_stats := false
 
 @export_multiline var summary: String

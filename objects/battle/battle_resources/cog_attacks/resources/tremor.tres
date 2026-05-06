@@ -5,6 +5,5 @@
 [resource]
 script = ExtResource("1_ie6md")
 anim_type = 1
-damage = 4
 attack_lines = Array[String](["Did you feel that?", "Not afraid of a little tremor are you?", "A tremor is only the beginning.", "You look jittery.", "I'll shake things up a bit!", "Are you ready to rumble?", "What's wrong? You look shaken.", "Tremor with fear!", "Why are you tremoring with fear?"])
 action_name = "Tremor"

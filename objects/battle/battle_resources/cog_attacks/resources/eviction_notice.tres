@@ -7,7 +7,8 @@
 script = ExtResource("1_sib8b")
 prop = ExtResource("1_do6ww")
 custom_method = "eviction_notice"
-damage = 3
+accuracy = 80
+damage = 8
 attack_lines = Array[String](["It's moving time.", "Pack your bags, Toon.", "Time to make some new living arrangements.", "Consider yourself served.", "You're behind on your lease.", "This will be extremely unsettling.", "You're about to be uprooted.", "I'm going to send you packing.", "You're out of place.", "Prepare to be relocated.", "You're in a hostel position."])
 action_name = "Eviction Notice"
 metadata/_custom_type_script = "uid://itkxki65d0v7"
