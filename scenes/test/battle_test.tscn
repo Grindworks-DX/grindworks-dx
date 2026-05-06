@@ -23,11 +23,11 @@
 [ext_resource type="Script" uid="uid://b68uqtpqs73wk" path="res://objects/player/player_stats.gd" id="17_8fcps"]
 [ext_resource type="Script" uid="uid://ckypnf7t805p3" path="res://objects/battle/battle_resources/gag_loadouts/gag_loadout.gd" id="17_aepo7"]
 [ext_resource type="PackedScene" uid="uid://dxyq5lb5oineo" path="res://objects/interactables/treasure_chest/treasure_chest.tscn" id="23_16xtn"]
-[ext_resource type="Resource" uid="uid://c8xt0naden1hv" path="res://objects/items/resources/accessories/shoes/super_toon_boots.tres" id="24_16xtn"]
+[ext_resource type="Resource" uid="uid://djij80h8jh7yd" path="res://objects/items/resources/accessories/glasses/star_glasses.tres" id="24_1xuw6"]
 [ext_resource type="Resource" uid="uid://klobdj40hb36" path="res://objects/items/resources/accessories/backpacks/medium_pouch.tres" id="25_1xuw6"]
 [ext_resource type="Resource" uid="uid://c8hbpj5bgfuem" path="res://objects/items/resources/active/spinning_top.tres" id="26_1xuw6"]
-[ext_resource type="Resource" uid="uid://clm40vnq0ywx8" path="res://objects/items/resources/passive/joke.tres" id="28_1xuw6"]
-[ext_resource type="Resource" uid="uid://ca25j75xttg4p" path="res://objects/items/resources/active/moneybags_coin.tres" id="28_16xtn"]
+[ext_resource type="Resource" uid="uid://bh5mubvof8wpe" path="res://objects/items/resources/accessories/hats/tiara.tres" id="27_1xuw6"]
+[ext_resource type="Resource" uid="uid://cfl3ywl6ynhpc" path="res://objects/items/resources/accessories/backpacks/bee_wings.tres" id="28_66vty"]
 [ext_resource type="PackedScene" uid="uid://c1g5f6yxujvef" path="res://addons/toonlike_tools/injectors/player/debug_player_position_marker.tscn" id="30_ouruu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5pfdn"]
@@ -193,7 +193,7 @@ stats = SubResource("Resource_vs51t")
 
 [node name="treasure_chest" parent="." unique_id=943058125 instance=ExtResource("23_16xtn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0877, 0, -5.41882)
-override_item = ExtResource("24_16xtn")
+override_item = ExtResource("24_1xuw6")
 
 [node name="treasure_chest2" parent="." unique_id=499844087 instance=ExtResource("23_16xtn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9695, 0, -5.41882)
@@ -205,11 +205,11 @@ override_item = ExtResource("26_1xuw6")
 
 [node name="treasure_chest4" parent="." unique_id=1800338882 instance=ExtResource("23_16xtn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05854, 0, -5.41882)
-override_item = ExtResource("28_1xuw6")
+override_item = ExtResource("27_1xuw6")
 
 [node name="treasure_chest5" parent="." unique_id=1686263884 instance=ExtResource("23_16xtn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.65817, 0, -5.41882)
-override_item = ExtResource("28_16xtn")
+override_item = ExtResource("28_66vty")
 
 [node name="DebugPlayerPositionMarker" parent="." unique_id=1108719677 instance=ExtResource("30_ouruu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.011791, 0, -4.1908646)

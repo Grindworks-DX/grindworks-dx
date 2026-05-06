@@ -225,6 +225,7 @@ func on_battle_started(_battle: BattleManager) -> void:
 		restock(track, roll_gag_regen(track) + gag_battle_start_point_boost.get(track, 0) + global_battle_start_point_boost)
 
 func restock_tick() -> void:
+	print('Restock tick!')
 	for track in gag_balance.keys():
 		if not gags_unlocked[track] > 0: continue
 		restock(track, roll_gag_regen(track))

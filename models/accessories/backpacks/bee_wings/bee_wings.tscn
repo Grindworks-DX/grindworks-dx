@@ -9,7 +9,7 @@ cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("2_mf11o")
 
-[node name="tt_m_chr_avt_acc_pac_beeWings" instance=ExtResource("1_bi6j3")]
+[node name="tt_m_chr_avt_acc_pac_beeWings" unique_id=466406570 instance=ExtResource("1_bi6j3")]
 
-[node name="beeWing" parent="." index="0"]
+[node name="beeWing" parent="." index="0" unique_id=276935627]
 surface_material_override/0 = SubResource("StandardMaterial3D_x22xv")
