@@ -894,13 +894,17 @@ signal s_enemy_moves_assigned
 var enemy_moves: Array[BattleAction]
 
 func populate_enemy_moves() -> void:
+	var any_delay := false
 	for cog in cogs:
 		cog.current_moves.clear()
 		var attacks := get_cog_attacks(cog)
-		if check_for_delay(cog): attacks.clear()
+		if check_for_delay(cog):
+			attacks.clear()
+			any_delay = true
 		if !attacks.is_empty():
 			enemy_moves.append_array(attacks)
 			cog.current_moves.append_array(attacks)
+	if any_delay: AudioManager.play_sound(load("res://audio/sfx/battle/gags/sound/LB_receive_evidence.ogg"), 3.0)
 	print(enemy_moves)
 	s_enemy_moves_assigned.emit()
 
@@ -909,7 +913,7 @@ func is_target_debuffed(target: Actor) -> bool:
 		if effect.target == target and effect.quality == effect.EffectQuality.NEGATIVE: return true
 	return false
 
-# For each speed point the player has above a Cog, there is a 10% chance for them to be delayed;
+# For each speed point the player has above a Cog, there is a 5% chance for them to be delayed;
 # this causes a stacking 20% Delay resistance until they finally take their turn
 
 func check_for_delay(cog: Cog) -> bool:
@@ -918,7 +922,7 @@ func check_for_delay(cog: Cog) -> bool:
 	var cog_speed = battle_stats[cog].speed
 	var cog_delay_resist = battle_stats[cog].delay_resist
 	var roll := randf()
-	var chance: float = min(1.0, ((player_speed - cog_speed) * 0.1)) - cog_delay_resist
+	var chance: float = min(1.0, ((player_speed - cog_speed) * 0.05)) - cog_delay_resist
 	__out = roll < chance
 	if __out:
 		
