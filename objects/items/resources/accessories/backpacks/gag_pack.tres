@@ -27,18 +27,20 @@ rotation = Vector3(0, 180, 0)
 [resource]
 script = ExtResource("1_ltiyy")
 accessory_placements = Array[ExtResource("1_gjp8m")]([SubResource("Resource_lhhvb"), SubResource("Resource_sl4s4"), SubResource("Resource_by7s7")])
-qualitoon = 4
-rarity = 6
+qualitoon = 2
+rarity = 4
 slot = 3
 world_scale = 0.25
 ui_cam_offset = 0.375
 item_name = "Gag Attack Pack"
-item_description = "Always come prepared!"
-big_description = "Decreases the point cost of gags by 1."
+item_description = "Make those gags count!"
+big_description = "+32% Damage
+Increases the point cost of gags by 1"
 model = ExtResource("2_xgj81")
 pickup_sfx = ExtResource("5_hor22")
 stats_add = {
-"gag_discount": 1
+"damage": 0.32,
+"gag_discount": -1
 }
 icon = ExtResource("3_6exoy")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://fb0tqfojo57q" path="res://objects/items/classes/accessory_placement.gd" id="1_wewl1"]
 [ext_resource type="Script" uid="uid://c4eyu1xvv7h2l" path="res://objects/items/classes/head_placement.gd" id="2_jlgk8"]
 [ext_resource type="Texture2D" uid="uid://dp2lpibik70xn" path="res://models/accessories/glasses/star_glasses/star_glasses-pix-1.png" id="3_u7vbf"]
+[ext_resource type="Script" uid="uid://puvpbf521ad1" path="res://objects/items/custom/item_star_glasses.gd" id="4_2tprh"]
 [ext_resource type="PackedScene" uid="uid://cuomm0ifx302o" path="res://models/accessories/glasses/star_glasses/star_glasses.tscn" id="4_jiq6e"]
 [ext_resource type="Script" uid="uid://dvu24b3o8i3sj" path="res://objects/items/classes/item_accessory.gd" id="5_afkn2"]
 [ext_resource type="AudioStream" uid="uid://8vjo40mj15u4" path="res://audio/sfx/items/SZ_MM_fanfare.ogg" id="5_tbgjq"]
@@ -245,12 +246,10 @@ slot = 2
 world_scale = 0.15
 ui_cam_offset = 0.15
 item_name = "Star Glasses"
-item_description = "To Greater Sights"
-big_description = "+ 5 gag points to all tracks at the beginning of a battle."
+item_description = "Dazzle 'em when you walk in!"
+big_description = "+7 Speed on the first round of combat"
 model = ExtResource("4_jiq6e")
 pickup_sfx = ExtResource("5_tbgjq")
-stats_add = {
-"global_battle_start_point_boost": 5
-}
+item_script = ExtResource("4_2tprh")
 icon = ExtResource("3_u7vbf")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)
