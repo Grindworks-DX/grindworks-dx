@@ -163,11 +163,15 @@ func apply_item_stats(player: Player) -> void:
 			else:
 				stats[stat] += stats_add[stat]
 		# post mortem: bruh
-		elif stat.begins_with("gag_boost:"):
+		elif stat.begins_with("gag_regen:"):
 			var track: String = stat.get_slice(":",1)
 			if track in stats.gag_regen_chance_modifiers:
 				stats.gag_regen_chance_modifiers[track] += stats_add[stat]
-	
+		elif stat.begins_with("gag_boost:"):
+			var track: String = stat.get_slice(":",1)
+			if track in stats.gag_effectiveness:
+				stats.gag_effectiveness[track] += stats_add[stat]
+		
 	for stat in stats_multiply:
 		if str(stat) in stats:
 			stats[stat] *= stats_multiply[stat]

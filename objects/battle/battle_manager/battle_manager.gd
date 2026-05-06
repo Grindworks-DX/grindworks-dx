@@ -229,8 +229,7 @@ func round_over():
 			has_moved.clear()
 			is_round_ongoing = false
 			# Breaking Grounds: get enemy moves
-			enemy_moves.clear()
-			populate_enemy_moves()
+			populate_enemy_moves(true)
 
 func end_battle() -> void:
 	# End battle
@@ -893,15 +892,18 @@ signal s_enemy_moves_assigned
 # Cog turn generation
 var enemy_moves: Array[BattleAction]
 
-func populate_enemy_moves() -> void:
+func populate_enemy_moves(reset := true, keep_delays := false) -> void:
+	if reset:
+		enemy_moves.clear()
 	var any_delay := false
 	for cog in cogs:
 		cog.current_moves.clear()
 		var attacks := get_cog_attacks(cog)
-		if check_for_delay(cog):
-			attacks.clear()
-			any_delay = true
+		if !keep_delays: cog.delayed = false
 		if !attacks.is_empty():
+			if check_for_delay(cog):
+				attacks.clear()
+				any_delay = true
 			enemy_moves.append_array(attacks)
 			cog.current_moves.append_array(attacks)
 	if any_delay: AudioManager.play_sound(load("res://audio/sfx/battle/gags/sound/LB_receive_evidence.ogg"), 3.0)
@@ -920,6 +922,7 @@ signal s_cog_delayed(cog: Cog)
 
 func check_for_delay(cog: Cog) -> bool:
 	var __out = false
+	if cog.delayed: return true
 	var player_speed = battle_stats[Util.get_player()].speed
 	var cog_speed = battle_stats[cog].speed
 	var cog_delay_resist = battle_stats[cog].delay_resist
@@ -936,4 +939,5 @@ func check_for_delay(cog: Cog) -> bool:
 			if status.target == cog and status.get_status_name() == "Delay Resist Up":
 				expire_status_effect(status)
 	print("Delay - Rolled: %0.2f Needed lower than: %0.2f" % [roll, chance])
+	cog.delayed = __out
 	return __out

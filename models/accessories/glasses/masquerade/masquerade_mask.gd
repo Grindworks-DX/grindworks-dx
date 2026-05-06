@@ -1,13 +1,11 @@
 extends Node3D
 
-# TODO: Breaking Grounds rework
+# Breaking Grounds - Double one attribute, -2 to the others
 
 ## Funny script that's necessary for this item to work
 ## Also before you ask, no it cannot use an item script
 
-const ROLL_STATS: Array[String] = ['damage', 'defense', 'evasiveness', 'luck', 'speed']
-const GOOD_STATS_RANGE := Vector2(0.05, 0.12)
-const BAD_STATS_RANGE := Vector2(-0.08, -0.03)
+const ROLL_STATS: Array[String] = ['punch', 'humor', 'gusto', 'shrug']
 
 func setup(item: Item) -> void:
 	if item.stats_add.is_empty():
@@ -18,8 +16,6 @@ func setup(item: Item) -> void:
 func roll_for_stats(item: Item) -> void:
 	var stats_order := ROLL_STATS.duplicate(true)
 	RNG.channel(RNG.ChannelMasqueradeStats).shuffle(stats_order)
-	var boosts: Array[float] = []
-	for i in 3: boosts.append(RNG.channel(RNG.ChannelMasqueradeStats).randf_range(GOOD_STATS_RANGE.x, GOOD_STATS_RANGE.y))
-	for i in 2: boosts.append(RNG.channel(RNG.ChannelMasqueradeStats).randf_range(BAD_STATS_RANGE.x, BAD_STATS_RANGE.y))
-	for i in stats_order.size():
-		item.stats_add[stats_order[i]] = boosts[i]
+	for i in 3:
+		item.stats_add.set(stats_order[i], -2)
+	item.stats_multiply.set(stats_order[3], 2)

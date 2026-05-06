@@ -9,7 +9,7 @@ cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("2_hdyt0")
 
-[node name="tt_m_chr_avt_acc_pac_butterflyWings" instance=ExtResource("1_byta7")]
+[node name="tt_m_chr_avt_acc_pac_butterflyWings" unique_id=1372169937 instance=ExtResource("1_byta7")]
 
-[node name="tt_m_chr_avt_acc_pac_butterflyWingsStyle1" parent="." index="0"]
+[node name="tt_m_chr_avt_acc_pac_butterflyWingsStyle1" parent="." index="0" unique_id=1915472054]
 surface_material_override/0 = SubResource("StandardMaterial3D_xjjx6")

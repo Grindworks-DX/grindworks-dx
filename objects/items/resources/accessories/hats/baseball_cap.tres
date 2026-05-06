@@ -274,13 +274,13 @@ slot = 1
 world_scale = 0.15
 ui_cam_offset = 0.6
 item_name = "Baseball Cap"
-item_description = "Haphazard hucking"
-big_description = "+ 20% Throw damage
-- 7% Throw self heal"
+item_description = "Wind up that pitch!"
+big_description = "-30% Throw Regen
++20% Throw Damage"
 model = ExtResource("4_7ew81")
 stats_add = {
 "gag_boost:Throw": 0.2,
-"throw_heal_boost": -0.07
+"gag_regen:Throw": -0.3
 }
 icon = ExtResource("3_uxv0q")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

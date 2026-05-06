@@ -27,13 +27,13 @@ func roll_for_stats(item: Item) -> void:
 	# Positive
 	for i: int in 2:
 		var track_choice: Track = RNG.channel(RNG.ChannelBeeHiveHairdoStats).pick_random(potential_tracks)
-		item.stats_add["gag_boost:%s" % track_choice.track_name] = STAT_DIFF_POS
+		item.stats_add["gag_regen:%s" % track_choice.track_name] = STAT_DIFF_POS
 		potential_tracks.erase(track_choice)
 
 	# Negative
 	for i: int in 2:
 		var track_choice: Track = RNG.channel(RNG.ChannelBeeHiveHairdoStats).pick_random(potential_tracks)
-		item.stats_add["gag_boost:%s" % track_choice.track_name] = STAT_DIFF_NEG
+		item.stats_add["gag_regen:%s" % track_choice.track_name] = STAT_DIFF_NEG
 		potential_tracks.erase(track_choice)
 
 func collect() -> void:

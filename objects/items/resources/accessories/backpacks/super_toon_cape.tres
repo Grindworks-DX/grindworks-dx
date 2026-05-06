@@ -34,12 +34,10 @@ slot = 3
 world_scale = 0.1
 item_name = "Super Toon Cape"
 item_description = "Quick on your feet"
-big_description = "+ 5% Speed
-+ 10% Evasiveness"
+big_description = "+4 Gusto"
 model = ExtResource("3_seq16")
 stats_add = {
-"evasiveness": 0.1,
-"speed": 0.05
+"gusto": 4
 }
 icon = ExtResource("3_jmb86")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

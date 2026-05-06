@@ -274,7 +274,7 @@ world_scale = 0.15
 ui_cam_offset = 0.1
 item_name = "Heart Headband"
 item_description = "Laff boost boost"
-big_description = "All Laff boosts give +1 more Laff"
+big_description = "Whenever you gain Max Laff, gain 1 more"
 model = ExtResource("4_r7038")
 stats_add = {
 "laff_boost_boost": 1

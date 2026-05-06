@@ -24,6 +24,12 @@ enum Character {
 @export var base_stats: BattleStats
 @export var starting_gags: Dictionary[String, int] = {}
 @export var additional_stats: Dictionary[String, Variant] = {}
+@export var starting_attributes := {
+	'punch': 0,
+	'humor': 0,
+	'gusto': 0,
+	'shrug': 0,
+}
 ## Displays the Toon at a different index than normal
 @export var override_index := -1
 @export var achievement_qualities: Dictionary[ProgressFile.GameAchievement, String] = {}
@@ -35,7 +41,7 @@ enum Character {
 @export var achievement_index : ProgressFile.GameAchievement = ProgressFile.GameAchievement.DEFEAT_COGS_1
 
 func character_setup(player: Player):
-	player.stats.max_hp = starting_laff + (base_stats.humor * base_stats.attribute_modifiers['humor']['max_hp'])
+	player.stats.max_hp = starting_laff + (starting_attributes['humor'] * 5)
 	player.stats.hp = player.stats.max_hp
 	for key in starting_gags.keys():
 		player.stats.gags_unlocked[key] = starting_gags[key]

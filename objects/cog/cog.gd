@@ -79,6 +79,7 @@ var stunned := false:
 		stunned = x
 		if x:
 			stats.s_stunned.emit()
+var delayed := false
 var trap: GagTrap
 var losing := false
 

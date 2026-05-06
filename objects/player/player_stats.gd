@@ -155,10 +155,6 @@ func first_time_setup() -> void:
 				'speed',
 				'turns',
 				'max_turns',
-				'punch',
-				'humor',
-				'gusto',
-				'shrug'
 			]:
 				set(stat, character.base_stats.get(stat))
 	
@@ -189,7 +185,9 @@ func initialize() -> void:
 		'gusto',
 		'shrug'
 	]:
-		attribute_changed(attribute, 0, character.base_stats.get(attribute))
+		var value = character.starting_attributes[attribute]
+		attribute_changed(attribute, 0, value)
+		set(attribute, value)
 	attributes_initialized = true
 	start_stat_monitors()
 	monitor_stranger_chance()
@@ -337,6 +335,87 @@ func run_stranger_roll() -> bool:
 #endregion
 
 #region Breaking Grounds
+
+# Attributes: New stats that modify internal stats
+
+signal s_punch_changed(new_value: int)
+signal s_humor_changed(new_value: int)
+signal s_gusto_changed(new_value: int)
+signal s_shrug_changed(new_value: int)
+
+# Punch: +5% damage | +4% Parry chance
+@export var punch := 0:
+	set(x):
+		if Util.player_exists() and attributes_initialized:
+			attribute_changed('punch', punch, x)
+		punch = x
+		if self is PlayerStats:
+			print('punch set to ' +str(x))
+		s_punch_changed.emit(x)
+		s_stat_changed.emit('punch')
+		
+# Humor: +4 Laff | +2 Laff on Cog Destroyed
+@export var humor := 0:
+	set(x):
+		if Util.player_exists() and attributes_initialized:
+			attribute_changed('humor', humor, x)
+		humor = x
+		if self is PlayerStats:
+			print('humor set to ' +str(x))
+		s_humor_changed.emit(x)
+		s_stat_changed.emit('humor')
+		
+# Gusto: +1 Speed | +10% Gag Regen
+@export var gusto := 0:
+	set(x):
+		if Util.player_exists() and attributes_initialized:
+			attribute_changed('gusto', gusto, x)
+		gusto = x
+		#if self is PlayerStats:
+		print('gusto set to ' +str(x))
+		s_gusto_changed.emit(x)
+		s_stat_changed.emit('gusto')
+		
+# Shrug: +1 Luck | +4% Dodge Chance
+@export var shrug := 0:
+	set(x):
+		if Util.player_exists() and attributes_initialized:
+			attribute_changed('shrug', shrug, x)
+		shrug = x
+		if self is PlayerStats:
+			print('shrug set to ' +str(x))
+		s_shrug_changed.emit(x)
+		s_stat_changed.emit('shrug')
+
+@export var attributes_initialized := false
+
+# New mechanic stats
+@export var parry := 0.0 # TODO
+@export var humor_healing := 0 # TODO
+@export var gag_regen_chance := 1.0 # TODO
+
+var attribute_modifiers := {
+	'punch': { 'damage': 0.04, 'parry': 0.04 },
+	'humor': { 'max_hp': 3, 'humor_healing': 2 },
+	'gusto': { 'speed': 2, 'gag_regen_chance': 0.15 },
+	'shrug': { 'luck': 0.03, 'evasiveness': 0.04 },
+}
+
+func attribute_changed(attr: String, old_value, new_value) -> void:
+	if attr not in attribute_modifiers.keys(): return
+	
+	var difference = new_value - old_value
+	var modifiers = attribute_modifiers[attr]
+	for key in modifiers:
+		var value = difference * modifiers[key]
+		if key == 'max_hp':
+			set(key, get(key) + value + laff_boost_boost)
+			if value > 0:
+				hp += value
+			if hp > max_hp:
+				hp = max_hp
+		else:
+			set(key, get(key) + value)
 
 @export var jokes := 0:
 	set(x):

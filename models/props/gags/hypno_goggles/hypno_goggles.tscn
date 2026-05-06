@@ -110,12 +110,12 @@ _data = {
 &"hypnotize": SubResource("Animation_n34tw")
 }
 
-[node name="hypno_goggles" type="Node3D"]
+[node name="hypno_goggles" type="Node3D" unique_id=1405325341]
 
-[node name="hypnotize" type="Node3D" parent="."]
+[node name="hypnotize" type="Node3D" parent="." unique_id=779293381]
 transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="hypnotize"]
+[node name="Skeleton3D" type="Skeleton3D" parent="hypnotize" unique_id=408801527]
 bones/0/name = "meat_hypnotize"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0.40044, 1.04359, -1.20198)
@@ -152,15 +152,13 @@ bones/4/position = Vector3(-30.6166, 2.29794e-06, 3.88684e-06)
 bones/4/rotation = Quaternion(0, 0, -0.54595, 0.837818)
 bones/4/scale = Vector3(1.00136e-05, 1.00136e-05, 1.00136e-05)
 
-[node name="left" type="MeshInstance3D" parent="hypnotize/Skeleton3D"]
+[node name="left" type="MeshInstance3D" parent="hypnotize/Skeleton3D" unique_id=1914003918]
 mesh = SubResource("ArrayMesh_lqwtg")
 skin = SubResource("Skin_66evj")
 
-[node name="right" type="MeshInstance3D" parent="hypnotize/Skeleton3D"]
+[node name="right" type="MeshInstance3D" parent="hypnotize/Skeleton3D" unique_id=1602169792]
 mesh = SubResource("ArrayMesh_y0lo2")
 skin = SubResource("Skin_66evj")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_t0w1i")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=433844646]
+libraries/ = SubResource("AnimationLibrary_t0w1i")

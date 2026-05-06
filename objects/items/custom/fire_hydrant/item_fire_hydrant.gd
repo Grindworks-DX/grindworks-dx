@@ -7,6 +7,7 @@ func use() -> void:
 	
 	BattleService.ongoing_battle.battle_ui.cog_panels.reset(0)
 	await cutscene(BattleService.ongoing_battle.cogs)
+	BattleService.ongoing_battle.populate_enemy_moves(true, true)
 	BattleService.ongoing_battle.battle_ui.cog_panels.assign_cogs(BattleService.ongoing_battle.cogs)
 
 func cutscene(cogs : Array[Cog]) -> void:

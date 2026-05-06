@@ -122,6 +122,8 @@ var obscured_laff: bool:
 	get: return laff_meter.obscured
 	set(x): laff_meter.obscured = x
 var alt_gag_hotswap := false
+# New goggles
+var can_cancel_gags := true
 
 var laff_lock_enabled := false:
 	set(x):

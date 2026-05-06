@@ -32,11 +32,11 @@ slot = 3
 world_scale = 0.4
 item_name = "Wooden Sword"
 item_description = "Don't hold back!"
-big_description = "+ 15% Damage"
+big_description = "On pickup, double your current Punch"
 model = ExtResource("1_q43vh")
 pickup_sfx = ExtResource("5_s8sik")
-stats_add = {
-"damage": 0.15
+stats_multiply = {
+"punch": 2
 }
 icon = ExtResource("3_fmyad")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

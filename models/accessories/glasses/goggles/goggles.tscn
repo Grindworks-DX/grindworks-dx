@@ -40,8 +40,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tdddl")
 
-[node name="tt_m_chr_avt_acc_msk_goggles2" type="Node3D"]
+[node name="tt_m_chr_avt_acc_msk_goggles2" type="Node3D" unique_id=16151630]
 
-[node name="tt_m_chr_avt_acc_msk_goggles" type="MeshInstance3D" parent="."]
+[node name="tt_m_chr_avt_acc_msk_goggles" type="MeshInstance3D" parent="." unique_id=759547375]
 mesh = SubResource("ArrayMesh_2xbbl")
 skeleton = NodePath("")

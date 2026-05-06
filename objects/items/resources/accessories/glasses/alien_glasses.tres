@@ -248,13 +248,13 @@ world_scale = 0.125
 ui_cam_offset = 0.2
 item_name = "Alien Glasses"
 item_description = "Out of this world!"
-big_description = "+10% Luck
-+5% Damage
+big_description = "+2 Shrug
++4 Punch
 15% chance for Gags to target a random Cog."
 model = ExtResource("4_4dai8")
 stats_add = {
-"damage": 0.05,
-"luck": 0.1
+"punch": 4,
+"shrug": 2
 }
 item_script = ExtResource("4_usai5")
 icon = ExtResource("3_4dai8")

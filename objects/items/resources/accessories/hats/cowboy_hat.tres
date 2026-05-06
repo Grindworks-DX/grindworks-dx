@@ -277,7 +277,7 @@ ui_cam_offset = 0.4
 item_name = "Cowboy Hat"
 item_description = "Reach for the skies!"
 big_description = "- 15% Damage
-+ 1% Damage for defeating a Cog in one move"
+Once per combat, gain +1 Punch point when defeating a Cog in one move"
 model = ExtResource("4_e1cqt")
 stats_add = {
 "damage": -0.15

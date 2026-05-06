@@ -259,11 +259,18 @@ slot = 2
 world_scale = 0.15
 ui_cam_offset = 0.2
 item_name = "Goggles"
-item_description = "Power Scramble!"
-big_description = "- Scrambles the gags in your loadout, including point cost.
-- Adds a 10 second timer to every turn."
+item_description = "True brilliance lies in madness!"
+big_description = "-15% Damage
+Every move, scrambles the gags and point costs in your loadout
+You cannot undo gag selections"
 model = ExtResource("2_s8ghy")
 pickup_sfx = ExtResource("6_0r8ig")
+stats_add = {
+"damage": -0.15
+}
+player_values = {
+"can_cancel_gags": false
+}
 item_script = ExtResource("3_q5860")
 icon = ExtResource("3_anu6k")
 shop_category_title = "Special Item"

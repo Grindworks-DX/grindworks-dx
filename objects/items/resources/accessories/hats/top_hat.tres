@@ -272,14 +272,11 @@ qualitoon = 1
 slot = 1
 world_scale = 0.15
 item_name = "Top Hat"
-item_description = "Style has its price."
-big_description = "+ 10 Max Laff
-- 10% Evasiveness"
+item_description = "Top o' the morning!"
+big_description = "+5 Humor"
 model = ExtResource("2_w4pdb")
 stats_add = {
-"evasiveness": -0.1,
-"hp": 10,
-"max_hp": 10
+"humor": 5
 }
 icon = ExtResource("3_whmtc")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

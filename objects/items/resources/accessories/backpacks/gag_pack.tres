@@ -34,12 +34,12 @@ world_scale = 0.25
 ui_cam_offset = 0.375
 item_name = "Gag Attack Pack"
 item_description = "Make those gags count!"
-big_description = "+32% Damage
+big_description = "+33% Damage
 Increases the point cost of gags by 1"
 model = ExtResource("2_xgj81")
 pickup_sfx = ExtResource("5_hor22")
 stats_add = {
-"damage": 0.32,
+"damage": 0.33,
 "gag_discount": -1
 }
 icon = ExtResource("3_6exoy")

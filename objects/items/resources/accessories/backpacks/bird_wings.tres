@@ -36,12 +36,12 @@ world_scale = 0.15
 ui_cam_offset = 0.4
 item_name = "Bird Wings"
 item_description = "Soar to new heights."
-big_description = "+ 5% Speed
+big_description = "+2 Gusto
 After jumping, you can jump again with a small delay"
 model = ExtResource("4_n4erk")
 stats_add = {
 "extra_jumps": 1,
-"speed": 0.05
+"gusto": 2
 }
 icon = ExtResource("3_y2txo")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

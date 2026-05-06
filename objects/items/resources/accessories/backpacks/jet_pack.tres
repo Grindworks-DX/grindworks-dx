@@ -34,10 +34,12 @@ slot = 3
 world_scale = 0.125
 item_name = "Jet Pack"
 item_description = "Gotta Blast!"
-big_description = "+3 Speed"
+big_description = "+5 Gusto
++2 Punch"
 model = ExtResource("4_6o0n0")
 stats_add = {
-"speed": 3
+"gusto": 5,
+"punch": 2
 }
 icon = ExtResource("3_6o0n0")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)
