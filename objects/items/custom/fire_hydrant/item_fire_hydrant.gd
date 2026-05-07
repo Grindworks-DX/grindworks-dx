@@ -3,6 +3,8 @@ extends ItemScriptActive
 const HYDRANT := preload("res://models/props/gags/firehose/betterhydrant.tscn")
 const DRENCHED := preload("res://objects/battle/battle_resources/status_effects/resources/status_effect_drenched.tres")
 
+var boost := -6
+
 func use() -> void:
 	
 	BattleService.ongoing_battle.battle_ui.cog_panels.reset(0)
@@ -59,7 +61,7 @@ func cutscene(cogs : Array[Cog]) -> void:
 		# Apply the drenched effect
 		var drenched = DRENCHED.duplicate(true)
 		drenched.target = cog
-		drenched.boost = Util.get_player().stats.get_stat('squirt_defense_boost')
+		drenched.boost = boost
 		BattleService.ongoing_battle.add_status_effect(drenched)
 	
 	await Task.delay(2.5)

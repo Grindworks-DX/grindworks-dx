@@ -2,6 +2,8 @@ extends Control
 
 const UPGRADE_SOUND := preload("res://audio/sfx/items/clock03.ogg")
 
+static var attributes = ['punch', 'humor', 'gusto', 'shrug']
+
 @onready var attribute_graph := %AttributeRadarGraph
 @onready var jokes_label := %JokesLabel
 @onready var total_jokes_label := %TotalJokesLabel
@@ -12,7 +14,6 @@ func _ready() -> void:
 	await get_tree().process_frame
 	var player = Util.get_player()
 	# Breaking Grounds - Populate attribute radar graph
-	var attributes = ['punch', 'humor', 'gusto', 'shrug']
 	for i in attributes.size():
 		var button: GeneralButton = attribute_graph.get_node("UpgradeButton%s" % attributes[i].capitalize())
 		upgrade_buttons.set(attributes[i], button)
@@ -35,8 +36,9 @@ func update() -> void:
 	
 	jokes_label.text = str(player.stats.jokes)
 	total_jokes_label.text = "/ %d" % player.stats.total_jokes
-	
-	var attributes = ['punch', 'humor', 'gusto', 'shrug']
+
 	var tween := create_tween().set_parallel()
 	for i in attributes.size():
-		tween.tween_property(attribute_graph, "items/key_%d/value" %i, player.stats.get(attributes[i]), 1.0)
+		var value: int = player.stats.get(attributes[i])
+		attribute_graph.set_item_title(i, "%s: %d" % [attributes[i].capitalize(), value])
+		tween.tween_property(attribute_graph, "items/key_%d/value" %i, value, 1.0)

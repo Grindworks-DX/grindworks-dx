@@ -813,30 +813,29 @@ self_modulate = Color(0.28814104, 0.6765764, 0.7398631, 1)
 anchors_preset = 0
 offset_left = 81.0
 offset_top = 43.0
-offset_right = 81.0
-offset_bottom = 43.0
+offset_right = 648.0
+offset_bottom = 441.0
 pivot_offset = Vector2(239, 199)
 size_flags_horizontal = 4
 script = ExtResource("6_5p4rn")
 key_count = 4
 radius = 150.0
 key_items = Array[Dictionary]([{
-"title": "Punch
-",
+"title": "Punch: 0",
 "tooltip": "+5% Damage per point",
 "value": 0.0
 }, {
-"title": "Humor
+"title": "Humor: 0
 ",
-"tooltip": "+3 Max Laff, +2 Humor Healing per point",
+"tooltip": "+5 Max Laff, +1 Humor Healing per point",
 "value": 0.0
 }, {
-"title": "Gusto",
+"title": "Gusto: 0",
 "tooltip": "+2 Speed, +15% Gag Regen per point",
 "value": 0.0
 }, {
-"title": "Shrug",
-"tooltip": "+3% Luck, +4% Dodge per point",
+"title": "Shrug: 0",
+"tooltip": "+3% Luck, +3% Dodge per point",
 "value": 0.0
 }])
 max_value = 12.0
@@ -855,25 +854,24 @@ guide_width = 3.0
 guide_step = 4.0
 draw_order = PackedStringArray("background", "background_outline", "guides", "graph", "graph_outline", "titles")
 items/key_0/value = 0.0
-items/key_0/title = "Punch
-"
+items/key_0/title = "Punch: 0"
 items/key_0/tooltip = "+5% Damage per point"
 items/key_1/value = 0.0
-items/key_1/title = "Humor
+items/key_1/title = "Humor: 0
 "
-items/key_1/tooltip = "+3 Max Laff, +2 Humor Healing per point"
+items/key_1/tooltip = "+5 Max Laff, +1 Humor Healing per point"
 items/key_2/value = 0.0
-items/key_2/title = "Gusto"
+items/key_2/title = "Gusto: 0"
 items/key_2/tooltip = "+2 Speed, +15% Gag Regen per point"
 items/key_3/value = 0.0
-items/key_3/title = "Shrug"
-items/key_3/tooltip = "+3% Luck, +4% Dodge per point"
+items/key_3/title = "Shrug: 0"
+items/key_3/tooltip = "+3% Luck, +3% Dodge per point"
 
 [node name="UpgradeButtonPunch" parent="Pages/MainPage/Attributes/AttributeRadarGraph" unique_id=1756232947 instance=ExtResource("2_fdjxk")]
 layout_mode = 0
-offset_left = 208.0
+offset_left = 248.0
 offset_top = 58.0
-offset_right = 267.0
+offset_right = 307.0
 offset_bottom = 116.0
 texture_normal = ExtResource("8_krdv7")
 texture_pressed = ExtResource("9_56hqx")
@@ -888,9 +886,9 @@ label_settings = SubResource("LabelSettings_krdv7")
 
 [node name="UpgradeButtonHumor" parent="Pages/MainPage/Attributes/AttributeRadarGraph" unique_id=1031913354 instance=ExtResource("2_fdjxk")]
 layout_mode = 0
-offset_left = 320.0
+offset_left = 360.0
 offset_top = 172.0
-offset_right = 379.0
+offset_right = 419.0
 offset_bottom = 230.0
 texture_normal = ExtResource("8_krdv7")
 texture_pressed = ExtResource("9_56hqx")
@@ -905,9 +903,9 @@ label_settings = SubResource("LabelSettings_56hqx")
 
 [node name="UpgradeButtonGusto" parent="Pages/MainPage/Attributes/AttributeRadarGraph" unique_id=1793753504 instance=ExtResource("2_fdjxk")]
 layout_mode = 0
-offset_left = 208.0
+offset_left = 248.0
 offset_top = 284.0
-offset_right = 267.0
+offset_right = 307.0
 offset_bottom = 342.0
 texture_normal = ExtResource("8_krdv7")
 texture_pressed = ExtResource("9_56hqx")
@@ -922,9 +920,9 @@ label_settings = SubResource("LabelSettings_7hnab")
 
 [node name="UpgradeButtonShrug" parent="Pages/MainPage/Attributes/AttributeRadarGraph" unique_id=1016320477 instance=ExtResource("2_fdjxk")]
 layout_mode = 0
-offset_left = 97.0
+offset_left = 137.0
 offset_top = 172.0
-offset_right = 156.0
+offset_right = 196.0
 offset_bottom = 230.0
 texture_normal = ExtResource("8_krdv7")
 texture_pressed = ExtResource("9_56hqx")

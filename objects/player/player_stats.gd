@@ -157,6 +157,15 @@ func first_time_setup() -> void:
 				'max_turns',
 			]:
 				set(stat, character.base_stats.get(stat))
+		for attribute in [
+			'punch',
+			'humor',
+			'gusto',
+			'shrug'
+		]:
+			var value = character.starting_attributes[attribute]
+			attribute_changed(attribute, 0, value)
+			set(attribute, value)
 	
 	initialize()
 
@@ -179,15 +188,6 @@ func clear_quests(clear_check := true) -> void:
 
 func initialize() -> void:
 	hp_changed.connect(attempt_revive)
-	for attribute in [
-		'punch',
-		'humor',
-		'gusto',
-		'shrug'
-	]:
-		var value = character.starting_attributes[attribute]
-		attribute_changed(attribute, 0, value)
-		set(attribute, value)
 	attributes_initialized = true
 	start_stat_monitors()
 	monitor_stranger_chance()
@@ -395,10 +395,10 @@ signal s_shrug_changed(new_value: int)
 @export var gag_regen_chance := 1.0 # TODO
 
 var attribute_modifiers := {
-	'punch': { 'damage': 0.04, 'parry': 0.04 },
-	'humor': { 'max_hp': 6, 'humor_healing': 2 },
+	'punch': { 'damage': 0.05, 'parry': 0.04 },
+	'humor': { 'max_hp': 5, 'humor_healing': 1 },
 	'gusto': { 'speed': 2, 'gag_regen_chance': 0.15 },
-	'shrug': { 'luck': 0.03, 'evasiveness': 0.04 },
+	'shrug': { 'luck': 0.03, 'evasiveness': 0.03 },
 }
 
 func attribute_changed(attr: String, old_value, new_value) -> void:
@@ -417,12 +417,7 @@ func attribute_changed(attr: String, old_value, new_value) -> void:
 		else:
 			set(key, get(key) + value)
 
-@export var jokes := 0:
-	set(x):
-		if total_jokes < x:
-			total_jokes = x
-		jokes = x
-		s_stat_changed.emit('jokes')
+@export var jokes := 0
 @export var total_jokes := 0
 
 @export var regen_crit_chance := 0.0
@@ -444,10 +439,12 @@ func roll_gag_regen(track_name: String) -> int:
 signal s_humor_healing_triggered
 
 func do_humor_healing(effectiveness := 1.0) -> void:
-	if humor_healing * effectiveness > 0:
-		AudioManager.play_sound(load("res://audio/sfx/items/laff_boost_pickup.ogg"), -5.0)
 	allow_overheal = true
 	BattleService.ongoing_battle.s_round_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
 	BattleService.ongoing_battle.s_battle_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
 	Util.get_player().quick_heal(ceili(humor_healing * effectiveness))
 	s_humor_healing_triggered.emit()
+	if humor_healing * effectiveness > 0:
+		Task.delay(0.2).connect(AudioManager.play_sound.bind(load("res://audio/sfx/items/laff_boost_pickup.ogg"), -5.0))
+
+signal s_toonup_used(gag: ToonAttack)

@@ -176,7 +176,9 @@ func _refresh_toonup() -> void:
 func use_toonup(level: int) -> void:
 	if Util.get_player().stats.toonups[level] > 0:
 		Util.get_player().stats.toonups[level] -= 1
-		TOON_UP.gags[level].apply(Util.get_player())
+		var gag = TOON_UP.gags[level].duplicate(true)
+		Util.get_player().stats.s_toonup_used.emit(gag)
+		gag.apply(Util.get_player())
 		_refresh_toonup()
 
 #endregion

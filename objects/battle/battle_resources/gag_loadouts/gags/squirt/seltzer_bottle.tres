@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("2_hsbcx")
 drenched_speed = -10
-icon = ExtResource("1_kad6d")
-damage = 21
+damage = 28
 action_name = "Seltzer Bottle"
+icon = ExtResource("1_kad6d")

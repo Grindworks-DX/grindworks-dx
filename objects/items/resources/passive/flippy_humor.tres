@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b1tyryfbi1c7"]
+
+[ext_resource type="Script" uid="uid://c0qdpb6d8nhl6" path="res://objects/items/custom/humor_healing/item_flippy_humor.gd" id="1_4xvdy"]
+[ext_resource type="Script" uid="uid://combwqypom1ru" path="res://objects/items/classes/item.gd" id="2_mmnpi"]
+
+[resource]
+script = ExtResource("2_mmnpi")
+qualitoon = 4
+item_name = "Flippy Humor Healing"
+big_description = "Unique to Flippy"
+item_script = ExtResource("1_4xvdy")
+shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

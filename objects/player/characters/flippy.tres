@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://combwqypom1ru" path="res://objects/items/classes/item.gd" id="9_t8yrd"]
 [ext_resource type="Resource" uid="uid://cyiwxplege133" path="res://objects/items/resources/passive/emergency_unite.tres" id="10_81tpj"]
 [ext_resource type="Resource" uid="uid://ci7shc77lxvwr" path="res://objects/items/resources/passive/flippy_setup.tres" id="12_e8jb6"]
+[ext_resource type="Resource" uid="uid://b1tyryfbi1c7" path="res://objects/items/resources/passive/flippy_humor.tres" id="14_mwkof"]
 
 [sub_resource type="Resource" id="Resource_4xrsp"]
 script = ExtResource("1_vg416")
@@ -48,27 +49,27 @@ bottoms = SubResource("Resource_ugrs1")
 [resource]
 script = ExtResource("1_joak5")
 character_id = 1
-character_summary = "Can revive once before going sad
-10% base Throw boost"
+character_summary = "Starts with Emergency Unite
++10% Throw boost
+Using a Toon-Up triggers 50% Humor Healing"
 character_blurb = "President of the Toon Council and professional pie pitcher. A doggone inspiration to Toons everywhere."
 dna = SubResource("Resource_ax4gq")
 gag_loadout = ExtResource("2_pvta8")
-starting_laff = 30
-starting_items = Array[ExtResource("9_t8yrd")]([ExtResource("10_81tpj"), ExtResource("12_e8jb6")])
+starting_items = Array[ExtResource("9_t8yrd")]([ExtResource("10_81tpj"), ExtResource("12_e8jb6"), ExtResource("14_mwkof")])
 base_stats = SubResource("Resource_4xrsp")
 starting_gags = Dictionary[String, int]({
 "Drop": 0,
-"Lure": 0,
-"Sound": 1,
-"Squirt": 3,
-"Throw": 3,
+"Lure": 1,
+"Sound": 0,
+"Squirt": 4,
+"Throw": 4,
 "Trap": 0
 })
 starting_attributes = {
 "gusto": 3,
-"humor": 5,
+"humor": 3,
 "punch": 2,
-"shrug": 0
+"shrug": 2
 }
 achievement_items = Dictionary[int, ExtResource("9_t8yrd")]({
 26: ExtResource("2_4xrsp")

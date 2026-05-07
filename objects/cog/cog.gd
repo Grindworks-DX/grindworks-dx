@@ -240,7 +240,7 @@ func set_up_stats() -> void:
 	stats.hp = stats.max_hp
 	stats.evasiveness = 0.5 + (level * 0.05)
 	# Breaking Grounds: make them mad
-	stats.damage = 1.0 + (level * 0.08)
+	stats.damage = 0.92 + (level * 0.06)
 	stats.accuracy = 1.0
 	#stats.accuracy = 0.75 + (level * 0.05)
 	var new_text: String = dna.cog_name + '\n'
@@ -449,7 +449,7 @@ func get_targets(target_type):
 		_:
 			return [Util.get_player()]
 func get_damage_boost() -> int:
-	return level / 2
+	return ceili(level / 3)
 
 func lose():
 	# Get the lose model
