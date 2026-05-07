@@ -9,7 +9,8 @@ enum LureType {
 
 @export var lure_type := LureType.STUN
 @export var knockback_effect := 10
-@export var damage_nerf := 0.5
+@export var damage_debuff := StatMultiplier.new('damage', -0.3, false)
+@export var accuracy_debuff := -0.3
 
 func apply() -> void:
 	var cog: Cog = target
@@ -20,14 +21,14 @@ func apply() -> void:
 		cog.stunned = true
 	else:
 		var stats: BattleStats = manager.battle_stats[cog]
-		stats.damage += damage_nerf
-		stats.accuracy += damage_nerf / 2.0
+		stats.multipliers.append(damage_debuff)
+		stats.accuracy += accuracy_debuff
 
 func get_description() -> String:
 	var return_string := "Knockback Damage: %d" % get_true_knockback()
 	if lure_type == LureType.DAMAGE_DOWN:
-		var dmg_nerf: String = str(roundi(damage_nerf * 100.0))
-		var acc_nerf: String = str(roundi((damage_nerf / 2.0) * 100.0))
+		var dmg_nerf: String = str(roundi(damage_debuff.amount * 100.0))
+		var acc_nerf: String = str(roundi((accuracy_debuff) * 100.0))
 		return_string += "\n%s%% Damage\n%s%% Accuracy" % [dmg_nerf, acc_nerf]
 	return return_string
 
@@ -37,8 +38,8 @@ func expire() -> void:
 	await walk_tween.finished
 	walk_tween.kill()
 	if lure_type == LureType.DAMAGE_DOWN:
-		manager.battle_stats[target].damage -= damage_nerf
-		manager.battle_stats[target].accuracy -= damage_nerf / 2.0
+		manager.battle_stats[target].multipliers.erase(damage_debuff)
+		manager.battle_stats[target].accuracy -= accuracy_debuff
 	else:
 		target.stunned = false 
 		# Breaking Grounds: No longer acts after unluring - instead gains Lure Resistance
@@ -67,7 +68,7 @@ func create_walk_tween() -> Tween:
 func get_effect_string() -> String:
 	match lure_type:
 		LureType.STUN: return 'While Lured: Stun'
-		_: return 'While Lured: -50% DMG'
+		_: return 'While Lured: %s DMG' % Util.float_to_perc(damage_debuff.amount)
 
 func get_status_name() -> String:
 	return "Lured"

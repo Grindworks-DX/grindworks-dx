@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://t6oqxsyf1qia" path="res://objects/toon/toon.gd" id="1_6asl0"]
 [ext_resource type="PackedScene" uid="uid://suibio7o1avg" path="res://objects/misc/drop_shadow/drop_shadow.tscn" id="2_6lsek"]
 
-[node name="Toon" type="Node3D"]
+[node name="Toon" type="Node3D" unique_id=854464810]
 script = ExtResource("1_6asl0")
 
-[node name="Body" type="Node3D" parent="."]
+[node name="Body" type="Node3D" parent="." unique_id=1324412588]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
 
-[node name="DropShadow" parent="." instance=ExtResource("2_6lsek")]
+[node name="DropShadow" parent="." unique_id=449411423 instance=ExtResource("2_6lsek")]
 unique_name_in_owner = true
 transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0.02, 0)

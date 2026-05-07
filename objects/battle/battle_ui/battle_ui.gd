@@ -8,6 +8,7 @@ class_name BattleUI
 @onready var cog_panels := %CogPanels
 @onready var main_container := %BattleMenuContainer
 @onready var gag_order_menu := %SelectedGags
+@onready var pass_button: GagButton = %LockIn
 
 @onready var planning_ui := %PlanningUI
 
@@ -53,7 +54,8 @@ func _ready():
 	fire_action.target_type = BattleAction.ActionTarget.ENEMY
 	fire_action.icon = load("res://objects/items/custom/pink_slip/pink_slip_icon.png")
 	fire_action.action_name = "FIRE"
-	check_pink_slips()
+
+	pass_action = load("res://objects/battle/battle_resources/pass_action.tres")
 
 	status_container.target = Util.get_player()
 
@@ -123,10 +125,14 @@ func refresh_turns() -> void:
 		for track in gag_tracks.get_children():
 			track.set_disabled(true)
 		fire_button.disable()
+		pass_button.label.text = "GO!"
+		pass_button.self_modulate = Color("18ba77")
 	else:
 		for track in gag_tracks.get_children():
 			track.set_disabled(false)
 		check_pink_slips()
+		pass_button.label.text = "PASS MOVE"
+		pass_button.self_modulate = Color("c19d6fff")
 
 func check_fires() -> bool:
 	return Util.get_player().stats.pink_slips > 0
@@ -204,6 +210,7 @@ func on_timer_timeout() -> void:
 
 func cancel_gag(index: int):
 	var gag: BattleAction = selected_gags[index]
+	if !Util.get_player().can_cancel_gags or gag.ActionTag.NO_CANCEL in gag.action_tags: return
 	selected_gags.remove_at(index)
 	s_gags_updated.emit(selected_gags)
 	turn -= 1
@@ -298,3 +305,21 @@ func _input(event: InputEvent):
 	if event.is_pressed():
 		if InputMap.event_is_action(event, "undo_move") and turn > 0:
 			cancel_gag(turn - 1)
+
+var pass_action: ToonAttack
+
+func on_pass_pressed() -> void:
+	# Check if there are free moves - if so, pass; otherwise, end turn
+	var has_move: bool = manager.battle_stats[Util.get_player()].turns > turn
+	if has_move:
+		Util.get_player().stats.restock_tick()
+		var action := pass_action.duplicate(true)
+		action.user = Util.get_player()
+		gag_selected(action)
+	else: complete_turn()
+
+func on_pass_hovered() -> void:
+	var has_move: bool = manager.battle_stats[Util.get_player()].turns > turn
+	if has_move:
+		gag_hovered(pass_action)
+		

@@ -19,13 +19,15 @@ func get_stats() -> String:
 			string += "One Cog"
 		ActionTarget.ENEMY_SPLASH:
 			string += "Three Cogs"
-
-	string += "\nAftershock: %s" % get_true_damage(0.5)
-	string += "\nRounds: %d" % (rounds + 1 + Util.get_player().stats.get_stat("drop_aftershock_round_boost"))
+	
+	if rounds > -1:
+		string += "\nAftershock: %s" % get_true_damage(0.5)
+		string += "\nRounds: %d" % (rounds + 1 + Util.get_player().stats.get_stat("drop_aftershock_round_boost"))
 
 	return string
 
 func apply_debuff(target: Cog, damage_dealt: int) -> void:
+	if rounds < 0: return
 	var new_effect: StatEffectAftershock = DEBUFF.duplicate(true)
 	new_effect.amount = roundi(damage_dealt * 0.5)
 	new_effect.target = target

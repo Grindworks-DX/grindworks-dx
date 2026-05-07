@@ -228,11 +228,12 @@ label_settings = SubResource("LabelSettings_qttfa")
 
 [node name="GagStats" type="Label" parent="PlanningUI/BattleMenuContainer/RightPanel/GagInfo" unique_id=2064804983]
 layout_mode = 0
-offset_left = 5.0
+offset_left = -4.0
 offset_top = 74.0
-offset_right = 128.0
+offset_right = 140.39124
 offset_bottom = 149.0
 label_settings = SubResource("LabelSettings_iiktb")
+autowrap_mode = 3
 
 [node name="CurrentStats" type="Control" parent="PlanningUI/BattleMenuContainer/RightPanel" unique_id=1882810803]
 unique_name_in_owner = true
@@ -261,9 +262,9 @@ vertical_alignment = 1
 [node name="PlayerStats" type="Label" parent="PlanningUI/BattleMenuContainer/RightPanel/CurrentStats" unique_id=1803015119]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 6.0
+offset_left = -4.0
 offset_top = 74.0
-offset_right = 129.0
+offset_right = 138.73901
 offset_bottom = 149.0
 text = "Damage: 1.0
 Defense: 1.0
@@ -298,7 +299,7 @@ text = "FIRE"
 
 [node name="LockIn" parent="PlanningUI/BattleMenuContainer/BottomRight" unique_id=1462293221 instance=ExtResource("6_giclt")]
 unique_name_in_owner = true
-self_modulate = Color(0.0949, 0.73, 0.465375, 1)
+self_modulate = Color(0.09411765, 0.7294118, 0.46666667, 1)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -548,17 +549,17 @@ offset_bottom = 171.0
 [node name="StatusContainer" type="HBoxContainer" parent="." unique_id=72980342]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(700, 90)
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -354.0
-offset_top = 274.0
-offset_right = 924.3334
-offset_bottom = 364.0
+anchor_bottom = 1.0
+offset_left = -376.0
+offset_top = -48.0
+offset_right = 902.33325
+offset_bottom = 42.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 scale = Vector2(0.5, 0.5)
 theme_override_constants/separation = -8
 script = ExtResource("29_rfk4w")
@@ -624,7 +625,11 @@ script = ExtResource("14_j8cyf")
 [connection signal="mouse_entered" from="PlanningUI/BattleMenuContainer/BottomRight/Fire" to="." method="fire_hovered"]
 [connection signal="mouse_exited" from="PlanningUI/BattleMenuContainer/BottomRight/Fire" to="." method="gag_unhovered"]
 [connection signal="pressed" from="PlanningUI/BattleMenuContainer/BottomRight/Fire" to="." method="fire_pressed"]
-[connection signal="pressed" from="PlanningUI/BattleMenuContainer/BottomRight/LockIn" to="." method="complete_turn"]
+[connection signal="focus_entered" from="PlanningUI/BattleMenuContainer/BottomRight/LockIn" to="." method="on_pass_hovered"]
+[connection signal="focus_exited" from="PlanningUI/BattleMenuContainer/BottomRight/LockIn" to="." method="gag_unhovered"]
+[connection signal="mouse_entered" from="PlanningUI/BattleMenuContainer/BottomRight/LockIn" to="." method="on_pass_hovered"]
+[connection signal="mouse_exited" from="PlanningUI/BattleMenuContainer/BottomRight/LockIn" to="." method="gag_unhovered"]
+[connection signal="pressed" from="PlanningUI/BattleMenuContainer/BottomRight/LockIn" to="." method="on_pass_pressed"]
 [connection signal="pressed" from="PlanningUI/BattleMenuContainer/BottomRight/SOS" to="." method="open_items"]
 [connection signal="pressed" from="PlanningUI/TargetSelect/Buttons/Back" to="PlanningUI/TargetSelect" method="arrow_pressed" binds= [-1]]
 [connection signal="s_gag_canceled" from="SelectedGags" to="." method="cancel_gag"]

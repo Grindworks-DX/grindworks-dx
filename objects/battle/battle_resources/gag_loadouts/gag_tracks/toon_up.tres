@@ -25,9 +25,9 @@ rounds = -1
 script = ExtResource("3_3nxeb")
 custom_description = "Defense boost"
 status_effect = SubResource("Resource_ykd0g")
-icon = ExtResource("2_mk5mw")
 target_type = 4
 action_name = "Feather"
+icon = ExtResource("2_mk5mw")
 
 [sub_resource type="Resource" id="Resource_bhq5a"]
 script = ExtResource("6_5nyuh")
@@ -41,9 +41,9 @@ script = ExtResource("3_3nxeb")
 movie_type = 1
 custom_description = "Attack boost"
 status_effect = SubResource("Resource_bhq5a")
-icon = ExtResource("10_mgua5")
 target_type = 4
 action_name = "Megaphone"
+icon = ExtResource("10_mgua5")
 
 [sub_resource type="Resource" id="Resource_dsjnk"]
 script = ExtResource("8_ki655")
@@ -60,9 +60,9 @@ script = ExtResource("3_3nxeb")
 movie_type = 2
 custom_description = "Gag Discount"
 status_effect = SubResource("Resource_dsjnk")
-icon = ExtResource("7_480hh")
 target_type = 4
 action_name = "Lipstick"
+icon = ExtResource("7_480hh")
 
 [sub_resource type="Resource" id="Resource_xd2n5"]
 script = ExtResource("6_5nyuh")
@@ -76,9 +76,9 @@ script = ExtResource("3_3nxeb")
 movie_type = 3
 custom_description = "Evasiveness boost"
 status_effect = SubResource("Resource_xd2n5")
-icon = ExtResource("5_b6fii")
 target_type = 4
 action_name = "Bamboo Cane"
+icon = ExtResource("5_b6fii")
 
 [sub_resource type="Resource" id="Resource_mjlbk"]
 script = ExtResource("9_o3o8k")
@@ -92,9 +92,9 @@ script = ExtResource("3_3nxeb")
 movie_type = 4
 custom_description = "20% laff regeneration"
 status_effect = SubResource("Resource_mjlbk")
-icon = ExtResource("9_e8hrd")
 target_type = 4
 action_name = "Pixie Dust"
+icon = ExtResource("9_e8hrd")
 
 [sub_resource type="Resource" id="Resource_mg323"]
 script = ExtResource("6_5nyuh")
@@ -108,17 +108,17 @@ script = ExtResource("3_3nxeb")
 movie_type = 5
 custom_description = "Luck boost"
 status_effect = SubResource("Resource_mg323")
-icon = ExtResource("8_3w7na")
 target_type = 4
 action_name = "Juggling Cubes"
+icon = ExtResource("8_3w7na")
 
 [sub_resource type="Resource" id="Resource_w75b6"]
 script = ExtResource("3_3nxeb")
 movie_type = 6
 custom_description = "All stats boost"
-icon = ExtResource("11_32ks8")
 target_type = 4
 action_name = "High Dive"
+icon = ExtResource("11_32ks8")
 
 [resource]
 script = ExtResource("11_vgh4o")

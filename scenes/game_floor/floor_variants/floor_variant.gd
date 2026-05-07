@@ -40,7 +40,7 @@ static var ANOMALIES_NEGATIVE: Array[String] = [
 static var LEVEL_RANGES: Dictionary[int, Array] = {
 	0: [4, 6],
 	1: [5, 11],
-	2: [10, 14],
+	2: [10, 13],
 	3: [12, 16]
 }
 

@@ -468,6 +468,7 @@ func get_damage(damage: float, action: BattleAction, target: Node3D) -> int:
 
 	if user is Player:
 		var user_stats: PlayerStats = battle_stats[user]
+		if action.action_name == "Pass": return 0
 		if action is GagLure:
 			if action.action_name == "KnockbackTest":
 				boosted_damage *= user_stats.get_track_effectiveness('Lure')
@@ -709,8 +710,8 @@ func force_unlure(target: Cog) -> void:
 	if not lure_effect:
 		return
 	if lure_effect.lure_type == StatusLured.LureType.DAMAGE_DOWN:
-		battle_stats[target].damage -= lure_effect.damage_nerf
-		battle_stats[target].accuracy -= lure_effect.damage_nerf / 2.0
+		battle_stats[target].multipliers.erase(lure_effect.damage_debuff)
+		battle_stats[target].accuracy -= lure_effect.accuracy_debuff
 	if target.stats.hp > 0 and lure_effect.lure_type == StatusLured.LureType.STUN and not target in has_moved:
 		unskip_turn(target)
 
@@ -915,8 +916,8 @@ func is_target_debuffed(target: Actor) -> bool:
 		if effect.target == target and effect.quality == effect.EffectQuality.NEGATIVE: return true
 	return false
 
-# For each speed point the player has above a Cog, there is a 10% chance for them to be delayed;
-# this causes a stacking 40% Delay resistance until they finally take their turn
+# For each speed point the player has above a Cog, there is an 8% chance for them to be delayed;
+# this causes a stacking 20% Delay resistance for the rest of combat
 
 signal s_cog_delayed(cog: Cog)
 
@@ -934,10 +935,10 @@ func check_for_delay(cog: Cog) -> bool:
 		new_status.target = cog
 		add_status_effect(new_status)
 		s_cog_delayed.emit(cog)
-	else:
-		for status: StatusEffect in status_effects:
-			if status.target == cog and status.get_status_name() == "Delay Resist Up":
-				expire_status_effect(status)
+	#else:
+		#for status: StatusEffect in status_effects:
+			#if status.target == cog and status.get_status_name() == "Delay Resist Up":
+				#expire_status_effect(status)
 	print("Delay - Rolled: %0.2f Needed lower than: %0.2f" % [roll, chance])
 	cog.delayed = __out
 	return __out

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DropSmall" load_steps=6 format=3 uid="uid://b36jh0mm8fske"]
+[gd_resource type="Resource" script_class="DropSmall" format=3 uid="uid://b36jh0mm8fske"]
 
 [ext_resource type="Texture2D" uid="uid://b0ur80pn0rlga" path="res://ui_assets/battle/gags/inventory_sandbag.png" id="1_b64jr"]
 [ext_resource type="PackedScene" uid="uid://bqcn6woo6faw3" path="res://models/props/gags/sandbag/sandbag.tscn" id="2_48lc5"]
@@ -12,9 +12,6 @@ model = ExtResource("2_48lc5")
 shadow_scale = 1.25
 sfx_hit = ExtResource("4_j60m7")
 sfx_miss = ExtResource("5_fdkqi")
-icon = ExtResource("1_b64jr")
-damage = 14
-crit_chance_mod = 1.0
-target_type = 0
+damage = 22
 action_name = "Sandbag"
-one_time_use = false
+icon = ExtResource("1_b64jr")

@@ -68,7 +68,7 @@ func append_gag(gag: ToonAttack) -> void:
 	
 	# Enable/Disable x buttons
 	for panel in panels:
-		panel.get_node('GeneralButton').disabled = not panel.get_node('GagIcon').texture and not Util.get_player().can_cancel_gags
+		panel.get_node('GeneralButton').disabled = not panel.get_node('GagIcon').texture and not Util.get_player().can_cancel_gags and not gag.ActionTag.NO_CANCEL in gag.action_tags
 		panel.get_node('GeneralButton').visible = not panel.get_node('GeneralButton').disabled
 
 ## Reset all panels
@@ -92,7 +92,7 @@ func refresh_gags(gags: Array[ToonAttack]):
 			var gag = gags[i]
 			var damage = manager.get_damage(gag.damage, gag, gag.targets[0])
 			panel.get_node('GagIcon').texture = gag.icon
-			panel.get_node('GeneralButton').disabled = !Util.get_player().can_cancel_gags
+			panel.get_node('GeneralButton').disabled = !Util.get_player().can_cancel_gags or gag.ActionTag.NO_CANCEL in gag.action_tags
 			panel.get_node('DamageLabel').text = ("-" + str(damage)) if damage > 0 else ""
 			panel.get_node('TargetingLabel').text = get_targeting_string(gag)
 		else:
@@ -112,6 +112,7 @@ func hover_slot(idx: int) -> void:
 
 func get_targeting_string(gag: ToonAttack) -> String:
 	var atk_string := ""
+	if gag.target_type == gag.ActionTarget.NONE: return atk_string
 	var has_main_target: bool = gag.main_target != null
 	for cog in manager.cogs:
 		if cog in gag.targets:

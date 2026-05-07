@@ -1,7 +1,6 @@
 extends ActionScript
 class_name ToonAttack
 
-@export var icon: Texture2D
 @export var damage: int
 @export_multiline var gag_summary := ""
 
@@ -26,6 +25,8 @@ func get_stats() -> String:
 			string += "One Cog"
 		ActionTarget.ENEMY_SPLASH:
 			string += "Three Cogs"
+		ActionTarget.NONE:
+			return gag_summary
 	
 	return string
 

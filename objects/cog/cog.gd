@@ -240,7 +240,7 @@ func set_up_stats() -> void:
 	stats.hp = stats.max_hp
 	stats.evasiveness = 0.5 + (level * 0.05)
 	# Breaking Grounds: make them mad
-	stats.damage = 1.0 + (level * 0.1)
+	stats.damage = 1.0 + (level * 0.08)
 	stats.accuracy = 1.0
 	#stats.accuracy = 0.75 + (level * 0.05)
 	var new_text: String = dna.cog_name + '\n'

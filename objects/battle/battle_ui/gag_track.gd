@@ -106,7 +106,7 @@ func refresh():
 			
 			if not button.pressed.is_connected(emit_gag):
 				if not is_gag_free(gag):
-					price = i
+					price = track.base_prices[i]
 					price -= battle_stats.gag_discount
 					if Util.get_player().gags_cost_beans:
 						# Basically just for budget cuts on Pete

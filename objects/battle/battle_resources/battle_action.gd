@@ -17,6 +17,8 @@ enum ActionTarget {
 @export var crit_chance_mod := 1.0
 @export var action_tags: Array[ActionTag] = []
 
+@export var icon: Texture2D
+
 var user: Node3D
 var targets := []
 ## Used for splash attacks
@@ -114,6 +116,7 @@ enum ActionTag {
 	DOUBLE_REVIVE_DAMAGE,  # Does two revive-damage to characters who only have revives
 	OLDMAN_NULLIFY,
 	PRIORITY_ACTION, # Marks an action as being high priority for a few scripts that need it
+	NO_CANCEL
 }
 
 func has_tag(tag: ActionTag) -> bool:

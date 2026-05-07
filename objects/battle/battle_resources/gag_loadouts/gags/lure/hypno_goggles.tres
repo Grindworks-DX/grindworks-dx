@@ -7,16 +7,16 @@
 
 [sub_resource type="Resource" id="Resource_41ybs"]
 script = ExtResource("2_aw7h4")
-knockback_effect = 32
-damage_nerf = -1.0
+knockback_effect = 48
+accuracy_debuff = null
 quality = 1
-rounds = 2
+rounds = 4
 id = 2
 
 [resource]
 script = ExtResource("3_6ggh8")
 sfx = ExtResource("4_ywge2")
 lure_effect = SubResource("Resource_41ybs")
-icon = ExtResource("1_efhxm")
 target_type = 7
 action_name = "Hypno Goggles"
+icon = ExtResource("1_efhxm")

@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_il8md")
-drenched_speed = -10
-icon = ExtResource("1_3bq1d")
-damage = 40
+drenched_speed = -12
+damage = 36
 action_name = "Fire Hose"
+icon = ExtResource("1_3bq1d")

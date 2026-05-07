@@ -2,7 +2,7 @@ extends ToonAttack
 class_name GagTrap
 
 const TRAP_EFFECT := preload("res://objects/battle/battle_resources/status_effects/resources/status_effect_trapped.tres")
-const GULLIBLE_EFFECT := preload("uid://ckb6q8h5rxyg8")
+const GULLIBLE_EFFECT := preload("res://objects/battle/battle_resources/status_effects/resources/status_effect_gullible.tres")
 
 @export var gullible_defense := -0.2
 

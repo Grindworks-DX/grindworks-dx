@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DropSmall" load_steps=6 format=3 uid="uid://bsbidil8mdrcx"]
+[gd_resource type="Resource" script_class="DropSmall" format=3 uid="uid://bsbidil8mdrcx"]
 
 [ext_resource type="Texture2D" uid="uid://dqtqf65k6nxi8" path="res://ui_assets/battle/gags/inventory_anvil.png" id="1_mw1px"]
 [ext_resource type="PackedScene" uid="uid://bbrcfwwkp3uhk" path="res://models/props/gags/anvil/anvil.tscn" id="2_v2ahf"]
@@ -12,9 +12,6 @@ model = ExtResource("2_v2ahf")
 shadow_scale = 1.5
 sfx_hit = ExtResource("4_7m0ro")
 sfx_miss = ExtResource("5_abi3b")
-icon = ExtResource("1_mw1px")
-damage = 20
-crit_chance_mod = 1.0
-target_type = 0
+damage = 30
 action_name = "Anvil"
-one_time_use = false
+icon = ExtResource("1_mw1px")

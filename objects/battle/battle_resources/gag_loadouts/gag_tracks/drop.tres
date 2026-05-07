@@ -15,7 +15,7 @@
 script = ExtResource("28_0rg6a")
 track_name = "Drop"
 track_color = Color(0.207843, 0.956863, 1, 1)
-gags = Array[ExtResource("1_tudwb")]([ExtResource("2_g5jok"), ExtResource("3_dfe2c"), ExtResource("4_lwyrl"), ExtResource("5_anp2t"), ExtResource("6_vt0l2"), ExtResource("7_u5f0h"), ExtResource("8_qlh2s")])
+gags = Array[ExtResource("1_tudwb")]([ExtResource("2_g5jok"), ExtResource("3_dfe2c"), ExtResource("4_lwyrl"), ExtResource("5_anp2t"), ExtResource("6_vt0l2"), ExtResource("8_qlh2s"), ExtResource("7_u5f0h")])
 mod_gags = Dictionary[ExtResource("1_tudwb"), int]({
 ExtResource("2_g5jok"): 0,
 ExtResource("3_dfe2c"): 1,
@@ -26,3 +26,4 @@ ExtResource("7_u5f0h"): 5,
 ExtResource("8_qlh2s"): 6,
 ExtResource("9_dfe2c"): 1
 })
+base_gp_cap = 20

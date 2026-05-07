@@ -2,20 +2,28 @@
 
 [ext_resource type="Texture2D" uid="uid://d2w1gqvkuqair" path="res://ui_assets/battle/gags/inventory_5dollarbill.png" id="1_g2t7g"]
 [ext_resource type="Script" uid="uid://gpeto6dx1eja" path="res://objects/battle/battle_resources/status_effects/lured.gd" id="2_2r7r2"]
+[ext_resource type="Script" uid="uid://byjrft5q3aylc" path="res://objects/battle/battle_resources/stat_multiplier.gd" id="2_a2hu7"]
 [ext_resource type="Material" uid="uid://c6k1h8avpta45" path="res://models/props/gags/fishing_rod/dollar_bill_5.tres" id="3_a2hu7"]
 [ext_resource type="Script" uid="uid://td2akjfqd0r3" path="res://objects/battle/battle_resources/toon_attacks/lure_fish.gd" id="4_uwc66"]
 
-[sub_resource type="Resource" id="Resource_4kntx"]
+[sub_resource type="Resource" id="Resource_2r7r2"]
+script = ExtResource("2_a2hu7")
+stat = "damage"
+amount = -0.5
+metadata/_custom_type_script = "uid://byjrft5q3aylc"
+
+[sub_resource type="Resource" id="Resource_a2hu7"]
 script = ExtResource("2_2r7r2")
-knockback_effect = 32
-damage_nerf = -0.8
+lure_type = 1
+knockback_effect = 28
+damage_debuff = SubResource("Resource_2r7r2")
 quality = 1
-rounds = 2
+rounds = 3
 id = 2
 
 [resource]
 script = ExtResource("4_uwc66")
 override_mat = ExtResource("3_a2hu7")
-lure_effect = SubResource("Resource_4kntx")
-icon = ExtResource("1_g2t7g")
+lure_effect = SubResource("Resource_a2hu7")
 action_name = "5 Dollar Bill"
+icon = ExtResource("1_g2t7g")

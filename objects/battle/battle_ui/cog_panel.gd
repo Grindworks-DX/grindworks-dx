@@ -77,7 +77,7 @@ func set_hp_label():
 func set_speed_label(new_speed: int):
 	speed_label.text = str(new_speed)
 
-const ADV_LABEL_SETTINGS := [preload("uid://cnx4cg5a68tp7"), preload("uid://ix6utnif3h1p")]
+const ADV_LABEL_SETTINGS := [preload("res://ui_assets/battle/labelsettings_adv_label_good.tres"), preload("res://ui_assets/battle/labelsettings_adv_label_bad.tres")]
 
 func set_advantage_label():
 	if !is_instance_valid(current_cog): return
@@ -87,7 +87,7 @@ func set_advantage_label():
 	if moves == 1 and !current_cog.current_moves.is_empty(): return
 	
 	var delayed: bool = moves == 0 or current_cog.current_moves.is_empty()
-	advantage_label.label_settings = ADV_LABEL_SETTINGS[int(!delayed)]
+	advantage_label.label_settings = ADV_LABEL_SETTINGS[int(delayed)]
 	
 	if delayed:
 		advantage_label.text = "Delayed!" if !current_cog.stunned else "Stunned!"

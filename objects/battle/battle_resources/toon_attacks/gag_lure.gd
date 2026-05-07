@@ -39,7 +39,8 @@ func get_lure_effect() -> StatusLured:
 		new_effect.icon = icon
 		new_effect.lure_type = lure_effect.lure_type
 		new_effect.knockback_effect = lure_effect.knockback_effect
-		new_effect.damage_nerf = lure_effect.damage_nerf
+		new_effect.damage_debuff = lure_effect.damage_debuff
+		new_effect.accuracy_debuff = lure_effect.accuracy_debuff
 	
 	return new_effect
 
@@ -47,8 +48,8 @@ func apply_lure(who: Cog) -> void:
 	var effect := get_lure_effect()
 	effect.target = who
 	effect.rounds = get_lure_rounds()
-	if not who == main_target:
-		effect.damage_nerf -= effect.damage_nerf / 2.0
+	#if not who == main_target:
+		#effect.damage_debuff.amount -= effect.damage_debuff.amount / 2.0
 	manager.add_status_effect(effect)
 
 func get_lure_rounds() -> int:
