@@ -917,7 +917,7 @@ func is_target_debuffed(target: Actor) -> bool:
 	return false
 
 # For each speed point the player has above a Cog, there is an 8% chance for them to be delayed;
-# this causes a stacking 20% Delay resistance for the rest of combat
+# this causes a stacking 30% Delay resistance for the rest of combat
 
 signal s_cog_delayed(cog: Cog)
 
@@ -928,7 +928,7 @@ func check_for_delay(cog: Cog) -> bool:
 	var cog_speed = battle_stats[cog].speed
 	var cog_delay_resist = battle_stats[cog].delay_resist
 	var roll := randf()
-	var chance: float = min(1.0, ((player_speed - cog_speed) * 0.10)) - cog_delay_resist
+	var chance: float = min(1.0, ((player_speed - cog_speed) * 0.8)) - cog_delay_resist
 	__out = roll < chance
 	if __out:
 		var new_status = load("res://objects/battle/battle_resources/status_effects/resources/status_effect_delay_resist.tres").duplicate(true)
