@@ -156,7 +156,7 @@ func get_stats() -> String:
 			player_stats = Util.get_player().stats
 		#string += "\nSelf-Heal: %s%%" % roundi(player_stats.get_stat('throw_heal_boost') * 100)
 	
-	string += "\nSweetspot: %s" % get_true_damage(1.0, sweetspot_damage)
+	string += "\nSweetspot: %s" % [get_true_damage(1.0, sweetspot_damage + damage)]
 
 	return string
 

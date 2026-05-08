@@ -17,9 +17,11 @@
 
 [sub_resource type="Resource" id="Resource_4xrsp"]
 script = ExtResource("1_vg416")
+speed = 5
+max_turns = 5
 max_hp = 30
 hp = 30
-turns = 2
+turns = 3
 metadata/_custom_type_script = "uid://o2fe7ud1faj6"
 
 [sub_resource type="Resource" id="Resource_ugrs1"]
@@ -50,7 +52,7 @@ bottoms = SubResource("Resource_ugrs1")
 script = ExtResource("1_joak5")
 character_id = 1
 character_summary = "Starts with Emergency Unite
-+10% Throw boost
++10% Throw Damage, +20% Throw Regen
 Using a Toon-Up triggers 50% Humor Healing"
 character_blurb = "President of the Toon Council and professional pie pitcher. A doggone inspiration to Toons everywhere."
 dna = SubResource("Resource_ax4gq")

@@ -9,6 +9,9 @@
 
 [sub_resource type="Resource" id="Resource_q3qk8"]
 script = ExtResource("1_j1jpo")
+speed = 5
+max_turns = 5
+turns = 3
 
 [sub_resource type="Resource" id="Resource_gqohd"]
 script = ExtResource("1_t03ah")
@@ -19,10 +22,11 @@ skirt = true
 script = ExtResource("1_grtey")
 character_id = 6
 character_name = "Mystery Toon"
-character_summary = "Stats are randomized
+character_summary = "Attributes are randomized
 Starts with a random Accessory
 Starts with a random Pocket Prank
-Starts with 2 random tracks"
+Starts with 3 random tracks
+Humor Healing is doubled"
 character_blurb = "Congratulations! You're Toontown's newest Toon! Your first ToonTask: Defeat this Cog building."
 dna = SubResource("Resource_gqohd")
 gag_loadout = ExtResource("2_w38qq")

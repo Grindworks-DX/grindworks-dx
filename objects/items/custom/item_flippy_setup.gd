@@ -5,3 +5,4 @@ const PAINT_BUCKET_PATH := "res://objects/items/resources/active/paint_bucket.tr
 func first_time_setup(player : Player) -> void:
 	var stats := player.stats
 	stats.gag_effectiveness['Throw'] = 1.1
+	stats.gag_regen_chance_modifiers['Throw'] += 0.2

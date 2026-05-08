@@ -14,16 +14,23 @@ var ICONS := {
 @export var stat: String = 'defense'
 @export var boost: Variant
 
+@export var multiplicative := false
+var multiplier: StatMultiplier
+
 
 func apply():
 	var battle_stats: BattleStats = manager.battle_stats[target]
 	if stat in battle_stats:
-		battle_stats.set(stat,battle_stats.get(stat) + boost)
+		if multiplicative:
+			multiplier = StatMultiplier.new(stat, boost, false)
+			battle_stats.multipliers.append(multiplier)
+		else: battle_stats.set(stat,battle_stats.get(stat) + boost)
 
 func expire():
 	var battle_stats = manager.battle_stats[target]
 	if stat in battle_stats:
-		battle_stats.set(stat, battle_stats.get(stat) - boost)
+		if multiplicative: battle_stats.multipliers.erase(multiplier)
+		else: battle_stats.set(stat, battle_stats.get(stat) - boost)
 
 func get_description() -> String:
 	var __out = "%s%s%s %s" % ["+" if boost > 0.0 else "-", roundi(abs(boost) * (100 if boost is float else 1)), "%" if boost is float else "", stat.capitalize()]

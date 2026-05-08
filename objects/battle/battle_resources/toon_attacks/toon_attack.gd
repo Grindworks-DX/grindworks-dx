@@ -37,7 +37,7 @@ func get_true_damage(dmg_mod := 1.0, base_dmg: int = 0, override_track: Track = 
 	else:
 		true_dmg = float(base_dmg)
 	if not is_equal_approx(dmg_mod, 1.0):
-		true_dmg *= dmg_mod
+		true_dmg = ceili(true_dmg * dmg_mod)
 	var player_stats: PlayerStats
 	if is_instance_valid(BattleService.ongoing_battle):
 		player_stats = BattleService.ongoing_battle.battle_stats[Util.get_player()]
@@ -45,7 +45,7 @@ func get_true_damage(dmg_mod := 1.0, base_dmg: int = 0, override_track: Track = 
 		player_stats = Util.get_player().stats
 	
 	var base_boost: float = player_stats.get_stat('damage')
-	true_dmg *= base_boost
+	true_dmg = ceili(true_dmg * base_boost)
 	
 	var effectiveness := 1.0
 	if not override_track: override_track = player_stats.character.gag_loadout.get_action_track(self)

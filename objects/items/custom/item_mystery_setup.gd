@@ -3,6 +3,7 @@ extends ItemCharSetup
 const MIN_HP := 25
 const MAX_HP := 35
 
+static var gag_tracks := 3
 
 func first_time_setup(player: Player) -> void:
 	# It's hacky, I know.
@@ -13,7 +14,7 @@ func first_time_setup(player: Player) -> void:
 
 func randomize_stats(player: Player) -> void:
 	# Randomize stats
-	var random_stats: Array[String] = ['damage', 'defense', 'evasiveness', 'luck', 'speed']
+	var random_stats: Array[String] = PlayerStats.attributes
 	
 	# Random HP
 	player.stats.max_hp = RNG.channel(RNG.ChannelMysteryToonLaff).randi_range(MIN_HP, MAX_HP)
@@ -23,9 +24,9 @@ func randomize_stats(player: Player) -> void:
 	var point_boost := avg_hp - player.stats.max_hp
 	
 	# Randomize stats
-	var good_points := 20
-	var bad_points := 12
-	var point_cost := 0.02
+	var good_points := 18
+	var bad_points := 6
+	var point_cost := 1
 	if signi(point_boost) == 1: good_points += point_boost
 	else: bad_points += absi(point_boost)
 	while good_points > 0:
@@ -67,7 +68,7 @@ func randomize_gags(player: Player) -> void:
 	# Probably won't ever run but yk
 	if offense_tracks.is_empty() or support_tracks.is_empty():
 		var selected_track: Track
-		while selected_tracks.size() < 2 or not selected_track in selected_tracks:
+		while selected_tracks.size() < gag_tracks or not selected_track in selected_tracks:
 			selected_track = gag_loadout.loadout[RNG.channel(RNG.ChannelMysteryToonGags).randi() % gag_loadout.loadout.size()]
 			if not selected_track in selected_tracks: selected_tracks.append(selected_track)
 	# Otherwise run like normal
@@ -79,10 +80,9 @@ func randomize_gags(player: Player) -> void:
 	for track in selected_tracks:
 		player.stats.gags_unlocked[track.track_name] += RNG.channel(RNG.ChannelMysteryToonGags).randi() % 2 + 1
 	
-	var random_stats: Array[String] = ['damage', 'defense', 'evasiveness', 'luck', 'speed']
 	# Restore stats
 	if Util.random_stats:
-		for stat in random_stats:
+		for stat in PlayerStats.attributes:
 			player.stats.set(stat, Util.random_stats.get(stat))
 	
 	# Restore default value

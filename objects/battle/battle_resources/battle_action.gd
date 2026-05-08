@@ -31,7 +31,7 @@ static var camera_angles = {
 }
 
 ## Allow to mark actions as ignored for special action checks, i.e. retaliates from bosses.
-var special_action_exclude := false
+@export var special_action_exclude := false
 ## Allow moves to set a custom message for when a player gets merc'ed by it
 var custom_player_death_source := ""
 ## Does no damage + Battle text will say "Nullified"

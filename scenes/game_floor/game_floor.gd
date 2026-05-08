@@ -436,7 +436,7 @@ func on_battle_spawned(battle_node: BattleNode) -> void:
 		var highest_level := 0
 		
 		for cog in battle_node.cogs:
-			if cog.level > highest_level:
+			if cog.level > highest_level and !cog.dna.is_admin:
 				highest_level = cog.level
 				cog_to_debuff = cog
 		

@@ -10,3 +10,4 @@ target_type = 5
 action_name = "Pass"
 action_tags = Array[int]([5])
 icon = ExtResource("1_0c8t5")
+special_action_exclude = true

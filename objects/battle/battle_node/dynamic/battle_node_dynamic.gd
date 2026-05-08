@@ -31,6 +31,8 @@ func _ready() -> void:
 	if not Engine.is_editor_hint():
 		super()
 
+static var cog_count_boost := [1, 1, 2, 3, 4]
+
 func _refresh_cogs() -> void:
 	var cog_count : int
 	if Engine.is_editor_hint():
@@ -38,7 +40,7 @@ func _refresh_cogs() -> void:
 	else:
 		cog_count = RNG.channel(RNG.ChannelCogCounts).randi_range(cog_range.x, cog_range.y)
 		if is_instance_valid(Util.floor_manager):
-			cog_count = mini(cog_count + Util.floor_number, 8)
+			cog_count = mini(cog_count + cog_count_boost[Util.floor_number], 7)
 	
 	clear_cogs()
 	if Engine.is_editor_hint():

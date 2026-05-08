@@ -362,13 +362,13 @@ func affect_target(target: Node3D, amount: float, ignore_current_action := false
 	if should_crit:
 		var user = current_action.user
 		if not 'stats' in user or not 'crit_mult' in user.stats:
-			amount = roundi(amount * 1.25)
+			amount = ceili(amount * 1.25)
 		else:
-			amount = roundi(amount * battle_stats[current_action.user].get_stat("crit_mult"))
+			amount = ceili(amount * battle_stats[current_action.user].get_stat("crit_mult"))
 
 	# Check for healing effectiveness on player target
 	if target is Player and amount < 0:
-		amount = roundi(amount * battle_stats[target].get_stat("healing_effectiveness"))
+		amount = ceili(amount * battle_stats[target].get_stat("healing_effectiveness"))
 
 	target.stats.set(stat, pre_stat - amount)
 

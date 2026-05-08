@@ -338,6 +338,8 @@ func run_stranger_roll() -> bool:
 
 # Attributes: New stats that modify internal stats
 
+static var attributes: Array[String ]= ['punch', 'humor', 'gusto', 'shrug']
+
 signal s_punch_changed(new_value: int)
 signal s_humor_changed(new_value: int)
 signal s_gusto_changed(new_value: int)
@@ -391,13 +393,13 @@ signal s_shrug_changed(new_value: int)
 
 # New mechanic stats
 @export var parry := 0.0 # TODO
-@export var humor_healing := 0 # TODO
-@export var gag_regen_chance := 1.0 # TODO
+@export var humor_healing := 0
+@export var gag_regen_chance := 0.0 
 
 var attribute_modifiers := {
 	'punch': { 'damage': 0.05, 'parry': 0.04 },
 	'humor': { 'max_hp': 5, 'humor_healing': 1 },
-	'gusto': { 'speed': 2, 'gag_regen_chance': 0.15 },
+	'gusto': { 'speed': 1, 'gag_regen_chance': 0.05 },
 	'shrug': { 'luck': 0.03, 'evasiveness': 0.03 },
 }
 
@@ -438,11 +440,16 @@ func roll_gag_regen(track_name: String) -> int:
 
 signal s_humor_healing_triggered
 
-func do_humor_healing(effectiveness := 1.0) -> void:
+func do_humor_healing(_effectiveness := 1.0) -> void:
+	# this is a hack mb
+	var effectiveness := _effectiveness
+	if character.character_id == PlayerCharacter.Character.MYSTERY:
+		effectiveness *= 2.0
+	
 	allow_overheal = true
 	BattleService.ongoing_battle.s_round_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
 	BattleService.ongoing_battle.s_battle_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
-	Util.get_player().quick_heal(ceili(humor_healing * effectiveness))
+	Util.get_player().quick_heal(maxi(1, ceili(humor_healing * effectiveness)))
 	s_humor_healing_triggered.emit()
 	if humor_healing * effectiveness > 0:
 		Task.delay(0.2).connect(AudioManager.play_sound.bind(load("res://audio/sfx/items/laff_boost_pickup.ogg"), -5.0))

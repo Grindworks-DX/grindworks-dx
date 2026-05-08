@@ -112,16 +112,16 @@ func fetch_suit(suit_type: int, skelecog: bool) -> PackedScene:
 ## Player Characters
 const TOON_UNLOCK_ORDER_PATHS := [
 	'res://objects/player/characters/flippy.tres',
-	'res://objects/player/characters/clerk_clara.tres',
-	'res://objects/player/characters/julius_wheezer.tres',
-	'res://objects/player/characters/barnacle_bessie.tres',
-	'res://objects/player/characters/moe_zart.tres',
+	#'res://objects/player/characters/clerk_clara.tres',
+	#'res://objects/player/characters/julius_wheezer.tres',
+	#'res://objects/player/characters/barnacle_bessie.tres',
+	#'res://objects/player/characters/moe_zart.tres',
 	'res://objects/player/characters/testchar.tres',
 ]
 ## Characters unlocked non-sequentially
 var ADDITIONAL_TOON_PATHS := [
-	'res://objects/player/characters/professor_pete.tres',
-	'res://objects/player/characters/lil_oldman.tres',
+	#'res://objects/player/characters/professor_pete.tres',
+	#'res://objects/player/characters/lil_oldman.tres',
 ]
 
 func fetch_toon_unlock_order() -> Array[PlayerCharacter]:

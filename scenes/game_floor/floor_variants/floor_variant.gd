@@ -38,8 +38,8 @@ static var ANOMALIES_NEGATIVE: Array[String] = [
 
 # Breaking Grounds: 4 floors (from 6)
 static var LEVEL_RANGES: Dictionary[int, Array] = {
-	0: [4, 6],
-	1: [5, 11],
+	0: [4, 8],
+	1: [7, 11],
 	2: [10, 13],
 	3: [12, 16]
 }

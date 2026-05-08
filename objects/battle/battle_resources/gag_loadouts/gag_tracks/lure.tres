@@ -25,6 +25,5 @@ ExtResource("6_p4v71"): 4,
 ExtResource("7_wy8xf"): 5,
 ExtResource("8_rqkk5"): 6
 })
-base_regen = -0.3
-base_gp_cap = 10
-base_prices = [0, 1, 2, 3, 5, 7, 9]
+base_regen = 0.4
+base_gp_cap = 12

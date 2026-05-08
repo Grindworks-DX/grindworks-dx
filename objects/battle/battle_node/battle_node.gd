@@ -233,14 +233,14 @@ func focus_character(character: Node3D, cam_dist := 4.0, dir := -1):
 func focus_cogs():
 	battle_cam.reparent(self)
 	battle_cam.global_position = Util.get_player().head_node.global_position + Vector3(1.2, -0.5, -1.7)
-	battle_cam.global_position = battle_cam.global_position.move_toward(Vector3(global_position.x, battle_cam.global_position.y, global_position.z), 1.0)
-	var avg_height := 0.0
-	for cog in cogs:
-		if cog.head_node:
-			avg_height += cog.head_node.global_position.y
-		else:
-			avg_height += global_position.y
-	avg_height /= cogs.size()
+	#battle_cam.global_position = battle_cam.global_position.move_toward(Vector3(global_position.x, battle_cam.global_position.y, global_position.z), 1.0)
+	#var avg_height := 0.0
+	#for cog in cogs:
+		#if cog.head_node:
+			#avg_height += cog.head_node.global_position.y
+		#else:
+			#avg_height += global_position.y
+	#avg_height /= cogs.size()
 	#battle_cam.global_position.y = avg_height
 	battle_cam.rotation_degrees = Vector3(20,20,0)
 

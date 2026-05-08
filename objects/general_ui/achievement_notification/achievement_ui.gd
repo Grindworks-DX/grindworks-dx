@@ -18,6 +18,8 @@ func _play_queue() -> void:
 	playing = false 
 
 func play_animation(achievement: Achievement) -> void:
+	# TODO: rework achievement notification
+	return
 	var animation := UI_ANIMATION.instantiate()
 	animation.get_node("CanvasLayer/Origin/PanelMask/Panel/Title").set_text(achievement.achievement_name)
 	animation.get_node('CanvasLayer/Origin/PanelMask/Panel/Summary').set_text(achievement.achievement_summary)

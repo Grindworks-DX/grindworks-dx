@@ -822,20 +822,30 @@ key_count = 4
 radius = 150.0
 key_items = Array[Dictionary]([{
 "title": "Punch: 0",
-"tooltip": "+5% Damage per point",
+"tooltip": "+5% Damage per point
+Damage increases the output of your Gags.",
 "value": 0.0
 }, {
 "title": "Humor: 0
 ",
-"tooltip": "+5 Max Laff, +1 Humor Healing per point",
+"tooltip": "+5 Max Laff, +1 Humor Healing per point
+Humor Healing is given when a Cog is defeated.
+It can also be triggered through item and character effects.",
 "value": 0.0
 }, {
 "title": "Gusto: 0",
-"tooltip": "+2 Speed, +15% Gag Regen per point",
+"tooltip": "+1 Speed, +5% Gag Regen per point
+For each Speed point you have over a Cog, there is a +8% chance to Delay them and skip their turn.
+Delayed Cogs receive a stacking Delay Resist effect for the remainder of combat.
+Gag Regen determines the chance of receiving a point in each Gag track every Restock tick.
+A Restock tick occurs on round start and when passing a move.",
 "value": 0.0
 }, {
 "title": "Shrug: 0",
-"tooltip": "+3% Luck, +3% Dodge per point",
+"tooltip": "+3% Luck, +3% Evasiveness per point
+Your gags have a % chance to Crit equal to your Luck, dealing 100% more damage.
+Restock ticks can also crit per track, doubling that track's point gain.
+Luck also affects some chance-based item effects.",
 "value": 0.0
 }])
 max_value = 12.0
@@ -855,17 +865,27 @@ guide_step = 4.0
 draw_order = PackedStringArray("background", "background_outline", "guides", "graph", "graph_outline", "titles")
 items/key_0/value = 0.0
 items/key_0/title = "Punch: 0"
-items/key_0/tooltip = "+5% Damage per point"
+items/key_0/tooltip = "+5% Damage per point
+Damage increases the output of your Gags."
 items/key_1/value = 0.0
 items/key_1/title = "Humor: 0
 "
-items/key_1/tooltip = "+5 Max Laff, +1 Humor Healing per point"
+items/key_1/tooltip = "+5 Max Laff, +1 Humor Healing per point
+Humor Healing is given when a Cog is defeated.
+It can also be triggered through item and character effects."
 items/key_2/value = 0.0
 items/key_2/title = "Gusto: 0"
-items/key_2/tooltip = "+2 Speed, +15% Gag Regen per point"
+items/key_2/tooltip = "+1 Speed, +5% Gag Regen per point
+For each Speed point you have over a Cog, there is a +8% chance to Delay them and skip their turn.
+Delayed Cogs receive a stacking Delay Resist effect for the remainder of combat.
+Gag Regen determines the chance of receiving a point in each Gag track every Restock tick.
+A Restock tick occurs on round start and when passing a move."
 items/key_3/value = 0.0
 items/key_3/title = "Shrug: 0"
-items/key_3/tooltip = "+3% Luck, +3% Dodge per point"
+items/key_3/tooltip = "+3% Luck, +3% Evasiveness per point
+Your gags have a % chance to Crit equal to your Luck, dealing 100% more damage.
+Restock ticks can also crit per track, doubling that track's point gain.
+Luck also affects some chance-based item effects."
 
 [node name="UpgradeButtonPunch" parent="Pages/MainPage/Attributes/AttributeRadarGraph" unique_id=1756232947 instance=ExtResource("2_fdjxk")]
 layout_mode = 0

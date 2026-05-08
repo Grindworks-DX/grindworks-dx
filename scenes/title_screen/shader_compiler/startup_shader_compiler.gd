@@ -1,6 +1,6 @@
 extends Control
 
-const STAY_TIME := 0.25
+const STAY_TIME := 5.0
 
 ## These scenes will be forced to load on startup
 @export_custom(GameLoader.FILE_ARRAY, GameLoader.SCENE_ARRAY) var files_to_load: Array[String] = []

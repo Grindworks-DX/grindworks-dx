@@ -36,11 +36,11 @@ world_scale = 0.17
 world_y_offset = -0.25
 item_name = "Plush Bear Pack"
 item_description = "Hold it tight!"
-big_description = "+ 5% Luck
-Using no moves during a turn will grant a 30% Damage boost for 2 rounds"
+big_description = "+10% Defense
+Each combat, the first time you take no moves during a round, gain 65% Defense for that round"
 model = ExtResource("2_au5im")
 stats_add = {
-"luck": 0.05
+"defense": 0.1
 }
 item_script = ExtResource("4_c0jjl")
 icon = ExtResource("3_dnwfj")
