@@ -19,7 +19,7 @@ emission_energy_multiplier = 0.0
 gradient = ExtResource("5_7b15l")
 fill_to = Vector2(0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7b15l"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cygcb"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("5_cygcb")
@@ -154,49 +154,47 @@ backface_collision = true
 material = ExtResource("5_fu464")
 size = Vector2(0.895, 0.62)
 
-[node name="treasure_chest" type="Node3D"]
+[node name="treasure_chest" type="Node3D" unique_id=2079435126]
 script = ExtResource("1_gn78k")
 
-[node name="Chest" parent="." instance=ExtResource("3_7b15l")]
+[node name="Chest" parent="." unique_id=83118503 instance=ExtResource("3_7b15l")]
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="Chest" parent="Chest" index="0"]
+[node name="Chest" parent="Chest" index="0" unique_id=59254734]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_cygcb")
 
-[node name="Lid" parent="Chest" index="1"]
+[node name="Lid" parent="Chest" index="1" unique_id=1002771634]
 transform = Transform3D(100, 0, 0.000361999, -0.000361999, 1.3104329e-09, 100, 0, -100, 1.3104329e-09, -0.214957, 0.322778, 6.63598e-09)
 surface_material_override/0 = SubResource("StandardMaterial3D_cygcb")
 
-[node name="Lightray" parent="Chest" index="2"]
+[node name="Lightray" parent="Chest" index="2" unique_id=1704958615]
 visible = false
-surface_material_override/0 = SubResource("ShaderMaterial_7b15l")
+surface_material_override/0 = SubResource("ShaderMaterial_cygcb")
 
-[node name="Item" type="Node3D" parent="."]
+[node name="Item" type="Node3D" parent="." unique_id=1184563642]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.789423, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_thjf0")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1789794382]
+libraries/ = SubResource("AnimationLibrary_thjf0")
 
-[node name="OpenArea" type="Area3D" parent="."]
+[node name="OpenArea" type="Area3D" parent="." unique_id=1084929747]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.527992, 0)
 visible = false
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="OpenArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OpenArea" unique_id=1390432986]
 shape = SubResource("BoxShape3D_7nayw")
 
-[node name="ChestCollision" type="StaticBody3D" parent="."]
+[node name="ChestCollision" type="StaticBody3D" parent="." unique_id=922414701]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChestCollision"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChestCollision" unique_id=1887979198]
 transform = Transform3D(-4.37114e-06, 100, 4.37114e-06, 0, -4.37114e-06, 100, 100, 4.37114e-06, 1.91069e-13, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_cygcb")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1275040660]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00616327, 0)
 mesh = SubResource("PlaneMesh_cygcb")
 

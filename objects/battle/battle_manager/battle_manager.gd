@@ -279,7 +279,7 @@ func spawn_reward() -> void:
 			for i in range(chests_to_spawn):
 				var chest: TreasureChest = load('res://objects/interactables/treasure_chest/treasure_chest.tscn').instantiate()
 				if bounty:
-					chest.item_pool = ItemService.PROGRESSIVE_POOL
+					chest.item_pool = ItemService.SPECIAL_POOL
 				else:
 					chest.item_pool = battle_node.item_pool
 				chest.override_replacement_rolls = RNG.channel(RNG.ChannelBattleChestOverrides).randf() < 0.33

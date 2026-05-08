@@ -296,19 +296,21 @@ func get_gag_rate() -> float:
 	
 	return chance
 
-const STARTING_LAFF := 30
+const STARTING_LAFF := 15
 const FLOOR_LAFF_INCREMENT := 12
 const LIKELIHOOD_PER_POINT := 0.1
 func get_laff_rate() -> float:
 	if not is_instance_valid(Util.get_player()):
 		return 0.0
 	
-	if Util.get_player().revives_are_hp:
+	var player = Util.get_player()
+	if player.revives_are_hp:
 		return get_revive_rate()
 	
 	# Get the current laff total
 	# Take player's max hp + all the other laff boost items in play
-	var laff_total := Util.get_player().stats.max_hp
+	# Breaking Grounds - exclude humor laff!
+	var laff_total: int = player.stats.max_hp - (player.stats.humor * player.stats.attribute_modifiers['humor'].get('max_hp'))
 	for laff_boost : Item in get_items_in_play("Laff Boost"):
 		if laff_boost.stats_add.has('max_hp'):
 			laff_total += laff_boost.stats_add['max_hp']
@@ -449,6 +451,8 @@ var REWARD_POOL: ItemPool:
 	get: return pool_from_path("res://objects/items/pools/rewards.tres")
 var PROGRESSIVE_POOL: ItemPool:
 	get: return pool_from_path("res://objects/items/pools/progressives.tres")
+var SPECIAL_POOL: ItemPool:
+	get: return pool_from_path("res://objects/items/pools/special_items.tres")
 
 
 #endregion

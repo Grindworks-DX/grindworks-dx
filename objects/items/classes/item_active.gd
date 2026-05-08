@@ -19,6 +19,9 @@ enum ActiveType {
 ## Will not be used if the color is set to black
 @export var custom_charge_color := Color.BLACK
 
+# Breaking Grounds - fleeting items do not gain charge after encounters
+@export var fleeting := false
+
 @export_range(0, 12) var charge_count := 0
 @export_range(0, 12) var current_charge := 0:
 	set(x):
@@ -26,6 +29,7 @@ enum ActiveType {
 		s_current_charge_changed.emit(x)
 @export var needs_full_charge := true
 @export var one_time_use := false
+@export var remove_when_depleted := false
 
 ## Not sure how to best implement this yet
 #@export var one_time_use := false

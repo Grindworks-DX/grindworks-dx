@@ -13,6 +13,8 @@ enum UseFailType {
 var item: ItemActive
 var is_removing := false
 
+var charge_to_use: int
+
 signal s_used
 signal s_use_failed
 signal s_no_charge_use_failed
@@ -53,12 +55,15 @@ func attempt_use() -> void:
 	var fail_type := is_usable()
 	match fail_type:
 		UseFailType.SUCCESS:
-			item.current_charge = 0
 			use()
 			s_used.emit()
 			Globals.s_pocket_prank_used.emit(item)
+			
+			if charge_to_use is not int: charge_to_use = item.current_charge
+			item.current_charge -= charge_to_use
+			
 			SaveFileService.progress_file.pocket_pranks_used += 1
-			if item.one_time_use:
+			if item.one_time_use or (item.remove_when_depleted and !item.charge_count > 0):
 				attempt_disconnect()
 			return
 		UseFailType.CHARGE_COUNT:
@@ -105,7 +110,8 @@ func attempt_disconnect() -> void:
 	if not Item.ItemTag.DELAYED_FREE in item.tags:
 		queue_free()
 
-func charge_item(count := 1) -> void:
+func charge_item(count := 1, ignore_fleeting := true) -> void:
+	if !ignore_fleeting and item.fleeting: return
 	item.current_charge += count
 
 func check_item(new_item: ItemActive) -> void:
@@ -128,8 +134,8 @@ func check_player_state() -> bool:
 
 func _on_battle_started(battle: BattleManager) -> void:
 	if battle.battle_node.boss_battle:
-		battle.s_battle_ended.connect(charge_item.bind(2))
+		battle.s_battle_ended.connect(charge_item.bind(2, false))
 	elif battle.battle_node.is_punishment_battle:
 		return
 	else:
-		battle.s_battle_ended.connect(charge_item)
+		battle.s_battle_ended.connect(charge_item.bind(false))

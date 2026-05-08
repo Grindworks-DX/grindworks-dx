@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ItemActive" format=3 uid="uid://db5bnbd7amet1"]
+
+[ext_resource type="PackedScene" uid="uid://ksbi6gl0rhet" path="res://models/pbg_new/chocolate_cake.glb" id="2_b0332"]
+[ext_resource type="Script" uid="uid://cy4l60kdxdkae" path="res://objects/items/custom/sandwich/item_sandwich.gd" id="2_kuqst"]
+[ext_resource type="Script" uid="uid://5uwfsntxdag6" path="res://objects/items/classes/item_active.gd" id="4_ax50x"]
+
+[resource]
+script = ExtResource("4_ax50x")
+active_type = 3
+fleeting = true
+charge_count = 8
+current_charge = 8
+needs_full_charge = false
+qualitoon = 1
+world_scale = 0.3
+item_name = "Chocolate Cake"
+item_description = "Slice of life!"
+big_description = "On use, consume 1 charge to heal 20% of current laff
+Does not gain charges after encounters"
+model = ExtResource("2_b0332")
+item_script = ExtResource("2_kuqst")
+shop_category_title = "Pocket Prank"
+shop_category_color = Color(0.929412, 0.262745, 0.278431, 1)
+metadata/_custom_type_script = "uid://5uwfsntxdag6"

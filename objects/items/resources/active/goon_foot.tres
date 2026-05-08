@@ -8,15 +8,15 @@
 
 [resource]
 script = ExtResource("1_pjx1j")
-active_type = 2
-charge_count = 1
-current_charge = 1
+active_type = 3
+charge_count = 2
+current_charge = 2
 custom_discharge_time = 8.0
 qualitoon = 1
 world_scale = 0.4
 item_name = "Goon Foot"
-item_description = "Run like the wind!"
-big_description = "Double speed for 30 seconds"
+item_description = "Run with courage!"
+big_description = "On use, start your next combat round with +5 Speed for 3 rounds"
 model = ExtResource("1_3g22k")
 pickup_sfx = ExtResource("2_gqm7s")
 item_script = ExtResource("2_ub7wi")

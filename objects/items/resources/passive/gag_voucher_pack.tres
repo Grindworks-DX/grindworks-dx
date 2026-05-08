@@ -10,6 +10,7 @@ qualitoon = 2
 evergreen = true
 world_scale = 0.5
 item_name = "Gag Voucher Pack"
+item_description = "Really restock!"
 model = ExtResource("1_88hnp")
 pickup_sfx = ExtResource("2_2srfl")
 remember_item = false

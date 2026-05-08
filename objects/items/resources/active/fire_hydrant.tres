@@ -9,13 +9,16 @@
 [resource]
 script = ExtResource("1_6b7hg")
 active_type = 1
-charge_count = 3
-current_charge = 3
+charge_count = 4
+current_charge = 1
+needs_full_charge = false
 qualitoon = 2
 world_scale = 0.3
 item_name = "Fire Hydrant"
 item_description = "Water you doing?!"
-big_description = "Causes all cogs in battle to become drenched."
+big_description = "On use, instantly Drench all Cogs
+Drenched reduces Speed by 2 per charge consumed
+"
 model = ExtResource("3_mipkj")
 pickup_sfx = ExtResource("4_wqnbm")
 item_script = ExtResource("2_wqnbm")

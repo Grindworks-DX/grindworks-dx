@@ -1,7 +1,9 @@
 extends Sprite3D
 
-## Amount of Gags a voucher restores
-const VALUE := 5
+# Breaking Grounds - Now gives gag regen
+
+var value := 0.15
+static var lure_value := 0.10
 
 ## Don't mind the fact that it don't look right in the preview
 ## It looks correct in game for some reason?!?!
@@ -35,8 +37,11 @@ func setup(item: Item):
 			gag_track = player.stats.gags_unlocked.keys()[RNG.channel(RNG.ChannelGagVouchers).randi() % player.stats.gags_unlocked.keys().size()]
 		else:
 			gag_track = tracks[RNG.channel(RNG.ChannelGagVouchers).randi() % tracks.size()]
+		
+		if gag_track == "Lure": value = lure_value
+		
 		resource.arbitrary_data['gag_track'] = gag_track
-		resource.item_description = "+%d %s points!" %[VALUE, gag_track]
+		resource.item_description = "+%s %s Gag Regen!" %[Util.float_to_perc(value), gag_track]
 		resource.big_description = resource.item_description
 	else:
 		gag_track = resource.arbitrary_data['gag_track']
@@ -44,7 +49,7 @@ func setup(item: Item):
 	gag.texture = get_icon()
 
 func collect() -> void:
-	Util.get_player().stats.gag_vouchers[gag_track] += 1
+	Util.get_player().stats.gag_regen_chance_modifiers[gag_track] += value
 
 func modify(model: Sprite3D):
 	model.gag.texture = gag.texture

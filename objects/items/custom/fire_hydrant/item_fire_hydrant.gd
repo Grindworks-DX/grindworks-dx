@@ -3,10 +3,12 @@ extends ItemScriptActive
 const HYDRANT := preload("res://models/props/gags/firehose/betterhydrant.tscn")
 const DRENCHED := preload("res://objects/battle/battle_resources/status_effects/resources/status_effect_drenched.tres")
 
-var boost := -6
+var boost_per_charge := -2
+var boost := 0
 
 func use() -> void:
-	
+	boost = item.current_charge * boost_per_charge
+	charge_to_use = item.current_charge
 	BattleService.ongoing_battle.battle_ui.cog_panels.reset(0)
 	await cutscene(BattleService.ongoing_battle.cogs)
 	BattleService.ongoing_battle.populate_enemy_moves(true, true)

@@ -110,7 +110,7 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
-pivot_offset = Vector2(273, 284)
+pivot_offset = Vector2(576, 284)
 
 [node name="Title" parent="Panel" index="0" unique_id=1672225041]
 offset_top = 477.0
