@@ -212,9 +212,9 @@ func cancel_gag(index: int):
 	var gag: BattleAction = selected_gags[index]
 	if !Util.get_player().can_cancel_gags or gag.ActionTag.NO_CANCEL in gag.action_tags: return
 	selected_gags.remove_at(index)
+	s_gag_canceled.emit(gag)
 	s_gags_updated.emit(selected_gags)
 	turn -= 1
-	s_gag_canceled.emit(gag)
 	if Util.get_player().gags_cost_beans:
 		refresh_tracks()
 	AudioManager.play_sound(load("res://audio/sfx/ui/GUI_balloon_popup.ogg"))

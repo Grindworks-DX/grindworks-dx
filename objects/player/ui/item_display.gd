@@ -22,19 +22,18 @@ func _ready() -> void:
 	if not Util.get_player(): await Util.s_player_assigned
 	reload_items()
 	
+const ITEM_ICON := preload("res://objects/player/ui/item_icon.tscn")
 
 func add_new_item(item: Item) -> void:
 	if not item.icon:
 		return
 
-	var new_tex := TextureRect.new()
-	new_tex.custom_minimum_size = Vector2(48, 48)
-	new_tex.pivot_offset = Vector2(24, 24)
-	new_tex.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	new_tex.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
-	new_tex.texture = item.icon
-	if item.icon_material:
-		new_tex.material = item.icon_material
+	var new_tex := ITEM_ICON.instantiate()
+	#new_tex.custom_minimum_size = Vector2(48, 48)
+	#new_tex.pivot_offset = Vector2(24, 24)
+	#new_tex.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	#new_tex.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+	new_tex.item = item
 	new_tex.mouse_entered.connect(hover_item.bind(item, new_tex))
 	new_tex.mouse_exited.connect(stop_hover.bind(new_tex))
 	item_container.add_child(new_tex)

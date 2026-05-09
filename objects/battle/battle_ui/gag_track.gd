@@ -58,6 +58,7 @@ func _ready():
 
 func emit_gag(gag: ToonAttack, price: int):
 	var newgag := gag.duplicate(true)
+	newgag.track = gag.track
 	if not Util.get_player().gags_cost_beans:
 		Util.get_player().stats.gag_balance[track.track_name] -= price
 	else:
@@ -87,6 +88,7 @@ func refresh():
 	for i in gag_buttons.size():
 		if gags.size() >= i + 1 and i < unlocked:
 			var gag := gags[i]
+			gag.track = track
 			var button: GagButton = gag_buttons[i]
 			button.image = gag.icon
 			button.show()

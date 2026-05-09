@@ -300,3 +300,5 @@ enum ItemTag {
 	NO_PICKUP_SFX,  # Does not play any pickup sfx on pickup
 	DELAYED_FREE, # Used for one-time-use active items that need to be allowed to free themselves
 }
+
+signal s_item_icon_connected(item_icon: ItemIcon)

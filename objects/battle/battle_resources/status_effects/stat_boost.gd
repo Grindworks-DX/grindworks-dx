@@ -33,7 +33,13 @@ func expire():
 		else: battle_stats.set(stat, battle_stats.get(stat) - boost)
 
 func get_description() -> String:
-	var __out = "%s%s%s %s" % ["+" if boost > 0.0 else "-", roundi(abs(boost) * (100 if boost is float else 1)), "%" if boost is float else "", stat.capitalize()]
+	var __out: String
+	if multiplicative:
+		__out = "x %s " % str(boost + 1.0)
+	else:
+		__out = "%s" % "+" if boost > 0.0 else "-"
+		__out += "%s%s " % [roundi(abs(boost) * (100 if boost is float else 1)), "%" if boost is float else ""]
+	__out += stat.capitalize()
 	return __out
 
 func get_icon() -> Texture2D:

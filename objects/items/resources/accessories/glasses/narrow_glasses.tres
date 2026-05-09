@@ -264,10 +264,13 @@ slot = 2
 world_scale = 0.15
 ui_cam_offset = 0.25
 item_name = "Danger Shades"
-item_description = "Power rush!"
-big_description = "Damage boost between -10% and +40%
-The lower your laff, the higher the damage boost"
+item_description = "Become a showstopper!"
+big_description = "-1 Moves
+Your Level 7 gags deal double damage"
 model = ExtResource("5_fegkw")
+stats_add = {
+"turns": -1
+}
 item_script = ExtResource("4_fegkw")
 icon = ExtResource("3_fegkw")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

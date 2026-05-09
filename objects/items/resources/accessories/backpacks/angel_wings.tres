@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://duxq3xtgnln43" path="res://objects/items/classes/body_placement.gd" id="2_yauy7"]
 [ext_resource type="Texture2D" uid="uid://p74i8fx4wflf" path="res://models/accessories/backpacks/angel_wings/angel_wings-pix-1.png" id="3_17rcm"]
 [ext_resource type="PackedScene" uid="uid://b0ax1vrm0l4q3" path="res://models/accessories/backpacks/angel_wings/angel_wings.tscn" id="4_to132"]
+[ext_resource type="Script" uid="uid://dk2h8b44f1btb" path="res://objects/items/custom/item_angel_wings.gd" id="4_yauy7"]
 [ext_resource type="AudioStream" uid="uid://bjioeo4lep22p" path="res://audio/sfx/items/Holy_Mackerel.ogg" id="5_to132"]
 [ext_resource type="Script" uid="uid://dvu24b3o8i3sj" path="res://objects/items/classes/item_accessory.gd" id="6_n260u"]
 
@@ -36,23 +37,10 @@ slot = 3
 world_scale = 0.15
 ui_cam_offset = 0.4
 item_name = "Angel Wings"
-item_description = "Your power soars"
-big_description = "+ 7% Damage
-+ 7% Defense
-+ 7% Evasiveness
-+ 7% Luck
-+ 7% Speed
-+ 7 max Laff"
+item_description = "Divine nines!"
+big_description = "At the end of gag selection, gain +30% Damage that round for each gag track holding exactly 9 points"
 model = ExtResource("4_to132")
 pickup_sfx = ExtResource("5_to132")
-stats_add = {
-"damage": 0.07,
-"defense": 0.07,
-"evasiveness": 0.07,
-"hp": 7,
-"luck": 0.07,
-"max_hp": 7,
-"speed": 0.07
-}
+item_script = ExtResource("4_yauy7")
 icon = ExtResource("3_17rcm")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

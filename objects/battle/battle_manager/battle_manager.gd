@@ -427,7 +427,9 @@ func affect_target(target: Node3D, amount: float, ignore_current_action := false
 		if target == player and player.revives_are_hp and current_action.has_tag(BattleAction.ActionTag.DOUBLE_REVIVE_DAMAGE):
 			target.stats.set(stat, target.stats.get_stat(stat) - 1)
 
-	return roundi(amount)
+	if target == Util.get_player() and sign(amount) == 1: return floori(amount)
+	
+	return ceili(amount)
 
 func battle_text(target, string, text_color: Color = Color('ff0000'), outline_color: Color = Color('7a0000'), raise_height := 0.0):
 	if !is_instance_valid(target): return
@@ -928,7 +930,7 @@ func check_for_delay(cog: Cog) -> bool:
 	var cog_speed = battle_stats[cog].speed
 	var cog_delay_resist = battle_stats[cog].delay_resist
 	var roll := randf()
-	var chance: float = min(1.0, ((player_speed - cog_speed) * 0.8)) - cog_delay_resist
+	var chance: float = min(1.0, ((player_speed - cog_speed) * 0.08)) - cog_delay_resist
 	__out = roll < chance
 	if __out:
 		var new_status = load("res://objects/battle/battle_resources/status_effects/resources/status_effect_delay_resist.tres").duplicate(true)

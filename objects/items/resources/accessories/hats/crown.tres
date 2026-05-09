@@ -273,12 +273,8 @@ slot = 1
 world_scale = 0.2
 item_name = "Crown"
 item_description = "You're in charge!"
-big_description = "+ 3% Luck
-Gags will run in the order you choose them."
+big_description = "Gags will run in the order you choose them."
 model = ExtResource("2_6qtlc")
-stats_add = {
-"luck": 0.03
-}
 player_values = {
 "custom_gag_order": true
 }

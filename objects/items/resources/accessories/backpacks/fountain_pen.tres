@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="ItemAccessory" format=3 uid="uid://c34lgsjsp48jl"]
+
+[ext_resource type="Script" uid="uid://fb0tqfojo57q" path="res://objects/items/classes/accessory_placement.gd" id="1_2w7gh"]
+[ext_resource type="Script" uid="uid://duxq3xtgnln43" path="res://objects/items/classes/body_placement.gd" id="2_pgork"]
+[ext_resource type="Texture2D" uid="uid://8vj8pdavmefi" path="res://models/accessories/hats/fedora/fedora.glb-pix-1.png" id="3_2w7gh"]
+[ext_resource type="Script" uid="uid://bdibmm4cvmmek" path="res://objects/items/custom/item_fountain_pen.gd" id="4_pgork"]
+[ext_resource type="PackedScene" uid="uid://bpdnsjjqmu2y2" path="res://models/pbg_new/fountain_pen.glb" id="5_sy5uo"]
+[ext_resource type="Script" uid="uid://dvu24b3o8i3sj" path="res://objects/items/classes/item_accessory.gd" id="6_iuag2"]
+
+[sub_resource type="Resource" id="Resource_c0jjl"]
+script = ExtResource("2_pgork")
+position = Vector3(0, -0.35, 1.49)
+rotation = Vector3(8.77, 180, 0)
+scale = Vector3(0.4, 0.4, 0.4)
+
+[sub_resource type="Resource" id="Resource_lfmi6"]
+script = ExtResource("2_pgork")
+body_type = 1
+position = Vector3(0, -0.35, 1.23)
+rotation = Vector3(8.77, 180, 0)
+scale = Vector3(0.4, 0.4, 0.4)
+
+[sub_resource type="Resource" id="Resource_ct0kg"]
+script = ExtResource("2_pgork")
+body_type = 2
+position = Vector3(0, -0.07, 0.87)
+rotation = Vector3(-7.6, 180, 0)
+scale = Vector3(0.4, 0.4, 0.4)
+
+[resource]
+script = ExtResource("6_iuag2")
+accessory_placements = Array[ExtResource("1_2w7gh")]([SubResource("Resource_c0jjl"), SubResource("Resource_lfmi6"), SubResource("Resource_ct0kg")])
+qualitoon = 1
+slot = 3
+world_scale = 0.17
+world_y_offset = -0.25
+item_name = "Fountain Pen"
+item_description = "Put it in ink!"
+big_description = "Every 10th gag you pick deals +50% damage"
+model = ExtResource("5_sy5uo")
+item_script = ExtResource("4_pgork")
+icon = ExtResource("3_2w7gh")
+shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)
+metadata/_custom_type_script = "uid://dvu24b3o8i3sj"

@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://chij2fj5ysfqa"]
+
+[ext_resource type="Texture2D" uid="uid://8vj8pdavmefi" path="res://models/accessories/hats/fedora/fedora.glb-pix-1.png" id="1_4plhh"]
+[ext_resource type="Script" uid="uid://buheydxupb54f" path="res://objects/player/ui/item_icon.gd" id="1_abv4j"]
+[ext_resource type="FontFile" uid="uid://cup2yr5w7or1l" path="res://fonts/Minnie.TTF" id="3_6pq5l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hd32d"]
+resource_local_to_scene = true
+line_spacing = 0.0
+font = ExtResource("3_6pq5l")
+font_size = 18
+font_color = Color(1, 0.95332307, 0.94528455, 1)
+outline_size = 4
+outline_color = Color(0.11300447, 0.16029215, 0.19068274, 1)
+shadow_size = 2
+shadow_color = Color(0.20074558, 0.21696883, 0.3236, 1)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(2, 2)
+stacked_shadow_0/color = Color(0, 0, 0, 0.37254903)
+stacked_shadow_0/outline_size = 2
+
+[node name="ItemIcon" type="TextureRect" unique_id=1925690311]
+texture_filter = 4
+custom_minimum_size = Vector2(48, 48)
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("1_4plhh")
+expand_mode = 1
+script = ExtResource("1_abv4j")
+metadata/_custom_type_script = "uid://buheydxupb54f"
+
+[node name="CounterLabel" type="Label" parent="." unique_id=543130687]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 24.0
+offset_bottom = 7.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "0"
+label_settings = SubResource("LabelSettings_hd32d")
+vertical_alignment = 1

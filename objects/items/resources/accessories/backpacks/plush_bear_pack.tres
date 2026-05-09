@@ -37,7 +37,7 @@ world_y_offset = -0.25
 item_name = "Plush Bear Pack"
 item_description = "Hold it tight!"
 big_description = "+10% Defense
-Each combat, the first time you take no moves during a round, gain 65% Defense for that round"
+Each combat, the first time you pass all your moves during a round, take half damage from incoming attacks"
 model = ExtResource("2_au5im")
 stats_add = {
 "defense": 0.1

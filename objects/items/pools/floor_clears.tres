@@ -4,5 +4,4 @@
 
 [resource]
 script = ExtResource("2_pc1nw")
-items = PackedStringArray("res://objects/items/resources/accessories/glasses/square_frames.tres", "res://objects/items/resources/accessories/glasses/goggles.tres", "res://objects/items/resources/accessories/hats/princess_hat.tres", "res://objects/items/resources/accessories/hats/crown.tres", "res://objects/items/resources/accessories/backpacks/angel_wings.tres", "res://objects/items/resources/accessories/backpacks/dragonfly_wings.tres", "res://objects/items/resources/accessories/backpacks/wood_sword.tres", "res://objects/items/resources/accessories/backpacks/cog_pack.tres")
-low_roll_override = 2
+items = PackedStringArray("res://objects/items/resources/accessories/glasses/square_frames.tres", "res://objects/items/resources/accessories/glasses/goggles.tres", "res://objects/items/resources/accessories/hats/princess_hat.tres", "res://objects/items/resources/accessories/hats/crown.tres", "res://objects/items/resources/accessories/backpacks/angel_wings.tres", "res://objects/items/resources/accessories/backpacks/dragonfly_wings.tres", "res://objects/items/resources/accessories/backpacks/wood_sword.tres", "res://objects/items/resources/accessories/backpacks/cog_pack.tres", "res://objects/items/resources/accessories/glasses/cateye_glasses.tres", "res://objects/items/resources/accessories/glasses/narrow_glasses.tres")

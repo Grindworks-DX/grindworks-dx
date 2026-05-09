@@ -37,15 +37,11 @@ world_scale = 0.15
 ui_cam_offset = 0.45
 item_name = "Bat Wings"
 item_description = "Who's the Bloodsucker now?!"
-big_description = "+20% Damage
-TRIPLE your Humor Healing
+big_description = "TRIPLE your Humor Healing
 Take 2 damage (non-lethal) every time you deal damage"
 model = ExtResource("2_lkame")
-stats_add = {
-"damage": 0.2
-}
 stats_multiply = {
-"humor_healing": 3
+"humor_healing_multiplier": 3.0
 }
 item_script = ExtResource("4_a83ep")
 icon = ExtResource("3_jpgnc")

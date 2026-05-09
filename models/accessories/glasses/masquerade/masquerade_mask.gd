@@ -17,5 +17,5 @@ func roll_for_stats(item: Item) -> void:
 	var stats_order := ROLL_STATS.duplicate(true)
 	RNG.channel(RNG.ChannelMasqueradeStats).shuffle(stats_order)
 	for i in 3:
-		item.stats_add.set(stats_order[i], -2)
+		item.stats_add.set(stats_order[i], -1)
 	item.stats_multiply.set(stats_order[3], 2)

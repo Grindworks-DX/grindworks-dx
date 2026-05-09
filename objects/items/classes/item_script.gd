@@ -6,11 +6,11 @@ class_name ItemScript
 
 ## Called when an item is first collected by the player
 func on_collect(_item: Item, _object: Node3D) -> void:
-	pass
+	_item.s_item_icon_connected.connect(on_item_icon_assigned)
 
 ## Called when an item is re-instanced on game-load
 func on_load(_item: Item) -> void:
-	pass
+	_item.s_item_icon_connected.connect(on_item_icon_assigned)
 
 ## Called if the item is removed from the Player
 func on_item_removed() -> void:
@@ -22,3 +22,6 @@ static func add_item_script(player: Player, item_script: Script) -> Node:
 	new_node.set_script(item_script)
 	player.get_node('Items').add_child(new_node)
 	return new_node
+
+func on_item_icon_assigned(item_icon: ItemIcon) -> void:
+	pass

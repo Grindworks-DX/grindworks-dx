@@ -46,10 +46,10 @@ func action():
 				await manager.sleep(1.245)
 				set_camera_angle("SIDE_RIGHT")
 				await manager.sleep(1.3),
-			func():
-				await manager.sleep(1.545)
-				manager.battle_node.focus_cogs()
-				await manager.sleep(1.0)
+			#func():
+				#await manager.sleep(1.545)
+				#manager.battle_node.focus_cogs()
+				#await manager.sleep(1.0)
 		].pick_random().call()
 	else:
 		await manager.sleep(1.545)

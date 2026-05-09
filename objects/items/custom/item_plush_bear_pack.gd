@@ -3,7 +3,7 @@ extends ItemScript
 # TODO: defense rework
 
 const STAT_BOOST := "res://objects/battle/battle_resources/status_effects/resources/status_effect_stat_boost.tres"
-const BOOST_AMT := 0.65
+const BOOST_AMT := 1.0
 
 var is_active := true
 

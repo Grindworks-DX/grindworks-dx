@@ -252,11 +252,13 @@ slot = 2
 world_scale = 0.5
 ui_cam_offset = 0.2
 item_name = "Dorky Glasses"
-item_description = "Precise powerful pinpoint punches!"
-big_description = "Adds +100% to critical hit damage multiplier."
+item_description = "Erm, actually..."
+big_description = "+1 Move
+-50% Crit Multiplier"
 model = ExtResource("2_yh3d7")
 stats_add = {
-"crit_mult": 1.0
+"crit_mult": -0.5,
+"moves": 1
 }
 icon = ExtResource("3_a62yo")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

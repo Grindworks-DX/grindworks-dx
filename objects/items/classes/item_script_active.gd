@@ -13,7 +13,7 @@ enum UseFailType {
 var item: ItemActive
 var is_removing := false
 
-var charge_to_use: int
+var charge_to_use := -1
 
 signal s_used
 signal s_use_failed
@@ -59,7 +59,7 @@ func attempt_use() -> void:
 			s_used.emit()
 			Globals.s_pocket_prank_used.emit(item)
 			
-			if charge_to_use is not int: charge_to_use = item.current_charge
+			if !charge_to_use > -1: charge_to_use = item.current_charge
 			item.current_charge -= charge_to_use
 			
 			SaveFileService.progress_file.pocket_pranks_used += 1

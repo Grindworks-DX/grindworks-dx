@@ -4,7 +4,7 @@ const PLAYER_SCENE := preload('res://objects/player/player.tscn')
 var player: Player
 
 @export var invulnerable := false
-@export var infinite_gag_points := true
+@export var infinite_gag_points := false
 @export var state: Player.PlayerState = Player.PlayerState.WALK
 
 func _init():
@@ -19,10 +19,12 @@ func _ready():
 		player.state = state
 		player.stats.set_loadout(player.character.gag_loadout)
 		player.stats.initialize()
+		for track in player.stats.gags_unlocked:
+			player.stats.gags_unlocked[track] = 7
 		if infinite_gag_points:
 			player.stats.gag_cap = 100
 			player.stats.debug_gag_points = true
 			for track in player.stats.gags_unlocked:
-				player.stats.gags_unlocked[track] = 7
+				
 				player.stats.gag_balance[track] = 100
 	queue_free()

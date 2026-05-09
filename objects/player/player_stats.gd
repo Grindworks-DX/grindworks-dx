@@ -393,13 +393,15 @@ signal s_shrug_changed(new_value: int)
 
 # New mechanic stats
 @export var parry := 0.0 # TODO
-@export var humor_healing := 0
-@export var gag_regen_chance := 0.0 
+@export var humor_healing := 0.0
+@export var gag_regen_chance := 0.0
+
+@export var humor_healing_multiplier := 1.0 
 
 var attribute_modifiers := {
 	'punch': { 'damage': 0.05, 'parry': 0.04 },
-	'humor': { 'max_hp': 5, 'humor_healing': 1 },
-	'gusto': { 'speed': 1, 'gag_regen_chance': 0.08 },
+	'humor': { 'max_hp': 5, 'humor_healing': 0.5 },
+	'gusto': { 'speed': 1, 'gag_regen_chance': 0.05 },
 	'shrug': { 'luck': 0.03, 'evasiveness': 0.03 },
 }
 
@@ -417,7 +419,7 @@ func attribute_changed(attr: String, old_value, new_value) -> void:
 			if hp > max_hp:
 				hp = max_hp
 		else:
-			set(key, get(key) + value)
+			set(key, ceili(get(key) + value))
 
 @export var jokes := 0
 @export var total_jokes := 0
@@ -449,7 +451,7 @@ func do_humor_healing(_effectiveness := 1.0) -> void:
 	allow_overheal = true
 	BattleService.ongoing_battle.s_round_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
 	BattleService.ongoing_battle.s_battle_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
-	Util.get_player().quick_heal(maxi(1, ceili(humor_healing * effectiveness)))
+	Util.get_player().quick_heal(maxi(1, ceili(humor_healing * effectiveness * humor_healing_multiplier)))
 	s_humor_healing_triggered.emit()
 	if humor_healing * effectiveness > 0:
 		Task.delay(0.2).connect(AudioManager.play_sound.bind(load("res://audio/sfx/items/laff_boost_pickup.ogg"), -5.0))
