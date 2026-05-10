@@ -17,4 +17,4 @@ func setup() -> void:
 func on_humor_healing() -> void:
 	if randf() < (base_chance + BattleService.ongoing_battle.battle_stats[Util.get_player()].luck):
 		Util.get_player().boost_queue.queue_text("Splatter restock!", Color(0.593, 0.143, 0.562, 1.0))
-		Util.gett_player().stats.restock_tick()
+		Util.get_player().stats.restock_tick()
