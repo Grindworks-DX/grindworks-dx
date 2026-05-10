@@ -20,7 +20,6 @@
 [ext_resource type="Script" uid="uid://ts8xpgftpmty" path="res://objects/player/character.gd" id="10_7fcej"]
 [ext_resource type="Resource" uid="uid://cyiwxplege133" path="res://objects/items/resources/passive/emergency_unite.tres" id="12_sveqr"]
 [ext_resource type="PackedScene" uid="uid://d1vtqaf4hmrdj" path="res://objects/player/player_camera.tscn" id="16_tmow5"]
-[ext_resource type="PackedScene" uid="uid://b8xccla84x6gh" path="res://objects/quests/quest_notification/quest_notification.tscn" id="19_2bvb5"]
 [ext_resource type="FontFile" uid="uid://cup2yr5w7or1l" path="res://fonts/Minnie.TTF" id="20_fnojw"]
 [ext_resource type="Script" uid="uid://dmbp7gb7omh12" path="res://objects/player/floor_label.gd" id="21_dh5ch"]
 [ext_resource type="PackedScene" uid="uid://5hvtmu8sf5ub" path="res://objects/player/ui/timer/game_timer.tscn" id="22_0c65h"]
@@ -227,10 +226,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="QuestNotification" parent="GUI" unique_id=1109842636 instance=ExtResource("19_2bvb5")]
-unique_name_in_owner = true
-layout_mode = 1
-
 [node name="LaffMeter" parent="GUI" unique_id=1014651457 instance=ExtResource("6_553ug")]
 unique_name_in_owner = true
 layout_mode = 1
@@ -250,16 +245,14 @@ scale = Vector2(1.2, 1.2)
 [node name="BeanJar" parent="GUI" unique_id=1296201761 instance=ExtResource("9_2bgkf")]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 2
-anchor_left = 0.0
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = -228.0
-offset_right = 115.0
-offset_bottom = -103.0
-grow_horizontal = 1
+offset_left = -100.0
+offset_top = -125.0
+grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.85, 0.85)
 pivot_offset = Vector2(50, 62.5)
@@ -267,17 +260,14 @@ pivot_offset = Vector2(50, 62.5)
 [node name="FloorLabel" type="Label" parent="GUI" unique_id=885106932]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -113.0
-offset_top = -30.0
-offset_right = -5.0
-offset_bottom = -5.0
+offset_left = -121.0
+offset_top = 14.0
+offset_right = -13.0
+offset_bottom = 39.0
 grow_horizontal = 0
-grow_vertical = 0
 text = "Floor 0"
 label_settings = SubResource("LabelSettings_530nt")
 horizontal_alignment = 2
@@ -313,10 +303,10 @@ anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 0.0
 anchor_bottom = 1.0
-offset_left = 122.0
-offset_top = -125.0
-offset_right = 224.0
-offset_bottom = -35.0
+offset_left = 14.0
+offset_top = -215.0
+offset_right = 116.0
+offset_bottom = -125.0
 grow_horizontal = 1
 grow_vertical = 0
 
@@ -324,11 +314,17 @@ grow_vertical = 0
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 0)
 layout_mode = 1
-offset_left = 36.0
-offset_top = -592.0
-offset_right = -976.0
-offset_bottom = -127.0
-scale = Vector2(0.8, 0.8)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -22.999878
+offset_top = -282.99997
+offset_right = 85.40723
+offset_bottom = 101.00003
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(-1.3356122, 1.2581543)
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 0
 vertical = true
@@ -338,17 +334,14 @@ unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(230, 200)
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -1020.0
-offset_top = 3.0
-offset_right = -790.0
-offset_bottom = 207.0
-grow_horizontal = 0
-grow_vertical = 2
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 145.0
+offset_top = -209.0
+offset_right = 375.0
+offset_bottom = -5.0
+grow_vertical = 0
 pivot_offset = Vector2(115, 105)
 mouse_filter = 2
 script = ExtResource("28_adk3m")

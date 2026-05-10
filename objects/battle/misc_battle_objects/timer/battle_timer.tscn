@@ -10,22 +10,21 @@ font = ExtResource("3_p72mw")
 font_size = 48
 font_color = Color(0, 0, 0, 1)
 
-[node name="BattleTimer" type="TextureRect"]
-anchors_preset = 3
+[node name="BattleTimer" type="TextureRect" unique_id=337260044]
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -123.0
-offset_top = -121.0
+offset_left = -124.0
+offset_top = 39.0
+offset_right = -1.0
+offset_bottom = 160.0
 grow_horizontal = 0
-grow_vertical = 0
 pivot_offset = Vector2(61.5, 60.5)
 texture = ExtResource("1_ywg0q")
 expand_mode = 1
 script = ExtResource("2_ob8ly")
 
-[node name="TimeLabel" type="Label" parent="."]
+[node name="TimeLabel" type="Label" parent="." unique_id=1183473080]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
