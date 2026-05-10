@@ -97,7 +97,7 @@ func try_add_cogs(_actions: Array[BattleAction]) -> void:
 	var cooldown := 4
 	var amount := 4
 	if !(boss_one_alive and boss_two_alive):
-		amount += 2
+		amount -= 2
 	
 	if BattleService.ongoing_battle.current_round % cooldown == 1 and (boss_one_alive or boss_two_alive):
 		var new_reinforcements := ElevatorReinforcements.new(amount)

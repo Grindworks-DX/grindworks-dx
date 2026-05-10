@@ -37,6 +37,7 @@ func play_intro(player : Player) -> void:
 	player.camera.make_current()
 	player.state = Player.PlayerState.WALK
 	player.game_timer_tick = true
+	player.item_display.reload_items()
 
 
 ## Attempt to clean out any remaining, unretrievable items

@@ -349,6 +349,7 @@ offset_bottom = 207.0
 grow_horizontal = 0
 grow_vertical = 2
 pivot_offset = Vector2(115, 105)
+mouse_filter = 2
 script = ExtResource("28_adk3m")
 is_mini = true
 

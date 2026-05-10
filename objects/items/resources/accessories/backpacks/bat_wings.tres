@@ -37,9 +37,13 @@ world_scale = 0.15
 ui_cam_offset = 0.45
 item_name = "Bat Wings"
 item_description = "Who's the Bloodsucker now?!"
-big_description = "TRIPLE your Humor Healing
-Take 2 damage (non-lethal) every time you deal damage"
+big_description = "+1 Punch
+TRIPLE your Humor Healing
+Take 4 damage (non-lethal) every time you deal damage"
 model = ExtResource("2_lkame")
+stats_add = {
+"punch": 1
+}
 stats_multiply = {
 "humor_healing_multiplier": 3.0
 }

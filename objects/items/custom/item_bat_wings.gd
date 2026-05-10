@@ -1,7 +1,7 @@
 extends ItemScript
 
 # Breaking Grounds - -2 HP every time damage is dealt
-var damage_to_take := 2
+var damage_to_take := 4
 
 func on_collect(_item: Item, _object: Node3D) -> void:
 	setup()

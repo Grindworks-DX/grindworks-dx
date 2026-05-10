@@ -27,7 +27,8 @@ func on_round_start(_actions: Array[BattleAction], manager: BattleManager) -> vo
 	
 	# Skip Cogs' first turn
 	for cog in cogs_to_try:
-		if !randf() < 0.5: continue
+		if !is_instance_valid(cog): continue
+		if !randf() < 0.5 or cog.delayed: continue
 		for i in range(manager.round_actions.size() - 1, -1, -1):
 			var action := manager.round_actions[i]
 			if action.user == cog:

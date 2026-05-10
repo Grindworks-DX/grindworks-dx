@@ -813,8 +813,8 @@ self_modulate = Color(0.28814104, 0.6765764, 0.7398631, 1)
 anchors_preset = 0
 offset_left = 81.0
 offset_top = 43.0
-offset_right = 648.0
-offset_bottom = 441.0
+offset_right = 81.0
+offset_bottom = 43.0
 pivot_offset = Vector2(239, 199)
 size_flags_horizontal = 4
 script = ExtResource("6_5p4rn")
@@ -822,7 +822,7 @@ key_count = 4
 radius = 150.0
 key_items = Array[Dictionary]([{
 "title": "Punch: 0",
-"tooltip": "+5% Damage per point
+"tooltip": "+8% Damage per point
 Damage increases the output of your Gags.",
 "value": 0.0
 }, {
@@ -842,7 +842,7 @@ A Restock tick occurs on round start and when passing a move.",
 "value": 0.0
 }, {
 "title": "Shrug: 0",
-"tooltip": "+3% Luck, +3% Evasiveness per point
+"tooltip": "+4% Luck, +5% Evasiveness per point
 Your gags have a % chance to Crit equal to your Luck, dealing 100% more damage.
 Restock ticks can also crit per track, doubling that track's point gain.
 Luck also affects some chance-based item effects.",
@@ -865,7 +865,7 @@ guide_step = 4.0
 draw_order = PackedStringArray("background", "background_outline", "guides", "graph", "graph_outline", "titles")
 items/key_0/value = 0.0
 items/key_0/title = "Punch: 0"
-items/key_0/tooltip = "+5% Damage per point
+items/key_0/tooltip = "+8% Damage per point
 Damage increases the output of your Gags."
 items/key_1/value = 0.0
 items/key_1/title = "Humor: 0
@@ -882,7 +882,7 @@ Gag Regen determines the chance of receiving a point in each Gag track every Res
 A Restock tick occurs on round start and when passing a move."
 items/key_3/value = 0.0
 items/key_3/title = "Shrug: 0"
-items/key_3/tooltip = "+3% Luck, +3% Evasiveness per point
+items/key_3/tooltip = "+4% Luck, +5% Evasiveness per point
 Your gags have a % chance to Crit equal to your Luck, dealing 100% more damage.
 Restock ticks can also crit per track, doubling that track's point gain.
 Luck also affects some chance-based item effects."

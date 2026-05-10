@@ -399,10 +399,10 @@ signal s_shrug_changed(new_value: int)
 @export var humor_healing_multiplier := 1.0 
 
 var attribute_modifiers := {
-	'punch': { 'damage': 0.05, 'parry': 0.04 },
-	'humor': { 'max_hp': 5, 'humor_healing': 0.5 },
+	'punch': { 'damage': 0.08, 'parry': 0.04 },
+	'humor': { 'max_hp': 5, 'humor_healing': 1.0 },
 	'gusto': { 'speed': 1, 'gag_regen_chance': 0.05 },
-	'shrug': { 'luck': 0.03, 'evasiveness': 0.03 },
+	'shrug': { 'luck': 0.04, 'evasiveness': 0.05 },
 }
 
 func attribute_changed(attr: String, old_value, new_value) -> void:
@@ -419,7 +419,7 @@ func attribute_changed(attr: String, old_value, new_value) -> void:
 			if hp > max_hp:
 				hp = max_hp
 		else:
-			set(key, ceili(get(key) + value))
+			set(key, get(key) + value)
 
 @export var jokes := 0
 @export var total_jokes := 0

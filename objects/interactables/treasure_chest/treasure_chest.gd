@@ -61,9 +61,9 @@ var POOL_GRADIENTS : Dictionary[String, String] = {
 const EXTRA_TURN := preload(ExtraTurnItem.BASE_ITEM)
 const POINT_BOOST := preload(PointBoostItem.BASE_ITEM)
 var LAFF_BOOST := load("res://objects/items/resources/passive/laff_boost.tres")
-var VOUCHER_PACK := load("res://objects/items/resources/passive/gag_voucher_small.tres")
+var VOUCHER_PACK := load("res://objects/items/resources/passive/gag_voucher_pack.tres")
 var SCRIPTED_PROGRESSION_ITEMS: Dictionary = {
-	0: null,
+	0: VOUCHER_PACK,
 	1: VOUCHER_PACK,
 	2: LAFF_BOOST,
 	3: LAFF_BOOST,
