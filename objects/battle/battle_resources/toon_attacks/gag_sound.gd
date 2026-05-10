@@ -127,7 +127,7 @@ func get_stats() -> String:
 	return string
 
 func get_main_damage_str() -> String:
-	if Util.get_player().inverted_sound_damage:
+	if Util.get_player().inverted_sound_damage and target_type == ActionTarget.ENEMY_SPLASH:
 		return get_true_damage(0.5)
 	return get_true_damage()
 

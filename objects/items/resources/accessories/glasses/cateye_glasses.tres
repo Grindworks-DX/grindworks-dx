@@ -253,7 +253,7 @@ big_description = "+1 Move
 model = ExtResource("2_jumbx")
 stats_add = {
 "defense": -0.2,
-"moves": 1
+"turns": 1
 }
 icon = ExtResource("3_gpdmo")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

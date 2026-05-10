@@ -265,8 +265,8 @@ world_scale = 0.15
 ui_cam_offset = 0.25
 item_name = "Danger Shades"
 item_description = "Become a showstopper!"
-big_description = "-1 Moves
-Your Level 7 gags deal double damage"
+big_description = "-1 Move
+Your Level 7 gags deal TRIPLE damage"
 model = ExtResource("5_fegkw")
 stats_add = {
 "turns": -1

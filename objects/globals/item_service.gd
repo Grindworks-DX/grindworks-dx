@@ -296,8 +296,8 @@ func get_gag_rate() -> float:
 	
 	return chance
 
-const STARTING_LAFF := 15
-const FLOOR_LAFF_INCREMENT := 12
+const STARTING_LAFF := 30
+const FLOOR_LAFF_INCREMENT := 18
 const LIKELIHOOD_PER_POINT := 0.1
 func get_laff_rate() -> float:
 	if not is_instance_valid(Util.get_player()):

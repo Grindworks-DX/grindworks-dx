@@ -273,12 +273,8 @@ slot = 1
 world_scale = 0.1
 item_name = "Sombrero"
 item_description = "Play it loud!"
-big_description = "-15% Sound damage
-Sound does full damage to adjacent Cogs, half to targeted Cog"
+big_description = "Splash Sound does full damage to adjacent Cogs, half to targeted Cog"
 model = ExtResource("3_rte55")
-stats_add = {
-"gag_boost:Sound": -0.15
-}
 player_values = {
 "inverted_sound_damage": true
 }

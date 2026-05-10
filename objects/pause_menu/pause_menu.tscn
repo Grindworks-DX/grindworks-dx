@@ -822,7 +822,7 @@ key_count = 4
 radius = 150.0
 key_items = Array[Dictionary]([{
 "title": "Punch: 0",
-"tooltip": "+8% Damage per point
+"tooltip": "+5% Damage per point
 Damage increases the output of your Gags.",
 "value": 0.0
 }, {
@@ -865,7 +865,7 @@ guide_step = 4.0
 draw_order = PackedStringArray("background", "background_outline", "guides", "graph", "graph_outline", "titles")
 items/key_0/value = 0.0
 items/key_0/title = "Punch: 0"
-items/key_0/tooltip = "+8% Damage per point
+items/key_0/tooltip = "+5% Damage per point
 Damage increases the output of your Gags."
 items/key_1/value = 0.0
 items/key_1/title = "Humor: 0

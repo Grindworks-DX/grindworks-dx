@@ -399,7 +399,7 @@ signal s_shrug_changed(new_value: int)
 @export var humor_healing_multiplier := 1.0 
 
 var attribute_modifiers := {
-	'punch': { 'damage': 0.08, 'parry': 0.04 },
+	'punch': { 'damage': 0.05, 'parry': 0.04 },
 	'humor': { 'max_hp': 5, 'humor_healing': 1.0 },
 	'gusto': { 'speed': 1, 'gag_regen_chance': 0.05 },
 	'shrug': { 'luck': 0.04, 'evasiveness': 0.05 },
@@ -449,8 +449,9 @@ func do_humor_healing(_effectiveness := 1.0) -> void:
 		effectiveness *= 2.0
 	
 	allow_overheal = true
-	BattleService.ongoing_battle.s_round_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
-	BattleService.ongoing_battle.s_battle_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
+	if BattleService.ongoing_battle is BattleManager:
+		BattleService.ongoing_battle.s_round_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
+		BattleService.ongoing_battle.s_battle_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
 	Util.get_player().quick_heal(maxi(1, ceili(humor_healing * effectiveness * humor_healing_multiplier)))
 	s_humor_healing_triggered.emit()
 	if humor_healing * effectiveness > 0:

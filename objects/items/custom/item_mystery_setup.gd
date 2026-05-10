@@ -74,7 +74,8 @@ func randomize_gags(player: Player) -> void:
 	# Otherwise run like normal
 	else:
 		selected_tracks.append(offense_tracks[RNG.channel(RNG.ChannelMysteryToonGags).randi() % offense_tracks.size()])
-		selected_tracks.append(support_tracks[RNG.channel(RNG.ChannelMysteryToonGags).randi() % support_tracks.size()])
+		selected_tracks.append(offense_tracks[RNG.channel(RNG.ChannelMysteryToonGags).randi() % offense_tracks.size()])
+		selected_tracks.append(gag_loadout.loadout[RNG.channel(RNG.ChannelMysteryToonGags).randi() % gag_loadout.loadout.size()])
 	
 	# Start player off with anywhere from level 1-3 gags
 	for track in selected_tracks:

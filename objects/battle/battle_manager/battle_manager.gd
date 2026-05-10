@@ -269,13 +269,16 @@ var chests_to_spawn := 3
 var chest_distance := 2
 
 func spawn_reward() -> void:
+	chests_to_spawn = 3
 	# Battle drops
 	if boss_battle:
 		Util.make_boss_chests(battle_node.get_parent(), battle_node)
 	else:
 		if battle_node.item_pool:
 			var bounty: bool = (player.better_battle_rewards and current_round <= 2)
-			if bounty: player.boost_queue.queue_text("Bounty!", Color.GREEN)
+			if bounty:
+				player.boost_queue.queue_text("Bounty!", Color.GREEN)
+				chests_to_spawn = 1
 			for i in range(chests_to_spawn):
 				var chest: TreasureChest = load('res://objects/interactables/treasure_chest/treasure_chest.tscn').instantiate()
 				if bounty:

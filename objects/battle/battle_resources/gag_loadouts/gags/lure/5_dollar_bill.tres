@@ -17,8 +17,9 @@ script = ExtResource("2_2r7r2")
 lure_type = 1
 knockback_effect = 28
 damage_debuff = SubResource("Resource_2r7r2")
+accuracy_debuff = -0.5
 quality = 1
-rounds = 3
+rounds = 2
 id = 2
 
 [resource]

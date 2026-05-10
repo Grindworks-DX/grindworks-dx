@@ -57,6 +57,7 @@ Using a Toon-Up triggers 50% Humor Healing"
 character_blurb = "President of the Toon Council and professional pie pitcher. A doggone inspiration to Toons everywhere."
 dna = SubResource("Resource_ax4gq")
 gag_loadout = ExtResource("2_pvta8")
+starting_laff = 30
 starting_items = Array[ExtResource("9_t8yrd")]([ExtResource("10_81tpj"), ExtResource("12_e8jb6"), ExtResource("14_mwkof")])
 base_stats = SubResource("Resource_4xrsp")
 starting_gags = Dictionary[String, int]({

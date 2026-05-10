@@ -15,8 +15,9 @@ amount = -0.3
 script = ExtResource("2_2t0uq")
 knockback_effect = 44
 damage_debuff = SubResource("Resource_y83u0")
+accuracy_debuff = -0.8
 quality = 1
-rounds = 4
+rounds = 3
 id = 2
 
 [resource]

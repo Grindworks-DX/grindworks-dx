@@ -277,7 +277,7 @@ big_description = "+ 3% Damage
 + 5% Defense
 + 5% Evasiveness
 + 5% Luck
-+ 5% Speed
++ 2 Speed
 + 3 Max Laff"
 model = ExtResource("2_bfyou")
 stats_add = {
@@ -287,7 +287,7 @@ stats_add = {
 "hp": 3,
 "luck": 0.05,
 "max_hp": 3,
-"speed": 0.05
+"speed": 2
 }
 icon = ExtResource("3_ud7li")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)
