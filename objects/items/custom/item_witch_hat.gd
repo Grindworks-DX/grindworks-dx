@@ -12,10 +12,10 @@ func on_round_started(actions : Array[BattleAction]) -> void:
 			action.s_hit.connect(squirt_hit.bind(action))
 
 func squirt_hit(action : GagSquirt) -> void:
-	var gag_damage := BattleService.ongoing_battle.get_damage(action.damage, action, action.targets[0])
-	var cog: Cog = action.targets[0]
-	if cog.stats.hp > 0:
-		apply_poison_effect(cog, get_damage(gag_damage))
+	for cog in action.targets:
+		var gag_damage := BattleService.ongoing_battle.get_damage(action.damage, action, action.targets[0])
+		if cog.stats.hp > 0:
+			apply_poison_effect(cog, get_damage(gag_damage))
 
 func apply_poison_effect(cog : Cog, damage : int) -> void:
 	var poison_effect := POISON_EFFECT.duplicate(true)
