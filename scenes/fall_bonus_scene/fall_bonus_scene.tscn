@@ -1,13 +1,14 @@
-[gd_scene format=4 uid="uid://c3mhx0wv5stqs"]
+[gd_scene format=4 uid="uid://cjjy3porgwvhx"]
 
-[ext_resource type="Script" uid="uid://dlk5wd2afjmxw" path="res://scenes/elevator_scene/elevator_scene.gd" id="1_vjcem"]
-[ext_resource type="Script" uid="uid://baosi3a5wl8b6" path="res://scenes/elevator_scene/elevator_cam.gd" id="2_mmofx"]
-[ext_resource type="PackedScene" uid="uid://dt42sn63or30c" path="res://scenes/elevator_scene/ui/elevator_ui.tscn" id="5_6p32t"]
-[ext_resource type="Script" uid="uid://cpinallk62oiy" path="res://objects/interactables/elevators/elevator.gd" id="6_gseco"]
-[ext_resource type="Texture2D" uid="uid://b2hxebb448x04" path="res://models/props/facility_objects/transporters/mint_elevator/mint_elevator_LocomotiveSide5.png" id="7_ksrjc"]
-[ext_resource type="Texture2D" uid="uid://64imno2syur0" path="res://models/props/facility_objects/transporters/mint_elevator/mint_elevator_CFOCeiling2.png" id="8_pr6bg"]
-[ext_resource type="Texture2D" uid="uid://bnujcjend7bf4" path="res://models/props/facility_objects/transporters/mint_elevator/mint_elevator_CBWallVault.png" id="9_74pqk"]
-[ext_resource type="Texture2D" uid="uid://dth1vbdluw0a7" path="res://models/props/facility_objects/transporters/mint_elevator/mint_elevator_CBSafe2.png" id="10_vroci"]
+[ext_resource type="Script" uid="uid://c4jfswdjkovwo" path="res://scenes/fall_bonus_scene/fall_bonus_scene.gd" id="1_8jxdy"]
+[ext_resource type="PackedScene" uid="uid://dt42sn63or30c" path="res://scenes/elevator_scene/ui/elevator_ui.tscn" id="3_qg0t2"]
+[ext_resource type="Script" uid="uid://cpinallk62oiy" path="res://objects/interactables/elevators/elevator.gd" id="4_nnu6d"]
+[ext_resource type="Texture2D" uid="uid://b2hxebb448x04" path="res://models/props/facility_objects/transporters/mint_elevator/mint_elevator_LocomotiveSide5.png" id="5_jrryj"]
+[ext_resource type="Texture2D" uid="uid://64imno2syur0" path="res://models/props/facility_objects/transporters/mint_elevator/mint_elevator_CFOCeiling2.png" id="6_5wxit"]
+[ext_resource type="Texture2D" uid="uid://bnujcjend7bf4" path="res://models/props/facility_objects/transporters/mint_elevator/mint_elevator_CBWallVault.png" id="7_j0585"]
+[ext_resource type="Texture2D" uid="uid://dth1vbdluw0a7" path="res://models/props/facility_objects/transporters/mint_elevator/mint_elevator_CBSafe2.png" id="8_81cvr"]
+[ext_resource type="PackedScene" uid="uid://cy4iox7mj5ei0" path="res://objects/toon/toon.tscn" id="8_if1ap"]
+[ext_resource type="Script" uid="uid://yg7gxug4rab" path="res://objects/toon/toon_dna.gd" id="9_qqxi5"]
 
 [sub_resource type="Environment" id="Environment_6gtde"]
 background_energy_multiplier = 0.0
@@ -17,7 +18,7 @@ ambient_light_color = Color(1, 1, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272fd"]
 resource_name = "textures:textures1:ZONE04aT:textures:CashBotLocomotive__357fea4"
 cull_mode = 2
-albedo_texture = ExtResource("7_ksrjc")
+albedo_texture = ExtResource("5_jrryj")
 roughness = 0.552786
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_s5asu"]
@@ -59,7 +60,7 @@ backface_collision = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hscqw"]
 resource_name = "textures:textures1:ZONE04aT:textures:MidVault_v2_s2:CFO_6e43cdd"
 cull_mode = 2
-albedo_texture = ExtResource("8_pr6bg")
+albedo_texture = ExtResource("6_5wxit")
 roughness = 0.552786
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yjhvp"]
@@ -102,13 +103,13 @@ backface_collision = true
 resource_name = "textures:textures1:textures:EndVault_v2_s3:CBWallVault_SHD1"
 transparency = 4
 cull_mode = 2
-albedo_texture = ExtResource("9_74pqk")
+albedo_texture = ExtResource("7_j0585")
 roughness = 0.552786
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ul66"]
 resource_name = "textures:textures1:textures:CashBotFlatCarCargo3_v1_s1:_1395913"
 cull_mode = 2
-albedo_texture = ExtResource("10_vroci")
+albedo_texture = ExtResource("8_81cvr")
 roughness = 0.552786
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_tc5f2"]
@@ -343,21 +344,26 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_njuld"]
 size = Vector3(3.80225, 3.87613, 1.71704)
 
-[node name="ElevatorScene" type="Node3D" unique_id=1081744085]
-script = ExtResource("1_vjcem")
+[sub_resource type="Resource" id="Resource_10lbx"]
+script = ExtResource("9_qqxi5")
+eyelashes = false
+
+[node name="FallBonusScene" type="Node3D" unique_id=1081744085]
+script = ExtResource("1_8jxdy")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1927100914]
 environment = SubResource("Environment_6gtde")
 
 [node name="ElevatorCam" type="Camera3D" parent="." unique_id=2080989582]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.119, 1.6, -2.555)
+transform = Transform3D(1, 0, 0, 0, 0.9773051, 0.21183655, 0, -0.21183655, 0.9773051, 5.36304, -1.8832669, -1.8796854)
 current = true
-script = ExtResource("2_mmofx")
 
-[node name="ElevatorUI" parent="." unique_id=385599411 instance=ExtResource("5_6p32t")]
+[node name="ElevatorUI" parent="." unique_id=385599411 instance=ExtResource("3_qg0t2")]
+show_tips = false
 
 [node name="Elevator" type="Node3D" parent="." unique_id=504469761 node_paths=PackedStringArray("animator", "player_pos", "elevator_cam")]
-script = ExtResource("6_gseco")
+visible = false
+script = ExtResource("4_nnu6d")
 animator = NodePath("AnimationPlayer")
 player_pos = NodePath("PlayerPosition")
 elevator_cam = NodePath("ElevatorCam")
@@ -429,6 +435,11 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.18067, 0, 0)
 
 [node name="Outside" type="Node3D" parent="." unique_id=523445637]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.8229)
+
+[node name="Toon" parent="." unique_id=854464810 instance=ExtResource("8_if1ap")]
+unique_name_in_owner = true
+transform = Transform3D(-0.07522106, -4.9081616, 0.95093834, -3.3776087e-07, 0.95104647, 4.908717, -4.9994345, 0.07384783, -0.014307588, 6.916246, -3.4179037, -3.366985)
+toon_dna = SubResource("Resource_10lbx")
 
 [connection signal="start_floor" from="ElevatorUI" to="." method="start_floor"]
 [connection signal="body_entered" from="Elevator/PlayerCollision" to="Elevator" method="body_entered"]

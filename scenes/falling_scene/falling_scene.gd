@@ -1,6 +1,7 @@
 extends Node3D
 
 var GAME_FLOOR: PackedScene
+var FALL_BONUS_SCENE: PackedScene
 var INTRO_STINGER: AudioStreamOggVorbis
 
 @export var gags: Array[PackedScene]
@@ -21,7 +22,8 @@ func _init():
 		'INTRO_STINGER': 'res://audio/music/intro_stinger.ogg'
 	})
 	GameLoader.queue_into(GameLoader.Phase.GAMEPLAY, self, {
-		'GAME_FLOOR': 'res://scenes/game_floor/game_floor.tscn'
+		'GAME_FLOOR': 'res://scenes/game_floor/game_floor.tscn',
+		'FALL_BONUS_SCENE': "res://scenes/fall_bonus_scene/fall_bonus_scene.tscn"
 	})
 
 func _ready() -> void:
@@ -35,6 +37,7 @@ func _ready() -> void:
 		dna = Util.get_player().toon.toon_dna
 		Util.get_player().hide()
 		Util.get_player().stats.hp = Util.get_player().stats.max_hp
+		Util.get_player().gui.hide()
 	AudioManager.play_sound(Globals.get_species_sfx(Globals.ToonDial.FALLING,dna))
 	toon.construct_toon(dna)
 	toon.scale *= 5.0
@@ -156,13 +159,14 @@ func end_scene() -> void:
 	if is_instance_valid(player):
 		await GameLoader.wait_for_phase(GameLoader.Phase.GAMEPLAY)
 		player.show()
+		player.gui.show()
 		player.reset_stats()
 		player.stats.initialize_quests()
 		player.lock_game_timer = false
 		player.item_display.reload_items()
 		Globals.s_game_started.emit()
-		var gamefloor := GAME_FLOOR.instantiate()
-		gamefloor.floor_variant = get_first_floor()
+		var gamefloor := FALL_BONUS_SCENE.instantiate()
+		#gamefloor.floor_variant = get_first_floor()
 		SceneLoader.change_scene_to_node(gamefloor)
 	else:
 		SceneLoader.change_scene_to_file('res://scenes/falling_scene/falling_scene.tscn')
