@@ -195,11 +195,10 @@ func grey_out() -> void:
 		button.hide()
 
 func set_disabled(disabled : bool) -> void:
+	refresh()
 	for button : GagButton in gag_buttons:
 		if disabled:
 			button.disable()
-		else:
-			refresh()
 
 func show_track() -> void:
 	track_label.set_text(track.track_name.to_upper())
@@ -227,11 +226,14 @@ func is_gag_free(gag : ToonAttack) -> bool:
 
 # Breaking Grounds
 
+var tween: Tween
+
 func do_gain_animation(amount: int, delay := 0.5) -> void:
 	point_gain_label.text = "+%d" % amount
 	point_gain_label.scale = Vector2.ONE * 0.01
 	
-	var tween := create_tween().set_trans(Tween.TRANS_QUAD)
+	if tween is Tween: tween.kill()
+	tween = create_tween().set_trans(Tween.TRANS_QUAD)
 	tween.tween_interval(delay)
 	tween.tween_property(point_gain_label, 'scale', Vector2.ONE, 0.2)
 	tween.tween_callback(
