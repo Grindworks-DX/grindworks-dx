@@ -11,6 +11,7 @@ const HOVER_SFX := preload("res://audio/sfx/ui/GUI_rollover.ogg")
 		vertical = x
 		%ItemContainer.vertical = vertical
 		%ItemContainer.alignment = FlowContainer.ALIGNMENT_END
+		%ItemContainer.reverse_fill = true
 
 func _ready() -> void:
 	ItemService.s_item_applied.connect(add_new_item)
