@@ -1,0 +1,344 @@
+[gd_scene format=3 uid="uid://d3sjem5yqtol1"]
+
+[ext_resource type="Script" uid="uid://cykv5tbt4501y" path="res://objects/general_ui/stats_display.gd" id="1_efi14"]
+[ext_resource type="FontFile" uid="uid://815gwlftl5ik" path="res://fonts/impress-bt.ttf" id="2_6epnd"]
+[ext_resource type="FontFile" uid="uid://cup2yr5w7or1l" path="res://fonts/Minnie.TTF" id="3_8rvoh"]
+[ext_resource type="Texture2D" uid="uid://be7nrxoyxenp6" path="res://ui_assets/battle/statuses/damage.png" id="4_0vs2e"]
+[ext_resource type="Texture2D" uid="uid://ca70trnfykg5p" path="res://ui_assets/battle/statuses/defense.png" id="5_is1qx"]
+[ext_resource type="Texture2D" uid="uid://cabh8sh536557" path="res://ui_assets/battle/statuses/evasiveness.png" id="6_7jtme"]
+[ext_resource type="Texture2D" uid="uid://cd0igouy5fqje" path="res://ui_assets/battle/statuses/luck_crit.png" id="7_1375g"]
+[ext_resource type="Texture2D" uid="uid://dkriwcm0xxlsn" path="res://ui_assets/battle/statuses/speed.png" id="8_blua2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jerem"]
+font = ExtResource("2_6epnd")
+font_size = 15
+font_color = Color(0.5582785, 0.83155495, 0.9249591, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ur8bd"]
+resource_local_to_scene = true
+font = ExtResource("3_8rvoh")
+font_size = 14
+font_color = Color(0.3019608, 0.9019608, 0.3019608, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_si0m7"]
+font = ExtResource("2_6epnd")
+font_size = 15
+font_color = Color(0.992165, 0.682616, 0.465558, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b75n2"]
+font = ExtResource("2_6epnd")
+font_size = 15
+font_color = Color(0.687588, 0.74357, 0.925783, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rgkrx"]
+font = ExtResource("2_6epnd")
+font_size = 15
+font_color = Color(0.894916, 0.660997, 0.86582, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p8q04"]
+font = ExtResource("2_6epnd")
+font_size = 15
+font_color = Color(0.568627, 0.862745, 0.623529, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bvvlm"]
+font = ExtResource("2_6epnd")
+font_size = 15
+font_color = Color(0.984314, 0.65098, 0.592157, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Stats" type="PanelContainer" unique_id=1312529540 node_paths=PackedStringArray("stat_info")]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(230, 200)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 145.0
+offset_top = -209.0
+offset_right = 375.0
+offset_bottom = -5.0
+grow_vertical = 0
+pivot_offset = Vector2(115, 105)
+mouse_filter = 2
+script = ExtResource("1_efi14")
+stat_info = {
+NodePath("MarginContainer/VBoxContainer/Punch"): "punch",
+NodePath("MarginContainer/VBoxContainer/Humor"): "humor",
+NodePath("MarginContainer/VBoxContainer/Gusto"): "gusto",
+NodePath("MarginContainer/VBoxContainer/Shrug"): "shrug",
+NodePath("MarginContainer/VBoxContainer/Damage"): "damage",
+NodePath("MarginContainer/VBoxContainer/Defense"): "defense",
+NodePath("MarginContainer/VBoxContainer/Evasiveness"): "evasiveness",
+NodePath("MarginContainer/VBoxContainer/Luck"): "luck",
+NodePath("MarginContainer/VBoxContainer/Speed"): "speed"
+}
+is_mini = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1115411383]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=903919198]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Punch" type="Label" parent="MarginContainer/VBoxContainer" unique_id=264753156]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_jerem")
+vertical_alignment = 1
+
+[node name="PunchChange" type="Label" parent="MarginContainer/VBoxContainer/Punch" unique_id=1618122894]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 135.0
+offset_bottom = 21.0
+text = "+2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Punch" unique_id=81214495]
+visible = false
+layout_mode = 0
+offset_left = -26.848488
+offset_top = -0.9999924
+offset_right = 3.4242325
+offset_bottom = 29.272728
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("4_0vs2e")
+expand_mode = 1
+
+[node name="Humor" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1135039051]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_jerem")
+vertical_alignment = 1
+
+[node name="HumorChange" type="Label" parent="MarginContainer/VBoxContainer/Humor" unique_id=865542840]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 135.0
+offset_bottom = 21.0
+text = "+2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Humor" unique_id=1964081684]
+visible = false
+layout_mode = 0
+offset_left = -26.848488
+offset_top = -0.9999924
+offset_right = 3.4242325
+offset_bottom = 29.272728
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("4_0vs2e")
+expand_mode = 1
+
+[node name="Gusto" type="Label" parent="MarginContainer/VBoxContainer" unique_id=634499764]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_jerem")
+vertical_alignment = 1
+
+[node name="GustoChange" type="Label" parent="MarginContainer/VBoxContainer/Gusto" unique_id=1540304952]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 135.0
+offset_bottom = 21.0
+text = "+2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Gusto" unique_id=987523824]
+visible = false
+layout_mode = 0
+offset_left = -26.848488
+offset_top = -0.9999924
+offset_right = 3.4242325
+offset_bottom = 29.272728
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("4_0vs2e")
+expand_mode = 1
+
+[node name="Shrug" type="Label" parent="MarginContainer/VBoxContainer" unique_id=906618760]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_jerem")
+vertical_alignment = 1
+
+[node name="ShrugChange" type="Label" parent="MarginContainer/VBoxContainer/Shrug" unique_id=909084144]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 135.0
+offset_bottom = 21.0
+text = "+2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Shrug" unique_id=1493032756]
+visible = false
+layout_mode = 0
+offset_left = -26.848488
+offset_top = -0.9999924
+offset_right = 3.4242325
+offset_bottom = 29.272728
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("4_0vs2e")
+expand_mode = 1
+
+[node name="Damage" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1424409080]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_si0m7")
+vertical_alignment = 1
+
+[node name="DamageChange" type="Label" parent="MarginContainer/VBoxContainer/Damage" unique_id=349189200]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 25.0
+offset_right = 115.0
+offset_bottom = 21.0
+text = "+2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Damage" unique_id=745739575]
+layout_mode = 0
+offset_left = -26.848488
+offset_top = -0.9999924
+offset_right = 3.4242325
+offset_bottom = 29.272728
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("4_0vs2e")
+expand_mode = 1
+
+[node name="Defense" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1408181613]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_b75n2")
+vertical_alignment = 1
+
+[node name="DefenseChange" type="Label" parent="MarginContainer/VBoxContainer/Defense" unique_id=1092862445]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 25.0
+offset_right = 115.0
+offset_bottom = 21.0
+text = "-2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/Defense" unique_id=386519685]
+layout_mode = 0
+offset_left = -26.848488
+offset_top = -2.9999924
+offset_right = 3.4242325
+offset_bottom = 27.272728
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("5_is1qx")
+expand_mode = 1
+
+[node name="Evasiveness" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1105951720]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_rgkrx")
+vertical_alignment = 1
+
+[node name="EvasivenessChange" type="Label" parent="MarginContainer/VBoxContainer/Evasiveness" unique_id=1517169984]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 25.0
+offset_right = 115.0
+offset_bottom = 21.0
+text = "+2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/Evasiveness" unique_id=1026862633]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -4.1514816
+offset_right = 3.2727203
+offset_bottom = 26.121239
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("6_7jtme")
+expand_mode = 1
+
+[node name="Luck" type="Label" parent="MarginContainer/VBoxContainer" unique_id=951377115]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_p8q04")
+vertical_alignment = 1
+
+[node name="LuckChange" type="Label" parent="MarginContainer/VBoxContainer/Luck" unique_id=76076485]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 25.0
+offset_right = 115.0
+offset_bottom = 21.0
+text = "-2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/Luck" unique_id=1586987333]
+layout_mode = 0
+offset_left = -26.848488
+offset_top = -2.0
+offset_right = 3.4242325
+offset_bottom = 28.27272
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("7_1375g")
+expand_mode = 1
+
+[node name="Speed" type="Label" parent="MarginContainer/VBoxContainer" unique_id=256034115]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_bvvlm")
+vertical_alignment = 1
+
+[node name="SpeedChange" type="Label" parent="MarginContainer/VBoxContainer/Speed" unique_id=652511440]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 5.0
+offset_right = 95.0
+offset_bottom = 21.0
+text = "+2.00"
+label_settings = SubResource("LabelSettings_ur8bd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VBoxContainer/Speed" unique_id=905050472]
+layout_mode = 0
+offset_left = -25.848488
+offset_top = -1.0
+offset_right = 4.4242325
+offset_bottom = 29.27272
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("8_blua2")
+expand_mode = 1

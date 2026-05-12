@@ -193,8 +193,8 @@ func initialize() -> void:
 	monitor_stranger_chance()
 
 func start_stat_monitors() -> void:
-	var stat_monitors := ['damage', 'defense', 'evasiveness', 'speed', 'luck']
-	for stat in stat_monitors:
+	var stat_monitors := ['damage', 'defense', 'evasiveness', 'speed', 'luck', 'crit_mult']
+	for stat in stat_monitors + attributes:
 		prev_stats[stat] = get_stat(stat)
 
 func max_out() -> void:
@@ -338,7 +338,7 @@ func run_stranger_roll() -> bool:
 
 # Attributes: New stats that modify internal stats
 
-static var attributes: Array[String ]= ['punch', 'humor', 'gusto', 'shrug']
+static var attributes: Array[String] = ['punch', 'humor', 'gusto', 'shrug']
 
 signal s_punch_changed(new_value: int)
 signal s_humor_changed(new_value: int)

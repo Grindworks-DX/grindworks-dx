@@ -1005,7 +1005,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Stats" type="PanelContainer" parent="Pages/MainPage/StatsHolder" unique_id=879759009]
+[node name="Stats" type="PanelContainer" parent="Pages/MainPage/StatsHolder" unique_id=879759009 node_paths=PackedStringArray("stat_info")]
 unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(230, 200)
@@ -1023,6 +1023,13 @@ grow_horizontal = 0
 grow_vertical = 2
 pivot_offset = Vector2(115, 105)
 script = ExtResource("6_6ehxx")
+stat_info = {
+NodePath("MarginContainer/VBoxContainer/Damage"): "damage",
+NodePath("MarginContainer/VBoxContainer/Defense"): "defense",
+NodePath("MarginContainer/VBoxContainer/Evasiveness"): "evasiveness",
+NodePath("MarginContainer/VBoxContainer/Luck"): "luck",
+NodePath("MarginContainer/VBoxContainer/Speed"): "speed"
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="Pages/MainPage/StatsHolder/Stats" unique_id=1881362290]
 layout_mode = 2
