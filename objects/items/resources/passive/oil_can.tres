@@ -15,7 +15,8 @@ big_description = "+1 Move
 +15% Proxy Cog spawn chance"
 model = ExtResource("2_umilv")
 stats_add = {
-"proxy_chance_boost": 0.15
+"proxy_chance_boost": 0.15,
+"turns": 1
 }
 icon = ExtResource("1_o2wmk")
 shop_category_title = "Special Item"
