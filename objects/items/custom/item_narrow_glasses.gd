@@ -1,7 +1,7 @@
 extends ItemScript
 
 var player: Player
-var mult := 3.0
+var mult := 2.0
 
 func on_collect(_item: Item, _object: Node3D) -> void:
 	player = Util.get_player()
