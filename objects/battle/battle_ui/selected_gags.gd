@@ -94,6 +94,8 @@ func refresh_gags(gags: Array[ToonAttack]):
 			panel.get_node('GagIcon').texture = gag.icon
 			panel.get_node('GeneralButton').disabled = !Util.get_player().can_cancel_gags or gag.ActionTag.NO_CANCEL in gag.action_tags
 			panel.get_node('DamageLabel').text = ("-" + str(damage)) if damage > 0 else ""
+			if gag is GagThrow: panel.get_node('DamageLabel').text += "\n(%d)" % manager.get_damage(gag.damage + gag.sweetspot_damage, gag, gag.targets[0])
+			if gag is GagLure: panel.get_node('DamageLabel').text += "(%d)" % manager.get_damage(gag.lure_effect.knockback_effect, gag, gag.targets[0])
 			panel.get_node('TargetingLabel').text = get_targeting_string(gag)
 		else:
 			panel.get_node('GagIcon').texture = null

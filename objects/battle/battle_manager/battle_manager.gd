@@ -501,7 +501,7 @@ func get_damage(damage: float, action: BattleAction, target: Node3D) -> int:
 		if not is_equal_approx(dept_boost, 1.0):
 			defense *= dept_boost
 
-	return ceili(boosted_damage / defense)
+	return roundi(boosted_damage / defense)
 
 func calculate_accuracy(action: BattleAction) -> float:
 	if action in action_hit_rolls.keys():

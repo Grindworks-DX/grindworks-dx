@@ -36,6 +36,7 @@ outline_size = 4
 outline_color = Color(0.051970966, 0.05197096, 0.05197095, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_m07gh"]
+line_spacing = -1.0
 font = ExtResource("7_l5xvc")
 font_size = 14
 font_color = Color(1, 0.84034747, 0.8107204, 1)
@@ -130,7 +131,7 @@ anchor_bottom = 1.0
 offset_left = -24.0
 offset_top = 2.0
 offset_right = 24.0
-offset_bottom = 20.0
+offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "544"
