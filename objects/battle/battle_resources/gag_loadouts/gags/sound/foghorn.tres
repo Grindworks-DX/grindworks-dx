@@ -15,6 +15,7 @@ scale = Vector3(0.475, 0.475, 0.475)
 sfx_windup = ExtResource("5_lvh27")
 sfx_blast = ExtResource("4_ujfg1")
 damage = 70
+level = 6
 target_type = 7
 action_name = "Fog Horn"
 icon = ExtResource("1_7hiyh")

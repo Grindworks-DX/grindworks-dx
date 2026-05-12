@@ -15,6 +15,7 @@ scale = Vector3(0.325, 0.325, 0.325)
 sfx_windup = ExtResource("5_bg2bf")
 sfx_blast = ExtResource("4_rftmk")
 damage = 30
+level = 5
 target_type = 2
 action_name = "Elephant Trunk"
 icon = ExtResource("1_npgmh")

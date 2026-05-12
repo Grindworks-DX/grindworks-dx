@@ -101,6 +101,7 @@ var no_negative_anomalies := 0
 # Breaking Grounds - Throw self-heal removed in favor of Humor Healing
 var throw_heals := 0
 var can_drop_hit_lured := 0
+var stealth_sounds := []
 var trap_needs_lure := 1
 var inverted_sound_damage := 0
 var obscured_anomalies := 0

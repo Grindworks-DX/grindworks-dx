@@ -12,8 +12,10 @@ class_name GagSound
 @export var sfx_blast: AudioStream
 
 var do_knockback := false
+var stealthy := false
 
 func action():
+	stealthy = level in user.stealth_sounds
 	# Play the movie's sfx
 	sfx_track()
 	
@@ -51,8 +53,11 @@ func action():
 	if hit:
 		# If we're doing knockback and any of our targets are lured,
 		# give the funny special text
-		if do_knockback and targets.filter(func(x: Cog): return x.lured and not get_immunity(x)).size() > 0:
-			store_boost_text("Rude Awakening!", Color(0.328, 0.4, 0.96))
+		if targets.filter(func(x: Cog): return x.lured and not get_immunity(x)).size() > 0:
+			if stealthy:
+				store_boost_text("Shhhhh!", Color(0.212, 0.314, 0.593, 1.0))
+			elif do_knockback:
+				store_boost_text("Rude Awakening!", Color(0.439, 0.431, 0.876, 1.0))
 
 		var animator_target: Cog = null
 		for target: Cog in targets:
@@ -66,22 +71,24 @@ func action():
 				manager.battle_text(target, 'IMMUNE')
 			else:
 				manager.affect_target(target, real_damage)
-			if not target.lured or not do_knockback:
+			if not target.lured or not (do_knockback and !stealthy):
 				target.set_animation('squirt-small')
 				do_dizzy_stars(target)
 			elif not get_immunity(target):
 				manager.knockback_cog(target)
 				do_dizzy_stars(target)
 		
-		if animator_target:
-			await manager.barrier(animator_target.animator.animation_finished, 5.0)
 		
 		# Check if any cogs are lured, and unlure them
 		var lured_targets: Array[Cog] = []
 		for target in targets:
 			if target.lured:
 				lured_targets.append(target)
-		if not lured_targets.is_empty():
+				
+		if animator_target:
+			await manager.barrier(animator_target.animator.animation_finished, 5.0)
+		
+		if not lured_targets.is_empty() and !stealthy:
 			var unlure_tween: Tween = manager.create_tween()
 			unlure_tween.set_parallel(true)
 			for target in lured_targets:
@@ -91,6 +98,7 @@ func action():
 			await unlure_tween.finished
 			for target in lured_targets:
 				target.set_animation('neutral')
+		
 		await manager.check_pulses(targets)
 	else:
 		for target in targets:

@@ -3,6 +3,7 @@ class_name ToonAttack
 
 @export var damage: int
 @export_multiline var gag_summary := ""
+@export var level := 1
 
 # Used in the UI to temporarily store the price of a gag
 var price: int
