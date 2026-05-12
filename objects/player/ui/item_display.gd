@@ -25,7 +25,9 @@ func _ready() -> void:
 	
 const ITEM_ICON := preload("res://objects/player/ui/item_icon.tscn")
 
-func add_new_item(item: Item) -> void:
+func add_new_item(item: Item, _use_count_label := false) -> void:
+	# temp
+	var use_count_label := vertical
 	if not item.icon:
 		return
 
@@ -37,6 +39,7 @@ func add_new_item(item: Item) -> void:
 	new_tex.item = item
 	new_tex.mouse_entered.connect(hover_item.bind(item, new_tex))
 	new_tex.mouse_exited.connect(stop_hover.bind(new_tex))
+	new_tex.use_count_label = use_count_label
 	item_container.add_child(new_tex)
 
 func hover_item(item: Item, tex_rect: TextureRect) -> void:

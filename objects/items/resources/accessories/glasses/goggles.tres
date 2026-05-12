@@ -260,13 +260,13 @@ world_scale = 0.15
 ui_cam_offset = 0.2
 item_name = "Goggles"
 item_description = "True brilliance lies in madness!"
-big_description = "-15% Damage
+big_description = "+15% Gag Regen
 Every move, scrambles the gags and point costs in your loadout
 You cannot undo gag selections"
 model = ExtResource("2_s8ghy")
 pickup_sfx = ExtResource("6_0r8ig")
 stats_add = {
-"damage": -0.15
+"base_gag_regen": 0.15
 }
 player_values = {
 "can_cancel_gags": false

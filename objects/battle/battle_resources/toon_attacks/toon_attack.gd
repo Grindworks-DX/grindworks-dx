@@ -51,7 +51,7 @@ func get_true_damage(dmg_mod := 1.0, base_dmg: int = 0, override_track: Track = 
 	if not override_track: override_track = player_stats.character.gag_loadout.get_action_track(self)
 	if override_track:
 		effectiveness = player_stats.get_track_effectiveness(override_track.track_name)
-	return str(ceili(float(true_dmg) * effectiveness))
+	return str(roundi(float(true_dmg) * effectiveness))
 
 #region MOVIE SCRIPTS
 

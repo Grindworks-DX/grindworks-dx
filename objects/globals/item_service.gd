@@ -218,6 +218,7 @@ func apply_inventory() -> void:
 			var item_node := ItemScript.add_item_script(Util.get_player(), item.item_script)
 			if item_node is ItemScript:
 				item_node.on_load(item)
+	player.item_display.reload_items()
 	
 	# Place accessory items on player
 	var accessories: Array[ItemAccessory] = [hat, glasses, backpack]
@@ -255,9 +256,9 @@ func apply_inventory() -> void:
 
 
 const GagGoals: Dictionary = {
-	1: 0.4,
-	2: 0.6,
-	3: 0.7,
+	1: 0.5,
+	2: 0.75,
+	3: 0.85,
 	4: 1.0,
 }
 
@@ -296,9 +297,9 @@ func get_gag_rate() -> float:
 	
 	return chance
 
-const STARTING_LAFF := 30
+const STARTING_LAFF := 15
 const FLOOR_LAFF_INCREMENT := 18
-const LIKELIHOOD_PER_POINT := 0.1
+const LIKELIHOOD_PER_POINT := 0.133
 func get_laff_rate() -> float:
 	if not is_instance_valid(Util.get_player()):
 		return 0.0
@@ -328,7 +329,7 @@ const JokeGoals := {
 	1: 3,
 	2: 6,
 	3: 10,
-	4: 18
+	4: 14
 }
 
 func get_joke_rate() -> float:

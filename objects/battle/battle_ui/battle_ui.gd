@@ -10,6 +10,8 @@ class_name BattleUI
 @onready var gag_order_menu := %SelectedGags
 @onready var pass_button: GagButton = %LockIn
 
+@onready var target_select := %TargetSelect
+
 @onready var planning_ui := %PlanningUI
 
 # Bottom-right buttons
@@ -84,15 +86,15 @@ func gag_selected(gag: BattleAction) -> void:
 					gag.main_target = gag.targets[0]
 			else:
 				# Swap UIs
-				%TargetSelect.show()
-				%TargetSelect.gag = gag
-				%TargetSelect.reposition_buttons(get_parent().cogs.size())
+				target_select.show()
+				target_select.gag = gag
+				target_select.reposition_buttons(get_parent().cogs.size())
 				main_container.hide()
-				%TargetSelect.back.grab_focus(true)
-				var selection = await %TargetSelect.s_arrow_pressed
+				target_select.back.grab_focus(true)
+				var selection = await target_select.s_arrow_pressed
 				if selection == -1:
 					# Swap UIs back
-					%TargetSelect.hide()
+					target_select.hide()
 					main_container.show()
 					s_gag_canceled.emit(gag)
 					focus_gag_button()
@@ -104,7 +106,7 @@ func gag_selected(gag: BattleAction) -> void:
 					else:
 						gag.targets = [get_parent().cogs[selection]]
 					# Swap UIs back
-					%TargetSelect.hide()
+					target_select.hide()
 					main_container.show()
 					focus_gag_button()
 		_:

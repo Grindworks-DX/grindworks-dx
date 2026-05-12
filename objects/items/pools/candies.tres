@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("2_vdgus")
-items = PackedStringArray("res://objects/items/resources/passive/candies/candy_damage.tres", "res://objects/items/resources/passive/candies/candy_defense.tres", "res://objects/items/resources/passive/candies/candy_evasiveness.tres", "res://objects/items/resources/passive/candies/candy_luck.tres", "res://objects/items/resources/passive/candies/candy_speed.tres")
+items = PackedStringArray("res://objects/items/resources/passive/candies/candy_damage.tres", "res://objects/items/resources/passive/candies/candy_defense.tres", "res://objects/items/resources/passive/candies/candy_evasiveness.tres", "res://objects/items/resources/passive/candies/candy_luck.tres")

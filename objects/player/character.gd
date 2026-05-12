@@ -41,7 +41,7 @@ enum Character {
 @export var achievement_index : ProgressFile.GameAchievement = ProgressFile.GameAchievement.DEFEAT_COGS_1
 
 func character_setup(player: Player):
-	player.stats.max_hp = starting_laff + (starting_attributes['humor'] * 5)
+	player.stats.max_hp = starting_laff + (starting_attributes['humor'] * PlayerStats.attribute_modifiers['humor']['max_hp'])
 	player.stats.hp = player.stats.max_hp
 	for key in starting_gags.keys():
 		player.stats.gags_unlocked[key] = starting_gags[key]

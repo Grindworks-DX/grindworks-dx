@@ -12,10 +12,10 @@ world_scale = 0.6
 item_name = "Oil Can"
 item_description = "Disgustingly good"
 big_description = "+1 Move
-+15% Proxy Cog spawn chance"
++30% Proxy Cog spawn chance"
 model = ExtResource("2_umilv")
 stats_add = {
-"proxy_chance_boost": 0.15,
+"proxy_chance_boost": 0.3,
 "turns": 1
 }
 icon = ExtResource("1_o2wmk")

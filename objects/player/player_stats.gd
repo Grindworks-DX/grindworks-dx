@@ -398,9 +398,9 @@ signal s_shrug_changed(new_value: int)
 
 @export var humor_healing_multiplier := 1.0 
 
-var attribute_modifiers := {
-	'punch': { 'damage': 0.05, 'parry': 0.04 },
-	'humor': { 'max_hp': 5, 'humor_healing': 1.0 },
+static var attribute_modifiers := {
+	'punch': { 'damage': 0.04, 'parry': 0.04 },
+	'humor': { 'max_hp': 3, 'humor_healing': 1.0 },
 	'gusto': { 'speed': 1, 'gag_regen_chance': 0.05 },
 	'shrug': { 'luck': 0.04, 'evasiveness': 0.05 },
 }
@@ -412,6 +412,7 @@ func attribute_changed(attr: String, old_value, new_value) -> void:
 	var modifiers = attribute_modifiers[attr]
 	for key in modifiers:
 		var value = difference * modifiers[key]
+		print("%s modifying %s by %s" % [attr, key, str(value)])
 		if key == 'max_hp':
 			set(key, get(key) + value + laff_boost_boost)
 			if value > 0:

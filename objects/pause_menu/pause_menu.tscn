@@ -822,13 +822,13 @@ key_count = 4
 radius = 150.0
 key_items = Array[Dictionary]([{
 "title": "Punch: 0",
-"tooltip": "+5% Damage per point
+"tooltip": "+4% Damage per point
 Damage increases the output of your Gags.",
 "value": 0.0
 }, {
 "title": "Humor: 0
 ",
-"tooltip": "+5 Max Laff, +1 Humor Healing per point
+"tooltip": "+3 Max Laff, +1 Humor Healing per point
 Humor Healing is given when a Cog is defeated.
 It can also be triggered through item and character effects.",
 "value": 0.0
@@ -865,12 +865,12 @@ guide_step = 4.0
 draw_order = PackedStringArray("background", "background_outline", "guides", "graph", "graph_outline", "titles")
 items/key_0/value = 0.0
 items/key_0/title = "Punch: 0"
-items/key_0/tooltip = "+5% Damage per point
+items/key_0/tooltip = "+4% Damage per point
 Damage increases the output of your Gags."
 items/key_1/value = 0.0
 items/key_1/title = "Humor: 0
 "
-items/key_1/tooltip = "+5 Max Laff, +1 Humor Healing per point
+items/key_1/tooltip = "+3 Max Laff, +1 Humor Healing per point
 Humor Healing is given when a Cog is defeated.
 It can also be triggered through item and character effects."
 items/key_2/value = 0.0

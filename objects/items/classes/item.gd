@@ -184,6 +184,8 @@ func apply_item_stats(player: Player) -> void:
 		else:
 			player.set(value, player_values[value])
 
+signal s_item_script_applied(node: ItemScript)
+
 func apply_item_script(player : Player, object : Node3D = null) -> void:
 	if item_script:
 		var item_node := ItemScript.add_item_script(player,item_script)
@@ -191,6 +193,7 @@ func apply_item_script(player : Player, object : Node3D = null) -> void:
 			if not is_instance_valid(Util.get_player()):
 				await Util.s_player_assigned
 			item_node.on_collect(self,object)
+		s_item_script_applied.emit(item_node)
 
 func run_item_config() -> void:
 	# Check the model for custom item setups

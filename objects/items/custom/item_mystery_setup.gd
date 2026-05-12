@@ -24,7 +24,7 @@ func randomize_stats(player: Player) -> void:
 	var point_boost := avg_hp - player.stats.max_hp
 	
 	# Randomize stats
-	var good_points := 18
+	var good_points := 14
 	var bad_points := 6
 	var point_cost := 1
 	if signi(point_boost) == 1: good_points += point_boost

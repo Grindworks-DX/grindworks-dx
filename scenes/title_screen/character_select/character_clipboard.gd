@@ -74,7 +74,7 @@ func update_display() -> void:
 			stat_value = character.additional_stats[stat_name]
 		elif stat_name in character.starting_attributes.keys():
 			stat_value = character.starting_attributes[stat_name]
-		if stat_value and not is_mystery_toon:
+		if stat_value > -1 and not is_mystery_toon:
 			#child.get_node('StatLabel').set_text(Util.float_to_perc(stat_value) if stat_name != 'speed' else str(stat_value))
 			child.get_node('StatLabel').set_text(str(stat_value))
 		else:
