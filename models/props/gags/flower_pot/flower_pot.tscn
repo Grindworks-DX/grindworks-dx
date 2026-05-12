@@ -352,12 +352,12 @@ _data = {
 &"drop": SubResource("Animation_3nofe")
 }
 
-[node name="flower_pot" type="Node3D"]
+[node name="flower_pot" type="Node3D" unique_id=412381195]
 
-[node name="flowerot" type="Node3D" parent="."]
+[node name="flowerot" type="Node3D" parent="." unique_id=630936635]
 transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="flowerot"]
+[node name="Skeleton3D" type="Skeleton3D" parent="flowerot" unique_id=991615019]
 bones/0/name = "joint_scale_flowerpot"
 bones/0/parent = -1
 bones/0/rest = Transform3D(0.913089, 1.49012e-08, -0.40776, 0.40776, -1.19209e-07, 0.913089, -1.49012e-08, -1, -1.19209e-07, 0, 0, 571.476)
@@ -394,51 +394,49 @@ bones/4/position = Vector3(2.73435e-07, 45.5164, -2.08616e-07)
 bones/4/rotation = Quaternion(-0.685289, 1.30959e-09, 2.04567e-08, 0.728272)
 bones/4/scale = Vector3(1, 1, 1)
 
-[node name="center_uv" type="MeshInstance3D" parent="flowerot/Skeleton3D"]
+[node name="center_uv" type="MeshInstance3D" parent="flowerot/Skeleton3D" unique_id=1853373188]
 mesh = SubResource("ArrayMesh_1dhgi")
 skin = SubResource("Skin_wvgjs")
 
-[node name="leaf_uv" type="MeshInstance3D" parent="flowerot/Skeleton3D"]
+[node name="leaf_uv" type="MeshInstance3D" parent="flowerot/Skeleton3D" unique_id=510052677]
 mesh = SubResource("ArrayMesh_880k1")
 skin = SubResource("Skin_wvgjs")
 
-[node name="leaf_uv1" type="MeshInstance3D" parent="flowerot/Skeleton3D"]
+[node name="leaf_uv1" type="MeshInstance3D" parent="flowerot/Skeleton3D" unique_id=482969726]
 mesh = SubResource("ArrayMesh_qv601")
 skin = SubResource("Skin_wvgjs")
 
-[node name="petal2" type="MeshInstance3D" parent="flowerot/Skeleton3D"]
+[node name="petal2" type="MeshInstance3D" parent="flowerot/Skeleton3D" unique_id=1907523576]
 mesh = SubResource("ArrayMesh_bbycy")
 skin = SubResource("Skin_wvgjs")
 
-[node name="petal3" type="MeshInstance3D" parent="flowerot/Skeleton3D"]
+[node name="petal3" type="MeshInstance3D" parent="flowerot/Skeleton3D" unique_id=1045030280]
 mesh = SubResource("ArrayMesh_ymgre")
 skin = SubResource("Skin_wvgjs")
 
-[node name="petal4" type="MeshInstance3D" parent="flowerot/Skeleton3D"]
+[node name="petal4" type="MeshInstance3D" parent="flowerot/Skeleton3D" unique_id=1258178701]
 mesh = SubResource("ArrayMesh_lc7eo")
 skin = SubResource("Skin_wvgjs")
 
-[node name="petal5" type="MeshInstance3D" parent="flowerot/Skeleton3D"]
+[node name="petal5" type="MeshInstance3D" parent="flowerot/Skeleton3D" unique_id=988907952]
 mesh = SubResource("ArrayMesh_m0nuo")
 skin = SubResource("Skin_wvgjs")
 
-[node name="petal_uv" type="MeshInstance3D" parent="flowerot/Skeleton3D"]
+[node name="petal_uv" type="MeshInstance3D" parent="flowerot/Skeleton3D" unique_id=2042672515]
 mesh = SubResource("ArrayMesh_1m0hw")
 skin = SubResource("Skin_wvgjs")
 
-[node name="petla6" type="MeshInstance3D" parent="flowerot/Skeleton3D"]
+[node name="petla6" type="MeshInstance3D" parent="flowerot/Skeleton3D" unique_id=1102296306]
 mesh = SubResource("ArrayMesh_g6eyc")
 skin = SubResource("Skin_wvgjs")
 
-[node name="pot_uv" type="MeshInstance3D" parent="flowerot/Skeleton3D"]
+[node name="pot_uv" type="MeshInstance3D" parent="flowerot/Skeleton3D" unique_id=1918529911]
 mesh = SubResource("ArrayMesh_q05kd")
 skin = SubResource("Skin_wvgjs")
 
-[node name="stem_uv" type="MeshInstance3D" parent="flowerot/Skeleton3D"]
+[node name="stem_uv" type="MeshInstance3D" parent="flowerot/Skeleton3D" unique_id=649459983]
 mesh = SubResource("ArrayMesh_42s26")
 skin = SubResource("Skin_wvgjs")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_j11uv")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1426150242]
+libraries/ = SubResource("AnimationLibrary_j11uv")

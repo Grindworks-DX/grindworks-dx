@@ -507,8 +507,9 @@ func calculate_accuracy(action: BattleAction) -> float:
 	if action in action_hit_rolls.keys():
 		return Globals.ACCURACY_GUARANTEE_HIT
 	if action is ToonAttack:
-		if action is GagDrop and action.targets[0].lured:
+		if action is GagDrop and action.targets[0].lured and Util.get_player().can_drop_hit_lured == 0:
 			# Breaking Grounds: no more lured drop, sorry!
+			# okay maybe sometimes lured drop
 			return Globals.ACCURACY_GUARANTEE_MISS
 		if not Util.get_player().use_accuracy:
 			action_hit_rolls[action] = true
