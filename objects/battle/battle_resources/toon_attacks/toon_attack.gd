@@ -91,3 +91,7 @@ func get_store_summary() -> String:
 	if gag_summary.is_empty():
 		return get_stats()
 	return gag_summary
+
+func impact(target: Actor = null) -> void:
+	manager.affect_target(target, damage)
+	super(target)

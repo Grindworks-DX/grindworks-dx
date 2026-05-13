@@ -52,7 +52,7 @@ func update(stat := "") -> void:
 func apply_stat_labels() -> void:
 	for label in stat_info.keys():
 		var stat = stat_info[label]
-		label.text = "%s: " % stat.capitalize() if (!is_mini or stat in PlayerStats.attributes + ['crit_mult']) else ""
+		label.text = "%s: " % stat.capitalize() if (!is_mini or stat in PlayerStats.attributes + ['crit_mult', 'silly_meter']) else ""
 		if stat in ['damage', 'defense', 'evasiveness', 'luck', 'crit_mult']:
 			label.text += '%d%%' % stats.get_stat_as_percent(stat) if Util.player_exists() else 100
 		else:
@@ -69,7 +69,7 @@ func apply_stat_changes() -> void:
 			#label.set_text("")
 			continue
 		var stat_change_txt: String
-		if stat in PlayerStats.attributes + ['speed']:
+		if stat in PlayerStats.attributes + ['speed', 'silly_meter']:
 			stat_change = roundi(stat_change)
 			stat_change_txt = str(stat_change)
 		elif stat_change is float:

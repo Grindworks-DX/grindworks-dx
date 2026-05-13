@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="GagToonup" format=3 uid="uid://dw1ec1sx8ef4y"]
+
+[ext_resource type="Texture2D" uid="uid://bsmmrav5fwlhx" path="res://ui_assets/battle/gags/inventory_juggling_cubes.png" id="1_plfmk"]
+[ext_resource type="Script" uid="uid://b0qqkck4dyqap" path="res://objects/battle/battle_resources/toon_attacks/gag_toonup.gd" id="2_ut15j"]
+
+[resource]
+script = ExtResource("2_ut15j")
+movie_type = 5
+toonup_effect = -40.0
+level = 6
+target_type = 4
+action_name = "Juggling Cubes"
+icon = ExtResource("1_plfmk")
+metadata/_custom_type_script = "uid://b0qqkck4dyqap"

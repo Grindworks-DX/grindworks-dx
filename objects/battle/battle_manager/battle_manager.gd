@@ -11,8 +11,10 @@ const CRIT_SFX: Array = [CRIT_SFX_1, CRIT_SFX_2, CRIT_SFX_3, CRIT_SFX_4]
 
 ## Child references
 @onready var scene_timer := $SceneTimer
-@onready var attack_label := %AttackLabel
-@onready var summary_label := %SummaryLabel
+@onready var attack_label_enemy := %AttackLabelEnemy
+@onready var summary_label_enemy := %SummaryLabelEnemy
+@onready var attack_label_player := %AttackLabelPlayer
+@onready var summary_label_player := %SummaryLabelPlayer
 
 ## Locals
 var player = Util.get_player()
@@ -86,6 +88,7 @@ func start_battle(cog_array: Array[Cog], battlenode: BattleNode):
 	
 	player.toon.drop_shadow.reparent(player.toon.legs.shadow_bone)
 	populate_enemy_moves()
+	
 
 func append_action(action: BattleAction):
 	round_actions.append(action)
@@ -583,14 +586,16 @@ func get_crit_chance(action: BattleAction) -> float:
 	var crit_chance: float = (battle_stats[action.user].get_stat('luck') - 1.0) * action.crit_chance_mod
 	return crit_chance
 
-func show_action_name(action_name : String, action_summary := "", action_color := Color.RED, action_shadow := Color.DARK_RED, summary_color := Color('ff6d00'), summary_shadow := Color('5c2200')):
+func show_action_name(action_name : String, action_summary := "", is_player := false):
+	var attack_label = attack_label_player if is_player else attack_label_enemy
+	var summary_label = summary_label_player if is_player else summary_label_enemy
 	attack_label.set_text(action_name)
-	attack_label.label_settings.font_color = action_color
-	attack_label.label_settings.shadow_color = action_shadow
+	#attack_label_enemy.label_settings.font_color = action_color
+	#attack_label_enemy.label_settings.shadow_color = action_shadow
 	attack_label.show()
 	summary_label.set_text(action_summary)
-	summary_label.label_settings.font_color = summary_color
-	summary_label.label_settings.shadow_color = summary_shadow
+	#summary_label_enemy.label_settings.font_color = summary_color
+	#summary_label_enemy.label_settings.shadow_color = summary_shadow
 	summary_label.visible = !action_summary.is_empty()
 	await sleep(6.0)
 	

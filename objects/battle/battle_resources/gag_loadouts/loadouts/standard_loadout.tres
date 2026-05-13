@@ -7,8 +7,10 @@
 [ext_resource type="Resource" uid="uid://0528viy6hdsv" path="res://objects/battle/battle_resources/gag_loadouts/gag_tracks/throw.tres" id="6_nlbmv"]
 [ext_resource type="Resource" uid="uid://dvxiqtapdvmj4" path="res://objects/battle/battle_resources/gag_loadouts/gag_tracks/squirt.tres" id="7_m7vt2"]
 [ext_resource type="Resource" uid="uid://lf7h5xkbt2op" path="res://objects/battle/battle_resources/gag_loadouts/gag_tracks/drop.tres" id="8_gt0y2"]
+[ext_resource type="Resource" uid="uid://3inewh4lfe16" path="res://objects/battle/battle_resources/silly_surges/surge_juggling.tres" id="9_8y25i"]
 [ext_resource type="Script" uid="uid://ckypnf7t805p3" path="res://objects/battle/battle_resources/gag_loadouts/gag_loadout.gd" id="119_h062j"]
 
 [resource]
 script = ExtResource("119_h062j")
 loadout = Array[ExtResource("1_ejseq")]([ExtResource("3_f35fq"), ExtResource("4_0jpk2"), ExtResource("5_lim3m"), ExtResource("6_nlbmv"), ExtResource("7_m7vt2"), ExtResource("8_gt0y2")])
+silly_surge = ExtResource("9_8y25i")

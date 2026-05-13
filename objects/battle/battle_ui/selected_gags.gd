@@ -31,6 +31,7 @@ func configure_panel(panel) -> void:
 	panel.get_node('GeneralButton').pressed.connect(cancel_gag.bind(panels.find(panel)))
 	panel.get_node('DamageLabel').text = ""
 	panel.get_node('TargetingLabel').text = ""
+	panel.get_node('PriceLabel').text = ""
 		
 func update_panels() -> void:
 	# Amount of panels is based on Player turns (-1)
@@ -97,11 +98,13 @@ func refresh_gags(gags: Array[ToonAttack]):
 			if gag is GagThrow: panel.get_node('DamageLabel').text += "\n(%d)" % manager.get_damage(gag.damage + gag.sweetspot_damage, gag, gag.targets[0])
 			if gag is GagLure: panel.get_node('DamageLabel').text += "(%d)" % manager.get_damage(gag.lure_effect.knockback_effect, gag, gag.targets[0])
 			panel.get_node('TargetingLabel').text = get_targeting_string(gag)
+			panel.get_node('PriceLabel').text = str(gag.price) if gag.price > 0 else ""
 		else:
 			panel.get_node('GagIcon').texture = null
 			panel.get_node('GeneralButton').disabled = true
 			panel.get_node('DamageLabel').text = ""
 			panel.get_node('TargetingLabel').text = ""
+			panel.get_node('PriceLabel').text = ""
 		panel.get_node('GeneralButton').visible = not panel.get_node('GeneralButton').disabled
 
 func hover_slot(idx: int) -> void:

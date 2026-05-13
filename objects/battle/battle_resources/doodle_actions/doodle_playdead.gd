@@ -12,7 +12,7 @@ func action():
 	await manager.sleep(0.5)
 	
 	# Show the move's effect
-	manager.show_action_name("Luck Boost!")
+	manager.show_action_name("Luck Boost!", "", true)
 	
 	# Do play dead anim
 	user.set_animation('playdead')

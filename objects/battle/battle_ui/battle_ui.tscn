@@ -59,6 +59,25 @@ font_size = 12
 shadow_size = 2
 shadow_color = Color(0, 0, 0, 0.35686275)
 
+[sub_resource type="LabelSettings" id="LabelSettings_aeg68"]
+font = ExtResource("5_pju0v")
+font_size = 20
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_isscl"]
+resource_local_to_scene = true
+font = ExtResource("5_pju0v")
+font_size = 12
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.35686275)
+
+[sub_resource type="LabelSettings" id="LabelSettings_od75h"]
+font = ExtResource("5_pju0v")
+font_size = 20
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_uefqg"]
 font = ExtResource("12_iqdos")
 font_size = 18
@@ -170,9 +189,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
+offset_left = -50.0
 offset_top = 3.0
-offset_right = 20.0
+offset_right = -10.0
 offset_bottom = 43.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -390,6 +409,57 @@ offset_bottom = 31.5
 [node name="CountLabel" parent="PlanningUI/BattleMenuContainer/BottomRight/LockIn" index="2" unique_id=2098216321]
 label_settings = SubResource("LabelSettings_s17px")
 
+[node name="Surge" parent="PlanningUI/BattleMenuContainer/BottomRight" unique_id=1066076446 instance=ExtResource("6_giclt")]
+unique_name_in_owner = true
+self_modulate = Color(0.82860273, 0.8833039, 0.26649347, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -69.21735
+offset_top = 118.30434
+offset_right = 78.6087
+offset_bottom = 147.30434
+grow_horizontal = 0
+grow_vertical = 1
+texture_normal = ExtResource("6_x2218")
+texture_pressed = ExtResource("7_ispc8")
+texture_hover = ExtResource("8_rdvyd")
+texture_disabled = ExtResource("9_fsjx4")
+texture_focused = ExtResource("8_rdvyd")
+text = "SILLY SURGE"
+
+[node name="ButtonText" parent="PlanningUI/BattleMenuContainer/BottomRight/Surge" index="1" unique_id=2113924769]
+offset_left = -70.0
+offset_top = -24.5
+offset_right = 86.0
+offset_bottom = 31.5
+label_settings = SubResource("LabelSettings_aeg68")
+
+[node name="CountLabel" parent="PlanningUI/BattleMenuContainer/BottomRight/Surge" index="2" unique_id=2098216321]
+label_settings = SubResource("LabelSettings_isscl")
+
+[node name="SurgeRequirements" type="Label" parent="PlanningUI/BattleMenuContainer/BottomRight/Surge" unique_id=851705168]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -194.56516
+offset_top = -11.5
+offset_right = -154.56516
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Required Silly Meter: 20/45/80"
+label_settings = SubResource("LabelSettings_od75h")
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="Run" parent="PlanningUI/BattleMenuContainer/BottomRight" unique_id=509481613 instance=ExtResource("6_giclt")]
 visible = false
 layout_mode = 1
@@ -414,6 +484,17 @@ grow_vertical = 0
 focus_neighbor_left = NodePath("../Fire")
 focus_neighbor_top = NodePath("../LockIn")
 text = "ITEMS"
+
+[node name="SillyMeterBar" type="ProgressBar" parent="PlanningUI/BattleMenuContainer" unique_id=1612230418]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 423.91302
+offset_top = -109.78261
+offset_right = 457.60864
+offset_bottom = 174.99998
+value = 50.0
+fill_mode = 3
+show_percentage = false
 
 [node name="AttackLabel" type="Label" parent="PlanningUI" unique_id=241992762]
 unique_name_in_owner = true
@@ -635,7 +716,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -417.0
 offset_top = -123.0
-offset_right = -85.0
+offset_right = 261.0
 offset_bottom = -75.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -685,9 +766,9 @@ custom_minimum_size = Vector2(230, 200)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 28.0
+offset_left = 20.0
 offset_top = -441.0
-offset_right = 258.0
+offset_right = 250.0
 offset_bottom = -217.0
 grow_vertical = 0
 pivot_offset = Vector2(115, 105)
@@ -703,7 +784,8 @@ NodePath("MarginContainer/VBoxContainer/Defense"): "defense",
 NodePath("MarginContainer/VBoxContainer/Evasiveness"): "evasiveness",
 NodePath("MarginContainer/VBoxContainer/Luck"): "luck",
 NodePath("MarginContainer/VBoxContainer/Speed"): "speed",
-NodePath("MarginContainer/VBoxContainer/Crit Mult"): "crit_mult"
+NodePath("MarginContainer/VBoxContainer/Crit Mult"): "crit_mult",
+NodePath("MarginContainer/VBoxContainer/Silly Meter"): "silly_meter"
 }
 is_mini = true
 use_battle_stats = true
@@ -981,8 +1063,8 @@ vertical_alignment = 1
 
 [node name="Crit MultChange" type="Label" parent="Stats/MarginContainer/VBoxContainer/Crit Mult" unique_id=364936339]
 layout_mode = 0
-offset_left = 81.0
-offset_right = 171.0
+offset_left = 64.0
+offset_right = 154.0
 offset_bottom = 21.0
 text = "+2.00"
 label_settings = SubResource("LabelSettings_6dwfh")
@@ -1000,6 +1082,34 @@ scale = Vector2(0.765, 0.765)
 texture = ExtResource("35_6vafj")
 expand_mode = 1
 
+[node name="Silly Meter" type="Label" parent="Stats/MarginContainer/VBoxContainer" unique_id=2059574507]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_jerem")
+vertical_alignment = 1
+
+[node name="Silly MeterChange" type="Label" parent="Stats/MarginContainer/VBoxContainer/Silly Meter" unique_id=1074528356]
+layout_mode = 0
+offset_left = 72.0
+offset_right = 162.0
+offset_bottom = 21.0
+text = "+2.00"
+label_settings = SubResource("LabelSettings_y87ra")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Stats/MarginContainer/VBoxContainer/Silly Meter" unique_id=1027437604]
+visible = false
+layout_mode = 0
+offset_left = -26.848488
+offset_top = -0.9999924
+offset_right = 3.4242325
+offset_bottom = 29.272728
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("31_aeg68")
+expand_mode = 1
+
 [connection signal="s_gag_canceled" from="." to="." method="gag_canceled"]
 [connection signal="s_gag_pressed" from="." to="." method="gag_selected"]
 [connection signal="s_gags_updated" from="." to="SelectedGags" method="refresh_gags"]
@@ -1014,8 +1124,14 @@ expand_mode = 1
 [connection signal="mouse_entered" from="PlanningUI/BattleMenuContainer/BottomRight/LockIn" to="." method="on_pass_hovered"]
 [connection signal="mouse_exited" from="PlanningUI/BattleMenuContainer/BottomRight/LockIn" to="." method="gag_unhovered"]
 [connection signal="pressed" from="PlanningUI/BattleMenuContainer/BottomRight/LockIn" to="." method="on_pass_pressed"]
+[connection signal="focus_entered" from="PlanningUI/BattleMenuContainer/BottomRight/Surge" to="." method="on_surge_hovered"]
+[connection signal="focus_exited" from="PlanningUI/BattleMenuContainer/BottomRight/Surge" to="." method="gag_unhovered"]
+[connection signal="mouse_entered" from="PlanningUI/BattleMenuContainer/BottomRight/Surge" to="." method="on_surge_hovered"]
+[connection signal="mouse_exited" from="PlanningUI/BattleMenuContainer/BottomRight/Surge" to="." method="gag_unhovered"]
+[connection signal="pressed" from="PlanningUI/BattleMenuContainer/BottomRight/Surge" to="." method="on_surge_pressed"]
 [connection signal="pressed" from="PlanningUI/BattleMenuContainer/BottomRight/SOS" to="." method="open_items"]
 [connection signal="pressed" from="PlanningUI/TargetSelect/Buttons/Back" to="PlanningUI/TargetSelect" method="arrow_pressed" binds= [-1]]
 [connection signal="s_gag_canceled" from="SelectedGags" to="." method="cancel_gag"]
 
 [editable path="PlanningUI/BattleMenuContainer/BottomRight/LockIn"]
+[editable path="PlanningUI/BattleMenuContainer/BottomRight/Surge"]

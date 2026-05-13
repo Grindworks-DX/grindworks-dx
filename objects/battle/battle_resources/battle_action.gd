@@ -13,6 +13,10 @@ enum ActionTarget {
 }
 @export var target_type := ActionTarget.ENEMY
 @export var action_name: String = "Attack"
+
+func get_action_name() -> String:
+	return action_name
+
 @export var one_time_use := false
 @export var crit_chance_mod := 1.0
 @export var action_tags: Array[ActionTag] = []
@@ -130,3 +134,8 @@ func remove_tag(tag: ActionTag) -> void:
 		action_tags.erase(tag)
 
 #endregion
+
+func action() -> void: pass
+
+func impact(target: Actor = null) -> void:
+	BattleService.s_action_impact.emit(self)

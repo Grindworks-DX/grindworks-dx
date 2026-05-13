@@ -49,6 +49,19 @@ stacked_shadow_0/offset = Vector2(2, 2)
 stacked_shadow_0/color = Color(0, 0, 0, 0.37254903)
 stacked_shadow_0/outline_size = 2
 
+[sub_resource type="LabelSettings" id="LabelSettings_l5xvc"]
+line_spacing = -1.0
+font = ExtResource("6_kkrbn")
+font_size = 14
+outline_size = 2
+outline_color = Color(0.103743516, 0.10374353, 0.103743516, 1)
+shadow_size = 4
+shadow_color = Color(0.17015168, 0.15703246, 0.28341207, 1)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(2, 2)
+stacked_shadow_0/color = Color(0, 0, 0, 0.37254903)
+stacked_shadow_0/outline_size = 2
+
 [node name="SelectedGag" type="TextureRect" unique_id=680160225]
 texture = ExtResource("1_y0eee")
 
@@ -137,3 +150,22 @@ grow_vertical = 0
 text = "544"
 label_settings = SubResource("LabelSettings_m07gh")
 horizontal_alignment = 1
+
+[node name="PriceLabel" type="Label" parent="." unique_id=854260719]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -26.0
+offset_right = 16.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "7"
+label_settings = SubResource("LabelSettings_l5xvc")
+horizontal_alignment = 1
+vertical_alignment = 1

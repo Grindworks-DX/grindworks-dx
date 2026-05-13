@@ -53,7 +53,10 @@ var debug_gag_points := false
 		print("Agility set to %.2f" % x)
 
 # Breaking Grounds - beeeeg crits
-@export var crit_mult := 2.0
+@export var crit_mult := 2.0:
+	set(x):
+		crit_mult = x
+		s_stat_changed.emit('crit_mult')
 @export var mod_cog_dmg_mult := 1.0
 @export var shop_discount := 0
 @export var healing_effectiveness := 1.0
@@ -193,7 +196,7 @@ func initialize() -> void:
 	monitor_stranger_chance()
 
 func start_stat_monitors() -> void:
-	var stat_monitors := ['damage', 'defense', 'evasiveness', 'speed', 'luck', 'crit_mult']
+	var stat_monitors := ['damage', 'defense', 'evasiveness', 'speed', 'luck', 'crit_mult', 'silly_meter']
 	for stat in stat_monitors + attributes:
 		prev_stats[stat] = get_stat(stat)
 
@@ -208,7 +211,7 @@ func max_out() -> void:
 		toonups[key] = 0
 	for key in gag_vouchers.keys():
 		gag_vouchers[key] = 0
-	turns = max_turns
+	#turns = max_turns
 
 func get_highest_gag_level() -> int:
 	return gags_unlocked.values().max()
@@ -221,6 +224,7 @@ func on_battle_started(_battle: BattleManager) -> void:
 		if not gags_unlocked[track] > 0: continue
 		gag_balance[track] = gag_starting_points[track]
 		restock(track, roll_gag_regen(track) + gag_battle_start_point_boost.get(track, 0) + global_battle_start_point_boost)
+	_battle.battle_stats[Util.get_player()].silly_meter = starting_silly_meter
 
 func restock_tick() -> void:
 	print('Restock tick!')
@@ -399,9 +403,9 @@ signal s_shrug_changed(new_value: int)
 @export var humor_healing_multiplier := 1.0 
 
 static var attribute_modifiers := {
-	'punch': { 'damage': 0.04, 'parry': 0.04 },
+	'punch': { 'damage': 0.05, 'parry': 0.04 },
 	'humor': { 'max_hp': 3, 'humor_healing': 1.0 },
-	'gusto': { 'speed': 1, 'gag_regen_chance': 0.05 },
+	'gusto': { 'speed': 1, 'gag_regen_chance': 0.05, 'starting_silly_meter': 1 },
 	'shrug': { 'luck': 0.04, 'evasiveness': 0.05 },
 }
 
@@ -459,3 +463,15 @@ func do_humor_healing(_effectiveness := 1.0) -> void:
 		Task.delay(0.2).connect(AudioManager.play_sound.bind(load("res://audio/sfx/items/laff_boost_pickup.ogg"), -5.0))
 
 signal s_toonup_used(gag: ToonAttack)
+
+# Silly Meter: Builds in combat by spending gag points
+
+@export var silly_meter := 0:
+	set(x):
+		silly_meter = x
+		s_stat_changed.emit('silly_meter')
+@export var starting_silly_meter := 0
+
+func on_action_finished(action: BattleAction) -> void:
+	if action is not ToonAttack or action.user != Util.get_player(): return
+	action.manager.battle_stats[Util.get_player()].silly_meter += maxi(0, action.price)
