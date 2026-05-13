@@ -12,7 +12,7 @@ func action():
 	await manager.sleep(0.5)
 	
 	# Show the move's effect
-	manager.show_action_name("Evasiveness Boost!")
+	manager.show_action_name("Evasiveness Boost!", "", true)
 	
 	# Do roll over anim
 	user.set_animation('rollover')

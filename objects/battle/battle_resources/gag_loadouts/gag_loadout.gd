@@ -1,8 +1,8 @@
 extends Resource
 class_name GagLoadout
 
-
 @export var loadout: Array[Track]
+@export var silly_surge: SillySurge
 
 func get_track_of_name(track_name: String) -> Track:
 	for track: Track in loadout:

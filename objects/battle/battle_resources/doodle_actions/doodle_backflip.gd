@@ -11,7 +11,7 @@ func action():
 	await manager.sleep(0.5)
 	
 	# Show the move's effect
-	manager.show_action_name("Defense Boost!")
+	manager.show_action_name("Defense Boost!", "", true)
 	
 	# Do backflip anim
 	user.set_animation('backflip')

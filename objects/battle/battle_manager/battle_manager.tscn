@@ -25,20 +25,42 @@ stacked_shadow_0/offset = Vector2(2, 2)
 stacked_shadow_0/color = Color(0, 0, 0, 0.37254903)
 stacked_shadow_0/outline_size = 2
 
+[sub_resource type="LabelSettings" id="LabelSettings_7upjs"]
+font = ExtResource("2_nyi5o")
+font_size = 48
+font_color = Color(0.41568628, 0.87058824, 0.23529412, 1)
+shadow_size = 11
+shadow_color = Color(0.07067042, 0.27304757, 0.08166788, 1)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(2, 2)
+stacked_shadow_0/color = Color(0, 0, 0, 0.37254903)
+stacked_shadow_0/outline_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_ryyfd"]
+font = ExtResource("2_nyi5o")
+font_size = 28
+font_color = Color(0.4206235, 0.8964995, 0.94228745, 1)
+shadow_size = 8
+shadow_color = Color(0.11791583, 0.24484926, 0.16308874, 1)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(2, 2)
+stacked_shadow_0/color = Color(0, 0, 0, 0.37254903)
+stacked_shadow_0/outline_size = 2
+
 [node name="BattleManager" type="Node" unique_id=473736810]
 script = ExtResource("1_jfi3m")
 
 [node name="SceneTimer" type="Timer" parent="." unique_id=1295539216]
 one_shot = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=151573554]
-offset_left = 384.0
+[node name="EnemyLabels" type="VBoxContainer" parent="." unique_id=151573554]
+offset_left = 472.0
 offset_top = 400.0
-offset_right = 939.0
+offset_right = 1027.0
 offset_bottom = 512.0
 alignment = 2
 
-[node name="AttackLabel" type="Label" parent="VBoxContainer" unique_id=418347371]
+[node name="AttackLabelEnemy" type="Label" parent="EnemyLabels" unique_id=418347371]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -47,11 +69,38 @@ label_settings = SubResource("LabelSettings_j00wc")
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="SummaryLabel" type="Label" parent="VBoxContainer" unique_id=1008880546]
+[node name="SummaryLabelEnemy" type="Label" parent="EnemyLabels" unique_id=1008880546]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 text = "Attack Summary"
 label_settings = SubResource("LabelSettings_sg3ye")
 horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PlayerLabels" type="VBoxContainer" parent="." unique_id=1207413023]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 135.0
+offset_top = 76.0
+offset_right = 690.0
+offset_bottom = 188.0
+grow_vertical = 2
+alignment = 2
+
+[node name="AttackLabelPlayer" type="Label" parent="PlayerLabels" unique_id=387073805]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "ATTACK NAME"
+label_settings = SubResource("LabelSettings_7upjs")
+vertical_alignment = 1
+
+[node name="SummaryLabelPlayer" type="Label" parent="PlayerLabels" unique_id=617619706]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Attack Summary"
+label_settings = SubResource("LabelSettings_ryyfd")
 vertical_alignment = 1

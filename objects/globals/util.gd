@@ -51,6 +51,9 @@ var floor_number := -1:
 func get_player() -> Player:
 	return player
 
+func get_silly_surge() -> SillySurge:
+	return player.character.gag_loadout.silly_surge
+
 func player_exists() -> bool:
 	return is_instance_valid(get_player())
 
@@ -416,3 +419,23 @@ func search_directory_recursive(directory: String, type: String) -> PackedString
 		files.append_array(search_directory_recursive(new_dir, type))
 	
 	return files
+
+#region Breaking Grounds
+
+func do_instant_battle_action(action: BattleAction) -> void:
+	var battle := BattleService.ongoing_battle
+	var battle_node := battle.battle_node
+	
+	if is_instance_valid(battle.battle_ui.timer):
+		battle.battle_ui.timer.timer.set_paused(true)
+		
+	battle.battle_ui.planning_ui.visible = false
+	
+	await action.action()
+	
+	battle.battle_ui.planning_ui.visible = true
+
+	battle.battle_node.focus_character(battle.battle_node)
+	
+	if is_instance_valid(battle.battle_ui.timer):
+		battle.battle_ui.timer.timer.set_paused(false)

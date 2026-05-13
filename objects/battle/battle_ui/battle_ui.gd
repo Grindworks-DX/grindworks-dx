@@ -9,6 +9,7 @@ class_name BattleUI
 @onready var main_container := %BattleMenuContainer
 @onready var gag_order_menu := %SelectedGags
 @onready var pass_button: GagButton = %LockIn
+@onready var surge_button: GagButton = %Surge
 
 @onready var target_select := %TargetSelect
 
@@ -56,6 +57,20 @@ func _ready():
 	fire_action.target_type = BattleAction.ActionTarget.ENEMY
 	fire_action.icon = load("res://objects/items/custom/pink_slip/pink_slip_icon.png")
 	fire_action.action_name = "FIRE"
+	
+	var surge = Util.get_silly_surge()
+	if surge is SillySurge:
+		surge_button.visible = true
+		surge.user = Util.get_player() #TEMP
+		s_gags_updated.connect(surge.sync_level.unbind(1))
+		manager.s_round_ended.connect(surge.sync_level)
+		surge.s_surge_level_set.connect(on_surge_level_changed)
+		surge.sync_level()
+		%SurgeRequirements.text = "Silly Meter Needed: "
+		for i in surge.thresholds.size():
+			%SurgeRequirements.text += str(surge.thresholds[i])
+			if i < surge.thresholds.size() - 1: %SurgeRequirements.text += "/"
+		%SurgeRequirements.hide()
 
 	pass_action = load("res://objects/battle/battle_resources/pass_action.tres")
 
@@ -115,6 +130,7 @@ func gag_selected(gag: BattleAction) -> void:
 	selected_gags = sort_gags(selected_gags)
 	s_gag_selected.emit(gag)
 	gag_order_menu.refresh_gags(selected_gags)
+	s_gags_updated.emit(selected_gags)
 	
 	# Lower turns
 	turn += 1
@@ -144,6 +160,7 @@ func gag_hovered(gag: BattleAction):
 
 func gag_unhovered() -> void:
 	right_panel.clear_display()
+	%SurgeRequirements.hide()
 
 func complete_turn():
 	var gag_order := sort_gags(selected_gags)
@@ -324,4 +341,31 @@ func on_pass_hovered() -> void:
 	var has_move: bool = manager.battle_stats[Util.get_player()].turns > turn
 	if has_move:
 		gag_hovered(pass_action)
-		
+
+func on_surge_pressed() -> void:
+	# Do surge instantly
+	var surge := Util.get_silly_surge()
+	surge.user = Util.get_player()
+	surge.manager = manager
+	Util.do_instant_battle_action(surge)
+	manager.battle_stats[Util.get_player()].silly_meter -= surge.thresholds[surge.level - 1]
+	surge.sync_level()
+
+func on_surge_hovered() -> void:
+	gag_hovered(Util.get_silly_surge())
+	%SurgeRequirements.show()
+
+func on_surge_level_changed(level := 0) -> void:
+	surge_button.label.text = "SILLY SURGE"
+	if level > 0:
+		surge_button.disabled = false
+		surge_button.self_modulate = Color(0.878, 0.858, 0.381, 1.0)
+	else:
+		surge_button.disabled = true
+		surge_button.self_modulate = Color(0.112, 0.144, 0.153, 1.0)
+	
+	for i in range(level):
+		surge_button.label.text += "!"
+	
+	%SillyMeterBar.value = manager.battle_stats[Util.get_player()].silly_meter
+	%SillyMeterBar.max_value = Util.get_silly_surge().thresholds[Util.get_silly_surge().thresholds.size() - 1]

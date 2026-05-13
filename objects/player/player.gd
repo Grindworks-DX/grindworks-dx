@@ -357,6 +357,8 @@ func connect_stats() -> void:
 		BattleService.s_round_ended.connect(stats.on_round_end)
 	if not BattleService.s_battle_started.is_connected(stats.on_battle_started):
 		BattleService.s_battle_started.connect(stats.on_battle_started)
+	if not BattleService.s_action_finished.is_connected(stats.on_action_finished):
+		BattleService.s_action_finished.connect(stats.on_action_finished)
 	stats.s_active_item_changed.connect(func(newitem): active_item_ui.item = newitem)
 	stats.current_active_item = stats.current_active_item
 	if stats.current_active_item and not stats.current_active_item.node:

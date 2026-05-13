@@ -64,8 +64,8 @@ func emit_gag(gag: ToonAttack, price: int):
 	else:
 		Util.get_player().stats.money -= price
 	refresh()
-	ui_root.s_gag_pressed.emit(newgag)
 	newgag.price = price
+	ui_root.s_gag_pressed.emit(newgag)
 
 func refresh():
 	if not track:
