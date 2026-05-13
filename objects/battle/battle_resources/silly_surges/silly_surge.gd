@@ -26,3 +26,14 @@ func sync_level() -> void:
 	for threshold in thresholds:
 		if meter >= threshold: level += 1
 		else: break
+
+func get_general_stats() -> String:
+	return ""
+
+func get_surge_requirement_text() -> String:
+	var string := "Silly Meter Needed: "
+	for i in thresholds.size():
+		string += str(thresholds[i])
+		if i < thresholds.size() - 1: string += "/"
+	
+	return string

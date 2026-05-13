@@ -353,11 +353,11 @@ func connect_stats() -> void:
 	stats.hp_changed.connect(check_hp)
 	stats.s_extra_lives_changed.connect(func(x: int): laff_meter.extra_lives = x)
 	# Regenerate points at end of round
-	if not BattleService.s_round_ended.is_connected(stats.on_round_end):
+	if !BattleService.s_round_ended.is_connected(stats.on_round_end):
 		BattleService.s_round_ended.connect(stats.on_round_end)
-	if not BattleService.s_battle_started.is_connected(stats.on_battle_started):
+	if !BattleService.s_battle_started.is_connected(stats.on_battle_started):
 		BattleService.s_battle_started.connect(stats.on_battle_started)
-	if not BattleService.s_action_finished.is_connected(stats.on_action_finished):
+	if !BattleService.s_action_finished.is_connected(stats.on_action_finished):
 		BattleService.s_action_finished.connect(stats.on_action_finished)
 	stats.s_active_item_changed.connect(func(newitem): active_item_ui.item = newitem)
 	stats.current_active_item = stats.current_active_item

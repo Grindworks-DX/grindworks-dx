@@ -45,27 +45,22 @@ func get_stats() -> String:
 	if !level > 0: return get_general_stats()
 	var moves = values[level - 1].get('status').moves
 	var healing_percent = values[level - 1].get('healing_percent')
-	var string := "Affects: All Toons
-		Heals %s Laff (%d)
-		Gives %s this round
-		" % [Util.float_to_perc(healing_percent),
+	var string := "Affects: All Toons\nHeals %s Laff (%d)\nGives %s this round" % [
+			Util.float_to_perc(healing_percent),
 			ceili(user.stats.max_hp * healing_percent),
 			"%d Move%s" % [moves, "s" if moves > 1 else ""]
 		]
 	return string
 
 func get_general_stats() -> String:
-	var string := "Affects: All Toons
-		Heals %s Max Laff
-		Gives %s this round
-		" % [
+	var string := "Affects: All Toons\nHeals %s Max Laff\nGives %s this round" % [
 			(func() -> String:
 				var __out := ""
 				
 				for i in values.size():
 					__out += Util.float_to_perc(values[i].get('healing_percent'))
-					if i < values.size() - 2:
-						__out += "/"
+					if i < values.size() - 1:
+						__out += " / "
 				return __out).call(),
 			(func() -> String:
 				var __out := ""
@@ -73,7 +68,7 @@ func get_general_stats() -> String:
 				for i in values.size():
 					__out += str(values[i].get('status').moves)
 					if i < values.size() - 1:
-						__out += "/"
+						__out += " / "
 					if i == values.size() - 1:
 						__out += " Moves"
 				return __out).call(),

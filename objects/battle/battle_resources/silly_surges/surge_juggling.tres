@@ -27,13 +27,13 @@ id = 27
 [resource]
 script = ExtResource("1_mdoqu")
 values = Array[Dictionary]([{
-"healing_percent": 0.4,
+"healing_percent": 0.3,
 "status": SubResource("Resource_xcs34")
 }, {
-"healing_percent": 0.8,
+"healing_percent": 0.6,
 "status": SubResource("Resource_xcs34")
 }, {
-"healing_percent": 1.5,
+"healing_percent": 1.0,
 "status": SubResource("Resource_23j4t")
 }])
 summary = "Heal and gain extra moves this round!"

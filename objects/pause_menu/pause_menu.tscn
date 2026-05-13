@@ -822,7 +822,7 @@ key_count = 4
 radius = 150.0
 key_items = Array[Dictionary]([{
 "title": "Punch: 0",
-"tooltip": "+4% Damage per point
+"tooltip": "+5% Damage per point
 Damage increases the output of your Gags.",
 "value": 0.0
 }, {
@@ -834,11 +834,13 @@ It can also be triggered through item and character effects.",
 "value": 0.0
 }, {
 "title": "Gusto: 0",
-"tooltip": "+1 Speed, +5% Gag Regen per point
+"tooltip": "+1 Speed, +5% Gag Regen, +1 Starting Silly Meter per point
 For each Speed point you have over a Cog, there is a +8% chance to Delay them and skip their turn.
 Delayed Cogs receive a stacking Delay Resist effect for the remainder of combat.
 Gag Regen determines the chance of receiving a point in each Gag track every Restock tick.
-A Restock tick occurs on round start and when passing a move.",
+A Restock tick occurs on round start and when passing a move.
+Silly Meter is used to perform your Silly Surge.
+Every gag point used adds to the Silly Meter.",
 "value": 0.0
 }, {
 "title": "Shrug: 0",
@@ -865,7 +867,7 @@ guide_step = 4.0
 draw_order = PackedStringArray("background", "background_outline", "guides", "graph", "graph_outline", "titles")
 items/key_0/value = 0.0
 items/key_0/title = "Punch: 0"
-items/key_0/tooltip = "+4% Damage per point
+items/key_0/tooltip = "+5% Damage per point
 Damage increases the output of your Gags."
 items/key_1/value = 0.0
 items/key_1/title = "Humor: 0
@@ -875,11 +877,13 @@ Humor Healing is given when a Cog is defeated.
 It can also be triggered through item and character effects."
 items/key_2/value = 0.0
 items/key_2/title = "Gusto: 0"
-items/key_2/tooltip = "+1 Speed, +5% Gag Regen per point
+items/key_2/tooltip = "+1 Speed, +5% Gag Regen, +1 Starting Silly Meter per point
 For each Speed point you have over a Cog, there is a +8% chance to Delay them and skip their turn.
 Delayed Cogs receive a stacking Delay Resist effect for the remainder of combat.
 Gag Regen determines the chance of receiving a point in each Gag track every Restock tick.
-A Restock tick occurs on round start and when passing a move."
+A Restock tick occurs on round start and when passing a move.
+Silly Meter is used to perform your Silly Surge.
+Every gag point used adds to the Silly Meter."
 items/key_3/value = 0.0
 items/key_3/title = "Shrug: 0"
 items/key_3/tooltip = "+4% Luck, +5% Evasiveness per point

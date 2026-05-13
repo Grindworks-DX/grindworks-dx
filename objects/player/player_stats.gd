@@ -211,7 +211,7 @@ func max_out() -> void:
 		toonups[key] = 0
 	for key in gag_vouchers.keys():
 		gag_vouchers[key] = 0
-	turns = max_turns
+	#turns = max_turns
 
 func get_highest_gag_level() -> int:
 	return gags_unlocked.values().max()
@@ -224,7 +224,7 @@ func on_battle_started(_battle: BattleManager) -> void:
 		if not gags_unlocked[track] > 0: continue
 		gag_balance[track] = gag_starting_points[track]
 		restock(track, roll_gag_regen(track) + gag_battle_start_point_boost.get(track, 0) + global_battle_start_point_boost)
-	silly_meter = starting_silly_meter
+	_battle.battle_stats[Util.get_player()].silly_meter = starting_silly_meter
 
 func restock_tick() -> void:
 	print('Restock tick!')
@@ -405,7 +405,7 @@ signal s_shrug_changed(new_value: int)
 static var attribute_modifiers := {
 	'punch': { 'damage': 0.05, 'parry': 0.04 },
 	'humor': { 'max_hp': 3, 'humor_healing': 1.0 },
-	'gusto': { 'speed': 1, 'gag_regen_chance': 0.05, 'starting_sily_meter': 1 },
+	'gusto': { 'speed': 1, 'gag_regen_chance': 0.05, 'starting_silly_meter': 1 },
 	'shrug': { 'luck': 0.04, 'evasiveness': 0.05 },
 }
 

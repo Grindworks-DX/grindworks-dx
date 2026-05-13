@@ -66,10 +66,7 @@ func _ready():
 		manager.s_round_ended.connect(surge.sync_level)
 		surge.s_surge_level_set.connect(on_surge_level_changed)
 		surge.sync_level()
-		%SurgeRequirements.text = "Silly Meter Needed: "
-		for i in surge.thresholds.size():
-			%SurgeRequirements.text += str(surge.thresholds[i])
-			if i < surge.thresholds.size() - 1: %SurgeRequirements.text += "/"
+		%SurgeRequirements.text = surge.get_surge_requirement_text()
 		%SurgeRequirements.hide()
 
 	pass_action = load("res://objects/battle/battle_resources/pass_action.tres")
@@ -347,7 +344,7 @@ func on_surge_pressed() -> void:
 	var surge := Util.get_silly_surge()
 	surge.user = Util.get_player()
 	surge.manager = manager
-	Util.do_instant_battle_action(surge)
+	await Util.do_instant_battle_action(surge)
 	manager.battle_stats[Util.get_player()].silly_meter -= surge.thresholds[surge.level - 1]
 	surge.sync_level()
 

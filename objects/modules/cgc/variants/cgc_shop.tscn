@@ -26,8 +26,6 @@ const BASE_SHIRT := preload(\"res://objects/toon/clothing/shirts/basic_shirt.tre
 const BASE_SHORTS := preload(\"res://objects/toon/clothing/shorts/basic_shorts.tres\")
 const BASE_SKIRT := preload(\"res://objects/toon/clothing/skirts/basic_skirt.tres\")
 
-const SFX_STATIC := preload(\"res://audio/sfx/battle/cogs/misc/staticlight.wav\")
-
 
 func _ready() -> void:
 	if is_instance_valid(Util.floor_manager):
@@ -53,7 +51,7 @@ func haunted_setup() -> void:
 	
 	for stream in stream_randomizer.streams_count:
 		stream_randomizer.remove_stream(0)
-	stream_randomizer.add_stream(0, SFX_STATIC)
+	stream_randomizer.add_stream(0, load(\"res://audio/sfx/battle/cogs/misc/staticlight.wav\"))
 	
 	audio_player.stop()
 	audio_player.play()
@@ -84,33 +82,33 @@ func get_base_dna() -> ToonDNA:
 [sub_resource type="Resource" id="Resource_mr3il"]
 script = ExtResource("11_tbro7")
 
-[node name="mole_room" instance=ExtResource("1_y4lq3")]
+[node name="mole_room" unique_id=158963834 instance=ExtResource("1_y4lq3")]
 
 [node name="Navigation" parent="." index="3"]
 visible = true
 navigation_mesh = SubResource("NavigationMesh_0ehsp")
 
-[node name="Fences" type="Node3D" parent="Navigation" index="0"]
+[node name="Fences" type="Node3D" parent="Navigation" index="0" unique_id=110544577]
 
-[node name="fence" parent="Navigation/Fences" index="0" instance=ExtResource("9_1e15g")]
+[node name="fence" parent="Navigation/Fences" index="0" unique_id=234598565 instance=ExtResource("9_1e15g")]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -12.9032, 0, -4.40783)
 
-[node name="fence2" parent="Navigation/Fences" index="1" instance=ExtResource("9_1e15g")]
+[node name="fence2" parent="Navigation/Fences" index="1" unique_id=942511359 instance=ExtResource("9_1e15g")]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -8.90324, 0, -4.40783)
 
-[node name="fence3" parent="Navigation/Fences" index="2" instance=ExtResource("9_1e15g")]
+[node name="fence3" parent="Navigation/Fences" index="2" unique_id=2125002970 instance=ExtResource("9_1e15g")]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -4.90324, 0, -4.40783)
 
-[node name="fence4" parent="Navigation/Fences" index="3" instance=ExtResource("9_1e15g")]
+[node name="fence4" parent="Navigation/Fences" index="3" unique_id=990298588 instance=ExtResource("9_1e15g")]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -0.90324, 0, -4.40783)
 
-[node name="fence5" parent="Navigation/Fences" index="4" instance=ExtResource("9_1e15g")]
+[node name="fence5" parent="Navigation/Fences" index="4" unique_id=279705340 instance=ExtResource("9_1e15g")]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 3.09676, 0, -4.40783)
 
-[node name="fence6" parent="Navigation/Fences" index="5" instance=ExtResource("9_1e15g")]
+[node name="fence6" parent="Navigation/Fences" index="5" unique_id=783521202 instance=ExtResource("9_1e15g")]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 7.09676, 0, -4.40783)
 
-[node name="fence7" parent="Navigation/Fences" index="6" instance=ExtResource("9_1e15g")]
+[node name="fence7" parent="Navigation/Fences" index="6" unique_id=986534224 instance=ExtResource("9_1e15g")]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 11.0968, 0, -4.40783)
 
 [node name="collision_floor_3" parent="Navigation" index="1"]
@@ -119,47 +117,47 @@ visible = false
 [node name="collisionfloor2" parent="Navigation" index="2"]
 visible = false
 
-[node name="Shop" type="Node3D" parent="." index="16"]
+[node name="Shop" type="Node3D" parent="." index="16" unique_id=1608483952]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.52923, 0, 13.2559)
 script = SubResource("GDScript_w0q02")
 
-[node name="Toon" parent="Shop" index="0" instance=ExtResource("10_15ijt")]
+[node name="Toon" parent="Shop" index="0" unique_id=1645077912 instance=ExtResource("10_15ijt")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.546352)
 toon_dna = SubResource("Resource_mr3il")
 auto_build = true
 
-[node name="BoardSign" parent="Shop" index="1" instance=ExtResource("12_sfans")]
+[node name="BoardSign" parent="Shop" index="1" unique_id=1717108870 instance=ExtResource("12_sfans")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.367, -1.511)
 render_priority = 1
 
-[node name="shop_counter" parent="Shop" index="2" node_paths=PackedStringArray("toon") instance=ExtResource("13_3poqf")]
+[node name="shop_counter" parent="Shop" index="2" unique_id=1332155406 node_paths=PackedStringArray("toon") instance=ExtResource("13_3poqf")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.235705, 0, 0.43947)
 toon = NodePath("../Toon")
 
-[node name="CrateLeft" parent="Shop" index="3" instance=ExtResource("14_kjccx")]
+[node name="CrateLeft" parent="Shop" index="3" unique_id=1674152050 instance=ExtResource("14_kjccx")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -3.03834, 1.43051e-06, -0.473169)
 
-[node name="CrateTop" parent="Shop/CrateLeft" index="1" instance=ExtResource("14_kjccx")]
+[node name="CrateTop" parent="Shop/CrateLeft" index="1" unique_id=1915646646 instance=ExtResource("14_kjccx")]
 transform = Transform3D(0.457247, 0, -0.2023, 0, 0.5, 0, 0.2023, 0, 0.457247, 0, 1.67445, 0)
 
-[node name="CrateRight" parent="Shop" index="4" instance=ExtResource("14_kjccx")]
+[node name="CrateRight" parent="Shop" index="4" unique_id=1990787448 instance=ExtResource("14_kjccx")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 2.85144, 1.43051e-06, -0.473169)
 
-[node name="CrateMiddle" parent="Shop/CrateRight" index="1" instance=ExtResource("14_kjccx")]
+[node name="CrateMiddle" parent="Shop/CrateRight" index="1" unique_id=38362195 instance=ExtResource("14_kjccx")]
 transform = Transform3D(-0.173664, 0, 0.468872, 0, 0.5, 0, -0.468872, 0, -0.173664, 0, 1.67445, 0)
 
-[node name="CrateTop" parent="Shop/CrateRight/CrateMiddle" index="1" instance=ExtResource("14_kjccx")]
+[node name="CrateTop" parent="Shop/CrateRight/CrateMiddle" index="1" unique_id=1813403653 instance=ExtResource("14_kjccx")]
 transform = Transform3D(0.377223, 0, 0.328181, 0, 0.5, 0, -0.328181, 0, 0.377223, 0, 1.67445, 0)
 
-[node name="mint_crate" parent="Shop" index="5" instance=ExtResource("15_gai5s")]
+[node name="mint_crate" parent="Shop" index="5" unique_id=391796916 instance=ExtResource("15_gai5s")]
 transform = Transform3D(-0.4, 0, -3.49691e-08, 0, 0.4, 0, 3.49691e-08, 0, -0.4, -1.43309, 0, -1.16297)
 
-[node name="radio" parent="Shop/mint_crate" index="1" instance=ExtResource("16_fpggi")]
+[node name="radio" parent="Shop/mint_crate" index="1" unique_id=216586547 instance=ExtResource("16_fpggi")]
 unique_name_in_owner = true
 transform = Transform3D(-2.5, 0, -2.18557e-07, 0, 2.5, 0, 2.18557e-07, 0, -2.5, 0.00894141, 1.67461, -0.00341606)
 
-[node name="MoleStompGame" type="Area3D" parent="." index="18" node_paths=PackedStringArray("force_launch_node", "launch_cam")]
+[node name="MoleStompGame" type="Area3D" parent="." index="18" unique_id=1203402276 node_paths=PackedStringArray("force_launch_node", "launch_cam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8659, -0.0502783, -14.1157)
 script = ExtResource("10_600br")
 game_mode = 1
@@ -170,7 +168,7 @@ launch_cam = NodePath("../MoleCam")
 hole_separation = 2.2
 want_instructions = false
 
-[node name="MoleForcePos" type="Node3D" parent="." index="19"]
+[node name="MoleForcePos" type="Node3D" parent="." index="19" unique_id=988175558]
 
-[node name="MoleCam" type="Camera3D" parent="." index="20"]
+[node name="MoleCam" type="Camera3D" parent="." index="20" unique_id=1027504557]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.08034, 0, -11.0032)

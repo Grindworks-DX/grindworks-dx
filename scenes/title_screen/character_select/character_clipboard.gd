@@ -44,6 +44,8 @@ func _ready() -> void:
 	if char_tabs.get_child_count() > MAX_CHAR_TABS:
 		%CharButtonUp.show()
 		%CharButtonDown.show()
+	
+	%SurgeTexture.mouse_exited.connect(HoverManager.stop_hover)
 
 func update_display() -> void:
 	clear_display()
@@ -94,6 +96,16 @@ func update_display() -> void:
 			new_icon.mouse_entered.connect(Util.do_item_hover.bind(item))
 			new_icon.mouse_exited.connect(HoverManager.stop_hover)
 			item_container.add_child(new_icon)
+	
+	var surge = character.gag_loadout.silly_surge
+	if %SurgeTexture.mouse_entered.is_connected(HoverManager.hover): %SurgeTexture.mouse_entered.disconnect(HoverManager.hover)
+	if surge is SillySurge:
+		%Surge.show()
+		%SurgeTexture.texture = surge.icon
+		%SurgeTexture.mouse_entered.connect(HoverManager.hover.bind(surge.action_name + "\n" + surge.get_general_stats() + "\n" + surge.get_surge_requirement_text()))
+	else:
+		%Surge.hide()
+		%SurgeTexture.mouse_entered.disconnect(HoverManager.hover)
 
 func add_questionmarks() -> void:
 	var qmark: Texture2D = load("res://ui_assets/pick_a_toon/questionmark.png")
