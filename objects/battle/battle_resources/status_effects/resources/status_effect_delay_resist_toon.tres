@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="StatBoost" format=3 uid="uid://7y6sobwq5spp"]
+
+[ext_resource type="Texture2D" uid="uid://bxbtqr6bncfeq" path="res://ui_assets/player_ui/pause/time_crunch.png" id="1_kx0ou"]
+[ext_resource type="Script" uid="uid://csl6saufv84ri" path="res://objects/battle/battle_resources/status_effects/stat_boost.gd" id="2_uicn2"]
+
+[resource]
+script = ExtResource("2_uicn2")
+stat = "delay_resist"
+boost = 0.15
+quality = 0
+icon = ExtResource("1_kx0ou")
+id = 54

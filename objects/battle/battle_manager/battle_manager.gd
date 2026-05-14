@@ -913,9 +913,12 @@ func populate_enemy_moves(reset := true, keep_delays := false) -> void:
 		var attacks := get_cog_attacks(cog)
 		if !keep_delays: cog.delayed = false
 		if !attacks.is_empty():
-			if check_for_delay(cog):
-				attacks.clear()
-				any_delay = true
+			match check_for_delay(cog):
+				DelayResult.COG_DELAYED:
+					attacks.clear()
+					any_delay = true
+				DelayResult.TOON_DELAYED:
+					attacks = get_cog_attacks(cog)
 			enemy_moves.append_array(attacks)
 			cog.current_moves.append_array(attacks)
 	if any_delay: AudioManager.play_sound(load("res://audio/sfx/battle/gags/sound/LB_receive_evidence.ogg"), 3.0)
@@ -932,24 +935,46 @@ func is_target_debuffed(target: Actor) -> bool:
 
 signal s_cog_delayed(cog: Cog)
 
-func check_for_delay(cog: Cog) -> bool:
-	var __out = false
-	if cog.delayed: return true
+static var cog_delay_chance_per_speed := 0.08
+static var toon_delay_chance_per_speed := 0.05
+static var toon_delay_threshold := 3
+
+enum DelayResult {
+	NONE,
+	COG_DELAYED,
+	TOON_DELAYED
+}
+
+func check_for_delay(cog: Cog) -> DelayResult:
+	if cog.delayed: return DelayResult.COG_DELAYED
 	var player_speed = battle_stats[Util.get_player()].speed
 	var cog_speed = battle_stats[cog].speed
-	var cog_delay_resist = battle_stats[cog].delay_resist
 	var roll := randf()
-	var chance: float = min(1.0, ((player_speed - cog_speed) * 0.08)) - cog_delay_resist
-	__out = roll < chance
-	if __out:
-		var new_status = load("res://objects/battle/battle_resources/status_effects/resources/status_effect_delay_resist.tres").duplicate(true)
-		new_status.target = cog
-		add_status_effect(new_status)
-		s_cog_delayed.emit(cog)
-	#else:
-		#for status: StatusEffect in status_effects:
-			#if status.target == cog and status.get_status_name() == "Delay Resist Up":
-				#expire_status_effect(status)
-	print("Delay - Rolled: %0.2f Needed lower than: %0.2f" % [roll, chance])
-	cog.delayed = __out
-	return __out
+	
+	if player_speed > cog_speed:
+		var cog_delay_resist = battle_stats[cog].delay_resist
+		var chance: float = min(1.0, ((player_speed - cog_speed) * cog_delay_chance_per_speed)) - cog_delay_resist
+		print("Delay vs Cog - Rolled: %0.2f Needed lower than: %0.2f" % [roll, chance])
+		if roll < chance:
+			var new_status = load("res://objects/battle/battle_resources/status_effects/resources/status_effect_delay_resist_cog.tres").duplicate(true)
+			new_status.target = cog
+			add_status_effect(new_status)
+			s_cog_delayed.emit(cog)
+			return DelayResult.COG_DELAYED
+		
+	if cog_speed > player_speed + toon_delay_threshold:
+		var toon_delay_resist = battle_stats[Util.get_player()].delay_resist
+		var chance: float = min(1.0, ((cog_speed - player_speed) * toon_delay_chance_per_speed)) - toon_delay_resist
+		print("Delay vs Toon - Rolled: %0.2f Needed lower than: %0.2f" % [roll, chance])
+		if roll < chance:
+			var new_status_toon = load("res://objects/battle/battle_resources/status_effects/resources/status_effect_delay_resist_toon.tres").duplicate(true)
+			new_status_toon.target = Util.get_player()
+			add_status_effect(new_status_toon)
+			var new_status_cog: StatusEffect = load("res://objects/battle/battle_resources/status_effects/resources/status_effect_speed_advantage.tres").duplicate(true)
+			new_status_cog.target = cog
+			new_status_cog.description += "\nRolled Delay Chance: %s" % Util.float_to_perc(chance)
+			add_status_effect(new_status_cog)
+			return DelayResult.TOON_DELAYED
+	
+	cog.delayed = false
+	return DelayResult.NONE

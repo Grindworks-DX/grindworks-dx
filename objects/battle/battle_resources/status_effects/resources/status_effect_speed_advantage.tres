@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://ckhvxmw6cj3uy"]
+
+[ext_resource type="Texture2D" uid="uid://e5b2tf3v7sur" path="res://ui_assets/player_ui/pocket_prank_icons/goon_foot.png" id="1_68fgp"]
+[ext_resource type="Script" uid="uid://b0b68efa61prk" path="res://objects/battle/battle_resources/status_effects/status_effect_overtime.gd" id="2_bxxp0"]
+
+[resource]
+script = ExtResource("2_bxxp0")
+quality = 0
+rounds = 0
+icon = ExtResource("1_68fgp")
+description = "This Cog delayed you and gained +1 Move!"
+status_name = "Speed Advantage"
+id = 27
