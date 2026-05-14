@@ -297,8 +297,8 @@ func get_gag_rate() -> float:
 	
 	return chance
 
-const STARTING_LAFF := 15
-const FLOOR_LAFF_INCREMENT := 18
+const STARTING_LAFF := 30
+const FLOOR_LAFF_INCREMENT := 14
 const LIKELIHOOD_PER_POINT := 0.133
 func get_laff_rate() -> float:
 	if not is_instance_valid(Util.get_player()):
@@ -326,8 +326,8 @@ func get_laff_rate() -> float:
 	return laff_rate
 
 const JokeGoals := {
-	1: 3,
-	2: 6,
+	1: 5,
+	2: 8,
 	3: 10,
 	4: 14
 }
@@ -339,7 +339,7 @@ func get_joke_rate() -> float:
 	var floor_num := maxi(Util.floor_number + 1, 1)
 	
 	var joke_percent: float = float(Util.get_player().stats.total_jokes) / float(JokeGoals[floor_num])
-	var chance := (1.0 - (joke_percent)) * 1.35
+	var chance := (1.0 - (joke_percent)) * 1.1
 	return chance
 
 const REVIVE_GOAL := 15.0

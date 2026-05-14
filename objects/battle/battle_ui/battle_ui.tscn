@@ -1066,8 +1066,8 @@ vertical_alignment = 1
 
 [node name="Crit MultChange" type="Label" parent="Stats/MarginContainer/VBoxContainer/Crit Mult" unique_id=364936339]
 layout_mode = 0
-offset_left = 64.0
-offset_right = 154.0
+offset_left = 89.0
+offset_right = 179.0
 offset_bottom = 21.0
 text = "+2.00"
 label_settings = SubResource("LabelSettings_6dwfh")
@@ -1094,8 +1094,8 @@ vertical_alignment = 1
 
 [node name="Silly MeterChange" type="Label" parent="Stats/MarginContainer/VBoxContainer/Silly Meter" unique_id=1074528356]
 layout_mode = 0
-offset_left = 72.0
-offset_right = 162.0
+offset_left = 25.0
+offset_right = 115.0
 offset_bottom = 21.0
 text = "+2.00"
 label_settings = SubResource("LabelSettings_y87ra")

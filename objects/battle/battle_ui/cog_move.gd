@@ -42,6 +42,7 @@ func setup() -> void:
 	manager.s_status_effect_added.connect(update.unbind(1))
 
 func update(stat := "") -> void:
+	if !is_instance_valid(action.user): return
 	var manager := BattleService.ongoing_battle
 	if stat != "" and stat not in ['hp', 'damage', 'defense', 'accuracy', 'evasiveness']: return
 	
