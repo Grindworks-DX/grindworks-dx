@@ -68,38 +68,16 @@ func reset_panel(panel) -> void:
 var damage_total := 0
 
 func refresh_moves():
-	damage_total = 0
-	
 	for i in panels.size():
-		var move: BattleAction = manager.enemy_moves[i]
-		var damage: int = 0
-		
-		if move is CogAttack:
-			damage = manager.get_damage(move.damage, move, Util.get_player())
-			damage_total += damage
-		
-		var cog: Cog = move.user
 		var panel = panels[i]
-		
-		if i < manager.enemy_moves.size():
-			var head: Node3D = cog.dna.get_head()
-			if not cog.dna.head_scale.is_equal_approx(Vector3.ONE * cog.dna.head_scale.x):
-				head.scale = cog.dna.head_scale
-			panel.get_node('CogFace').node = head
-			panel.get_node('GeneralButton').disabled = true
-			
-			var damage_label: Label = panel.get_node('DamageLabel')
-			if damage > 0:
-				damage_label.label_settings.font_color = Color(1.0, 0.0, 0.0, 1.0)
-				damage_label.text = "-" + str(damage)
-			else:
-				damage_label.label_settings.font_color = Color("ff4d00")
-				damage_label.text = "!"
-			
-			var accuracy_bar: ProgressBar = panel.get_node('AccuracyBar')
-			accuracy_bar.value = manager.calculate_accuracy(move)
-			
-			panel.get_node('TargetingLabel').text = get_source_string(cog)
+		if !panel.s_cog_move_updated.is_connected(on_cog_move_updated):
+			panel.s_cog_move_updated.connect(on_cog_move_updated)
+		panel.action = manager.enemy_moves[i]
+
+func on_cog_move_updated() -> void:
+	damage_total = 0
+	for panel in panels:
+		damage_total += panel.damage
 	
 	incoming_label.text = "Incoming Damage: %d" % damage_total
 
@@ -121,14 +99,3 @@ func refresh_moves():
 #
 #func stop_hover() -> void:
 	#HoverManager.stop_hover()
-
-func get_source_string(_cog: Cog) -> String:
-	var atk_string := ""
-	for cog in manager.cogs:
-		if cog == _cog:
-			atk_string += "V"
-		else:
-			atk_string += "-"
-		if manager.cogs.find(cog) < manager.cogs.size() - 1:
-			atk_string += ""
-	return atk_string
