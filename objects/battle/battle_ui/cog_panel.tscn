@@ -140,23 +140,35 @@ text = "6/6"
 label_settings = SubResource("LabelSettings_2vko0")
 horizontal_alignment = 1
 
-[node name="SpeedIcon" type="TextureRect" parent="Profile" unique_id=591728751]
+[node name="Speed" type="Control" parent="Profile" unique_id=1148525123]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 0.98700005
+anchor_top = 0.87000006
+anchor_right = 0.98700005
+anchor_bottom = 0.87000006
+offset_left = -66.92001
+offset_top = -31.000008
+offset_right = 0.07998657
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SpeedIcon" type="TextureRect" parent="Profile/Speed" unique_id=591728751]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 96.0
-offset_top = 56.0
-offset_right = 125.0
-offset_bottom = 85.0
+offset_left = 5.0
+offset_right = 34.0
+offset_bottom = 29.0
 texture = ExtResource("7_x3boc")
 expand_mode = 1
 
-[node name="SpeedLabel" type="Label" parent="Profile" unique_id=759807861]
+[node name="SpeedLabel" type="Label" parent="Profile/Speed" unique_id=759807861]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 128.0
-offset_top = 60.0
-offset_right = 194.0
-offset_bottom = 81.0
+offset_left = 37.0
+offset_top = 4.0
+offset_right = 55.0
+offset_bottom = 25.0
 text = "12"
 label_settings = SubResource("LabelSettings_qcr6k")
 
