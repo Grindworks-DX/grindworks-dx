@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="StatusEffectLate" format=3 uid="uid://x2hni04kqiea"]
+
+[ext_resource type="Texture2D" uid="uid://bxbtqr6bncfeq" path="res://ui_assets/player_ui/pause/time_crunch.png" id="1_4kj8g"]
+[ext_resource type="Script" uid="uid://bx11uc4wocbwd" path="res://objects/battle/battle_resources/status_effects/status_effect_late_worm.gd" id="1_7orxr"]
+
+[resource]
+script = ExtResource("1_7orxr")
+quality = 1
+rounds = 0
+icon = ExtResource("1_4kj8g")
+description = "Your actions are played after all Cogs have attacked"
+status_name = "Late Worm"
+metadata/_custom_type_script = "uid://bx11uc4wocbwd"

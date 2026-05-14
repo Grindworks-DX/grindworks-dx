@@ -23,7 +23,7 @@ func action():
 	toon.set_animation('neutral')
 
 func impact(_target: Actor = null) -> void:
-	if level not in range(values.size()):
+	if level not in range(values.size() + 1):
 		printerr("Surge: Level out of bounds")
 		return
 	

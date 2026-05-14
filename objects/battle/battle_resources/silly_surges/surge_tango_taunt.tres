@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="SurgeTangoTaunt" format=3 uid="uid://dgyepet4peywu"]
+
+[ext_resource type="Script" uid="uid://m30jqv614c65" path="res://objects/battle/battle_resources/silly_surges/surge_tango_taunt.gd" id="1_1pdy5"]
+[ext_resource type="Script" uid="uid://csl6saufv84ri" path="res://objects/battle/battle_resources/status_effects/stat_boost.gd" id="2_y14tq"]
+
+[sub_resource type="Resource" id="Resource_ufnps"]
+script = ExtResource("2_y14tq")
+boost = 0.3
+multiplicative = true
+quality = 0
+id = 10
+
+[sub_resource type="Resource" id="Resource_1770h"]
+script = ExtResource("2_y14tq")
+stat = "evasiveness"
+boost = 0.2
+multiplicative = true
+quality = 0
+id = 10
+
+[sub_resource type="Resource" id="Resource_wmgsh"]
+script = ExtResource("2_y14tq")
+boost = 0.4
+multiplicative = true
+quality = 0
+metadata/_custom_type_script = "uid://csl6saufv84ri"
+
+[sub_resource type="Resource" id="Resource_pxram"]
+script = ExtResource("2_y14tq")
+stat = "evasiveness"
+boost = 0.3
+multiplicative = true
+quality = 0
+metadata/_custom_type_script = "uid://csl6saufv84ri"
+
+[sub_resource type="Resource" id="Resource_mou44"]
+script = ExtResource("2_y14tq")
+boost = 0.6
+multiplicative = true
+quality = 0
+metadata/_custom_type_script = "uid://csl6saufv84ri"
+
+[sub_resource type="Resource" id="Resource_aakuq"]
+script = ExtResource("2_y14tq")
+stat = "evasiveness"
+boost = 0.5
+multiplicative = true
+quality = 0
+metadata/_custom_type_script = "uid://csl6saufv84ri"
+
+[resource]
+script = ExtResource("1_1pdy5")
+thresholds = Array[int]([5, 15, 40])
+values = Array[Dictionary]([{
+"statuses": [SubResource("Resource_ufnps"), SubResource("Resource_1770h")]
+}, {
+"statuses": [SubResource("Resource_wmgsh"), SubResource("Resource_pxram")]
+}, {
+"statuses": [SubResource("Resource_mou44"), SubResource("Resource_aakuq")]
+}])
+summary = "Boosts defenses, but lets the Cogs attack first!"
+target_type = 2
+action_name = "Tango Taunt"
+metadata/_custom_type_script = "uid://m30jqv614c65"

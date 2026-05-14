@@ -232,8 +232,8 @@ func construct_toon(dna: ToonDNA = ToonDNA.new()):
 	
 	# Create the speech bubble node
 	speech_bubble_node = Node3D.new()
-	add_child(speech_bubble_node)
-	speech_bubble_node.global_position = head_bone.global_position + Vector3(0.0, 0.5, 0.0)
+	head_bone.add_child(speech_bubble_node)
+	speech_bubble_node.global_position = head_bone.global_position + Vector3(0.0, 0.22, 0.0)
 	
 	# Start blinking
 	do_blink()

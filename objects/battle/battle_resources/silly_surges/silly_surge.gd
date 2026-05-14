@@ -9,23 +9,26 @@ class_name SillySurge
 @export var values: Array[Dictionary]
 @export_multiline var summary := ""
 
-signal s_surge_level_set(level: int)
+signal s_surge_level_changed(level: int)
+var meter := 0
 
-var level := 0:
-	set(x):
-		level = x
-		if level is int: s_surge_level_set.emit(level)
+var level := 0
 
 func get_action_name() -> String:
 	if !level > 0: return action_name
 	return "%s Lv. %d" % [action_name, level]
 
 func sync_level() -> void:
-	var meter: int = BattleService.ongoing_battle.battle_stats[Util.get_player()].silly_meter
-	level = 0
-	for threshold in thresholds:
-		if meter >= threshold: level += 1
-		else: break
+	var _meter = BattleService.ongoing_battle.battle_stats[Util.get_player()].silly_meter
+	if _meter != meter:
+		level = 0
+		for threshold in thresholds:
+			if _meter >= threshold: level += 1
+			else: break
+		s_surge_level_changed.emit(level)
+	meter = _meter
+
+func get_stats() -> String: return ""
 
 func get_general_stats() -> String:
 	return ""

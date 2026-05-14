@@ -64,7 +64,8 @@ func _ready():
 		surge.user = Util.get_player() #TEMP
 		s_gags_updated.connect(surge.sync_level.unbind(1))
 		manager.s_round_ended.connect(surge.sync_level)
-		surge.s_surge_level_set.connect(on_surge_level_changed)
+		surge.s_surge_level_changed.connect(on_surge_level_changed)
+		on_surge_level_changed(0)
 		surge.sync_level()
 		%SurgeRequirements.text = surge.get_surge_requirement_text()
 		%SurgeRequirements.hide()
@@ -347,6 +348,8 @@ func on_surge_pressed() -> void:
 	await Util.do_instant_battle_action(surge)
 	manager.battle_stats[Util.get_player()].silly_meter -= surge.thresholds[surge.level - 1]
 	surge.sync_level()
+	# it is intentional to allow the player to perform their surge multiple times if they can rebuild it; this also makes low cost surges recharge-dependent instead of infinite
+	disable_surge()
 
 func on_surge_hovered() -> void:
 	gag_hovered(Util.get_silly_surge())
@@ -358,11 +361,14 @@ func on_surge_level_changed(level := 0) -> void:
 		surge_button.disabled = false
 		surge_button.self_modulate = Color(0.878, 0.858, 0.381, 1.0)
 	else:
-		surge_button.disabled = true
-		surge_button.self_modulate = Color(0.112, 0.144, 0.153, 1.0)
+		disable_surge()
 	
 	for i in range(level):
 		surge_button.label.text += "!"
 	
 	%SillyMeterBar.value = manager.battle_stats[Util.get_player()].silly_meter
 	%SillyMeterBar.max_value = Util.get_silly_surge().thresholds[Util.get_silly_surge().thresholds.size() - 1]
+
+func disable_surge() -> void:
+	surge_button.disabled = true
+	surge_button.self_modulate = Color(0.112, 0.144, 0.153, 1.0)

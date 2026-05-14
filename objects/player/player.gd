@@ -146,6 +146,8 @@ signal s_jumped
 signal s_stats_connected(stats: PlayerStats)
 signal s_hurt_realtime(damage: int)
 
+var stats_connected := false
+
 func _init() -> void:
 	GameLoader.queue_into(GameLoader.Phase.GAMEPLAY, self, {
 		'PAUSE_MENU': "res://objects/pause_menu/pause_menu.tscn",
@@ -172,7 +174,7 @@ func _ready() -> void:
 	rotation = Vector3(0, 0, 0)
 	
 	# Hook up stats
-	connect_stats()
+	if !stats_connected: connect_stats()
 
 func _physics_process(_delta: float) -> void:
 	# Emit signal when player is under death threshold
@@ -336,7 +338,7 @@ func reset_stats() -> void:
 		newstats.first_time_setup()
 		newstats.character.character_setup(self)
 	if laff_meter:
-		connect_stats()
+		if !stats_connected: connect_stats()
 	
 
 func connect_stats() -> void:
@@ -353,17 +355,21 @@ func connect_stats() -> void:
 	stats.hp_changed.connect(check_hp)
 	stats.s_extra_lives_changed.connect(func(x: int): laff_meter.extra_lives = x)
 	# Regenerate points at end of round
-	if !BattleService.s_round_ended.is_connected(stats.on_round_end):
-		BattleService.s_round_ended.connect(stats.on_round_end)
-	if !BattleService.s_battle_started.is_connected(stats.on_battle_started):
-		BattleService.s_battle_started.connect(stats.on_battle_started)
-	if !BattleService.s_action_finished.is_connected(stats.on_action_finished):
-		BattleService.s_action_finished.connect(stats.on_action_finished)
+	if BattleService.s_round_ended.is_connected(stats.on_round_end):
+		BattleService.s_round_ended.disconnect(stats.on_round_end)
+	BattleService.s_round_ended.connect(stats.on_round_end)
+	if BattleService.s_battle_started.is_connected(stats.on_battle_started):
+		BattleService.s_battle_started.disconnect(stats.on_battle_started)
+	BattleService.s_battle_started.connect(stats.on_battle_started)
+	if BattleService.s_action_finished.is_connected(stats.on_action_finished):
+		BattleService.s_action_finished.disconnect(stats.on_action_finished)
+	BattleService.s_action_finished.connect(stats.on_action_finished)
 	stats.s_active_item_changed.connect(func(newitem): active_item_ui.item = newitem)
 	stats.current_active_item = stats.current_active_item
 	if stats.current_active_item and not stats.current_active_item.node:
 		stats.current_active_item.apply_item(self)
 	s_stats_connected.emit(stats)
+	stats_connected = true
 	
 	# Breaking Grounds
 	BattleService.s_cog_died.connect(stats.do_humor_healing.unbind(1))

@@ -22,6 +22,7 @@ func _ready() -> void:
 	if !Util.player_exists():
 		await Util.s_player_assigned
 	
+	Util.get_player().s_stats_connected.connect(assign_stats.unbind(1))
 	assign_stats()
 	
 	if !stats.is_connected("s_stat_changed", update):
@@ -29,6 +30,7 @@ func _ready() -> void:
 	
 	update()
 	
+	Globals.s_game_started.connect(assign_stats, CONNECT_ONE_SHOT)
 	Globals.s_game_started.connect(update, CONNECT_ONE_SHOT)
 	if !use_battle_stats:
 		BattleService.s_battle_started.connect(
@@ -76,10 +78,10 @@ func apply_stat_changes() -> void:
 			stat_change_txt = Util.float_to_perc(stat_change)
 		
 		if stat_change >= 0.0:
-			stat_change_txt = "+%s" % stat_change_txt.trim_suffix('0')
+			stat_change_txt = "+%s" % stat_change_txt
 			label.label_settings.font_color = stat_up_color
 		else: 
-			stat_change_txt = "%s" % stat_change_txt.trim_suffix('0')
+			stat_change_txt = "%s" % stat_change_txt
 			label.label_settings.font_color = stat_down_color
 		do_stat_change_flash(label, 0.1 * stat_info.keys().find(key), stat_change_txt)
 	stats.start_stat_monitors()
