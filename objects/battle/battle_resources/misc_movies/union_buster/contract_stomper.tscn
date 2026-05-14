@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bh665mc48n23u"]
 
-[ext_resource type="PackedScene" uid="uid://bj5amoerd44or" path="res://models/props/facility_objects/stomper/stomper.fbx" id="1_6qdtg"]
+[ext_resource type="PackedScene" uid="uid://bj5amoerd44or" path="res://models/props/facility_objects/general/stomper/stomper.fbx" id="1_6qdtg"]
 
 [node name="ContractStomper" type="Node3D"]
 

@@ -10,7 +10,7 @@
 [ext_resource type="Shader" uid="uid://463makg7epmn" path="res://general_resources/shaders/molten_lavafalls.tres" id="4_us7du"]
 [ext_resource type="PackedScene" uid="uid://p33fqws4qewy" path="res://objects/obstacles/conveyer_belt/conveyer_belt.tscn" id="5_o0oxw"]
 [ext_resource type="Texture2D" uid="uid://b14pa1232wtue" path="res://models/facilities/molten/textures/FINALFACTORY_101.png" id="5_us7du"]
-[ext_resource type="Texture2D" uid="uid://bj0ye0oxq1fea" path="res://models/props/facility_objects/conveyor_platform/platform_CVBelt1.png" id="6_7f8tk"]
+[ext_resource type="Texture2D" uid="uid://bj0ye0oxq1fea" path="res://models/props/facility_objects/general/conveyor_platform/platform_CVBelt1.png" id="6_7f8tk"]
 [ext_resource type="PackedScene" uid="uid://mmocb33ecqd6" path="res://objects/obstacles/stomper/stomper.tscn" id="7_ygam3"]
 [ext_resource type="PackedScene" uid="uid://bchcm0txqesmn" path="res://objects/obstacles/burner/burner.tscn" id="9_o0oxw"]
 [ext_resource type="PackedScene" uid="uid://dbrst2twjd0pu" path="res://objects/interactables/button/button.tscn" id="10_ha7se"]

@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://jhk4wbj4x47o" path="res://objects/modules/molten/base_rooms/molten_s_room.tscn" id="1_xxjpe"]
 [ext_resource type="PackedScene" uid="uid://c1rus4vu8jrlg" path="res://objects/battle/battle_node/dynamic/battle_node_dynamic.tscn" id="3_jponw"]
 [ext_resource type="PackedScene" uid="uid://duuriwh75afua" path="res://objects/props/mint/mint_crate.tscn" id="4_84alc"]
-[ext_resource type="PackedScene" uid="uid://62mqao2o2egv" path="res://objects/props/mint/shelf_gold.tscn" id="5_yo7mb"]
+[ext_resource type="PackedScene" uid="uid://62mqao2o2egv" path="res://objects/props/mint/mint/shelf_gold.tscn" id="5_yo7mb"]
 [ext_resource type="PackedScene" uid="uid://c1g5f6yxujvef" path="res://addons/toonlike_tools/injectors/player/debug_player_position_marker.tscn" id="6_2e88b"]
-[ext_resource type="PackedScene" uid="uid://byrmf687ynghb" path="res://objects/props/mint/pipes/pipes_d1.tscn" id="6_dqxxv"]
+[ext_resource type="PackedScene" uid="uid://byrmf687ynghb" path="res://objects/props/mint/mint/pipes/pipes_d1.tscn" id="6_dqxxv"]
 [ext_resource type="Script" uid="uid://dax7hby88nkbu" path="res://addons/toonlike_tools/injectors/player/debug_player_position_marker.gd" id="7_74tsh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nynd3"]

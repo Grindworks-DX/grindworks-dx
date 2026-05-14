@@ -11,7 +11,7 @@
 [ext_resource type="Material" uid="uid://dmafgykr0wfb3" path="res://models/facilities/general/materials/lava_mat.tres" id="9_hgi4d"]
 [ext_resource type="PackedScene" uid="uid://direah3lbjuu5" path="res://objects/battle/battle_node/battle_node.tscn" id="10_4xj8y"]
 [ext_resource type="Texture2D" uid="uid://dw0ovgcnsmkqi" path="res://objects/misc/spotlight_1.png" id="10_bs7xe"]
-[ext_resource type="PackedScene" uid="uid://d0o37sg2xvqe6" path="res://models/props/facility_objects/conveyor_platform/platform.glb" id="11_7cw30"]
+[ext_resource type="PackedScene" uid="uid://d0o37sg2xvqe6" path="res://models/props/facility_objects/general/conveyor_platform/platform.glb" id="11_7cw30"]
 [ext_resource type="PackedScene" uid="uid://b860ba06jbjwm" path="res://objects/misc/gradient_plane.tscn" id="11_b6402"]
 [ext_resource type="Texture2D" uid="uid://bl6lm6ttgsfmi" path="res://objects/misc/gradient.png" id="12_b1omr"]
 [ext_resource type="PackedScene" uid="uid://dflwjcy6fj0av" path="res://objects/cog/cog.tscn" id="13_l0xot"]

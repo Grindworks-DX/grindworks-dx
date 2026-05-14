@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bey02hvt1xosb"]
+
+[ext_resource type="Texture2D" uid="uid://bd43hss5e2j3i" path="res://models/facilities/factory/textures/csb_factory_env_lightbulbs_1a.png" id="1_duku7"]
+
+[resource]
+resource_name = "FINALFACTORY_66"
+transparency = 1
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_duku7")
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0

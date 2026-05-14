@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bl6lm6ttgsfmi" path="res://objects/misc/gradient.png" id="4_w546f"]
 [ext_resource type="PackedScene" uid="uid://dvslagwd6sk4r" path="res://objects/props/etc/shop_counter.tscn" id="6_36sdd"]
 [ext_resource type="PackedScene" uid="uid://nnrcjp5qaxv0" path="res://models/props/toon_props/accessory_trunk/accessory_trunk.glb" id="7_7mj11"]
-[ext_resource type="PackedScene" uid="uid://dn2240phqf7k2" path="res://objects/props/mint/money_bag.tscn" id="8_5vkai"]
+[ext_resource type="PackedScene" uid="uid://dn2240phqf7k2" path="res://objects/props/mint/mint/money_bag.tscn" id="8_5vkai"]
 [ext_resource type="PackedScene" uid="uid://rriejmaesd7l" path="res://objects/props/factory/gear.tscn" id="11_5vkai"]
 [ext_resource type="PackedScene" uid="uid://vndcua2dbph2" path="res://objects/props/cgc/cgc_flag_red.tscn" id="12_ttpn0"]
 [ext_resource type="PackedScene" uid="uid://bolaea3btm1ae" path="res://objects/props/office/da_crate.tscn" id="13_jc87d"]

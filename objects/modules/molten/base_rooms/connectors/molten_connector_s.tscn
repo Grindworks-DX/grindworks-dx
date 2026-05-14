@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://r3doqoqkbxnl"]
 
 [ext_resource type="PackedScene" uid="uid://b0g4h0p4knron" path="res://models/facilities/molten/molten_connector_s.fbx" id="1_i7qck"]
-[ext_resource type="PackedScene" uid="uid://klxlslni1hnn" path="res://objects/props/mint/door_frame.tscn" id="2_3qwwl"]
+[ext_resource type="PackedScene" uid="uid://klxlslni1hnn" path="res://objects/props/mint/mint/door_frame.tscn" id="2_3qwwl"]
 [ext_resource type="Shader" uid="uid://bwqy10j7lib06" path="res://general_resources/shaders/lava_shader.gdshader" id="4_ec43r"]
 [ext_resource type="Texture2D" uid="uid://dutf3tiqr8h1t" path="res://models/facilities/mint/textures/lava7.png" id="5_bmoim"]
 [ext_resource type="PackedScene" uid="uid://bjhle6ljdlsvr" path="res://objects/interactables/chq_door/chq_door_no_wall.tscn" id="6_kiyl4"]

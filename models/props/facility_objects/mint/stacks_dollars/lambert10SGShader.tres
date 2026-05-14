@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b2xctpwbpd0on"]
+
+[ext_resource type="Texture2D" uid="uid://co1n1wk4uqowr" path="res://models/props/facility_objects/mint/cog_nation_crate/shelf/shelf_1_5.png" id="1_btxim"]
+
+[resource]
+resource_name = "lambert10SGShader"
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_btxim")
+emission_enabled = true

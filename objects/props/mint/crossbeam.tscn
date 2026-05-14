@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://drpj1lganwu6n"]
 
-[ext_resource type="PackedScene" uid="uid://swjsixjcsyns" path="res://models/props/facility_objects/mint/pipes/pipes_A1.fbx" id="1_tw5o0"]
-[ext_resource type="Texture2D" uid="uid://c4ywkjbuuxyel" path="res://models/props/facility_objects/mint/pipes/textures/CrossBeamTop.png" id="2_xlnn6"]
-[ext_resource type="Texture2D" uid="uid://bft3wqu5rag6f" path="res://models/props/facility_objects/mint/pipes/textures/CrossBeamQuarter2.png" id="3_jtf6o"]
-[ext_resource type="Texture2D" uid="uid://bfi7oyk4hrj46" path="res://models/props/facility_objects/mint/pipes/textures/CrossBeamQuarter.png" id="4_coo86"]
+[ext_resource type="PackedScene" uid="uid://swjsixjcsyns" path="res://models/props/facility_objects/mint/cog_nation_crate/pipes/pipes_A1.fbx" id="1_tw5o0"]
+[ext_resource type="Texture2D" uid="uid://c4ywkjbuuxyel" path="res://models/props/facility_objects/mint/cog_nation_crate/pipes/textures/CrossBeamTop.png" id="2_xlnn6"]
+[ext_resource type="Texture2D" uid="uid://bft3wqu5rag6f" path="res://models/props/facility_objects/mint/cog_nation_crate/pipes/textures/CrossBeamQuarter2.png" id="3_jtf6o"]
+[ext_resource type="Texture2D" uid="uid://bfi7oyk4hrj46" path="res://models/props/facility_objects/mint/cog_nation_crate/pipes/textures/CrossBeamQuarter.png" id="4_coo86"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ne34d"]
 resource_name = "CrossBeamTopSHD"

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cgi7ntfeyvu2x"]
+
+[ext_resource type="Texture2D" uid="uid://cwn56qd1b0inf" path="res://models/facilities/express/textures/ccb_hq_prp_locomotivetank.png" id="1_d2ido"]
+
+[resource]
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_d2ido")

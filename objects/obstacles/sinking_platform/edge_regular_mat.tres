@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://b4jsk4lpyajdh"]
 
-[ext_resource type="Texture2D" uid="uid://b1lwy5glu10he" path="res://models/props/facility_objects/conveyor_platform/platform_CVBeltEdge.png" id="1_bp5tf"]
+[ext_resource type="Texture2D" uid="uid://b1lwy5glu10he" path="res://models/props/facility_objects/general/conveyor_platform/platform_CVBeltEdge.png" id="1_bp5tf"]
 
 [resource]
 resource_name = "ConveyerBeltEdgeSHD"

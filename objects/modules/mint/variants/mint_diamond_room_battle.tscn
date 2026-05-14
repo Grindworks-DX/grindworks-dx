@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://jntxin7vcjnp"]
 
 [ext_resource type="PackedScene" uid="uid://cv2afui5p28af" path="res://objects/modules/mint/base_rooms/mint_diamond_room.tscn" id="1_4nthc"]
-[ext_resource type="PackedScene" uid="uid://byrmf687ynghb" path="res://objects/props/mint/pipes/pipes_d1.tscn" id="4_7e7io"]
+[ext_resource type="PackedScene" uid="uid://byrmf687ynghb" path="res://objects/props/mint/mint/pipes/pipes_d1.tscn" id="4_7e7io"]
 [ext_resource type="PackedScene" uid="uid://c1rus4vu8jrlg" path="res://objects/battle/battle_node/dynamic/battle_node_dynamic.tscn" id="4_mtmw1"]
-[ext_resource type="PackedScene" uid="uid://drpj1lganwu6n" path="res://objects/props/mint/crossbeam.tscn" id="5_r2wtc"]
+[ext_resource type="PackedScene" uid="uid://drpj1lganwu6n" path="res://objects/props/mint/mint/crossbeam.tscn" id="5_r2wtc"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1bh8a"]
 data = PackedVector3Array(-2926.45, 139.355, -3205.15, -2926.45, 418.064, -3205.15, -2508.38, 418.064, -3414.19, -2508.38, 418.064, -3414.19, -2508.38, 139.354, -3414.18, -2926.45, 139.355, -3205.15)

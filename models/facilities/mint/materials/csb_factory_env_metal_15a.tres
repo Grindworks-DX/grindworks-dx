@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cjvdh0sqgbm6l"]
+
+[ext_resource type="Texture2D" uid="uid://bn0kcwnalr34c" path="res://models/facilities/factory/textures/csb_factory_env_metal_15a.png" id="1_wci4n"]
+
+[resource]
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_wci4n")

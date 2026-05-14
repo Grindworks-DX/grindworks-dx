@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c85tm04fy2ui1"]
+
+[ext_resource type="Texture2D" uid="uid://cvjr20tmo68yn" path="res://models/facilities/express/textures/cf_boss_prp_bosstreads.png" id="1_bfsbh"]
+
+[resource]
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_bfsbh")

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://chwveitdf8s1e"]
+
+[ext_resource type="PackedScene" uid="uid://b403rpe5nyryv" path="res://objects/props/etc/shelf_empty.tscn" id="1_b6leu"]
+[ext_resource type="PackedScene" uid="uid://c1ow56cfa5l7t" path="res://objects/props/mint/dollar_stacks.tscn" id="2_m0ssh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nk6ba"]
+size = Vector3(4.10889, 4.6601563, 1.52594)
+
+[node name="shelf_dollars" type="Node3D" unique_id=1365304649]
+
+[node name="shelf_2" parent="." unique_id=1253869983 instance=ExtResource("1_b6leu")]
+
+[node name="dollar_stacks" parent="." unique_id=1484314504 instance=ExtResource("2_m0ssh")]
+
+[node name="dollar_stacks2" parent="." unique_id=274499483 instance=ExtResource("2_m0ssh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77953446, 0)
+
+[node name="dollar_stacks3" parent="." unique_id=1174427442 instance=ExtResource("2_m0ssh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0821183, 0)
+
+[node name="dollar_stacks4" parent="." unique_id=1717708303 instance=ExtResource("2_m0ssh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.283141, 0)
+
+[node name="dollar_stacks5" parent="." unique_id=217610333 instance=ExtResource("2_m0ssh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9555967, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1895482142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07791, -0.228497)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1625958133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0241699, 0.22119093, -0.056793213)
+shape = SubResource("BoxShape3D_nk6ba")

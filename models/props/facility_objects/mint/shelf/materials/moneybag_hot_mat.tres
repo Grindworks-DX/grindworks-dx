@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cooxytv5cy0h8"]
 
-[ext_resource type="Texture2D" uid="uid://pmmio1a1yuwn" path="res://models/props/facility_objects/mint/shelf/hotbag.png" id="1_8dbbe"]
+[ext_resource type="Texture2D" uid="uid://pmmio1a1yuwn" path="res://models/props/facility_objects/mint/cog_nation_crate/shelf/hotbag.png" id="1_8dbbe"]
 
 [resource]
 resource_name = "lambert2SGShader"

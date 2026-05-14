@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://ddgcp7s7nqu44" path="res://models/props/facility_objects/mint/shelf/shelf_3.fbx" id="1_2y5ds"]
 [ext_resource type="Script" uid="uid://dnl272m6ccpqr" path="res://objects/props/mint/shelf_money_bags.gd" id="1_v2aqt"]
-[ext_resource type="Material" uid="uid://8dk6vuxlwx0a" path="res://models/props/facility_objects/mint/shelf/materials/shelf_back_regular_mat.tres" id="3_artp5"]
-[ext_resource type="Material" uid="uid://cx217kphtc1fn" path="res://models/props/facility_objects/mint/shelf/materials/shelf_panel_regular_mat.tres" id="4_egl0w"]
+[ext_resource type="Material" uid="uid://cx217kphtc1fn" path="res://models/props/facility_objects/mint/shelf/materials/shelf_panel_regular_mat.tres" id="3_artp5"]
+[ext_resource type="Material" uid="uid://8dk6vuxlwx0a" path="res://models/props/facility_objects/mint/shelf/materials/shelf_back_regular_mat.tres" id="4_egl0w"]
 [ext_resource type="Material" uid="uid://dcs8evi0rbxge" path="res://models/props/facility_objects/mint/shelf/materials/moneybag_regular_mat.tres" id="5_nfpwn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gj5iy"]
@@ -75,41 +75,41 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_w0y1g")
 
-[node name="shelf2" type="Node3D"]
+[node name="shelf_money_bags" type="Node3D" unique_id=1106338282]
 script = ExtResource("1_v2aqt")
 metadata/battle_cam_hide = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=664721586]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07791, -0.228497)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=588915303]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0241699, 0.111328, -0.0567932)
 shape = SubResource("BoxShape3D_gj5iy")
 
-[node name="shelf_3" parent="." instance=ExtResource("1_2y5ds")]
+[node name="shelf_3" parent="." unique_id=928879725 instance=ExtResource("1_2y5ds")]
 transform = Transform3D(30.5, 0, 0, 0, 30.5, 0, 0, 0, 30.5, 0, 0, 0)
 
-[node name="polySurface2" parent="shelf_3/geometry/shelf/shelf_A1" index="0"]
+[node name="polySurface2" parent="shelf_3/geometry/shelf/shelf_A1" parent_id_path=PackedInt32Array(928879725, 1948427348) index="0" unique_id=1225398178]
 mesh = SubResource("ArrayMesh_kqoe6")
 surface_material_override/0 = ExtResource("3_artp5")
 
-[node name="polySurface3" parent="shelf_3/geometry/shelf/shelf_A1" index="1"]
+[node name="polySurface3" parent="shelf_3/geometry/shelf/shelf_A1" parent_id_path=PackedInt32Array(928879725, 1948427348) index="1" unique_id=1776747091]
 mesh = SubResource("ArrayMesh_3s0pq")
 surface_material_override/0 = ExtResource("4_egl0w")
 
-[node name="polySurface4" parent="shelf_3/geometry/shelf/shelf_A1" index="2"]
+[node name="polySurface4" parent="shelf_3/geometry/shelf/shelf_A1" parent_id_path=PackedInt32Array(928879725, 1948427348) index="2" unique_id=333217884]
 surface_material_override/0 = ExtResource("4_egl0w")
 
-[node name="polySurface5" parent="shelf_3/geometry/shelf/shelf_A1" index="3"]
+[node name="polySurface5" parent="shelf_3/geometry/shelf/shelf_A1" parent_id_path=PackedInt32Array(928879725, 1948427348) index="3" unique_id=631846379]
 surface_material_override/0 = ExtResource("4_egl0w")
 
-[node name="GeometryTransformHelper" parent="shelf_3/geometry/moneybag_grp/moneybag_top" index="0"]
+[node name="GeometryTransformHelper" parent="shelf_3/geometry/moneybag_grp/moneybag_top" parent_id_path=PackedInt32Array(928879725, 2018672055) index="0" unique_id=1815394723]
 surface_material_override/0 = ExtResource("5_nfpwn")
 
-[node name="GeometryTransformHelper2" parent="shelf_3/geometry/moneybag_grp/moneybag_bag" index="0"]
+[node name="GeometryTransformHelper2" parent="shelf_3/geometry/moneybag_grp/moneybag_bag" parent_id_path=PackedInt32Array(928879725, 236314812) index="0" unique_id=1615410250]
 surface_material_override/0 = ExtResource("5_nfpwn")
 
-[node name="collision" parent="shelf_3" index="1"]
+[node name="collision" parent="shelf_3" index="1" unique_id=1441720545]
 visible = false
 
 [editable path="shelf_3"]

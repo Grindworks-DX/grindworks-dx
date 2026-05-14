@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cx217kphtc1fn"]
 
-[ext_resource type="Texture2D" uid="uid://gl3vj5cn7y3r" path="res://models/props/facility_objects/mint/shelf/tallShelfShelf3Rust.png" id="1_1xoof"]
+[ext_resource type="Texture2D" uid="uid://gl3vj5cn7y3r" path="res://models/props/facility_objects/mint/cog_nation_crate/shelf/tallShelfShelf3Rust.png" id="1_1xoof"]
 
 [resource]
 resource_name = "__WAREHOUSE_newfixes_v1s2_WareHouseT_shortShelf_v1s7_lambert3SGShader"

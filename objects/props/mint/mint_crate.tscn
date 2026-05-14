@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://duuriwh75afua"]
 
-[ext_resource type="PackedScene" uid="uid://eawla6bo6duc" path="res://models/props/facility_objects/mint/crate/mint_crate.fbx" id="1_iohwq"]
-[ext_resource type="Script" uid="uid://dim6oed5u3x5w" path="res://objects/props/mint/mint_crate.gd" id="2_erbro"]
+[ext_resource type="Script" uid="uid://dim6oed5u3x5w" path="res://objects/props/mint/mint/mint_crate.gd" id="2_erbro"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1xsft"]
 data = PackedVector3Array(27.8709, 105.85, 27.8709, 27.8709, 54.7534, 27.8709, -27.8709, 54.7534, 27.8709, -27.8709, 54.7534, 27.8709, -27.8709, 105.85, 27.8709, 27.8709, 105.85, 27.8709, 27.8709, 54.7534, -27.8709, 27.8709, 105.85, -27.8709, -27.8709, 105.85, -27.8709, -27.8709, 105.85, -27.8709, -27.8709, 54.7534, -27.8709, 27.8709, 54.7534, -27.8709, 27.8709, 105.85, -27.8709, 27.8709, 54.7534, -27.8709, 27.8709, 54.7534, 27.8709, 27.8709, 54.7534, 27.8709, 27.8709, 105.85, 27.8709, 27.8709, 105.85, -27.8709, -27.8709, 105.85, 27.8709, -27.8709, 54.7534, 27.8709, -27.8709, 54.7534, -27.8709, -27.8709, 54.7534, -27.8709, -27.8709, 105.85, -27.8709, -27.8709, 105.85, 27.8709)
@@ -9,21 +8,21 @@ data = PackedVector3Array(27.8709, 105.85, 27.8709, 27.8709, 54.7534, 27.8709, -
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1ebks"]
 data = PackedVector3Array(27.8709, 105.85, -27.8709, 27.8709, 105.85, 27.8709, -27.8709, 105.85, 27.8709, -27.8709, 105.85, 27.8709, -27.8709, 105.85, -27.8709, 27.8709, 105.85, -27.8709)
 
-[node name="mint_crate" instance=ExtResource("1_iohwq")]
+[node name="mint_crate" unique_id=549956919]
 script = ExtResource("2_erbro")
 
-[node name="CBMetalBoxShadow" parent="CBMetalBoxAll/CBMetalBox" index="1"]
+[node name="CBMetalBoxShadow" parent="CBMetalBoxAll/CBMetalBox" parent_id_path=PackedInt32Array(254596334) index="1" unique_id=1037814707]
 unique_name_in_owner = true
 
-[node name="collision" parent="CBMetalBoxAll" index="1"]
+[node name="collision" parent="CBMetalBoxAll" parent_id_path=PackedInt32Array(112019687) index="1" unique_id=1259334300]
 visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CBMetalBoxAll/collision/wall/GeometryTransformHelper4" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="CBMetalBoxAll/collision/wall/GeometryTransformHelper4" parent_id_path=PackedInt32Array(649790043) index="0" unique_id=1996779536]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CBMetalBoxAll/collision/wall/GeometryTransformHelper4/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CBMetalBoxAll/collision/wall/GeometryTransformHelper4/StaticBody3D" index="0" unique_id=646294512]
 shape = SubResource("ConcavePolygonShape3D_1xsft")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CBMetalBoxAll/collision/floor/GeometryTransformHelper5" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="CBMetalBoxAll/collision/floor/GeometryTransformHelper5" parent_id_path=PackedInt32Array(1635414491) index="0" unique_id=376282768]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CBMetalBoxAll/collision/floor/GeometryTransformHelper5/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CBMetalBoxAll/collision/floor/GeometryTransformHelper5/StaticBody3D" index="0" unique_id=1161182826]
 shape = SubResource("ConcavePolygonShape3D_1ebks")

@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://bsl1ltwkd4g2e"]
 
-[ext_resource type="Texture2D" uid="uid://c6crsry4n2agx" path="res://models/props/facility_objects/mint/pipes/textures/LocomotiveDetail1.png" id="1_7ki3y"]
+[ext_resource type="Texture2D" uid="uid://c6crsry4n2agx" path="res://models/props/facility_objects/mint/cog_nation_crate/pipes/textures/LocomotiveDetail1.png" id="1_7ki3y"]
 
 [resource]
 resource_name = "pipes_C:textures:textures1:textures:CashBotTankCar_v2_s3:CashBotTankCar_v2_s1_CashBotTankCar_v1_s6_LocomotiveDetail1_SHD"

@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cjqb0uq01jfng"]
 
-[ext_resource type="Texture2D" uid="uid://df5qrrkvi3ijy" path="res://models/props/facility_objects/mint/pipes/textures/CogIntPipeCapTop1.png" id="1_80jmx"]
+[ext_resource type="Texture2D" uid="uid://df5qrrkvi3ijy" path="res://models/props/facility_objects/mint/cog_nation_crate/pipes/textures/CogIntPipeCapTop1.png" id="1_80jmx"]
 
 [resource]
 resource_name = "DuctModules_PipeCapTop1SHD"

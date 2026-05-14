@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bcuf7hiy2cwp6"]
+
+[ext_resource type="Texture2D" uid="uid://dag0fxf3opkni" path="res://models/facilities/factory/textures/csb_factory_prp_belt_platform_1b.png" id="1_n0tqy"]
+
+[resource]
+resource_name = "FINALFACTORY_66"
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_n0tqy")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0

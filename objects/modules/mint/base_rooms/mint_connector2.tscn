@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://ddfk765qkh6me"]
 
 [ext_resource type="PackedScene" uid="uid://bt7m3kg6es7j0" path="res://models/facilities/mint/mint_connector2.fbx" id="1_od2t3"]
-[ext_resource type="PackedScene" uid="uid://klxlslni1hnn" path="res://objects/props/mint/door_frame.tscn" id="2_l6io6"]
+[ext_resource type="PackedScene" uid="uid://klxlslni1hnn" path="res://objects/props/mint/mint/door_frame.tscn" id="2_l6io6"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m4wgq"]
 data = PackedVector3Array(-130.864, 46.4515, -2216.9, -130.864, 46.4515, -2356.26, -112.283, 46.4515, -2356.26, -112.283, 46.4515, -2356.26, -112.283, 46.4515, -2216.9, -130.864, 46.4515, -2216.9, -112.283, 46.4515, -2216.9, -112.283, 46.4515, -2356.26, -12.3994, 0, -2356.26, -12.3994, 0, -2356.26, -12.3994, 0, -2216.9, -112.283, 46.4515, -2216.9)

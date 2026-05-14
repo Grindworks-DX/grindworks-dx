@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bgmp70gu00j5t"]
+
+[ext_resource type="Texture2D" uid="uid://dwc7m1haeobiu" path="res://models/facilities/express/textures/ccb_hq_prp_tankerside.png" id="1_x25ps"]
+
+[resource]
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_x25ps")

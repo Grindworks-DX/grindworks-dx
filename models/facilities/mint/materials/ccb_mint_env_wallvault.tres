@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://beo3hfpjoviis"]
+
+[ext_resource type="Texture2D" uid="uid://bvk5w88t3ccyk" path="res://models/facilities/express/textures/ccb_mint_env_wallvault.png" id="1_vacjg"]
+
+[resource]
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_vacjg")

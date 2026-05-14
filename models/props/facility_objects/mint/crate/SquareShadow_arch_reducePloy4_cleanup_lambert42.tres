@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://br1yd3n8vy3u2"]
 
-[ext_resource type="Texture2D" uid="uid://cxrdca7ctv1ml" path="res://models/props/facility_objects/mint/crate/mint_crate_1.png" id="1_ywn70"]
+[ext_resource type="Texture2D" uid="uid://cxrdca7ctv1ml" path="res://models/props/facility_objects/mint/cog_nation_crate/crate/mint_crate_1.png" id="1_ywn70"]
 
 [resource]
 resource_name = "SquareShadow:arch_reducePloy4_cleanup_lambert42"

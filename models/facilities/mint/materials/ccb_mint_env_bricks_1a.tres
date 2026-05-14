@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://du4w06ed2fmys"]
+
+[ext_resource type="Texture2D" uid="uid://i2wjwm4x2qhw" path="res://models/facilities/express/textures/ccb_mint_env_bricks_1a.png" id="1_vsetf"]
+
+[resource]
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_vsetf")

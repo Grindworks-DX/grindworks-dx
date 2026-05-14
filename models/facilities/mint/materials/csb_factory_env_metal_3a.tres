@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://0p0u5ip32nus"]
+
+[ext_resource type="Texture2D" uid="uid://d2lf5kbibh14q" path="res://models/facilities/factory/textures/csb_factory_env_metal_3a.png" id="1_2eyvu"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_2eyvu")

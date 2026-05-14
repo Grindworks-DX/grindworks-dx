@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://2hcmvkkhbl6x" path="res://objects/modules/molten/variants/chase_boss/stage_pieces/molten_hall_straight.tscn" id="1_sils5"]
 [ext_resource type="PackedScene" uid="uid://cpiib04mrtkk8" path="res://objects/obstacles/spinning_gear/spinning_gear.tscn" id="2_clegk"]
-[ext_resource type="PackedScene" uid="uid://d0o37sg2xvqe6" path="res://models/props/facility_objects/conveyor_platform/platform.glb" id="3_ph5r8"]
+[ext_resource type="PackedScene" uid="uid://d0o37sg2xvqe6" path="res://models/props/facility_objects/general/conveyor_platform/platform.glb" id="3_ph5r8"]
 [ext_resource type="PackedScene" uid="uid://c1g5f6yxujvef" path="res://addons/toonlike_tools/injectors/player/debug_player_position_marker.tscn" id="4_ph5r8"]
 [ext_resource type="PackedScene" uid="uid://bqamcxorlapkk" path="res://objects/props/molten/rotating_cylinder.tscn" id="4_w0fcn"]
 [ext_resource type="Texture2D" uid="uid://jnxb62du5548" path="res://models/props/facility_objects/molten/rotating_cylinder/Molten_CompiledSet1.png" id="5_0gt1x"]

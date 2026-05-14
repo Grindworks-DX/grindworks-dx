@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cpbtf4ejmfro"]
+
+[ext_resource type="PackedScene" uid="uid://dsxtu5su412oe" path="res://models/props/facility_objects/mint/stacks_money_bags/money_stacks_random.fbx" id="1_nbiws"]
+[ext_resource type="Script" uid="uid://dsewqfm70uess" path="res://objects/interactables/node_randomizer/node_randomizer.gd" id="2_cjm37"]
+
+[node name="money_stacks" unique_id=1680368643 node_paths=PackedStringArray("targets") instance=ExtResource("1_nbiws")]
+script = ExtResource("2_cjm37")
+chance_type = 1
+chance = 1.0
+targets = [NodePath("MoneyBag_Shelf_001"), NodePath("MoneyBag_Shelf_002"), NodePath("MoneyBag_Shelf_003"), NodePath("MoneyBag_Shelf_004"), NodePath("MoneyBag_Shelf_005")]

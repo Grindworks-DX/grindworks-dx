@@ -56,16 +56,16 @@ albedo_color = Color(1, 1, 1, 0.28627452)
 albedo_texture = SubResource("CompressedTexture2D_vcc86")
 roughness = 0.5527864
 
-[node name="law_bookshelf" instance=ExtResource("1_3rfxt")]
+[node name="law_bookshelf" unique_id=2136075698 instance=ExtResource("1_3rfxt")]
 
-[node name="CollisionShape3D" parent="Bookshelf/StaticBody3D" index="0"]
+[node name="CollisionShape3D" parent="Bookshelf/StaticBody3D" parent_id_path=PackedInt32Array(1456987581) index="0" unique_id=16743380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.967438, 0)
 shape = SubResource("BoxShape3D_vcc86")
 
-[node name="Law_bookcaseB#shadow" type="MeshInstance3D" parent="." index="1"]
+[node name="Law_bookcaseB#shadow" type="MeshInstance3D" parent="." index="1" unique_id=1161864547]
 transparency = 0.35
 mesh = SubResource("ArrayMesh_l5ocu")
 skeleton = NodePath("")
 
-[node name="shadow" parent="." index="2"]
+[node name="shadow" parent="." index="2" unique_id=202404007]
 surface_material_override/0 = SubResource("StandardMaterial3D_d4kx5")

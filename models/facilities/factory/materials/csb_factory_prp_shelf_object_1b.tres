@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://j84bridhxxhl"]
+
+[ext_resource type="Texture2D" uid="uid://c16pflj7xowb3" path="res://models/facilities/factory/textures/csb_factory_prp_shelf_object_1b.png" id="1_jcwji"]
+
+[resource]
+resource_name = "FINALFACTORY_66"
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_jcwji")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0

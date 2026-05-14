@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://dbrst2twjd0pu"]
 
 [ext_resource type="Script" uid="uid://be46mgxc70khx" path="res://objects/interactables/button/cog_button.gd" id="1_21ejp"]
-[ext_resource type="Texture2D" uid="uid://d046bnroqh3a8" path="res://models/props/facility_objects/button/button_button3.png" id="1_74im7"]
-[ext_resource type="Texture2D" uid="uid://b7ogyyudcn2db" path="res://models/props/facility_objects/button/button_buttonBase.png" id="2_sxtyp"]
-[ext_resource type="Texture2D" uid="uid://dbdsvboh2okni" path="res://models/props/facility_objects/button/button_square_drop_shadow.png" id="3_2widq"]
+[ext_resource type="Texture2D" uid="uid://d046bnroqh3a8" path="res://models/props/facility_objects/general/button/button_button3.png" id="1_74im7"]
+[ext_resource type="Texture2D" uid="uid://b7ogyyudcn2db" path="res://models/props/facility_objects/general/button/button_buttonBase.png" id="2_sxtyp"]
+[ext_resource type="Texture2D" uid="uid://dbdsvboh2okni" path="res://models/props/facility_objects/general/button/button_square_drop_shadow.png" id="3_2widq"]
 [ext_resource type="AudioStream" uid="uid://di6hcgi1j76lb" path="res://audio/sfx/objects/button/CHQ_FACT_switch_pressed.ogg" id="5_3f0ln"]
 [ext_resource type="AudioStream" uid="uid://nenuu1b28ks8" path="res://audio/sfx/objects/button/CHQ_FACT_switch_popup.ogg" id="6_faa3l"]
 

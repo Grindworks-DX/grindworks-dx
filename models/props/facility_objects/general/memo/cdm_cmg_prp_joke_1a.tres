@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://baljct0ayl4kw"]
+
+[ext_resource type="Texture2D" uid="uid://cgs7wao7thc4f" path="res://models/props/facility_objects/general/memo/cdm_cmg_prp_joke_1a.png" id="1_ck51b"]
+
+[resource]
+resource_name = "tt_t_ara_csa_memoShader"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 0.8)
+albedo_texture = ExtResource("1_ck51b")
+emission_enabled = true

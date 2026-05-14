@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cfeju7cmcun3o" path="res://models/facilities/molten/molten_Lshape.fbx" id="1_crjec"]
 [ext_resource type="Shader" uid="uid://bwqy10j7lib06" path="res://general_resources/shaders/lava_shader.gdshader" id="3_jtdxy"]
 [ext_resource type="PackedScene" uid="uid://dmv7dbgr2b2nr" path="res://objects/obstacles/lava_floor/lava_floor.tscn" id="4_jtdxy"]
-[ext_resource type="PackedScene" uid="uid://62mqao2o2egv" path="res://objects/props/mint/shelf_gold.tscn" id="8_f2jlf"]
+[ext_resource type="PackedScene" uid="uid://62mqao2o2egv" path="res://objects/props/mint/mint/shelf_gold.tscn" id="8_f2jlf"]
 [ext_resource type="PackedScene" uid="uid://bjhle6ljdlsvr" path="res://objects/interactables/chq_door/chq_door_no_wall.tscn" id="14_ssxct"]
 [ext_resource type="Texture2D" uid="uid://lpqo478g33r8" path="res://objects/props/factory/tt_t_efx_ext_smoke.png" id="17_15r6x"]
 

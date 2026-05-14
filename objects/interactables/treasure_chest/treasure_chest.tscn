@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ddpi37yhj5bvg" path="res://models/props/treasure_chest/TreasureChestGold.png" id="4_yqhux"]
 [ext_resource type="Gradient" uid="uid://cjd2hai64hend" path="res://models/props/treasure_chest/sunrays/goldchest_sunrays.tres" id="5_7b15l"]
 [ext_resource type="Shader" uid="uid://ceq0rcg0ntvia" path="res://objects/interactables/treasure_chest/sunrays.tres" id="5_cygcb"]
-[ext_resource type="Material" uid="uid://c0oqskakk1fq3" path="res://general_resources/common/squareshadow.tres" id="5_fu464"]
+[ext_resource type="Material" uid="uid://il08msjlhggs" path="res://general_resources/common/drop_shadow_square.tres" id="6_cygcb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cygcb"]
 resource_name = "TreasureChestGold"
@@ -19,7 +19,7 @@ emission_energy_multiplier = 0.0
 gradient = ExtResource("5_7b15l")
 fill_to = Vector2(0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cygcb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7b15l"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("5_cygcb")
@@ -151,7 +151,7 @@ data = PackedVector3Array(0.002, 0.0016, 0.0011, 0.002, 0.0034, 0.0011, 0.0017, 
 backface_collision = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cygcb"]
-material = ExtResource("5_fu464")
+material = ExtResource("6_cygcb")
 size = Vector2(0.895, 0.62)
 
 [node name="treasure_chest" type="Node3D" unique_id=2079435126]
@@ -161,17 +161,17 @@ script = ExtResource("1_gn78k")
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="Chest" parent="Chest" index="0" unique_id=59254734]
+[node name="Chest" parent="Chest" index="0" unique_id=940342383]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_cygcb")
 
-[node name="Lid" parent="Chest" index="1" unique_id=1002771634]
+[node name="Lid" parent="Chest" index="1" unique_id=148333883]
 transform = Transform3D(100, 0, 0.000361999, -0.000361999, 1.3104329e-09, 100, 0, -100, 1.3104329e-09, -0.214957, 0.322778, 6.63598e-09)
 surface_material_override/0 = SubResource("StandardMaterial3D_cygcb")
 
-[node name="Lightray" parent="Chest" index="2" unique_id=1704958615]
+[node name="Lightray" parent="Chest" index="2" unique_id=1897375636]
 visible = false
-surface_material_override/0 = SubResource("ShaderMaterial_cygcb")
+surface_material_override/0 = SubResource("ShaderMaterial_7b15l")
 
 [node name="Item" type="Node3D" parent="." unique_id=1184563642]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.789423, 0)

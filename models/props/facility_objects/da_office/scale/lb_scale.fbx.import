@@ -91,8 +91,8 @@ _subresources={
 },
 "roundShadow": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://general_resources/common/roundShadow.tres",
-"use_external/path": "uid://dtfv6w7rxa7hp"
+"use_external/fallback_path": "res://general_resources/common/drop_shadow_circle.tres",
+"use_external/path": "uid://cxkmiwrq68gc2"
 },
 "scaleneedle": {
 "use_external/enabled": true,
@@ -101,8 +101,8 @@ _subresources={
 },
 "squareshadow": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://general_resources/common/squareshadow.tres",
-"use_external/path": "uid://c0oqskakk1fq3"
+"use_external/fallback_path": "res://general_resources/common/drop_shadow_square.tres",
+"use_external/path": "uid://il08msjlhggs"
 }
 }
 }

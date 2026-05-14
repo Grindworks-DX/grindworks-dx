@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhk8f3fvkyuhm"]
 
-[ext_resource type="PackedScene" uid="uid://ddbx8konsqieq" path="res://models/props/facility_objects/stomperpiston/StomperPiston.fbx" id="1_jw08e"]
+[ext_resource type="PackedScene" uid="uid://ddbx8konsqieq" path="res://models/props/facility_objects/general/stomperpiston/StomperPiston.fbx" id="1_jw08e"]
 
 [sub_resource type="Gradient" id="Gradient_1qgt5"]
 offsets = PackedFloat32Array(0, 0.3488372, 0.875, 0.9127907, 0.9738372, 1)

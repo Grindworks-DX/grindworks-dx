@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ba0qfmp11arol"]
+
+[sub_resource type="Gradient" id="Gradient_f0yf8"]
+interpolation_mode = 2
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yau4v"]
+gradient = SubResource("Gradient_f0yf8")
+width = 512
+height = 512
+fill_to = Vector2(0, 1)
+repeat = 1
+
+[resource]
+resource_name = "FINALFACTORY_66"
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = SubResource("GradientTexture2D_yau4v")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0

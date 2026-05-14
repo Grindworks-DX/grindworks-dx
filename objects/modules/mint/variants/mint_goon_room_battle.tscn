@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dfhgbjrdoxhau" path="res://objects/modules/mint/base_rooms/mint_goon_room.tscn" id="1_kb4d2"]
 [ext_resource type="PackedScene" uid="uid://dxyq5lb5oineo" path="res://objects/interactables/treasure_chest/treasure_chest.tscn" id="2_hul5y"]
-[ext_resource type="PackedScene" uid="uid://bsb5ku08jbkdy" path="res://objects/props/mint/pipes/pipes_e.tscn" id="5_0yy82"]
+[ext_resource type="PackedScene" uid="uid://bsb5ku08jbkdy" path="res://objects/props/mint/mint/pipes/pipes_e.tscn" id="5_0yy82"]
 [ext_resource type="PackedScene" uid="uid://c1rus4vu8jrlg" path="res://objects/battle/battle_node/dynamic/battle_node_dynamic.tscn" id="5_xxpfd"]
 [ext_resource type="PackedScene" uid="uid://duuriwh75afua" path="res://objects/props/mint/mint_crate.tscn" id="6_sv4dy"]
-[ext_resource type="PackedScene" uid="uid://dnip6uj60poax" path="res://objects/props/mint/pipes/pipes_c.tscn" id="6_tcwsp"]
-[ext_resource type="PackedScene" uid="uid://drpj1lganwu6n" path="res://objects/props/mint/crossbeam.tscn" id="8_jmg4y"]
+[ext_resource type="PackedScene" uid="uid://dnip6uj60poax" path="res://objects/props/mint/mint/pipes/pipes_c.tscn" id="6_tcwsp"]
+[ext_resource type="PackedScene" uid="uid://drpj1lganwu6n" path="res://objects/props/mint/mint/crossbeam.tscn" id="8_jmg4y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3qus3"]
 size = Vector3(13.6777, 8.89194, 9.95801)

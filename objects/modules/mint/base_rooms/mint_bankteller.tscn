@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://4d8tuwc8ybyp" path="res://models/facilities/mint/mint_bankteller.fbx" id="1_ei8pu"]
 [ext_resource type="Texture2D" uid="uid://ct3ypts2fb31j" path="res://models/facilities/mint/textures/CashBotColumns1.png" id="2_2umnl"]
-[ext_resource type="PackedScene" uid="uid://klxlslni1hnn" path="res://objects/props/mint/door_frame.tscn" id="2_xpwng"]
+[ext_resource type="PackedScene" uid="uid://klxlslni1hnn" path="res://objects/props/mint/mint/door_frame.tscn" id="2_xpwng"]
 [ext_resource type="Texture2D" uid="uid://dh47h7sfj8vfu" path="res://models/facilities/mint/textures/CBWallVaultWheel.png" id="3_kh21w"]
 [ext_resource type="Texture2D" uid="uid://bswg8mtj02q5x" path="res://models/facilities/mint/textures/CashBotColumnsBase.png" id="3_ui7ei"]
 [ext_resource type="PackedScene" uid="uid://c1rus4vu8jrlg" path="res://objects/battle/battle_node/dynamic/battle_node_dynamic.tscn" id="5_m1dl7"]
-[ext_resource type="PackedScene" uid="uid://ca5iu2h5u2ltv" path="res://objects/props/mint/mint_safe.tscn" id="6_xj22u"]
+[ext_resource type="PackedScene" uid="uid://ca5iu2h5u2ltv" path="res://objects/props/mint/mint/mint_safe.tscn" id="6_xj22u"]
 [ext_resource type="PackedScene" uid="uid://dxyq5lb5oineo" path="res://objects/interactables/treasure_chest/treasure_chest.tscn" id="7_e1mxn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_anqrp"]

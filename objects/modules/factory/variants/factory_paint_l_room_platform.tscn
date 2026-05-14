@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dg0htgo4qjau2" path="res://objects/obstacles/elevating_platform/elevating_platform.tscn" id="4_edefv"]
 [ext_resource type="PackedScene" uid="uid://cpiib04mrtkk8" path="res://objects/obstacles/spinning_gear/spinning_gear.tscn" id="5_jmg7o"]
 [ext_resource type="Texture2D" uid="uid://c7gtsd6v3580e" path="res://models/props/facility_objects/mint/gear/gear_0.png" id="6_7cjng"]
-[ext_resource type="Texture2D" uid="uid://dunyhns3tkdq" path="res://models/props/facility_objects/mint/gear/gear_1.png" id="7_l5o7u"]
+[ext_resource type="Texture2D" uid="uid://hxut3nvrwssy" path="res://models/props/facility_objects/mint/cog_nation_crate/gear/gear_1.png" id="7_l5o7u"]
 [ext_resource type="Texture2D" uid="uid://cg73nmwwywaxm" path="res://models/props/facility_objects/mint/paint_platform/paintmixer_platform_GearCapJoint.png" id="8_58hy2"]
 [ext_resource type="PackedScene" uid="uid://dxyq5lb5oineo" path="res://objects/interactables/treasure_chest/treasure_chest.tscn" id="9_niata"]
 [ext_resource type="PackedScene" uid="uid://celxj5u1aay0l" path="res://objects/props/etc/wood_crate.tscn" id="10_4ce4k"]

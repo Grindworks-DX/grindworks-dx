@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://k44r7tk128hb" path="res://objects/props/molten/moving_tower.tscn" id="4_u5g27"]
 [ext_resource type="Shader" uid="uid://bwqy10j7lib06" path="res://general_resources/shaders/lava_shader.gdshader" id="5_54l0r"]
 [ext_resource type="Texture2D" uid="uid://dutf3tiqr8h1t" path="res://models/facilities/mint/textures/lava7.png" id="6_d62pp"]
-[ext_resource type="PackedScene" uid="uid://klxlslni1hnn" path="res://objects/props/mint/door_frame.tscn" id="7_d62pp"]
+[ext_resource type="PackedScene" uid="uid://klxlslni1hnn" path="res://objects/props/mint/mint/door_frame.tscn" id="7_d62pp"]
 [ext_resource type="Texture2D" uid="uid://biiqghubrrka7" path="res://models/facilities/molten/textures/LocomotiveSide5_hot.png" id="8_p0x6o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xba4c"]

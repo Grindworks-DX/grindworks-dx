@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bqyedncbmcevd"]
+
+[ext_resource type="Texture2D" uid="uid://c5qyngukrqdlc" path="res://models/props/facility_objects/mint/smallvaults/ccb_mint_prp_safe_small_1a.png" id="1_i8g56"]
+
+[resource]
+resource_name = "ccb_mint_prp_safe_small_1a"
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_i8g56")
+emission_enabled = true

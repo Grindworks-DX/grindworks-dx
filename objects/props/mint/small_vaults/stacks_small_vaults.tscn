@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bv3bu2qhk1bw1"]
+
+[ext_resource type="Script" uid="uid://dsewqfm70uess" path="res://objects/interactables/node_randomizer/node_randomizer.gd" id="1_2st6d"]
+[ext_resource type="PackedScene" uid="uid://qtdpumu0vlck" path="res://objects/props/mint/mint/small_vaults/small_vault_001.tscn" id="1_s6b8q"]
+[ext_resource type="PackedScene" uid="uid://cc5mh6ur1l56j" path="res://objects/props/mint/mint/small_vaults/small_vault_003.tscn" id="2_qobkq"]
+[ext_resource type="PackedScene" uid="uid://bquujy24gfix4" path="res://objects/props/mint/mint/small_vaults/small_vault_006.tscn" id="3_35664"]
+[ext_resource type="PackedScene" uid="uid://xi0tvtnsqdc" path="res://objects/props/mint/mint/small_vaults/small_vault_007.tscn" id="4_2st6d"]
+[ext_resource type="PackedScene" uid="uid://bruad2saj8tsp" path="res://objects/props/mint/mint/small_vaults/small_vault_005.tscn" id="5_35664"]
+[ext_resource type="PackedScene" uid="uid://bui0jeehc7t47" path="res://objects/props/mint/mint/small_vaults/small_vault_002.tscn" id="6_2st6d"]
+[ext_resource type="PackedScene" uid="uid://d0xeyaf7c7w3h" path="res://objects/props/mint/mint/piggy_bank.tscn" id="8_4e12h"]
+[ext_resource type="PackedScene" uid="uid://d3bir4ewa1uv" path="res://objects/props/mint/mint/small_vaults/small_vault_004.tscn" id="9_qwgdu"]
+
+[node name="Shelf_Vaults" type="Node3D" unique_id=101868765 node_paths=PackedStringArray("targets")]
+script = ExtResource("1_2st6d")
+chance_type = 1
+chance = 1.0
+targets = [NodePath("Shelf_Vaults_001"), NodePath("Shelf_Vaults_002"), NodePath("Shelf_Vaults_003"), NodePath("Shelf_Vaults_004"), NodePath("Shelf_Vaults_005")]
+
+[node name="Shelf_Vaults_001" type="Node3D" parent="." unique_id=840350322]
+
+[node name="SmallVault_001" parent="Shelf_Vaults_001" unique_id=1472246277 instance=ExtResource("1_s6b8q")]
+transform = Transform3D(0.035096154, 0.35286516, 0, 0, 0, 0.3546062, 0.35286516, -0.035096154, 0, 0.46699733, 0.0011324212, -0.592242)
+
+[node name="SmallVault_003" parent="Shelf_Vaults_001" unique_id=1997363166 instance=ExtResource("2_qobkq")]
+transform = Transform3D(-0.08815108, 0.3434748, 1.5013763e-08, 0, -1.550033e-08, 0.3546062, 0.3434748, 0.08815108, 3.853206e-09, 1.2812856, 0.0011326, -0.1494863)
+
+[node name="SmallVault_006" parent="Shelf_Vaults_001" unique_id=1182471606 instance=ExtResource("3_35664")]
+transform = Transform3D(0.066422395, 0.44059798, 0, 0, 0, 0.45954835, 0.51636344, -0.05667631, 0, -1.2999045, 0.0015687197, -0.299428)
+
+[node name="SmallVault_007" parent="Shelf_Vaults_001" unique_id=1040920135 instance=ExtResource("4_2st6d")]
+transform = Transform3D(-0.06220025, 0.41095993, 0, 0, 0, 0.28246728, 0.23213431, 0.11011646, 0, -0.35756552, -0.00064343214, -0.10253382)
+
+[node name="Shelf_Vaults_002" type="Node3D" parent="." unique_id=853487615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.23620129)
+
+[node name="SmallVault_003" parent="Shelf_Vaults_002" unique_id=1664632737 instance=ExtResource("2_qobkq")]
+transform = Transform3D(0.034466945, 0.4753427, 0, 0, 0, 0.3300922, 0.34319347, -0.047738697, 0, -0.19635856, 0, 0)
+
+[node name="SmallVault_005" parent="Shelf_Vaults_002" unique_id=631376428 instance=ExtResource("5_35664")]
+transform = Transform3D(-0.047155112, 0.45873716, 0, 0, 0, 0.4611544, 0.45873716, 0.047155112, 0, -0.9831378, 0, 0)
+
+[node name="SmallVault_002" parent="Shelf_Vaults_002" unique_id=1608035846 instance=ExtResource("6_2st6d")]
+transform = Transform3D(0.15192203, 0.31150022, 1.36161065e-08, 2.0059998e-22, -1.5149178e-08, 0.34657276, 0.31150022, -0.15192203, -6.640723e-09, 1.1746231, 0, 0)
+
+[node name="Shelf_Vaults_003" type="Node3D" parent="." unique_id=1271116773]
+
+[node name="SmallVault_001" parent="Shelf_Vaults_003" unique_id=516041599 instance=ExtResource("1_s6b8q")]
+transform = Transform3D(-0.29844162, 0.24078606, 0, 0, 0, 0.2706035, 0.2809717, 0.25575742, 0, -1.074184, 0, -0.21618581)
+
+[node name="SmallVault_006" parent="Shelf_Vaults_003" unique_id=503246071 instance=ExtResource("3_35664")]
+transform = Transform3D(0.09631394, 0.40637055, 0, 0, 0, 0.31528407, 0.3594487, -0.10888661, 0, 1.0033064, 0, -0.21618581)
+
+[node name="SmallVault_005" parent="Shelf_Vaults_003" unique_id=316056068 instance=ExtResource("5_35664")]
+transform = Transform3D(-0.07667453, 0.47762704, 0, 0, 0, 0.48374224, 0.47762704, 0.07667453, 0, 0, 0, -0.17483974)
+
+[node name="Shelf_Vaults_004" type="Node3D" parent="." unique_id=2046033955]
+
+[node name="piggy_bank" parent="Shelf_Vaults_004" unique_id=1732469885 instance=ExtResource("8_4e12h")]
+transform = Transform3D(-0.093247, 0, -0.36918578, 0, 0.38077965, 0, 0.36918578, 0, -0.093247, 1.2820926, 0, -0.24744105)
+
+[node name="SmallVault_004" parent="Shelf_Vaults_004" unique_id=1915464454 instance=ExtResource("9_qwgdu")]
+transform = Transform3D(0.11306815, 0.4219763, 0, 0, 0, 0.436862, 0.4219763, -0.11306815, 0, 0.49939078, 0, -0.24744105)
+
+[node name="SmallVault_007" parent="Shelf_Vaults_004" unique_id=1326350206 instance=ExtResource("4_2st6d")]
+transform = Transform3D(0.10466334, 0.40290445, 0, 0, 0, 0.23962423, 0.40290445, -0.10466334, 0, -1.2313311, 0, -0.24744105)
+
+[node name="SmallVault_001" parent="Shelf_Vaults_004" unique_id=1194954942 instance=ExtResource("1_s6b8q")]
+transform = Transform3D(-0.07907696, 0.3451571, 0, 0, 0, 0.3540997, 0.3451571, 0.07907696, 0, -0.3697877, 0, -0.24744105)
+
+[node name="Shelf_Vaults_005" type="Node3D" parent="." unique_id=1360562330]
+
+[node name="piggy_bank" parent="Shelf_Vaults_005" unique_id=1992636843 instance=ExtResource("8_4e12h")]
+transform = Transform3D(0.2637506, 0, -0.2746429, 0, 0.38077965, 0, 0.2746429, 0, 0.2637506, -0.43257004, 0, -0.24744105)
+
+[node name="piggy_bank2" parent="Shelf_Vaults_005" unique_id=907643119 instance=ExtResource("8_4e12h")]
+transform = Transform3D(0.3754796, 0.062216, -0.011719588, -0.006202972, 0.10630106, 0.36558813, 0.06300551, -0.3603087, 0.10583499, 0.23042674, 0.2132566, -0.26680562)
+
+[node name="SmallVault_002" parent="Shelf_Vaults_005" unique_id=1224514391 instance=ExtResource("6_2st6d")]
+transform = Transform3D(-0.05176068, 0.40512058, 1.9623842e-08, -4.333199e-23, -1.7852336e-08, 0.4525906, 0.40512058, 0.05176068, 2.507262e-09, -1.132862, 0, 0)
+
+[node name="SmallVault_007" parent="Shelf_Vaults_005" unique_id=1361263450 instance=ExtResource("4_2st6d")]
+transform = Transform3D(0.21584333, 0.41202933, 0, 0, 0, 0.31730202, 0.41202933, -0.21584333, 0, 1.1196046, -1.1920929e-07, -0.15968442)

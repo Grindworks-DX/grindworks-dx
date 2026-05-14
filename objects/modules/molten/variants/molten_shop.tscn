@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cy4iox7mj5ei0" path="res://objects/toon/toon.tscn" id="3_57tae"]
 [ext_resource type="Texture2D" uid="uid://c6ybgfq0buj8i" path="res://models/facilities/molten/textures/CFOCeiling2.png" id="3_iytxi"]
 [ext_resource type="Texture2D" uid="uid://bqt3mggfvixqf" path="res://models/facilities/mint/textures/square_drop_shadow.png" id="6_jwf50"]
-[ext_resource type="PackedScene" uid="uid://bps6hbvitehfb" path="res://objects/props/mint/shelf_money.tscn" id="7_omjv0"]
+[ext_resource type="PackedScene" uid="uid://bps6hbvitehfb" path="res://objects/props/mint/mint/shelf_dollars.tscn" id="7_omjv0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jwf50"]
 resource_name = "CFOCeiling2"

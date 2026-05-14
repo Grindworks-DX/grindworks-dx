@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dk4hwps2pe2i4" path="res://objects/modules/mint/base_rooms/mint_lava_room.tscn" id="1_psmdg"]
 [ext_resource type="PackedScene" uid="uid://cdjmlidf0pm6b" path="res://objects/obstacles/sinking_platform/sinking_platform.tscn" id="2_ewjut"]
 [ext_resource type="PackedScene" uid="uid://dxyq5lb5oineo" path="res://objects/interactables/treasure_chest/treasure_chest.tscn" id="3_2k71q"]
-[ext_resource type="PackedScene" uid="uid://drpj1lganwu6n" path="res://objects/props/mint/crossbeam.tscn" id="4_st8rj"]
+[ext_resource type="PackedScene" uid="uid://drpj1lganwu6n" path="res://objects/props/mint/mint/crossbeam.tscn" id="4_st8rj"]
 [ext_resource type="Shader" uid="uid://bwqy10j7lib06" path="res://general_resources/shaders/lava_shader.gdshader" id="5_6kj4k"]
 [ext_resource type="Texture2D" uid="uid://dw0ovgcnsmkqi" path="res://objects/misc/spotlight_1.png" id="6_br1g2"]
 [ext_resource type="Texture2D" uid="uid://dutf3tiqr8h1t" path="res://models/facilities/mint/textures/lava7.png" id="6_hqcfp"]

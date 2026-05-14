@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://io537oormvj5"]
+
+[ext_resource type="Script" uid="uid://dsewqfm70uess" path="res://objects/interactables/node_randomizer/node_randomizer.gd" id="1_nyxp0"]
+[ext_resource type="PackedScene" uid="uid://dn2240phqf7k2" path="res://objects/props/mint/money_bag.tscn" id="1_o3f1s"]
+[ext_resource type="PackedScene" uid="uid://brupbko3w3tbq" path="res://objects/props/mint/gold_stack.tscn" id="2_nyxp0"]
+[ext_resource type="PackedScene" uid="uid://d0xeyaf7c7w3h" path="res://objects/props/mint/piggy_bank.tscn" id="3_yk380"]
+[ext_resource type="PackedScene" uid="uid://civ54d02whyna" path="res://objects/props/mint/money_bag_tall.tscn" id="5_yk380"]
+[ext_resource type="PackedScene" uid="uid://dfy8g8ff5efa4" path="res://models/props/facility_objects/mint/smallvaults/smallvaults.fbx" id="6_b2e1c"]
+
+[node name="RandomProp_Cash_Small" type="Node3D" unique_id=188778157]
+
+[node name="Props" type="Node3D" parent="." unique_id=495389583 node_paths=PackedStringArray("targets")]
+script = ExtResource("1_nyxp0")
+chance_type = 1
+chance = 1.0
+targets = [NodePath("gold_stack"), NodePath("piggy_bank"), NodePath("money_bag"), NodePath("money_bag_tall"), NodePath("smallvaults")]
+
+[node name="money_bag" parent="Props" unique_id=2107415721 instance=ExtResource("1_o3f1s")]
+
+[node name="gold_stack" parent="Props" unique_id=58938271 instance=ExtResource("2_nyxp0")]
+transform = Transform3D(0.7045295, 0, 0, 0, 0.7045295, 0, 0, 0, 0.7045295, 0, 0, 0)
+
+[node name="piggy_bank" parent="Props" unique_id=604375397 instance=ExtResource("3_yk380")]
+transform = Transform3D(-0.08487405, 0, -0.5894952, 0, 0.5955738, 0, 0.5894952, 0, -0.08487405, 0, 0, 0)
+
+[node name="money_bag_tall" parent="Props" unique_id=1881144207 instance=ExtResource("5_yk380")]
+
+[node name="smallvaults" parent="Props" unique_id=1494860719 instance=ExtResource("6_b2e1c")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+visible = false

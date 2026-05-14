@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://d3hqrdb7gxkti"]
 
-[ext_resource type="Texture2D" uid="uid://c4ywkjbuuxyel" path="res://models/props/facility_objects/mint/pipes/textures/CrossBeamTop.png" id="1_8niqi"]
+[ext_resource type="Texture2D" uid="uid://c4ywkjbuuxyel" path="res://models/props/facility_objects/mint/cog_nation_crate/pipes/textures/CrossBeamTop.png" id="1_8niqi"]
 
 [resource]
 resource_name = "CrossBeamTopSHD"

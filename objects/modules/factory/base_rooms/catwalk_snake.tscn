@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://becnyi3ke1i55"]
 
-[ext_resource type="PackedScene" uid="uid://crocd4wjg6ilp" path="res://models/facilities/factory/Catwalk_Snake.fbx" id="1_ro6xg"]
+[ext_resource type="PackedScene" uid="uid://crocd4wjg6ilp" path="res://models/facilities/factory/factory_connector_snake.fbx" id="1_ro6xg"]
 [ext_resource type="Texture2D" uid="uid://lug01s8ijo22" path="res://models/facilities/factory/FINALFACTORY_2.png" id="2_1ajtx"]
 [ext_resource type="Texture2D" uid="uid://cmyvdjy6okiuy" path="res://models/facilities/factory/FINALFACTORY_67.png" id="2_ro6xg"]
 [ext_resource type="PackedScene" uid="uid://klxlslni1hnn" path="res://objects/props/mint/door_frame.tscn" id="4_ivl3l"]

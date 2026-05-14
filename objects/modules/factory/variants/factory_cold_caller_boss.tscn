@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bfds4ecmwyos7" path="res://objects/battle/battle_resources/misc_movies/battle_entrances/battle_start_movie.gd" id="4_fa1g6"]
 [ext_resource type="PackedScene" uid="uid://dxyq5lb5oineo" path="res://objects/interactables/treasure_chest/treasure_chest.tscn" id="5_6mjn0"]
 [ext_resource type="Resource" uid="uid://b4jf6084dolhy" path="res://objects/cog/presets/sellbot/cold_caller.tres" id="6_2utoi"]
-[ext_resource type="PackedScene" uid="uid://y6ineseqnb3c" path="res://objects/props/mint/boiler_a1.tscn" id="6_41krn"]
+[ext_resource type="PackedScene" uid="uid://y6ineseqnb3c" path="res://objects/props/mint/mint/boiler_a1.tscn" id="6_41krn"]
 [ext_resource type="PackedScene" uid="uid://b6eexfh4v078o" path="res://objects/interactables/elevators/sellbot_elevator.tscn" id="8_yx3is"]
 
 [sub_resource type="Resource" id="Resource_l3j0c"]

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://wcbaaifovixx" path="res://objects/modules/mint/base_rooms/mint_entrance.tscn" id="1_crudf"]
 [ext_resource type="PackedScene" uid="uid://dxyq5lb5oineo" path="res://objects/interactables/treasure_chest/treasure_chest.tscn" id="2_bm6ip"]
 [ext_resource type="Resource" uid="uid://j75am6rbrvrj" path="res://objects/items/pools/progressives.tres" id="3_tko3j"]
-[ext_resource type="PackedScene" uid="uid://dn2240phqf7k2" path="res://objects/props/mint/money_bag.tscn" id="5_wyet8"]
+[ext_resource type="PackedScene" uid="uid://dn2240phqf7k2" path="res://objects/props/mint/mint/money_bag.tscn" id="5_wyet8"]
 [ext_resource type="Texture2D" uid="uid://dk7iacwy2a7il" path="res://models/facilities/mint/textures/CashBotTrainStationWall2.png" id="6_d2lr0"]
 [ext_resource type="PackedScene" uid="uid://duuriwh75afua" path="res://objects/props/mint/mint_crate.tscn" id="6_vveln"]
 

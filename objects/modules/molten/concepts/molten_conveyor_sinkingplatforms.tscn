@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://58hn0ewqd1s0" path="res://models/facilities/molten/textures/StoneSquares_Hot.png" id="1_eboua"]
 [ext_resource type="Texture2D" uid="uid://v7y7mef5rs2i" path="res://models/facilities/molten/textures/FINALFACTORY_118.png" id="2_6in6b"]
 [ext_resource type="PackedScene" uid="uid://p33fqws4qewy" path="res://objects/obstacles/conveyer_belt/conveyer_belt.tscn" id="2_j8l7k"]
-[ext_resource type="Texture2D" uid="uid://bj0ye0oxq1fea" path="res://models/props/facility_objects/conveyor_platform/platform_CVBelt1.png" id="3_uouc3"]
+[ext_resource type="Texture2D" uid="uid://bj0ye0oxq1fea" path="res://models/props/facility_objects/general/conveyor_platform/platform_CVBelt1.png" id="3_uouc3"]
 [ext_resource type="PackedScene" uid="uid://bchcm0txqesmn" path="res://objects/obstacles/burner/burner.tscn" id="4_j8l7k"]
 [ext_resource type="PackedScene" uid="uid://mmocb33ecqd6" path="res://objects/obstacles/stomper/stomper.tscn" id="5_uouc3"]
 [ext_resource type="PackedScene" uid="uid://klxlslni1hnn" path="res://objects/props/mint/door_frame.tscn" id="6_1wpp6"]

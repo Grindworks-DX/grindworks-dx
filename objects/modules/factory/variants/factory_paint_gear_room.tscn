@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://5jeob8ddu6hk" path="res://models/facilities/factory/factory_paint_gear_room.fbx" id="1_07mp3"]
 [ext_resource type="PackedScene" uid="uid://p33fqws4qewy" path="res://objects/obstacles/conveyer_belt/conveyer_belt.tscn" id="2_3xd0q"]
-[ext_resource type="Texture2D" uid="uid://bj0ye0oxq1fea" path="res://models/props/facility_objects/conveyor_platform/platform_CVBelt1.png" id="3_m7fmi"]
+[ext_resource type="Texture2D" uid="uid://bj0ye0oxq1fea" path="res://models/props/facility_objects/general/conveyor_platform/platform_CVBelt1.png" id="3_m7fmi"]
 [ext_resource type="PackedScene" uid="uid://dmv7dbgr2b2nr" path="res://objects/obstacles/lava_floor/lava_floor.tscn" id="4_m7fmi"]
 [ext_resource type="Shader" uid="uid://b3xje7jv3si6v" path="res://general_resources/shaders/liquid_shader.gdshader" id="6_j0byl"]
 [ext_resource type="Texture2D" uid="uid://dj5lnvim0vwrs" path="res://models/facilities/factory/SB_Paint.png" id="7_fyo2c"]

@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://srxbjtdik0jv" path="res://objects/modules/mint/base_rooms/mint_skele_room2.tscn" id="1_krfwh"]
 [ext_resource type="PackedScene" uid="uid://c1rus4vu8jrlg" path="res://objects/battle/battle_node/dynamic/battle_node_dynamic.tscn" id="2_2323j"]
-[ext_resource type="PackedScene" uid="uid://cfmtdq84k5wwh" path="res://objects/props/mint/pipes/kit/pipe_connector.tscn" id="3_8hifh"]
-[ext_resource type="PackedScene" uid="uid://6q10lgmvy153" path="res://objects/props/mint/pipes/kit/small_elbow_pipe.tscn" id="4_kqkl3"]
-[ext_resource type="PackedScene" uid="uid://ds050pq3gfubn" path="res://objects/props/mint/pipes/kit/large_straight_pipe_1.tscn" id="5_2t8vt"]
-[ext_resource type="PackedScene" uid="uid://csdrrw6xiokuy" path="res://objects/props/mint/pipes/kit/pipe_shadow.tscn" id="6_w0ghc"]
+[ext_resource type="PackedScene" uid="uid://cfmtdq84k5wwh" path="res://objects/props/mint/mint/pipes/kit/pipe_connector.tscn" id="3_8hifh"]
+[ext_resource type="PackedScene" uid="uid://6q10lgmvy153" path="res://objects/props/mint/mint/pipes/kit/small_elbow_pipe.tscn" id="4_kqkl3"]
+[ext_resource type="PackedScene" uid="uid://ds050pq3gfubn" path="res://objects/props/mint/mint/pipes/kit/large_straight_pipe_1.tscn" id="5_2t8vt"]
+[ext_resource type="PackedScene" uid="uid://csdrrw6xiokuy" path="res://objects/props/mint/mint/pipes/kit/pipe_shadow.tscn" id="6_w0ghc"]
 [ext_resource type="PackedScene" uid="uid://duuriwh75afua" path="res://objects/props/mint/mint_crate.tscn" id="7_7bc7s"]
-[ext_resource type="PackedScene" uid="uid://dn2240phqf7k2" path="res://objects/props/mint/money_bag.tscn" id="8_72lny"]
-[ext_resource type="PackedScene" uid="uid://klxlslni1hnn" path="res://objects/props/mint/door_frame.tscn" id="9_2323j"]
+[ext_resource type="PackedScene" uid="uid://dn2240phqf7k2" path="res://objects/props/mint/mint/money_bag.tscn" id="8_72lny"]
+[ext_resource type="PackedScene" uid="uid://klxlslni1hnn" path="res://objects/props/mint/mint/door_frame.tscn" id="9_2323j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k65xd"]
 size = Vector3(13.5801, 9.10193, 7.4189)

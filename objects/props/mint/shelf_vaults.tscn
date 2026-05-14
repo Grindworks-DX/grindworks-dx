@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cka3tsayqxytl"]
+
+[ext_resource type="PackedScene" uid="uid://b403rpe5nyryv" path="res://objects/props/etc/shelf_empty.tscn" id="1_gry1r"]
+[ext_resource type="PackedScene" uid="uid://bv3bu2qhk1bw1" path="res://objects/props/mint/small_vaults/shelf_small_vaults.tscn" id="2_ajrp0"]
+[ext_resource type="Script" uid="uid://dsewqfm70uess" path="res://objects/interactables/node_randomizer/node_randomizer.gd" id="2_st431"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ajrp0"]
+size = Vector3(4.10889, 4.44043, 1.52594)
+
+[node name="shelf_vaults" type="Node3D" unique_id=1934267576]
+
+[node name="shelf_2" parent="." unique_id=141837513 node_paths=PackedStringArray("targets") instance=ExtResource("1_gry1r")]
+script = ExtResource("2_st431")
+chance_type = 2
+chance = 0.129
+targets = [NodePath("Shelf_Vaults"), NodePath("Shelf_Vaults2"), NodePath("Shelf_Vaults3")]
+
+[node name="Shelf_Vaults" parent="shelf_2" unique_id=101868765 instance=ExtResource("2_ajrp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7786415, 0)
+
+[node name="Shelf_Vaults2" parent="shelf_2" unique_id=179268807 instance=ExtResource("2_ajrp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0808816, 0)
+
+[node name="Shelf_Vaults3" parent="shelf_2" unique_id=1549119420 instance=ExtResource("2_ajrp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2785032, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1717617473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07791, -0.228497)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=905611028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0241699, 0.111328, -0.0567932)
+shape = SubResource("BoxShape3D_ajrp0")

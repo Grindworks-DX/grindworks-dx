@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hox57qqxnjdl"]
 
-[ext_resource type="PackedScene" uid="uid://bdkskbaifhl2l" path="res://models/props/facility_objects/mint/post/gear_post.fbx" id="1_ihu75"]
+[ext_resource type="PackedScene" uid="uid://bdkskbaifhl2l" path="res://models/props/facility_objects/mint/cog_nation_crate/post/gear_post.fbx" id="1_ihu75"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cmuoo"]
 radius = 0.0833804

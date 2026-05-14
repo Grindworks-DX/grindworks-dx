@@ -10,9 +10,9 @@
 [ext_resource type="Script" uid="uid://bfds4ecmwyos7" path="res://objects/battle/battle_resources/misc_movies/battle_entrances/battle_start_movie.gd" id="5_tsyfj"]
 [ext_resource type="Resource" uid="uid://db873b4wfde6n" path="res://objects/cog/presets/cashbot/nickel_nabber.tres" id="6_347ym"]
 [ext_resource type="Resource" uid="uid://baaxso4jhvinp" path="res://objects/cog/presets/cashbot/quarter_catcher.tres" id="7_pdx5r"]
-[ext_resource type="PackedScene" uid="uid://k8228k6jwvf7" path="res://objects/props/mint/shelf_money_bags.tscn" id="10_4ceor"]
+[ext_resource type="PackedScene" uid="uid://k8228k6jwvf7" path="res://objects/props/mint/mint/shelf_money_bags.tscn" id="10_4ceor"]
 [ext_resource type="PackedScene" uid="uid://duuriwh75afua" path="res://objects/props/mint/mint_crate.tscn" id="11_cko6k"]
-[ext_resource type="PackedScene" uid="uid://dn2240phqf7k2" path="res://objects/props/mint/money_bag.tscn" id="12_aijao"]
+[ext_resource type="PackedScene" uid="uid://dn2240phqf7k2" path="res://objects/props/mint/mint/money_bag.tscn" id="12_aijao"]
 [ext_resource type="PackedScene" uid="uid://dxyq5lb5oineo" path="res://objects/interactables/treasure_chest/treasure_chest.tscn" id="13_lta6y"]
 
 [sub_resource type="Resource" id="Resource_l3j0c"]

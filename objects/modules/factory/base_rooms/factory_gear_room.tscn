@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ca3vhlh1frt2c" path="res://models/facilities/factory/FINALFACTORY_30.png" id="7_xpsr0"]
 [ext_resource type="Texture2D" uid="uid://2qu4yng011jd" path="res://models/facilities/factory/FINALFACTORY_31.png" id="8_bgbgo"]
 [ext_resource type="Texture2D" uid="uid://bilg551hfi5y" path="res://models/facilities/factory/FINALFACTORY_32.png" id="9_vk0r2"]
-[ext_resource type="Texture2D" uid="uid://3f86w3gwdkw5" path="res://models/props/facility_objects/valve/FINALFACTORY_33.png" id="10_h2wb8"]
+[ext_resource type="Texture2D" uid="uid://3f86w3gwdkw5" path="res://models/props/facility_objects/general/valve/FINALFACTORY_33.png" id="10_h2wb8"]
 [ext_resource type="Texture2D" uid="uid://cjwa1xp05wr03" path="res://models/facilities/factory/FINALFACTORY_34.png" id="11_tx60k"]
 [ext_resource type="Texture2D" uid="uid://ba6eh0qm4frda" path="res://models/facilities/factory/FINALFACTORY_35.png" id="12_lmur4"]
 [ext_resource type="Texture2D" uid="uid://xtwvenijoyef" path="res://models/facilities/factory/FINALFACTORY_36.png" id="13_jq4hh"]

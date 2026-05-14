@@ -16,7 +16,7 @@
 [ext_resource type="Shader" uid="uid://b4l5edm0sdpba" path="res://objects/obstacles/burner/shaders/innerburner.tres" id="15_nfopm"]
 [ext_resource type="Shader" uid="uid://vgg5px6wnyc" path="res://objects/obstacles/burner/shaders/outerburner.tres" id="16_w25vm"]
 [ext_resource type="PackedScene" uid="uid://cpiib04mrtkk8" path="res://objects/obstacles/spinning_gear/spinning_gear.tscn" id="17_w25vm"]
-[ext_resource type="PackedScene" uid="uid://d0o37sg2xvqe6" path="res://models/props/facility_objects/conveyor_platform/platform.glb" id="18_7at8w"]
+[ext_resource type="PackedScene" uid="uid://d0o37sg2xvqe6" path="res://models/props/facility_objects/general/conveyor_platform/platform.glb" id="18_7at8w"]
 [ext_resource type="PackedScene" uid="uid://dhk8f3fvkyuhm" path="res://objects/props/molten/stomper_piston.tscn" id="18_w25vm"]
 [ext_resource type="Texture2D" uid="uid://cy3fxmvaei2ls" path="res://models/facilities/molten/textures/BoxCarSide2.png" id="19_7at8w"]
 

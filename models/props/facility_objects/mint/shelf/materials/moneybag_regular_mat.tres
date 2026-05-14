@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dcs8evi0rbxge"]
 
-[ext_resource type="Texture2D" uid="uid://cxy2x1wwlwnic" path="res://models/props/facility_objects/mint/shelf/shelf_3_3.png" id="1_26w6n"]
+[ext_resource type="Texture2D" uid="uid://cxy2x1wwlwnic" path="res://models/props/facility_objects/mint/cog_nation_crate/shelf/shelf_3_3.png" id="1_26w6n"]
 
 [resource]
 resource_name = "lambert2SGShader"

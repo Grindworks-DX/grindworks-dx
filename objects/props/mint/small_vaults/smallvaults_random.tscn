@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://mupuatteipmn"]
+
+[ext_resource type="PackedScene" uid="uid://dfy8g8ff5efa4" path="res://models/props/facility_objects/mint/smallvaults/smallvaults.fbx" id="1_3icw1"]
+[ext_resource type="Script" uid="uid://dsewqfm70uess" path="res://objects/interactables/node_randomizer/node_randomizer.gd" id="2_tcqt6"]
+[ext_resource type="PackedScene" uid="uid://co0wshh25yrlm" path="res://objects/props/etc/square_drop_shadow.tscn" id="3_tcqt6"]
+
+[node name="smallvaults_random" unique_id=1494860719 node_paths=PackedStringArray("targets") instance=ExtResource("1_3icw1")]
+script = ExtResource("2_tcqt6")
+chance_type = 1
+chance = 1.0
+targets = [NodePath("SmallVault_001"), NodePath("SmallVault_002"), NodePath("SmallVault_003"), NodePath("SmallVault_004"), NodePath("SmallVault_005"), NodePath("SmallVault_006"), NodePath("SmallVault_007")]
+
+[node name="SquareDropShadow" parent="SmallVault_001" parent_id_path=PackedInt32Array(1753288131) index="0" unique_id=1017671737 instance=ExtResource("3_tcqt6")]
+transform = Transform3D(2.3579898, 3.841653e-07, 3.841653e-07, 3.8416525e-07, -1.0307094e-07, -2.3579898, -3.8416528e-07, 2.3579898, -1.03071e-07, 0, 0, 0)
+
+[node name="SquareDropShadow" parent="SmallVault_002" parent_id_path=PackedInt32Array(333683860) index="0" unique_id=867264675 instance=ExtResource("3_tcqt6")]
+transform = Transform3D(2.2949536, 3.738954e-07, 3.738954e-07, 3.7389535e-07, -1.0031554e-07, -2.2949536, -3.7389538e-07, 2.2949536, -1.003156e-07, 0, 0, 0)
+
+[node name="SquareDropShadow" parent="SmallVault_003" parent_id_path=PackedInt32Array(362071943) index="0" unique_id=227835935 instance=ExtResource("3_tcqt6")]
+transform = Transform3D(2.413937, 3.9328026e-07, 3.932803e-07, 3.9328023e-07, -1.0551647e-07, -2.413937, -3.9328023e-07, 2.413937, -1.05516534e-07, 0, 0, 0)
+
+[node name="SquareDropShadow" parent="SmallVault_004" parent_id_path=PackedInt32Array(1996807257) index="0" unique_id=520300652 instance=ExtResource("3_tcqt6")]
+transform = Transform3D(2.413937, 3.9328026e-07, 3.932803e-07, 3.9328023e-07, -1.0551647e-07, -2.413937, -3.9328023e-07, 2.413937, -1.05516534e-07, 0, 0, 0)
+
+[node name="SquareDropShadow" parent="SmallVault_005" parent_id_path=PackedInt32Array(104012450) index="0" unique_id=351394659 instance=ExtResource("3_tcqt6")]
+transform = Transform3D(2.2758827, 3.7078834e-07, 3.2038827e-07, 3.707883e-07, -9.948192e-08, -1.966529, -3.707883e-07, 2.2758827, -8.595971e-08, 0, 0, 0)
+
+[node name="SquareDropShadow" parent="SmallVault_006" parent_id_path=PackedInt32Array(1507536517) index="0" unique_id=1698558368 instance=ExtResource("3_tcqt6")]
+transform = Transform3D(2.2758827, 3.7078834e-07, 3.5913013e-07, 3.707883e-07, -9.948192e-08, -2.204325, -3.707883e-07, 2.2758827, -9.63541e-08, 0, 0, 0)
+
+[node name="SquareDropShadow" parent="SmallVault_007" parent_id_path=PackedInt32Array(676256057) index="0" unique_id=1076814181 instance=ExtResource("3_tcqt6")]
+transform = Transform3D(2.2758827, 3.7078834e-07, 3.5913013e-07, 3.707883e-07, -9.948192e-08, -2.204325, -3.707883e-07, 2.2758827, -9.63541e-08, 0, 0, 0)

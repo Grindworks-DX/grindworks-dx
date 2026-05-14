@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://vqg68r3d6nu5"]
 
 [ext_resource type="PackedScene" uid="uid://clvxp66ubtn1i" path="res://objects/modules/molten/base_rooms/molten_furnace_room.tscn" id="1_kmajh"]
-[ext_resource type="PackedScene" uid="uid://drpj1lganwu6n" path="res://objects/props/mint/crossbeam.tscn" id="2_hmxgo"]
+[ext_resource type="PackedScene" uid="uid://drpj1lganwu6n" path="res://objects/props/mint/mint/crossbeam.tscn" id="2_hmxgo"]
 [ext_resource type="PackedScene" uid="uid://dunq1mgh6t4kc" path="res://objects/interactables/chq_door/chq_door.tscn" id="3_ejdq7"]
 [ext_resource type="PackedScene" uid="uid://q13pfs05aior" path="res://objects/obstacles/paint_platform/paintmixer_platform.tscn" id="4_8ches"]
 [ext_resource type="PackedScene" uid="uid://cluyiu76brkoi" path="res://objects/interactables/molten_bellows/molten_bellows.tscn" id="5_lssta"]

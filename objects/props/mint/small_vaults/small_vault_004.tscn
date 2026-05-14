@@ -1,0 +1,44 @@
+[gd_scene format=4 uid="uid://d3bir4ewa1uv"]
+
+[ext_resource type="Material" uid="uid://bqyedncbmcevd" path="res://models/props/facility_objects/mint/smallvaults/ccb_mint_prp_safe_small_1a.tres" id="1_m7mxc"]
+[ext_resource type="PackedScene" uid="uid://co0wshh25yrlm" path="res://objects/props/etc/square_drop_shadow.tscn" id="2_qp2qx"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gtrlv"]
+_surfaces = [{
+"aabb": AABB(-0.9036403, -0.90364045, 0, 1.8072805, 1.8072798, 2.4923954),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAgAEAAAAAQAFAAMABQABAAAAAgADAAYABgADAAUABgAEAAIAAAAHAAUABQAHAAYABwAAAAQABAAGAAcA"),
+"name": "ccb_mint_prp_safe_small_1a",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("X1xQP+hUZz9ogx9A+FRnv19cUD9ogx9AKadGvyynRj8AAAAAKadGvyanRr8AAAAAKadGPyynRj8AAAAAX1xQv/tUZ79ogx9AKadGPyanRr8AAAAA+FRnP1lcUL9ogx9A")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xs3ev"]
+resource_name = "Cube_007"
+_surfaces = [{
+"aabb": AABB(-0.9036403, -0.90364045, 0, 1.8072805, 1.8072798, 2.4923954),
+"attribute_data": PackedByteArray("MzlJ/+cPRD9LNwM/MzlJ/9KdfD9LNwM/MzlJ/9KdfD+MsXw/MzlJ/+cPRD+MsXw//////yN+iz4Y39g9/////3VE9T4Y39g9/////3VE9T7ckts+/////yN+iz7ikts+MzlJ/9KdfD+MsXw/MzlJ/+cPRD+MsXw/MzlJ/+cPRD9LNwM/MzlJ/9KdfD9LNwM/KS48/+cPRD9LNwM/KS48/9KdfD9LNwM/KS48/9KdfD+MsXw/KS48/+cPRD+MsXw/MzlJ/+cPRD9LNwM/MzlJ/9KdfD9LNwM/MzlJ/9KdfD+MsXw/MzlJ/+cPRD+MsXw/IiYx/+cPRD9LNwM/IiYx/9KdfD9LNwM/IiYx/9KdfD+MsXw/IiYx/+cPRD+MsXw/"),
+"format": 34359742495,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": ExtResource("1_m7mxc"),
+"name": "ccb_mint_prp_safe_small_1a",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("X1xQP+hUZz9ogx9A+FRnv19cUD9ogx9AKadGvyynRj8AAAAAKadGPyynRj8AAAAA+FRnP1lcUL9ogx9AX1xQP+hUZz9ogx9AKadGPyynRj8AAAAAKadGPyanRr8AAAAAX1xQv/tUZ79ogx9A+FRnv19cUD9ogx9AX1xQP+hUZz9ogx9A+FRnP1lcUL9ogx9A+FRnv19cUD9ogx9AX1xQv/tUZ79ogx9AKadGvyanRr8AAAAAKadGvyynRj8AAAAAX1xQv/tUZ79ogx9A+FRnP1lcUL9ogx9AKadGPyanRr8AAAAAKadGvyanRr8AAAAAKadGPyanRr8AAAAAKadGPyynRj8AAAAAKadGvyynRj8AAAAAKadGvyanRr8AAAAAn3iv/GsDRr6feK/8awM8vp94r/xyA0m+n3iv/IYDSr6v/F+HjXxJ/q/8X4d5fEn+r/xfh5R8Rf6v/F+HlXw7/v9//39ahiyD/3//f1qGLIP/f/9/WoYsg/9//39ahiyDTwOfeHGDtYFPA594hYO1gU8Dn3hqg7iBTwOfeGmDwoFfh08Dk/y4wV+HTwOT/MLBX4dPA4z8tMFfh08DePy0wf//////f/////////9//////////3//////////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gtrlv")
+
+[node name="SmallVault_004" type="MeshInstance3D" unique_id=1915464454]
+transform = Transform3D(1, 1.629207e-07, 0, 0, 0, 1, 1.629207e-07, -1, 0, 0, 0, 0)
+mesh = SubResource("ArrayMesh_xs3ev")
+skeleton = NodePath("")
+
+[node name="SquareDropShadow" parent="." unique_id=1017671737 instance=ExtResource("2_qp2qx")]
+transform = Transform3D(2.413937, 3.9328026e-07, 3.932803e-07, 3.9328023e-07, -1.0551647e-07, -2.413937, -3.9328023e-07, 2.413937, -1.05516534e-07, 0, 0, 0)

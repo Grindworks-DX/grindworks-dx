@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://b53vf7i6lqcbg"]
 
-[ext_resource type="Texture2D" uid="uid://cg2uccg6r4tku" path="res://models/props/facility_objects/mint/pipes/textures/CogIntPlate1b.png" id="1_g68g2"]
+[ext_resource type="Texture2D" uid="uid://cg2uccg6r4tku" path="res://models/props/facility_objects/mint/cog_nation_crate/pipes/textures/CogIntPlate1b.png" id="1_g68g2"]
 
 [resource]
 resource_name = "Pipes1Plate1SHD"

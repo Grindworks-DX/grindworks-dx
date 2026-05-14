@@ -56,8 +56,8 @@ _subresources={
 },
 "Shadow": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://general_resources/common/squareshadow.tres",
-"use_external/path": "uid://c0oqskakk1fq3"
+"use_external/fallback_path": "res://general_resources/common/drop_shadow_square.tres",
+"use_external/path": "uid://il08msjlhggs"
 },
 "Slate": {
 "use_external/enabled": true,

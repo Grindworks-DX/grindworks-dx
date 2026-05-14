@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://lbhjenq2w2au"]
+
+[ext_resource type="Texture2D" uid="uid://dtm13qbxxohgl" path="res://models/facilities/mint/textures/csb_factory_env_stone_1a.png" id="1_57mc8"]
+
+[resource]
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_57mc8")

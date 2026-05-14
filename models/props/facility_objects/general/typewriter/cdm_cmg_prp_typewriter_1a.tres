@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dnsy04g38jbtw"]
+
+[ext_resource type="Texture2D" uid="uid://d0ewjw15ne5hg" path="res://models/props/facility_objects/general/typewriter/tt_t_ara_cmg_typewriter_upscayl_4x_ultramix_balanced.png" id="1_78hus"]
+
+[resource]
+resource_name = "Typewriter"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_78hus")
+emission_enabled = true

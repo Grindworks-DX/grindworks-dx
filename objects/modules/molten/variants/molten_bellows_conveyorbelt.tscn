@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://p33fqws4qewy" path="res://objects/obstacles/conveyer_belt/conveyer_belt.tscn" id="2_6gw2x"]
 [ext_resource type="Script" uid="uid://bkyp58cx4xql7" path="res://objects/modules/molten/variants/molten_bellows_conveyorbelt.gd" id="2_voyj8"]
 [ext_resource type="PackedScene" uid="uid://lyt3x6vgin5x" path="res://objects/modules/molten/variants/conveyor_room_obstacles/burner_set2.tscn" id="3_436b0"]
-[ext_resource type="Texture2D" uid="uid://bj0ye0oxq1fea" path="res://models/props/facility_objects/conveyor_platform/platform_CVBelt1.png" id="3_n2akk"]
+[ext_resource type="Texture2D" uid="uid://bj0ye0oxq1fea" path="res://models/props/facility_objects/general/conveyor_platform/platform_CVBelt1.png" id="3_n2akk"]
 [ext_resource type="PackedScene" uid="uid://hvvko2vguyj0" path="res://objects/modules/molten/variants/conveyor_room_obstacles/burner_set1.tscn" id="4_md28c"]
 [ext_resource type="PackedScene" uid="uid://6w7qnjyug5fe" path="res://objects/props/mint/conveyor_belt_portal.tscn" id="4_mw3b7"]
 [ext_resource type="PackedScene" uid="uid://8w34qndxvrlc" path="res://objects/modules/molten/variants/conveyor_room_obstacles/conveyor_room_bellows.tscn" id="5_62xuw"]

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://hox57qqxnjdl" path="res://objects/props/factory/gear_post.tscn" id="5_f77s1"]
 [ext_resource type="PackedScene" uid="uid://p33fqws4qewy" path="res://objects/obstacles/conveyer_belt/conveyer_belt.tscn" id="5_uegom"]
 [ext_resource type="PackedScene" uid="uid://ckvsq2pbqm3e3" path="res://objects/props/factory/shelf_1.tscn" id="6_0gxqj"]
-[ext_resource type="Texture2D" uid="uid://bj0ye0oxq1fea" path="res://models/props/facility_objects/conveyor_platform/platform_CVBelt1.png" id="6_5ihuv"]
+[ext_resource type="Texture2D" uid="uid://bj0ye0oxq1fea" path="res://models/props/facility_objects/general/conveyor_platform/platform_CVBelt1.png" id="6_5ihuv"]
 [ext_resource type="PackedScene" uid="uid://cpui5l4pi63l0" path="res://objects/props/factory/small_gear.tscn" id="7_0s1w3"]
 [ext_resource type="PackedScene" uid="uid://rriejmaesd7l" path="res://objects/props/factory/gear.tscn" id="8_5k8wn"]
 [ext_resource type="PackedScene" uid="uid://ciyyhun2e5nmf" path="res://objects/props/etc/crate/crate_general.tscn" id="9_77bkg"]

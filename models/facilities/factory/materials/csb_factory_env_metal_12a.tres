@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cwk2sp62pxlqh"]
+
+[ext_resource type="Texture2D" uid="uid://cmn7b1cf8s12n" path="res://models/facilities/factory/textures/csb_factory_env_metal_12a.png" id="1_xiw0n"]
+
+[resource]
+resource_name = "FINALFACTORY_66"
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_xiw0n")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0

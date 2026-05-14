@@ -1,26 +1,59 @@
 [gd_scene format=3 uid="uid://62mqao2o2egv"]
 
-[ext_resource type="PackedScene" uid="uid://ch40srx60of2j" path="res://models/props/facility_objects/mint/shelf/shelf_2.fbx" id="1_054yi"]
-[ext_resource type="Script" uid="uid://b8bopskef0can" path="res://objects/props/mint/shelf_gold.gd" id="1_we7sf"]
+[ext_resource type="PackedScene" path="res://objects/props/etc/shelf_empty.tscn" id="1_o8tlx"]
+[ext_resource type="PackedScene" uid="uid://et13yu2370cr" path="res://objects/props/mint/gold_stacks_random.tscn" id="3_o8tlx"]
+[ext_resource type="Script" uid="uid://dsewqfm70uess" path="res://objects/interactables/node_randomizer/node_randomizer.gd" id="3_vasy5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gj5iy"]
-size = Vector3(4.10889, 4.41406, 1.51978)
+size = Vector3(4.10889, 4.355956, 1.51978)
 
-[node name="shelf2" type="Node3D"]
-script = ExtResource("1_we7sf")
+[node name="shelf_gold" type="Node3D" unique_id=142606903]
 metadata/battle_cam_hide = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07791, -0.228497)
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1838263989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0486314, -0.228497)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0241699, 0.0981441, -0.0567932)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=519898548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0241699, 0.12719607, -0.056793213)
 shape = SubResource("BoxShape3D_gj5iy")
 
-[node name="shelf_2" parent="." instance=ExtResource("1_054yi")]
-transform = Transform3D(30.5, 0, 0, 0, 30.5, 0, 0, 0, 30.5, 0, 0, 0)
+[node name="shelf" parent="." unique_id=1253869983 node_paths=PackedStringArray("targets") instance=ExtResource("1_o8tlx")]
+script = ExtResource("3_vasy5")
+chance_type = 2
+chance = 0.27
+targets = [NodePath("GoldLocation1"), NodePath("GoldLocation2"), NodePath("GoldLocation3"), NodePath("GoldLocation4"), NodePath("GoldLocation5"), NodePath("GoldLocation6")]
 
-[node name="collision" parent="shelf_2" index="1"]
-visible = false
+[node name="GoldLocation1" type="Node3D" parent="shelf" unique_id=2017647699]
+transform = Transform3D(0.30478027, 0, 0, 0, 0.30478027, 0, 0, 0, 0.30478027, -0.78127265, 0.78597194, -0.2605763)
 
-[editable path="shelf_2"]
+[node name="gold_stacks" parent="shelf/GoldLocation1" unique_id=83011488 instance=ExtResource("3_o8tlx")]
+transform = Transform3D(0.99974465, 0, 0.022600092, 0, 1, 0, -0.022600092, 0, 0.99974465, 0, 0, 0)
+
+[node name="GoldLocation2" type="Node3D" parent="shelf" unique_id=583440262]
+transform = Transform3D(0.30478027, 0, 2.664474e-08, 0, 0.30478027, 0, -2.664474e-08, 0, 0.30478027, 0.94418216, 0.78602064, -0.2605763)
+
+[node name="gold_stacks" parent="shelf/GoldLocation2" unique_id=1041977447 instance=ExtResource("3_o8tlx")]
+transform = Transform3D(0.99992067, 0, -0.012600944, 0, 1, 0, 0.012600944, 0, 0.99992067, 0.06536603, 0, 0)
+
+[node name="GoldLocation3" type="Node3D" parent="shelf" unique_id=1583633932]
+transform = Transform3D(0.30478027, 0, 2.664474e-08, 0, 0.30478027, 0, -2.664474e-08, 0, 0.30478027, -0.78127265, 2.1023157, -0.2605763)
+
+[node name="gold_stacks" parent="shelf/GoldLocation3" unique_id=1610963647 instance=ExtResource("3_o8tlx")]
+transform = Transform3D(0.99988425, 0, 0.015218684, 0, 1, 0, -0.015218684, 0, 0.99988425, -0.14485097, 0, 0.08634472)
+
+[node name="GoldLocation4" type="Node3D" parent="shelf" unique_id=780045645]
+transform = Transform3D(0.30478027, 0, 2.664474e-08, 0, 0.30478027, 0, -2.664474e-08, 0, 0.30478027, 0.94418216, 2.105422, -0.2605763)
+
+[node name="gold_stacks" parent="shelf/GoldLocation4" unique_id=1609400219 instance=ExtResource("3_o8tlx")]
+transform = Transform3D(1, 0, -7.1054274e-15, 0, 1, 0, 7.1054274e-15, 0, 1, 0.08523774, 0, 0)
+
+[node name="GoldLocation5" type="Node3D" parent="shelf" unique_id=1348699359]
+transform = Transform3D(0.3046824, 0, -0.0077229445, 0, 0.30478027, 0, 0.0077229445, 0, 0.3046824, -0.83258265, 3.3097527, -0.2605763)
+
+[node name="gold_stacks" parent="shelf/GoldLocation5" unique_id=1969394194 instance=ExtResource("3_o8tlx")]
+
+[node name="GoldLocation6" type="Node3D" parent="shelf" unique_id=1749613602]
+transform = Transform3D(0.30478027, 0, 2.664474e-08, 0, 0.30478027, 0, -2.664474e-08, 0, 0.30478027, 0.94418216, 3.309504, -0.2605763)
+
+[node name="gold_stacks" parent="shelf/GoldLocation6" unique_id=1000918995 instance=ExtResource("3_o8tlx")]
+transform = Transform3D(0.9999213, 0, 0.012548587, 0, 1, 0, -0.012548587, 0, 0.9999213, 0, 0, -0.045164227)

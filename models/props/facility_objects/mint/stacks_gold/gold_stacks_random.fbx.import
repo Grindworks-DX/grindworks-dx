@@ -1,0 +1,67 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://c2ioaac4vp170"
+path="res://.godot/imported/gold_stacks_random.fbx-edbab78ddc9ffc8c19a904f7abad966d.scn"
+
+[deps]
+
+source_file="res://models/props/facility_objects/mint/stacks_gold/gold_stacks_random.fbx"
+dest_files=["res://.godot/imported/gold_stacks_random.fbx-edbab78ddc9ffc8c19a904f7abad966d.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"drop_shadow_square": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://general_resources/common/drop_shadow_square.tres",
+"use_external/path": "uid://il08msjlhggs"
+},
+"lambert2SGShader": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/props/facility_objects/mint/stacks_gold/ccb_mint_facility_gold_1a.tres",
+"use_external/path": "uid://bsv5owho73re3"
+},
+"lambert3SGShader": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/props/facility_objects/mint/stacks_gold/ccb_mint_facility_gold_2a.tres",
+"use_external/path": "uid://cp3ft2yih4fv6"
+},
+"lambert4SGShader": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/props/facility_objects/mint/stacks_gold/ccb_mint_facility_gold_3a.tres",
+"use_external/path": "uid://bhhlgputmvr6m"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=true
+fbx/embedded_image_handling=1
+fbx/naming_version=1

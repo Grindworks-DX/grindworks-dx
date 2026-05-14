@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://djsp1edyihjnt" path="res://models/facilities/molten/molten_connector_straight.fbx" id="1_s388i"]
 [ext_resource type="Texture2D" uid="uid://xq7dvm0xhhhw" path="res://models/facilities/molten/textures/FINALFACTORY_9.png" id="2_10kov"]
-[ext_resource type="PackedScene" uid="uid://klxlslni1hnn" path="res://objects/props/mint/door_frame.tscn" id="2_khtgy"]
+[ext_resource type="PackedScene" uid="uid://klxlslni1hnn" path="res://objects/props/mint/mint/door_frame.tscn" id="2_khtgy"]
 [ext_resource type="Texture2D" uid="uid://n1trapjb4fq6" path="res://models/facilities/molten/textures/FINALFACTORY_52.png" id="3_s8yh0"]
 [ext_resource type="Shader" uid="uid://bwqy10j7lib06" path="res://general_resources/shaders/lava_shader.gdshader" id="3_w6hsm"]
 [ext_resource type="Texture2D" uid="uid://dutf3tiqr8h1t" path="res://models/facilities/mint/textures/lava7.png" id="4_0wily"]

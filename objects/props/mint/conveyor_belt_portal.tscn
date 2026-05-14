@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://6w7qnjyug5fe"]
 
-[ext_resource type="PackedScene" uid="uid://cvdy66nm5xl3v" path="res://models/props/facility_objects/mint/conveyor_belt_portal/conveyor_belt_portal.fbx" id="1_umg7s"]
-[ext_resource type="Script" uid="uid://bwouq015wh5e2" path="res://objects/props/mint/conveyor_belt_portal.gd" id="2_ugxt3"]
-[ext_resource type="Texture2D" uid="uid://dmktgoh80xa74" path="res://models/props/facility_objects/mint/conveyor_belt_portal/LocomotiveLight1.png" id="3_0j6cr"]
+[ext_resource type="PackedScene" path="res://models/props/facility_objects/mint/mint/conveyor_belt_portal/conveyor_belt_portal.fbx" id="1_umg7s"]
+[ext_resource type="Script" uid="uid://bwouq015wh5e2" path="res://objects/props/mint/mint/conveyor_belt_portal.gd" id="2_ugxt3"]
+[ext_resource type="Texture2D" path="res://models/props/facility_objects/mint/cog_nation_crate/conveyor_belt_portal/LocomotiveLight1.png" id="3_0j6cr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jh64"]
 resource_local_to_scene = true

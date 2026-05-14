@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cp3ft2yih4fv6"]
+
+[ext_resource type="Texture2D" uid="uid://c6pr2exjtn7iv" path="res://models/props/facility_objects/mint/stacks_gold/ccb_mint_facility_gold_2a.png" id="1_6q674"]
+
+[resource]
+resource_name = "lambert3SGShader"
+transparency = 1
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_6q674")
+emission_enabled = true

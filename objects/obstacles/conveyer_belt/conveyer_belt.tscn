@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://p33fqws4qewy"]
 
-[ext_resource type="PackedScene" uid="uid://d0o37sg2xvqe6" path="res://models/props/facility_objects/conveyor_platform/platform.glb" id="1_0hyvl"]
+[ext_resource type="PackedScene" uid="uid://d0o37sg2xvqe6" path="res://models/props/facility_objects/general/conveyor_platform/platform.glb" id="1_0hyvl"]
 [ext_resource type="Script" uid="uid://b12sj13k0ngpy" path="res://objects/obstacles/conveyer_belt/conveyer_belt.gd" id="1_cey7s"]
-[ext_resource type="Texture2D" uid="uid://bj0ye0oxq1fea" path="res://models/props/facility_objects/conveyor_platform/platform_CVBelt1.png" id="2_5yx4i"]
+[ext_resource type="Texture2D" uid="uid://bj0ye0oxq1fea" path="res://models/props/facility_objects/general/conveyor_platform/platform_CVBelt1.png" id="2_5yx4i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qram"]
 resource_name = "ConveyerBeltV3SHD"

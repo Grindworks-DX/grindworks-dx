@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://v0ki0toqb35k"]
 
-[ext_resource type="PackedScene" uid="uid://dj6hdk57qvxnq" path="res://models/props/facility_objects/mint/safe/cb_safe.fbx" id="1_wsfg1"]
-[ext_resource type="Texture2D" uid="uid://ngcq6r6rnjbn" path="res://models/props/facility_objects/mint/safe/CBSafe2.png" id="2_blgbs"]
-[ext_resource type="Texture2D" uid="uid://cys44dv1h061j" path="res://models/props/facility_objects/mint/safe/CBSafe1c.png" id="3_noycm"]
+[ext_resource type="PackedScene" uid="uid://dj6hdk57qvxnq" path="res://models/props/facility_objects/mint/cog_nation_crate/safe/cb_safe.fbx" id="1_wsfg1"]
+[ext_resource type="Texture2D" uid="uid://ngcq6r6rnjbn" path="res://models/props/facility_objects/mint/cog_nation_crate/safe/CBSafe2.png" id="2_blgbs"]
+[ext_resource type="Texture2D" uid="uid://cys44dv1h061j" path="res://models/props/facility_objects/mint/cog_nation_crate/safe/CBSafe1c.png" id="3_noycm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noycm"]
 resource_name = "CBSafeSide_SHD"

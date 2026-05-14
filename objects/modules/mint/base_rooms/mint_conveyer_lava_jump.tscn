@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dutf3tiqr8h1t" path="res://models/facilities/mint/textures/lava7.png" id="4_b3cli"]
 [ext_resource type="Texture2D" uid="uid://dd5uep74x6opm" path="res://models/facilities/mint/textures/CBWallVault.png" id="4_vpt0r"]
 [ext_resource type="Texture2D" uid="uid://dw0ovgcnsmkqi" path="res://objects/misc/spotlight_1.png" id="5_b3cli"]
-[ext_resource type="Texture2D" uid="uid://bj0ye0oxq1fea" path="res://models/props/facility_objects/conveyor_platform/platform_CVBelt1.png" id="5_k543y"]
+[ext_resource type="Texture2D" uid="uid://bj0ye0oxq1fea" path="res://models/props/facility_objects/general/conveyor_platform/platform_CVBelt1.png" id="5_k543y"]
 [ext_resource type="Texture2D" uid="uid://b2bemkg545ldp" path="res://models/facilities/mint/textures/FINALFACTORY_66.png" id="5_pnhuj"]
 [ext_resource type="PackedScene" uid="uid://dxyq5lb5oineo" path="res://objects/interactables/treasure_chest/treasure_chest.tscn" id="10_1fwrh"]
 [ext_resource type="Resource" uid="uid://j75am6rbrvrj" path="res://objects/items/pools/progressives.tres" id="11_fy70c"]

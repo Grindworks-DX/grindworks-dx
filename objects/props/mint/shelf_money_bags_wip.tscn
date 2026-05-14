@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bjmhyv1txlv0"]
+
+[ext_resource type="Script" path="res://objects/props/mint/shelf_money_bags_new.gd" id="1_gjqnq"]
+[ext_resource type="PackedScene" path="res://objects/props/etc/shelf_empty.tscn" id="2_gjqnq"]
+[ext_resource type="Script" uid="uid://dsewqfm70uess" path="res://objects/interactables/node_randomizer/node_randomizer.gd" id="3_gjqnq"]
+[ext_resource type="PackedScene" uid="uid://cpbtf4ejmfro" path="res://objects/props/mint/stacks_money_bags.tscn" id="4_gjqnq"]
+
+[node name="shelf_money_bags" type="Node3D" unique_id=1262017193]
+script = ExtResource("1_gjqnq")
+
+[node name="shelf_2" parent="." unique_id=141837513 node_paths=PackedStringArray("targets") instance=ExtResource("2_gjqnq")]
+unique_name_in_owner = true
+script = ExtResource("3_gjqnq")
+chance_type = 1
+chance = 0.14
+targets = [null, null, null]
+
+[node name="MoneyBags" type="Node3D" parent="." unique_id=1803601537]
+unique_name_in_owner = true
+
+[node name="money_stacks" parent="MoneyBags" unique_id=1680368643 instance=ExtResource("4_gjqnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78271353, 0)
+
+[node name="money_stacks2" parent="MoneyBags" unique_id=1108942063 instance=ExtResource("4_gjqnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0857217, 0)
+
+[node name="money_stacks3" parent="MoneyBags" unique_id=816167685 instance=ExtResource("4_gjqnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2841542, 0)

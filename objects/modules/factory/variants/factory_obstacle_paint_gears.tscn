@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cg73nmwwywaxm" path="res://models/props/facility_objects/mint/paint_platform/paintmixer_platform_GearCapJoint.png" id="3_57dou"]
 [ext_resource type="PackedScene" uid="uid://dxyq5lb5oineo" path="res://objects/interactables/treasure_chest/treasure_chest.tscn" id="3_nupdt"]
 [ext_resource type="Texture2D" uid="uid://c7gtsd6v3580e" path="res://models/props/facility_objects/mint/gear/gear_0.png" id="3_thjgg"]
-[ext_resource type="Texture2D" uid="uid://dunyhns3tkdq" path="res://models/props/facility_objects/mint/gear/gear_1.png" id="4_713r6"]
+[ext_resource type="Texture2D" uid="uid://hxut3nvrwssy" path="res://models/props/facility_objects/mint/cog_nation_crate/gear/gear_1.png" id="4_713r6"]
 [ext_resource type="PackedScene" uid="uid://celxj5u1aay0l" path="res://objects/props/etc/wood_crate.tscn" id="8_5kg2y"]
 [ext_resource type="PackedScene" uid="uid://ciyyhun2e5nmf" path="res://objects/props/etc/crate/crate_general.tscn" id="9_1xw0q"]
 
