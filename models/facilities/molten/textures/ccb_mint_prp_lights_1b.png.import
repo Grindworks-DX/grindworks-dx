@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ofuuiundcoub"
-path="res://.godot/imported/LocomotiveSide5.png-ecbe3860da7d163157a0d061de1b3c92.ctex"
+uid="uid://c53igcg0g1skq"
+path="res://.godot/imported/ccb_mint_prp_lights_1b.png-873e1c9cd1c2615b1d5a732f01d66aa7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/facilities/mint/textures/LocomotiveSide5.png"
-dest_files=["res://.godot/imported/LocomotiveSide5.png-ecbe3860da7d163157a0d061de1b3c92.ctex"]
+source_file="res://models/facilities/molten/textures/ccb_mint_prp_lights_1b.png"
+dest_files=["res://.godot/imported/ccb_mint_prp_lights_1b.png-873e1c9cd1c2615b1d5a732f01d66aa7.ctex"]
 
 [params]
 

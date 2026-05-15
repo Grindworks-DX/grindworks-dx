@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ntpjxe3t4pl2"
-path="res://.godot/imported/LocomotiveSide5_hot.png-5b077e498f0912d176656551366dba2b.ctex"
+uid="uid://ofuuiundcoub"
+path="res://.godot/imported/ccb_mint_env_wall_1a.png-1a0214a9bbe9e47881a7cbb7a6f4f330.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/facilities/mint/textures/LocomotiveSide5_hot.png"
-dest_files=["res://.godot/imported/LocomotiveSide5_hot.png-5b077e498f0912d176656551366dba2b.ctex"]
+source_file="res://models/facilities/mint/textures/ccb_mint_env_wall_1a.png"
+dest_files=["res://.godot/imported/ccb_mint_env_wall_1a.png-1a0214a9bbe9e47881a7cbb7a6f4f330.ctex"]
 
 [params]
 

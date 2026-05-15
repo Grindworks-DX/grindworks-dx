@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0kadq36e318"
-path="res://.godot/imported/CBStationLightTubes.png-7cc0d11f70459f696b6855776818788c.ctex"
+uid="uid://bw77stek2wtfm"
+path="res://.godot/imported/ccb_mint_prp_dollars_2a.png-3ed15034f67f738c1143e0eb3df71307.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/facilities/molten/textures/CBStationLightTubes.png"
-dest_files=["res://.godot/imported/CBStationLightTubes.png-7cc0d11f70459f696b6855776818788c.ctex"]
+source_file="res://models/facilities/mint/textures/ccb_mint_prp_dollars_2a.png"
+dest_files=["res://.godot/imported/ccb_mint_prp_dollars_2a.png-3ed15034f67f738c1143e0eb3df71307.ctex"]
 
 [params]
 

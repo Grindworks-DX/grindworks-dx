@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cymbo6d2yjo6m"]
+
+[ext_resource type="Texture2D" uid="uid://b6r737scdu480" path="res://models/facilities/mint/textures/ccb_mint_prp_dollars_1a.png" id="1_jxi77"]
+
+[resource]
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_jxi77")

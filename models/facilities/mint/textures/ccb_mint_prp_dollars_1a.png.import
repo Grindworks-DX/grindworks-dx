@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lrdqpgbfja00"
-path="res://.godot/imported/cb_dollars_pile_scrunched_single2.png-7ddaf214fcc45ec04dc4f3aaeedf2bea.ctex"
+uid="uid://b6r737scdu480"
+path="res://.godot/imported/ccb_mint_prp_dollars_1a.png-48afc5395970bb6c35ba100de43f6ef2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/facilities/mint/textures/cb_dollars_pile_scrunched_single2.png"
-dest_files=["res://.godot/imported/cb_dollars_pile_scrunched_single2.png-7ddaf214fcc45ec04dc4f3aaeedf2bea.ctex"]
+source_file="res://models/facilities/mint/textures/ccb_mint_prp_dollars_1a.png"
+dest_files=["res://.godot/imported/ccb_mint_prp_dollars_1a.png-48afc5395970bb6c35ba100de43f6ef2.ctex"]
 
 [params]
 

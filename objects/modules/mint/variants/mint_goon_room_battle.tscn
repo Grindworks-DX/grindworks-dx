@@ -1,96 +1,75 @@
-[gd_scene format=3 uid="uid://cgikj7t8vhs6m"]
+[gd_scene format=4 uid="uid://cgikj7t8vhs6m"]
 
 [ext_resource type="PackedScene" uid="uid://dfhgbjrdoxhau" path="res://objects/modules/mint/base_rooms/mint_goon_room.tscn" id="1_kb4d2"]
 [ext_resource type="PackedScene" uid="uid://dxyq5lb5oineo" path="res://objects/interactables/treasure_chest/treasure_chest.tscn" id="2_hul5y"]
-[ext_resource type="PackedScene" uid="uid://bsb5ku08jbkdy" path="res://objects/props/mint/mint/pipes/pipes_e.tscn" id="5_0yy82"]
+[ext_resource type="Material" uid="uid://crd3gdxphqxq7" path="res://models/facilities/factory/materials/csb_factory_env_stone_tiles_1b.tres" id="2_mduy1"]
 [ext_resource type="PackedScene" uid="uid://c1rus4vu8jrlg" path="res://objects/battle/battle_node/dynamic/battle_node_dynamic.tscn" id="5_xxpfd"]
-[ext_resource type="PackedScene" uid="uid://duuriwh75afua" path="res://objects/props/mint/mint_crate.tscn" id="6_sv4dy"]
-[ext_resource type="PackedScene" uid="uid://dnip6uj60poax" path="res://objects/props/mint/mint/pipes/pipes_c.tscn" id="6_tcwsp"]
-[ext_resource type="PackedScene" uid="uid://drpj1lganwu6n" path="res://objects/props/mint/mint/crossbeam.tscn" id="8_jmg4y"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3qus3"]
-size = Vector3(13.6777, 8.89194, 9.95801)
+[sub_resource type="ArrayMesh" id="ArrayMesh_ogr35"]
+_surfaces = [{
+"aabb": AABB(-457.2, -304.8, -6.1035156e-05, 457.2002, 304.8, 678.4668),
+"format": 34359742465,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAADAAIAAgAFAAQA"),
+"name": "csb_factory_env_stone_tiles_1b",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("mpnkw8E2vzYAAIC4AABAOcE2vzYAAIC4AABAOcE2vzbw13NCmpnkw8E2vzbw13NCmpnkw2ZmmMPPnSlEAABAOWZmmMPfnSlE")
+}]
+blend_shape_mode = 0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7pmsu"]
-size = Vector3(13.8569, 9.66125, 5.88867)
+[sub_resource type="ArrayMesh" id="ArrayMesh_virh0"]
+resource_name = "Mesh_027"
+_surfaces = [{
+"aabb": AABB(-457.2, -304.8, -6.1035156e-05, 457.2002, 304.8, 678.4668),
+"attribute_data": PackedByteArray("/wD//wAAAAAAAAAA/wD//wAAgD8AAAAA/wD//wAAgD8AAAA//wD//wAAAAAAAAA//wD//wAAAAAAAIA//wD//wAAAAAAAAA//wD//wAAgD8AAAA//wD//wAAgD8AAIA/"),
+"format": 34359742495,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQA"),
+"material": ExtResource("2_mduy1"),
+"name": "csb_factory_env_stone_tiles_1b",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("mpnkw8E2vzYAAIC4AABAOcE2vzYAAIC4AABAOcE2vzbw13NCmpnkw8E2vzbw13NCmpnkw2ZmmMPPnSlEmpnkw8E2vzbw13NCAABAOcE2vzbw13NCAABAOWZmmMPfnSlE/3///////7//f///////v/9///////+//3///////7//f7LV/v//v/9/stX+//+//3+y1f7//7//f7LV/v//vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ogr35")
 
-[node name="Root Scene" instance=ExtResource("1_kb4d2")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_o7xvx"]
+size = Vector3(14.370541, 9.50684, 5.973856)
 
-[node name="Lights5" parent="Z07_ALL/Z07/gear_center/room/geometry_gearcenter/LightsAll" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -495.617, -26.0563, -1.30809)
+[node name="Root Scene" unique_id=1426606062 instance=ExtResource("1_kb4d2")]
 
-[node name="Lights6" parent="Z07_ALL/Z07/gear_center/room/geometry_gearcenter/LightsAll" index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 495.617, -26.0563, -1.30809)
+[node name="ENTRANCE" parent="." index="2" unique_id=669793459]
+transform = Transform3D(-9.139114e-08, 1.6292066e-07, 0.9999999, 7.1054274e-15, 1, -1.6292068e-07, -0.9999999, -7.0732977e-15, -9.139114e-08, -22.859991, 0.009790764, 0.38344496)
 
-[node name="Lights7" parent="Z07_ALL/Z07/gear_center/room/geometry_gearcenter/LightsAll" index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 349.394, -26.0563, -1.30809)
+[node name="stairsCollision" parent="." index="15" unique_id=1357056353]
+mesh = SubResource("ArrayMesh_virh0")
 
-[node name="Lights8" parent="Z07_ALL/Z07/gear_center/room/geometry_gearcenter/LightsAll" index="7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -346.768, -26.0563, -1.30809)
-
-[node name="GeometryTransformHelper23" parent="Z07_ALL/Z07/gear_center/room/geometry_gearcenter/LightsAll/Lights9" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.3561, -239.475, 478.491)
-
-[node name="GeometryTransformHelper24" parent="Z07_ALL/Z07/gear_center/room/geometry_gearcenter/LightsAll/Lights10" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.3561, -239.475, 336.109)
-
-[node name="Lights11" parent="Z07_ALL/Z07/gear_center/room/geometry_gearcenter/LightsAll" index="10"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59054, -26.1249, 348.998)
-
-[node name="Lights12" parent="Z07_ALL/Z07/gear_center/room/geometry_gearcenter/LightsAll" index="11"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59054, -26.1249, 487.007)
-
-[node name="treasure_chest" parent="." index="4" instance=ExtResource("2_hul5y")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.1739, 0, -0.892759)
-
-[node name="treasure_chest2" parent="." index="5" instance=ExtResource("2_hul5y")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.1739, 0, 1.78773)
-
-[node name="Battles" type="Node3D" parent="." index="6"]
-
-[node name="BattleNodeDynamic1" parent="Battles" index="0" node_paths=PackedStringArray("cogs") instance=ExtResource("5_xxpfd")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.8599, 0, 0.503852)
+[node name="BattleNodeDynamic" parent="." index="19" unique_id=1730871415 node_paths=PackedStringArray("cogs") instance=ExtResource("5_xxpfd")]
+transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -15.577274, 0, 0.11439639)
 cog_range = Vector2i(2, 3)
+cog_dist = 0.5
 cogs = [NodePath("Cogs/Cog6"), NodePath("Cogs/Cog7"), NodePath("Cogs/Cog8")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Battles/BattleNodeDynamic1" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115341, 4.45668, -4.479)
-shape = SubResource("BoxShape3D_3qus3")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BattleNodeDynamic" index="4" unique_id=1459806218]
+transform = Transform3D(0.9999996, 0, 0, 0, 1, 0, 0, 0, 0.9999996, 0.666651, 4.25342, -0.67512417)
+shape = SubResource("BoxShape3D_o7xvx")
 
-[node name="BattleNodeDynamic" parent="Battles" index="1" node_paths=PackedStringArray("cogs") instance=ExtResource("5_xxpfd")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.41382, 0, 0)
-cog_range = Vector2i(3, 4)
-cogs = [NodePath("Cogs/Cog8"), NodePath("Cogs/Cog9"), NodePath("Cogs/Cog10"), NodePath("Cogs/Cog11")]
+[node name="BattleNodeDynamic2" parent="." index="20" unique_id=1279320847 node_paths=PackedStringArray("cogs") instance=ExtResource("5_xxpfd")]
+transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, 7.8885393, 0, 0.27358657)
+cog_range = Vector2i(2, 3)
+cog_dist = 0.5
+cogs = [NodePath("Cogs/Cog6"), NodePath("Cogs/Cog7"), NodePath("Cogs/Cog8")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Battles/BattleNodeDynamic" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.492432, 4.84343, -0.914063)
-shape = SubResource("BoxShape3D_7pmsu")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BattleNodeDynamic2" index="4" unique_id=1509204446]
+transform = Transform3D(0.9999996, 0, 0, 0, 1, 0, 0, 0, 0.9999996, 0.34117883, 4.25342, -2.1717958)
+shape = SubResource("BoxShape3D_o7xvx")
 
-[node name="Pipes" type="Node3D" parent="." index="10"]
+[node name="treasure_chest" parent="CogDoor" parent_id_path=PackedInt32Array(1942541853) index="5" unique_id=2079435126 instance=ExtResource("2_hul5y")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 13.677893, 0.1067971, 12.359982)
 
-[node name="pipes_E" parent="Pipes" index="0" instance=ExtResource("5_0yy82")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.356786, 0, 20.3202)
-
-[node name="pipes_C" parent="Pipes" index="1" instance=ExtResource("6_tcwsp")]
-transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -7.19424, 3.054, -13.519)
-
-[node name="mint_crate" parent="." index="11" instance=ExtResource("6_sv4dy")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.12067, 0.00959027, 18.9136)
-
-[node name="mint_crate2" parent="." index="12" instance=ExtResource("6_sv4dy")]
-transform = Transform3D(1.6302, 0, 0.482115, 0, 1.7, 0, -0.482115, 0, 1.6302, -7.10668, 0.00959027, 14.5375)
-
-[node name="mint_crate3" parent="." index="13" instance=ExtResource("6_sv4dy")]
-transform = Transform3D(1.1621, 0, 1.02568, 0, 1.55, 0, -1.02568, 0, 1.1621, 2.20104, 0.00959027, 17.9574)
-
-[node name="pipes_A1" parent="." index="14" instance=ExtResource("8_jmg4y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.654, 0, 6.11305)
-
-[node name="pipes_A2" parent="." index="15" instance=ExtResource("8_jmg4y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.654, 0, -5.22115)
-
-[node name="pipes_A3" parent="." index="16" instance=ExtResource("8_jmg4y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1022, 0, 6.11305)
-
-[node name="pipes_A4" parent="." index="17" instance=ExtResource("8_jmg4y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1022, 0, -5.22115)
+[node name="treasure_chest2" parent="CogDoor" parent_id_path=PackedInt32Array(1942541853) index="6" unique_id=797661255 instance=ExtResource("2_hul5y")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 16.352533, 0.1067971, 12.359982)

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://nrdik8it4411"]
+
+[ext_resource type="Texture2D" uid="uid://wmswa4qowcj2" path="res://models/facilities/mint/textures/ccb_mint_prp_lights_1a.png" id="1_16by8"]
+
+[resource]
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_16by8")
+emission_enabled = true
+emission_energy_multiplier = 0.79
+emission_texture = ExtResource("1_16by8")

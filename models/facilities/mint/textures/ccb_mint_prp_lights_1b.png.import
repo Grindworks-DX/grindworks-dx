@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj6r8et1d1dyt"
-path="res://.godot/imported/CBStationLightTubes.png-6f6ec508f845b4c3689ab28e5f072443.ctex"
+uid="uid://b41c4cfg4xamj"
+path="res://.godot/imported/ccb_mint_prp_lights_1b.png-04ac54fe01f1532691b7cdbd2db4c106.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/facilities/mint/textures/CBStationLightTubes.png"
-dest_files=["res://.godot/imported/CBStationLightTubes.png-6f6ec508f845b4c3689ab28e5f072443.ctex"]
+source_file="res://models/facilities/mint/textures/ccb_mint_prp_lights_1b.png"
+dest_files=["res://.godot/imported/ccb_mint_prp_lights_1b.png-04ac54fe01f1532691b7cdbd2db4c106.ctex"]
 
 [params]
 

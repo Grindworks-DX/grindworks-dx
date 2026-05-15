@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di20loq1sk80d"
-path="res://.godot/imported/LocomotiveLight1.png-8123419951e6500ebd177b84e391f87c.ctex"
+uid="uid://lrdqpgbfja00"
+path="res://.godot/imported/ccb_mint_prp_dollars_2b.png-f2437d699b12ec16af75be5d6ff53521.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/facilities/molten/textures/LocomotiveLight1.png"
-dest_files=["res://.godot/imported/LocomotiveLight1.png-8123419951e6500ebd177b84e391f87c.ctex"]
+source_file="res://models/facilities/mint/textures/ccb_mint_prp_dollars_2b.png"
+dest_files=["res://.godot/imported/ccb_mint_prp_dollars_2b.png-f2437d699b12ec16af75be5d6ff53521.ctex"]
 
 [params]
 
