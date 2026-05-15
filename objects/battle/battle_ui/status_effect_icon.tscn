@@ -4,10 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://c10rbf13ht1p3" path="res://ui_assets/battle/neutral_icon.png" id="2_i4y0p"]
 [ext_resource type="Texture2D" uid="uid://cp4aaluignlma" path="res://objects/battle/effects/fire/fire.png" id="3_w28ga"]
 [ext_resource type="FontFile" uid="uid://cup2yr5w7or1l" path="res://fonts/Minnie.TTF" id="4_uyrus"]
+[ext_resource type="FontFile" uid="uid://815gwlftl5ik" path="res://fonts/impress-bt.ttf" id="5_dsvm5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hxjq2"]
 font = ExtResource("4_uyrus")
 font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i4y0p"]
+font = ExtResource("5_dsvm5")
+font_size = 22
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
@@ -89,5 +96,20 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "1"
 label_settings = SubResource("LabelSettings_hxjq2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StacksLabel" type="Label" parent="." unique_id=1566355260]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -41.0
+offset_top = -4.0
+offset_right = 41.0
+offset_bottom = 29.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_i4y0p")
 horizontal_alignment = 1
 vertical_alignment = 1

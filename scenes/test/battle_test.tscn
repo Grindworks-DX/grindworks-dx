@@ -28,7 +28,6 @@
 [ext_resource type="Resource" uid="uid://cqyp04twrkeg8" path="res://objects/items/resources/accessories/backpacks/bat_wings.tres" id="26_ouruu"]
 [ext_resource type="Resource" uid="uid://bh5mubvof8wpe" path="res://objects/items/resources/accessories/hats/tiara.tres" id="27_1xuw6"]
 [ext_resource type="Resource" uid="uid://bvs3yf5vb63ta" path="res://objects/items/resources/accessories/backpacks/plush_bear_pack.tres" id="27_pnjbe"]
-[ext_resource type="Resource" uid="uid://cfl3ywl6ynhpc" path="res://objects/items/resources/accessories/backpacks/bee_wings.tres" id="28_66vty"]
 [ext_resource type="Resource" uid="uid://bfkuxhwhi17r4" path="res://objects/items/resources/accessories/backpacks/angel_wings.tres" id="28_pnjbe"]
 [ext_resource type="Resource" uid="uid://dvlis7mm2c6qn" path="res://objects/items/resources/active/book_of_laws.tres" id="29_pnjbe"]
 [ext_resource type="Resource" uid="uid://dr6swjafd4wst" path="res://objects/items/resources/accessories/glasses/goggles.tres" id="29_seg7t"]
@@ -37,6 +36,7 @@
 [ext_resource type="Resource" uid="uid://c34lgsjsp48jl" path="res://objects/items/resources/accessories/backpacks/fountain_pen.tres" id="31_pnjbe"]
 [ext_resource type="Resource" uid="uid://546c2c3jwuck" path="res://objects/items/resources/accessories/hats/flowerpot_hat.tres" id="33_pnjbe"]
 [ext_resource type="Resource" uid="uid://kulqd7ih0uda" path="res://objects/items/resources/accessories/glasses/narrow_glasses.tres" id="34_pnjbe"]
+[ext_resource type="Resource" uid="uid://ca2pylifupu8x" path="res://objects/player/characters/pbg_char_resources/item_moe_zart_conductor.tres" id="36_pnjbe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5pfdn"]
 size = Vector3(14.6639, 5.65576, 10.2309)
@@ -250,7 +250,7 @@ override_item = ExtResource("27_1xuw6")
 
 [node name="treasure_chest5" parent="." unique_id=1686263884 instance=ExtResource("23_16xtn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.65817, 0, -5.41882)
-override_item = ExtResource("28_66vty")
+override_item = ExtResource("36_pnjbe")
 
 [node name="DebugPlayerPositionMarker" parent="." unique_id=1108719677 instance=ExtResource("30_ouruu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.011791, 0, -4.1908646)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.13928, 0, -9.101027)

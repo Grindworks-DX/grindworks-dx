@@ -23,6 +23,7 @@ func get_trap_effect() -> StatusTrapped:
 	new_effect.quality = StatusEffect.EffectQuality.NEGATIVE
 	new_effect.gag = self
 	new_effect.rounds = -1
+	new_effect.stacks = get_true_damage()
 	s_activate.connect(manager.expire_status_effect.bind(new_effect))
 	
 	return new_effect
@@ -54,7 +55,7 @@ func apply_extra_knockback(cog: Cog) -> void:
 	manager.do_standalone_knockback_damage(cog, roundi(activating_lure.get_lure_effect().get_true_knockback() * boost_percent))
 
 func get_stats() -> String:
-	var string := "Damage: " + get_true_damage() + "\n"\
+	var string := "Damage: " + str(get_true_damage()) + "\n"\
 	+ "Affects: "
 	match target_type:
 		ActionTarget.SELF:

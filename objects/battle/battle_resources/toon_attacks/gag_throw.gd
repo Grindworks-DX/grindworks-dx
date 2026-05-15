@@ -136,17 +136,7 @@ func action():
 	await manager.check_pulses(targets)
 
 func get_stats() -> String:
-	var string := "Damage: " + get_true_damage() + "\n"\
-	+ "Affects: "
-	match target_type:
-		ActionTarget.SELF:
-			string += "Self"
-		ActionTarget.ENEMIES:
-			string += "All Cogs"
-		ActionTarget.ENEMY:
-			string += "One Cog"
-		ActionTarget.ENEMY_SPLASH:
-			string += "Three Cogs"
+	super()
 
 	if Util.get_player().throw_heals:
 		var player_stats: PlayerStats
@@ -156,9 +146,9 @@ func get_stats() -> String:
 			player_stats = Util.get_player().stats
 		#string += "\nSelf-Heal: %s%%" % roundi(player_stats.get_stat('throw_heal_boost') * 100)
 	
-	string += "\nSweetspot: %s" % [get_true_damage(1.0, sweetspot_damage + damage)]
+	stat_string += "\nSweetspot: %s" % [get_true_damage(1.0, sweetspot_damage + damage)]
 
-	return string
+	return stat_string
 
 func apply_status_effect() -> void:
 	var base_effect = status_effect_base.duplicate()

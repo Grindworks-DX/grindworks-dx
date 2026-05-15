@@ -457,7 +457,7 @@ func do_humor_healing(_effectiveness := 1.0) -> void:
 	if BattleService.ongoing_battle is BattleManager:
 		BattleService.ongoing_battle.s_round_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
 		BattleService.ongoing_battle.s_battle_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
-	Util.get_player().quick_heal(maxi(1, ceili(humor_healing * effectiveness * humor_healing_multiplier)))
+	Util.get_player().quick_heal(maxi(1, ceili(humor_healing * effectiveness * get_stat('humor_healing_multiplier'))))
 	s_humor_healing_triggered.emit()
 	if humor_healing * effectiveness > 0:
 		Task.delay(0.2).connect(AudioManager.play_sound.bind(load("res://audio/sfx/items/laff_boost_pickup.ogg"), -5.0))

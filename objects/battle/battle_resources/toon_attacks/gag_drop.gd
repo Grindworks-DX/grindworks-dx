@@ -8,23 +8,12 @@ const DEBUFF := preload("res://objects/battle/battle_resources/status_effects/re
 var skip_button_movie := false
 
 func get_stats() -> String:
-	var string := "Damage: " + get_true_damage() + "\n"\
-	+ "Affects: "
-	match target_type:
-		ActionTarget.SELF:
-			string += "Self"
-		ActionTarget.ENEMIES:
-			string += "All Cogs"
-		ActionTarget.ENEMY:
-			string += "One Cog"
-		ActionTarget.ENEMY_SPLASH:
-			string += "Three Cogs"
-	
+	super()
 	if rounds > -1:
-		string += "\nAftershock: %s" % get_true_damage(0.5)
-		string += "\nRounds: %d" % (rounds + 1 + Util.get_player().stats.get_stat("drop_aftershock_round_boost"))
+		stat_string += "\nAftershock: %d" % get_true_damage(0.5)
+		stat_string += "\nRounds: %d" % (rounds + 1 + Util.get_player().stats.get_stat("drop_aftershock_round_boost"))
 
-	return string
+	return stat_string
 
 func apply_debuff(target: Cog, damage_dealt: int) -> void:
 	if rounds < 0: return

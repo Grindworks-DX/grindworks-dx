@@ -13,6 +13,7 @@ enum LureType {
 @export var accuracy_debuff := -0.3
 
 func apply() -> void:
+	stacks = get_true_knockback()
 	var cog: Cog = target
 	cog.lured = true
 	cog.get_node('Body').position.z = Globals.SUIT_LURE_DISTANCE
@@ -49,7 +50,9 @@ func expire() -> void:
 		await manager.run_actions()
 
 func get_true_knockback() -> int:
-	var stats := Util.get_player().stats
+	var stats: BattleStats
+	if BattleService.ongoing_battle is BattleManager: stats = BattleService.ongoing_battle.battle_stats[Util.get_player()]
+	else: stats = Util.get_player().stats
 	return roundi(knockback_effect * stats.get_stat('damage') * stats.get_track_effectiveness('Lure'))
 
 func create_walk_tween() -> Tween:

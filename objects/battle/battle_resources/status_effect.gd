@@ -15,6 +15,9 @@ enum EffectQuality {
 @export var quality := EffectQuality.NEUTRAL
 @export var rounds := 1
 @export var rounds_offset := 0
+var stacks
+@export var stacks_as_percent := false
+@export var multiplicative := false
 @export var icon: Texture2D = null
 @export var icon_color := Color.WHITE
 @export var icon_scale := 1.0
@@ -29,6 +32,7 @@ var manager: BattleManager
 var is_toonup_effect := false
 var force_no_combine := false
 
+@export var stacks_label_prefix := ""
 
 ## Called by battle manager on initial application
 func apply():

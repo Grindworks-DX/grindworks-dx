@@ -13,25 +13,26 @@ var track: Track
 signal s_hit
 signal s_missed
 
+var stat_string := ""
 
 func get_stats() -> String:
-	var string := "Damage: " + get_true_damage() + "\n"\
+	stat_string = "Damage: " + str(get_true_damage()) + "\n"\
 	+ "Affects: "
 	match target_type:
 		ActionTarget.SELF:
-			string += "Self"
+			stat_string += "Self"
 		ActionTarget.ENEMIES:
-			string += "All Cogs"
+			stat_string += "All Cogs"
 		ActionTarget.ENEMY:
-			string += "One Cog"
+			stat_string += "One Cog"
 		ActionTarget.ENEMY_SPLASH:
-			string += "Three Cogs"
+			stat_string += "Three Cogs"
 		ActionTarget.NONE:
 			return gag_summary
-	
-	return string
+	BattleService.s_gag_stat_string_set.emit(self)
+	return stat_string
 
-func get_true_damage(dmg_mod := 1.0, base_dmg: int = 0, override_track: Track = null) -> String:
+func get_true_damage(dmg_mod := 1.0, base_dmg: int = 0, override_track: Track = null) -> int:
 	var true_dmg: float
 	if base_dmg == 0:
 		true_dmg = float(damage)
@@ -52,7 +53,7 @@ func get_true_damage(dmg_mod := 1.0, base_dmg: int = 0, override_track: Track = 
 	if not override_track: override_track = player_stats.character.gag_loadout.get_action_track(self)
 	if override_track:
 		effectiveness = player_stats.get_track_effectiveness(override_track.track_name)
-	return str(roundi(float(true_dmg) * effectiveness))
+	return roundi(float(true_dmg) * effectiveness)
 
 #region MOVIE SCRIPTS
 

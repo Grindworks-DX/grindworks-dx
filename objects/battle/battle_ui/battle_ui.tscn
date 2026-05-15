@@ -47,7 +47,7 @@ font_size = 12
 font_color = Color(0.0313726, 0.313726, 0.439216, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_iiktb"]
-line_spacing = -2.0
+line_spacing = -3.0
 font = ExtResource("5_pju0v")
 font_size = 13
 font_color = Color(0, 0, 0.454902, 1)

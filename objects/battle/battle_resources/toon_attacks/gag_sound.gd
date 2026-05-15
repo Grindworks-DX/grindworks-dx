@@ -61,23 +61,9 @@ func action():
 
 		var animator_target: Cog = null
 		for target: Cog in targets:
-			if not is_instance_valid(target):
-				continue
+			if not is_instance_valid(target): continue
 			animator_target = target
-			var real_damage = damage
-			if target_type != ActionTarget.ENEMIES and ((not target == main_target and not user.inverted_sound_damage) or (user.inverted_sound_damage and target == main_target)):
-				real_damage *= 0.5
-			if get_immunity(target):
-				manager.battle_text(target, 'IMMUNE')
-			else:
-				manager.affect_target(target, real_damage)
-			if not target.lured or not (do_knockback and !stealthy):
-				target.set_animation('squirt-small')
-				do_dizzy_stars(target)
-			elif not get_immunity(target):
-				manager.knockback_cog(target)
-				do_dizzy_stars(target)
-		
+			impact(target)
 		
 		# Check if any cogs are lured, and unlure them
 		var lured_targets: Array[Cog] = []
@@ -110,6 +96,22 @@ func action():
 	
 	megaphone.queue_free()
 
+func impact(target: Actor = null) -> void:
+	var real_damage = damage
+	if target_type != ActionTarget.ENEMIES and ((not target == main_target and not user.inverted_sound_damage) or (user.inverted_sound_damage and target == main_target)):
+		real_damage *= 0.5
+	if get_immunity(target):
+		manager.battle_text(target, 'IMMUNE')
+	else:
+		manager.affect_target(target, real_damage)
+	if not target.lured or not (do_knockback and !stealthy):
+		target.set_animation('squirt-small')
+		do_dizzy_stars(target)
+	elif not get_immunity(target):
+		manager.knockback_cog(target)
+		do_dizzy_stars(target)
+	BattleService.s_action_impact.emit(self, target)
+
 func sfx_track():
 	await manager.sleep(1.0)
 	if sfx_windup:
@@ -119,27 +121,29 @@ func sfx_track():
 		AudioManager.play_sound(sfx_blast)
 
 func get_stats() -> String:
-	var string := "Damage: " + get_main_damage_str() + "\n"\
+	stat_string = "Damage: " + str(get_main_damage()) + "\n"\
 	+ "Affects: "
 	match target_type:
 		ActionTarget.SELF:
-			string += "Self"
+			stat_string += "Self"
 		ActionTarget.ENEMIES:
-			string += "All Cogs"
+			stat_string += "All Cogs"
 		ActionTarget.ENEMY:
-			string += "One Cog"
+			stat_string += "One Cog"
 		ActionTarget.ENEMY_SPLASH:
-			string += "Three Cogs"
-			string += "\nSplash: %s" % get_splash_damage_str()
+			stat_string += "Three Cogs"
+			stat_string += "\nSplash: %d" % get_splash_damage()
+			
+	BattleService.s_gag_stat_string_set.emit(self)
+	
+	return stat_string
 
-	return string
-
-func get_main_damage_str() -> String:
+func get_main_damage() -> int:
 	if Util.get_player().inverted_sound_damage and target_type == ActionTarget.ENEMY_SPLASH:
 		return get_true_damage(0.5)
 	return get_true_damage()
 
-func get_splash_damage_str() -> String:
+func get_splash_damage() -> int:
 	if Util.get_player().inverted_sound_damage:
 		return get_true_damage()
 	return get_true_damage(0.5)

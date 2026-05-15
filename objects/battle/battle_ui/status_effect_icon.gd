@@ -56,6 +56,10 @@ func refresh() -> void:
 	else:
 		%RoundLabel.text = str(get_effect_rounds())
 		%RoundLabel.show()
+	if effect.stacks is int:
+		%StacksLabel.text = "%d%s" % [effect.stacks, "%" if effect.stacks_as_percent else ""]
+	else:
+		%StacksLabel.text = ""
 
 func get_effect_rounds() -> int:
 	return effect.rounds + 1 + effect.rounds_offset
