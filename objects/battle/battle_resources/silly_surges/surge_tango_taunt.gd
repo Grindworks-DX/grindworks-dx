@@ -21,8 +21,6 @@ static var taunt_phrases_desperation := [
 	'This dance ends when I say it ends!'
 ]
 
-@export var desperation_threshold := 0.33
-
 func action() -> void:
 	var toon: Toon = user.toon
 	var desperation = float(user.stats.hp) / float(user.stats.max_hp) < desperation_threshold

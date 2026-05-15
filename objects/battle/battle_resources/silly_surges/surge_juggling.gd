@@ -3,6 +3,7 @@ class_name SurgeJuggling
 
 func action():
 	var toon = user.toon
+	var desperation = float(user.stats.hp) / float(user.stats.max_hp) < desperation_threshold
 	
 	manager.battle_node.focus_character(user)
 	
@@ -13,12 +14,16 @@ func action():
 	cubes.get_node('AnimationPlayer').play('juggle')
 	await manager.sleep(0.1)
 	user.set_animation('juggle')
+	toon.set_emotion(toon.Emotion.LAUGH if !desperation else toon.Emotion.SAD)
 	await manager.sleep(1.0)
 	manager.show_action_name(action_name + "!", summary, true)
 	AudioManager.play_sound(load('res://audio/sfx/battle/gags/toonup/AA_heal_juggle.ogg'))
 	await manager.sleep(3.0)
 	impact()
+	toon.set_emotion(toon.Emotion.DELIGHTED if !desperation else toon.Emotion.LAUGH)
 	user.toon.speak(MovieUtil.big_laughs[randi() % MovieUtil.big_laughs.size()])
+	await manager.sleep(3.0)
+	toon.set_emotion(toon.Emotion.NEUTRAL)
 	await manager.barrier(user.animator.animation_finished, 5.0)
 	toon.set_animation('neutral')
 

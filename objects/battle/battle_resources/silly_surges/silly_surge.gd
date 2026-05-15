@@ -9,6 +9,8 @@ class_name SillySurge
 @export var values: Array[Dictionary]
 @export_multiline var summary := ""
 
+@export var desperation_threshold := 0.33
+
 signal s_surge_level_changed(level: int)
 var meter := 0
 
