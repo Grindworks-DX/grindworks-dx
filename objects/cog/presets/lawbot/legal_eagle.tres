@@ -17,6 +17,7 @@ custom_nametag_height = 10.0
 attacks = Array[ExtResource("1_8l2dk")]([ExtResource("2_tdpxq"), ExtResource("3_keh6y")])
 level_low = 7
 level_high = 14
+speed_mod = 4
 battle_phrases = Array[String](["I am going to give you legal nightmares.", "I call this a citizen's arrest.", "I'm bringing down the law on you!", "Careful, my legal isn't very tender.", "You won't win this battle.", "Legally, you're too small to fight me.", "This is so much fun it should be illegal.", "I soar, then I score.", "You should know, I have some killer instincts.", "There is no limit to my talons."])
 external_assets = {
 &"head_model": "",

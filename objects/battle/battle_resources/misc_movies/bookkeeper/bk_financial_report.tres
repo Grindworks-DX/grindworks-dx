@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_7ejm4")
 play_sound = true
+damage = 0
 summary = "Applies a random debuff!"
 attack_lines = Array[String](["Our profits are up 25% this quarter.", "You're a blemish on my balance sheet.", "Watch out, you're in the red."])
 action_name = "Financial Report"

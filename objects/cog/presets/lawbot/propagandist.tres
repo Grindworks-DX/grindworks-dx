@@ -23,6 +23,7 @@ level_low = 6
 level_high = 20
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/status_effect_mod_cog.tres")
 is_mod_cog = true
+speed_mod = -1
 battle_phrases = Array[String](["The house always wins.", "Toons are an impediment to our future! They must go!", "Nobody gerrymanders like me.", "Go green? No no, my friend, that’s YOUR job!", "There’s no HOPE for you here, Toon!", "I want YOU to get out of our facility!", "I’ve been hard at work lobbying for your defeat."])
 external_assets = {
 &"head_model": "",

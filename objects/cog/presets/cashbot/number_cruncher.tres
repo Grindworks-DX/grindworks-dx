@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://bhl72hd7pn8s2" path="res://objects/battle/battle_resources/cog_attacks/resources/workout.tres" id="5_e04ns"]
 [ext_resource type="Resource" uid="uid://b8evcct5837aq" path="res://objects/battle/battle_resources/cog_attacks/resources/pick_pocket_money.tres" id="6_bxjir"]
 [ext_resource type="Script" uid="uid://yc46vrmyfql1" path="res://objects/cog/cog_dna.gd" id="7_0adly"]
+[ext_resource type="Resource" uid="uid://dhye8rdo1dnwh" path="res://objects/battle/battle_resources/misc_movies/bookkeeper/bk_financial_report.tres" id="7_wy543"]
 
 [resource]
 script = ExtResource("7_0adly")
@@ -16,8 +17,9 @@ head = "res://models/cogs/heads/numbercruncher.glb"
 scale = 5.25
 head_textures = PackedStringArray("res://models/cogs/heads/numbercruncher_tt_t_ene_hed_numberCruncher.png")
 hand_color = Color(0.6, 0.792157, 0.72549, 1)
-attacks = Array[ExtResource("1_jufpa")]([ExtResource("2_yh6og"), ExtResource("3_5yak2"), ExtResource("4_8uag5"), ExtResource("5_e04ns"), ExtResource("6_bxjir")])
+attacks = Array[ExtResource("1_jufpa")]([ExtResource("2_yh6og"), ExtResource("3_5yak2"), ExtResource("4_8uag5"), ExtResource("5_e04ns"), ExtResource("6_bxjir"), ExtResource("7_wy543")])
 level_low = 5
+speed_mod = -2
 battle_phrases = Array[String](["Is it time for crunch already?", "Where would you like to have your crunch today?", "Now you're really in a crunch.", "This will not be smooth.", "Let's do crunch.", "I hope you prefer extra crunchy.", "Looks like your number is up.", "It's crunch time!", "Go ahead, try and take a number.", "You've given me something to crunch on."])
 external_assets = {
 &"head_model": "",

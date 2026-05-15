@@ -16,6 +16,7 @@ hand_color = Color(0.94902, 0.74902, 0.94902, 1)
 attacks = Array[ExtResource("1_20sb0")]([ExtResource("2_8503x"), ExtResource("3_q1ull"), ExtResource("4_5ouac")])
 level_low = 7
 level_high = 14
+speed_mod = -2
 battle_phrases = Array[String](["Are you sure you're ready to mingle?", "You don't know who you're mingling with.", "I'm going to mingle in your business.", "Ever mingle with the likes of me?", "You're mingling with defeat.", "Let's mingle.", "Well, isn't this cozy?", "Good, it takes two to mingle."])
 external_assets = {
 &"head_model": "",

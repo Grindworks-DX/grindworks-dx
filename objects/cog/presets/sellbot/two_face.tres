@@ -18,6 +18,7 @@ hand_color = Color(0.929412, 0.835294, 0.752941, 1)
 attacks = Array[ExtResource("1_sl40i")]([ExtResource("2_v7hrd"), ExtResource("3_jjwnb"), ExtResource("4_cpjof")])
 level_low = 6
 level_high = 13
+speed_mod = -2
 battle_phrases = Array[String](["Two heads are better than one.", "It takes two to tango, you wanna tango?", "Are you ready to face your doom?", "Which face would you like to defeat you?", "Prepare to face your worst nightmare.", "Face it, I'm better than you.", "I'm 'two' much for you.", "You don't know who you're facing.", "It's time to face-off!", "You're in for two times the trouble.", "You better face up to defeat."])
 external_assets = {
 &"head_model": "",

@@ -23,6 +23,7 @@ attacks = Array[ExtResource("1_3xc46")]([ExtResource("3_i2f1o"), ExtResource("4_
 level_low = 4
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/status_effect_mod_cog.tres")
 is_mod_cog = true
+speed_mod = 2
 battle_phrases = Array[String](["Pucker up, Toon.", "Aren't you just darling?", "Is this a good shade on me?", "This will leave a mark.", "My superiors will love this.", "Nobody can gloss over my talents.", "Kiss your chances goodbye."])
 external_assets = {
 &"head_model": "",

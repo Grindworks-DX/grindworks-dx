@@ -21,6 +21,7 @@ custom_nametag_height = 12.0
 attacks = Array[ExtResource("1_1de7l")]([ExtResource("2_j4lnf"), ExtResource("3_i0v4j"), ExtResource("4_6giqt")])
 level_low = 3
 level_high = 10
+speed_mod = 1
 battle_phrases = Array[String](["You need some positive enforcement.", "I haven't been wrong yet.", "Want to meet? I say yes, anytime.", "I won't take no for an answer.", "I'll be sure to end this on a positive note.", "I'm positive you're not going to like this.", "I'm confirming our meeting time.", "I don't know the meaning of no."])
 external_assets = {
 &"head_model": "",

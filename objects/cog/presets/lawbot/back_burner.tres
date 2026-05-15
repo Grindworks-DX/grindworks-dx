@@ -23,6 +23,7 @@ level_low = 5
 level_high = 20
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/status_effect_mod_cog.tres")
 is_mod_cog = true
+speed_mod = -2
 battle_phrases = Array[String](["Time to turn up the heat.", "I'll run you through like a hot knife through butter.", "Hurry this up, I have irons in the fire.", "It's awl over for you.", "You'll have no chills up your spine.", "I've reached my boiling point.", "I've got a boilerplate with your name on it."])
 external_assets = {
 &"head_model": "",

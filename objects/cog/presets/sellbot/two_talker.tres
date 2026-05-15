@@ -23,6 +23,7 @@ level_low = 3
 level_high = 20
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/status_effect_mod_cog.tres")
 is_mod_cog = true
+speed_mod = -3
 battle_phrases = Array[String](["Trust me, we're as disturbed as you are.", "It takes two to tango—*BZZRT!*—Doubles, anyone???", "You’re in for–*BZT!*–double dipping.", "Two heads are–*ZAP!*–my double play.", "Are you ready to face–*KZT!*–my double cross."])
 external_assets = {
 &"head_model": "",

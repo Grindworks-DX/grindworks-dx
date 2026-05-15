@@ -25,6 +25,7 @@ level_low = 2
 level_high = 20
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/status_effect_mod_cog.tres")
 is_mod_cog = true
+speed_mod = 7
 battle_phrases = Array[String](["My time in the shadows is over.", "I'm the one who pulls the strings.", "Prepare for a ghastly defeat.", "The specter of defeat looms over you.", "I'll be sure to write you an epitaph.", "You'll find I have a lot of spirit.", "You're in grave trouble."])
 external_assets = {
 &"head_model": "",

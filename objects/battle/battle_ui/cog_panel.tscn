@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dg7eslyvsgjpm" path="res://models/cogs/misc/hp_light/glow.png" id="4_3emoa"]
 [ext_resource type="FontFile" uid="uid://815gwlftl5ik" path="res://fonts/impress-bt.ttf" id="4_rqo48"]
 [ext_resource type="Texture2D" uid="uid://e5b2tf3v7sur" path="res://ui_assets/player_ui/pocket_prank_icons/goon_foot.png" id="7_x3boc"]
-[ext_resource type="LabelSettings" path="res://ui_assets/battle/labelsettings_adv_label_bad.tres" id="8_05y4n"]
+[ext_resource type="LabelSettings" uid="uid://dxkr04h3f6k0s" path="res://ui_assets/battle/labelsettings_adv_label_bad.tres" id="8_05y4n"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_05y4n"]
 viewport_path = NodePath("SubViewport")

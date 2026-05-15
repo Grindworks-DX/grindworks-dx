@@ -18,6 +18,7 @@ level_low = 20
 level_high = 20
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/attentive.tres", "res://objects/battle/battle_resources/status_effects/resources/tenure_status.tres", "res://objects/battle/battle_resources/status_effects/resources/boss_logic_traffic_manager.tres")
 health_mod = 4.22
+speed_mod = -5
 external_assets = {
 &"head_model": "",
 &"head_textures": []

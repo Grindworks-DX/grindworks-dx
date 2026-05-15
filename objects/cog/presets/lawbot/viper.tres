@@ -23,6 +23,7 @@ level_low = 7
 level_high = 20
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/status_effect_mod_cog.tres")
 is_mod_cog = true
+speed_mod = 5
 battle_phrases = Array[String](["Lookssss like you're hisssstory.", "I have no time for Toony ssssimpletonssss.", "Too bad, you rolled ssssnake eyessss.", "Lookssss like ssssupper has arrived."])
 external_assets = {
 &"head_model": "",

@@ -22,6 +22,7 @@ level_low = 8
 level_high = 20
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/status_effect_mod_cog.tres")
 is_mod_cog = true
+speed_mod = -4
 battle_phrases = Array[String](["My glare is stone cold.", "Try not to crumble under the pressure.", "Between a rock and a hard place, Toon?", "My directive is concrete.", "You've hit rock bottom.", "I'm the foundation of this corporation.", "I refuse to be taken for granite.", "You're nothing but a pebble beneath my boot."])
 external_assets = {
 &"head_model": "",
