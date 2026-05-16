@@ -295,7 +295,7 @@ func barrier(_signal: Signal, timeout: float = 10.0) -> Signal:
 func do_item_hover(item: Item) -> void:
 	var big_description := SaveFileService.settings_file.item_descriptions
 	var desc: String = item.big_description if big_description else item.item_description
-	HoverManager.hover(desc, 18, 0.025, item.item_name, item.shop_category_color.darkened(0.3))
+	HoverManager.hover(desc, 14, 0.025, item.item_name, item.shop_category_color.darkened(0.3))
 
 func float_to_perc(num: float) -> String:
 	return "%d%%" % roundi(num * 100.0)

@@ -226,7 +226,7 @@ func win_game() -> void:
 	scene.tween_property(toon_cage.get_node('cage_door'), 'rotation_degrees:x', 90.0, 0.5)
 	scene.tween_callback(caged_toon.speak.bind("Whew, thanks for the rescue!"))
 	
-	if unlock_toon and SaveFileService.progress_file.characters_unlocked < 6:
+	if unlock_toon and SaveFileService.progress_file.characters_unlocked < Globals.TOON_UNLOCK_ORDER_PATHS.size():
 		scene.tween_interval(4.0)
 		scene.tween_callback(caged_toon.speak.bind("I think it's time I give the Cogs a little payback."))
 		scene.tween_interval(4.0)

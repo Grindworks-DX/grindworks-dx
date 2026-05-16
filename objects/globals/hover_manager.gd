@@ -1,7 +1,7 @@
 @tool
 extends CanvasLayer
 
-const YAdjust := (99.0 / 121.0)
+const YAdjust := (70.0 / 121.0)
 
 @export_multiline var text := '':
 	set(x):
@@ -57,7 +57,7 @@ func set_text(string: String):
 		text_size.x = max(text_size.x, title_text_size.x)
 	
 	bubble.scale = Vector2(clampf((text_size.x * 0.002) + curr_values[1], 0.001, 0.65), max(0.2, label.get_line_count() * 0.14) * (float(font_size) / 20.0))
-	bubble.position.y = -242 + ((label.get_line_count() - 1) * bubble.scale.y * 25.0)
+	bubble.position.y = -242 + ((label.get_line_count() - 1) * bubble.scale.y * 18.0)
 
 	text_pos.position.x = 32 - (bubble.scale.x * 20.0)
 	label.global_position = text_pos.global_position
@@ -100,7 +100,7 @@ func _process(_delta: float) -> void:
 		if adjusted_y_pos > viewport_rect.size.y:
 			hover_root.global_position.y -= (adjusted_y_pos - viewport_rect.size.y)
 
-func hover(_text: String, font_size := 18, extra_x_margin := 0.025, title := "", title_color := Color.BLACK) -> void:
+func hover(_text: String, font_size := 16, extra_x_margin := 0.025, title := "", title_color := Color.BLACK) -> void:
 	if Engine.is_editor_hint():
 		return
 	curr_values = [font_size, extra_x_margin, title, title_color]

@@ -59,9 +59,7 @@ func character_setup(player: Player):
 
 func get_unlocked() -> bool:
 	# fipy always unlocked :)
-	if character_id == Character.FLIPPY: return true
-	# MYSTRY ALSO UNLOCKED RAAAAAH
-	if character_id == Character.MYSTERY: return true
+	if character_id in [Character.FLIPPY, Character.MOE, Character.MYSTERY]: return true
 	
 	return SaveFileService.progress_file.get_achievement_unlocked(achievement_index)
 

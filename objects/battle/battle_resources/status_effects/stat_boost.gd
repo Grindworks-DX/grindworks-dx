@@ -66,6 +66,7 @@ func combine(effect: StatusEffect) -> bool:
 		if effect.stat == stat and effect.rounds == rounds and get_quality() == effect.get_quality():
 			expire()
 			boost = get_combined_boost(boost, effect.boost)
+			stacks = boost
 			apply()
 			return true
 	

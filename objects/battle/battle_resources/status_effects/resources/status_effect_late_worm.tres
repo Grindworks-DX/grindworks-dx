@@ -7,7 +7,17 @@
 script = ExtResource("1_7orxr")
 quality = 1
 rounds = 0
+rounds_offset = null
+stacks_as_percent = null
+multiplicative = null
 icon = ExtResource("1_4kj8g")
+icon_color = null
+icon_scale = null
+mini_icon_color = null
+mini_icon_scale = null
+visible = null
 description = "Your actions are played after all Cogs have attacked"
 status_name = "Late Worm"
+stacks_label_prefix = null
+id = 58
 metadata/_custom_type_script = "uid://bx11uc4wocbwd"

@@ -57,7 +57,7 @@ const UNCAPPED_STAT_VAL := -999.0
 		s_speed_changed.emit(x)
 		s_stat_changed.emit('speed')
 # Breaking Grounds: mooooooves
-@export var max_turns := 4
+@export var max_turns := 8
 
 
 # Additive
@@ -78,6 +78,10 @@ const UNCAPPED_STAT_VAL := -999.0
 	set(x):
 		turns = x
 		s_turns_changed.emit(x)
+	get:
+		if self is PlayerStats:
+			return maxi(1, turns)
+		return turns
 var debug_invulnerable := false
 
 var multipliers: Array[StatMultiplier] = []

@@ -90,7 +90,7 @@ func refresh():
 			var gag := gags[i]
 			gag.track = track
 			var button: GagButton = gag_buttons[i]
-			button.image = gag.icon
+			button.gag = gag
 			button.show()
 			button.count_label.label_settings.outline_size = 1 if battle_stats.get_track_effectiveness(track.track_name) > 1.0 else 0
 			button.count_label.label_settings.font_size = 14 if battle_stats.get_track_effectiveness(track.track_name) > 1.0 else 12
@@ -110,6 +110,7 @@ func refresh():
 				if not is_gag_free(gag):
 					price = track.base_prices[i]
 					price -= battle_stats.gag_discount
+					price += gag.price_modifier
 					if Util.get_player().gags_cost_beans:
 						# Basically just for budget cuts on Pete
 						if i == 0: price = 0
@@ -137,7 +138,7 @@ func refresh():
 	point_label.text = "%d/%d (%s)" % [
 		points,
 		roundi(Util.get_player().stats.gag_point_caps[track.track_name]),
-		Util.float_to_perc(stats.gag_regen_chance + stats.gag_regen_chance_modifiers[track.track_name])
+		Util.float_to_perc(stats.get_stat('gag_regen_chance') + stats.gag_regen_chance_modifiers[track.track_name])
 	]
 	if Util.get_player().stats.gag_balance[track.track_name] > Util.get_player().stats.gag_point_caps[track.track_name]:
 		point_label.self_modulate = WARNING_COLOR

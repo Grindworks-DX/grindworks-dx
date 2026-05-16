@@ -184,9 +184,9 @@ grow_vertical = 2
 [node name="Name" type="Control" parent="ClipboardOrigin/ClipboardFront/Page1" unique_id=461335211]
 anchors_preset = 0
 offset_left = 54.0
-offset_top = 118.0
+offset_top = 111.0
 offset_right = 387.0
-offset_bottom = 219.0
+offset_bottom = 212.0
 
 [node name="ToonName" type="Label" parent="ClipboardOrigin/ClipboardFront/Page1/Name" unique_id=1410044103]
 unique_name_in_owner = true
@@ -200,7 +200,7 @@ label_settings = SubResource("LabelSettings_cv3rc")
 unique_name_in_owner = true
 layout_mode = 1
 offset_top = 29.0
-offset_right = 214.0
+offset_right = 253.0
 offset_bottom = 88.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("5_q43as")
@@ -219,15 +219,19 @@ layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -139.332
-offset_top = -153.5
-offset_right = -49.3312
-offset_bottom = -63.5
+offset_left = -139.33176
+offset_top = -188.5
+offset_right = -49.330963
+offset_bottom = -98.5
 grow_horizontal = 0
 scale = Vector2(1.2, 1.2)
 focus_mode = 0
 
 [node name="Anchor" parent="ClipboardOrigin/ClipboardFront/Page1/LaffMeter" index="0" unique_id=274326246]
+offset_left = 20.832924
+offset_top = 1.6666718
+offset_right = 20.832924
+offset_bottom = 1.6666718
 rotation = -0.0698132
 
 [node name="Tooth1" parent="ClipboardOrigin/ClipboardFront/Page1/LaffMeter/Anchor/Meter/Healthy/Mouth" parent_id_path=PackedInt32Array(18472491, 48601179) index="0" unique_id=615984757]
@@ -289,9 +293,9 @@ autowrap_mode = 0
 layout_mode = 1
 anchors_preset = 0
 offset_left = 53.0
-offset_top = 445.0
+offset_top = 450.0
 offset_right = 262.0
-offset_bottom = 491.0
+offset_bottom = 496.0
 
 [node name="Title" type="Label" parent="ClipboardOrigin/ClipboardFront/Page1/Stats" unique_id=824194392]
 layout_mode = 0
@@ -421,9 +425,9 @@ clip_text = true
 layout_mode = 1
 anchors_preset = 0
 offset_left = 53.0
-offset_top = 341.0
+offset_top = 347.0
 offset_right = 262.0
-offset_bottom = 452.0
+offset_bottom = 458.0
 
 [node name="Title" type="Label" parent="ClipboardOrigin/ClipboardFront/Page1/Gear" unique_id=818602459]
 layout_mode = 1
@@ -542,9 +546,9 @@ unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 0
 offset_left = 248.0
-offset_top = 341.0
+offset_top = 347.0
 offset_right = 384.0
-offset_bottom = 452.0
+offset_bottom = 458.0
 
 [node name="Title" type="Label" parent="ClipboardOrigin/ClipboardFront/Page1/Surge" unique_id=446249858]
 layout_mode = 1

@@ -13,6 +13,12 @@ var track_color := Color("ffffff"):
 @onready var label := $ButtonText
 @onready var count_label: Label = $CountLabel
 
+@export var gag: ToonAttack:
+	set(x):
+		gag = x
+		if gag is ToonAttack:
+			gag_updated()
+			
 @export var image: Texture2D:
 	set(x):
 		if not is_node_ready() or not x:
@@ -69,3 +75,6 @@ func enable():
 
 func button_down():
 	AudioManager.play_sound(click_sfx)
+
+func gag_updated() -> void:
+	image = gag.icon

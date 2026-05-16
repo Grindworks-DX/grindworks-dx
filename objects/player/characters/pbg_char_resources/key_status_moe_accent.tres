@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://cpc06jltde2hu"]
+
+[ext_resource type="Texture2D" uid="uid://8vj8pdavmefi" path="res://models/accessories/hats/fedora/fedora.glb-pix-1.png" id="1_fxgrw"]
+[ext_resource type="Script" uid="uid://b2xpj72dtchet" path="res://objects/player/characters/pbg_char_resources/key_status_moe_accent.gd" id="2_fxgrw"]
+
+[resource]
+script = ExtResource("2_fxgrw")
+quality = 0
+rounds = -1
+icon = ExtResource("1_fxgrw")
+status_name = "Accent"
+id = 56
+metadata/_custom_type_script = "uid://df7irk63ikx4k"

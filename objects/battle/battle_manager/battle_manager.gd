@@ -239,6 +239,7 @@ func end_battle() -> void:
 
 	# First call cleanup on all existing status effects
 	for _effect: StatusEffect in status_effects.duplicate():
+		if is_instance_valid(_effect.target): _effect.expire()
 		status_effects.erase(_effect)
 		_effect.cleanup()
 	status_effects = []
@@ -947,12 +948,12 @@ enum DelayResult {
 
 func check_for_delay(cog: Cog) -> DelayResult:
 	if cog.delayed: return DelayResult.COG_DELAYED
-	var player_speed = battle_stats[Util.get_player()].speed
-	var cog_speed = battle_stats[cog].speed
+	var player_speed = battle_stats[Util.get_player()].get_stat('speed')
+	var cog_speed = battle_stats[cog].get_stat('speed')
 	var roll := randf()
 	
 	if player_speed > cog_speed:
-		var cog_delay_resist = battle_stats[cog].delay_resist
+		var cog_delay_resist = battle_stats[cog].get_stat('delay_resist')
 		var chance: float = min(1.0, ((player_speed - cog_speed) * cog_delay_chance_per_speed)) - cog_delay_resist
 		print("Delay vs Cog - Rolled: %0.2f Needed lower than: %0.2f" % [roll, chance])
 		if roll < chance:
@@ -963,7 +964,7 @@ func check_for_delay(cog: Cog) -> DelayResult:
 			return DelayResult.COG_DELAYED
 		
 	if cog_speed > player_speed + toon_delay_threshold:
-		var toon_delay_resist = battle_stats[Util.get_player()].delay_resist
+		var toon_delay_resist = battle_stats[Util.get_player()].get_stat('delay_resist')
 		var chance: float = min(1.0, ((cog_speed - player_speed) * toon_delay_chance_per_speed)) - toon_delay_resist
 		print("Delay vs Toon - Rolled: %0.2f Needed lower than: %0.2f" % [roll, chance])
 		if roll < chance:

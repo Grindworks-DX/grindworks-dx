@@ -3,6 +3,7 @@ extends IDResource
 class_name StatusEffect
 
 signal s_expire
+signal s_applied
 
 # General specifiers
 enum EffectQuality {
@@ -15,7 +16,10 @@ enum EffectQuality {
 @export var quality := EffectQuality.NEUTRAL
 @export var rounds := 1
 @export var rounds_offset := 0
-var stacks
+var stacks:
+	set(x):
+		stacks = x
+		stacks_updated()
 @export var stacks_as_percent := false
 @export var multiplicative := false
 @export var icon: Texture2D = null
@@ -36,7 +40,7 @@ var force_no_combine := false
 
 ## Called by battle manager on initial application
 func apply():
-	pass
+	s_applied.emit()
 
 ## Called by battle manager when effect renews at the end of rounds
 func renew():
@@ -108,3 +112,5 @@ static func safe_copy_effect(effect_base: StatusEffect, effect_new: StatusEffect
 		if dict['name'] in test_res or dict['name'] == 'id': continue
 		if not effect_base.get(dict['name']) == effect_new.get(dict['name']):
 			effect_new.set(dict['name'], effect_base.get(dict['name']))
+
+func stacks_updated() -> void: pass

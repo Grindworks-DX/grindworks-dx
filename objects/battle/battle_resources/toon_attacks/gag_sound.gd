@@ -98,7 +98,7 @@ func action():
 
 func impact(target: Actor = null) -> void:
 	var real_damage = damage
-	if target_type != ActionTarget.ENEMIES and ((not target == main_target and not user.inverted_sound_damage) or (user.inverted_sound_damage and target == main_target)):
+	if target_type == ActionTarget.ENEMY_SPLASH and ((not target == main_target and not user.inverted_sound_damage) or (user.inverted_sound_damage and target == main_target)):
 		real_damage *= 0.5
 	if get_immunity(target):
 		manager.battle_text(target, 'IMMUNE')

@@ -152,14 +152,14 @@ func get_retract_size() -> float:
 
 func get_delay_chance_string() -> String:
 	var manager := BattleService.ongoing_battle
-	var difference = manager.battle_stats[current_cog].speed - manager.battle_stats[Util.get_player()].speed
+	var difference = manager.battle_stats[current_cog].get_stat('speed') - manager.battle_stats[Util.get_player()].get_stat('speed')
 	
 	if difference < 0:
 		return "Chance to be delayed: %s\nWhen delayed, the Cog's attacks are skipped" % \
 		Util.float_to_perc((absf(difference) * manager.cog_delay_chance_per_speed) \
-		- manager.battle_stats[current_cog].delay_resist)
+		- manager.battle_stats[current_cog].get_stat('delay_resist'))
 	if difference > manager.toon_delay_threshold:
 		return "Chance to delay you: %s\nThe Cog gains an extra move if it delays you!" % \
 		Util.float_to_perc((absf(difference) * manager.toon_delay_chance_per_speed) \
-		- manager.battle_stats[Util.get_player()].delay_resist)
+		- manager.battle_stats[Util.get_player()].get_stat('delay_resist'))
 	return ""

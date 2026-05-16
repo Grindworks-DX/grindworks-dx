@@ -56,3 +56,34 @@ func impact(_target = null) -> void:
 	var late_status: StatusEffectLate = load("res://objects/battle/battle_resources/status_effects/resources/status_effect_late_worm.tres")
 	late_status.target = user
 	manager.add_status_effect(late_status)
+
+func get_stats() -> String:
+	if !level > 0: return get_general_stats()
+	var defense = values[level - 1].get('statuses')[0].boost
+	var evasiveness = values[level - 1].get('statuses')[1].boost
+	var string := "Cogs Attack First\n%sx Defense\n%sx Evasiveness" % [
+			str(defense + 1.0),
+			str(evasiveness + 1.0),
+		]
+	return string
+
+func get_general_stats() -> String:
+	var string := "Cogs Attack First\n%s Defense\n%s Evasiveness" % [
+			(func() -> String:
+				var __out := ""
+				
+				for i in values.size():
+					__out += "%sx" % str(values[i].get('statuses')[0].boost + 1.0)
+					if i < values.size() - 1:
+						__out += " / "
+				return __out).call(),
+			(func() -> String:
+				var __out := ""
+				
+				for i in values.size():
+					__out += "%sx" % str(values[i].get('statuses')[1].boost + 1.0)
+					if i < values.size() - 1:
+						__out += " / "
+				return __out).call(),
+			]
+	return string

@@ -120,7 +120,9 @@ enum ActionTag {
 	DOUBLE_REVIVE_DAMAGE,  # Does two revive-damage to characters who only have revives
 	OLDMAN_NULLIFY,
 	PRIORITY_ACTION, # Marks an action as being high priority for a few scripts that need it
-	NO_CANCEL
+	NO_CANCEL,
+	# Breaking Grounds
+	CHAR_MOE_CUE
 }
 
 func has_tag(tag: ActionTag) -> bool:

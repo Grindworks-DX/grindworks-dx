@@ -138,4 +138,4 @@ func _on_battle_started(battle: BattleManager) -> void:
 	elif battle.battle_node.is_punishment_battle:
 		return
 	else:
-		battle.s_battle_ended.connect(charge_item.bind(false))
+		battle.s_battle_ended.connect(charge_item.bind(1, false))

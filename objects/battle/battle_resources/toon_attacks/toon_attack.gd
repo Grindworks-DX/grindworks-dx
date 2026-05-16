@@ -7,6 +7,7 @@ class_name ToonAttack
 
 # Used in the UI to temporarily store the price of a gag
 var price: int
+var price_modifier := 0
 # Use to force-associate a Gag with a Track
 var track: Track
 
