@@ -5,6 +5,8 @@ class_name ToonAttack
 @export_multiline var gag_summary := ""
 @export var level := 1
 
+@export var damage_modifier := 0.0
+
 # Used in the UI to temporarily store the price of a gag
 var price: int
 var price_modifier := 0
@@ -49,6 +51,8 @@ func get_true_damage(dmg_mod := 1.0, base_dmg: int = 0, override_track: Track = 
 	
 	var base_boost: float = player_stats.get_stat('damage')
 	true_dmg = ceili(true_dmg * base_boost)
+	
+	true_dmg *= 1.0 + damage_modifier
 	
 	var effectiveness := 1.0
 	if not override_track: override_track = player_stats.character.gag_loadout.get_action_track(self)

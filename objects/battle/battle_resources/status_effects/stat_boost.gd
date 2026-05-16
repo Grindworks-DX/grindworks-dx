@@ -16,6 +16,17 @@ var ICONS := {
 
 var multiplier: StatMultiplier
 
+func _init(_stat := 'defense', _boost := 0.0, _mult := false) -> void:
+	stat = _stat
+	boost = _boost
+	multiplicative = _mult
+	quality = {
+		1.0: EffectQuality.POSITIVE,
+		0.0: EffectQuality.NEUTRAL,
+		-1.0: EffectQuality.NEGATIVE,
+	}[signf(boost)]
+		
+
 func apply():
 	var battle_stats: BattleStats = manager.battle_stats[target]
 	if stat in battle_stats:

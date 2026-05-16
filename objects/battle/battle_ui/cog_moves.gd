@@ -11,6 +11,7 @@ const COG_MOVE := preload("uid://wgwxlmdh0cm")
 
 ## Find the proper amount of gag panels to have on startup
 func _ready():
+	on_cog_move_updated()
 	manager.s_enemy_moves_assigned.connect(update_panels)
 	# Add the first gag panel to the array
 	#panels.append(move_panel)

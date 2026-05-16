@@ -35,7 +35,8 @@ func configure_panel(panel) -> void:
 		
 func update_panels() -> void:
 	# Amount of panels is based on Player turns (-1)
-	var panels_to_make: int = manager.battle_stats[Util.get_player()].turns - panels.size()
+	var turns := manager.get_player_turns()
+	var panels_to_make: int = turns - panels.size()
 	if panels_to_make > 0:
 		# Append the panels
 		for i in panels_to_make:

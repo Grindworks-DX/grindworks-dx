@@ -7,20 +7,12 @@
 
 [resource]
 script = ExtResource("1_anwrg")
-item_name = "Conductor"
+item_name = "Conductor (Accents)"
 item_description = "Control your rhythm!"
-big_description = "Start combat in Mezzopiano
-While in Mezzopiano:
-- +60% Defense, -2 Moves
-- Sound applies Alarmed, increasing Cog Speed
-
-When hit by a Cog, gain 1 Accent for every 3 of its Speed points above yours
-For each Accent, a random Gag becomes a Cue with -2 Cost
-Use a Cue Gag to consume all Accent and enter Fortissimo
-
-While in Fortissimo:
-- -50% Gag Regen
-- Gain +10% Damage and +2 Speed per Accent consumed"
+big_description = "When you or a Cog attack the other, gain 1 Accent if Speed difference is 5+
+- Each Accent gives a random gag +50% damage and +3 Cost
+- During Fortissimo, Accented Gags also give +30% Evasiveness
+- Accent is removed when exiting Fortissimo"
 model = ExtResource("3_p76mf")
 item_script = ExtResource("1_f64m6")
 icon = ExtResource("1_j6rfr")

@@ -76,8 +76,9 @@ const UNCAPPED_STAT_VAL := -999.0
 		hp_changed.emit(hp)
 @export var turns := 1:
 	set(x):
+		var old_turns = turns
 		turns = x
-		s_turns_changed.emit(x)
+		s_turns_changed.emit(old_turns, x)
 	get:
 		if self is PlayerStats:
 			return maxi(1, turns)
@@ -97,7 +98,7 @@ signal s_evasiveness_changed(new_evasiveness: float)
 signal s_speed_changed(new_speed: int)
 signal s_luck_changed(new_luck: float)
 
-signal s_turns_changed(new_turns: int)
+signal s_turns_changed(old_turns:int, new_turns: int)
 
 signal s_stat_changed(stat: String)
 

@@ -10,6 +10,8 @@ const HOVER_SFX := preload("res://audio/sfx/ui/GUI_rollover.ogg")
 @export var effect: StatusEffect:
 	set(x):
 		effect = x
+		effect.s_stacks_changed.connect(refresh.unbind(1))
+		effect.s_rounds_changed.connect(refresh.unbind(1))
 		refresh()
 
 var is_hovered := false

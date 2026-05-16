@@ -26,7 +26,6 @@
 [sub_resource type="Resource" id="Resource_4xrsp"]
 script = ExtResource("1_vg416")
 speed = 3
-max_turns = 8
 max_hp = 30
 hp = 30
 turns = 3

@@ -7,8 +7,8 @@
 script = ExtResource("2_85d74")
 rounds = -1
 icon = ExtResource("1_dw0gc")
-description = "+60% Defense
--2 Moves
+description = "+50% Defense
++20% Gag Regen
 Sound buffs Cog Speed on hit"
 status_name = "Mezzopiano"
 id = 55

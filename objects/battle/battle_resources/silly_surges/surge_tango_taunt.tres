@@ -23,7 +23,7 @@ id = 10
 
 [sub_resource type="Resource" id="Resource_wmgsh"]
 script = ExtResource("2_y14tq")
-boost = 0.4
+boost = 0.5
 quality = 0
 rounds = 0
 multiplicative = true
@@ -57,7 +57,7 @@ metadata/_custom_type_script = "uid://csl6saufv84ri"
 
 [resource]
 script = ExtResource("1_1pdy5")
-thresholds = Array[int]([8, 20, 40])
+thresholds = Array[int]([15, 30, 45])
 values = Array[Dictionary]([{
 "statuses": [SubResource("Resource_ufnps"), SubResource("Resource_1770h")]
 }, {

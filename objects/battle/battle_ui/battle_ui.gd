@@ -38,9 +38,9 @@ var turn := 0:
 var remaining_turns: int:
 	get:
 		if manager is BattleManager:
-			return manager.battle_stats[Util.get_player()].turns - turn
+			return roundi(manager.battle_stats[Util.get_player()].get_stat('turns')) > turn
 		else:
-			return Util.get_player().stats.turns - turn
+			return roundi(Util.get_player().get_stat('turns')) > turn
 
 var selected_gags: Array[ToonAttack] = []
 var fire_action: ToonAttackFire
@@ -134,7 +134,7 @@ func gag_selected(gag: BattleAction) -> void:
 	turn += 1
 
 func refresh_turns() -> void:
-	attack_label.set_text("Moves Remaining: " + str(manager.battle_stats[Util.get_player()].turns - turn))
+	attack_label.set_text("Moves Remaining: " + str(roundi(manager.battle_stats[Util.get_player()].get_stat('turns')) - turn))
 	gag_order_menu.update_panels()
 	
 	if remaining_turns == 0:
@@ -327,7 +327,7 @@ var pass_action: ToonAttack
 
 func on_pass_pressed() -> void:
 	# Check if there are free moves - if so, pass; otherwise, end turn
-	var has_move: bool = manager.battle_stats[Util.get_player()].turns > turn
+	var has_move: bool = roundi(manager.battle_stats[Util.get_player()].get_stat('turns')) > turn
 	if has_move:
 		Util.get_player().stats.restock_tick()
 		var action := pass_action.duplicate(true)
@@ -336,7 +336,7 @@ func on_pass_pressed() -> void:
 	else: complete_turn()
 
 func on_pass_hovered() -> void:
-	var has_move: bool = manager.battle_stats[Util.get_player()].turns > turn
+	var has_move: bool = roundi(manager.battle_stats[Util.get_player()].get_stat('turns')) > turn
 	if has_move:
 		gag_hovered(pass_action)
 

@@ -474,6 +474,8 @@ func get_damage(damage: float, action: BattleAction, target: Node3D) -> int:
 	# Calculate true damage
 	var boosted_damage := float(damage) * dmg_boost
 	var dept_boost: float = 1.0
+	var action_dmg_modifier := 1.0
+	if action is ToonAttack: action_dmg_modifier += action.damage_modifier
 
 	if user is Player:
 		var user_stats: PlayerStats = battle_stats[user]
@@ -485,6 +487,7 @@ func get_damage(damage: float, action: BattleAction, target: Node3D) -> int:
 				boosted_damage *= user_stats.get_track_effectiveness('Trap')
 		else:
 			boosted_damage *= user_stats.get_track_effectiveness(user_stats.character.gag_loadout.get_action_track(action).track_name)
+		boosted_damage *= action_dmg_modifier
 
 		if target is Cog:
 			# Mod cog dmg boost
@@ -979,3 +982,6 @@ func check_for_delay(cog: Cog) -> DelayResult:
 	
 	cog.delayed = false
 	return DelayResult.NONE
+
+func get_player_turns() -> int:
+	return roundi(battle_stats[Util.get_player()].get_stat('turns'))

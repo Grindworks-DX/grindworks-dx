@@ -1,24 +1,21 @@
 @tool
 extends StatusEffect
 
-var defense_boost := StatMultiplier.new('defense', 0.60, true)
-static var speed_gains := [5, 3, 5, 8, 12, 10, 10]
-static var moves := -2
+var defense_boost := StatMultiplier.new('defense', 0.50, true)
+var gag_regen_multiplier := StatMultiplier.new("gag_regen_chance", 0.2, true)
+static var speed_gains := [4, 3, 6, 3, 6, 3, 9]
 
 var conductor_item: ItemMoeConductor = null
 
 func apply() -> void:
 	target.get_battle_stats().multipliers.append(defense_boost)
+	target.stats.multipliers.append(gag_regen_multiplier)
 	if !BattleService.s_gag_stat_string_set.is_connected(on_gag_stat_string_set):
 		BattleService.s_gag_stat_string_set.connect(on_gag_stat_string_set)
 	BattleService.s_action_impact.connect(on_gag_impact)
-	manager.battle_stats[target].turns += moves
 	if manager.battle_ui.manager is not BattleManager: await manager.s_ui_initialized
-	manager.battle_ui.refresh_turns()
 
 func expire() -> void:
-	manager.battle_stats[target].turns -= moves
-	manager.battle_ui.refresh_turns()
 	cleanup()
 
 func on_gag_stat_string_set(gag: ToonAttack) -> void:
@@ -39,6 +36,8 @@ func on_gag_impact(action: BattleAction, _target: Node3D) -> void:
 	manager.battle_text(_target, "ALARMED!")
 
 func cleanup() -> void:
-	if is_instance_valid(target): target.get_battle_stats().multipliers.erase(defense_boost)
+	if is_instance_valid(target):
+		target.stats.multipliers.erase(gag_regen_multiplier)
+		target.get_battle_stats().multipliers.erase(defense_boost)
 	BattleService.s_gag_stat_string_set.disconnect(on_gag_stat_string_set)
 	BattleService.s_action_impact.disconnect(on_gag_impact)

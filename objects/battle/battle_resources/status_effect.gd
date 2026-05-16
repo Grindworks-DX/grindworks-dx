@@ -4,6 +4,8 @@ class_name StatusEffect
 
 signal s_expire
 signal s_applied
+signal s_stacks_changed(new_stacks: Variant)
+signal s_rounds_changed(new_rounds: int)
 
 # General specifiers
 enum EffectQuality {
@@ -14,11 +16,15 @@ enum EffectQuality {
 
 # Effect Specific
 @export var quality := EffectQuality.NEUTRAL
-@export var rounds := 1
+@export var rounds := 1:
+	set(x):
+		rounds = x
+		s_rounds_changed.emit(rounds)
 @export var rounds_offset := 0
 var stacks:
 	set(x):
 		stacks = x
+		s_stacks_changed.emit(x)
 		stacks_updated()
 @export var stacks_as_percent := false
 @export var multiplicative := false
