@@ -2,7 +2,7 @@
 extends StatusEffect
 
 var cue_order: Array[ToonAttack] = []
-@export var cue_cost := 3
+@export var cue_cost := 2
 @export var cue_color := Color(0.243, 0.741, 0.514, 1.0)
 @export var damage_boost := 0.50
 

@@ -12,11 +12,12 @@ big_description = "When you gain Moves during combat, trigger Humor Healing
 Start combat in Mezzopiano
 
 While in Mezzopiano:
-- +50% Defense, +20% Gag Regen
+- 0.7x Damage
+- +50% Defense, +50% Gag Regen
 - Sound applies Alarmed, increasing Cog Speed
 - Enter Fortissimo for 2 rounds upon using an Accented Gag
 While in Fortissimo:
-- Gain +3% Luck and +1 Speed per Accent
+- Gain +5% Luck and +1 Speed per Accent
 - Accented Gags add 1 round; Passing and using normal Gags subtracts 1 round
 - -2 Moves; If all moves were Accented Gags, gain +1 Move for Fortissimo's duration"
 model = ExtResource("3_fot6k")

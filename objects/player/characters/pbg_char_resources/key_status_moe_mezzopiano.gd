@@ -2,13 +2,15 @@
 extends StatusEffect
 
 var defense_boost := StatMultiplier.new('defense', 0.50, true)
-var gag_regen_multiplier := StatMultiplier.new("gag_regen_chance", 0.2, true)
-static var speed_gains := [4, 3, 6, 3, 6, 3, 9]
+var damage_multiplier := StatMultiplier.new('damage', -0.30, false)
+var gag_regen_multiplier := StatMultiplier.new("gag_regen_chance", 0.5, true)
+static var speed_gains := [6, 3, 8, 3, 6, 3, 8]
 
 var conductor_item: ItemMoeConductor = null
 
 func apply() -> void:
 	target.get_battle_stats().multipliers.append(defense_boost)
+	target.get_battle_stats().multipliers.append(damage_multiplier)
 	target.stats.multipliers.append(gag_regen_multiplier)
 	if !BattleService.s_gag_stat_string_set.is_connected(on_gag_stat_string_set):
 		BattleService.s_gag_stat_string_set.connect(on_gag_stat_string_set)
@@ -39,5 +41,6 @@ func cleanup() -> void:
 	if is_instance_valid(target):
 		target.stats.multipliers.erase(gag_regen_multiplier)
 		target.get_battle_stats().multipliers.erase(defense_boost)
+		target.get_battle_stats().multipliers.erase(damage_multiplier)
 	BattleService.s_gag_stat_string_set.disconnect(on_gag_stat_string_set)
 	BattleService.s_action_impact.disconnect(on_gag_impact)

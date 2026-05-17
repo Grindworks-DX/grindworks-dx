@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="SurgeSettle" format=3 uid="uid://ds1co2j8gt6hy"]
+
+[ext_resource type="Texture2D" uid="uid://u37je0xb1jc1" path="res://models/props/gags/tnt/spark.png" id="1_07xxb"]
+[ext_resource type="Script" uid="uid://c46y3uggsu8pd" path="res://objects/battle/battle_resources/silly_surges/surge_settle_the_score.gd" id="2_h16pl"]
+[ext_resource type="Script" uid="uid://csl6saufv84ri" path="res://objects/battle/battle_resources/status_effects/stat_boost.gd" id="3_qmnvm"]
+
+[sub_resource type="Resource" id="Resource_ufnps"]
+script = ExtResource("3_qmnvm")
+boost = 0.3
+quality = 0
+rounds = 0
+multiplicative = true
+id = 10
+
+[sub_resource type="Resource" id="Resource_wmgsh"]
+script = ExtResource("3_qmnvm")
+boost = 1.0
+quality = 0
+rounds = 0
+multiplicative = true
+metadata/_custom_type_script = "uid://csl6saufv84ri"
+
+[sub_resource type="Resource" id="Resource_mou44"]
+script = ExtResource("3_qmnvm")
+boost = 2.0
+quality = 0
+rounds = 0
+multiplicative = true
+metadata/_custom_type_script = "uid://csl6saufv84ri"
+
+[resource]
+script = ExtResource("2_h16pl")
+thresholds = Array[int]([5, 25, 55])
+values = Array[Dictionary]([{
+"restock_ticks": 2,
+"statuses": [SubResource("Resource_ufnps")]
+}, {
+"restock_ticks": 4,
+"statuses": [SubResource("Resource_wmgsh")]
+}, {
+"restock_ticks": 8,
+"statuses": [SubResource("Resource_mou44")]
+}])
+summary = "Charge up and let the Cogs attack first!"
+target_type = 4
+action_name = "Settle The Score"
+icon = ExtResource("1_07xxb")
+metadata/_custom_type_script = "uid://m30jqv614c65"

@@ -226,11 +226,11 @@ func on_battle_started(_battle: BattleManager) -> void:
 		restock(track, roll_gag_regen(track) + gag_battle_start_point_boost.get(track, 0) + global_battle_start_point_boost)
 	_battle.battle_stats[Util.get_player()].silly_meter = starting_silly_meter
 
-func restock_tick() -> void:
+func restock_tick(amount := 1) -> void:
 	print('Restock tick!')
 	for track in gag_balance.keys():
 		if not gags_unlocked[track] > 0: continue
-		restock(track, roll_gag_regen(track))
+		restock(track, roll_gag_regen(track, amount))
 
 func restock(track: String, add: int) -> void:
 	if debug_gag_points:
@@ -431,17 +431,19 @@ func attribute_changed(attr: String, old_value, new_value) -> void:
 
 @export var regen_crit_chance := 0.0
 
-func roll_gag_regen(track_name: String) -> int:
+func roll_gag_regen(track_name: String, amount := 1) -> int:
 	var __out := 0
 	var regen_rate := gag_regen_chance + gag_regen_chance_modifiers[track_name]
-	__out += floori(regen_rate)
-	# TODO: implement rng
-	var bonus = (randf() < (regen_rate - floori(regen_rate)))
-	if bonus: __out += int(bonus)
-	# Crit regen: Luck% chance per track to double its regeneration
-	if randf() < (luck - 1.0) + regen_crit_chance:
-		print("Regen crit! %s" % track_name)
-		__out *= 2
+	for i in range(amount):
+		var tick = floori(regen_rate)
+		# TODO: implement rng
+		var bonus = (randf() < (regen_rate - floori(regen_rate)))
+		if bonus: tick += int(bonus)
+		# Crit regen: Luck% chance per track to double its regeneration
+		if randf() < (luck - 1.0) + regen_crit_chance:
+			print("Regen crit! %s" % track_name)
+			tick *= 2
+		__out += tick
 	print("Gag regen: %s gained %d points" % [track_name, __out])
 	return __out
 

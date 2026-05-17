@@ -30,17 +30,17 @@
 [ext_resource type="Resource" uid="uid://4vss2qycp4rk" path="res://objects/battle/battle_resources/gag_loadouts/gags/sound/bike_horn.tres" id="30_edayh"]
 [ext_resource type="Resource" uid="uid://bawjqrc07c6o2" path="res://objects/battle/battle_resources/gag_loadouts/gags/sound/bugle.tres" id="31_audog"]
 [ext_resource type="Resource" uid="uid://l777pylc7632" path="res://objects/battle/battle_resources/gag_loadouts/gags/sound/elephant_trunk.tres" id="32_euxp0"]
+[ext_resource type="Resource" uid="uid://ds1co2j8gt6hy" path="res://objects/battle/battle_resources/silly_surges/surge_settle_the_score.tres" id="33_gmcex"]
 [ext_resource type="Resource" uid="uid://0528viy6hdsv" path="res://objects/battle/battle_resources/gag_loadouts/gag_tracks/throw.tres" id="33_kjw8o"]
 [ext_resource type="Resource" uid="uid://dvxiqtapdvmj4" path="res://objects/battle/battle_resources/gag_loadouts/gag_tracks/squirt.tres" id="34_yesae"]
 [ext_resource type="Resource" uid="uid://lf7h5xkbt2op" path="res://objects/battle/battle_resources/gag_loadouts/gag_tracks/drop.tres" id="35_7kcv5"]
 [ext_resource type="Script" uid="uid://ckypnf7t805p3" path="res://objects/battle/battle_resources/gag_loadouts/gag_loadout.gd" id="36_qxgo1"]
 [ext_resource type="Resource" uid="uid://b7ew2rv4bfvhy" path="res://objects/player/characters/pbg_char_resources/item_info_conductor_stances.tres" id="37_gmcex"]
-[ext_resource type="Resource" uid="uid://dgyepet4peywu" path="res://objects/battle/battle_resources/silly_surges/surge_tango_taunt.tres" id="37_vhgtt"]
 [ext_resource type="Resource" uid="uid://ca2pylifupu8x" path="res://objects/player/characters/pbg_char_resources/item_moe_zart_conductor.tres" id="40_gy1ap"]
 
 [sub_resource type="Resource" id="Resource_ls34v"]
 script = ExtResource("1_dv5s5")
-speed = 6
+speed = 3
 max_hp = 45
 hp = 45
 turns = 3
@@ -108,10 +108,10 @@ ExtResource("28_s4dvl"): 5,
 ExtResource("29_3nbh6"): 6
 })
 
-[sub_resource type="Resource" id="Resource_mpm38"]
+[sub_resource type="Resource" id="Resource_ot1wo"]
 script = ExtResource("36_qxgo1")
 loadout = Array[ExtResource("9_gy1ap")]([ExtResource("10_xywa3"), ExtResource("11_mpm38"), SubResource("Resource_xywa3"), ExtResource("33_kjw8o"), ExtResource("34_yesae"), ExtResource("35_7kcv5")])
-silly_surge = ExtResource("37_vhgtt")
+silly_surge = ExtResource("33_gmcex")
 
 [resource]
 script = ExtResource("8_cnedl")
@@ -123,7 +123,7 @@ Level 1 and 3 Sound hit one Cog
 +10% Sound Damage, 30% Sound Regen"
 character_blurb = "Music is an intricate art, and More Scores' Moe Zart is no stranger to its vibrant nuances. To him, that's fancy talk for \"big buildups make big sounds!\""
 dna = SubResource("Resource_hx8so")
-gag_loadout = SubResource("Resource_mpm38")
+gag_loadout = SubResource("Resource_ot1wo")
 starting_laff = 45
 starting_items = Array[ExtResource("9_5bb58")]([ExtResource("12_qvy8b"), ExtResource("40_gy1ap"), ExtResource("37_gmcex")])
 base_stats = SubResource("Resource_ls34v")
