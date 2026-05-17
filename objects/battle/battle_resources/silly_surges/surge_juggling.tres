@@ -14,13 +14,23 @@ description = "+1 Move"
 status_name = "Moves Up"
 id = 27
 
-[sub_resource type="Resource" id="Resource_23j4t"]
+[sub_resource type="Resource" id="Resource_5cxee"]
 script = ExtResource("3_23j4t")
 moves = 2
 quality = 0
 rounds = 0
 icon = ExtResource("2_hi6lj")
 description = "+2 Moves"
+status_name = "Moves Up"
+id = 27
+
+[sub_resource type="Resource" id="Resource_23j4t"]
+script = ExtResource("3_23j4t")
+moves = 3
+quality = 0
+rounds = 0
+icon = ExtResource("2_hi6lj")
+description = "+3 Moves"
 status_name = "Moves Up"
 id = 27
 
@@ -31,7 +41,7 @@ values = Array[Dictionary]([{
 "status": SubResource("Resource_xcs34")
 }, {
 "healing_percent": 0.6,
-"status": SubResource("Resource_xcs34")
+"status": SubResource("Resource_5cxee")
 }, {
 "healing_percent": 1.0,
 "status": SubResource("Resource_23j4t")

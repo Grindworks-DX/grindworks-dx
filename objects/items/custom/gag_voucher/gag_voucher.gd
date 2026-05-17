@@ -1,9 +1,10 @@
 extends Sprite3D
 
-# Breaking Grounds - Now gives gag regen
+# Breaking Grounds - Now gives gag regen and starting points
 
 var value := 0.15
 static var lure_value := 0.10
+var starting_gp := 2
 
 ## Don't mind the fact that it don't look right in the preview
 ## It looks correct in game for some reason?!?!
@@ -31,7 +32,8 @@ func setup(item: Item):
 			player = await Util.s_player_assigned
 		
 		for track in player.stats.gags_unlocked.keys():
-			tracks.append(track)
+			if player.stats.gags_unlocked[track] > 0:
+				tracks.append(track)
 		
 		if tracks.is_empty():
 			gag_track = player.stats.gags_unlocked.keys()[RNG.channel(RNG.ChannelGagVouchers).randi() % player.stats.gags_unlocked.keys().size()]
@@ -41,8 +43,7 @@ func setup(item: Item):
 		if gag_track == "Lure": value = lure_value
 		
 		resource.arbitrary_data['gag_track'] = gag_track
-		resource.item_description = "+%s %s Gag Regen!" %[Util.float_to_perc(value), gag_track]
-		resource.big_description = resource.item_description
+		resource.big_description = "+%s: +%s Gag Regen, +%d Starting Points" % [gag_track, Util.float_to_perc(value), starting_gp]
 	else:
 		gag_track = resource.arbitrary_data['gag_track']
 
@@ -50,6 +51,7 @@ func setup(item: Item):
 
 func collect() -> void:
 	Util.get_player().stats.gag_regen_chance_modifiers[gag_track] += value
+	Util.get_player().stats.gag_starting_points[gag_track] += starting_gp
 
 func modify(model: Sprite3D):
 	model.gag.texture = gag.texture
