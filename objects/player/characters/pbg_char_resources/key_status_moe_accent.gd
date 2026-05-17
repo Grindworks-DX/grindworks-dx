@@ -59,7 +59,7 @@ func remove_cue_gags() -> void:
 	for track in track_elements:
 		for button in track.gag_buttons:
 			button.default_color = Color("00a1ff")
-		track.s_refreshed.disconnect(track_refreshed)
+		if track.s_refreshed.is_connected(track_refreshed): track.s_refreshed.disconnect(track_refreshed)
 
 signal s_cue_gag_used
 

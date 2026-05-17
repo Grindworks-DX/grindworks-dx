@@ -372,3 +372,6 @@ func on_surge_level_changed(level := 0) -> void:
 func disable_surge() -> void:
 	surge_button.disabled = true
 	surge_button.self_modulate = Color(0.112, 0.144, 0.153, 1.0)
+
+func update_gags() -> void:
+	for track: TrackElement in gag_tracks.get_children(): track.refresh()

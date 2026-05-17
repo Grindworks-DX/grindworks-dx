@@ -439,3 +439,4 @@ func do_instant_battle_action(action: BattleAction) -> void:
 	
 	if is_instance_valid(battle.battle_ui.timer):
 		battle.battle_ui.timer.timer.set_paused(false)
+	battle.battle_ui.update_gags()

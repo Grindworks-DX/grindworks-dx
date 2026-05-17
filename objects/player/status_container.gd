@@ -11,6 +11,8 @@ func _ready() -> void:
 		if x.target == target:
 			refresh()
 			x.s_expire.connect(refresh)
+			x.s_stacks_changed.connect(refresh)
+			x.s_rounds_changed.connect(refresh)
 	)
 
 func refresh() -> void:
