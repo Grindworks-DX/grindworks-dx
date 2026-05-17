@@ -11,8 +11,10 @@ const CRIT_SFX: Array = [CRIT_SFX_1, CRIT_SFX_2, CRIT_SFX_3, CRIT_SFX_4]
 
 ## Child references
 @onready var scene_timer := $SceneTimer
-@onready var attack_label := %AttackLabel
-@onready var summary_label := %SummaryLabel
+@onready var attack_label_enemy := %AttackLabelEnemy
+@onready var summary_label_enemy := %SummaryLabelEnemy
+@onready var attack_label_player := %AttackLabelPlayer
+@onready var summary_label_player := %SummaryLabelPlayer
 
 ## Locals
 var player = Util.get_player()
@@ -86,6 +88,7 @@ func start_battle(cog_array: Array[Cog], battlenode: BattleNode):
 	
 	player.toon.drop_shadow.reparent(player.toon.legs.shadow_bone)
 	populate_enemy_moves()
+	
 
 func append_action(action: BattleAction):
 	round_actions.append(action)
@@ -236,6 +239,7 @@ func end_battle() -> void:
 
 	# First call cleanup on all existing status effects
 	for _effect: StatusEffect in status_effects.duplicate():
+		if is_instance_valid(_effect.target): _effect.expire()
 		status_effects.erase(_effect)
 		_effect.cleanup()
 	status_effects = []
@@ -269,13 +273,16 @@ var chests_to_spawn := 3
 var chest_distance := 2
 
 func spawn_reward() -> void:
+	chests_to_spawn = 3
 	# Battle drops
 	if boss_battle:
 		Util.make_boss_chests(battle_node.get_parent(), battle_node)
 	else:
 		if battle_node.item_pool:
 			var bounty: bool = (player.better_battle_rewards and current_round <= 2)
-			if bounty: player.boost_queue.queue_text("Bounty!", Color.GREEN)
+			if bounty:
+				player.boost_queue.queue_text("Bounty!", Color.GREEN)
+				chests_to_spawn = 1
 			for i in range(chests_to_spawn):
 				var chest: TreasureChest = load('res://objects/interactables/treasure_chest/treasure_chest.tscn').instantiate()
 				if bounty:
@@ -467,6 +474,8 @@ func get_damage(damage: float, action: BattleAction, target: Node3D) -> int:
 	# Calculate true damage
 	var boosted_damage := float(damage) * dmg_boost
 	var dept_boost: float = 1.0
+	var action_dmg_modifier := 1.0
+	if action is ToonAttack: action_dmg_modifier += action.damage_modifier
 
 	if user is Player:
 		var user_stats: PlayerStats = battle_stats[user]
@@ -478,6 +487,7 @@ func get_damage(damage: float, action: BattleAction, target: Node3D) -> int:
 				boosted_damage *= user_stats.get_track_effectiveness('Trap')
 		else:
 			boosted_damage *= user_stats.get_track_effectiveness(user_stats.character.gag_loadout.get_action_track(action).track_name)
+		boosted_damage *= action_dmg_modifier
 
 		if target is Cog:
 			# Mod cog dmg boost
@@ -498,14 +508,15 @@ func get_damage(damage: float, action: BattleAction, target: Node3D) -> int:
 		if not is_equal_approx(dept_boost, 1.0):
 			defense *= dept_boost
 
-	return ceili(boosted_damage / defense)
+	return roundi(boosted_damage / defense)
 
 func calculate_accuracy(action: BattleAction) -> float:
 	if action in action_hit_rolls.keys():
 		return Globals.ACCURACY_GUARANTEE_HIT
 	if action is ToonAttack:
-		if action is GagDrop and action.targets[0].lured:
+		if action is GagDrop and action.targets[0].lured and Util.get_player().can_drop_hit_lured == 0:
 			# Breaking Grounds: no more lured drop, sorry!
+			# okay maybe sometimes lured drop
 			return Globals.ACCURACY_GUARANTEE_MISS
 		if not Util.get_player().use_accuracy:
 			action_hit_rolls[action] = true
@@ -579,14 +590,16 @@ func get_crit_chance(action: BattleAction) -> float:
 	var crit_chance: float = (battle_stats[action.user].get_stat('luck') - 1.0) * action.crit_chance_mod
 	return crit_chance
 
-func show_action_name(action_name : String, action_summary := "", action_color := Color.RED, action_shadow := Color.DARK_RED, summary_color := Color('ff6d00'), summary_shadow := Color('5c2200')):
+func show_action_name(action_name : String, action_summary := "", is_player := false):
+	var attack_label = attack_label_player if is_player else attack_label_enemy
+	var summary_label = summary_label_player if is_player else summary_label_enemy
 	attack_label.set_text(action_name)
-	attack_label.label_settings.font_color = action_color
-	attack_label.label_settings.shadow_color = action_shadow
+	#attack_label_enemy.label_settings.font_color = action_color
+	#attack_label_enemy.label_settings.shadow_color = action_shadow
 	attack_label.show()
 	summary_label.set_text(action_summary)
-	summary_label.label_settings.font_color = summary_color
-	summary_label.label_settings.shadow_color = summary_shadow
+	#summary_label_enemy.label_settings.font_color = summary_color
+	#summary_label_enemy.label_settings.shadow_color = summary_shadow
 	summary_label.visible = !action_summary.is_empty()
 	await sleep(6.0)
 	
@@ -904,9 +917,12 @@ func populate_enemy_moves(reset := true, keep_delays := false) -> void:
 		var attacks := get_cog_attacks(cog)
 		if !keep_delays: cog.delayed = false
 		if !attacks.is_empty():
-			if check_for_delay(cog):
-				attacks.clear()
-				any_delay = true
+			match check_for_delay(cog):
+				DelayResult.COG_DELAYED:
+					attacks.clear()
+					any_delay = true
+				DelayResult.TOON_DELAYED:
+					attacks = get_cog_attacks(cog)
 			enemy_moves.append_array(attacks)
 			cog.current_moves.append_array(attacks)
 	if any_delay: AudioManager.play_sound(load("res://audio/sfx/battle/gags/sound/LB_receive_evidence.ogg"), 3.0)
@@ -923,24 +939,49 @@ func is_target_debuffed(target: Actor) -> bool:
 
 signal s_cog_delayed(cog: Cog)
 
-func check_for_delay(cog: Cog) -> bool:
-	var __out = false
-	if cog.delayed: return true
-	var player_speed = battle_stats[Util.get_player()].speed
-	var cog_speed = battle_stats[cog].speed
-	var cog_delay_resist = battle_stats[cog].delay_resist
+static var cog_delay_chance_per_speed := 0.08
+static var toon_delay_chance_per_speed := 0.05
+static var toon_delay_threshold := 3
+
+enum DelayResult {
+	NONE,
+	COG_DELAYED,
+	TOON_DELAYED
+}
+
+func check_for_delay(cog: Cog) -> DelayResult:
+	if cog.delayed: return DelayResult.COG_DELAYED
+	var player_speed = battle_stats[Util.get_player()].get_stat('speed')
+	var cog_speed = battle_stats[cog].get_stat('speed')
 	var roll := randf()
-	var chance: float = min(1.0, ((player_speed - cog_speed) * 0.08)) - cog_delay_resist
-	__out = roll < chance
-	if __out:
-		var new_status = load("res://objects/battle/battle_resources/status_effects/resources/status_effect_delay_resist.tres").duplicate(true)
-		new_status.target = cog
-		add_status_effect(new_status)
-		s_cog_delayed.emit(cog)
-	#else:
-		#for status: StatusEffect in status_effects:
-			#if status.target == cog and status.get_status_name() == "Delay Resist Up":
-				#expire_status_effect(status)
-	print("Delay - Rolled: %0.2f Needed lower than: %0.2f" % [roll, chance])
-	cog.delayed = __out
-	return __out
+	
+	if player_speed > cog_speed:
+		var cog_delay_resist = battle_stats[cog].get_stat('delay_resist')
+		var chance: float = min(1.0, ((player_speed - cog_speed) * cog_delay_chance_per_speed)) - cog_delay_resist
+		print("Delay vs Cog - Rolled: %0.2f Needed lower than: %0.2f" % [roll, chance])
+		if roll < chance:
+			var new_status = load("res://objects/battle/battle_resources/status_effects/resources/status_effect_delay_resist_cog.tres").duplicate(true)
+			new_status.target = cog
+			add_status_effect(new_status)
+			s_cog_delayed.emit(cog)
+			return DelayResult.COG_DELAYED
+		
+	if cog_speed > player_speed + toon_delay_threshold:
+		var toon_delay_resist = battle_stats[Util.get_player()].get_stat('delay_resist')
+		var chance: float = min(1.0, ((cog_speed - player_speed) * toon_delay_chance_per_speed)) - toon_delay_resist
+		print("Delay vs Toon - Rolled: %0.2f Needed lower than: %0.2f" % [roll, chance])
+		if roll < chance:
+			var new_status_toon = load("res://objects/battle/battle_resources/status_effects/resources/status_effect_delay_resist_toon.tres").duplicate(true)
+			new_status_toon.target = Util.get_player()
+			add_status_effect(new_status_toon)
+			var new_status_cog: StatusEffect = load("res://objects/battle/battle_resources/status_effects/resources/status_effect_speed_advantage.tres").duplicate(true)
+			new_status_cog.target = cog
+			new_status_cog.description += "\nRolled Delay Chance: %s" % Util.float_to_perc(chance)
+			add_status_effect(new_status_cog)
+			return DelayResult.TOON_DELAYED
+	
+	cog.delayed = false
+	return DelayResult.NONE
+
+func get_player_turns() -> int:
+	return roundi(battle_stats[Util.get_player()].get_stat('turns'))

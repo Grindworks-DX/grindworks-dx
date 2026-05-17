@@ -28,21 +28,11 @@ func get_player_stats() -> PlayerStats:
 		return Util.get_player().stats
 
 func get_stats() -> String:
-	var string := "Damage: " + get_true_damage() + "\n"\
-	+ "Affects: "
-	match target_type:
-		ActionTarget.SELF:
-			string += "Self"
-		ActionTarget.ENEMIES:
-			string += "All Cogs"
-		ActionTarget.ENEMY:
-			string += "One Cog"
-		ActionTarget.ENEMY_SPLASH:
-			string += "Three Cogs"
+	super()
 		
-	string += "\nOn Hit: %d Speed" % drenched_speed
+	stat_string += "\nOn Hit: %d Speed" % drenched_speed
 	
 	if Util.get_player().stats.has_item('Witch Hat'):
-		string += "\nOn Hit: Poison"
+		stat_string += "\nOn Hit: Poison"
 	
-	return string
+	return stat_string

@@ -23,6 +23,7 @@ level_low = 2
 level_high = 20
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/status_effect_mod_cog.tres")
 is_mod_cog = true
+speed_mod = 2
 battle_phrases = Array[String](["I'm gonna nickel and dime you.", "There is no silver lining.", "Another day, another nickel.", "Five seconds is all I'll need for you.", "You'd better start making cents, Toon.", "Careful, I'm told I have sticky fingers."])
 external_assets = {
 &"head_model": "",

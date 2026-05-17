@@ -31,7 +31,7 @@ func _ready() -> void:
 	if not Engine.is_editor_hint():
 		super()
 
-static var cog_count_boost := [1, 1, 2, 3, 4]
+static var cog_count_boost := [1, 1, 2, 2, 2]
 
 func _refresh_cogs() -> void:
 	var cog_count : int

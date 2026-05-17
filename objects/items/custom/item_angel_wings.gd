@@ -8,7 +8,6 @@ var count := 0:
 	set(x):
 		count = x
 		if count is int: count_changed()
-var count_label: Label
 
 var threshold := 10
 
@@ -48,9 +47,6 @@ func on_round_started(_actions) -> void:
 		status_effect.rounds = 0
 		BattleService.ongoing_battle.add_status_effect(status_effect)
 	
-func on_item_icon_assigned(item_icon: ItemIcon) -> void:
-	count_label = item_icon.counter_label
-	count_label.show()
 
 func count_changed() -> void:
 	if count_label is Label:

@@ -1,6 +1,6 @@
 extends ItemScript
 
-var base_chance := 0.6
+var base_chance := 0.3
 
 func on_collect(_item: Item, _object: Node3D) -> void:
 	setup()

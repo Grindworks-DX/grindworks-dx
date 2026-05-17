@@ -10,6 +10,7 @@ const BoostNums := {
 	'defense': -0.2,
 	'luck': -0.3,
 	'evasiveness': -0.3,
+	'speed': -4
 }
 
 @export var play_sound := false

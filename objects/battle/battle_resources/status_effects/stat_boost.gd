@@ -14,9 +14,18 @@ var ICONS := {
 @export var stat: String = 'defense'
 @export var boost: Variant
 
-@export var multiplicative := false
 var multiplier: StatMultiplier
 
+func _init(_stat := 'defense', _boost := 0.0, _mult := false) -> void:
+	stat = _stat
+	boost = _boost
+	multiplicative = _mult
+	quality = {
+		1.0: EffectQuality.POSITIVE,
+		0.0: EffectQuality.NEUTRAL,
+		-1.0: EffectQuality.NEGATIVE,
+	}[signf(boost)]
+		
 
 func apply():
 	var battle_stats: BattleStats = manager.battle_stats[target]
@@ -24,7 +33,16 @@ func apply():
 		if multiplicative:
 			multiplier = StatMultiplier.new(stat, boost, false)
 			battle_stats.multipliers.append(multiplier)
-		else: battle_stats.set(stat,battle_stats.get(stat) + boost)
+			stacks_as_percent = false
+			stacks_label_prefix = "x"
+			stacks = boost + 1.0
+		else:
+			battle_stats.set(stat,battle_stats.get(stat) + boost)
+			if boost is float:
+				stacks_as_percent = true
+				stacks = roundi(boost * 100.0)
+			else:
+				stacks = boost
 
 func expire():
 	var battle_stats = manager.battle_stats[target]
@@ -59,6 +77,7 @@ func combine(effect: StatusEffect) -> bool:
 		if effect.stat == stat and effect.rounds == rounds and get_quality() == effect.get_quality():
 			expire()
 			boost = get_combined_boost(boost, effect.boost)
+			stacks = boost
 			apply()
 			return true
 	

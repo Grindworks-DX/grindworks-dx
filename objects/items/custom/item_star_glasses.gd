@@ -14,7 +14,7 @@ func setup() -> void:
 
 func on_battle_started(manager: BattleManager) -> void:
 	manager.battle_stats[Util.get_player()].speed += starting_speed
-	manager.populate_enemy_moves(true, false)
+	#manager.populate_enemy_moves(true, false)
 	manager.s_round_ended.connect(reset_moves.bind(manager), CONNECT_ONE_SHOT)
 	await get_tree().process_frame
 	manager.battle_ui.refresh_turns()

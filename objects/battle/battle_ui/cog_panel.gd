@@ -25,7 +25,6 @@ var hp_hidden := false:
 		await NodeGlobals.until_ready(self)
 		hp_label.set_visible(not hp_hidden)
 
-
 func set_cog(cog: Cog):
 	# Match HP light
 	var cog_changed: bool = current_cog != cog
@@ -47,6 +46,8 @@ func set_cog(cog: Cog):
 	set_speed_label(BattleService.ongoing_battle.battle_stats[cog].speed)
 	BattleService.ongoing_battle.s_enemy_moves_assigned.connect(set_advantage_label)
 	set_advantage_label()
+
+	%Speed.mouse_exited.connect(HoverManager.stop_hover)
 	
 	BattleService.s_round_ended.connect(func(_x):
 		if !is_instance_valid(current_cog): queue_free() 
@@ -75,6 +76,12 @@ func set_hp_label():
 		effect_mask.hide()
 
 func set_speed_label(new_speed: int):
+	if %Speed.mouse_entered.is_connected(HoverManager.hover):
+		%Speed.mouse_entered.disconnect(HoverManager.hover)
+	%Speed.mouse_entered.connect(HoverManager.hover.bind("Cog Speed: %d%s" % [ \
+		(func(): return BattleService.ongoing_battle.battle_stats[current_cog].speed).call(),
+		("\n" + get_delay_chance_string()) if get_delay_chance_string() != "" else ""
+	]))
 	speed_label.text = str(new_speed)
 
 const ADV_LABEL_SETTINGS := [preload("res://ui_assets/battle/labelsettings_adv_label_good.tres"), preload("res://ui_assets/battle/labelsettings_adv_label_bad.tres")]
@@ -142,3 +149,17 @@ func retract() -> void:
 
 func get_retract_size() -> float:
 	return minf(status_container.size.y, BASE_MASK_SIZE)
+
+func get_delay_chance_string() -> String:
+	var manager := BattleService.ongoing_battle
+	var difference = manager.battle_stats[current_cog].get_stat('speed') - manager.battle_stats[Util.get_player()].get_stat('speed')
+	
+	if difference < 0:
+		return "Chance to be delayed: %s\nWhen delayed, the Cog's attacks are skipped" % \
+		Util.float_to_perc((absf(difference) * manager.cog_delay_chance_per_speed) \
+		- manager.battle_stats[current_cog].get_stat('delay_resist'))
+	if difference > manager.toon_delay_threshold:
+		return "Chance to delay you: %s\nThe Cog gains an extra move if it delays you!" % \
+		Util.float_to_perc((absf(difference) * manager.toon_delay_chance_per_speed) \
+		- manager.battle_stats[Util.get_player()].get_stat('delay_resist'))
+	return ""

@@ -16,6 +16,7 @@ hand_color = Color(0.74902, 0.74902, 0.94902, 1)
 attacks = Array[ExtResource("1_qafid")]([ExtResource("2_jq5ty"), ExtResource("3_8d7w6")])
 level_low = 3
 level_high = 10
+speed_mod = -3
 battle_phrases = Array[String](["You're not going to like my double play.", "I'm going to give you double the trouble.", "You may want to double up against me.", "You may want to double-think this.", "Doubles, anyone??", "Get ready for a double TAKE!", "I serve a mean double-DECKER.", "It's time to do some double-dealing.", "See if you can stop my double-cross.", "I plan to do some double dipping."])
 external_assets = {
 &"head_model": "",

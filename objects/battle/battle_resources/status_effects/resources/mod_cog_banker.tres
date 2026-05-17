@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://ca8r6vx480qsx"]
+[gd_resource type="Resource" format=3 uid="uid://ca8r6vx480qsx"]
 
-[ext_resource type="Script" uid="uid://df7irk63ikx4k" path="res://objects/battle/battle_resources/status_effect.gd" id="1_i21pr"]
 [ext_resource type="Texture2D" uid="uid://badve832i5ix1" path="res://ui_assets/battle/statuses/banker.png" id="1_pmb15"]
+[ext_resource type="Script" uid="uid://dcwehqb1picji" path="res://objects/battle/battle_resources/status_effects/mod_cog_effects/cog_mod_banker.gd" id="2_yylup"]
 
 [resource]
-script = ExtResource("1_i21pr")
+script = ExtResource("2_yylup")
 quality = 0
 rounds = -1
 icon = ExtResource("1_pmb15")
-description = "+8% Damage every turn"
+description = "+12% Damage every round"
 status_name = "Banker"
 id = 24

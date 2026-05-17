@@ -20,6 +20,7 @@ head_textures = PackedStringArray("res://models/cogs/heads/movershaker_movershak
 hand_color = Color(0.988235, 0.839216, 0.8, 1)
 attacks = Array[ExtResource("1_m5vcq")]([ExtResource("2_2rg62"), ExtResource("3_jnshr"), ExtResource("4_oduic"), ExtResource("5_phrcf"), ExtResource("6_14dwj")])
 level_low = 5
+speed_mod = 4
 battle_phrases = Array[String](["This should shake you up.", "Prepare to be moved.", "I feel moved to defeat you.", "Are you shaking yet?", "I'm ready to make my move.", "This should be a moving moment.", "I think it's my move.", "Move it or lose it.", "Watch out, Toon, you're on shaky ground.", "You had better move out of the way."])
 external_assets = {
 &"head_model": "",

@@ -1,6 +1,8 @@
 extends Node
 class_name ItemScript
 
+var count_label: Label
+
 ## Script class that will be attached to the player as nodes
 
 
@@ -24,4 +26,6 @@ static func add_item_script(player: Player, item_script: Script) -> Node:
 	return new_node
 
 func on_item_icon_assigned(item_icon: ItemIcon) -> void:
-	pass
+	if item_icon.use_count_label:
+		count_label = item_icon.counter_label
+		count_label.show()

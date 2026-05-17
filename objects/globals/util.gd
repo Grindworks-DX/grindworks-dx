@@ -51,6 +51,9 @@ var floor_number := -1:
 func get_player() -> Player:
 	return player
 
+func get_silly_surge() -> SillySurge:
+	return player.character.gag_loadout.silly_surge
+
 func player_exists() -> bool:
 	return is_instance_valid(get_player())
 
@@ -292,7 +295,7 @@ func barrier(_signal: Signal, timeout: float = 10.0) -> Signal:
 func do_item_hover(item: Item) -> void:
 	var big_description := SaveFileService.settings_file.item_descriptions
 	var desc: String = item.big_description if big_description else item.item_description
-	HoverManager.hover(desc, 18, 0.025, item.item_name, item.shop_category_color.darkened(0.3))
+	HoverManager.hover(desc, 14, 0.025, item.item_name, item.shop_category_color.darkened(0.3))
 
 func float_to_perc(num: float) -> String:
 	return "%d%%" % roundi(num * 100.0)
@@ -416,3 +419,24 @@ func search_directory_recursive(directory: String, type: String) -> PackedString
 		files.append_array(search_directory_recursive(new_dir, type))
 	
 	return files
+
+#region Breaking Grounds
+
+func do_instant_battle_action(action: BattleAction) -> void:
+	var battle := BattleService.ongoing_battle
+	var battle_node := battle.battle_node
+	
+	if is_instance_valid(battle.battle_ui.timer):
+		battle.battle_ui.timer.timer.set_paused(true)
+		
+	battle.battle_ui.planning_ui.visible = false
+	
+	await action.action()
+	
+	battle.battle_ui.planning_ui.visible = true
+
+	battle.battle_node.focus_character(battle.battle_node)
+	
+	if is_instance_valid(battle.battle_ui.timer):
+		battle.battle_ui.timer.timer.set_paused(false)
+	battle.battle_ui.update_gags()

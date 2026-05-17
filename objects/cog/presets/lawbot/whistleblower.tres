@@ -21,6 +21,7 @@ level_low = 20
 level_high = 20
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/attentive.tres", "res://objects/battle/battle_resources/status_effects/resources/tenure_status.tres", "res://objects/battle/battle_resources/status_effects/resources/boss_logic_whistleblower.tres")
 health_mod = 4.87
+speed_mod = 3
 battle_phrases = Array[String](["I am the whistle blower"])
 external_assets = {
 &"head_model": "",

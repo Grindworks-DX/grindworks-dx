@@ -24,6 +24,7 @@ level_low = 3
 level_high = 10
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/status_effect_mod_cog.tres")
 is_mod_cog = true
+speed_mod = -3
 battle_phrases = Array[String](["A winning smile pays for a lot in this world.", "Let's make this quick, I've got checks to skip.", "I refuse to pay for my misdeeds.", "I'll have to pay you back next time.", "I'm an expert at skating by the consequences.", "Add this to my IOU?", "Losing to a Toon is outside my budget."])
 external_assets = {
 &"head_model": "",

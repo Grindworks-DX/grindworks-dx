@@ -12,21 +12,21 @@ func get_stats() -> String:
 	if not lure_effect:
 		return "NO LURE EFFECT SET UP"
 
-	var knockback_damage: int = lure_effect.get_true_knockback()
-	var string := "Knockback Damage: " + str(knockback_damage) + "\n"\
+	var knockback_damage: int = ceili(lure_effect.get_true_knockback() * (1.0 + damage_modifier))
+	stat_string = "Knockback Damage: " + str(knockback_damage) + "\n"\
 	+ "Affects: "
 	match target_type:
 		ActionTarget.SELF:
-			string += "Self"
+			stat_string += "Self"
 		ActionTarget.ENEMIES:
-			string += "All Cogs"
+			stat_string += "All Cogs"
 		ActionTarget.ENEMY:
-			string += "One Cog"
+			stat_string += "One Cog"
 		ActionTarget.ENEMY_SPLASH:
-			string += "Three Cogs"
-	string += "\n" + lure_effect.get_effect_string()
-	string += "\nRounds: " + str(get_lure_rounds())
-	return string
+			stat_string += "Three Cogs"
+	stat_string += "\n" + lure_effect.get_effect_string()
+	stat_string += "\nRounds: " + str(get_lure_rounds())
+	return stat_string
 
 
 ## Get a properly ID'd version of the lure effect specified
@@ -38,7 +38,7 @@ func get_lure_effect() -> StatusLured:
 		new_effect.quality = StatusEffect.EffectQuality.NEGATIVE
 		new_effect.icon = icon
 		new_effect.lure_type = lure_effect.lure_type
-		new_effect.knockback_effect = lure_effect.knockback_effect
+		new_effect.knockback_effect = ceili(lure_effect.knockback_effect * (1.0 + damage_modifier))
 		new_effect.damage_debuff = lure_effect.damage_debuff
 		new_effect.accuracy_debuff = lure_effect.accuracy_debuff
 	

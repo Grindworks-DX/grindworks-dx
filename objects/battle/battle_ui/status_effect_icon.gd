@@ -10,6 +10,8 @@ const HOVER_SFX := preload("res://audio/sfx/ui/GUI_rollover.ogg")
 @export var effect: StatusEffect:
 	set(x):
 		effect = x
+		effect.s_stacks_changed.connect(refresh.unbind(1))
+		effect.s_rounds_changed.connect(refresh.unbind(1))
 		refresh()
 
 var is_hovered := false
@@ -56,6 +58,10 @@ func refresh() -> void:
 	else:
 		%RoundLabel.text = str(get_effect_rounds())
 		%RoundLabel.show()
+	if effect.stacks is int:
+		%StacksLabel.text = "%d%s" % [effect.stacks, "%" if effect.stacks_as_percent else ""]
+	else:
+		%StacksLabel.text = ""
 
 func get_effect_rounds() -> int:
 	return effect.rounds + 1 + effect.rounds_offset

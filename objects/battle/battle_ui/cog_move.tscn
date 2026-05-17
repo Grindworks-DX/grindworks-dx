@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://32cwmb236pju" path="res://ui_assets/battle/queued_gags/gag_panel.png" id="1_51hfk"]
 [ext_resource type="PackedScene" uid="uid://b0d1er4oqiqcn" path="res://objects/general_ui/general_button/general_button.tscn" id="2_ofr5y"]
+[ext_resource type="Script" uid="uid://58suwyhc5qpx" path="res://objects/battle/battle_ui/cog_move.gd" id="2_t8bm5"]
 [ext_resource type="Texture2D" uid="uid://bl4jam52awobx" path="res://ui_assets/battle/queued_gags/PartyPlanner_CancelButtonUp.png" id="3_104ww"]
 [ext_resource type="Texture2D" uid="uid://cijunm56f5hq2" path="res://ui_assets/battle/queued_gags/PartyPlanner_CancelButtonDown.png" id="4_t8bm5"]
 [ext_resource type="Texture2D" uid="uid://ctnar4np8tsb3" path="res://ui_assets/battle/queued_gags/PartyPlanner_CancelButtonRollover.png" id="5_6tf37"]
@@ -9,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://815gwlftl5ik" path="res://fonts/impress-bt.ttf" id="7_104ww"]
 [ext_resource type="FontFile" uid="uid://cup2yr5w7or1l" path="res://fonts/Minnie.TTF" id="7_ofr5y"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_104ww"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_6tf37"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="Theme" id="Theme_t8bm5"]
@@ -55,6 +56,7 @@ outline_color = Color(0.051970966, 0.05197096, 0.05197095, 1)
 [node name="CogMove" type="TextureRect" unique_id=1905001589]
 self_modulate = Color(0.8877367, 0.5481883, 0.53012496, 1)
 texture = ExtResource("1_51hfk")
+script = ExtResource("2_t8bm5")
 
 [node name="GagIcon" type="TextureRect" parent="." unique_id=1316383845]
 visible = false
@@ -101,7 +103,7 @@ offset_right = 21.5
 offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("ViewportTexture_104ww")
+texture = SubResource("ViewportTexture_6tf37")
 expand_mode = 2
 stretch_mode = 6
 

@@ -22,6 +22,7 @@ attacks = Array[ExtResource("1_inyrk")]([ExtResource("2_uwgxm"), ExtResource("4_
 level_high = 20
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/status_effect_mod_cog.tres")
 is_mod_cog = true
+speed_mod = 3
 battle_phrases = Array[String](["You'll have to act fast.", "Ah, our first caller.", "This call will be recorded.", "This is your last call.", "Right on schedule.", "You're in the hot seat now.", "I've got a few burning questions for you, Toon.", "Is it hot in here, or is it just me?", "Play with fire, and you'll get burned."])
 external_assets = {
 &"head_model": "",

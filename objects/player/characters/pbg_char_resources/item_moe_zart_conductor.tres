@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ca2pylifupu8x"]
+
+[ext_resource type="Script" uid="uid://combwqypom1ru" path="res://objects/items/classes/item.gd" id="1_anwrg"]
+[ext_resource type="Script" uid="uid://clrax3tuhrape" path="res://objects/player/characters/pbg_char_resources/item_moe_zart_conductor.gd" id="1_f64m6"]
+[ext_resource type="Texture2D" uid="uid://43bou7tkoo75" path="res://ui_assets/achievements/icon_achievement_moe.png" id="1_j6rfr"]
+[ext_resource type="PackedScene" uid="uid://c4kf2mtj3ve8e" path="res://models/accessories/backpacks/jamboree_pack/tt_m_chr_avt_acc_pac_band.glb" id="3_p76mf"]
+
+[resource]
+script = ExtResource("1_anwrg")
+item_name = "Conductor (Accents)"
+item_description = "Control your rhythm!"
+big_description = "When you or a Cog attack the other, gain 1 Accent if Speed difference is 5+
+- Each Accent gives a random gag +50% damage and +3 Cost
+- During Fortissimo, Accented Gags also give +30% Evasiveness
+- Accent is removed when exiting Fortissimo"
+model = ExtResource("3_p76mf")
+item_script = ExtResource("1_f64m6")
+icon = ExtResource("1_j6rfr")
+metadata/_custom_type_script = "uid://combwqypom1ru"

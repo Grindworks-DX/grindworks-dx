@@ -1,0 +1,22 @@
+[gd_resource type="Resource" format=3 uid="uid://wt3nxgg7qak0"]
+
+[ext_resource type="Texture2D" uid="uid://d23er1qplly1g" path="res://ui_assets/battle/statuses/fire_sale_dot.png" id="1_tn3kc"]
+[ext_resource type="Script" uid="uid://bmxh2tt4c2f0j" path="res://objects/player/characters/pbg_char_resources/key_status_moe_fortissimo.gd" id="2_tn3kc"]
+
+[resource]
+script = ExtResource("2_tn3kc")
+quality = 0
+rounds = 2
+rounds_offset = null
+stacks_as_percent = null
+multiplicative = null
+icon = ExtResource("1_tn3kc")
+icon_color = null
+icon_scale = null
+mini_icon_color = null
+mini_icon_scale = null
+visible = null
+description = null
+status_name = "Fortissimo"
+id = 57
+metadata/_custom_type_script = "uid://df7irk63ikx4k"

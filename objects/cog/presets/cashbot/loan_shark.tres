@@ -17,6 +17,7 @@ hand_color = Color(0.662745, 0.756863, 0.733333, 1)
 attacks = Array[ExtResource("1_8hnjw")]([ExtResource("2_j8psf"), ExtResource("4_7u2qj"), ExtResource("4_7u2qj")])
 level_low = 7
 level_high = 14
+speed_mod = 5
 battle_phrases = Array[String](["You've been on borrowed time.", "You're going to pay for this.", "It's time to collect on your loan.", "Your loan is now due.", "Time to pay up.", "Well, you asked for an advance and you've got it.", "It's pay back time.", "Can you lend me an ear?", "Good thing you're here, I'm in a frenzy.", "Shall we have a quick bite?", "Your loan is late.", "Lunch Time!", "I haven't had a bite all day."])
 external_assets = {
 &"head_model": "",

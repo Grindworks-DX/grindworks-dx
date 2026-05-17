@@ -276,7 +276,7 @@ world_scale = 0.13
 item_name = "Princess Hat"
 item_description = "Fight for a kingdom in unrest!"
 big_description = "+2 in all Attributes
-When you defeat a Cog, enforce a 20 second round timer for the rest of combat (scales with Speed)"
+When you defeat a Cog, enforce a 10 second round timer for the rest of combat (scales with Speed)"
 model = ExtResource("4_84qt4")
 stats_add = {
 "gusto": 2,

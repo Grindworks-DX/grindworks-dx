@@ -273,12 +273,14 @@ slot = 1
 world_scale = 0.15
 item_name = "Flowerpot Hat"
 item_description = "Look out below!"
-big_description = "- 10% Drop damage
-+ 1 Aftershock round"
+big_description = "-20% Drop damage
+Drop now hits Lured Cogs, does not unlure on hit"
 model = ExtResource("4_ifluh")
 stats_add = {
-"drop_aftershock_round_boost": 1,
-"gag_boost:Drop": -0.1
+"gag_boost:Drop": -0.2
+}
+player_values = {
+"can_drop_hit_lured": 1
 }
 icon = ExtResource("3_ifluh")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

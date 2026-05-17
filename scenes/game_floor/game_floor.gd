@@ -440,7 +440,7 @@ func on_battle_spawned(battle_node: BattleNode) -> void:
 				highest_level = cog.level
 				cog_to_debuff = cog
 		
-		if cog_to_debuff is Cog:
+		if cog_to_debuff is Cog and !cog_to_debuff.dna.is_admin:
 			cog_to_debuff.level = RNG.channel(RNG.ChannelCogLevels).randi_range(level_range.x - 3, level_range.x - 2)
 			cog_to_debuff.dna = null
 			cog_to_debuff.randomize_cog()

@@ -24,7 +24,7 @@ func randomize_stats(player: Player) -> void:
 	var point_boost := avg_hp - player.stats.max_hp
 	
 	# Randomize stats
-	var good_points := 18
+	var good_points := 14
 	var bad_points := 6
 	var point_cost := 1
 	if signi(point_boost) == 1: good_points += point_boost
@@ -74,7 +74,8 @@ func randomize_gags(player: Player) -> void:
 	# Otherwise run like normal
 	else:
 		selected_tracks.append(offense_tracks[RNG.channel(RNG.ChannelMysteryToonGags).randi() % offense_tracks.size()])
-		selected_tracks.append(support_tracks[RNG.channel(RNG.ChannelMysteryToonGags).randi() % support_tracks.size()])
+		selected_tracks.append(offense_tracks[RNG.channel(RNG.ChannelMysteryToonGags).randi() % offense_tracks.size()])
+		selected_tracks.append(gag_loadout.loadout[RNG.channel(RNG.ChannelMysteryToonGags).randi() % gag_loadout.loadout.size()])
 	
 	# Start player off with anywhere from level 1-3 gags
 	for track in selected_tracks:

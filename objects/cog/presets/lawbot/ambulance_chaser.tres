@@ -19,6 +19,7 @@ custom_nametag_height = 11.2
 attacks = Array[ExtResource("1_hddah")]([ExtResource("2_7oa6g"), ExtResource("3_xlph2"), ExtResource("4_df06f")])
 level_low = 4
 level_high = 11
+speed_mod = 6
 battle_phrases = Array[String](["I'm going to chase you out of town!", "This is no laughing matter.", "It's all uphill from here.", "I'm going to enjoy this.", "I'm going to give you the business.", "Did you hear a siren?", "I doubt you can keep up with me.", "I love the thrill of the chase!", "Do you have insurance?", "I hope you brought a stretcher with you.", "Looks like you won't be around much longer."])
 external_assets = {
 &"head_model": "",

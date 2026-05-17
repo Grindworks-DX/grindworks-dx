@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="ItemActive" format=3 uid="uid://db5bnbd7amet1"]
 
+[ext_resource type="Texture2D" uid="uid://b8tdy4qthmv3t" path="res://ui_assets/battle/gags/inventory_cake_1.png" id="1_kqdow"]
 [ext_resource type="PackedScene" uid="uid://ksbi6gl0rhet" path="res://models/pbg_new/chocolate_cake.glb" id="2_b0332"]
 [ext_resource type="Script" uid="uid://cy4l60kdxdkae" path="res://objects/items/custom/sandwich/item_sandwich.gd" id="2_kuqst"]
 [ext_resource type="Script" uid="uid://5uwfsntxdag6" path="res://objects/items/classes/item_active.gd" id="4_ax50x"]
@@ -19,6 +20,7 @@ big_description = "On use, consume 1 charge to heal 20% of current laff
 Does not gain charges after encounters"
 model = ExtResource("2_b0332")
 item_script = ExtResource("2_kuqst")
+icon = ExtResource("1_kqdow")
 shop_category_title = "Pocket Prank"
 shop_category_color = Color(0.929412, 0.262745, 0.278431, 1)
 metadata/_custom_type_script = "uid://5uwfsntxdag6"

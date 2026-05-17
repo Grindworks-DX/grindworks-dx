@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b7ew2rv4bfvhy"]
+
+[ext_resource type="Texture2D" uid="uid://d4nd5tsflit5c" path="res://ui_assets/pick_a_toon/questionmark.png" id="1_32sfn"]
+[ext_resource type="PackedScene" uid="uid://c4kf2mtj3ve8e" path="res://models/accessories/backpacks/jamboree_pack/tt_m_chr_avt_acc_pac_band.glb" id="3_fot6k"]
+[ext_resource type="Script" uid="uid://combwqypom1ru" path="res://objects/items/classes/item.gd" id="4_hx6pu"]
+
+[resource]
+script = ExtResource("4_hx6pu")
+item_name = "Conductor (Stances)"
+item_description = "Control your rhythm!"
+big_description = "When you gain Moves during combat, trigger Humor Healing
+Start combat in Mezzopiano
+
+While in Mezzopiano:
+- 0.7x Damage
+- +50% Defense, +50% Gag Regen
+- Sound applies Alarmed, increasing Cog Speed
+- Enter Fortissimo for 2 rounds upon using an Accented Gag
+While in Fortissimo:
+- Gain +5% Luck and +1 Speed per Accent
+- Accented Gags add 1 round; Passing and using normal Gags subtracts 1 round
+- -2 Moves; If all moves were Accented Gags, gain +1 Move for Fortissimo's duration"
+model = ExtResource("3_fot6k")
+icon = ExtResource("1_32sfn")
+metadata/_custom_type_script = "uid://combwqypom1ru"

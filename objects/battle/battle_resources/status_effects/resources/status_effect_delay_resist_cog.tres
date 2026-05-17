@@ -7,7 +7,6 @@
 script = ExtResource("1_f8mcp")
 stat = "delay_resist"
 boost = 0.3
-multiplicative = null
 quality = 0
 rounds = -1
 icon = ExtResource("1_tvat3")

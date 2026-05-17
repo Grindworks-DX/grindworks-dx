@@ -15,6 +15,7 @@ scale = Vector3(0.525, 0.525, 0.525)
 sfx_windup = ExtResource("5_ew2jg")
 sfx_blast = ExtResource("4_jqekm")
 damage = 36
+level = 4
 target_type = 7
 action_name = "Aoogah"
 icon = ExtResource("1_10dg7")

@@ -1,6 +1,6 @@
 extends Node
 
-const VERSION_NUMBER := "v1.2.7"
+const VERSION_NUMBER := "PROJECT B v06"
 
 ## Holds any value you may want accessible globally and quickly
 
@@ -115,7 +115,7 @@ const TOON_UNLOCK_ORDER_PATHS := [
 	#'res://objects/player/characters/clerk_clara.tres',
 	#'res://objects/player/characters/julius_wheezer.tres',
 	#'res://objects/player/characters/barnacle_bessie.tres',
-	#'res://objects/player/characters/moe_zart.tres',
+	'res://objects/player/characters/moe_zart.tres',
 	'res://objects/player/characters/testchar.tres',
 ]
 ## Characters unlocked non-sequentially

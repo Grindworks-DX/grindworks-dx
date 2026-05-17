@@ -7,18 +7,25 @@
 [ext_resource type="Resource" uid="uid://wfdgusu3acxl" path="res://objects/items/resources/active/paint_bucket.tres" id="2_4xrsp"]
 [ext_resource type="Texture2D" uid="uid://v0n7tknvy2jk" path="res://models/toon/textures/clothes/shorts/desat_shorts_10_2.png" id="2_io7we"]
 [ext_resource type="Script" uid="uid://dfqwh4jmdy0iw" path="res://objects/toon/clothing/toon_shirt.gd" id="2_j4ef6"]
-[ext_resource type="Resource" uid="uid://tyi7ukxtvcgc" path="res://objects/battle/battle_resources/gag_loadouts/loadouts/standard_loadout.tres" id="2_pvta8"]
 [ext_resource type="Texture2D" uid="uid://c4qvk4ssy1c0n" path="res://models/toon/textures/clothes/shirts/desat_shirt_4.png" id="3_cc2cr"]
 [ext_resource type="Texture2D" uid="uid://cdawen500xuqx" path="res://models/toon/textures/clothes/shirts/desat_sleeve_4.png" id="4_ikk8d"]
 [ext_resource type="Script" uid="uid://combwqypom1ru" path="res://objects/items/classes/item.gd" id="9_t8yrd"]
+[ext_resource type="Script" uid="uid://b6b6pfoqyolr" path="res://objects/battle/battle_resources/gag_loadouts/track.gd" id="10_0pem7"]
 [ext_resource type="Resource" uid="uid://cyiwxplege133" path="res://objects/items/resources/passive/emergency_unite.tres" id="10_81tpj"]
+[ext_resource type="Resource" uid="uid://5dld88ul3rb5" path="res://objects/battle/battle_resources/gag_loadouts/gag_tracks/trap.tres" id="11_63ujo"]
 [ext_resource type="Resource" uid="uid://ci7shc77lxvwr" path="res://objects/items/resources/passive/flippy_setup.tres" id="12_e8jb6"]
+[ext_resource type="Resource" uid="uid://dqldfsmn7g606" path="res://objects/battle/battle_resources/gag_loadouts/gag_tracks/lure.tres" id="12_osj1d"]
+[ext_resource type="Resource" uid="uid://cvaos6ucteefy" path="res://objects/battle/battle_resources/gag_loadouts/gag_tracks/sound.tres" id="13_suqqq"]
 [ext_resource type="Resource" uid="uid://b1tyryfbi1c7" path="res://objects/items/resources/passive/flippy_humor.tres" id="14_mwkof"]
+[ext_resource type="Resource" uid="uid://0528viy6hdsv" path="res://objects/battle/battle_resources/gag_loadouts/gag_tracks/throw.tres" id="14_y5mwk"]
+[ext_resource type="Resource" uid="uid://dvxiqtapdvmj4" path="res://objects/battle/battle_resources/gag_loadouts/gag_tracks/squirt.tres" id="15_f0hvt"]
+[ext_resource type="Resource" uid="uid://lf7h5xkbt2op" path="res://objects/battle/battle_resources/gag_loadouts/gag_tracks/drop.tres" id="16_noi0y"]
+[ext_resource type="Script" uid="uid://ckypnf7t805p3" path="res://objects/battle/battle_resources/gag_loadouts/gag_loadout.gd" id="17_vs5om"]
+[ext_resource type="Resource" uid="uid://3inewh4lfe16" path="res://objects/battle/battle_resources/silly_surges/surge_juggling.tres" id="18_0pem7"]
 
 [sub_resource type="Resource" id="Resource_4xrsp"]
 script = ExtResource("1_vg416")
-speed = 5
-max_turns = 5
+speed = 3
 max_hp = 30
 hp = 30
 turns = 3
@@ -48,6 +55,11 @@ leg_color = Color(0.345098, 0.819608, 0.952941, 1)
 shirt = SubResource("Resource_2lryd")
 bottoms = SubResource("Resource_ugrs1")
 
+[sub_resource type="Resource" id="Resource_perh7"]
+script = ExtResource("17_vs5om")
+loadout = Array[ExtResource("10_0pem7")]([ExtResource("11_63ujo"), ExtResource("12_osj1d"), ExtResource("13_suqqq"), ExtResource("14_y5mwk"), ExtResource("15_f0hvt"), ExtResource("16_noi0y")])
+silly_surge = ExtResource("18_0pem7")
+
 [resource]
 script = ExtResource("1_joak5")
 character_id = 1
@@ -56,7 +68,8 @@ character_summary = "Starts with Emergency Unite
 Using a Toon-Up triggers 50% Humor Healing"
 character_blurb = "President of the Toon Council and professional pie pitcher. A doggone inspiration to Toons everywhere."
 dna = SubResource("Resource_ax4gq")
-gag_loadout = ExtResource("2_pvta8")
+gag_loadout = SubResource("Resource_perh7")
+starting_laff = 30
 starting_items = Array[ExtResource("9_t8yrd")]([ExtResource("10_81tpj"), ExtResource("12_e8jb6"), ExtResource("14_mwkof")])
 base_stats = SubResource("Resource_4xrsp")
 starting_gags = Dictionary[String, int]({
@@ -68,9 +81,9 @@ starting_gags = Dictionary[String, int]({
 "Trap": 0
 })
 starting_attributes = {
-"gusto": 3,
-"humor": 3,
-"punch": 2,
+"gusto": 0,
+"humor": 5,
+"punch": 0,
 "shrug": 2
 }
 achievement_items = Dictionary[int, ExtResource("9_t8yrd")]({

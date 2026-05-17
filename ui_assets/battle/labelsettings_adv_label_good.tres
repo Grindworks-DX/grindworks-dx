@@ -1,4 +1,4 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://ix6utnif3h1p"]
+[gd_resource type="LabelSettings" format=3 uid="uid://ct2hcumj0bo2b"]
 
 [ext_resource type="FontFile" uid="uid://cup2yr5w7or1l" path="res://fonts/Minnie.TTF" id="1_orgwm"]
 
@@ -6,7 +6,7 @@
 resource_local_to_scene = true
 line_spacing = 0.0
 font = ExtResource("1_orgwm")
-font_size = 18
+font_size = 17
 font_color = Color(1, 0, 0, 1)
 outline_size = 4
 outline_color = Color(0.15127608, 0.15127608, 0.15127608, 1)

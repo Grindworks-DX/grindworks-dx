@@ -23,6 +23,7 @@ attacks = Array[ExtResource("1_u8onf")]([ExtResource("2_tmyoo"), ExtResource("3_
 level_high = 20
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/attentive.tres", "res://objects/battle/battle_resources/status_effects/resources/boss_logic_clown.tres")
 health_mod = 1.3
+speed_mod = -6
 battle_phrases = Array[String](["My business is funny business."])
 external_assets = {
 &"head_model": "",

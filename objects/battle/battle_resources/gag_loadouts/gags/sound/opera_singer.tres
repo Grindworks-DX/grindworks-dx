@@ -16,6 +16,7 @@ anim_delay = 0.01
 sfx_windup = ExtResource("5_e6qcd")
 sfx_blast = ExtResource("4_0bvr6")
 damage = 55
+level = 7
 target_type = 2
 action_name = "Opera Singer"
 icon = ExtResource("1_np050")

@@ -16,6 +16,7 @@ hand_color = Color(0.113725, 0.270588, 0.905882, 1)
 head_color = Color(0.25, 0.35, 1, 1)
 attacks = Array[ExtResource("1_2qty4")]([ExtResource("2_l467j"), ExtResource("3_5un0a")])
 level_high = 8
+speed_mod = -2
 battle_phrases = Array[String](["Boy, did you get your wires crossed.", "I was hoping you'd answer my call.", "You rang?", "I'm going to cause a ringing sensation.", "This call is going to cost you.", "You've got big trouble on the line.", "Surprised to hear from me?", "Are you ready to accept my charges?", "This caller always collects.", "I'm one smooth operator.", "Hold the phone -- I'm here.", "Have you been waiting for my call?", "I always make my calls direct."])
 external_assets = {
 &"head_model": "",

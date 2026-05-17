@@ -9,6 +9,9 @@ class_name BattleUI
 @onready var main_container := %BattleMenuContainer
 @onready var gag_order_menu := %SelectedGags
 @onready var pass_button: GagButton = %LockIn
+@onready var surge_button: GagButton = %Surge
+
+@onready var target_select := %TargetSelect
 
 @onready var planning_ui := %PlanningUI
 
@@ -35,9 +38,9 @@ var turn := 0:
 var remaining_turns: int:
 	get:
 		if manager is BattleManager:
-			return manager.battle_stats[Util.get_player()].turns - turn
+			return roundi(manager.battle_stats[Util.get_player()].get_stat('turns')) > turn
 		else:
-			return Util.get_player().stats.turns - turn
+			return roundi(Util.get_player().get_stat('turns')) > turn
 
 var selected_gags: Array[ToonAttack] = []
 var fire_action: ToonAttackFire
@@ -54,6 +57,18 @@ func _ready():
 	fire_action.target_type = BattleAction.ActionTarget.ENEMY
 	fire_action.icon = load("res://objects/items/custom/pink_slip/pink_slip_icon.png")
 	fire_action.action_name = "FIRE"
+	
+	var surge = Util.get_silly_surge()
+	if surge is SillySurge:
+		surge_button.visible = true
+		surge.user = Util.get_player() #TEMP
+		s_gags_updated.connect(surge.sync_level.unbind(1))
+		manager.s_round_ended.connect(surge.sync_level)
+		surge.s_surge_level_changed.connect(on_surge_level_changed)
+		on_surge_level_changed(0)
+		surge.sync_level()
+		%SurgeRequirements.text = surge.get_surge_requirement_text()
+		%SurgeRequirements.hide()
 
 	pass_action = load("res://objects/battle/battle_resources/pass_action.tres")
 
@@ -84,15 +99,15 @@ func gag_selected(gag: BattleAction) -> void:
 					gag.main_target = gag.targets[0]
 			else:
 				# Swap UIs
-				%TargetSelect.show()
-				%TargetSelect.gag = gag
-				%TargetSelect.reposition_buttons(get_parent().cogs.size())
+				target_select.show()
+				target_select.gag = gag
+				target_select.reposition_buttons(get_parent().cogs.size())
 				main_container.hide()
-				%TargetSelect.back.grab_focus(true)
-				var selection = await %TargetSelect.s_arrow_pressed
+				target_select.back.grab_focus(true)
+				var selection = await target_select.s_arrow_pressed
 				if selection == -1:
 					# Swap UIs back
-					%TargetSelect.hide()
+					target_select.hide()
 					main_container.show()
 					s_gag_canceled.emit(gag)
 					focus_gag_button()
@@ -104,21 +119,24 @@ func gag_selected(gag: BattleAction) -> void:
 					else:
 						gag.targets = [get_parent().cogs[selection]]
 					# Swap UIs back
-					%TargetSelect.hide()
+					target_select.hide()
 					main_container.show()
 					focus_gag_button()
+		BattleAction.ActionTarget.NONE:
+			pass
 		_:
 			gag.targets = get_parent().cogs.duplicate(true)
 	selected_gags.append(gag)
 	selected_gags = sort_gags(selected_gags)
 	s_gag_selected.emit(gag)
 	gag_order_menu.refresh_gags(selected_gags)
+	s_gags_updated.emit(selected_gags)
 	
 	# Lower turns
 	turn += 1
 
 func refresh_turns() -> void:
-	attack_label.set_text("Moves Remaining: " + str(manager.battle_stats[Util.get_player()].turns - turn))
+	attack_label.set_text("Moves Remaining: " + str(roundi(manager.battle_stats[Util.get_player()].get_stat('turns')) - turn))
 	gag_order_menu.update_panels()
 	
 	if remaining_turns == 0:
@@ -142,6 +160,7 @@ func gag_hovered(gag: BattleAction):
 
 func gag_unhovered() -> void:
 	right_panel.clear_display()
+	%SurgeRequirements.hide()
 
 func complete_turn():
 	var gag_order := sort_gags(selected_gags)
@@ -310,7 +329,7 @@ var pass_action: ToonAttack
 
 func on_pass_pressed() -> void:
 	# Check if there are free moves - if so, pass; otherwise, end turn
-	var has_move: bool = manager.battle_stats[Util.get_player()].turns > turn
+	var has_move: bool = roundi(manager.battle_stats[Util.get_player()].get_stat('turns')) > turn
 	if has_move:
 		Util.get_player().stats.restock_tick()
 		var action := pass_action.duplicate(true)
@@ -319,7 +338,42 @@ func on_pass_pressed() -> void:
 	else: complete_turn()
 
 func on_pass_hovered() -> void:
-	var has_move: bool = manager.battle_stats[Util.get_player()].turns > turn
+	var has_move: bool = roundi(manager.battle_stats[Util.get_player()].get_stat('turns')) > turn
 	if has_move:
 		gag_hovered(pass_action)
-		
+
+func on_surge_pressed() -> void:
+	# Do surge instantly
+	var surge := Util.get_silly_surge()
+	surge.user = Util.get_player()
+	surge.manager = manager
+	await Util.do_instant_battle_action(surge)
+	manager.battle_stats[Util.get_player()].silly_meter -= surge.thresholds[surge.level - 1]
+	surge.sync_level()
+	# it is intentional to allow the player to perform their surge multiple times if they can rebuild it; this also makes low cost surges recharge-dependent instead of infinite
+	disable_surge()
+
+func on_surge_hovered() -> void:
+	gag_hovered(Util.get_silly_surge())
+	%SurgeRequirements.show()
+
+func on_surge_level_changed(level := 0) -> void:
+	surge_button.label.text = "SILLY SURGE"
+	if level > 0:
+		surge_button.disabled = false
+		surge_button.self_modulate = Color(0.878, 0.858, 0.381, 1.0)
+	else:
+		disable_surge()
+	
+	for i in range(level):
+		surge_button.label.text += "!"
+	
+	%SillyMeterBar.value = manager.battle_stats[Util.get_player()].silly_meter
+	%SillyMeterBar.max_value = Util.get_silly_surge().thresholds[Util.get_silly_surge().thresholds.size() - 1]
+
+func disable_surge() -> void:
+	surge_button.disabled = true
+	surge_button.self_modulate = Color(0.112, 0.144, 0.153, 1.0)
+
+func update_gags() -> void:
+	for track: TrackElement in gag_tracks.get_children(): track.refresh()

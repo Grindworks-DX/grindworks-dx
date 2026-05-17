@@ -237,7 +237,7 @@ func begin_game(character: PlayerCharacter, falling_scene := false) -> void:
 	player.reset_stats()
 	SceneLoader.add_persistent_node(player)
 	player.state = player.PlayerState.STOPPED
-	player.stats.max_out()
+	#player.stats.max_out()
 	SaveFileService.progress_file.new_games += 1
 	if falling_scene:
 		SceneLoader.load_into_scene("res://scenes/falling_scene/falling_scene.tscn", GameLoader.Phase.FALLING_SEQ)
@@ -351,6 +351,7 @@ func clipboard_out() -> void:
 
 @onready var elevator_floor := $World3D/CogBuilding/suit_landmark_new_corp/locators/suit_landmark_new_corp_door_origin/GeometryTransformHelper11/sellbot_elevator/suit_elevator_1/ground
 func alt_opening(tween : Tween) -> void:
+	CinemaUtil.anim_letterboxes(true)
 	tween.set_trans(Tween.TRANS_QUART)
 	tween.tween_property(elevator_floor, 'rotation_degrees:x', -90.0, 0.25)
 	tween.set_trans(Tween.TRANS_LINEAR)

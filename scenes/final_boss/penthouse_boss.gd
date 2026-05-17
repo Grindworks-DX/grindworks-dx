@@ -139,7 +139,7 @@ func a_boss_died() -> void:
 		AudioManager.set_clip(2)
 
 func on_boss_hp_changed(_hp) -> void:
-	if not both_bosses_alive() or darkened_sky: return
+	if (not both_bosses_alive()) or darkened_sky: return
 	
 	var maximum_hp := boss_cog.stats.max_hp + boss_cog_2.stats.max_hp
 	var current_hp := boss_cog.stats.hp + boss_cog_2.stats.hp
@@ -152,7 +152,7 @@ func set_caged_toon_dna(dna: ToonDNA) -> void:
 
 func get_caged_toon_dna() -> ToonDNA:
 	var unlock_index: int = SaveFileService.progress_file.characters_unlocked
-	var can_unlock: bool = unlock_index < 5
+	var can_unlock: bool = unlock_index < 2
 	if not SaveFileService.is_achievement_unlocked(ProgressFile.GameAchievement.UNLOCK_RANDOM):
 		if Util.get_player().character.character_id == PlayerCharacter.Character.MOE:
 			unlock_mystery = true
@@ -226,7 +226,7 @@ func win_game() -> void:
 	scene.tween_property(toon_cage.get_node('cage_door'), 'rotation_degrees:x', 90.0, 0.5)
 	scene.tween_callback(caged_toon.speak.bind("Whew, thanks for the rescue!"))
 	
-	if unlock_toon and SaveFileService.progress_file.characters_unlocked < 6:
+	if unlock_toon and SaveFileService.progress_file.characters_unlocked < Globals.TOON_UNLOCK_ORDER_PATHS.size():
 		scene.tween_interval(4.0)
 		scene.tween_callback(caged_toon.speak.bind("I think it's time I give the Cogs a little payback."))
 		scene.tween_interval(4.0)

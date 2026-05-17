@@ -17,6 +17,8 @@ var floor_index := 0
 var tip_tween: Tween
 var tips: PackedStringArray
 
+@export var show_tips := true
+
 signal start_floor(floor_var: FloorVariant)
 
 func _init():
@@ -25,11 +27,11 @@ func _init():
 	})
 
 func _ready() -> void:
-	tips = read_tip_file()
-	change_tip(tips)
-	start_tip_tween()
-	if Util.get_player().see_anomalies:
-		anomaly_container.show()
+	if show_tips:
+		tips = read_tip_file()
+		change_tip(tips)
+		start_tip_tween()
+	else: tip_label.hide()
 
 func set_floor_index(index: int) -> void:
 	floor_button.floor_variant = floors[index]

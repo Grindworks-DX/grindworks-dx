@@ -25,6 +25,7 @@ level_low = 6
 level_high = 20
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/status_effect_mod_cog.tres")
 is_mod_cog = true
+speed_mod = -8
 battle_phrases = Array[String](["Big things are coming.", "No job is too big for me.", "I'm the big boss now.", "I used to be small, but now I'm standing tall.", "You're in big trouble now.", "I don't have time for the small stuff anymore.", "Hurry this up, I have bigger things to do."])
 external_assets = {
 &"head_model": "",

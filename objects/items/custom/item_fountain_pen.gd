@@ -7,7 +7,6 @@ var count := 0:
 	set(x):
 		count = x
 		if count is int: count_changed()
-var count_label: Label
 
 var threshold := 10
 

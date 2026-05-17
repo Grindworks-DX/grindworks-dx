@@ -53,7 +53,10 @@ var debug_gag_points := false
 		print("Agility set to %.2f" % x)
 
 # Breaking Grounds - beeeeg crits
-@export var crit_mult := 2.0
+@export var crit_mult := 2.0:
+	set(x):
+		crit_mult = x
+		s_stat_changed.emit('crit_mult')
 @export var mod_cog_dmg_mult := 1.0
 @export var shop_discount := 0
 @export var healing_effectiveness := 1.0
@@ -193,8 +196,8 @@ func initialize() -> void:
 	monitor_stranger_chance()
 
 func start_stat_monitors() -> void:
-	var stat_monitors := ['damage', 'defense', 'evasiveness', 'speed', 'luck']
-	for stat in stat_monitors:
+	var stat_monitors := ['damage', 'defense', 'evasiveness', 'speed', 'luck', 'crit_mult', 'silly_meter']
+	for stat in stat_monitors + attributes:
 		prev_stats[stat] = get_stat(stat)
 
 func max_out() -> void:
@@ -208,7 +211,7 @@ func max_out() -> void:
 		toonups[key] = 0
 	for key in gag_vouchers.keys():
 		gag_vouchers[key] = 0
-	turns = max_turns
+	#turns = max_turns
 
 func get_highest_gag_level() -> int:
 	return gags_unlocked.values().max()
@@ -221,12 +224,13 @@ func on_battle_started(_battle: BattleManager) -> void:
 		if not gags_unlocked[track] > 0: continue
 		gag_balance[track] = gag_starting_points[track]
 		restock(track, roll_gag_regen(track) + gag_battle_start_point_boost.get(track, 0) + global_battle_start_point_boost)
+	_battle.battle_stats[Util.get_player()].silly_meter = starting_silly_meter
 
-func restock_tick() -> void:
+func restock_tick(amount := 1) -> void:
 	print('Restock tick!')
 	for track in gag_balance.keys():
 		if not gags_unlocked[track] > 0: continue
-		restock(track, roll_gag_regen(track))
+		restock(track, roll_gag_regen(track, amount))
 
 func restock(track: String, add: int) -> void:
 	if debug_gag_points:
@@ -250,9 +254,10 @@ func attempt_revive(_hp: int = 0) -> void:
 	
 	# Create the unite effect
 	if not Util.get_player().revives_are_hp or extra_lives == 0:
-		var unite: GPUParticles3D = load('res://objects/battle/effects/unite/unite.tscn').instantiate()
-		Util.get_player().add_child(unite)
-		Util.get_player().toon.speak("Toons of the world, Toon-Up!")
+		#var unite: GPUParticles3D = load('res://objects/battle/effects/unite/unite.tscn').instantiate()
+		#Util.get_player().add_child(unite)
+		#Util.get_player().toon.speak("Toons of the world, Toon-Up!")
+		Util.get_player().boost_queue.queue_text("Revived!", Color(0.372, 0.568, 1.0, 1.0))
 		AudioManager.play_sound(load("res://audio/sfx/misc/Holy_Mackerel.ogg"))
 
 	print('Revived!')
@@ -338,7 +343,7 @@ func run_stranger_roll() -> bool:
 
 # Attributes: New stats that modify internal stats
 
-static var attributes: Array[String ]= ['punch', 'humor', 'gusto', 'shrug']
+static var attributes: Array[String] = ['punch', 'humor', 'gusto', 'shrug']
 
 signal s_punch_changed(new_value: int)
 signal s_humor_changed(new_value: int)
@@ -398,10 +403,10 @@ signal s_shrug_changed(new_value: int)
 
 @export var humor_healing_multiplier := 1.0 
 
-var attribute_modifiers := {
-	'punch': { 'damage': 0.08, 'parry': 0.04 },
-	'humor': { 'max_hp': 5, 'humor_healing': 1.0 },
-	'gusto': { 'speed': 1, 'gag_regen_chance': 0.05 },
+static var attribute_modifiers := {
+	'punch': { 'damage': 0.05, 'parry': 0.04 },
+	'humor': { 'max_hp': 3, 'humor_healing': 1.0 },
+	'gusto': { 'speed': 1, 'gag_regen_chance': 0.05, 'starting_silly_meter': 1 },
 	'shrug': { 'luck': 0.04, 'evasiveness': 0.05 },
 }
 
@@ -412,6 +417,7 @@ func attribute_changed(attr: String, old_value, new_value) -> void:
 	var modifiers = attribute_modifiers[attr]
 	for key in modifiers:
 		var value = difference * modifiers[key]
+		print("%s modifying %s by %s" % [attr, key, str(value)])
 		if key == 'max_hp':
 			set(key, get(key) + value + laff_boost_boost)
 			if value > 0:
@@ -426,17 +432,19 @@ func attribute_changed(attr: String, old_value, new_value) -> void:
 
 @export var regen_crit_chance := 0.0
 
-func roll_gag_regen(track_name: String) -> int:
+func roll_gag_regen(track_name: String, amount := 1) -> int:
 	var __out := 0
 	var regen_rate := gag_regen_chance + gag_regen_chance_modifiers[track_name]
-	__out += floori(regen_rate)
-	# TODO: implement rng
-	var bonus = (randf() < (regen_rate - floori(regen_rate)))
-	if bonus: __out += int(bonus)
-	# Crit regen: Luck% chance per track to double its regeneration
-	if randf() < (luck - 1.0) + regen_crit_chance:
-		print("Regen crit! %s" % track_name)
-		__out *= 2
+	for i in range(amount):
+		var tick = floori(regen_rate)
+		# TODO: implement rng
+		var bonus = (randf() < (regen_rate - floori(regen_rate)))
+		if bonus: tick += int(bonus)
+		# Crit regen: Luck% chance per track to double its regeneration
+		if randf() < (luck - 1.0) + regen_crit_chance:
+			print("Regen crit! %s" % track_name)
+			tick *= 2
+		__out += tick
 	print("Gag regen: %s gained %d points" % [track_name, __out])
 	return __out
 
@@ -449,11 +457,24 @@ func do_humor_healing(_effectiveness := 1.0) -> void:
 		effectiveness *= 2.0
 	
 	allow_overheal = true
-	BattleService.ongoing_battle.s_round_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
-	BattleService.ongoing_battle.s_battle_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
-	Util.get_player().quick_heal(maxi(1, ceili(humor_healing * effectiveness * humor_healing_multiplier)))
+	if BattleService.ongoing_battle is BattleManager:
+		BattleService.ongoing_battle.s_round_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
+		BattleService.ongoing_battle.s_battle_ended.connect(func(): allow_overheal = false, CONNECT_ONE_SHOT)
+	Util.get_player().quick_heal(maxi(1, ceili(humor_healing * effectiveness * get_stat('humor_healing_multiplier'))))
 	s_humor_healing_triggered.emit()
 	if humor_healing * effectiveness > 0:
 		Task.delay(0.2).connect(AudioManager.play_sound.bind(load("res://audio/sfx/items/laff_boost_pickup.ogg"), -5.0))
 
 signal s_toonup_used(gag: ToonAttack)
+
+# Silly Meter: Builds in combat by spending gag points
+
+@export var silly_meter := 0:
+	set(x):
+		silly_meter = x
+		s_stat_changed.emit('silly_meter')
+@export var starting_silly_meter := 0
+
+func on_action_finished(action: BattleAction) -> void:
+	if action is not ToonAttack or action.user != Util.get_player(): return
+	action.manager.battle_stats[Util.get_player()].silly_meter += maxi(0, action.price)

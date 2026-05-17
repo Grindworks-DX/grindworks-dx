@@ -7,10 +7,10 @@ extends ItemScript
 ## Battle Timer created by Util
 var timer: GameTimer
 
-var timer_seconds_base := 20
-var timer_seconds_per_speed := 2
+var timer_seconds_base := 10
+var timer_seconds_per_speed := 1
 
-var current_time := 20
+@onready var current_time := timer_seconds_base
 
 func on_collect(_item: Item, _model: Node3D) -> void:
 	setup()

@@ -12,8 +12,10 @@ class_name GagSound
 @export var sfx_blast: AudioStream
 
 var do_knockback := false
+var stealthy := false
 
 func action():
+	stealthy = level in user.stealth_sounds
 	# Play the movie's sfx
 	sfx_track()
 	
@@ -51,37 +53,28 @@ func action():
 	if hit:
 		# If we're doing knockback and any of our targets are lured,
 		# give the funny special text
-		if do_knockback and targets.filter(func(x: Cog): return x.lured and not get_immunity(x)).size() > 0:
-			store_boost_text("Rude Awakening!", Color(0.328, 0.4, 0.96))
+		if targets.filter(func(x: Cog): return x.lured and not get_immunity(x)).size() > 0:
+			if stealthy:
+				store_boost_text("Shhhhh!", Color(0.212, 0.314, 0.593, 1.0))
+			elif do_knockback:
+				store_boost_text("Rude Awakening!", Color(0.439, 0.431, 0.876, 1.0))
 
 		var animator_target: Cog = null
 		for target: Cog in targets:
-			if not is_instance_valid(target):
-				continue
+			if not is_instance_valid(target): continue
 			animator_target = target
-			var real_damage = damage
-			if target_type != ActionTarget.ENEMIES and ((not target == main_target and not user.inverted_sound_damage) or (user.inverted_sound_damage and target == main_target)):
-				real_damage *= 0.5
-			if get_immunity(target):
-				manager.battle_text(target, 'IMMUNE')
-			else:
-				manager.affect_target(target, real_damage)
-			if not target.lured or not do_knockback:
-				target.set_animation('squirt-small')
-				do_dizzy_stars(target)
-			elif not get_immunity(target):
-				manager.knockback_cog(target)
-				do_dizzy_stars(target)
-		
-		if animator_target:
-			await manager.barrier(animator_target.animator.animation_finished, 5.0)
+			impact(target)
 		
 		# Check if any cogs are lured, and unlure them
 		var lured_targets: Array[Cog] = []
 		for target in targets:
 			if target.lured:
 				lured_targets.append(target)
-		if not lured_targets.is_empty():
+				
+		if animator_target:
+			await manager.barrier(animator_target.animator.animation_finished, 5.0)
+		
+		if not lured_targets.is_empty() and !stealthy:
 			var unlure_tween: Tween = manager.create_tween()
 			unlure_tween.set_parallel(true)
 			for target in lured_targets:
@@ -91,6 +84,7 @@ func action():
 			await unlure_tween.finished
 			for target in lured_targets:
 				target.set_animation('neutral')
+		
 		await manager.check_pulses(targets)
 	else:
 		for target in targets:
@@ -102,6 +96,22 @@ func action():
 	
 	megaphone.queue_free()
 
+func impact(target: Actor = null) -> void:
+	var real_damage = damage
+	if target_type == ActionTarget.ENEMY_SPLASH and ((not target == main_target and not user.inverted_sound_damage) or (user.inverted_sound_damage and target == main_target)):
+		real_damage *= 0.5
+	if get_immunity(target):
+		manager.battle_text(target, 'IMMUNE')
+	else:
+		manager.affect_target(target, real_damage)
+	if not target.lured or not (do_knockback and !stealthy):
+		target.set_animation('squirt-small')
+		do_dizzy_stars(target)
+	elif not get_immunity(target):
+		manager.knockback_cog(target)
+		do_dizzy_stars(target)
+	BattleService.s_action_impact.emit(self, target)
+
 func sfx_track():
 	await manager.sleep(1.0)
 	if sfx_windup:
@@ -111,27 +121,29 @@ func sfx_track():
 		AudioManager.play_sound(sfx_blast)
 
 func get_stats() -> String:
-	var string := "Damage: " + get_main_damage_str() + "\n"\
+	stat_string = "Damage: " + str(get_main_damage()) + "\n"\
 	+ "Affects: "
 	match target_type:
 		ActionTarget.SELF:
-			string += "Self"
+			stat_string += "Self"
 		ActionTarget.ENEMIES:
-			string += "All Cogs"
+			stat_string += "All Cogs"
 		ActionTarget.ENEMY:
-			string += "One Cog"
+			stat_string += "One Cog"
 		ActionTarget.ENEMY_SPLASH:
-			string += "Three Cogs"
-			string += "\nSplash: %s" % get_splash_damage_str()
+			stat_string += "Three Cogs"
+			stat_string += "\nSplash: %d" % get_splash_damage()
+			
+	BattleService.s_gag_stat_string_set.emit(self)
+	
+	return stat_string
 
-	return string
-
-func get_main_damage_str() -> String:
-	if Util.get_player().inverted_sound_damage:
+func get_main_damage() -> int:
+	if Util.get_player().inverted_sound_damage and target_type == ActionTarget.ENEMY_SPLASH:
 		return get_true_damage(0.5)
 	return get_true_damage()
 
-func get_splash_damage_str() -> String:
+func get_splash_damage() -> int:
 	if Util.get_player().inverted_sound_damage:
 		return get_true_damage()
 	return get_true_damage(0.5)

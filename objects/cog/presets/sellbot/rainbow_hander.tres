@@ -22,6 +22,7 @@ level_low = 4
 level_high = 11
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/status_effect_mod_cog.tres")
 is_mod_cog = true
+speed_mod = 3
 battle_phrases = Array[String](["You'll find I have a colorful background.", "Color me impressed, you’ve made it this far.", "You’ll do nicely to cleanse my palette."])
 external_assets = {
 &"head_model": "",

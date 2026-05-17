@@ -16,9 +16,9 @@ func setup() -> void:
 	if not Util.get_player():
 		await Util.s_player_assigned
 	var player := Util.get_player()
-	player.stats.s_humor_changed.connect(on_humor_changed)
+	player.stats.s_shrug_changed.connect(on_shrug_changed)
 	create_multiplier()
-	on_humor_changed(player.stats.humor)
+	on_shrug_changed(player.stats.shrug)
 
 func create_multiplier() -> void:
 	mult = StatMultiplier.new()
@@ -27,5 +27,5 @@ func create_multiplier() -> void:
 	mult.additive = true
 	Util.get_player().stats.multipliers.append(mult)
 
-func on_humor_changed(new_value: int) -> void:
+func on_shrug_changed(new_value: int) -> void:
 	mult.amount = new_value * defense_per_shrug

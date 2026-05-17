@@ -45,4 +45,4 @@ func get_status_name() -> String:
 	return "Incoming Drop"
 
 func get_description() -> String:
-	return "Will be hit by %s\nDamage: %s" % [drop_gag.action_name, drop_gag.get_true_damage(1.0, 0, load('res://objects/battle/battle_resources/gag_loadouts/gag_tracks/drop.tres'))]
+	return "Will be hit by %s\nDamage: %d" % [drop_gag.action_name, drop_gag.get_true_damage(1.0, 0, load('res://objects/battle/battle_resources/gag_loadouts/gag_tracks/drop.tres'))]

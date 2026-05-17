@@ -25,6 +25,7 @@ level_low = 6
 level_high = 20
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/status_effect_mod_cog.tres")
 is_mod_cog = true
+speed_mod = -3
 battle_phrases = Array[String](["Money will be the yeast of your concerns.", "I'm on the rise!", "Time to separate the wheat from the chaff.", "Prepare to be toasted.", "Don't try to butter me up.", "Your stale jokes won't fly here.", "I'm on a roll!", "Would you like a knuckle sandwich?", "Quit loafing around."])
 external_assets = {
 &"head_model": "",

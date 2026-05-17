@@ -268,7 +268,7 @@ scale = Vector3(0.35, 0.35, 0.35)
 [resource]
 script = ExtResource("5_fnwbf")
 accessory_placements = Array[ExtResource("1_diuin")]([SubResource("Resource_7snvr"), SubResource("Resource_2a3jt"), SubResource("Resource_vqa6d"), SubResource("Resource_qq2g2"), SubResource("Resource_fhe56"), SubResource("Resource_f1mp7"), SubResource("Resource_j6ej0"), SubResource("Resource_4omhy"), SubResource("Resource_h3h0f"), SubResource("Resource_miot3"), SubResource("Resource_wci5b"), SubResource("Resource_yhg0e"), SubResource("Resource_ewy5l"), SubResource("Resource_ievsd"), SubResource("Resource_1oqvx"), SubResource("Resource_2cd0q"), SubResource("Resource_7tnu6"), SubResource("Resource_f8j27"), SubResource("Resource_an1j0"), SubResource("Resource_s7nxu"), SubResource("Resource_chqb8"), SubResource("Resource_tefkr"), SubResource("Resource_5u6sd"), SubResource("Resource_up81l"), SubResource("Resource_j3ghg"), SubResource("Resource_ca825"), SubResource("Resource_qx5em"), SubResource("Resource_6fijn"), SubResource("Resource_np6jg"), SubResource("Resource_kmies"), SubResource("Resource_6etti"), SubResource("Resource_iltn8"), SubResource("Resource_f2w00"), SubResource("Resource_dq3md")])
-qualitoon = 1
+qualitoon = 2
 rarity = 4
 slot = 1
 world_scale = 0.15
@@ -277,8 +277,5 @@ item_name = "Big Weight Hat"
 item_description = "Crush Immunity"
 big_description = "Immune from crush-based damage, such as stompers and gavel squishes"
 model = ExtResource("4_diuin")
-player_values = {
-"immune_to_crush_damage": true
-}
 icon = ExtResource("3_diuin")
 shop_category_color = Color(0.196078, 0.580392, 0.917647, 1)

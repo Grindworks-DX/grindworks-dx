@@ -31,10 +31,12 @@ func configure_panel(panel) -> void:
 	panel.get_node('GeneralButton').pressed.connect(cancel_gag.bind(panels.find(panel)))
 	panel.get_node('DamageLabel').text = ""
 	panel.get_node('TargetingLabel').text = ""
+	panel.get_node('PriceLabel').text = ""
 		
 func update_panels() -> void:
 	# Amount of panels is based on Player turns (-1)
-	var panels_to_make: int = manager.battle_stats[Util.get_player()].turns - panels.size()
+	var turns := manager.get_player_turns()
+	var panels_to_make: int = turns - panels.size()
 	if panels_to_make > 0:
 		# Append the panels
 		for i in panels_to_make:
@@ -90,16 +92,23 @@ func refresh_gags(gags: Array[ToonAttack]):
 		var panel = panels[i]
 		if i < gags.size():
 			var gag = gags[i]
-			var damage = manager.get_damage(gag.damage, gag, gag.targets[0])
 			panel.get_node('GagIcon').texture = gag.icon
 			panel.get_node('GeneralButton').disabled = !Util.get_player().can_cancel_gags or gag.ActionTag.NO_CANCEL in gag.action_tags
-			panel.get_node('DamageLabel').text = ("-" + str(damage)) if damage > 0 else ""
 			panel.get_node('TargetingLabel').text = get_targeting_string(gag)
+			panel.get_node('PriceLabel').text = str(gag.price) if gag.price > 0 else ""
+			if !gag.targets.is_empty():
+				var damage = manager.get_damage(gag.damage, gag, gag.targets[0])
+				panel.get_node('DamageLabel').text = ("-" + str(damage)) if damage > 0 else ""
+				if gag is GagThrow: panel.get_node('DamageLabel').text += "\n(%d)" % manager.get_damage(gag.damage + gag.sweetspot_damage, gag, gag.targets[0])
+				if gag is GagLure: panel.get_node('DamageLabel').text += "(%d)" % manager.get_damage(gag.lure_effect.knockback_effect, gag, gag.targets[0])
+			else:
+				panel.get_node('DamageLabel').text = ""
 		else:
 			panel.get_node('GagIcon').texture = null
 			panel.get_node('GeneralButton').disabled = true
 			panel.get_node('DamageLabel').text = ""
 			panel.get_node('TargetingLabel').text = ""
+			panel.get_node('PriceLabel').text = ""
 		panel.get_node('GeneralButton').visible = not panel.get_node('GeneralButton').disabled
 
 func hover_slot(idx: int) -> void:

@@ -64,8 +64,8 @@ func emit_gag(gag: ToonAttack, price: int):
 	else:
 		Util.get_player().stats.money -= price
 	refresh()
-	ui_root.s_gag_pressed.emit(newgag)
 	newgag.price = price
+	ui_root.s_gag_pressed.emit(newgag)
 
 func refresh():
 	if not track:
@@ -90,7 +90,7 @@ func refresh():
 			var gag := gags[i]
 			gag.track = track
 			var button: GagButton = gag_buttons[i]
-			button.image = gag.icon
+			button.gag = gag
 			button.show()
 			button.count_label.label_settings.outline_size = 1 if battle_stats.get_track_effectiveness(track.track_name) > 1.0 else 0
 			button.count_label.label_settings.font_size = 14 if battle_stats.get_track_effectiveness(track.track_name) > 1.0 else 12
@@ -110,6 +110,7 @@ func refresh():
 				if not is_gag_free(gag):
 					price = track.base_prices[i]
 					price -= battle_stats.gag_discount
+					price += gag.price_modifier
 					if Util.get_player().gags_cost_beans:
 						# Basically just for budget cuts on Pete
 						if i == 0: price = 0
@@ -137,7 +138,7 @@ func refresh():
 	point_label.text = "%d/%d (%s)" % [
 		points,
 		roundi(Util.get_player().stats.gag_point_caps[track.track_name]),
-		Util.float_to_perc(stats.gag_regen_chance + stats.gag_regen_chance_modifiers[track.track_name])
+		Util.float_to_perc(stats.get_stat('gag_regen_chance') + stats.gag_regen_chance_modifiers[track.track_name])
 	]
 	if Util.get_player().stats.gag_balance[track.track_name] > Util.get_player().stats.gag_point_caps[track.track_name]:
 		point_label.self_modulate = WARNING_COLOR
@@ -195,11 +196,10 @@ func grey_out() -> void:
 		button.hide()
 
 func set_disabled(disabled : bool) -> void:
+	refresh()
 	for button : GagButton in gag_buttons:
 		if disabled:
 			button.disable()
-		else:
-			refresh()
 
 func show_track() -> void:
 	track_label.set_text(track.track_name.to_upper())
@@ -227,11 +227,14 @@ func is_gag_free(gag : ToonAttack) -> bool:
 
 # Breaking Grounds
 
+var tween: Tween
+
 func do_gain_animation(amount: int, delay := 0.5) -> void:
 	point_gain_label.text = "+%d" % amount
 	point_gain_label.scale = Vector2.ONE * 0.01
 	
-	var tween := create_tween().set_trans(Tween.TRANS_QUAD)
+	if tween is Tween: tween.kill()
+	tween = create_tween().set_trans(Tween.TRANS_QUAD)
 	tween.tween_interval(delay)
 	tween.tween_property(point_gain_label, 'scale', Vector2.ONE, 0.2)
 	tween.tween_callback(

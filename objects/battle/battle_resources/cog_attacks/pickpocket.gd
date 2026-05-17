@@ -81,6 +81,6 @@ func apply_bean_stat(count: int) -> void:
 	if count < 0:
 		return
 	var effect := BEAN_STAT.duplicate(true)
-	effect.bean_count = count
+	effect.stacks = count
 	effect.target = user
 	manager.add_status_effect(effect)

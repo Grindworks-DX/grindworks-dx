@@ -15,7 +15,7 @@ script = ExtResource("14_tulk0")
 track_type = 1
 track_name = "Lure"
 track_color = Color(0.282353, 0.623529, 0.247059, 1)
-gags = Array[ExtResource("1_txqk2")]([ExtResource("2_a0v0m"), ExtResource("4_6h8l6"), ExtResource("6_p4v71"), ExtResource("3_lm2mb"), ExtResource("5_ple67"), ExtResource("7_wy8xf"), ExtResource("8_rqkk5")])
+gags = Array[ExtResource("1_txqk2")]([ExtResource("2_a0v0m"), ExtResource("4_6h8l6"), ExtResource("3_lm2mb"), ExtResource("5_ple67"), ExtResource("6_p4v71"), ExtResource("7_wy8xf"), ExtResource("8_rqkk5")])
 mod_gags = Dictionary[ExtResource("1_txqk2"), int]({
 ExtResource("2_a0v0m"): 0,
 ExtResource("3_lm2mb"): 1,

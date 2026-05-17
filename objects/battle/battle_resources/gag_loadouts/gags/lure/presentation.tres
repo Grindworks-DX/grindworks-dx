@@ -16,7 +16,7 @@ script = ExtResource("2_omt53")
 knockback_effect = 48
 damage_debuff = SubResource("Resource_3uy82")
 quality = 1
-rounds = 6
+rounds = 3
 id = 2
 
 [resource]

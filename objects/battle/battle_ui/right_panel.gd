@@ -22,7 +22,7 @@ func preview_gag(gag: BattleAction):
 	player_info.hide()
 	
 	gag_info.show()
-	gag_name.text = gag.action_name
+	gag_name.text = gag.get_action_name()
 	gag_stats.text = gag.get_stats()
 	gag_icon.texture = gag.icon
 

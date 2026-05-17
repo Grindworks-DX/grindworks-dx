@@ -21,6 +21,8 @@ func initialize_ui(manager: BattleManager) -> void:
 	for element: Control in ui.gag_tracks.get_children():
 		element.s_refreshing.connect(on_track_refresh)
 		element.refresh()
+	ui.target_select.back.hide()
+	ui.target_select.back.disabled = true
 
 ## Shuffles the gag order of each track
 func on_track_refresh(element: Control) -> void:

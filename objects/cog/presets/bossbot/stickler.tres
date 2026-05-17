@@ -24,6 +24,7 @@ level_low = 3
 level_high = 20
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/status_effect_mod_cog.tres")
 is_mod_cog = true
+speed_mod = 2
 battle_phrases = Array[String](["I do not believe you are a part of this branch.", "According to Article 14 Section 6 of the Toon Disposal Handbook, I am going to have to ask you to leave.", "We have a strict no Toon policy here.", "I will not snap as a single limb, for this company is a mighty oak.", "Hopefully this time, your defeat will stick.", "Oh, when will you Toons just leaf this company alone?", "You Toons truly cannot see the forest for the trees, can you?", "You are in violation of a truly staggering number of codes."])
 external_assets = {
 &"head_model": "",

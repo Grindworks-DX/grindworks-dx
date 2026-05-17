@@ -104,6 +104,10 @@ const ChannelHauntedCGCv2 = &"haunted_cgc_v2"
 const ChannelMoltenBuckets = &"molten_buckets"
 const ChannelDoubleTroublev2 = &"double_trouble_v2"
 
+# Breaking Grounds
+
+const ChannelMoeCueGags = &"moe_cue_gags"
+
 #endregion
 
 ## Simplified seeding for runs

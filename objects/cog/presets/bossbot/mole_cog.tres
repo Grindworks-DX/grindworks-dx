@@ -17,6 +17,7 @@ attacks = Array[ExtResource("1_hpxo2")]([ExtResource("3_i8akj"), ExtResource("4_
 baked_status_effects = PackedStringArray("res://objects/battle/battle_resources/status_effects/resources/attentive.tres")
 is_admin = true
 health_mod = 2.0
+speed_mod = -3
 external_assets = {
 &"head_model": "",
 &"head_textures": []

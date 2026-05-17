@@ -17,6 +17,7 @@ head_textures = PackedStringArray("res://models/cogs/heads/tt_t_ene_hed_bottomFe
 hand_color = Color(0.75, 0.75, 0.95, 1)
 attacks = Array[ExtResource("1_tg6lh")]([ExtResource("2_swp71"), ExtResource("3_lbs6f"), ExtResource("4_x0l4g")])
 level_high = 8
+speed_mod = -2
 battle_phrases = Array[String](["Oh goody, lunch time.", "I'm ready to feast!", "I'm a sucker for Toons.", "Let's talk about the bottom line.", "You'll find my talents are bottomless.", "I'd love to have you for lunch.", "I'd like some feedback on my performance.", "Perfect timing, I need a quick bite.", "Looks like you've hit rock bottom.", "Good, I need a little pick-me-up."])
 external_assets = {
 &"head_model": "",

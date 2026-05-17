@@ -16,6 +16,7 @@ hand_color = Color(0.960784, 0.960784, 0.960784, 1)
 attacks = Array[ExtResource("1_qq5yy")]([ExtResource("2_d8rm8"), ExtResource("3_rqeil")])
 level_low = 4
 level_high = 8
+speed_mod = -5
 battle_phrases = Array[String](["Oh. Hey."])
 external_assets = {
 &"head_model": "",

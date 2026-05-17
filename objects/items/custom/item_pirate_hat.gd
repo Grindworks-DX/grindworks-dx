@@ -1,6 +1,6 @@
 extends ItemScript
 
-const BEAN_AWARD := Vector2i(2, 4)
+const BEAN_AWARD := Vector2i(6, 12)
 const EARN_SFX := preload("res://audio/sfx/ui/tick_counter.ogg")
 
 func on_collect(_item: Item, _model: Node3D) -> void:

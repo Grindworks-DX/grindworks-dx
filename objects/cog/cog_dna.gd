@@ -49,6 +49,7 @@ enum SuitType {
 @export var is_mod_cog := false
 @export var is_admin := false
 @export var health_mod := 1.0
+@export var speed_mod := 0
 
 @export_multiline var battle_phrases: Array[String] = ["We are gonna fight now."]
 @export_custom(GameLoader.FILE, GameLoader.RESOURCE) var battle_start_movie: String

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://cmfrphxalx3c2"]
+
+[ext_resource type="Texture2D" uid="uid://cwpi1cl23exds" path="res://ui_assets/battle/gags/inventory_bamboo_cane.png" id="1_dw0gc"]
+[ext_resource type="Script" uid="uid://dwhmatr5rlp6n" path="res://objects/player/characters/pbg_char_resources/key_status_moe_mezzopiano.gd" id="2_85d74"]
+
+[resource]
+script = ExtResource("2_85d74")
+rounds = -1
+icon = ExtResource("1_dw0gc")
+description = "0.7x Damage
++50% Defense
++50% Gag Regen
+Sound buffs Cog Speed on hit"
+status_name = "Mezzopiano"
+id = 55
+metadata/_custom_type_script = "uid://df7irk63ikx4k"
