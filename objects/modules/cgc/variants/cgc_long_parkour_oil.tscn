@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dmv7dbgr2b2nr" path="res://objects/obstacles/lava_floor/lava_floor.tscn" id="12_nnd17"]
 [ext_resource type="Shader" uid="uid://b3xje7jv3si6v" path="res://general_resources/shaders/liquid_shader.gdshader" id="14_wschq"]
 [ext_resource type="PackedScene" uid="uid://q13pfs05aior" path="res://objects/obstacles/paint_platform/paintmixer_platform.tscn" id="15_pxxxq"]
-[ext_resource type="Texture2D" uid="uid://bdf3g7nyxirat" path="res://models/facilities/cgc/textures/oil.png" id="15_ywtpp"]
+[ext_resource type="Texture2D" uid="uid://bdf3g7nyxirat" path="res://models/facilities/cgc/textures/cbb_cgc_env_oil.png" id="15_ywtpp"]
 [ext_resource type="PackedScene" uid="uid://b35wcbrb3kc82" path="res://objects/obstacles/golf_door/golf_door.tscn" id="16_y2dli"]
 [ext_resource type="PackedScene" uid="uid://bwu5l3d7uncro" path="res://objects/props/cgc/hedge_pillar_spiked.tscn" id="20_3ltig"]
 [ext_resource type="PackedScene" uid="uid://5m1a0suouie8" path="res://objects/props/cgc/fence_with_end.tscn" id="21_m5g4g"]

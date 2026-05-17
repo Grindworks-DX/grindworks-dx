@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://p8gvfa1hsxhc" path="res://objects/props/cgc/hedge.tscn" id="2_l5ohi"]
 [ext_resource type="Script" uid="uid://gigjxsvg8ojv" path="res://objects/modules/cgc/variants/maze_generator.gd" id="2_o0jwp"]
 [ext_resource type="PackedScene" uid="uid://dxyq5lb5oineo" path="res://objects/interactables/treasure_chest/treasure_chest.tscn" id="3_6t6a2"]
-[ext_resource type="Texture2D" uid="uid://dnmjqucjpu5sg" path="res://models/facilities/cgc/textures/mazedirt_golf.png" id="4_rfs3i"]
+[ext_resource type="Texture2D" uid="uid://dnmjqucjpu5sg" path="res://models/facilities/cgc/textures/cbb_cgc_env_ground_1a.png" id="4_rfs3i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7spx8"]
 resource_name = "lambert174"

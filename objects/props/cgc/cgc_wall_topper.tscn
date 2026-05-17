@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://c7ect6170hman"]
 
-[ext_resource type="Texture2D" uid="uid://du4dqnxb80yr" path="res://models/facilities/cgc/textures/BQ_Fireplace_1.png" id="1_o1nqk"]
-[ext_resource type="Texture2D" uid="uid://csmkpukc6maca" path="res://models/facilities/cgc/textures/StoneWall1e.png" id="2_1nmys"]
+[ext_resource type="Texture2D" uid="uid://du4dqnxb80yr" path="res://models/facilities/cgc/textures/cbb_cgc_env_stone_2a.png" id="1_o1nqk"]
+[ext_resource type="Texture2D" uid="uid://csmkpukc6maca" path="res://models/facilities/cgc/textures/cbb_cgc_env_brick_2a.png" id="2_1nmys"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txkq4"]
 resource_name = "lambert167"

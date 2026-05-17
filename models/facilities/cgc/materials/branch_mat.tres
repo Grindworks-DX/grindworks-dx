@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://do7bpsdy2nk"]
 
-[ext_resource type="Texture2D" uid="uid://4415lam3y8re" path="res://models/facilities/cgc/textures/CogHedgeVine.png" id="1_myyd1"]
+[ext_resource type="Texture2D" uid="uid://4415lam3y8re" path="res://models/facilities/cgc/textures/cbb_cgc_env_tree_1a.png" id="1_myyd1"]
 
 [resource]
 resource_name = "lambert169"

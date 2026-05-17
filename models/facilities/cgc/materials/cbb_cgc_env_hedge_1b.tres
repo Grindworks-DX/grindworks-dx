@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c3vi6h4mq71ow"]
+
+[ext_resource type="Texture2D" uid="uid://e8g0mpv54yrs" path="res://models/facilities/cgc/textures/cbb_cgc_env_hedge_1b.png" id="1_juonu"]
+
+[resource]
+resource_name = "lambert173"
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.905882, 0.905882, 0.905882, 1)
+albedo_texture = ExtResource("1_juonu")
+emission_enabled = true

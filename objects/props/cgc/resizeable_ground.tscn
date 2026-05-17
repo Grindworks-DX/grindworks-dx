@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://8ib17sqgx1b2" path="res://objects/props/cgc/resizeable_ground.gd" id="1_ps4ww"]
 [ext_resource type="PackedScene" uid="uid://c6bqbu1bxlh3l" path="res://objects/props/cgc/resizeable_wall_plane.tscn" id="2_e4mvk"]
-[ext_resource type="Texture2D" uid="uid://dnmjqucjpu5sg" path="res://models/facilities/cgc/textures/mazedirt_golf.png" id="3_yjjam"]
+[ext_resource type="Texture2D" uid="uid://dnmjqucjpu5sg" path="res://models/facilities/cgc/textures/cbb_cgc_env_ground_1a.png" id="3_yjjam"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ws852"]
 resource_local_to_scene = true

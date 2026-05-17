@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://rrvc4q776fdk"]
 
 [ext_resource type="Script" uid="uid://bbxpen4y8yxgg" path="res://objects/props/cgc/resizeable_hedge.gd" id="1_kxuuw"]
-[ext_resource type="Texture2D" uid="uid://e8g0mpv54yrs" path="res://models/facilities/cgc/textures/CogHedgeMaze3.png" id="2_0guam"]
+[ext_resource type="Texture2D" uid="uid://e8g0mpv54yrs" path="res://models/facilities/cgc/textures/cbb_cgc_env_hedge_1b.png" id="2_0guam"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_i3ebp"]
 resource_local_to_scene = true

@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b3p8q3fhmuo35" path="res://objects/props/cgc/resizeable_hedge_cube.tscn" id="11_6hihm"]
 [ext_resource type="PackedScene" uid="uid://c274ukuqy7wgd" path="res://objects/props/cgc/tree/cgc_tree.tscn" id="13_0lfe4"]
 [ext_resource type="PackedScene" uid="uid://pn7r3ut085aw" path="res://objects/props/cgc/hedge_pillar.tscn" id="13_wngv4"]
-[ext_resource type="Texture2D" uid="uid://cjd18xmoljlbm" path="res://models/facilities/cgc/textures/WallBricksBig2.png" id="14_so7bu"]
+[ext_resource type="Texture2D" uid="uid://cjd18xmoljlbm" path="res://models/facilities/cgc/textures/cbb_cgc_env_brick_1a.png" id="14_so7bu"]
 [ext_resource type="PackedScene" uid="uid://dxyq5lb5oineo" path="res://objects/interactables/treasure_chest/treasure_chest.tscn" id="14_w536x"]
 [ext_resource type="PackedScene" uid="uid://c1g5f6yxujvef" path="res://addons/toonlike_tools/injectors/player/debug_player_position_marker.tscn" id="14_ymyt3"]
 [ext_resource type="Script" uid="uid://dax7hby88nkbu" path="res://addons/toonlike_tools/injectors/player/debug_player_position_marker.gd" id="15_qs1ux"]

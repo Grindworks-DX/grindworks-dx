@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cxgjht6egwlc1"]
+
+[ext_resource type="PackedScene" uid="uid://dk60awckcyeg1" path="res://objects/modules/cgc/base_rooms/cgc_connector_cartstorage.tscn" id="1_y5ac6"]
+
+[node name="cgc_connector_cartstorage" unique_id=1630432196 instance=ExtResource("1_y5ac6")]

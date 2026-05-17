@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://pn7r3ut085aw"]
 
-[ext_resource type="Texture2D" uid="uid://csmkpukc6maca" path="res://models/facilities/cgc/textures/StoneWall1e.png" id="1_skvam"]
-[ext_resource type="Texture2D" uid="uid://du4dqnxb80yr" path="res://models/facilities/cgc/textures/BQ_Fireplace_1.png" id="2_fhgie"]
+[ext_resource type="Texture2D" uid="uid://csmkpukc6maca" path="res://models/facilities/cgc/textures/cbb_cgc_env_brick_2a.png" id="1_skvam"]
+[ext_resource type="Texture2D" uid="uid://du4dqnxb80yr" path="res://models/facilities/cgc/textures/cbb_cgc_env_stone_2a.png" id="2_fhgie"]
 [ext_resource type="Material" uid="uid://do7bpsdy2nk" path="res://models/facilities/cgc/materials/branch_mat.tres" id="3_401bj"]
-[ext_resource type="Material" uid="uid://bv4ojtkb3obxf" path="res://models/facilities/cgc/materials/hedge_mat_full.tres" id="4_0vgtg"]
-[ext_resource type="Material" uid="uid://c3vi6h4mq71ow" path="res://models/facilities/cgc/materials/hedge_mat_partial.tres" id="5_08gt0"]
+[ext_resource type="Material" uid="uid://bv4ojtkb3obxf" path="res://models/facilities/cgc/materials/cbb_cgc_env_hedge_1a.tres" id="4_0vgtg"]
+[ext_resource type="Material" uid="uid://c3vi6h4mq71ow" path="res://models/facilities/cgc/materials/cbb_cgc_env_hedge_1b.tres" id="5_08gt0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qud6x"]
 resource_name = "doorsall_landscape_lambert3"

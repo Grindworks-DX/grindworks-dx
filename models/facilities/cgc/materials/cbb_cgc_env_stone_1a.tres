@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ch6ioni4g2jm1"]
+
+[ext_resource type="Texture2D" uid="uid://nw4d3q8wa5nk" path="res://models/facilities/cgc/textures/cbb_cgc_env_stone_1a.png" id="1_5j445"]
+
+[resource]
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_5j445")

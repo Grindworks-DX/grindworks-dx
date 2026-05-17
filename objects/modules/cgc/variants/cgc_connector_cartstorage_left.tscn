@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dj3n7kus3rc6u"]
+
+[ext_resource type="PackedScene" uid="uid://dk60awckcyeg1" path="res://objects/modules/cgc/base_rooms/cgc_connector_cartstorage.tscn" id="1_882s8"]
+
+[node name="cgc_connector_cartstorage" unique_id=1630432196 instance=ExtResource("1_882s8")]
+
+[node name="ENTRANCE" type="Node3D" parent="DOORWAY1" parent_id_path=PackedInt32Array(385315691) index="0" unique_id=1230367853]
+
+[node name="EXIT" type="Node3D" parent="DOORWAY2" parent_id_path=PackedInt32Array(749953511) index="0" unique_id=1631884822]

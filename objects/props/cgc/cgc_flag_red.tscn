@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://vndcua2dbph2"]
 
-[ext_resource type="Texture2D" uid="uid://ckbyo72pe45tw" path="res://models/facilities/cgc/textures/GogFlag.png" id="1_8kkki"]
+[ext_resource type="Texture2D" uid="uid://ckbyo72pe45tw" path="res://models/facilities/cgc/textures/cbb_cgc_prp_flag.png" id="1_8kkki"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66dba"]
 resource_name = "lambert170"

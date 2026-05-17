@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dashkj2a6dgb0"]
 
 [ext_resource type="Material" uid="uid://do7bpsdy2nk" path="res://models/facilities/cgc/materials/branch_mat.tres" id="1_0ovwj"]
-[ext_resource type="Material" uid="uid://c3vi6h4mq71ow" path="res://models/facilities/cgc/materials/hedge_mat_partial.tres" id="2_fdatg"]
+[ext_resource type="Material" uid="uid://c3vi6h4mq71ow" path="res://models/facilities/cgc/materials/cbb_cgc_env_hedge_1b.tres" id="2_fdatg"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_tuhbd"]
 _surfaces = [{

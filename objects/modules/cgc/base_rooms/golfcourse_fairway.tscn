@@ -3,14 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://xu0uv037rwgr" path="res://models/facilities/cgc/cgc_fairway.fbx" id="1_1vt43"]
 [ext_resource type="PackedScene" uid="uid://c274ukuqy7wgd" path="res://objects/props/cgc/tree/cgc_tree.tscn" id="2_s3e10"]
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8081y"]
-data = PackedVector3Array(1265.19, 0, -1034.65, 1265.19, 0, 920.148, -1200.8, 0, 920.148, -1200.8, 0, 920.148, -1200.8, 0, -1034.65, 1265.19, 0, -1034.65)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_s3e10"]
+data = PackedVector3Array(1386.2177, 271.6882, 2241.1914, 1386.2177, -271.6813, 2241.1914, 2977.8245, -271.67978, 2241.1968, 2977.8245, -271.67978, 2241.1968, 2977.8245, 271.6901, 2241.1973, 1386.2177, 271.6882, 2241.1914, 1386.2177, -271.6813, 2217.3652, 1386.2177, -271.6813, 2241.1914, 1386.2177, 271.6882, 2241.1914, 1386.2177, 271.6882, 2241.1914, 1386.2177, 271.6882, 2217.3652, 1386.2177, -271.6813, 2217.3652, 1121.6158, -271.6813, 2217.3652, 1386.2177, -271.6813, 2217.3652, 1386.2177, 271.6882, 2217.3652, 1386.2177, 271.6882, 2217.3652, 1121.6158, 271.6882, 2217.3652, 1121.6158, -271.6813, 2217.3652, 1121.6158, -271.6813, 2302.694, 1121.6158, -271.6813, 2217.3652, 1121.6158, 271.6882, 2217.3652, 1121.6158, 271.6882, 2217.3652, 1121.6158, 271.6882, 2302.694, 1121.6158, -271.6813, 2302.694, -3051.6772, -271.6813, 2302.694, 1121.6158, -271.6813, 2302.694, 1121.6158, 271.6882, 2302.694, 1121.6158, 271.6882, 2302.694, -3051.6772, 271.6882, 2302.694, -3051.6772, -271.6813, 2302.694, -3051.6772, -271.6813, 291.90848, -3051.6772, -271.6813, 2302.694, -3051.6772, 271.6882, 2302.694, -3051.6772, 271.6882, 2302.694, -3051.6772, 271.6882, 291.90848, -3051.6772, -271.6813, 291.90848, -3056.4614, -271.6813, -2302.7197, -3056.4614, -271.6813, -247.5654, -3056.4614, 271.6882, -247.5654, -3056.4614, 271.6882, -247.5654, -3056.4614, 271.6882, -2302.7197, -3056.4614, -271.6813, -2302.7197, 989.61896, -271.6813, -2302.7197, -3056.4614, -271.6813, -2302.7197, -3056.4614, 271.6882, -2302.7197, -3056.4614, 271.6882, -2302.7197, 989.61896, 271.6882, -2302.7197, 989.61896, -271.6813, -2302.7197, 989.61896, -271.6813, -2175.8628, 989.61896, -271.6813, -2302.7197, 989.61896, 271.6882, -2302.7197, 989.61896, 271.6882, -2302.7197, 989.61896, 271.6882, -2175.8628, 989.61896, -271.6813, -2175.8628, 1254.0527, -271.6813, -2175.8628, 989.61896, -271.6813, -2175.8628, 989.61896, 271.6882, -2175.8628, 989.61896, 271.6882, -2175.8628, 1254.0527, 271.6882, -2175.8628, 1254.0527, -271.6813, -2175.8628, 1254.0527, -271.6813, -2234.7563, 1254.0527, -271.6813, -2175.8628, 1254.0527, 271.6882, -2175.8628, 1254.0527, 271.6882, -2175.8628, 1254.0527, 271.6882, -2234.7563, 1254.0527, -271.6813, -2234.7563, 2968.558, 271.6883, -2234.7568, 2968.5583, -271.6813, -2234.7568, 1254.0527, -271.6813, -2234.7563, 1254.0527, -271.6813, -2234.7563, 1254.0527, 271.6882, -2234.7563, 2968.558, 271.6883, -2234.7568, 2968.411, 271.6882, -219.9885, 2968.411, -271.6813, -219.9885, 2968.5583, -271.6813, -2234.7568, 2968.5583, -271.6813, -2234.7568, 2968.558, 271.6883, -2234.7568, 2968.411, 271.6882, -219.9885, 2977.8245, -271.67978, 2241.1968, 2977.1946, -271.6813, 240.5349, 2977.1946, 271.6882, 240.5349, 2977.1946, 271.6882, 240.5349, 2977.8245, 271.6901, 2241.1973, 2977.8245, -271.67978, 2241.1968)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nxu1t"]
-data = PackedVector3Array(387.501, 156.654, 670.588, 387.501, -8.9647, 670.588, 872.623, -8.9643, 670.589, 872.623, -8.9643, 670.589, 872.623, 156.655, 670.589, 387.501, 156.654, 670.588, 387.501, -8.9647, 663.326, 387.501, -8.9647, 670.588, 387.501, 156.654, 670.588, 387.501, 156.654, 670.588, 387.501, 156.654, 663.326, 387.501, -8.9647, 663.326, 306.85, -8.9647, 663.326, 387.501, -8.9647, 663.326, 387.501, 156.654, 663.326, 387.501, 156.654, 663.326, 306.85, 156.654, 663.326, 306.85, -8.9647, 663.326, 306.85, -8.9647, 689.334, 306.85, -8.9647, 663.326, 306.85, 156.654, 663.326, 306.85, 156.654, 663.326, 306.85, 156.654, 689.334, 306.85, -8.9647, 689.334, -965.169, -8.9647, 689.334, 306.85, -8.9647, 689.334, 306.85, 156.654, 689.334, 306.85, 156.654, 689.334, -965.169, 156.654, 689.334, -965.169, -8.9647, 689.334, -965.169, -8.9647, 76.4462, -965.169, -8.9647, 689.334, -965.169, 156.654, 689.334, -965.169, 156.654, 689.334, -965.169, 156.654, 76.4462, -965.169, -8.9647, 76.4462, -1053.01, -8.9647, 76.4462, -965.169, -8.9647, 76.4462, -965.169, 156.654, 76.4462, -965.169, 156.654, 76.4462, -1053.01, 156.654, 76.4462, -1053.01, -8.9647, 76.4462, -966.628, -8.9647, -87.9854, -1059.32, -8.9647, -87.9854, -1059.32, 156.654, -87.9854, -1059.32, 156.654, -87.9854, -966.628, 156.654, -87.9854, -966.628, -8.9647, -87.9854, -966.628, -8.9647, -714.396, -966.628, -8.9647, -87.9854, -966.628, 156.654, -87.9854, -966.628, 156.654, -87.9854, -966.628, 156.654, -714.396, -966.628, -8.9647, -714.396, 266.618, -8.9647, -714.396, -966.628, -8.9647, -714.396, -966.628, 156.654, -714.396, -966.628, 156.654, -714.396, 266.618, 156.654, -714.396, 266.618, -8.9647, -714.396, 266.618, -8.9647, -675.73, 266.618, -8.9647, -714.396, 266.618, 156.654, -714.396, 266.618, 156.654, -714.396, 266.618, 156.654, -675.73, 266.618, -8.9647, -675.73, 347.217, -8.9647, -675.73, 266.618, -8.9647, -675.73, 266.618, 156.654, -675.73, 266.618, 156.654, -675.73, 347.217, 156.654, -675.73, 347.217, -8.9647, -675.73, 347.217, -8.9647, -693.681, 347.217, -8.9647, -675.73, 347.217, 156.654, -675.73, 347.217, 156.654, -675.73, 347.217, 156.654, -693.681, 347.217, -8.9647, -693.681, 869.798, 156.654, -693.681, 869.798, -8.9647, -693.681, 347.217, -8.9647, -693.681, 347.217, -8.9647, -693.681, 347.217, 156.654, -693.681, 869.798, 156.654, -693.681, 869.753, 156.654, -79.58, 869.753, -8.9647, -79.58, 869.798, -8.9647, -693.681, 869.798, -8.9647, -693.681, 869.798, 156.654, -693.681, 869.753, 156.654, -79.58, 982.986, -8.9647, -79.58, 869.753, -8.9647, -79.58, 869.753, 156.654, -79.58, 869.753, 156.654, -79.58, 982.986, 156.654, -79.58, 982.986, -8.9647, -79.58, 872.431, -8.9647, 60.7875, 982.986, -8.9647, 60.7875, 982.986, 156.654, 60.7875, 982.986, 156.654, 60.7875, 872.431, 156.654, 60.7875, 872.431, -8.9647, 60.7875, 872.623, -8.9643, 670.589, 872.431, -8.9647, 60.7875, 872.431, 156.654, 60.7875, 872.431, 156.654, 60.7875, 872.623, 156.655, 670.589, 872.623, -8.9643, 670.589, -1059.32, 156.654, -200.803, -1059.32, 156.654, -87.9854, -1059.32, -8.9647, -87.9854, -1059.32, -8.9647, -87.9854, -1059.32, -8.9647, -200.803, -1059.32, 156.654, -200.803, -1053.01, -8.9647, 166.485, -1053.01, -8.9647, 76.4462, -1053.01, 156.654, 76.4462, -1053.01, 156.654, 76.4462, -1053.01, 156.654, 166.485, -1053.01, -8.9647, 166.485, 982.986, -8.9647, -175.772, 982.986, -8.9647, -79.58, 982.986, 156.654, -79.58, 982.986, 156.654, -79.58, 982.986, 156.654, -175.772, 982.986, -8.9647, -175.772, 982.986, 156.654, 153.962, 982.986, 156.654, 60.7875, 982.986, -8.9647, 60.7875, 982.986, -8.9647, 60.7875, 982.986, -8.9647, 153.962, 982.986, 156.654, 153.962)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2voer"]
-data = PackedVector3Array(918.21, 3.3466, 103.552, 908.94, -0.1114, 113.768, 908.94, -0.1142, -159.577, 908.94, -0.1142, -159.577, 918.215, 3.3431, -150.466, 918.21, 3.3466, 103.552, 1019.49, 3.3407, 103.553, 918.21, 3.3466, 103.552, 918.215, 3.3431, -150.466, 918.215, 3.3431, -150.466, 1019.78, 3.3372, -150.466, 1019.49, 3.3407, 103.553, 1027.33, -0.1191, -159.636, 1027.34, -0.1163, 113.769, 1019.49, 3.3407, 103.553, 1019.49, 3.3407, 103.553, 1019.78, 3.3372, -150.466, 1027.33, -0.1191, -159.636, 918.21, 3.3466, 103.552, 1019.49, 3.3407, 103.553, 1027.34, -0.1163, 113.769, 1027.34, -0.1163, 113.769, 908.94, -0.1114, 113.768, 918.21, 3.3466, 103.552, 918.215, 3.3431, -150.466, 908.94, -0.1142, -159.577, 1027.33, -0.1191, -159.636, 1027.33, -0.1191, -159.636, 1019.78, 3.3372, -150.466, 918.215, 3.3431, -150.466)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_s3e10"]
+points = PackedVector3Array(32.650658, 26.020359, -1.9644824e-06, 32.650658, -26.020359, 1.9644829e-06, 32.650658, 22.719421, -1.7156531e-06, -32.65065, 26.020359, -1.9644824e-06, 32.650658, -20.427103, 1.5418191e-06, -32.65065, -26.020359, 1.9644829e-06, -23.068949, 21.731178, -1.6410427e-06, -28.71314, 21.629295, -1.633351e-06, -32.65065, 21.496853, -1.6233516e-06, -22.966675, -19.80563, 1.4948992e-06, -32.65065, -19.65281, 1.4833615e-06, -28.39993, -19.739407, 1.4898994e-06)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_43xhs"]
 size = Vector3(63.701, 7.35443, 50.4635)
@@ -97,133 +94,91 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_waopf")
 
-[node name="fairway" instance=ExtResource("1_1vt43")]
+[node name="fairway" unique_id=1560088953 instance=ExtResource("1_1vt43")]
 
-[node name="Collision" parent="BBFairway" index="0"]
+[node name="collision" parent="." index="3" unique_id=1550568366]
 visible = false
 
-[node name="collision_floor" parent="BBFairway/Collision" index="1"]
-transform = Transform3D(0.81619406, 0, 0, 0, 1, 0, 0, 0, 0.8465904, 508.10193, 3.246461e-13, 14.499674)
-visible = false
+[node name="StaticBody3D" type="StaticBody3D" parent="collision" index="0" unique_id=1705483981]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="BBFairway/Collision/collision_floor/GeometryTransformHelper3" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="collision/StaticBody3D" index="0" unique_id=497741457]
+shape = SubResource("ConcavePolygonShape3D_s3e10")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BBFairway/Collision/collision_floor/GeometryTransformHelper3/StaticBody3D" index="0"]
-shape = SubResource("ConcavePolygonShape3D_8081y")
+[node name="StaticBody3D" type="StaticBody3D" parent="ground" parent_id_path=PackedInt32Array(585463553) index="0" unique_id=425630435]
 
-[node name="GeometryTransformHelper4" parent="BBFairway/Collision/collision_walls1" index="0"]
-visible = false
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D" index="0" unique_id=1629853553]
+shape = SubResource("ConvexPolygonShape3D_s3e10")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="BBFairway/Collision/collision_walls1/GeometryTransformHelper4" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BBFairway/Collision/collision_walls1/GeometryTransformHelper4/StaticBody3D" index="0"]
-shape = SubResource("ConcavePolygonShape3D_nxu1t")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="BBFairway/Collision/collision_floor_1/GeometryTransformHelper5" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BBFairway/Collision/collision_floor_1/GeometryTransformHelper5/StaticBody3D" index="0"]
-shape = SubResource("ConcavePolygonShape3D_2voer")
-
-[node name="trees2" parent="BBFairway/Geometry" index="2"]
-visible = false
-
-[node name="GeometryTransformHelper12" parent="BBFairway/Geometry/trees2/pPlane50" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -703.5442, -118.43644, -1819.2373)
-
-[node name="GeometryTransformHelper13" parent="BBFairway/Geometry/trees2/pPlane392" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -931.65625, -118.436325, -1281.392)
-
-[node name="GeometryTransformHelper15" parent="BBFairway/Geometry/trees2/pPlane394" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -411.0895, -118.43644, -331.73956)
-
-[node name="gate" parent="BBFairway/Geometry" index="8"]
-visible = false
-
-[node name="SeemPatch" parent="BBFairway/Geometry" index="9"]
-visible = false
-
-[node name="EXIT" parent="BBFairway" index="2"]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 930.0779, 0, -8.156912)
-
-[node name="ENTRANCE" parent="BBFairway" index="3"]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -1052.7183, 0, -0.9352878)
-
-[node name="RoomArea" type="Area3D" parent="." index="25"]
+[node name="RoomArea" type="Area3D" parent="." index="9" unique_id=683245306]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.6294e-08, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomArea" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomArea" index="0" unique_id=1259906387]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04329, 3.7045, 1.30658)
 shape = SubResource("BoxShape3D_43xhs")
 
-[node name="ENTRANCE" type="Node3D" parent="." index="26"]
-transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -34.53804, 0, -0.0306853)
-
-[node name="EXIT" type="Node3D" parent="." index="27"]
-transform = Transform3D(0, -0.01, 0, 0, 0, -0.01, 0.01, 0, 0, 30.514328, 0, -0.267615)
-
-[node name="Navigation" type="NavigationRegion3D" parent="." index="28"]
+[node name="Navigation" type="NavigationRegion3D" parent="." index="10" unique_id=1547265751]
 visible = false
 navigation_mesh = SubResource("NavigationMesh_6braa")
 
-[node name="GeometryTransformHelper3" type="MeshInstance3D" parent="Navigation" index="0"]
+[node name="GeometryTransformHelper3" type="MeshInstance3D" parent="Navigation" index="0" unique_id=1452514244]
 transform = Transform3D(0.0328084, 0, 0, 0, 0.0328084, 0, 0, 0, 0.0328084, 8.34465e-07, 0, 0)
 mesh = SubResource("ArrayMesh_rgm7q")
 skeleton = NodePath("")
 
-[node name="GeometryTransformHelper5" type="MeshInstance3D" parent="Navigation" index="1"]
+[node name="GeometryTransformHelper5" type="MeshInstance3D" parent="Navigation" index="1" unique_id=1097768177]
 transform = Transform3D(0.0328084, 0, 0, 0, 0.0328084, 0, 0, 0, 0.0328084, 1.90735e-06, 0, 0)
 mesh = SubResource("ArrayMesh_1a7x1")
 skeleton = NodePath("")
 
-[node name="Trees" type="Node3D" parent="." index="29"]
+[node name="Trees" type="Node3D" parent="." index="11" unique_id=1125578935]
 
-[node name="cgc_tree" parent="Trees" index="0" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree" parent="Trees" index="0" unique_id=1549413271 instance=ExtResource("2_s3e10")]
 transform = Transform3D(-0.04033817, 0, 0.56089866, 0, 0.47799775, 0, -0.42248318, 0, -0.053553924, 0, 0, -33.411026)
 
-[node name="cgc_tree17" parent="Trees" index="1" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree17" parent="Trees" index="1" unique_id=1136143394 instance=ExtResource("2_s3e10")]
 transform = Transform3D(-0.53185827, 0, 0.32342693, 0, 0.4779977, 0, -0.28275838, 0, -0.6083545, -11.595081, 0, -32.609543)
 
-[node name="cgc_tree2" parent="Trees" index="2" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree2" parent="Trees" index="2" unique_id=637984301 instance=ExtResource("2_s3e10")]
 transform = Transform3D(-0.029942807, 0, 0.41635206, 0, 0.28372607, 0, -0.31360698, 0, -0.03975279, 13.534298, 0, -28.9635)
 
-[node name="cgc_tree3" parent="Trees" index="3" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree3" parent="Trees" index="3" unique_id=302705576 instance=ExtResource("2_s3e10")]
 transform = Transform3D(0.17715482, 0, 0.43711665, 0, 0.555501, 0, -0.49537367, 0, 0.15632106, 21.760708, 0, -31.187866)
 
-[node name="cgc_tree4" parent="Trees" index="4" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree4" parent="Trees" index="4" unique_id=428580083 instance=ExtResource("2_s3e10")]
 transform = Transform3D(0.13012743, 0, -0.7716943, 0, 0.6292837, 0, 0.3184702, 0, 0.31531563, -25.48169, 0, -31.187866)
 
-[node name="cgc_tree5" parent="Trees" index="5" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree5" parent="Trees" index="5" unique_id=2122091434 instance=ExtResource("2_s3e10")]
 transform = Transform3D(-0.19606596, 0, -0.13989334, 0, 0.29498085, 0, 0.12351713, 0, -0.22206086, -19.222198, 0, -32.46173)
 
-[node name="cgc_tree6" parent="Trees" index="6" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree6" parent="Trees" index="6" unique_id=1485705839 instance=ExtResource("2_s3e10")]
 transform = Transform3D(-0.38729644, 0, -0.27633655, 0, 0.5826867, 0, 0.243988, 0, -0.43864512, -6.5934105, 0, -27.561264)
 
-[node name="cgc_tree8" parent="Trees" index="7" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree8" parent="Trees" index="7" unique_id=620485306 instance=ExtResource("2_s3e10")]
 transform = Transform3D(-0.38729644, 0, -0.27633655, 0, 0.45266, 0, 0.243988, 0, -0.43864512, 29.769238, 0, -30.307873)
 
-[node name="cgc_tree7" parent="Trees" index="8" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree7" parent="Trees" index="8" unique_id=993858428 instance=ExtResource("2_s3e10")]
 transform = Transform3D(-0.78216034, 0, 0.086447194, 0, 0.7127099, 0, -0.11261352, 0, -0.6004215, 6.7923784, 0, -31.658432)
 
-[node name="cgc_tree9" parent="Trees" index="9" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree9" parent="Trees" index="9" unique_id=1156230074 instance=ExtResource("2_s3e10")]
 transform = Transform3D(0.040338203, 0, -0.5608986, 0, 0.4779977, 0, 0.42248318, 0, 0.053553972, -0.8976946, 0, 35.08452)
 
-[node name="cgc_tree10" parent="Trees" index="10" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree10" parent="Trees" index="10" unique_id=1543347092 instance=ExtResource("2_s3e10")]
 transform = Transform3D(0.029942835, 0, -0.41635203, 0, 0.28372604, 0, 0.31360695, 0, 0.039752826, -14.431992, 0, 30.636993)
 
-[node name="cgc_tree11" parent="Trees" index="11" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree11" parent="Trees" index="11" unique_id=1916112241 instance=ExtResource("2_s3e10")]
 transform = Transform3D(0.027663082, 0, -0.6690514, 0, 0.3535548, 0, 0.5127701, 0, 0.036094137, -22.658401, 0, 32.86136)
 
-[node name="cgc_tree12" parent="Trees" index="12" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree12" parent="Trees" index="12" unique_id=2035488559 instance=ExtResource("2_s3e10")]
 transform = Transform3D(-0.13012747, 0, 0.7716944, 0, 0.48869205, 0, -0.3184702, 0, -0.31531575, -9.058693, 0, 32.861355)
 
-[node name="cgc_tree13" parent="Trees" index="13" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree13" parent="Trees" index="13" unique_id=1678314351 instance=ExtResource("2_s3e10")]
 transform = Transform3D(0.6497741, 0, 0.4636148, 0, 0.97758377, 0, -0.4093431, 0, 0.7359227, 24.843777, 0, 34.135223)
 
-[node name="cgc_tree14" parent="Trees" index="14" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree14" parent="Trees" index="14" unique_id=1425451465 instance=ExtResource("2_s3e10")]
 transform = Transform3D(0.3872964, 0, 0.27633658, 0, 0.58268666, 0, -0.24398807, 0, 0.4386451, 5.695717, 0, 29.234756)
 
-[node name="cgc_tree15" parent="Trees" index="15" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree15" parent="Trees" index="15" unique_id=1028368934 instance=ExtResource("2_s3e10")]
 transform = Transform3D(0.20079067, 0, -0.46589193, 0, 0.5213465, 0, 0.4113536, 0, 0.22741193, -30.666931, 0, 31.981367)
 
-[node name="cgc_tree16" parent="Trees" index="16" instance=ExtResource("2_s3e10")]
+[node name="cgc_tree16" parent="Trees" index="16" unique_id=1981007325 instance=ExtResource("2_s3e10")]
 transform = Transform3D(0.78216034, 0, -0.086447135, 0, 0.71270996, 0, 0.11261346, 0, 0.6004215, 7.444309, 0, 33.331924)

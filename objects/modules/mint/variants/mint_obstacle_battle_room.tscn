@@ -216,10 +216,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4596, 0, 9.60274)
 transform = Transform3D(0.717349, 0, -0.696714, 0, 1, 0, 0.696714, 0, 0.717349, 9.28366, 3.02691, -20.8416)
 
 [node name="gold_stack" parent="Props" index="5" unique_id=776436816 instance=ExtResource("7_8p1lj")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 15.32, 0, -8.00504)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 15.32, 0.006292343, -8.00504)
 
 [node name="gold_stack2" parent="Props" index="6" unique_id=1412468387 instance=ExtResource("7_8p1lj")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 18.5875, 0, -8.00504)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 18.5875, 0.006292343, -8.00504)
 
 [node name="money_bag" parent="Props" index="7" unique_id=1763471971 instance=ExtResource("8_n7vts")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.50776, 0, -13.1211)

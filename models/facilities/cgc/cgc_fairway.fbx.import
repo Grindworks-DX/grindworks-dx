@@ -39,35 +39,55 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"CogHedgeFar2": {
+"BQ_Fireplace_1": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://models/facilities/cgc/materials/tree_mat.tres",
-"use_external/path": "uid://b45hb25eo5q6v"
+"use_external/fallback_path": "res://models/facilities/cgc/materials/cbb_cgc_env_stone_2a.tres",
+"use_external/path": "uid://cliv41wabcywl"
 },
-"CogHedgeMaze2": {
+"cbb_cgc_env_brick_1a": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://models/facilities/cgc/materials/hedge_mat_full.tres",
+"use_external/fallback_path": "res://models/facilities/cgc/materials/cbb_cgc_env_brick_1a.tres",
+"use_external/path": "uid://bpv4j5sqqc0ro"
+},
+"cbb_cgc_env_brick_2a": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/facilities/cgc/materials/cbb_cgc_env_brick_2a.tres",
+"use_external/path": "uid://xbihtj11aaah"
+},
+"cbb_cgc_env_ground_1a": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/facilities/cgc/materials/cbb_cgc_env_ground_1a.tres",
+"use_external/path": "uid://dlodnyf0k6y17"
+},
+"cbb_cgc_env_hedge_1a": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/facilities/cgc/materials/cbb_cgc_env_hedge_1a.tres",
 "use_external/path": "uid://bv4ojtkb3obxf"
 },
-"CogHedgeMaze3": {
+"cbb_cgc_env_hedge_1b": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://models/facilities/cgc/materials/hedge_mat_partial.tres",
+"use_external/fallback_path": "res://models/facilities/cgc/materials/cbb_cgc_env_hedge_1b.tres",
 "use_external/path": "uid://c3vi6h4mq71ow"
 },
-"CogHedgeVine": {
+"cbb_cgc_env_hedge_2a": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://models/facilities/cgc/materials/branch_mat.tres",
-"use_external/path": "uid://do7bpsdy2nk"
+"use_external/fallback_path": "res://models/facilities/cgc/materials/cbb_cgc_env_hedge_2a.tres",
+"use_external/path": "uid://b45hb25eo5q6v"
 },
-"CogThinTree": {
+"cbb_cgc_env_stone_1a": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://models/facilities/cgc/materials/branch_mat.tres",
-"use_external/path": "uid://do7bpsdy2nk"
+"use_external/fallback_path": "res://models/facilities/cgc/materials/cbb_cgc_env_stone_1a.tres",
+"use_external/path": "uid://ch6ioni4g2jm1"
 },
-"mazedirt_golf": {
+"cbb_cgc_env_tree_1a": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://models/facilities/cgc/materials/floor_mat.tres",
-"use_external/path": "uid://dlodnyf0k6y17"
+"use_external/fallback_path": "",
+"use_external/path": ""
+},
+"csb_factory_env_roof_tiles": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/facilities/factory/materials/csb_factory_env_roof_tiles.tres",
+"use_external/path": "uid://dv06dcokxmi2l"
 }
 }
 }

@@ -41,8 +41,8 @@ _subresources={
 "materials": {
 "ccb_mint_env_ceiling_1a": {
 "use_external/enabled": true,
-"use_external/fallback_path": "",
-"use_external/path": ""
+"use_external/fallback_path": "res://models/facilities/mint/materials/ccb_mint_env_ceiling_1a.tres",
+"use_external/path": "uid://y7dpowqgfn6"
 },
 "ccb_mint_env_wall_1a": {
 "use_external/enabled": true,
