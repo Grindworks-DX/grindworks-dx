@@ -22,6 +22,8 @@ func _init():
 	})
 
 func _ready():
+	CinemaUtil.anim_letterboxes(false)
+	
 	if Util.floor_number == 3:
 		$ElevatorUI.arrow_left.hide()
 		$ElevatorUI.arrow_right.hide()

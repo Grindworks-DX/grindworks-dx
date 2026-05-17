@@ -46,7 +46,7 @@ func _ready() -> void:
 	toon.body.animator.play()
 	toon.set_emotion(Toon.Emotion.SURPRISE)
 	toon.reset_physics_interpolation()
-	try_add_accessories()
+	if Util.get_player() is Player: try_add_accessories()
 	var twoon := toon.create_tween()
 	twoon.tween_property(toon, 'scale', Vector3.ONE * 0.01, 5.0)
 	animate_toon()

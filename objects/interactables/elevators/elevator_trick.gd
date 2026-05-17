@@ -14,6 +14,8 @@ func player_entered(player : Player):
 	player.toon.global_rotation.y = player_pos.global_rotation.y
 	player.toon.scale = toon_scale
 	
+	CinemaUtil.anim_letterboxes(true)
+	
 	var floor_tween := create_tween()
 	floor_tween.set_trans(Tween.TRANS_QUART)
 	floor_tween.tween_property(elevator_floor,'rotation_degrees:x',-90,0.25)

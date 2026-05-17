@@ -10,11 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cy4iox7mj5ei0" path="res://objects/toon/toon.tscn" id="8_if1ap"]
 [ext_resource type="Script" uid="uid://yg7gxug4rab" path="res://objects/toon/toon_dna.gd" id="9_qqxi5"]
 
-[sub_resource type="Environment" id="Environment_6gtde"]
-background_energy_multiplier = 0.0
-ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272fd"]
 resource_name = "textures:textures1:ZONE04aT:textures:CashBotLocomotive__357fea4"
 cull_mode = 2
@@ -348,11 +343,24 @@ size = Vector3(3.80225, 3.87613, 1.71704)
 script = ExtResource("9_qqxi5")
 eyelashes = false
 
+[sub_resource type="Environment" id="Environment_if1ap"]
+background_mode = 1
+background_color = Color(0.00010487089, 0.007900837, 0.12110796, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 1.2
+glow_enabled = true
+glow_intensity = 0.22
+glow_strength = 1.4
+glow_bloom = 0.6
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.33196172, 0.36162013, 0.40776464, 1)
+fog_light_energy = 0.03
+fog_density = 1.0
+
 [node name="FallBonusScene" type="Node3D" unique_id=1081744085]
 script = ExtResource("1_8jxdy")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1927100914]
-environment = SubResource("Environment_6gtde")
 
 [node name="ElevatorCam" type="Camera3D" parent="." unique_id=2080989582]
 transform = Transform3D(1, 0, 0, 0, 0.9773051, 0.21183655, 0, -0.21183655, 0.9773051, 5.36304, -1.8832669, -1.8796854)
@@ -440,6 +448,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.8229)
 unique_name_in_owner = true
 transform = Transform3D(-0.07522106, -4.9081616, 0.95093834, -3.3776087e-07, 0.95104647, 4.908717, -4.9994345, 0.07384783, -0.014307588, 6.916246, -3.4179037, -3.366985)
 toon_dna = SubResource("Resource_10lbx")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=495376489]
+environment = SubResource("Environment_if1ap")
 
 [connection signal="start_floor" from="ElevatorUI" to="." method="start_floor"]
 [connection signal="body_entered" from="Elevator/PlayerCollision" to="Elevator" method="body_entered"]

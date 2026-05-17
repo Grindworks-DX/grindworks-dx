@@ -351,6 +351,7 @@ func clipboard_out() -> void:
 
 @onready var elevator_floor := $World3D/CogBuilding/suit_landmark_new_corp/locators/suit_landmark_new_corp_door_origin/GeometryTransformHelper11/sellbot_elevator/suit_elevator_1/ground
 func alt_opening(tween : Tween) -> void:
+	CinemaUtil.anim_letterboxes(true)
 	tween.set_trans(Tween.TRANS_QUART)
 	tween.tween_property(elevator_floor, 'rotation_degrees:x', -90.0, 0.25)
 	tween.set_trans(Tween.TRANS_LINEAR)
