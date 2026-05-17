@@ -122,6 +122,8 @@ func gag_selected(gag: BattleAction) -> void:
 					target_select.hide()
 					main_container.show()
 					focus_gag_button()
+		BattleAction.ActionTarget.NONE:
+			pass
 		_:
 			gag.targets = get_parent().cogs.duplicate(true)
 	selected_gags.append(gag)
