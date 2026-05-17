@@ -36,7 +36,7 @@ func _ready() -> void:
 	else:
 		dna = Util.get_player().toon.toon_dna
 		Util.get_player().hide()
-		Util.get_player().stats.hp = Util.get_player().stats.max_hp
+		#Util.get_player().stats.hp = Util.get_player().stats.max_hp
 		Util.get_player().gui.hide()
 	AudioManager.play_sound(Globals.get_species_sfx(Globals.ToonDial.FALLING,dna))
 	toon.construct_toon(dna)
@@ -103,9 +103,9 @@ func move_camera() -> void:
 	cam_tween.set_trans(Tween.TRANS_SINE)
 	cam_tween.tween_property(camera, 'position:y', camera_final_y, 5.0)
 	cam_tween.tween_property(toon, 'rotation_degrees', Vector3(60, 120, 90), 5.0)
-	if Util.get_player():
-		cam_tween.tween_property(Util.get_player().stats, 'max_hp', Util.get_player().stats.character.starting_laff, 5.0)
-		cam_tween.tween_property(Util.get_player().stats, 'hp', Util.get_player().stats.character.starting_laff, 5.0)
+	#if Util.get_player():
+		#cam_tween.tween_property(Util.get_player().stats, 'max_hp', Util.get_player().stats.character.starting_laff, 5.0)
+		#cam_tween.tween_property(Util.get_player().stats, 'hp', Util.get_player().stats.character.starting_laff, 5.0)
 	await cam_tween.finished
 	toon.hide()
 	scene_ending = true
@@ -160,8 +160,8 @@ func end_scene() -> void:
 		await GameLoader.wait_for_phase(GameLoader.Phase.GAMEPLAY)
 		player.show()
 		player.gui.show()
-		player.reset_stats()
-		player.stats.initialize_quests()
+		#player.reset_stats()
+		#player.stats.initialize_quests()
 		player.lock_game_timer = false
 		player.item_display.reload_items()
 		Globals.s_game_started.emit()

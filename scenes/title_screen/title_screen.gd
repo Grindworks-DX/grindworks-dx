@@ -237,7 +237,7 @@ func begin_game(character: PlayerCharacter, falling_scene := false) -> void:
 	player.reset_stats()
 	SceneLoader.add_persistent_node(player)
 	player.state = player.PlayerState.STOPPED
-	player.stats.max_out()
+	#player.stats.max_out()
 	SaveFileService.progress_file.new_games += 1
 	if falling_scene:
 		SceneLoader.load_into_scene("res://scenes/falling_scene/falling_scene.tscn", GameLoader.Phase.FALLING_SEQ)

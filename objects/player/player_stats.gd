@@ -254,9 +254,10 @@ func attempt_revive(_hp: int = 0) -> void:
 	
 	# Create the unite effect
 	if not Util.get_player().revives_are_hp or extra_lives == 0:
-		var unite: GPUParticles3D = load('res://objects/battle/effects/unite/unite.tscn').instantiate()
-		Util.get_player().add_child(unite)
-		Util.get_player().toon.speak("Toons of the world, Toon-Up!")
+		#var unite: GPUParticles3D = load('res://objects/battle/effects/unite/unite.tscn').instantiate()
+		#Util.get_player().add_child(unite)
+		#Util.get_player().toon.speak("Toons of the world, Toon-Up!")
+		Util.get_player().boost_queue.queue_text("Revived!", Color(0.372, 0.568, 1.0, 1.0))
 		AudioManager.play_sound(load("res://audio/sfx/misc/Holy_Mackerel.ogg"))
 
 	print('Revived!')
